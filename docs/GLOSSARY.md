@@ -20,6 +20,10 @@ Cột **Dùng trong bài** là cách viết bắt buộc trong `/src/content`. N
 | PKT | Journal voucher | Phiếu kế toán (tổng hợp) | phiếu kế toán / PKT |
 | — | Population | Tổng thể (để chọn mẫu) | population |
 | PMS | Property Management System | Hệ thống quản lý khách sạn | PMS |
+| POS | Point of Sale | Máy tính tiền nhà hàng, quầy | POS |
+| F&B | Food & Beverage | Ăn uống (nhà hàng, quầy bar) | "ăn uống" trong câu; F&B chỉ trong nhãn |
+| — | Night audit | Khóa sổ doanh thu khách sạn cuối mỗi đêm | night audit |
+| — | Folio | Bảng kê chi phí của khách/đoàn trên PMS | folio |
 
 ## Mục đích & ý kiến kiểm toán
 | Viết tắt | Tiếng Anh | Tiếng Việt | Dùng trong bài |
@@ -88,6 +92,7 @@ Quy ước: viết hoa trên chip/nhãn (Occurrence), viết thường trong câ
 | — | Vouching | Đi từ sổ tìm chứng từ (top-down) | vouching |
 | — | Tracing | Đi từ nguồn dò vào sổ (bottom-up) | tracing |
 | — | Confirmation | Thư xác nhận | thư xác nhận |
+| — | Document request | Yêu cầu cung cấp tài liệu (cách đội thi nhận chứng từ chi tiết) | yêu cầu cung cấp tài liệu (document request) |
 | — | Alternative procedures | Thủ tục thay thế | thủ tục thay thế |
 | — | Subsequent review | Soát xét sau kỳ | soát xét sau kỳ |
 | — | Search for unrecorded liabilities | Tìm nợ chưa ghi nhận | nợ chưa ghi nhận |

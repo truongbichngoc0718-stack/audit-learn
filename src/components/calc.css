@@ -1,0 +1,20 @@
+.calc { border: 1px solid var(--bisc-line); border-radius: var(--bisc-radius); background: var(--bisc-card); padding: 1rem 1.2rem; box-shadow: var(--bisc-shadow); }
+.calc .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .7rem; }
+.calc label { display: flex; flex-direction: column; font-size: .8rem; color: var(--bisc-muted); gap: .25rem; }
+.calc input, .calc select { font: inherit; padding: .4rem .55rem; border-radius: 8px; border: 1px solid var(--bisc-line); background: transparent; color: var(--sl-color-white); }
+.calc .out { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .6rem; margin-top: .9rem; }
+.calc .out > div { background: var(--sl-color-gray-6); border-radius: 10px; padding: .55rem .7rem; }
+.calc .out small { display: block; color: var(--bisc-muted); font-size: .72rem; }
+.calc .out b { font-size: 1.15rem; color: var(--sl-color-white); }
+.calc .verdict { margin-top: .8rem; padding: .6rem .8rem; border-radius: 10px; font-weight: 600; }
+.calc .verdict.ok { background: var(--bisc-emerald-soft); color: var(--bisc-emerald); }
+.calc .verdict.mid { background: var(--bisc-amber-soft); }
+.calc .verdict.bad { background: var(--bisc-rose-soft); color: var(--bisc-rose); }
+.calc .presets { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.calc .presets button { font: inherit; font-size: .78rem; padding: .25rem .65rem; border-radius: 99px; border: 1px solid var(--bisc-line); background: transparent; color: inherit; cursor: pointer; }
+.calc .presets button.on { background: var(--bisc-navy); color: var(--bisc-amber); border-color: var(--bisc-navy); }
+.calc .ruler { position: relative; height: 54px; margin-top: 1rem; }
+.calc .ruler .bar { position: absolute; top: 22px; left: 0; right: 0; height: 10px; border-radius: 99px; background: linear-gradient(90deg, var(--bisc-emerald-soft), var(--bisc-amber-soft), var(--bisc-rose-soft)); border: 1px solid var(--bisc-line); }
+.calc .ruler .tick { position: absolute; top: 14px; height: 26px; border-left: 2px solid var(--bisc-navy-2); font-size: .7rem; }
+.calc .ruler .tick span { position: absolute; top: 28px; left: -1.5rem; width: 3rem; text-align: center; color: var(--bisc-muted); }
+.calc input[type=range] { width: 100%; accent-color: var(--bisc-rose); }

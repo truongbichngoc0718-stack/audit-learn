@@ -1,10 +1,45 @@
 ---
-title: "Phần 3 · Thủ tục theo phần hành"
-description: Đang xây dựng theo docs/CONTENT_MAP.md.
+title: Thủ tục theo từng phần hành
+description: Sáu chu trình trọng tâm và một lớp soát xét xuyên suốt. Phần hành nào cũng đi theo audit program, hiểu quy trình trước, kết luận sau cùng.
+id: a3-tong-quan
 nhanh: A
 phan: 3
-loai: khung
-trang_thai: khung
+loai: tong-quan
+thoi_luong: 27
+nguon: ["T#p3", "C#scope"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
 sidebar: { order: 0, label: "Tổng quan Phần 3" }
 ---
-Nội dung Phần 3 sẽ được viết ở Bước 3 (MVP) sau khi bộ chuẩn BISC_STYLE được duyệt.
+import { Eyebrow } from '@components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<Eyebrow>Audit scope</Eyebrow>
+## Sáu chu trình và lớp xuyên suốt
+Số hiệu tài khoản theo hệ thống tài khoản VAS. Bài đã có thì bấm thẻ để mở.
+
+<CardGrid>
+<LinkCard title="01 · Doanh thu · Revenue" description="511 · 521 · 3387 · Occurrence · Cut-off · 7 phút" href="/a/3/a3-1-doanh-thu/" />
+<Card title="02 · Phải thu khách hàng">131 · 2293 · Existence · Valuation · sắp có</Card>
+<Card title="03 · Phải trả người bán">331 · 335 · Completeness · Cut-off · sắp có</Card>
+<Card title="04 · Chi phí hoạt động">632 · 641 · 642 · 242 · Completeness · Classification · sắp có</Card>
+<Card title="05 · Vay và lãi vay">341 · 635 · 335 · Completeness · Presentation · sắp có</Card>
+<Card title="06 · Tài sản cố định">211 · 214 · 241 · Existence · Valuation · sắp có</Card>
+<Card title="07 · Bút toán tay & bên liên quan">Toàn bộ GL · danh sách bên liên quan · Occurrence · Completeness · Presentation · sắp có</Card>
+</CardGrid>
+
+<Eyebrow>Khung chung · audit program</Eyebrow>
+## Mọi phần hành, 6 bước
+| Bước | Việc | Nội dung |
+|---|---|---|
+| 1 | Hiểu quy trình | Walkthrough, rủi ro, kiểm soát |
+| 2 | Reconcile | Sổ chi tiết = GL = TB |
+| 3 | Phân tích | Lập kỳ vọng, tìm biến động |
+| 4 | Test chi tiết | Key items + mẫu |
+| 5 | Cut-off & sau kỳ | Quanh ngày khóa sổ |
+| 6 | Kết luận | Suy rộng, so ngưỡng |
+
+Bước 1, 2 và bước Kết luận cố định; bước 3–5 thay đổi theo đặc thù từng phần hành. Doanh thu có 7 bước vì tách riêng cut-off và soát xét sau kỳ.
+
+Mỗi trang phần hành: audit program từng bước (Technique Training), mỗi bước kèm một bài tập trên Biscore (dữ kiện + câu hỏi, lời giải ẩn) → Red flags → Kiểm tra nhanh → quiz 4 câu.

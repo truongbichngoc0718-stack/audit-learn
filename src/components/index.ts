@@ -13,3 +13,7 @@ export { default as RedFlags } from './RedFlags.astro';
 export { default as Quiz } from './Quiz';
 export { default as LessonNotes } from './LessonNotes';
 export { default as FlowDiagram } from './FlowDiagram';
+export { default as MaterialityCalc } from './MaterialityCalc';
+export { default as ProjectionCalc } from './ProjectionCalc';
+export { default as DeferredRevenueCalc } from './DeferredRevenueCalc';
+export { default as DirectionDrill } from './DirectionDrill';

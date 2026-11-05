@@ -1,0 +1,60 @@
+---
+title: Chọn mẫu đúng phương pháp
+description: Phương pháp chọn mẫu đi theo **rủi ro cần tìm**, không theo thói quen.
+id: a2-3-chon-mau
+nhanh: A
+phan: 2
+bai: "2.3"
+nhan: Chọn mẫu
+loai: ky-thuat
+thoi_luong: 1
+nguon: ["T#p2l2 (Bước 3)", "B:Công nợ phải thu.xlsx/01"]
+assertion: []
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 3 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, Extended, BiscoreExample, Solution, LessonNotes } from '@components';
+
+<Objectives>
+- Chọn đúng phương pháp chọn mẫu cho từng rủi ro
+- Phân biệt sampling với lọc theo tiêu chí
+</Objectives>
+
+<Eyebrow>Bước 3</Eyebrow>
+## Phương pháp nào, dùng khi nào
+| Phương pháp | Dùng khi |
+| --- | --- |
+| MUS | Rủi ro ghi khống: doanh thu, phải thu, TSCĐ |
+| Random · Systematic | Population đồng đều; test completeness từ nguồn |
+| Block | Cut-off quanh ngày khóa sổ |
+| Lọc theo tiêu chí | Bút toán tay, khoản bất thường. **Không phải sampling** |
+
+Không dùng MUS để tìm ghi thiếu: khoản bị ghi thiếu có số dư nhỏ nên ít khi được chọn, số dư bằng 0 thì không bao giờ được chọn.
+
+<BiscoreExample source="Bài 2.2 · Bài 3.1 · Sổ cái GL">
+Bấm "Xem lời giải" sau khi chọn phương pháp cho 4 thủ tục: (a) cut-off doanh thu buồng phòng; (b) bút toán PKT ghi Có 511 nhập sau 31/12; (c) xác nhận 171 dòng phải thu còn lại sau key items (103,21 tỷ); (d) test completeness phải trả từ hóa đơn NCC nhận tháng 1/2026.
+<Solution>
+(a) **Block** 16/12/2025 → 15/01/2026 · (b) **lọc theo tiêu chí**, không suy rộng · (c) **MUS**, rủi ro tồn tại/ghi khống · (d) **random** trên nguồn bên ngoài, vì cần tìm khoản ghi thiếu.
+</Solution>
+</BiscoreExample>
+
+<Extended basis="VSA 530 · thực hành MUS phổ biến (hệ số tin cậy 3,0 ở mức tin cậy 95%, không dự kiến sai sót)">
+**Cỡ mẫu MUS ước tính = Population sau key items × hệ số tin cậy ÷ PM.**
+
+Biscore, phải thu sau key items (Bài 2.2): 103,21 tỷ × 3,0 ÷ 2,2 tỷ ≈ **141 đơn vị mẫu**, khoảng mẫu ≈ 0,73 tỷ. Số dư bình quân mỗi dòng ≈ 0,60 tỷ, nên MUS gần như chọn hết 171 dòng; dòng nào có số dư ≥ khoảng mẫu thì luôn được chọn.
+
+Đọc kết quả: với PM thấp, năm đầu kiểm toán và đã có sai sót ở 131.OT, giả định "không dự kiến sai sót" là lạc quan; cỡ mẫu thực tế còn lớn hơn. Khi mẫu gần bằng population, cân nhắc test 100% hoặc tăng trọng tâm vào thủ tục thay thế (tiền thu sau kỳ).
+</Extended>
+
+<IfSkipped>bước gắn phương pháp với rủi ro, bạn có thể dùng MUS để tìm nợ chưa ghi nhận, và các nhà cung cấp số dư bằng 0 sẽ không bao giờ được chọn.</IfSkipped>
+
+<KeyPrinciple>Lọc theo tiêu chí là **chọn item cụ thể**: ghi đúng số tìm được, không suy rộng.</KeyPrinciple>
+
+<QuickCheck q="Để kiểm tra cut-off doanh thu Biscore, một đội chọn MUS 40 dòng trên GL 511 cả năm. Có phù hợp không?" short="Không">
+Cut-off nhắm vào một khoảng thời gian cụ thể. Chọn block giao dịch quanh 31/12/2025 (ví dụ 16/12/2025 → 15/01/2026), như Bài 3.1 Bước 5.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a2-3-chon-mau" />

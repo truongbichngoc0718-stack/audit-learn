@@ -13,7 +13,7 @@ const lesson = z.object({
   loai: z.enum(['tong-quan', 'ky-thuat', 'phan-hanh', 'kiem-tra', 'thu-vien', 'excel', 'khung', 'he-thong']).default('he-thong'),
   thoi_luong: z.number().positive().optional(),
   nguon: z.array(z.string()).default([]),
-  assertion: z.array(z.enum(['Occurrence', 'Existence', 'Completeness', 'Accuracy', 'Cut-off', 'Valuation', 'Classification', 'Presentation', 'Rights & obligations'])).default([]),
+  assertion: z.array(z.enum(['Occurrence', 'Existence', 'Completeness', 'Accuracy', 'Cut-off', 'Valuation', 'Classification', 'Presentation', 'Rights', 'Management override'])).default([]),
   chuan_muc: z.array(z.string()).default([]),
   ngay_cap_nhat: z.coerce.date().optional(),
   trang_thai: z.enum(['goc', 'mo-rong', 'gop', 'khung']).optional(),

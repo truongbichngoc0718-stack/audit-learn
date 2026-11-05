@@ -1,0 +1,67 @@
+---
+title: Khoản mục nào phải test
+description: So số dư với PM để chọn khoản mục, rồi **tách key items** để test 100%.
+id: a2-2-scoping-key-items
+nhanh: A
+phan: 2
+bai: "2.2"
+nhan: Scoping · key items
+loai: ky-thuat
+thoi_luong: 1
+nguon: ["T#p2l2 (Bước 1–2)", "N:test dựa vào materiality", "B:Công nợ phải thu.xlsx/01 Tuoi no theo khach hang"]
+assertion: []
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 2 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, FlowDiagram, LessonNotes } from '@components';
+
+<Objectives>
+- Xác định khoản mục phải test bằng PM
+- Tách key items và biết sai sót ở đó xử lý thế nào
+</Objectives>
+
+Bốn bước, mỗi bước dùng một mức trọng yếu. Tiếp tục ví dụ Công ty A: **OM 250 · PM 175 · CTT 12,5 triệu**. Bấm từng bước để xem.
+
+<FlowDiagram client:visible steps={[
+  { label: 'Scoping', sub: 'So với PM', detail: 'Khoản mục nào phải test. Bài này.' },
+  { label: 'Tách key items', sub: 'Ngưỡng ≤ PM', detail: 'Test 100% các khoản lớn. Bài này.' },
+  { label: 'Chọn mẫu', sub: 'Phần còn lại', detail: 'Đúng phương pháp cho rủi ro. Bài 2.3.' },
+  { label: 'Suy rộng & đánh giá', sub: 'CTT · PM · OM', detail: 'Suy rộng rồi mới so ngưỡng. Bài 2.4.' },
+]} />
+
+<Eyebrow>Bước 1 · So số dư với PM</Eyebrow>
+## Khoản mục nào phải test?
+| Khoản mục | Xử lý |
+|---|---|
+| Số dư hoặc phát sinh > PM | Khoản mục trọng yếu → thủ tục cơ bản |
+| Nhỏ nhưng dễ ghi thiếu (phải trả · chi phí · vay) | **Vẫn phải test**: số nhỏ có thể do ghi thiếu |
+| Nhỏ, rủi ro thấp | Phân tích tổng quát |
+
+<Eyebrow>Bước 2 · Ngưỡng key item ≤ PM</Eyebrow>
+## Tách key items, test 100%
+Population GL của một khoản mục = **key items** (test 100%) + **phần còn lại** (chọn mẫu → suy rộng). Ngưỡng ≤ PM; rủi ro cao → hạ ngưỡng.
+
+Sai sót ở key items **cộng thẳng, không suy rộng**.
+
+<BiscoreExample source="Công nợ phải thu.xlsx / 01 Tuoi no theo khach hang (182 dòng khách hàng × tiểu khoản)">
+Phải thu Biscore tại 31/12/2025: **137,50 tỷ** trên 182 dòng (khách hàng × tiểu khoản; 98 khách hàng). Lấy ngưỡng key item bằng mức trần PM 2,2 tỷ để minh họa, có bao nhiêu key items, và phần còn lại để chọn mẫu là bao nhiêu? Hai key items của 131.OT có gì đáng chú ý?
+<Solution>
+1. Có **11 dòng** số dư ≥ 2,2 tỷ, tổng **34,29 tỷ** (131.OF 5 dòng · 131.EV 3 · 131.OT 2 · 131.HT 1) → xác nhận/test 100%.
+2. Phần còn lại: **171 dòng, 103,21 tỷ** → chọn mẫu (Bài 2.3), sai sót phải suy rộng.
+3. Biscore là năm đầu kiểm toán, có rủi ro gian lận doanh thu → có thể hạ ngưỡng (ví dụ 50% PM). Hạ ngưỡng thì số key items tăng, phần chọn mẫu giảm; tổng khối lượng test chưa chắc giảm. Xét key item theo dòng có thể bỏ sót khách hàng có nhiều dòng nhỏ: nên xét thêm theo tổng từng khách hàng.
+4. Hai key items 131.OT tổng **7,15 tỷ** = 3,85 tỷ (Đại Nam Việt) + 3,3 tỷ (Liên Việt), đúng bằng hai bút toán PKT cuối năm ở Bài 3.1 Bước 6 (gồm cả thuế GTGT). Tách key items đã đưa thẳng hai khoản rủi ro vào phạm vi test.
+</Solution>
+</BiscoreExample>
+
+<IfSkipped>không tách key items, một khoản lớn có thể không được chọn vào mẫu, hoặc sai sót của nó bị suy rộng sai.</IfSkipped>
+
+<KeyPrinciple>Key items là **chọn item cụ thể**, không phải sampling: sai sót cộng thẳng.</KeyPrinciple>
+
+<QuickCheck q="Công ty A có số dư 331 chỉ 50 triệu, dưới PM 175 triệu. Có bỏ qua không test được không?" short="Không nên">
+Phải trả có rủi ro ghi thiếu: số nhỏ có thể chính là dấu hiệu nợ chưa ghi nhận. Vẫn phải test completeness bằng tracing từ nguồn bên ngoài (Bài 3.3).
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a2-2-scoping-key-items" />

@@ -1,0 +1,54 @@
+---
+title: Vouching hay tracing
+description: Chọn đúng chiều theo rủi ro. Ghi khống thì **vouching**, ghi thiếu thì **tracing**.
+id: a1-3-vouching-tracing
+nhanh: A
+phan: 1
+bai: "1.3"
+nhan: Chọn đúng chiều
+loai: ky-thuat
+thoi_luong: 2
+nguon: ["T#p1l2 (Vouching hay tracing)", "B:Sổ cái GL", "B:Công nợ phải trả.xlsx", "B:Sổ phụ ngân hàng.xlsx"]
+assertion: [Occurrence, Existence, Completeness]
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 3 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, DirectionDrill, LessonNotes } from '@components';
+
+<Objectives>
+- Phân biệt vouching và tracing theo điểm xuất phát
+- Gắn mỗi chiều với assertion và phần hành phù hợp
+</Objectives>
+
+<Eyebrow>Chọn đúng chiều</Eyebrow>
+## Hai chiều, hai rủi ro
+<div class="b-grid">
+  <div class="b-card" style="border-top:4px solid var(--bisc-rose)"><div class="b-kicker">Top-down · rủi ro ghi khống</div><b style="font-size:1.2rem">Vouching</b><br/>Sổ sách · GL ↓ Chứng từ gốc<br/>Chọn từ **sổ**, đi tìm **chứng từ**.<br/><span class="b-chip as">Occurrence</span> <span class="b-chip as">Existence</span><br/><small>Doanh thu · Phải thu · TSCĐ</small></div>
+  <div class="b-card" style="border-top:4px solid var(--bisc-emerald)"><div class="b-kicker">Bottom-up · rủi ro ghi thiếu</div><b style="font-size:1.2rem">Tracing</b><br/>Nguồn bên ngoài ↑ Sổ sách · GL<br/>Đi từ **nguồn** dò vào **sổ**.<br/><span class="b-chip as">Completeness</span><br/><small>Phải trả · Chi phí · Vay</small></div>
+</div>
+
+<Eyebrow>Thử ngay · tình huống Biscore</Eyebrow>
+## Chọn chiều cho từng thủ tục
+Bấm chiều bạn chọn để xem giải thích.
+
+<DirectionDrill client:visible items={[
+  { s: 'Chọn 25 dòng lớn nhất trên GL 5113.OF tháng 12, tìm hợp đồng thuê và phụ lục diện tích.', answer: 'vouching', assertion: 'Occurrence · Accuracy', why: 'Xuất phát từ sổ, đi tìm bằng chứng doanh thu có thật.' },
+  { s: 'Lấy hóa đơn nhà cung cấp nhận trong tháng 1/2026, kiểm tra đã ghi 331 hoặc 335 năm 2025 chưa.', answer: 'tracing', assertion: 'Completeness', why: 'Xuất phát từ nguồn sau kỳ để tìm nợ chưa ghi nhận.' },
+  { s: 'Chọn các khoản chi lớn trên sổ phụ ngân hàng tháng 1/2026, dò vào sổ cái 331/335/632 năm 2025.', answer: 'tracing', assertion: 'Completeness · Cut-off', why: 'Tiền chi ra sau kỳ là nguồn bên ngoài; khoản thuộc 2025 mà chưa ghi là ghi thiếu.' },
+  { s: 'Chọn tài sản tăng trong năm trên sổ TSCĐ, tìm biên bản bàn giao và hóa đơn.', answer: 'vouching', assertion: 'Existence · Accuracy', why: 'Đi từ sổ sách tìm bằng chứng tài sản có thật.' },
+  { s: 'Lấy báo cáo night audit 3 đêm cuối năm, dò vào GL 5113.RM.', answer: 'tracing', assertion: 'Completeness · Cut-off', why: 'Night audit là nguồn; kiểm tra doanh thu đêm đó đã ghi đủ, đúng kỳ.' },
+  { s: 'Lọc các bút toán PKT ghi Có 511, tìm hợp đồng và biên bản nghiệm thu.', answer: 'vouching', assertion: 'Occurrence', why: 'Bút toán tay trên sổ là điểm xuất phát; kiểm tra có giao dịch thật không.' },
+]} />
+
+<IfSkipped>bước xác định assertion trước khi chọn chiều, thủ tục chạy đúng kỹ thuật nhưng nhắm sai rủi ro: test tracing cả năm vẫn không thấy một khoản ghi khống nào.</IfSkipped>
+
+<KeyPrinciple>**Chọn sai chiều** thì test kỹ đến mấy cũng không thấy sai sót.</KeyPrinciple>
+
+<QuickCheck q="Chọn 30 hóa đơn trong hồ sơ rồi dò vào sổ 511. Thủ tục này có phát hiện được doanh thu ghi khống không?" short="Không">
+Đây là tracing, kiểm tra completeness. Bút toán khống không có hóa đơn thật để chọn. Muốn kiểm tra occurrence thì chọn từ GL 511 rồi đi tìm chứng từ.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a1-3-vouching-tracing" />

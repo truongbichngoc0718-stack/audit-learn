@@ -41,9 +41,9 @@ Trạng thái trang: 🟢 gốc (có sẵn trong ebook) · 🟡 gộp/tái cấu
 | id | Tiêu đề | Nguồn | Tr.thái | Ghi chú |
 |---|---|---|---|---|
 | a2-1-om-pm-ctt | Ba mức trọng yếu: OM · PM · CTT | T#p2l1 (benchmark, Công ty A, vùng đệm, "PM hai nghĩa", bảng VSA/EY/KPMG/Deloitte·PwC), N:materiality | 🟢 | Ví dụ BISCORE: C#materiality (0,5% × 721,2 tỷ = 3,6 tỷ; PM 60% = 2,2 tỷ; CTT 180 tr) |
-| a2-2-benchmark | Chọn benchmark | T#p2l1 "Benchmark tham khảo", N (startup/DN lớn) | 🟡 | 🔵 Máy tính materiality (benchmark → OM/PM/CTT); câu hỏi "vì sao Biscore chọn doanh thu thuần chứ không phải LNTT (+371%)?" |
-| a2-3-key-items-chon-mau | Key items & chọn mẫu | T#p2l2 bước 1–3, N:test dựa vào materiality | 🟢 | |
-| a2-4-suy-rong | Suy rộng & đánh giá sai sót | T#p2l2 "Sai sót doanh thu suy rộng…", "Máy tính suy rộng", N (ví dụ 6/50×500) | 🟢 + 🔵 | Nâng cấp máy tính sẵn có thành máy tính cỡ mẫu + suy rộng. 🔵 Công thức cỡ mẫu (căn cứ VSA 530 / ISA 530) |
+| a2-2-scoping-key-items | Khoản mục nào phải test (scoping · key items) | T#p2l2 bước 1–2, N:test dựa vào materiality, B: Công nợ phải thu/01 | 🟡 ✅ MVP | Benchmark đã nằm trong a2-1 (kèm máy tính) nên bài 2.2 cũ "Chọn benchmark" gộp vào 2.1 |
+| a2-3-chon-mau | Chọn mẫu đúng phương pháp | T#p2l2 bước 3 | 🟢 + 🔵 ✅ MVP | Mở rộng: cỡ mẫu MUS (VSA 530) |
+| a2-4-suy-rong | Suy rộng rồi mới so ngưỡng | T#p2l2 bước 4, ví dụ, máy tính | 🟢 ✅ MVP | |
 | a2-quiz | Bài kiểm tra Phần 2 | T#p2t | 🟢 | |
 
 ### Phần 3 · Phần hành (mỗi phần hành 1 trang hợp nhất)

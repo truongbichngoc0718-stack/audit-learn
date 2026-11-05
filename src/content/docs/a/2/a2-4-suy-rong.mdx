@@ -1,0 +1,72 @@
+---
+title: Suy rộng rồi mới so ngưỡng
+description: Luôn so **sai sót đã suy rộng** với CTT, PM, OM, không so sai sót thô trong mẫu.
+id: a2-4-suy-rong
+nhanh: A
+phan: 2
+bai: "2.4"
+nhan: Đánh giá sai sót
+loai: ky-thuat
+thoi_luong: 2
+nguon: ["T#p2l2 (Bước 4 · Sai sót doanh thu suy rộng thế nào · Máy tính suy rộng)", "N:test dựa vào materiality"]
+assertion: []
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 4 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, ProjectionCalc, LessonNotes } from '@components';
+
+<Objectives>
+- Suy rộng sai sót từ mẫu ra population
+- Đi đúng thứ tự CTT → PM → OM
+</Objectives>
+
+<Eyebrow>Bước 4 · CTT → PM → OM</Eyebrow>
+## Công thức suy rộng
+<div class="b-card" style="text-align:center;font-weight:600">Sai sót suy rộng = Sai sót trong mẫu **÷** Giá trị mẫu **×** Giá trị population</div>
+
+**≥ CTT** → vào bảng tổng hợp · **khoản mục > PM** → mở rộng thủ tục · **tổng > OM** → ảnh hưởng ý kiến.
+
+<Eyebrow>Ví dụ minh họa</Eyebrow>
+## MUS trên GL doanh thu, Công ty A
+Số liệu minh họa, đơn vị triệu và tỷ đồng.
+
+Population **9 tỷ** (không gồm key items) · giá trị mẫu **600 triệu** · sai sót trong mẫu **6 triệu**. Với OM 250 · PM 175 · CTT 12,5 triệu: sai sót suy rộng bao nhiêu? Có vào bảng tổng hợp không? Có phải mở rộng thủ tục không?
+
+<Solution>
+
+1. Tỷ lệ sai: 6 tr ÷ 600 tr = **1%**
+2. Suy rộng: 1% × 9 tỷ = **90 triệu**
+3. 90 tr ≥ CTT 12,5 tr → **vào bảng tổng hợp**
+4. 90 tr < PM 175 tr → chưa bắt buộc mở rộng, vẫn cộng vào tổng để so với OM
+
+</Solution>
+
+<Eyebrow>Thử ngay</Eyebrow>
+## Máy tính suy rộng
+Đổi số liệu để xem kết luận thay đổi. Phương pháp tỷ lệ, ngưỡng theo Công ty A.
+
+<ProjectionCalc client:visible />
+
+<BiscoreExample source="Bài 3.1 Bước 4–6">
+Ở Bài 3.1, các finding doanh thu (3,42 · 0,45 · 3,5 tỷ và khoản 3,0 tỷ đang chờ bằng chứng) có phải suy rộng không?
+<Solution>
+1. Sao Mai Land là **key item** (giao dịch lớn nhất năm) → cộng thẳng.
+2. Global Summit nằm trong **block cut-off** được chọn có chủ đích → cộng thẳng.
+3. PKT2512-0013 được chọn bằng **lọc tiêu chí** → cộng thẳng. PKT2512-0015 đang "Further evidence required", chỉ cộng khi chuyển thành sai sót đã xác định.
+
+→ Không finding nào suy rộng. Chỉ sai sót tìm được trong **mẫu chọn ngẫu nhiên hoặc MUS** trên phần còn lại mới suy rộng.
+</Solution>
+</BiscoreExample>
+
+<IfSkipped>bước suy rộng, một sai sót nhỏ trong mẫu 1% có thể đại diện cho sai sót gấp hàng chục lần trên population, và bị bỏ khỏi bảng tổng hợp. **Không chia nhỏ** một sai sót cùng bản chất để từng phần lọt dưới CTT.</IfSkipped>
+
+<KeyPrinciple>Suy rộng **rồi mới** so ngưỡng.</KeyPrinciple>
+
+<QuickCheck q="Công ty A: sai sót trong mẫu 5 triệu, suy rộng ra population được 60 triệu. Kết luận?" short="Vào bảng tổng hợp">
+Luôn so sai sót đã suy rộng với CTT. 60 triệu ≥ 12,5 triệu nên vào bảng tổng hợp; vẫn dưới PM 175 triệu nên chưa bắt buộc mở rộng thủ tục.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a2-4-suy-rong" />

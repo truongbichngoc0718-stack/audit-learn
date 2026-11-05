@@ -1,0 +1,85 @@
+---
+title: TB, GL và subledger
+description: Ba tầng của cùng một bộ số. Kết luận trên **TB**, chọn mẫu trên **GL**, test trên **chứng từ**.
+id: a1-1-tb-gl-subledger
+nhanh: A
+phan: 1
+bai: "1.1"
+nhan: Bộ dữ liệu kế toán
+loai: ky-thuat
+thoi_luong: 4
+nguon: ["T#p1l1", "B:Bảng cân đối phát sinh.xlsx/BANG CAN DOI PHAT SINH", "B:Sổ cái GL T01–T12", "B:Công nợ phải thu.xlsx/04 Doi chieu so cai"]
+assertion: [Completeness, Accuracy]
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [b3-sumifs]
+sidebar: { order: 1 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, FlowDiagram, LessonNotes } from '@components';
+
+<Objectives>
+- Phân biệt TB, GL và subledger
+- Biết số nào để kết luận, dòng nào để chọn mẫu
+- Reconcile trước khi test
+</Objectives>
+
+<Eyebrow>Dòng chảy số liệu</Eyebrow>
+## Từ chứng từ lên BCTC
+Bấm vào thẻ để đi lên tầng tiếp theo.
+
+<FlowDiagram client:visible footer="Mỗi lần chuyển tầng là một điểm có thể sai: ghi thiếu · sai kỳ · kết chuyển sai." steps={[
+  { label: 'Chứng từ gốc', sub: 'Hợp đồng · hóa đơn · phiếu xuất · biên bản', detail: 'Bằng chứng giao dịch có thật. Nơi <b>vouching</b> đi tới.' },
+  { label: 'Subledger', sub: 'Chi tiết theo đối tượng', detail: 'Theo <b>khách hàng, nhà cung cấp, tài sản, khoản vay</b>. Tổng phải bằng sổ cái.' },
+  { label: 'GL · Sổ cái', sub: 'Từng bút toán', detail: '<b>Population</b> để chọn mẫu. Có người lập, ngày nhập.' },
+  { label: 'TB · Bảng CĐPS', sub: 'Số dư từng tài khoản', detail: '<b>Kết luận</b> trên con số này.' },
+  { label: 'BCTC', sub: 'Số công bố', detail: 'Ý kiến kiểm toán nói về con số này.' },
+]} />
+
+<Eyebrow>Ba tài liệu, ba vai trò</Eyebrow>
+## Dùng tài liệu nào để làm gì
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">01 · TB</div><b>Trial Balance · Bảng CĐPS</b><p>**Kết luận** trên con số này.</p><small>Số dư từng TK · đầu kỳ · phát sinh · cuối kỳ</small></div>
+  <div class="b-card"><div class="b-kicker">02 · GL</div><b>General Ledger · Sổ cái</b><p>**Population** để chọn mẫu.</p><small>Từng bút toán · người lập · ngày nhập</small></div>
+  <div class="b-card"><div class="b-kicker">03 · Subledger</div><b>Sổ chi tiết</b><p>**Test chi tiết** theo từng đối tượng.</p><small>Bảng tuổi nợ · sổ TSCĐ · lịch vay</small></div>
+</div>
+
+<Eyebrow>Mô hình hóa</Eyebrow>
+## Một con số, ba tầng: TK 131
+Số liệu minh họa, đơn vị tỷ đồng.
+
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">TB · 131 Phải thu khách hàng</div>Đầu kỳ **50** · Phát sinh Nợ **800** · Phát sinh Có **(780)** · Cuối kỳ **70**</div>
+  <div class="b-card"><div class="b-kicker">GL · Sổ cái 131</div>Nợ: đầu kỳ **50** · bán chịu **800**<br/>Có: thu tiền **780**<br/>Dư cuối **70**</div>
+  <div class="b-card"><div class="b-kicker">Subledger · theo khách hàng</div>Khách hàng A **32** · Khách hàng B **23** · Các khách khác **15**<br/>Σ = TB **70 ✓**</div>
+</div>
+
+<Eyebrow>Bước 1 của mọi phần hành</Eyebrow>
+## Reconcile trước khi test
+<div class="b-card" style="text-align:center;font-weight:600">Báo cáo **BCTC** = Bảng CĐPS **TB** = Sổ cái **GL** = Sổ chi tiết **Σ Subledger**</div>
+
+<BiscoreExample source="Bảng cân đối phát sinh.xlsx · Sổ cái GL T01–T12 (80.496 dòng) · Công nợ phải thu.xlsx / 04 Doi chieu so cai">
+Biscore có 5 tiểu khoản phải thu (131.OF, 131.SC, 131.HT, 131.EV, 131.OT). Trên TB: đầu kỳ **118,0 tỷ**, phát sinh Nợ **570.337.614.800 đ**, phát sinh Có **550.838.088.800 đ**. Cộng toàn bộ dòng 131 trong sổ cái 12 tháng được Nợ 570.337.614.800 đ và Có 550.838.088.800 đ. Bảng tuổi nợ cộng được 137.499.526.000 đ.
+
+Ba tầng đã khớp chưa? Bảng tuổi nợ có dùng làm population cho xác nhận và dự phòng được không?
+<Solution>
+1. TB cuối kỳ: 118.000.000.000 + 570.337.614.800 − 550.838.088.800 = **137.499.526.000 đ** (khớp chỉ tiêu 131 trên BCTC: 137.499.526.000 đ).
+2. GL: phát sinh Nợ 570.337.614.800 đ và Có 550.838.088.800 đ cộng từ sổ cái, chênh lệch **0** với TB → population GL đầy đủ.
+3. Subledger: bảng tuổi nợ 137.499.526.000 đ, chênh lệch **0** với TB.
+
+→ Ba tầng khớp. Bảng tuổi nợ dùng được làm population cho Bài 3.2, sau khi cộng dọc, cộng ngang và tách dư Có 131.
+</Solution>
+</BiscoreExample>
+
+<IfSkipped>bút toán thiếu trong GL không bao giờ nằm trong population, nên không mẫu nào tìm ra.</IfSkipped>
+
+<KeyPrinciple>Chỉ population **đã khớp** với TB mới được dùng để chọn mẫu.</KeyPrinciple>
+
+<QuickCheck q="Tổng GL 511 thấp hơn số dư 511 trên TB 1,2 tỷ. Có chọn mẫu MUS ngay được không?" short="Chưa">
+Tìm nguyên nhân chênh lệch trước: bút toán thiếu, kết chuyển, bút toán đảo. Mẫu chọn trên population thiếu thì kết luận không áp dụng được cho số trên BCTC.
+</QuickCheck>
+
+Thực hành đối chiếu GL với TB bằng SUMIFS: [nhánh B, Bài 1.3](/b/b3-sumifs/).
+
+<LessonNotes client:only="react" id="a1-1-tb-gl-subledger" />

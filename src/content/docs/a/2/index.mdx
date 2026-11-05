@@ -1,10 +1,37 @@
 ---
-title: "Phần 2 · Materiality"
-description: Đang xây dựng theo docs/CONTENT_MAP.md.
+title: Materiality, thước đo của cuộc kiểm toán
+description: Ba mức trọng yếu quyết định test cái gì, test bao nhiêu và sai sót nào phải báo cáo.
+id: a2-tong-quan
 nhanh: A
 phan: 2
-loai: khung
-trang_thai: khung
+loai: tong-quan
+thoi_luong: 7
+nguon: ["T#p2"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
 sidebar: { order: 0, label: "Tổng quan Phần 2" }
 ---
-Nội dung Phần 2 sẽ được viết ở Bước 3 (MVP) sau khi bộ chuẩn BISC_STYLE được duyệt.
+import { Objectives } from '@components';
+
+<Objectives title="Sau Phần 2, bạn sẽ:">
+**1. Xác định ba mức trọng yếu**
+- Chọn benchmark phù hợp
+- Tính OM, PM, CTT và biết mỗi mức dùng ở bước nào
+- Không nhầm chữ "PM" giữa các firm
+
+**2. Dùng materiality để test**
+- Xác định khoản mục phải test
+- Tách key items, chọn mẫu phần còn lại
+- Suy rộng sai sót rồi mới so ngưỡng
+</Objectives>
+
+Ví dụ chạy suốt Phần 2: **Công ty A · OM 250 · PM 175 · CTT 12,5 triệu**. Ví dụ Biscore: **OM 3,6 tỷ · PM 2,2 tỷ · CTT 180 triệu**.
+
+| Bài | Nội dung | Thời lượng |
+|---|---|---|
+| [2.1 Ba mức trọng yếu](/a/2/a2-1-om-pm-ctt/) | Benchmark · OM · PM · CTT | 3 phút |
+| [2.2 Khoản mục nào phải test](/a/2/a2-2-scoping-key-items/) | Scoping · key items | 1 phút |
+| [2.3 Chọn mẫu đúng phương pháp](/a/2/a2-3-chon-mau/) | MUS · random · block · lọc tiêu chí | 1 phút |
+| [2.4 Suy rộng rồi mới so ngưỡng](/a/2/a2-4-suy-rong/) | Suy rộng · đánh giá | 2 phút |
+| [Bài kiểm tra Phần 2](/a/2/a2-quiz/) | 4 câu · mục tiêu 4/4 | |

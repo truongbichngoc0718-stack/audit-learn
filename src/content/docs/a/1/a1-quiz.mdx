@@ -1,0 +1,22 @@
+---
+title: Phần 1 · Bài kiểm tra chốt
+description: 4 câu về TB, GL, reconcile, chiều kiểm tra và bằng chứng. Mục tiêu 4/4.
+id: a1-quiz
+nhanh: A
+phan: 1
+loai: kiem-tra
+thoi_luong: 2
+nguon: ["T#p1t"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+sidebar: { order: 9, label: "✓ Bài kiểm tra Phần 1" }
+---
+import { Quiz } from '@components';
+
+<Quiz client:visible id="a1-quiz" target={4} questions={[
+  { q: 'Kiểm toán viên đưa ra kết luận trên số liệu của tài liệu nào?', options: ['Subledger', 'GL', 'TB, vì BCTC được lập từ TB', 'Chứng từ gốc'], answer: 2, explain: 'BCTC được lập từ TB, nên kết luận cuối cùng là về số trên TB/BCTC. GL là population để chọn mẫu, chứng từ là nơi lấy bằng chứng.' },
+  { q: 'Vì sao phải reconcile GL với TB trước khi chọn mẫu?', options: ['Để tính PM', 'Để chắc population đầy đủ: bút toán thiếu trong GL không bao giờ được chọn', 'Để giảm số mẫu', 'Vì chuẩn mực cấm chọn mẫu trên TB'], answer: 1, explain: 'Nếu GL thiếu bút toán thì không thủ tục chọn mẫu nào tìm ra, vì bút toán đó không nằm trong population.' },
+  { q: 'Muốn kiểm tra doanh thu ghi khống (occurrence), nên đi theo chiều nào?', options: ['Từ hóa đơn trong hồ sơ dò vào sổ', 'Từ GL 511 đi tìm chứng từ', 'Gửi xác nhận cho nhà cung cấp', 'Phân tích tỷ suất lợi nhuận gộp'], answer: 1, explain: 'Vouching: chọn từ sổ rồi đi tìm bằng chứng. Bút toán khống không có chứng từ thật để dò ngược.' },
+  { q: 'Bằng chứng nào tin cậy nhất?', options: ['Giải trình miệng của kế toán trưởng', 'Bảng tính nội bộ của đơn vị', 'Thư xác nhận ngân hàng gửi thẳng cho KTV', 'Bản photo hóa đơn'], answer: 2, explain: 'Bằng chứng từ bên thứ ba, gửi trực tiếp cho KTV, tin cậy hơn tài liệu do đơn vị lập hay giải trình miệng (VSA 500).' },
+]} />

@@ -1,0 +1,93 @@
+---
+title: Ba mức trọng yếu
+description: Chọn benchmark, tính OM, rồi suy ra PM và CTT. Điều cần bảo vệ được là **lý do chọn benchmark**, không phải con số.
+id: a2-1-om-pm-ctt
+nhanh: A
+phan: 2
+bai: "2.1"
+nhan: Xác định trọng yếu
+loai: ky-thuat
+thoi_luong: 3
+nguon: ["T#p2l1", "C#materiality", "B:Báo cáo tài chính.xlsx/01-02", "N:materiality (ghi chú cá nhân trên ebook)"]
+assertion: []
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 1 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, MaterialityCalc, LessonNotes } from '@components';
+
+<Objectives>
+- Chọn benchmark phù hợp và bảo vệ được lý do
+- Tính OM, PM, CTT và biết mỗi mức dùng ở bước nào
+- Đọc đúng chữ "PM" theo từng firm
+</Objectives>
+
+<Eyebrow>Bước 1 · Chọn benchmark</Eyebrow>
+## Benchmark tham khảo cho OM
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">Lợi nhuận trước thuế</div><b style="font-size:1.4rem">5%</b><br/>Doanh nghiệp có lãi, ổn định</div>
+  <div class="b-card"><div class="b-kicker">Doanh thu</div><b style="font-size:1.4rem">0,5–1%</b><br/>Lỗ hoặc lợi nhuận biến động mạnh</div>
+  <div class="b-card"><div class="b-kicker">Tổng tài sản</div><b style="font-size:1.4rem">1–2%</b><br/>Doanh nghiệp nặng tài sản</div>
+</div>
+
+**PM = 50–75% × OM** · **CTT = 3–5% × OM** · Rủi ro cao → chọn mức thấp.
+
+<Eyebrow>Ví dụ minh họa</Eyebrow>
+## Công ty A: lợi nhuận trước thuế 5 tỷ
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">01 · OM · Overall materiality</div><b style="font-size:1.3rem">250 triệu</b><br/>Thước đo cho **toàn bộ BCTC**.<br/><small>5% × LNTT 5 tỷ</small></div>
+  <div class="b-card"><div class="b-kicker">02 · PM · Performance materiality</div><b style="font-size:1.3rem">175 triệu</b><br/>Thiết kế thủ tục **từng khoản mục**.<br/><small>70% × OM</small></div>
+  <div class="b-card"><div class="b-kicker">03 · CTT · Clearly trivial</div><b style="font-size:1.3rem">12,5 triệu</b><br/>Dưới mức này: **không tổng hợp**.<br/><small>5% × OM</small></div>
+</div>
+
+<Eyebrow>Thử ngay</Eyebrow>
+## Đặt sai sót lên thước đo
+Kéo thanh trượt để đổi số tiền sai sót. Bấm "Biscore" để chuyển sang bộ số của đề Simulation.
+
+<MaterialityCalc client:visible preset="A" />
+
+| Sai sót đã suy rộng | Xử lý |
+|---|---|
+| Dưới CTT | Không tổng hợp, trừ dấu hiệu gian lận |
+| Từ CTT | Đưa vào bảng tổng hợp sai sót |
+| Vượt PM ở một khoản mục | Mở rộng thủ tục ở khoản mục đó |
+| Tổng vượt OM | Ảnh hưởng ý kiến nếu không điều chỉnh |
+
+<Eyebrow>Vì sao PM thấp hơn OM</Eyebrow>
+## Vùng đệm cho sai sót chưa phát hiện
+**OM 250 triệu = PM 175 triệu + vùng đệm 75 triệu.** Vùng đệm dành cho sai sót chưa phát hiện và sai sót cộng dồn. Rủi ro càng cao thì PM càng thấp, vùng đệm càng rộng.
+
+<Eyebrow>Cẩn thận tên gọi</Eyebrow>
+## Cùng chữ "PM", hai nghĩa khác nhau
+| VSA / ISA | EY | KPMG | Deloitte · PwC |
+| --- | --- | --- | --- |
+| Overall materiality | PM · Planning materiality | Materiality | Overall materiality |
+| Performance materiality | TE · Tolerable error | Performance materiality | PM · Performance materiality |
+| Clearly trivial | SAD nominal amount | AMPT | Clearly trivial |
+
+<IfSkipped>không xác định "PM" của tài liệu đang mang nghĩa gì, bạn sẽ thiết kế thủ tục trên một ngưỡng sai (trong hệ thống này, PM luôn là Performance materiality).</IfSkipped>
+
+<BiscoreExample source="Báo cáo tài chính.xlsx / 01 Bang can doi ke toan · 02 Bao cao KQKD · Case 03 Yêu cầu / Mức trọng yếu">
+Biscore FY2025: doanh thu thuần **721,23 tỷ** (2024: 657,66 tỷ), LNTT **53,53 tỷ** (2024: 11,36 tỷ), tổng tài sản **1.468,76 tỷ**. Đề Simulation chọn OM = 0,5% doanh thu thuần, PM = 60% OM, CTT = 5% OM.
+
+Tính ba mức. Vì sao đề không chọn LNTT, và vì sao PM chỉ 60%?
+<Solution>
+1. OM = 0,5% × 721.226.300.000 = 3.606 triệu → làm tròn **3,6 tỷ**.
+2. PM = 60% × 3,6 tỷ = 2,16 tỷ → **2,2 tỷ** theo đề.
+3. CTT = 5% × 3,6 tỷ = **180 triệu**.
+4. Đề không nêu lý do, chỉ yêu cầu đội chọn mức khác thì phải nêu cơ sở. **Một lý do bảo vệ được:** LNTT tăng 371% trong khi doanh thu thuần chỉ tăng 9,7% → lợi nhuận **biến động mạnh**, đúng dòng "Doanh thu 0,5–1%" của bảng benchmark. Đổi lại, OM theo doanh thu (3,6 tỷ) **cao hơn** OM theo 5% LNTT (2,68 tỷ), tức ít thận trọng hơn; vì vậy đề bù lại bằng PM ở mức thấp.
+5. PM để ở mức thấp của khung 50–75% vì đây là năm đầu kiểm toán, đơn vị chịu áp lực kết quả kinh doanh và điều khoản cam kết với ngân hàng.
+
+→ Mọi ví dụ Biscore trong hệ thống dùng bộ số **OM 3,6 tỷ · PM 2,2 tỷ · CTT 180 triệu**.
+</Solution>
+</BiscoreExample>
+
+<KeyPrinciple>Bảo vệ **lý do chọn benchmark**, không phải con số.</KeyPrinciple>
+
+<QuickCheck q="Công ty A có tổng sai sót chưa điều chỉnh 220 triệu, OM 250 triệu. Ý kiến kiểm toán có bị ảnh hưởng không?" short="Chưa, nhưng đã sát ngưỡng">
+220 triệu vẫn dưới OM 250 triệu. Vùng đệm chỉ còn 30 triệu cho sai sót chưa phát hiện, nên làm thêm thủ tục ở khoản mục rủi ro cao.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a2-1-om-pm-ctt" />

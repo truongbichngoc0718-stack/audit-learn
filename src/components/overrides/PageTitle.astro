@@ -7,13 +7,15 @@ const part = d.phan !== undefined ? String(d.phan) : undefined;
 const crumb = d.nhanh === 'B' ? 'Nhánh B · Excel & Power BI' : d.nhanh === 'lib' ? 'Thư viện' : part !== undefined ? `Phần ${part} · ${partNames[part] ?? ''}` : '';
 const label = d.bai ? `Bài ${d.bai}${d.nhan ? ` — ${d.nhan}` : ''}${d.thoi_luong ? ` · ${d.thoi_luong} phút` : ''}` : d.thoi_luong ? `${d.thoi_luong} phút` : '';
 const pageId = d.id ?? '';
+const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const takeawayHtml = d.description ? esc(d.description).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') : '';
 ---
 {isLesson ? (
   <div class="b-header" data-lesson-id={pageId} data-lesson-title={d.title}>
     {crumb && <div class="crumb">{crumb}{d.bai && <> / <b>Bài {d.bai}</b></>}</div>}
     {label && <div class="label">{label}{d.trang_thai === 'mo-rong' && ' · Mở rộng'}{d.trang_thai === 'khung' && ' · Đang xây dựng'}</div>}
     <Default />
-    {d.description && <div class="takeaway">{d.description}</div>}
+    {takeawayHtml && <div class="takeaway" set:html={takeawayHtml} />}
     {(d.assertion?.length > 0 || d.chuan_muc?.length > 0) && (
       <div class="meta">
         {d.assertion.map((a: string) => <span class="b-chip as">{a}</span>)}

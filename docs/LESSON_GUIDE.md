@@ -27,6 +27,7 @@ thoi_luong: 4                         # phút
 nguon:                                # nơi lấy nội dung, trỏ vào /source
   - "T#p1l1"                          # ebook 1, id gốc
   - "B:Công nợ phải thu.xlsx/04"      # dữ liệu BISCORE
+  # Tiền tố: T# ebook 1 · X# ebook 3 · C# ebook 5 · B: dữ liệu BISCORE · N: ghi chú cá nhân trên ebook (source/ebooks/notes)
 assertion: [Completeness, Accuracy]   # có thể rỗng
 chuan_muc: ["VSA 500"]                # có thể rỗng
 ngay_cap_nhat: 2026-11-05

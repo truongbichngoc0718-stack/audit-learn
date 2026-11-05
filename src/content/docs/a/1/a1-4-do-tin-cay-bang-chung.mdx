@@ -1,0 +1,56 @@
+---
+title: Bằng chứng nào đáng tin hơn
+description: Càng xa đơn vị, càng đáng tin. Mỗi phần hành cần **ít nhất một bằng chứng bên ngoài**.
+id: a1-4-do-tin-cay-bang-chung
+nhanh: A
+phan: 1
+bai: "1.4"
+nhan: Bằng chứng
+loai: ky-thuat
+thoi_luong: 1
+nguon: ["T#p1l2 (Bằng chứng nào đáng tin hơn)", "B:Sổ cái GL T12 (PKT2512-0015)", "B:Sổ phụ ngân hàng.xlsx"]
+assertion: []
+chuan_muc: ["VSA 500"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 4 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, FlowDiagram, LessonNotes } from '@components';
+
+<Objectives>
+- Xếp hạng bằng chứng theo độ tin cậy
+- Biết khi nào phải tìm thêm bằng chứng bên ngoài
+</Objectives>
+
+<Eyebrow>Bằng chứng · VSA 500</Eyebrow>
+## Thang độ tin cậy
+Bấm từng bậc, từ thấp lên cao.
+
+<FlowDiagram client:visible footer="↑ Càng lên cao càng tin cậy · mỗi phần hành cần ít nhất một bằng chứng bên ngoài" steps={[
+  { label: 'Giải trình miệng', sub: 'Thấp nhất', detail: 'Lời giải thích của đơn vị. Chỉ dùng để định hướng thủ tục, không đủ để kết luận.' },
+  { label: 'Chứng từ nội bộ', sub: 'Phiếu kế toán · bảng tính · hóa đơn bán hàng', detail: 'Do chính đơn vị lập. Tin cậy hơn khi kiểm soát nội bộ hữu hiệu.' },
+  { label: 'Chứng từ bên ngoài', sub: 'Sổ phụ ngân hàng · hóa đơn NCC', detail: 'Do bên thứ ba lập nhưng <b>đi qua tay đơn vị</b> trước khi tới KTV.' },
+  { label: 'Thư xác nhận · KTV tự tính lại', sub: 'Cao nhất', detail: 'Bên thứ ba <b>gửi thẳng KTV</b>, hoặc KTV tự tính lại.' },
+]} />
+
+<BiscoreExample source="GL T12 chứng từ PKT2512-0015 (Số tham chiếu: Chưa có hợp đồng và hóa đơn GTGT kèm theo)">
+Bút toán PKT2512-0015 ghi nhận 3,0 tỷ doanh thu 5113.OT, do Giám đốc Tài chính lập, ngày nhập 19/01/2026, số tham chiếu "Chưa có hợp đồng và hóa đơn GTGT kèm theo". **Tình huống giả định** (hồ sơ không có): Giám đốc Tài chính giải trình miệng rằng "đã thỏa thuận với đối tác" và đưa thêm một bảng tính nội bộ phân bổ phí quản lý. Bằng chứng đã đủ chưa? Cần thêm gì?
+<Solution>
+1. Hiện có: **giải trình miệng** (bậc 4) và **bảng tính nội bộ** (bậc 3), cả hai do chính người lập bút toán cung cấp.
+2. Chưa có bằng chứng bên ngoài nào → **chưa đủ**.
+3. Cần bằng chứng bên ngoài: hợp đồng có chữ ký đối tác, **thư xác nhận gửi thẳng KTV** từ Công ty CP Đầu tư Hạ tầng Liên Việt, tiền về trên sổ phụ ngân hàng sau kỳ. Hóa đơn GTGT do Biscore tự xuất vẫn là chứng từ nội bộ.
+
+→ Không có các bằng chứng trên thì kết luận theo Bài 3.1 Bước 6.
+</Solution>
+</BiscoreExample>
+
+<IfSkipped>kết luận một khoản mục chỉ bằng chứng từ do đơn vị tự lập, bạn đang kiểm tra lời khẳng định của đơn vị bằng chính tài liệu của đơn vị.</IfSkipped>
+
+<KeyPrinciple>Bằng chứng do **bên thứ ba gửi thẳng KTV** tin cậy hơn mọi tài liệu đơn vị tự lập.</KeyPrinciple>
+
+<QuickCheck q="Đơn vị đưa bản photo hóa đơn bán hàng và bảng đối chiếu công nợ do kế toán công nợ lập. Đủ để kết luận số dư phải thu tồn tại chưa?" short="Chưa">
+Cả hai đều do đơn vị cung cấp. Cần thư xác nhận gửi thẳng KTV, hoặc thủ tục thay thế: tiền thu sau 31/12 trên sổ phụ, hóa đơn kèm bằng chứng giao hàng (Bài 3.2).
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a1-4-do-tin-cay-bang-chung" />

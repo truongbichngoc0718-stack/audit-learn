@@ -1,0 +1,222 @@
+---
+title: Chu trình doanh thu
+description: Doanh thu có thật và ghi đúng kỳ?
+id: a3-1-doanh-thu
+nhanh: A
+phan: 3
+bai: "3.1"
+nhan: Chu trình 01
+loai: phan-hanh
+thoi_luong: 7
+nguon: ["T#p3l1", "N:Phần hành", "C#p5 (sự kiện 03–08)", "B:Báo cáo doanh thu.xlsx/01,07,08", "B:Sổ cái GL T12", "B:BSC-120 Điều 2–4"]
+assertion: [Occurrence, Completeness, Cut-off, Accuracy]
+chuan_muc: ["VSA 240"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [b3-sumifs, b6-measure, b8-dashboard]
+sidebar: { order: 1, label: "3.1 Doanh thu" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, AuditCard, AuditStep, RedFlags, Quiz, DeferredRevenueCalc, LessonNotes } from '@components';
+
+<AuditCard kicker="Chu trình 01 · Revenue · VSA 240" question="Doanh thu có thật và ghi đúng kỳ?" risk="Rủi ro gian lận được giả định có ở doanh thu." tk={['511 (5113.xx)', '521 (5213)', '3387', '131']} assertion={['Occurrence', 'Completeness', 'Cut-off', 'Accuracy']} data={['Detail listing', 'GL 511', 'Hợp đồng · hóa đơn', 'Sổ phụ']} />
+
+<Objectives>
+- Đi đúng 7 bước audit program doanh thu
+- Chọn đúng chiều: vouching cho occurrence, tracing cho completeness
+- Nhận ra doanh thu ghi sai kỳ và bút toán tay ghi Có 511
+</Objectives>
+
+<Eyebrow>Audit program</Eyebrow>
+## Bảy bước, đi đúng thứ tự
+Bấm một bước để nhảy tới phần đó.
+
+| Bước | | |
+|---|---|---|
+| [1 Hiểu quy trình](#buoc-1) | Walkthrough | |
+| [2 Reconcile](#buoc-2) | Detail listing = GL | |
+| [3 Phân tích](#buoc-3) | Kỳ vọng so với sổ | |
+| [4 Test chi tiết](#buoc-4) | Vouching · tracing | |
+| [5 Cut-off](#buoc-5) | Quanh 31/12 | |
+| [6 Sau kỳ · JE](#buoc-6) | Giảm trừ · ghi tay | |
+| [7 Kết luận](#buoc-7) | So ngưỡng | |
+
+<AuditStep n={1} label="Understanding · walkthrough" title="Hiểu quy trình bán hàng" output="Sơ đồ quy trình · walkthrough một giao dịch từ đơn hàng đến tiền về · danh sách rủi ro và kiểm soát chính">
+**Mục tiêu:** biết rủi ro nằm ở khâu nào, chứng từ nào sinh ra ở đâu.
+
+**Nhận đơn hàng** (đơn đặt hàng · hợp đồng · duyệt hạn mức tín dụng) → **Giao hàng** (phiếu xuất · biên bản giao nhận · khách ký nhận) → **Xuất hóa đơn** (hóa đơn GTGT · khớp phiếu giao) → **Ghi sổ** (Nợ 131 / Có 511 · hệ thống tự hạch toán) → **Thu tiền** (sổ phụ · Nợ 112 / Có 131 · đối chiếu công nợ)
+
+**Kiểm soát chính:** hỏi, quan sát, xem lại chứng từ.
+
+| Rủi ro | Xử lý ở |
+|---|---|
+| **Ghi khống:** hóa đơn không có giao hàng thật | → Bước 4 |
+| **Sai kỳ:** giao hàng năm sau, ghi doanh thu năm nay | → Bước 5 |
+| **Ghi thiếu:** đã giao hàng nhưng chưa xuất hóa đơn | → Bước 4 |
+
+**Doanh thu ghi nhận khi nào?**
+
+<div class="b-grid">
+<div class="b-card"><div class="b-kicker">Bán hàng · tại một thời điểm</div><b>Giao hàng xong mới ghi</b><br/>Nợ 131 / Có 511<br/><small>Đơn hàng → Biên bản giao hàng → Hóa đơn</small></div>
+<div class="b-card"><div class="b-kicker">Dịch vụ theo kỳ · chia theo tháng</div><b>Gói hội viên 12 tháng</b><br/>3387 → 511 mỗi tháng<br/><small>Hợp đồng → Thu tiền trước → Phân bổ theo tháng</small></div>
+<div class="b-card"><div class="b-kicker">Thu tiền trước · khi thực hiện</div><b>Bán vé tháng 3, bay tháng 6</b><br/>Tháng 3: 3387 · Tháng 6: 511<br/><small>Bán vé → Ghi 3387 → Chuyến bay → Doanh thu</small></div>
+</div>
+</AuditStep>
+
+## Thực hành trên Biscore
+Mỗi bước có một bài tập trên số liệu thật FY2025 (khoảng 20 phút cho cả 7 bài tập). Bấm "Xem lời giải" sau khi tự làm.
+
+<BiscoreExample title="Biscore · Bước 1" source="BSC-120 Chính sách kế toán 2025, Điều 2–3 · Case 02 Hồ sơ Biscore / Hai dòng doanh thu">
+Theo thời điểm ghi nhận, doanh thu Biscore chia ba nhóm: **cho thuê văn phòng** (5113.OF, .SC, .PK), **khách sạn** (5113.RM, .FB, .OT) và **sự kiện** (5113.EV). Với mỗi nhóm, doanh thu được ghi nhận vào thời điểm nào, và chứng từ nào chứng minh thời điểm đó?
+<Solution>
+| Nhóm | Ghi nhận khi | Chứng từ chứng minh |
+|---|---|---|
+| Văn phòng | Tiền thuê: đường thẳng theo thời hạn thuê, không theo lịch thu tiền; trả trước nhiều kỳ → 3387 (Điều 2.1–2.2). Phí dịch vụ, trông xe: theo tháng (Điều 2.3) | Hợp đồng thuê · phụ lục diện tích · bảng phân bổ 3387 |
+| Khách sạn | Từng đêm lưu trú thực tế, chốt qua night audit (khóa sổ cuối mỗi đêm, Điều 3.1); ăn uống khi cung cấp (3.2) | Báo cáo night audit · PMS folio (bảng kê chi phí của khách/đoàn) · POS (máy tính tiền nhà hàng) |
+| Sự kiện | Khi dịch vụ đã cung cấp, có biên bản nghiệm thu; ngày hóa đơn không đổi thời điểm ghi nhận (3.3) | Hợp đồng · biên bản nghiệm thu có xác nhận của khách |
+
+→ Mỗi nhóm có một rủi ro sai kỳ riêng. Đưa cả ba vào Bước 4 và 5.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={2} label="Reconcile · chốt population" title="Detail listing khớp GL, TB và BCTC" assertion={['Completeness', 'Accuracy']} output="Lead schedule doanh thu · bảng đối chiếu detail listing với GL, TB">
+**Detail listing** (Σ hóa đơn) = **GL 511** = **TB** = **BCTC**
+
+Trước khi so: cộng lại detail listing · loại kết chuyển 511 → 911 · loại bút toán đảo. Lệch thì **dừng lại tìm nguyên nhân**. Chỉ detail listing đã khớp mới dùng làm population ở Bước 4.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 2" source="Bảng cân đối phát sinh.xlsx · Báo cáo doanh thu.xlsx / 01 Doanh thu theo thang · Sổ cái GL T01–T12">
+Trên TB, 5113.EV có phát sinh Có **94,79 tỷ**. Báo cáo doanh thu (sheet 01) ghi doanh thu sự kiện cả năm **85,01 tỷ**. Tổng doanh thu theo báo cáo và theo BCTC đều là 724,78 tỷ. Chênh lệch 9,78 tỷ ở 5113.EV đến từ đâu? Báo cáo doanh thu có dùng làm population được không?
+<Solution>
+1. Lọc GL 5113.EV, bỏ dòng kết chuyển sang 911: phát sinh Nợ ngoài kết chuyển = các **PKT đảo doanh thu** (2,4 + 2,8 + 3,1 tỷ của Đại Nam Việt và 1,48 tỷ của Kim Long) = **9,78 tỷ**.
+2. 94,79 − 9,78 = **85,01 tỷ** = báo cáo doanh thu ✓. Tổng 724,78 tỷ khớp TB và BCTC.
+3. → Báo cáo doanh thu là số thuần sau bút toán đảo. Dùng được làm population, nhưng các bút toán đảo phải đưa vào danh sách xem xét ở Bước 6.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={3} label="Substantive analytics" title="Lập kỳ vọng, so với sổ" assertion={['Occurrence', 'Completeness']} output="Bảng phân tích theo tháng, theo dòng dịch vụ · giải thích từng biến động lớn">
+**Kỳ vọng doanh thu từng tháng = Sản lượng bán **×** Giá bán bình quân.** Số liệu minh họa: kỳ vọng tăng đều T1 → T11, tháng 12 sổ cao hơn kỳ vọng **+40%** → lệch vượt ngưỡng. Lệch vượt ngưỡng → hỏi đơn vị → bằng chứng giải thích (hợp đồng mới · tăng giá). Không giải thích được → tăng test chi tiết.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 3" source="Báo cáo doanh thu.xlsx / 01 Doanh thu theo thang">
+Doanh thu tháng 12/2025 là **88,47 tỷ**, cao hơn 33,5% so với tháng cao thứ hai (tháng 3: 66,28 tỷ). Trong đó 5113.EV tháng 12 đạt **18,91 tỷ**, 5113.OF **27,11 tỷ** (các tháng khác quanh 21,3 tỷ) và 5113.OT **5,87 tỷ** (các tháng khác 1,8–2,7 tỷ). Dòng nào cần đào sâu, và kỳ vọng của bạn dựa trên dữ kiện nào?
+<Solution>
+1. **5113.OF:** văn phòng là doanh thu lặp lại theo diện tích × đơn giá. Tháng 12 tăng **5,8 tỷ** so với mức nền trong khi chỉ có một khách thuê mới (Sao Mai Land, 400 m² từ 01/12) → kỳ vọng tiền thuê tăng thêm chỉ khoảng **0,25 tỷ**. Hai nguồn cần tìm: hóa đơn lớn của khách mới (→ Bước 4) và phiếu kế toán phân bổ 3387 dồn vào tháng 12 (PKT2512-0005, 3,0 tỷ cho 6 tháng cuối năm). Khoản thứ hai hợp lý về tổng năm nhưng phải vouch tới bảng theo dõi doanh thu chưa thực hiện và hợp đồng trả trước.
+2. **5113.EV:** mùa cao điểm sự kiện cuối năm giải thích được một phần (gala, countdown), nhưng phải tách phần ghi bằng PKT → Bước 6.
+3. **5113.OT:** tăng gấp hơn 2 lần; case không mô tả sự kiện vận hành nào tương ứng → Bước 6.
+
+→ Tháng 12 là vùng trọng tâm cho test chi tiết, cut-off và bút toán tay.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={4} label="Test of details" title="Test chi tiết theo hai chiều" assertion={['Occurrence', 'Accuracy', 'Completeness']} direction="ca-hai" output="Danh sách mẫu và cách chọn · kết quả từng mẫu · sai sót đã suy rộng">
+**Vouching** chọn từ sổ, đi tìm chứng từ (Occurrence · Accuracy): detail listing (key items + MUS) → hóa đơn (khớp khách hàng, số tiền) → giao hàng · nghiệm thu (có xác nhận của khách) → tiền về (sổ phụ ngân hàng).
+
+**Tracing** chọn từ nguồn, dò vào sổ (Completeness): phiếu xuất · biên bản giao (chọn random) → đã xuất hóa đơn? → có trong GL 511? đúng kỳ, đúng số tiền.
+
+Sai sót trong mẫu phải **suy rộng**; sai sót ở key items cộng thẳng (Bài 2.2).
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 4 · key item" source="Báo cáo doanh thu.xlsx / 07 Top giao dich · GL T12 chứng từ HDO2512-0086 · Case 02 / Sự kiện trọng yếu 04">
+Giao dịch doanh thu lớn nhất năm (sheet 07, dòng 1): hóa đơn **HDO2512-0086** ngày 10/12/2025, khách Sao Mai Land, 3.734.400.000 đ chưa thuế (5113.OF 2.976.000.000 · 5113.SC 662.400.000 · 5113.PK 96.000.000). Hợp đồng: 400 m², thuê 620.000 đ/m²/tháng, phí dịch vụ 138.000 đ/m²/tháng, trông xe 8.000.000 đ/tháng, **12 tháng từ 01/12/2025**. Doanh thu 2025 đúng là bao nhiêu?
+<Solution>
+1. Doanh thu một tháng: 400 × 620.000 + 400 × 138.000 + 8.000.000 = **311.200.000 đ**.
+2. Hóa đơn = 311,2 triệu × 12 = 3.734,4 triệu → hóa đơn ghi **cả 12 tháng** vào doanh thu tháng 12.
+3. Doanh thu 2025 chỉ được 1 tháng (12/2025): tiền thuê theo Điều 2.1–2.2, phí dịch vụ và trông xe theo tháng (Điều 2.3). Ghi thừa: 3.734,4 − 311,2 = **3.423,2 triệu**.
+4. Key item → cộng thẳng, không suy rộng. **3,42 tỷ > PM 2,2 tỷ** → vượt PM ở khoản mục doanh thu.
+
+Bút toán đề xuất: **Nợ 5113.OF 2.728.000.000 · Nợ 5113.SC 607.200.000 · Nợ 5113.PK 88.000.000 / Có 3387 3.423.200.000**.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={5} label="Cut-off · block selection" title="Ghi đúng kỳ quanh 31/12" assertion={['Cut-off']} direction="ca-hai" output="Danh sách giao dịch trong block · ngày cung cấp dịch vụ so với ngày ghi sổ · kết luận đúng kỳ">
+**Block 5–10 ngày mỗi bên** quanh 31/12/2025 (16/12/2025 → 15/01/2026). Mốc ghi nhận: hàng hóa theo ngày giao · dịch vụ theo kỳ theo tháng sử dụng · thu trước theo ngày thực hiện.
+
+Hai chiều trong block: từ GL dò ra chứng từ (doanh thu năm sau ghi sớm) và từ chứng từ dò vào GL (doanh thu năm nay ghi muộn).
+
+**Thử ngay: gói dịch vụ trả trước.** Đổi giá trị, tháng bắt đầu, thời hạn để xem doanh thu 2025 và số dư 3387 thay đổi. Khóa sổ 31/12/2025.
+
+<DeferredRevenueCalc client:visible value={120000000} start={10} months={12} />
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 5" source="GL T12 chứng từ HDK2512-0953 · Case 02 / Sự kiện trọng yếu 05 · BSC-120 Điều 3.1">
+Hóa đơn **HDK2512-0953** ngày 31/12/2025: doanh thu buồng phòng đoàn Vietnam Global Summit **1.350.000.000 đ**, diễn giải "150 phòng × 03 đêm". Hồ sơ kèm theo: hợp đồng đặt phòng đoàn, PMS folio nhóm GRP-20251230, night audit các đêm **30/12, 31/12 và 01/01**. Doanh thu buồng phòng năm 2025 bị ảnh hưởng thế nào?
+<Solution>
+1. Giả định giá phòng đều 3 đêm: 1.350 triệu ÷ 3 = **450 triệu/đêm**. Kiểm lại bằng giá từng đêm trên PMS folio GRP-20251230.
+2. Đêm lưu trú 01/01 → 02/01/2026 thuộc năm 2026 (ghi nhận theo đêm lưu trú, Điều 3.1).
+3. Doanh thu 2025 ghi thừa **450 triệu**. Đây là item cụ thể → cộng thẳng. 450 triệu ≥ CTT 180 triệu → vào bảng tổng hợp; dưới PM.
+
+Bút toán đề xuất: **Nợ 5113.RM 450.000.000 / Có 3387 450.000.000** (hoặc Có 131.HT nếu chưa thu tiền và hóa đơn được điều chỉnh).
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={6} label="Subsequent review · manual JE" title="Soát xét sau kỳ và bút toán tay" assertion={['Occurrence', 'Cut-off', 'Management override']} direction="vouching" output="Danh sách giảm trừ sau kỳ đã xem xét · danh sách bút toán tay đã kiểm tra">
+**Giảm trừ đầu năm sau:** xem tháng 1–2/2026. Hàng trả lại · chiết khấu · hóa đơn điều chỉnh, hủy → liên quan doanh thu 2025? Có → doanh thu 2025 ghi thừa.
+
+**Bút toán tay ghi Có 511** (không đi từ hệ thống bán hàng): lọc GL 511 bút toán thủ công → người lập, ngày nhập bất thường → vouch + phê duyệt (cách lọc ở Bài 3.7). Chọn theo tiêu chí, **không suy rộng**.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 6" source="Báo cáo doanh thu.xlsx / 08 But toan doanh thu thu cong · GL T12 chứng từ PKT2512-0013, PKT2512-0015">
+Sheet 08 liệt kê 22 bút toán doanh thu bằng phiếu kế toán. Hai bút toán cuối năm:
+
+| Chứng từ | Ngày hạch toán | Ngày nhập | Người lập | TK | Giá trị | Số tham chiếu |
+|---|---|---|---|---|---|---|
+| PKT2512-0013 | 31/12/2025 | 14/01/2026 | vu.quang.cm | Nợ 131.OT 3,85 tỷ / Có 5113.EV 3,5 tỷ · Có 3331 0,35 tỷ | 3,5 tỷ | Thỏa thuận nguyên tắc 05/2025/TTNT-DNV, chưa có hợp đồng cụ thể và chưa xuất hóa đơn |
+| PKT2512-0015 (Công ty CP Đầu tư Hạ tầng Liên Việt) | 31/12/2025 | 19/01/2026 | hoang.tv.cfo | Nợ 131.OT 3,3 tỷ / Có 5113.OT 3,0 tỷ · Có 3331 0,3 tỷ | 3,0 tỷ | Chưa có hợp đồng và hóa đơn GTGT kèm theo |
+
+Trước đó, Đại Nam Việt đã có bút toán ghi nhận quý 1, 2, 3 (2,4 · 2,8 · 3,1 tỷ), và mỗi bút toán đều bị đảo ngay đầu quý sau với lý do "chưa đủ điều kiện ghi nhận doanh thu". Hai bút toán này có dấu hiệu gì, và kết luận ra sao?
+<Solution>
+1. **Dấu hiệu:** ngày nhập sau ngày khóa sổ; không có hợp đồng, nghiệm thu hay hóa đơn; một bút toán do Giám đốc Tài chính tự lập; PKT2512-0013 là doanh thu sự kiện nhưng ghi Nợ 131.OT thay vì 131.EV. Đây là các tiêu chí lọc management override.
+2. **PKT2512-0013:** cùng bản chất với ba quý trước đã bị đơn vị tự đảo vì chưa đủ điều kiện; gửi yêu cầu cung cấp tài liệu (document request) mà không nhận được hợp đồng cụ thể hay biên bản nghiệm thu → không đạt Điều 3.3 → doanh thu ghi thừa **3,5 tỷ** (Confirmed misstatement).
+3. **PKT2512-0015:** chưa có bằng chứng dịch vụ đã cung cấp. Kết luận **Further evidence required**: cần hợp đồng, bằng chứng thực hiện, hóa đơn. Nếu không có, doanh thu ghi thừa **3,0 tỷ**.
+4. Chọn theo tiêu chí → **không suy rộng**. Mỗi bút toán đã vượt PM 2,2 tỷ.
+
+Bút toán đề xuất cho REV-03 (đảo đúng bút toán gốc trên GL): **Nợ 5113.EV 3.500.000.000 · Nợ 3331 350.000.000 / Có 131.OT 3.850.000.000**. Phần 3331 đi kèm vì bút toán gốc đã ghi; thuế GTGT tự nó nằm ngoài phạm vi chấm điểm.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={7} label="Evaluate · conclude" title="Tổng hợp sai sót, kết luận phần hành" output="Mini working paper cho từng finding (Bài 4) · kết luận cho khoản mục doanh thu">
+**Sai sót đã lượng hóa** (key items cộng thẳng · mẫu suy rộng) → **So CTT · PM** (từ CTT trở lên vào bảng tổng hợp; vượt PM mở rộng thủ tục) → **Bút toán điều chỉnh đề xuất**.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 7" source="Tổng hợp từ Bước 4–6">
+Cộng các sai sót doanh thu đã tìm được ở Bước 4–6. So với ngưỡng của đề (OM 3,6 tỷ · PM 2,2 tỷ · CTT 180 triệu), kết luận gì cho khoản mục doanh thu?
+<Solution>
+| Finding | Bản chất | Doanh thu ghi thừa |
+|---|---|---|
+| REV-01 | Sao Mai Land ghi 12 tháng vào tháng 12 | 3,42 tỷ |
+| REV-02 | Global Summit đêm 01/01/2026 | 0,45 tỷ |
+| REV-03 | Đại Nam Việt quý 4 chưa đủ điều kiện | 3,50 tỷ |
+| **Cộng sai sót đã xác định** | | **7,37 tỷ** |
+| REV-04 | Liên Việt: Further evidence required | (3,00 tỷ nếu không có bằng chứng) |
+
+1. Từng finding ≥ CTT → vào bảng tổng hợp.
+2. Riêng phần đã xác định 7,37 tỷ đã **vượt OM 3,6 tỷ** → nếu không điều chỉnh, ý kiến bị ảnh hưởng (ngoại trừ; trái ngược nếu lan tỏa). REV-04 không làm đổi kết luận này, nhưng phải được giải quyết trước khi phát hành báo cáo.
+3. Ghi mỗi finding vào một mini working paper (Bài 4).
+</Solution>
+</BiscoreExample>
+
+<RedFlags items={[
+  { title: 'Dồn vào tháng 12', text: 'Không khớp sản lượng, số hợp đồng' },
+  { title: 'Ghi tay', text: 'Không qua hóa đơn hay hệ thống bán hàng' },
+  { title: 'Trả lại đầu năm', text: 'Doanh thu tháng 12 bị đảo ở tháng 1' },
+  { title: 'Thu trước ghi ngay', text: 'Dịch vụ chưa thực hiện đã vào 511' },
+]} />
+
+<IfSkipped>chọn mẫu tracing từ hóa đơn trong hồ sơ, bạn sẽ không bao giờ thấy bút toán không có chứng từ gốc như PKT2512-0015, vì nó không có hóa đơn để chọn.</IfSkipped>
+
+<KeyPrinciple>Doanh thu: **vouching từ sổ** cho occurrence, **block quanh 31/12** cho cut-off, **lọc bút toán tay** cho management override.</KeyPrinciple>
+
+<QuickCheck q="Hóa đơn sự kiện HDE ngày 05/01/2026, biên bản nghiệm thu ghi sự kiện diễn ra 29/12/2025. Doanh thu thuộc năm nào?" short="Năm 2025">
+Doanh thu sự kiện ghi nhận khi dịch vụ đã cung cấp và có nghiệm thu; ngày hóa đơn không đổi thời điểm ghi nhận (BSC-120 Điều 3.3). Nếu đơn vị chưa ghi vào 2025 thì doanh thu 2025 ghi thiếu, phát hiện bằng tracing từ biên bản nghiệm thu.
+</QuickCheck>
+
+## Kiểm tra phần hành
+<Quiz client:visible id="a3-1-doanh-thu" questions={[
+  { q: 'Muốn phát hiện doanh thu ghi khống, nên chọn mẫu từ đâu?', options: ['Hóa đơn trong hồ sơ, dò vào GL 511', 'GL 511 / detail listing, đi tìm hợp đồng, nghiệm thu, tiền về', 'Thư xác nhận gửi nhà cung cấp', 'Biên bản giao hàng chọn random'], answer: 1, explain: 'Occurrence → vouching: chọn từ sổ rồi đi tìm bằng chứng. Bút toán khống không có chứng từ thật để dò ngược (Bài 1.3).' },
+  { q: 'Hợp đồng thuê 12 tháng từ 01/12/2025, xuất hóa đơn cả 12 tháng ngày 10/12/2025. Doanh thu 2025 đúng là:', options: ['Toàn bộ giá trị hóa đơn', '1/12 giá trị hóa đơn', '0 vì chưa thu tiền', '6/12 giá trị hóa đơn'], answer: 1, explain: 'Cho thuê ghi nhận đường thẳng theo thời hạn thuê, không theo lịch xuất hóa đơn hay thu tiền. Phần 11 tháng còn lại nằm trên 3387.' },
+  { q: 'Bút toán tay ghi Có 511 được chọn theo tiêu chí (người lập, ngày nhập sau khóa sổ). Phát hiện sai 3 tỷ. Xử lý:', options: ['Suy rộng ra toàn bộ GL 511', 'Cộng thẳng 3 tỷ vào bảng tổng hợp, không suy rộng', 'Bỏ qua vì dưới OM', 'Chia cho số tháng rồi suy rộng'], answer: 1, explain: 'Chọn theo tiêu chí không phải sampling, nên không suy rộng. Ghi đúng số tìm được.' },
+  { q: 'Phương pháp chọn mẫu phù hợp nhất để kiểm tra cut-off doanh thu:', options: ['MUS trên GL 511', 'Block giao dịch trước và sau 31/12', 'Random trên danh sách hợp đồng', 'Chỉ test key items'], answer: 1, explain: 'Cut-off nhắm vào một khoảng thời gian cụ thể, nên chọn một khối giao dịch quanh ngày khóa sổ.' },
+]} />
+
+<LessonNotes client:only="react" id="a3-1-doanh-thu" />

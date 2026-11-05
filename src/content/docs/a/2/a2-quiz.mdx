@@ -1,0 +1,22 @@
+---
+title: Phần 2 · Bài kiểm tra chốt
+description: 4 câu về ba mức trọng yếu và cách dùng chúng khi test. Mục tiêu 4/4.
+id: a2-quiz
+nhanh: A
+phan: 2
+loai: kiem-tra
+thoi_luong: 2
+nguon: ["T#p2t"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+sidebar: { order: 9, label: "✓ Bài kiểm tra Phần 2" }
+---
+import { Quiz } from '@components';
+
+<Quiz client:visible id="a2-quiz" target={4} questions={[
+  { q: 'Công ty B có lợi nhuận trước thuế 8 tỷ. Chọn OM = 5% LNTT và PM = 60% OM. PM bằng bao nhiêu?', options: ['400 triệu', '240 triệu', '20 triệu', '480 triệu'], answer: 1, explain: 'OM = 5% × 8 tỷ = 400 triệu; PM = 60% × 400 triệu = 240 triệu. Nếu CTT = 5% × OM thì CTT = 20 triệu.' },
+  { q: 'Công ty A (CTT 12,5 triệu, PM 175 triệu): sai sót trong mẫu là 5 triệu, suy rộng ra population được 60 triệu. Kết luận:', options: ['Bỏ qua vì 5 triệu < 12,5 triệu', 'Đưa vào bảng tổng hợp vì 60 triệu ≥ 12,5 triệu', 'Phải mở rộng thủ tục vì đã vượt PM', 'Chỉ ghi nhận nếu là gian lận'], answer: 1, explain: 'Luôn so sai sót đã suy rộng với CTT, không so sai sót thô trong mẫu. 60 triệu vẫn dưới PM 175 triệu nên chưa bắt buộc mở rộng thủ tục.' },
+  { q: 'Sai sót tìm thấy ở key items (test 100%) được xử lý thế nào?', options: ['Suy rộng ra toàn bộ population', 'Cộng thẳng, không suy rộng', 'Bỏ qua nếu dưới PM', 'Chia đôi rồi suy rộng'], answer: 1, explain: 'Key items là chọn item cụ thể, không phải sampling. Sai sót ở đó cộng thẳng vào tổng.' },
+  { q: 'Ở EY, chữ "PM" nghĩa là gì?', options: ['Performance materiality', 'Planning materiality, tức mức trọng yếu tổng thể', 'Ngưỡng sai sót không đáng kể', 'Mức trọng yếu cho từng khoản mục'], answer: 1, explain: 'EY: PM = Planning materiality (mức tổng thể), TE = Tolerable error. Ở Deloitte và PwC, PM là Performance materiality, như cách dùng trong hệ thống này.' },
+]} />

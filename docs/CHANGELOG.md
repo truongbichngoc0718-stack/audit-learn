@@ -17,3 +17,15 @@
 
 ## 2026-11-05 · Khóa BISC_STYLE v1.0
 - Bạn duyệt BISC_STYLE.md và GLOSSARY.md → khóa v1.0. Mã finding theo case (REV/AR/AP/OPEX/BOR/FA/JE-nn).
+
+## 2026-11-05 · Bước 3 — MVP (chờ duyệt)
+- [a1-1-tb-gl-subledger] bài mẫu chuẩn, ví dụ Biscore 3 tầng TK 131 khớp đến đồng (gộp)
+- [a2-1-om-pm-ctt] bài mẫu chuẩn, máy tính materiality có preset Biscore, lý do benchmark (gộp)
+- [a3-1-doanh-thu] bài mẫu chuẩn phần hành: 7 bước + 7 bài tập Biscore (Sao Mai Land, Global Summit, PKT Đại Nam Việt / Liên Việt), quiz 4 câu mới (gộp + mở rộng)
+- [a0-lo-trinh] [a0-gioi-thieu-biscore] Phần 0 (gộp)
+- [a1-2] [a1-3] [a1-4] tách từ ebook 1.2; a1-3 thêm bài tập chọn chiều 6 tình huống Biscore (mở rộng); [a1-quiz] (gốc)
+- [a2-2] [a2-3] [a2-4] tách từ ebook 2.2 (gốc + ví dụ Biscore); a2-3 mở rộng cỡ mẫu MUS (VSA 530); [a2-quiz] (gốc)
+- [a3-tong-quan] (gốc); khung nhánh B: tổng quan + 9 bài "sắp có"
+- Sửa theo review độc lập bài mẫu: tách REV-04 thành Further evidence required (sai sót đã xác định 7,37 tỷ), bỏ chữ "ghi khống", thêm chip Management override, khôi phục 3 thẻ "Doanh thu ghi nhận khi nào", nêu giả định giá phòng đều.
+- CONTENT_MAP: Phần 2 tổ chức lại thành 2.1 OM/PM/CTT (gồm benchmark) · 2.2 scoping & key items · 2.3 chọn mẫu · 2.4 suy rộng.
+- GLOSSARY: thêm POS, F&B, night audit, folio.

@@ -1,10 +1,56 @@
 ---
-title: "Phần 0 · Lộ trình"
-description: Đang xây dựng theo docs/CONTENT_MAP.md.
+title: Từ số liệu đến finding
+description: Ba câu hỏi đi suốt lộ trình. Test **cái gì**, test **bao nhiêu**, kết luận **thế nào**.
+id: a0-lo-trinh
 nhanh: A
 phan: 0
-loai: khung
-trang_thai: khung
-sidebar: { order: 0, label: "Tổng quan Phần 0" }
+loai: tong-quan
+thoi_luong: 3
+nguon: ["T#home", "T#caseband", "T#p3"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 0, label: "Lộ trình & 3 câu hỏi" }
 ---
-Nội dung Phần 0 sẽ được viết ở Bước 3 (MVP) sau khi bộ chuẩn BISC_STYLE được duyệt.
+import { Eyebrow, KeyPrinciple, LessonNotes } from '@components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<Eyebrow>Audit technique</Eyebrow>
+## Ba câu hỏi đi suốt lộ trình
+<CardGrid>
+  <Card title="Test cái gì">Reconcile để chốt population. Assertion quyết định chiều: vouching hay tracing. → Phần 1</Card>
+  <Card title="Test bao nhiêu">OM · PM · CTT quyết định khoản mục phải test, key items và mẫu. → Phần 2</Card>
+  <Card title="Kết luận thế nào">Suy rộng **rồi mới** so ngưỡng. Ghi finding vào mini working paper. → Phần 3, 4</Card>
+</CardGrid>
+
+<CardGrid>
+<Card title="Dữ liệu là điểm xuất phát">
+
+- Reconcile **trước** khi test
+- Kết luận trên **TB**, chọn mẫu trên **GL**
+- Bằng chứng **bên ngoài** đáng tin hơn
+
+</Card>
+<Card title="Materiality là thước đo">
+
+- **OM** cho toàn bộ báo cáo tài chính
+- **PM** cho từng khoản mục
+- **CTT** cho từng sai sót
+
+</Card>
+</CardGrid>
+
+<Eyebrow>Lộ trình · đi đúng dòng chảy của một cuộc kiểm toán</Eyebrow>
+## Bốn chặng, một case xuyên suốt
+| Chặng | Nội dung | Thời lượng gốc |
+|---|---|---|
+| [1 · Nền tảng](/a/1/) | TB, GL, subledger và mục đích cuối cùng của kiểm toán | 8 phút |
+| [2 · Materiality](/a/2/) | Ba mức trọng yếu quyết định test cái gì, test bao nhiêu | 7 phút |
+| [3 · Thủ tục theo phần hành](/a/3/) | Từng phần hành theo audit program: hiểu quy trình → reconcile → test → kết luận | 27 phút |
+| [4 · Ghi finding](/a/4/) | Từ thủ tục đến mini working paper | 3 phút |
+
+Ví dụ có hai tầng: **minh họa** số tròn (Công ty A) để hiểu nguyên lý, và **Biscore** số thật FY2025 để luyện như một cuộc kiểm toán thật. Nhánh B (Excel & Power BI) dạy công cụ để làm các thủ tục đó trên dữ liệu.
+
+<KeyPrinciple>Thiếu một mắt xích (population, thước đo, chiều kiểm tra, phạm vi mẫu, đánh giá sai sót) thì finding không đứng vững trước người soát xét.</KeyPrinciple>
+
+<LessonNotes client:only="react" id="a0-lo-trinh" />

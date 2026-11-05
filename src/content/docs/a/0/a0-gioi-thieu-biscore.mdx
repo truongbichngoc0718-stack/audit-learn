@@ -1,0 +1,71 @@
+---
+title: Làm quen Biscore Group
+description: Doanh nghiệp xuyên suốt mọi ví dụ thực hành. Hai dòng kinh doanh, sáu chu trình trong phạm vi, một bộ ngưỡng trọng yếu.
+id: a0-gioi-thieu-biscore
+nhanh: A
+phan: 0
+loai: tong-quan
+thoi_luong: 5
+nguon: ["B:BSC-122 Danh sách các bên liên quan", "C#01 Tổng quan ngành", "C#p1-p4", "C#scope", "C#materiality", "C#appendix-data", "B:Báo cáo tài chính.xlsx/01-02"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 1 }
+---
+import { Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Eyebrow>Hồ sơ khách hàng</Eyebrow>
+## Hai dòng kinh doanh tại Hà Nội
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">01 · Biscore Tower (OFA)</div>Toà văn phòng tháp A và tháp B · 63 khách thuê · 37.280 m² theo danh mục hợp đồng. Doanh thu: thuê văn phòng (5113.OF), phí dịch vụ (5113.SC), trông xe (5113.PK).</div>
+  <div class="b-card"><div class="b-kicker">02 · Biscore Grand Hotel (HTL)</div>Khách sạn 4 sao, 320 phòng. Doanh thu: buồng phòng (5113.RM), ăn uống (5113.FB), hội nghị · tiệc · sự kiện (5113.EV), dịch vụ khác (5113.OT).</div>
+</div>
+
+Theo **thời điểm ghi nhận**, doanh thu chia ba nhóm: văn phòng (đường thẳng theo thời hạn thuê) · khách sạn (theo đêm lưu trú) · sự kiện (khi đã cung cấp và nghiệm thu) → Bài 3.1.
+
+Công ty cổ phần chưa niêm yết, vốn góp 500 tỷ đồng, công ty mẹ Tổng công ty Đầu tư Biscore Holdings sở hữu 76% (theo danh sách bên liên quan BSC-122; hồ sơ công ty ghi nhóm cổ đông sáng lập 76%). Áp dụng VAS và Thông tư 200/2014/TT-BTC. COR = Corporate là bộ phận cấp công ty, không phải dòng kinh doanh thứ ba.
+
+<Eyebrow>Số liệu chưa kiểm toán FY2025</Eyebrow>
+## Những con số cần nhớ
+| Chỉ tiêu | 2025 | 2024 |
+|---|---|---|
+| Doanh thu thuần | 721,23 tỷ | 657,66 tỷ |
+| Lợi nhuận trước thuế | 53,53 tỷ | 11,36 tỷ |
+| Tổng tài sản | 1.468,76 tỷ | 1.486,82 tỷ |
+| Phải thu khách hàng | 137,50 tỷ | 118,00 tỷ |
+| Dư nợ vay (4 khoản) | 660 tỷ | |
+
+<Eyebrow>Phạm vi kiểm toán mô phỏng</Eyebrow>
+## Sáu chu trình và lớp xuyên suốt
+| Chu trình | Tài khoản chính | Bài |
+|---|---|---|
+| 01 · Doanh thu | 5113.OF · .SC · .PK · .RM · .FB · .EV · .OT · 5213 · 3387 | [3.1](/a/3/a3-1-doanh-thu/) |
+| 02 · Phải thu khách hàng | 131.OF · .SC · .HT · .EV · .OT · 2293 · 344 | 3.2 |
+| 03 · Phải trả người bán | 331.CON · .FNB · .UTL · .SRV · .SUP · .MKT · .OTH · 335 | 3.3 |
+| 04 · Chi phí hoạt động | 632.xx · 641x · 642x · 242.xx | 3.4 |
+| 05 · Vay và lãi vay | 3411.NH · 3411.DH · 635 | 3.5 |
+| 06 · Tài sản cố định | 2112–2115 · 2141 · 241 · 6424 | 3.6 |
+| Xuyên suốt · Bút toán tay và bên liên quan | Toàn bộ sổ cái | 3.7 |
+
+**Ngoài phạm vi:** hàng tồn kho · tiền lương · thuế GTGT, thuế thu nhập doanh nghiệp, thuế thu nhập cá nhân, thuế nhà đất · định giá bất động sản.
+
+<Eyebrow>Thước đo của đề</Eyebrow>
+## Mức trọng yếu áp dụng
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">OM</div><b style="font-size:1.3rem">3,6 tỷ</b><br/><small>0,5% × doanh thu thuần 721.226.300.000 đ</small></div>
+  <div class="b-card"><div class="b-kicker">PM</div><b style="font-size:1.3rem">2,2 tỷ</b><br/><small>60% × OM · mức thấp vì năm đầu kiểm toán, áp lực kết quả và cam kết với ngân hàng</small></div>
+  <div class="b-card"><div class="b-kicker">CTT</div><b style="font-size:1.3rem">180 triệu</b><br/><small>5% × OM</small></div>
+</div>
+Cách tính và lý do chọn benchmark: [Bài 2.1](/a/2/a2-1-om-pm-ctt/).
+
+<Eyebrow>Bộ dữ liệu</Eyebrow>
+## Dữ liệu dùng trong các bài thực hành
+D-01 BCTC chưa kiểm toán · D-02 Bảng CĐPS (87 tài khoản) · D-03 Sổ cái (80.496 dòng, có người lập và ngày nhập hệ thống) · D-04/D-11 Báo cáo doanh thu · D-05 Tuổi nợ phải thu · D-06 Công nợ phải trả · D-08 Sổ TSCĐ · D-10 Chi phí trả trước · D-12 Sổ phụ ngân hàng · Chính sách kế toán 2025 (BSC-120) · Danh sách bên liên quan (BSC-122) · Mẫu working paper.
+
+<KeyPrinciple>Mọi ví dụ Biscore so với **OM 3,6 tỷ · PM 2,2 tỷ · CTT 180 triệu**, không dùng ngưỡng của Công ty A.</KeyPrinciple>
+
+<QuickCheck q="Một đội phát hiện sai sót về thuế GTGT đầu ra 500 triệu. Có đưa vào bảng tổng hợp sai sót của bài thi không?" short="Không">
+Thuế GTGT nằm ngoài phạm vi kiểm toán mô phỏng. Các tài khoản này có trong sổ cái để BCTC cân đối, nhưng phát hiện thuộc phần này không được tính điểm. Nếu sai sót đi kèm doanh thu (ví dụ 3331 trong bút toán ghi khống doanh thu) thì xử lý trong bút toán điều chỉnh doanh thu.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a0-gioi-thieu-biscore" />

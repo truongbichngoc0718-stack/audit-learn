@@ -1,0 +1,67 @@
+---
+title: Mục đích cuối cùng của kiểm toán
+description: BCTC có trung thực và hợp lý, trên các khía cạnh trọng yếu? Kiểm toán viên trả lời bằng **ý kiến kiểm toán**.
+id: a1-2-muc-dich-kiem-toan
+nhanh: A
+phan: 1
+bai: "1.2"
+nhan: Đích đến
+loai: ky-thuat
+thoi_luong: 1
+nguon: ["T#p1l2 (Bốn việc để đi tới ý kiến · Từ tổng sai sót đến ý kiến)"]
+assertion: []
+chuan_muc: ["VSA 200", "VSA 700", "VSA 705"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+sidebar: { order: 2 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, FlowDiagram, LessonNotes } from '@components';
+
+<Objectives>
+- Nêu được bốn việc để đi tới ý kiến kiểm toán
+- Dùng OM để chọn loại ý kiến từ tổng sai sót chưa điều chỉnh
+</Objectives>
+
+Mọi thủ tục trong lộ trình đều phục vụ ý kiến kiểm toán.
+
+<Eyebrow>Trong cuộc thi</Eyebrow>
+## Bốn việc để đi tới ý kiến
+Bấm từng việc để xem.
+
+<FlowDiagram client:visible steps={[
+  { label: 'Tìm sai sót', sub: 'Việc 1', detail: 'Thủ tục trên từng phần hành (Phần 3).' },
+  { label: 'Lượng hóa', sub: 'Việc 2', detail: 'Số tiền · ghi thừa hay ghi thiếu. Sai sót từ mẫu phải suy rộng (Bài 2.4).' },
+  { label: 'Đề xuất điều chỉnh', sub: 'Việc 3', detail: 'Bút toán <b>Nợ / Có</b> cụ thể.' },
+  { label: 'So với OM', sub: 'Việc 4', detail: 'Tổng sai sót <b>chưa điều chỉnh</b> so với OM quyết định loại ý kiến.' },
+]} />
+
+<Eyebrow>Ra quyết định</Eyebrow>
+## Từ tổng sai sót đến ý kiến
+Tổng sai sót chưa điều chỉnh **vượt OM**?
+
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">Không</div><b>Chấp nhận toàn phần</b><br/>BCTC trung thực và hợp lý</div>
+  <div class="b-card"><div class="b-kicker">Có</div><b>Ngoại trừ</b><br/>Trái ngược nếu ảnh hưởng lan tỏa · VSA 705</div>
+</div>
+
+<BiscoreExample source="Bài 3.1 Bước 7 · Case 03 Yêu cầu / Mức trọng yếu">
+Ở Bài 3.1, riêng khoản mục doanh thu đã có 3 finding đã xác định với tổng doanh thu ghi thừa **7,37 tỷ**. OM của Biscore là 3,6 tỷ. Nếu Ban giám đốc chỉ đồng ý điều chỉnh finding lớn nhất (3,5 tỷ), ý kiến kiểm toán thế nào?
+<Solution>
+1. Sai sót chưa điều chỉnh: 7,37 − 3,5 = **3,87 tỷ**.
+2. 3,87 tỷ > OM 3,6 tỷ → **không còn chấp nhận toàn phần**.
+3. Ảnh hưởng tập trung ở doanh thu và doanh thu chưa thực hiện (3387) → thường là **ngoại trừ**; nếu lan tỏa ra nhiều khoản mục thì xem xét trái ngược (VSA 705).
+
+→ Muốn giữ ý kiến chấp nhận toàn phần, tổng sai sót chưa điều chỉnh phải về dưới 3,6 tỷ.
+</Solution>
+</BiscoreExample>
+
+<IfSkipped>bạn tìm được sai sót nhưng không lượng hóa và không đề xuất bút toán, người soát xét không thể cộng vào tổng để so với OM, nên finding không ảnh hưởng tới ý kiến.</IfSkipped>
+
+<KeyPrinciple>Ý kiến dựa trên **tổng sai sót chưa điều chỉnh** so với OM, không dựa trên từng sai sót riêng lẻ.</KeyPrinciple>
+
+<QuickCheck q="Công ty A (OM 250 · PM 175 · CTT 12,5 triệu) còn 12 sai sót chưa điều chỉnh, mỗi sai sót 25 triệu. Từng sai sót đều dưới PM. Ý kiến có thể là chấp nhận toàn phần không?" short="Không">
+Cộng lại: 12 × 25 triệu = **300 triệu** > OM 250 triệu. Ý kiến dựa trên tổng sai sót chưa điều chỉnh, không dựa trên từng sai sót.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a1-2-muc-dich-kiem-toan" />
