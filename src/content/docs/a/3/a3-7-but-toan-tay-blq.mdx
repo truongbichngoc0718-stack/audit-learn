@@ -1,0 +1,147 @@
+---
+title: Bút toán tay & bên liên quan
+description: Có ai can thiệp vào sổ?
+id: a3-7-but-toan-tay-blq
+nhanh: A
+phan: 3
+bai: "3.7"
+nhan: Xuyên suốt
+loai: phan-hanh
+thoi_luong: 5
+nguon: ["T#p3l7", "N:other hành", "B:Sổ cái GL T01–T12", "B:BSC-122 Danh sách các bên liên quan", "B:Công nợ phải trả.xlsx/01 (NCC100)", "B:Báo cáo tài chính.xlsx/04 Thuyet minh"]
+assertion: [Occurrence, Completeness, Presentation, Management override]
+chuan_muc: ["VSA 240", "VSA 550", "VAS 26"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [b2-freeze-filter-table, b4-xlookup, b5-ghep-12-file]
+sidebar: { order: 7, label: "3.7 Bút toán tay & bên liên quan" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, AuditCard, AuditStep, RedFlags, Quiz, JEFilter, LessonNotes } from '@components';
+
+<AuditCard kicker="Xuyên suốt · Manual JE & related parties" question="Có ai can thiệp vào sổ?" risk="Lớp soát xét chạy ngang cả sáu chu trình, trên toàn bộ sổ cái." tk={['Toàn bộ GL']} assertion={['Occurrence', 'Completeness', 'Presentation', 'Management override']} data={['Toàn bộ GL', 'Danh sách người dùng', 'Danh sách bên liên quan']} />
+
+<Objectives>
+- Chốt population toàn bộ sổ cái trước khi lọc
+- Chọn tiêu chí lọc bút toán bất thường phù hợp đơn vị
+- Nhận diện và test 100% giao dịch bên liên quan
+</Objectives>
+
+<Eyebrow>Audit program</Eyebrow>
+## Sáu bước cho lớp xuyên suốt
+| Bước | | |
+|---|---|---|
+| [1 Hiểu quy trình](#buoc-1) | Ghi sổ · khóa sổ | |
+| [2 Chốt population](#buoc-2) | GL = TB | |
+| [3 Lọc tiêu chí](#buoc-3) | Bút toán bất thường | |
+| [4 Vouch · phê duyệt](#buoc-4) | Danh sách ngắn | |
+| [5 Bên liên quan](#buoc-5) | Test 100% | |
+| [6 Kết luận](#buoc-6) | Không suy rộng | |
+
+<AuditStep n={1} label="Understanding" title="Hiểu quy trình ghi sổ và khóa sổ" output="Ai được ghi bút toán tay, ai phê duyệt, ngày khóa sổ">
+**Nghiệp vụ phát sinh** (chứng từ gốc · phê duyệt) → **Ghi sổ tự động** (phân hệ bán hàng, mua hàng, kho · phân quyền) → **Bút toán thủ công** (phiếu kế toán · phê duyệt bút toán tay) → **Khóa sổ · lập BCTC** (bút toán điều chỉnh cuối kỳ · chặn ghi sau khóa sổ)
+
+| Rủi ro | Xử lý ở |
+|---|---|
+| **Override:** ghi tay để làm đẹp số liệu | → Bước 3–4 |
+| **Ghi sau khóa sổ:** ngày nhập sau ngày khóa sổ | → Bước 3 |
+| **Bên liên quan:** giao dịch chưa khai báo | → Bước 5 |
+</AuditStep>
+
+<AuditStep n={2} label="Population" title="Lấy toàn bộ sổ cái, khớp với TB" assertion={['Completeness']} output="Population bút toán đã đối chiếu với TB · số bút toán thủ công">
+**Toàn bộ GL cả năm** (mọi tài khoản) = **tổng phát sinh trên TB** → tách bút toán thủ công theo nguồn, loại chứng từ.
+
+Sổ cái (toàn bộ) ⊃ bút toán thủ công ⊃ khớp ít nhất một tiêu chí ⊃ **danh sách ngắn** → vouch + phê duyệt.
+
+Biscore: 12 file sổ cái, **80.496 dòng**, tổng Nợ = tổng Có, khớp TB ([Bài 1.1](/a/1/a1-1-tb-gl-subledger/)). Bút toán thủ công (loại PKT): **87 chứng từ, 199 dòng**. Ghép 12 file bằng Power BI ở [nhánh B, Bài 2.1](/b/b5-ghep-12-file/).
+</AuditStep>
+
+<AuditStep n={3} label="Filtering" title="Bật tiêu chí, xem bút toán nào lọt lưới" assertion={['Occurrence', 'Management override']} output="Tiêu chí lọc đã dùng và lý do chọn · danh sách ngắn">
+**Bấm để bật, tắt từng tiêu chí lọc.** Dữ liệu minh họa.
+
+<JEFilter client:visible criteria={['Nhập sau ngày khóa sổ', 'Cuối tuần · ngày lễ', 'Người lập bất thường', 'Số tròn', 'Cặp tài khoản lạ', 'Diễn giải mơ hồ']} rows={[
+  { id: 'JE-0415', entered: '15/04/2025', user: 'KT tổng hợp', pair: '642 / 331', amount: '48.350.000', desc: 'Phí vệ sinh tháng 4', flags: [] },
+  { id: 'JE-0906', entered: '06/09/2025 · T7', user: 'KT công nợ', pair: '131 / 511', amount: '250.000.000', desc: 'Điều chỉnh', flags: ['Cuối tuần · ngày lễ', 'Số tròn', 'Diễn giải mơ hồ'] },
+  { id: 'JE-1112', entered: '12/11/2025', user: 'KT TSCĐ', pair: '211 / 241', amount: '3.418.260.000', desc: 'Kết chuyển hạng mục hoàn thành', flags: [] },
+  { id: 'JE-1231', entered: '14/01/2026 (chứng từ 31/12/2025)', user: 'Kế toán trưởng', pair: '241 / 642', amount: '500.000.000', desc: 'Theo chỉ đạo', flags: ['Nhập sau ngày khóa sổ', 'Người lập bất thường', 'Số tròn', 'Cặp tài khoản lạ', 'Diễn giải mơ hồ'] },
+  { id: 'JE-0630', entered: '30/06/2025', user: 'KT TSCĐ', pair: '642 / 214', amount: '1.236.540.000', desc: 'Khấu hao tháng 6', flags: [] },
+  { id: 'JE-1020', entered: '20/10/2025', user: 'Trợ lý BGĐ', pair: '338 / 511', amount: '120.000.000', desc: 'Ghi nhận doanh thu', flags: ['Người lập bất thường', 'Số tròn', 'Cặp tài khoản lạ'] },
+  { id: 'JE-0802', entered: '02/08/2025', user: 'KT công nợ', pair: '331 / 112', amount: '87.120.400', desc: 'Thanh toán NCC', flags: [] },
+  { id: 'JE-0902', entered: '02/09/2025 · lễ', user: 'KT tổng hợp', pair: '635 / 335', amount: '300.000.000', desc: 'Trích lãi', flags: ['Cuối tuần · ngày lễ', 'Số tròn'] },
+]} />
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 3" source="Sổ cái GL T01–T12 (cột Người lập, Ngày nhập hệ thống, Loại CT)">
+Áp các tiêu chí lên sổ cái Biscore: **nhập sau 31/12/2025**: 3 chứng từ · **người lập là Giám đốc Tài chính** (hoang.tv.cfo): 2 chứng từ · **số tròn từ 1 tỷ**: 41 chứng từ (23 là PKT) · **nhập vào thứ Bảy, Chủ nhật**: 7.422 chứng từ. Tiêu chí nào hữu ích, tiêu chí nào không?
+<Solution>
+1. **Nhập sau khóa sổ** và **người lập bất thường** cho danh sách rất ngắn, trúng đích: PKT2512-0013 (kế toán trưởng, 14/01/2026), PKT2512-0014 và PKT2512-0015 (Giám đốc Tài chính, 16 và 19/01/2026).
+2. **Cuối tuần** vô dụng ở Biscore: khách sạn vận hành 7 ngày, PMS hạch toán doanh thu buồng phòng mỗi đêm → hàng nghìn chứng từ hợp lệ. Tiêu chí phải chọn theo **đặc thù đơn vị**.
+3. **Số tròn** chỉ dùng kèm với loại chứng từ (PKT) để thu hẹp.
+
+→ Danh sách ngắn: 3 PKT cuối năm, cộng các PKT ghi Có 511 ở Bài 3.1.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={4} label="Vouching · approval" title="Kiểm tra từng bút toán trong danh sách ngắn" assertion={['Occurrence', 'Accuracy']} direction="vouching" output="Kết quả kiểm tra từng bút toán: chứng từ, phê duyệt, kết luận">
+Danh sách ngắn → **chứng từ gốc** (lý do kinh tế rõ ràng?) → **người phê duyệt** (đúng thẩm quyền?) → hợp lý hay sai sót.
+
+**Chọn theo tiêu chí, không phải sampling:** sai sót tìm được ghi đúng số, **không suy rộng**.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 4" source="Bài 3.1 Bước 6 · Bài 3.4 Bước 5">
+Kết quả vouch 3 bút toán nhập sau khóa sổ:
+<Solution>
+| Chứng từ | Nội dung | Kết quả | Finding |
+|---|---|---|---|
+| PKT2512-0013 | Doanh thu sự kiện Đại Nam Việt quý 4, 3,5 tỷ | Chỉ có thỏa thuận nguyên tắc; yêu cầu cung cấp tài liệu không nhận được hợp đồng, nghiệm thu | REV-03 (Confirmed) |
+| PKT2512-0014 | Chuyển 1,65 tỷ chi phí bảo trì sang 242 | Không chứng từ gốc, không thời hạn hưởng lợi | OPEX-01 (Confirmed) |
+| PKT2512-0015 | Doanh thu phí quản lý Liên Việt, 3,0 tỷ | Không hợp đồng, không hóa đơn | REV-04 (Further evidence) |
+
+Cả ba cùng một hướng: **tăng lợi nhuận 2025** (+8,15 tỷ nếu tính cả REV-04), cùng do cấp quản lý lập sau khóa sổ → dấu hiệu management override. Người lập là Giám đốc Tài chính và kế toán trưởng, nên trao đổi với **HĐQT và Ban Kiểm soát** (VSA 240), không chỉ Ban Giám đốc.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={5} label="Related parties · VSA 550" title="Bên liên quan: test 100%" assertion={['Occurrence', 'Completeness', 'Presentation']} direction="ca-hai" output="Danh sách bên liên quan · bảng giao dịch, số dư và đối chiếu với thuyết minh">
+Cổ đông kiểm soát · công ty cùng tập đoàn · HĐQT, Ban Giám đốc · người thân và doanh nghiệp liên quan.
+
+**1 Nhận diện** (danh sách đơn vị cung cấp + bên chưa khai báo) → **2 Lọc GL** (theo mã đối tượng, tên) → **3 Test 100%** (phê duyệt · giá so với bên độc lập) → **4 Thuyết minh** (VAS 26).
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 5" source="BSC-122 Danh sách các bên liên quan · Sổ cái GL · Công nợ phải trả.xlsx / 01 · Báo cáo tài chính.xlsx / 04 Thuyet minh">
+BSC-122 liệt kê công ty mẹ Biscore Holdings (mã NCC100), 4 tổ chức khác "không có giao dịch", 8 cá nhân HĐQT, Ban Giám đốc, Ban Kiểm soát. Giao dịch được khai báo: phí quản lý 4,2 tỷ chưa thuế, số dư cuối kỳ 1.177.599.270 đ. Lọc GL theo mã và tên trong danh sách, bạn thấy thêm: hóa đơn **HDK2505-0450** ngày 16/05/2025, doanh thu buồng phòng của **Nguyễn Đức Bình** (Chủ tịch HĐQT), 3 phòng × 2 đêm Club Deluxe, **11.156.000 đ**. Thuyết minh BCTC không có mục giao dịch với bên liên quan. Kết luận?
+<Solution>
+1. **NCC100:** GL Nợ 6427 4,2 tỷ, đã trả 3,465 tỷ, số dư 1,1776 tỷ (gồm 22,6 triệu đầu kỳ) → khớp BSC-122 ✓. Vẫn cần hợp đồng, phê duyệt HĐQT, bằng chứng dịch vụ (Bài 3.4).
+2. **Giao dịch chưa khai báo:** lưu trú của Chủ tịch HĐQT không có trong BSC-122. Giá bình quân 1,86 triệu/phòng/đêm, xấp xỉ giá Club Deluxe bình quân trên sổ (khoảng 1,83 triệu) → không có dấu hiệu ưu đãi giá. Số tiền nhỏ, nhưng cho thấy danh sách bên liên quan **chưa đầy đủ** → mở rộng: lọc thêm tên người có liên quan theo kê khai.
+3. **Thuyết minh thiếu** mục bên liên quan, dù chính BSC-122 đề nghị thuyết minh theo VAS 26 → finding trình bày RP-01: bổ sung thuyết minh giao dịch và số dư với công ty mẹ, thù lao HĐQT và Ban Giám đốc.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={6} label="Conclude" title="Tổng hợp sai sót, kết luận" output="Kết luận về bút toán tay và bên liên quan · mini working paper cho từng finding">
+**Sai sót đúng số đã tìm** (không suy rộng) → **So CTT · PM** → **Bút toán điều chỉnh đề xuất**.
+
+Biscore: REV-03 (3,5 tỷ) và OPEX-01 (1,65 tỷ) Confirmed, đã cộng ở Bài 3.1 và 3.4 · REV-04 (3,0 tỷ) Further evidence · RP-01 thiếu thuyết minh bên liên quan · giao dịch của Chủ tịch HĐQT chưa khai báo (số tiền nhỏ, ghi nhận để hoàn thiện danh sách) · báo cáo dấu hiệu management override cho HĐQT và Ban Kiểm soát.
+</AuditStep>
+
+<RedFlags items={[
+  { title: 'Không có hợp đồng', text: 'Giao dịch với bên liên quan' },
+  { title: 'Giá khác xa thị trường', text: 'So với khách, NCC độc lập' },
+  { title: 'Trùng địa chỉ, người đại diện', text: 'Bên liên quan chưa khai báo' },
+]} />
+
+<IfSkipped>bước lọc bút toán tay, ba phiếu kế toán nhập sau khóa sổ (tới 8,15 tỷ lợi nhuận, trong đó 5,15 tỷ đã xác nhận) sẽ nằm lẫn trong 80.496 dòng sổ cái.</IfSkipped>
+
+<KeyPrinciple>**Chọn theo tiêu chí, không phải sampling:** sai sót tìm được ghi đúng số, không suy rộng.</KeyPrinciple>
+
+<QuickCheck q="Công ty A lọc được 40 bút toán tay bất thường, 2 bút toán sai tổng 60 triệu. Có suy rộng ra toàn bộ sổ cái không?" short="Không">
+Đây là chọn theo tiêu chí, không phải sampling. Ghi nhận đúng 60 triệu đã tìm thấy; số này vượt CTT 12,5 triệu nên vào bảng tổng hợp.
+</QuickCheck>
+
+## Kiểm tra phần hành
+<Quiz client:visible id="a3-7-but-toan-tay-blq" questions={[
+  { q: 'Bút toán thủ công được lọc theo tiêu chí bất thường. Kết quả kiểm tra:', options: ['Suy rộng ra toàn bộ GL', 'Ghi nhận đúng số tìm được, không suy rộng', 'Chỉ cần kiểm tra 25 bút toán', 'Bỏ qua nếu dưới CTT'], answer: 1, explain: 'Chọn theo tiêu chí không phải sampling, nên không suy rộng.' },
+  { q: 'Giao dịch với bên liên quan nên được kiểm tra thế nào?', options: ['MUS', 'Random 10%', 'Test 100%', 'Chỉ giao dịch lớn hơn PM'], answer: 2, explain: 'Bên liên quan trọng yếu về tính chất, nên test toàn bộ giao dịch và thuyết minh (VSA 550, VAS 26).' },
+  { q: 'Ở một khách sạn vận hành 24/7, tiêu chí "nhập cuối tuần" cho hàng nghìn bút toán. Nên làm gì?', options: ['Vouch hết', 'Bỏ hoặc kết hợp với tiêu chí khác (loại chứng từ thủ công, người lập)', 'Suy rộng kết quả 25 mẫu', 'Giữ nguyên vì là tiêu chí chuẩn'], answer: 1, explain: 'Tiêu chí lọc phải chọn theo đặc thù đơn vị để danh sách ngắn thực sự ngắn và trúng rủi ro.' },
+  { q: 'Trước khi lọc bút toán tay, việc đầu tiên là:', options: ['Chọn tiêu chí', 'Khớp toàn bộ GL với TB để chắc population đầy đủ', 'Phỏng vấn kế toán trưởng', 'Gửi thư xác nhận'], answer: 1, explain: 'Bút toán không có trong population thì không tiêu chí nào lọc ra (Bài 1.1).' },
+]} />
+
+<LessonNotes client:only="react" id="a3-7-but-toan-tay-blq" />

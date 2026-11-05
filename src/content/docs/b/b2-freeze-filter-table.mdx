@@ -1,13 +1,57 @@
 ---
-title: "Freeze, Filter & Table"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id xl2).
+title: "Freeze, Filter & Vẽ bảng"
+description: "Giữ tiêu đề đứng yên, lọc nhanh, biến vùng dữ liệu thành Table."
 id: b2-freeze-filter-table
 nhanh: B
 phan: b
 bai: "1.2"
-loai: khung
-trang_thai: khung
+nhan: Phím tắt
+loai: excel
+thoi_luong: 6
 nguon: ["X#xl2"]
-sidebar: { order: 2, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+lien_ket: [a3-7-but-toan-tay-blq]
+sidebar: { order: 2 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a3-7.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Cố định dòng tiêu đề sổ cái khi cuộn
+- Lọc bút toán theo người lập, loại chứng từ
+- Tạo Table để công thức tự kéo xuống
+</Objectives>
+
+<Eyebrow>Freeze Panes</Eyebrow>
+## Giữ dòng tiêu đề đứng yên
+<kbd>Alt</kbd> → <kbd>W</kbd> → <kbd>F</kbd> → <kbd>F</kbd>: bấm **lần lượt** từng phím, không cần giữ. Excel cố định mọi dòng **phía trên** và mọi cột **bên trái** ô đang chọn.
+
+| Chọn ô | Kết quả |
+|---|---|
+| A5 | Cố định dòng 1–4 (tiêu đề ở dòng 4). Lựa chọn cho sheet 01 GL |
+| E5 | Cố định dòng 1–4 **và** cột A–D (STT, ngày, số chứng từ) khi cuộn ngang |
+| Bỏ freeze | Bấm lại đúng tổ hợp này |
+
+<Eyebrow>Filter</Eyebrow>
+## Bật bộ lọc và lọc nhanh
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>: bật / tắt filter. Đứng ở **dòng tiêu đề** (dòng 4) trước khi bấm. <kbd>Alt</kbd> + <kbd>↓</kbd> ở ô tiêu đề: mở menu lọc, gõ ngay vào ô Search.
+
+<Eyebrow>Vẽ bảng</Eyebrow>
+## Table và kẻ viền
+<kbd>Ctrl</kbd> + <kbd>T</kbd>: chuyển vùng dữ liệu thành **Table** (tự có filter, sọc màu, tự mở rộng, công thức tự kéo cả cột). Tick *My table has headers*.
+
+| Phím tắt kẻ viền | Tác dụng |
+|---|---|
+| <kbd>Alt</kbd> → <kbd>H</kbd> → <kbd>B</kbd> → <kbd>A</kbd> | All Borders |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>&amp;</kbd> | Viền ngoài |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>_</kbd> | Xóa viền |
+| <kbd>Ctrl</kbd> + <kbd>1</kbd> | Format Cells |
+
+**Dùng ở đâu trong kiểm toán:** lọc cột *Loại CT* = PKT và cột *Ngày nhập hệ thống* để lập danh sách bút toán tay ([Bài 3.7](/a/3/a3-7-but-toan-tay-blq/)).
+
+<QuickCheck q="Trên sheet 01 GL tháng 12, lọc Loại CT = PKT, rồi lọc Ngày nhập hệ thống có năm 2026. Còn bao nhiêu chứng từ?" short="3 chứng từ">
+PKT2512-0013, PKT2512-0014, PKT2512-0015, đúng danh sách ngắn của Bài 3.7.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b2-freeze-filter-table" />

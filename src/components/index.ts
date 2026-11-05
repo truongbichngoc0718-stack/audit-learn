@@ -17,3 +17,8 @@ export { default as MaterialityCalc } from './MaterialityCalc';
 export { default as ProjectionCalc } from './ProjectionCalc';
 export { default as DeferredRevenueCalc } from './DeferredRevenueCalc';
 export { default as DirectionDrill } from './DirectionDrill';
+export { default as AllowanceCalc } from './AllowanceCalc';
+export { default as InterestCalc } from './InterestCalc';
+export { default as JEFilter } from './JEFilter';
+export { default as MiniWPForm } from './MiniWPForm';
+export { default as Flashcards } from './Flashcards';

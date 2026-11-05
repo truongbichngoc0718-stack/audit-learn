@@ -1,13 +1,51 @@
 ---
 title: "Join dữ liệu: sổ cái + danh mục"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id pl3).
+description: "Nối GL với danh mục tài khoản và đối tượng: Relationship trong Model view, hoặc Merge Queries."
 id: b7-join
 nhanh: B
 phan: b
 bai: "2.3"
-loai: khung
-trang_thai: khung
+nhan: Data model
+loai: excel
+thoi_luong: 7
 nguon: ["X#pl3"]
-sidebar: { order: 7, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+lien_ket: [a3-2-phai-thu, a3-3-phai-tra]
+sidebar: { order: 7 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a3-2, a3-3.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Nạp danh mục và tạo relationship many-to-one
+- Chọn giữa Relationship và Merge Queries
+</Objectives>
+
+<Eyebrow>Bước 1</Eyebrow>
+## Nạp 2 bảng danh mục
+**Home → Get data → Excel workbook** → chọn file Bảng cân đối phát sinh → tick sheet **DANH MUC TAI KHOAN** và **DANH MUC DOI TUONG** → **Load**.
+
+<Eyebrow>Bước 2 · Cách A (khuyên dùng)</Eyebrow>
+## Tạo Relationship trong Model view
+1. Mở **Model view** (biểu tượng thứ ba ở thanh bên trái).
+2. Kéo **GL[Tài khoản]** thả vào **DANH MUC TAI KHOAN[Số hiệu TK]**; kéo **GL[Mã đối tượng]** thả vào **DANH MUC DOI TUONG[Mã đối tượng]**.
+3. Nhấp đúp đường nối: **Cardinality = Many to one**, **Cross filter direction = Single**. Phía "một" là danh mục.
+
+<Eyebrow>Bước 2 · Cách B</Eyebrow>
+## Merge Queries trong Power Query
+**Home → Transform data** → query GL → **Home → Merge Queries** → chọn danh mục, chọn cột khóa hai bên → **Join kind: Left Outer** → OK → bung cột cần lấy.
+
+| | Relationship (A) | Merge Queries (B) |
+|---|---|---|
+| Bản chất | Nối hai bảng trong mô hình, không thêm cột | Ghép cột danh mục vào bảng GL, giống XLOOKUP |
+| Dung lượng | Nhẹ | Bảng GL nặng hơn |
+| Khi nào dùng | Mặc định cho dashboard | Cần xuất bảng phẳng ra Excel, hoặc cần cột để lọc trong Power Query |
+
+**Dùng ở đâu trong kiểm toán:** lọc phát sinh theo loại đối tượng (khách thuê, khách sạn, nhà cung cấp) để chọn nhà cung cấp theo phát sinh ([Bài 3.3 Bước 4](/a/3/a3-3-phai-tra/#buoc-4)).
+
+<QuickCheck q="Tạo relationship GL[Mã đối tượng] → danh mục đối tượng, Power BI không cho đặt many-to-one. Nguyên nhân thường gặp?" short="Mã trùng trong danh mục">
+Phía "một" phải có mỗi mã một lần. Kiểm tra mã trùng hoặc khoảng trắng thừa trong danh mục (Remove Duplicates, Trim) trước khi nối.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b7-join" />

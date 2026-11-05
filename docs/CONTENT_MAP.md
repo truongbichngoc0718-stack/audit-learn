@@ -1,5 +1,5 @@
 # CONTENT_MAP: ánh xạ nguồn → trang mới
-Trạng thái: **ĐÃ DUYỆT 05/11/2026** · cập nhật 05/11/2026
+Trạng thái: **ĐÃ DUYỆT 05/11/2026** · Bước 4 hoàn thành: toàn bộ trang dưới đây đã xuất bản (✅), trừ ghi chú khác · cập nhật 05/11/2026
 
 ## Ký hiệu nguồn
 | Mã | Nguồn | Vị trí trong /source |

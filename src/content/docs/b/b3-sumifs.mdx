@@ -1,13 +1,85 @@
 ---
 title: "SUMIFS · cộng có điều kiện"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id xl3).
+description: "Đối chiếu sổ cái với bảng cân đối phát sinh và tách phát sinh theo tháng, theo ngày."
 id: b3-sumifs
 nhanh: B
 phan: b
 bai: "1.3"
-loai: khung
-trang_thai: khung
+nhan: Công thức
+loai: excel
+thoi_luong: 8
 nguon: ["X#xl3"]
-sidebar: { order: 3, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [a1-1-tb-gl-subledger, a3-1-doanh-thu]
+sidebar: { order: 3 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a1-1-tb-gl-subledger, a3-1-doanh-thu.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Cộng phát sinh sổ cái theo tài khoản để reconcile với TB
+- Cộng nhiều điều kiện: tài khoản × ngày
+</Objectives>
+
+<Eyebrow>Cú pháp</Eyebrow>
+## Cấu trúc hàm
+`=SUMIFS(vùng_cộng, vùng_điều_kiện_1, điều_kiện_1, [vùng_điều_kiện_2, điều_kiện_2], …)`
+
+| Thành phần | Ý nghĩa | Ví dụ trên sheet 01 GL |
+|---|---|---|
+| Vùng cộng | Cột cần cộng | Cột N · Phát sinh Nợ |
+| Vùng điều kiện | Cột để so | Cột G · Tài khoản |
+| Điều kiện | Giá trị cần khớp | Ô A3 = "131.OF", hoặc ">="&ngày |
+
+<Eyebrow>Bài 1 gốc · sheet BT1 SUMIFS TB</Eyebrow>
+## Đối chiếu sổ cái với bảng cân đối phát sinh
+Bảng đã có sẵn số dư đầu kỳ và phát sinh **theo kế toán**. Nhiệm vụ: tính phát sinh **theo sổ cái** ở cột F, G, rồi tìm chênh lệch.
+
+| Ô | Công thức |
+|---|---|
+| F5 · PS Nợ theo GL | `=SUMIFS('01 GL'!$N:$N, '01 GL'!$G:$G, $A5)` |
+| G5 · PS Có theo GL | `=SUMIFS('01 GL'!$O:$O, '01 GL'!$G:$G, $A5)` |
+| H5 · Số dư cuối theo GL | `=C5+F5-G5` |
+| J5 · Chênh lệch | `=H5-I5` |
+
+<Eyebrow>Bài 2 gốc · sheet BT2 SUMIFS THANG</Eyebrow>
+## Nhiều điều kiện: tài khoản × tháng
+Dòng 4 và dòng 5 có sẵn ngày đầu và ngày cuối mỗi tháng.
+
+```
+=SUMIFS('01 GL'!$N:$N, '01 GL'!$G:$G, $A7, '01 GL'!$B:$B, ">="&B$4, '01 GL'!$B:$B, "<="&B$5)
+ -SUMIFS('01 GL'!$O:$O, '01 GL'!$G:$G, $A7, '01 GL'!$B:$B, ">="&B$4, '01 GL'!$B:$B, "<="&B$5)
+```
+
+## Thực hành trên Biscore · mở rộng
+File [thuc-hanh-excel-biscore-T12.xlsx](/files/thuc-hanh-excel-biscore-T12.xlsx) có sổ cái tháng 12/2025 (cột I là TK đối ứng) và hai bài tập tương tự.
+
+<Eyebrow>BT1 SUMIFS TK</Eyebrow>
+## Phát sinh tháng 12 theo tài khoản
+| Ô | Công thức |
+|---|---|
+| C3 · PS Nợ T12 | `=SUMIFS('01 GL'!$N:$N, '01 GL'!$G:$G, $A3)` |
+| D3 · PS Có T12 | `=SUMIFS('01 GL'!$O:$O, '01 GL'!$G:$G, $A3)` |
+| E3 · Ròng | `=C3-D3` |
+
+Dòng tổng: **PS Nợ = PS Có**. Lệch → có dòng sổ cái thiếu tài khoản hoặc sai định dạng số. Ở bộ dữ liệu đầy đủ, cùng công thức này cộng 12 file để so với Bảng CĐPS ([Bài 1.1](/a/1/a1-1-tb-gl-subledger/)).
+
+<Eyebrow>BT2 SUMIFS NGAY</Eyebrow>
+## Nhiều điều kiện: tài khoản × ngày
+Doanh thu 5113 theo từng ngày 16–31/12/2025 (block cut-off, [Bài 3.1 Bước 5](/a/3/a3-1-doanh-thu/#buoc-5)). Ô B3:
+
+```
+=SUMIFS('01 GL'!$O:$O, '01 GL'!$G:$G, B$2, '01 GL'!$B:$B, $A3, '01 GL'!$I:$I, "<>911")
+ -SUMIFS('01 GL'!$N:$N, '01 GL'!$G:$G, B$2, '01 GL'!$B:$B, $A3, '01 GL'!$I:$I, "<>911")
+```
+
+Điều kiện `"<>911"` loại bút toán kết chuyển cuối kỳ. Đáp án ở sheet **DAP AN**.
+
+**Dùng ở đâu trong kiểm toán:** reconcile GL với TB trước khi chọn mẫu ([Bài 1.1](/a/1/a1-1-tb-gl-subledger/)); phân tích doanh thu theo tháng, theo ngày cho phân tích và cut-off ([Bài 3.1](/a/3/a3-1-doanh-thu/)).
+
+<QuickCheck q="Trên BT2, ngày 31/12/2025 doanh thu 5113.EV và 5113.OT cao vọt so với các ngày khác. Hai bút toán nào góp phần lớn?" short="PKT2512-0013 và PKT2512-0015">
+Hai phiếu kế toán ghi nhận 3,5 tỷ (sự kiện) và 3,0 tỷ (dịch vụ khác) ngày 31/12, nhập sau khóa sổ. SUMIFS theo ngày làm lộ chúng ngay trong bảng phân tích.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b3-sumifs" />

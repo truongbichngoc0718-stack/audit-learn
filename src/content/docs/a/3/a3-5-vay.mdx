@@ -1,0 +1,131 @@
+---
+title: Vay và lãi vay
+description: Đủ khoản vay, đúng lãi, đúng phân loại?
+id: a3-5-vay
+nhanh: A
+phan: 3
+bai: "3.5"
+nhan: Chu trình 05
+loai: phan-hanh
+thoi_luong: 3
+nguon: ["T#p3l5", "N:other hành", "C#business-risks (VAY01–04)", "C#p5 sự kiện 01", "C#process-cycles (Quy trình 05)", "B:Sổ cái GL (3411, 635, 335, 241)", "B:Báo cáo tài chính.xlsx/01, 04 (V.12)", "B:BSC-120 Điều 8–9"]
+assertion: [Completeness, Accuracy, Presentation]
+chuan_muc: ["VAS 16"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 5, label: "3.5 Vay" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, AuditCard, AuditStep, RedFlags, Quiz, InterestCalc, LessonNotes } from '@components';
+
+<AuditCard kicker="Chu trình 05 · Borrowings" question="Đủ khoản vay, đúng lãi, đúng phân loại?" risk="Ít khoản vay, mỗi khoản lớn: test 100%, không chọn mẫu." tk={['341', '635', '335', '241']} assertion={['Completeness', 'Accuracy', 'Presentation']} data={['Lịch vay', 'Hợp đồng vay · khế ước', 'Sổ phụ', 'Xác nhận ngân hàng']} />
+
+<Objectives>
+- Lập lead schedule và đối chiếu từng khoản vay
+- Tính lại lãi và khớp vào 635, 241, 335
+- Phân loại ngắn hạn, dài hạn theo ngày đáo hạn
+</Objectives>
+
+<Eyebrow>Audit program</Eyebrow>
+## Sáu bước cho vay
+| Bước | | |
+|---|---|---|
+| [1 Hiểu quy trình](#buoc-1) | Vay → trả nợ | |
+| [2 Reconcile](#buoc-2) | Lịch vay = GL · test 100% | |
+| [3 Tính lại lãi](#buoc-3) | 635 + 241 | |
+| [4 Phân loại](#buoc-4) | Ngắn hạn · dài hạn | |
+| [5 Covenants](#buoc-5) | Cam kết · thuyết minh | |
+| [6 Kết luận](#buoc-6) | So ngưỡng | |
+
+<AuditStep n={1} label="Understanding" title="Hiểu quy trình vay và trả nợ" output="Danh sách hợp đồng vay đang hiệu lực · điều khoản lãi suất, kỳ hạn, cam kết">
+**Ký hợp đồng vay** (hợp đồng · hạn mức · lãi suất · HĐQT, BGĐ phê duyệt) → **Giải ngân** (khế ước nhận nợ · sổ phụ · đối chiếu sổ phụ) → **Tính lãi** (thông báo lãi · 635 · 335 · đối chiếu thông báo lãi) → **Trả lãi, gốc** (lịch trả nợ · sổ phụ · theo dõi ngày đến hạn) → **Theo dõi cam kết** (chỉ tiêu tài chính trong hợp đồng · báo cáo cho ngân hàng)
+
+| Rủi ro | Xử lý ở |
+|---|---|
+| **Ghi thiếu:** khoản vay hoặc lãi chưa ghi | → Bước 2–3 |
+| **Phân loại sai:** phần đến hạn chưa tách ra | → Bước 4 |
+| **Vi phạm cam kết:** chưa phân loại lại, chưa thuyết minh | → Bước 5 |
+</AuditStep>
+
+<AuditStep n={2} label="Reconcile · confirmation" title="Đối chiếu từng khoản vay" assertion={['Completeness', 'Existence']} direction="tracing" output="Lead schedule vay: số dư đầu kỳ, giải ngân, trả gốc, số dư cuối kỳ theo từng khoản">
+**Lịch vay** = **GL 341** = **hợp đồng, khế ước nhận nợ** = **sổ phụ** (giải ngân · trả gốc). Phạm vi: **test 100%**. Bằng chứng ngoài: thư xác nhận ngân hàng, sổ phụ cuối năm.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 2" source="Case 02 / Yếu tố kinh doanh FY2025 · Sự kiện 01 · Sổ cái GL 3411">
+Lập lead schedule từ hồ sơ: VAY01 **320 tỷ** (9,20%, đáo hạn 15/06/2030) · VAY02 **180 tỷ** (9,00%, 20/03/2029) · VAY03 **120 tỷ** (9,80%, 30/09/2026) · VAY04 hạn mức **40 tỷ** (9,60%, ký 15/04/2025, đáo hạn 15/04/2028, trả lãi theo quý ngày 15 tháng đầu quý). Trên GL: 3411.DH đầu kỳ 620 tỷ, không phát sinh; 3411.NH nhận nợ 40 tỷ ngày 15/04/2025 (HDL2504-0001). Tổng có khớp không?
+<Solution>
+1. Hồ sơ: 320 + 180 + 120 + 40 = **660 tỷ**. GL: 620 + 40 = **660 tỷ** ✓, không trả gốc trong năm (thuyết minh V.12).
+2. Số dư khớp, nhưng **tài khoản** chưa chắc đúng: VAY04 nằm ở 3411.NH dù đáo hạn 2028 → Bước 4.
+3. Cần thư xác nhận của 4 ngân hàng (Việt Thịnh cho VAY01, VAY03; Đông Hà; Phương Đông) cho gốc và lãi tại 31/12.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={3} label="Recalculation" title="Tính lại lãi, rồi khớp vào sổ" assertion={['Accuracy', 'Completeness']} output="Bảng tính lại lãi theo từng khoản vay, so với 635, 241 và 335">
+<div class="b-card" style="text-align:center;font-weight:600">Lãi tính lại = Dư nợ bình quân **×** Lãi suất **×** Số ngày **÷** 365</div>
+
+Lãi tính lại = **635** lãi ghi chi phí + **241** lãi vốn hóa. Phần lãi chưa trả tại 31/12 phải nằm trên **335**.
+
+**Thử ngay: lãi vay năm 2025.** Số liệu minh họa: 90 tỷ, 10%/năm, giải ngân 01/07/2025. Đổi dư nợ, lãi suất, ngày để xem lãi phải ghi nhận.
+
+<InterestCalc client:visible />
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 3" source="Sổ cái GL 635, 335, 241 · BSC-120 Điều 8">
+Trên GL: VAY01–03 được trích trước lãi **hằng tháng** vào 635/335, cả năm **57,40 tỷ**. VAY04 chỉ ghi lãi khi **trả tiền**: 957,37 triệu (kỳ 15/04–15/07) và 967,89 triệu (15/07–15/10). Ngoài ra có 3 bút toán "vốn hóa lãi vay vào dự án cải tạo sảnh Biscore Tower" Nợ 241 / Có 335 tổng **1,15 tỷ** (quý 2–4), sau đó được trả bằng tiền. Tính lại và kết luận. Dùng máy tính ở trên với VAY04: 40 tỷ, 9,6%, từ 16/10/2025 đến 31/12/2025.
+<Solution>
+1. VAY01–03: 320 × 9,2% + 180 × 9,0% + 120 × 9,8% = 29,44 + 16,20 + 11,76 = **57,40 tỷ** ✓ khớp sổ.
+2. VAY04 kỳ 15/10–31/12/2025: 40 tỷ × 9,6% × 77 ÷ 365 = **810,1 triệu** → chưa trích trước (Điều 8.1–8.2: dồn tích, không phụ thuộc ngày trả). Finding BOR-01: 635 và 335 ghi thiếu **810 triệu** (≥ CTT, dưới PM). Bút toán: **Nợ 635 810.082.192 / Có 335 810.082.192**.
+3. Vốn hóa 1,15 tỷ: lãi của cả 4 khoản vay đã ghi hết vào 635; VAY04 tài trợ "nâng cấp hệ thống kỹ thuật", không phải sảnh; quý 4 vẫn vốn hóa dù sảnh nghiệm thu đợt cuối 18/12/2025. Không xác định được khoản vay nào tạo ra 1,15 tỷ này và tiền trả cho ai → **Further evidence required** (BOR-02): bảng tính vốn hóa, sổ phụ các khoản chi 1,15 tỷ, VAS 16. Xét cả chiều ngược lại: nếu dự án cơ điện (12 tỷ trên 241) là tài sản đủ điều kiện và được VAY04 tài trợ, một phần lãi VAY04 đang ghi 635 lẽ ra được vốn hóa → 635 ghi thừa.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={4} label="Classification" title="Tách phần đến hạn của khoản vay dài hạn" assertion={['Presentation']} output="Bảng phân loại ngắn hạn, dài hạn theo lịch trả nợ">
+**Đến hạn ≤ 12 tháng → nợ ngắn hạn**; phần còn lại → nợ dài hạn. Lịch trả nợ → gốc đến hạn trong 12 tháng tới → trình bày nợ ngắn hạn.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 4" source="Báo cáo tài chính.xlsx / 01 (mã 320, 338) · 04 Thuyet minh V.12 · BSC-120 Điều 9">
+BCTC trình bày: vay ngắn hạn (mã 320) **40 tỷ** = VAY04; vay dài hạn (mã 338) **620 tỷ** = VAY01, VAY02, VAY03. Theo Điều 9, khoản vay đáo hạn trong 12 tháng kể từ 31/12/2025 là ngắn hạn. Phân loại đúng là gì?
+<Solution>
+1. VAY03 đáo hạn **30/09/2026**, trong 12 tháng → **ngắn hạn 120 tỷ** (trừ khi có văn bản gia hạn của ngân hàng tại 31/12).
+2. VAY04 đáo hạn **15/04/2028** → **dài hạn 40 tỷ** (nếu hợp đồng không có lịch trả gốc trong 2026).
+3. Nếu VAY04 dài hạn: ngắn hạn **120 tỷ**, dài hạn **540 tỷ**. Đang trình bày: ngắn hạn 40 tỷ, dài hạn 620 tỷ.
+4. **BOR-03 (Confirmed):** VAY03 120 tỷ phải chuyển sang ngắn hạn (> PM). **BOR-04 (Further evidence required):** VAY04 là hạn mức, cần khế ước nhận nợ và lịch trả gốc để biết có phải dài hạn không.
+5. Không ảnh hưởng lợi nhuận nhưng làm đẹp hệ số thanh toán ngắn hạn, đúng vùng nhạy cảm khi đơn vị có cam kết với ngân hàng.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={5} label="Covenants · disclosure" title="Kiểm tra cam kết với ngân hàng" assertion={['Presentation']} output="Bảng tính các chỉ tiêu cam kết · đánh giá ảnh hưởng tới phân loại và thuyết minh">
+Chỉ tiêu trong hợp đồng vay → tính lại từ BCTC → vi phạm? → đòi nợ trước hạn · phân loại lại · thuyết minh.
+
+Biscore: hồ sơ nêu đơn vị "chịu áp lực về điều khoản cam kết với ngân hàng" nhưng chưa cung cấp chỉ tiêu cụ thể → đưa vào yêu cầu cung cấp tài liệu: các điều khoản tài chính của 4 hợp đồng. Tính lại chỉ tiêu **sau** khi điều chỉnh các finding (doanh thu ghi thừa, chi phí ghi thiếu, phân loại vay), vì chính các finding này có thể làm một chỉ tiêu vượt ngưỡng.
+</AuditStep>
+
+<AuditStep n={6} label="Conclude" title="Tổng hợp sai sót, kết luận" output="Kết luận vay và lãi vay · mini working paper cho từng finding">
+**Sai sót đã lượng hóa** → **So CTT · PM** → **Bút toán điều chỉnh đề xuất**.
+
+Biscore: BOR-01 lãi VAY04 chưa trích **0,81 tỷ** · BOR-02 vốn hóa lãi 1,15 tỷ **Further evidence required** · BOR-03 VAY03 120 tỷ chuyển sang ngắn hạn (trình bày) · BOR-04 phân loại VAY04 **Further evidence required**.
+</AuditStep>
+
+<RedFlags items={[
+  { title: 'Vẫn vốn hóa lãi', text: 'Sau khi công trình đã hoàn thành' },
+  { title: 'Chỉ tiêu sát ngưỡng', text: 'Động cơ làm đẹp số liệu' },
+  { title: 'Lệch sổ phụ', text: 'Giải ngân có trên sổ phụ, không có trên GL' },
+]} />
+
+<IfSkipped>bước tính lại lãi theo ngày, khoản vay trả lãi theo quý sẽ thiếu phần lãi từ kỳ trả gần nhất đến 31/12, dù mọi khoản đã trả đều khớp sổ phụ.</IfSkipped>
+
+<KeyPrinciple>Vay: **test 100%**, lãi ghi theo **dồn tích**, phân loại theo **ngày đáo hạn còn lại tại 31/12**.</KeyPrinciple>
+
+<QuickCheck q="Khoản vay 50 tỷ, lãi 9%/năm, trả lãi ngày 15 mỗi quý, kỳ gần nhất 15/10/2025. Lãi phải trích trước tại 31/12/2025 khoảng bao nhiêu?" short="Khoảng 949 triệu">
+50 tỷ × 9% × 77 ngày ÷ 365 ≈ 949 triệu, ghi Nợ 635 / Có 335 (Điều 8.2). Không trích thì chi phí tài chính và nợ phải trả cùng ghi thiếu.
+</QuickCheck>
+
+## Kiểm tra phần hành
+<Quiz client:visible id="a3-5-vay" questions={[
+  { q: 'Đơn vị có 4 khoản vay lớn. Phạm vi kiểm tra phù hợp:', options: ['MUS 2 khoản', 'Test 100% từng khoản', 'Chỉ khoản lớn nhất', 'Phân tích tổng quát'], answer: 1, explain: 'Ít khoản vay, mỗi khoản lớn: test 100%, không chọn mẫu.' },
+  { q: 'Khoản vay dài hạn đáo hạn 30/09/2026. Tại 31/12/2025 trình bày:', options: ['Dài hạn vì hợp đồng ký dài hạn', 'Ngắn hạn vì đáo hạn trong 12 tháng', 'Không trình bày', 'Tùy đơn vị lựa chọn'], answer: 1, explain: 'Phân loại theo thời hạn còn lại tại ngày kết thúc kỳ kế toán, trừ khi có quyền hoãn thanh toán bằng văn bản.' },
+  { q: 'Công trình hoàn thành 18/12/2025 nhưng lãi vay quý 4 vẫn vốn hóa toàn bộ vào 241. Vấn đề:', options: ['Không vấn đề', 'Lãi sau ngày hoàn thành không được vốn hóa; chi phí lãi vay ghi thiếu', 'Doanh thu ghi thừa', 'Phải thu ghi thiếu'], answer: 1, explain: 'VAS 16: dừng vốn hóa khi tài sản sẵn sàng sử dụng. Phần sau đó phải vào 635.' },
+  { q: 'Lãi tính lại cả năm 60 tỷ; 635 ghi 57 tỷ; 241 vốn hóa 3 tỷ. Kết luận ban đầu:', options: ['Lãi ghi thiếu 3 tỷ', 'Tổng khớp; tiếp tục kiểm tra điều kiện vốn hóa 3 tỷ', 'Lãi ghi thừa 3 tỷ', 'Không cần kiểm tra thêm'], answer: 1, explain: 'Lãi tính lại so với 635 + 241; khi tổng khớp, câu hỏi còn lại là phần vốn hóa có đủ điều kiện không.' },
+]} />
+
+<LessonNotes client:only="react" id="a3-5-vay" />

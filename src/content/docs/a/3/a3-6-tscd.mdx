@@ -1,0 +1,156 @@
+---
+title: Tài sản cố định
+description: Tài sản có thật, khấu hao từ đúng ngày?
+id: a3-6-tscd
+nhanh: A
+phan: 3
+bai: "3.6"
+nhan: Chu trình 06
+loai: phan-hanh
+thoi_luong: 3
+nguon: ["T#p3l6", "N:other hành", "C#process-cycles (Quy trình 01, bước 04 khấu hao)", "C#p5 sự kiện 02", "B:Tài sản cố định.xlsx/01-04", "B:Sổ cái GL (211x, 241)", "B:BSC-120 Điều 5"]
+assertion: [Existence, Rights, Valuation, Classification]
+chuan_muc: ["VAS 03", "VAS 16"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 6, label: "3.6 TSCĐ" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, Extended, AuditCard, AuditStep, RedFlags, Quiz, LessonNotes } from '@components';
+
+<AuditCard kicker="Chu trình 06 · Fixed assets" question="Tài sản có thật, khấu hao từ đúng ngày?" tk={['211', '214', '241', 'Chi phí khấu hao']} assertion={['Existence', 'Rights', 'Valuation', 'Classification']} data={['Sổ TSCĐ (FAR)', 'Hợp đồng · nghiệm thu', 'Chính sách khấu hao']} />
+
+<Objectives>
+- Lập roll-forward nguyên giá và khớp FAR với GL
+- Đánh giá điều kiện vốn hóa và mốc kết chuyển 241
+- Tính lại khấu hao theo ngày đưa vào sử dụng
+</Objectives>
+
+<Eyebrow>Audit program</Eyebrow>
+## Sáu bước cho TSCĐ
+| Bước | | |
+|---|---|---|
+| [1 Hiểu quy trình](#buoc-1) | Đầu tư → thanh lý | |
+| [2 Roll-forward](#buoc-2) | FAR = GL = TB | |
+| [3 Phân tích](#buoc-3) | Tỷ lệ khấu hao | |
+| [4 Vouching tăng](#buoc-4) | Điều kiện vốn hóa | |
+| [5 Khấu hao · thanh lý](#buoc-5) | Tính lại | |
+| [6 Kết luận](#buoc-6) | So ngưỡng | |
+
+<AuditStep n={1} label="Understanding" title="Hiểu vòng đời một tài sản" output="Sơ đồ quy trình · chính sách vốn hóa và khấu hao của đơn vị">
+**Đề xuất đầu tư** (tờ trình · dự toán · phê duyệt) → **Mua sắm · xây dựng** (hợp đồng · tập hợp trên 241 · theo dõi theo công trình) → **Nghiệm thu, bàn giao** (biên bản bàn giao · ghi ngày đưa vào sử dụng) → **Ghi tăng · khấu hao** (thẻ TSCĐ · FAR · chính sách khấu hao) → **Thanh lý** (biên bản thanh lý · kiểm kê định kỳ)
+
+| Rủi ro | Xử lý ở |
+|---|---|
+| **Vốn hóa sai:** sửa chữa thường xuyên ghi tăng TSCĐ | → Bước 4 |
+| **Khấu hao sai:** chậm kết chuyển 241, sai thời gian | → Bước 5 |
+| **Không tồn tại:** đã thanh lý vẫn còn trên sổ | → Bước 5 |
+
+Biscore: chỉ vốn hóa khoản làm tăng công suất, kéo dài thời gian sử dụng hoặc nâng cao đáng kể chất lượng dịch vụ, từ **30 triệu đồng** (BSC-120 Điều 5, CS-TSCĐ-2025); khấu hao đường thẳng **từ tháng kế tiếp** tháng ghi tăng (Case 02, Quy trình 01 bước 04).
+</AuditStep>
+
+<AuditStep n={2} label="Roll-forward · reconcile" title="Roll-forward nguyên giá, khớp FAR với GL" assertion={['Completeness']} output="Bảng roll-forward nguyên giá và hao mòn lũy kế · danh sách tăng, giảm trong năm">
+**Đầu kỳ + tăng − giảm = cuối kỳ**, theo từng nhóm. FAR (theo nhóm tài sản) = GL 211 · 214 = TB.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 2" source="Tài sản cố định.xlsx / 02, 04 · Báo cáo tài chính.xlsx / 01 (mã 222, 223, 242)">
+Nguyên giá đầu kỳ **1.600 tỷ**, tăng **32,05 tỷ** (8 tài sản), giảm **0**. Hao mòn lũy kế đầu kỳ 350 tỷ, khấu hao năm 85,02 tỷ. XDCB dở dang (241) đầu kỳ 18 tỷ, phát sinh 47,15 tỷ. Lập roll-forward và đối chiếu BCTC.
+<Solution>
+| | Đầu kỳ | Tăng | Giảm | Cuối kỳ | BCTC |
+|---|---|---|---|---|---|
+| Nguyên giá 211 | 1.600,00 | 32,05 | 0 | **1.632,05** | 1.632,05 ✓ |
+| Hao mòn 214 | 350,00 | 85,02 | 0 | **435,02** | 435,02 ✓ |
+| XDCB 241 | 18,00 | 47,15 | 0 | **65,15** | 65,15 ✓ |
+
+Số khớp. Hai câu hỏi cho Bước 4: vì sao **không có tài sản nào giảm** dù có "thay thế toàn bộ" thang máy; vì sao **241 không kết chuyển** đồng nào trong năm.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={3} label="Analytics" title="Tỷ lệ khấu hao có hợp lý?" assertion={['Valuation', 'Completeness']} output="Bảng phân tích khấu hao theo nhóm tài sản so với năm trước">
+<div class="b-card" style="text-align:center;font-weight:600">Tỷ lệ khấu hao bình quân = Chi phí khấu hao **÷** Nguyên giá bình quân</div>
+
+So năm trước · so thời gian sử dụng → lệch lớn? → khấu hao sai hoặc tăng, giảm chưa ghi → dồn trọng tâm vào Bước 4–5.
+</AuditStep>
+
+<AuditStep n={4} label="Test of details · additions" title="Vouching tài sản tăng và 241" assertion={['Existence', 'Classification']} direction="vouching" output="Danh sách mẫu tăng tài sản · đánh giá điều kiện vốn hóa và ngày bắt đầu khấu hao">
+Danh sách tăng (mua mới · kết chuyển từ 241) → hợp đồng · hóa đơn · nghiệm thu → ngày đưa vào sử dụng, đủ điều kiện ghi tăng?
+
+**Điều kiện ghi nhận (VAS 03):** chắc chắn thu được lợi ích kinh tế · nguyên giá xác định đáng tin cậy · thời gian sử dụng trên 1 năm · **Thông tư 45/2013:** giá trị từ 30 triệu đồng.
+
+**Từ 241 sang 211:** chi phí tập hợp trên 241 → **nghiệm thu · đưa vào sử dụng** (mốc quyết định) → kết chuyển 211, bắt đầu khấu hao. Chậm kết chuyển → khấu hao ghi thiếu. Lãi vay sau ngày hoàn thành không được vốn hóa nữa (VAS 16).
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 4" source="Sổ cái GL 241 (19 hóa đơn GTG nghiệm thu khối lượng) · Tài sản cố định.xlsx / 02 · Case 02 / Sự kiện 02">
+Ba dự án trên 241 trong năm 2025:
+
+| Dự án | Đợt nghiệm thu cuối | Ngày | Lũy kế 2025 |
+|---|---|---|---|
+| Cải tạo sảnh chính, mặt tiền Biscore Tower | đợt 8/8 | 18/12/2025 | 26,0 tỷ |
+| Cải tạo, nâng cấp 40 phòng tầng 8–10 Grand Hotel | đợt 5/5 | 12/11/2025 | 8,0 tỷ |
+| Nâng cấp cơ điện, điều hòa trung tâm Biscore Tower | đợt 6/6 | 13/11/2025 | 12,0 tỷ |
+
+Ngoài ra, sổ TSCĐ ghi tăng "Thang máy tải khách số 5 – **thay thế toàn bộ**" 5,9 tỷ (04/12/2025), không có tài sản nào ghi giảm. Bạn cần những bằng chứng gì, và rủi ro là gì?
+<Solution>
+1. Cả ba dự án đã nghiệm thu **đợt cuối** nhưng 241 không kết chuyển đồng nào. Nếu 40 phòng và hệ thống cơ điện đã đưa vào sử dụng từ tháng 11 → phải kết chuyển 211 và khấu hao từ tháng 12/2025 → **khấu hao ghi thiếu**, 241 trình bày sai.
+2. Cần: biên bản bàn giao đưa vào sử dụng, báo cáo công suất phòng tầng 8–10 tháng 11–12 (có bán phòng chưa?), quyết toán dự án.
+3. Thang máy "thay thế toàn bộ": thang máy cũ phải **ghi giảm** nguyên giá và hao mòn, giá trị còn lại vào 811. Không ghi giảm → tài sản không còn tồn tại vẫn trên sổ (Existence).
+4. Kết luận lúc này: FA-01 (241 chưa kết chuyển) và FA-02 (thang máy cũ chưa ghi giảm) **Further evidence required** cho tới khi có ngày bàn giao và thẻ tài sản cũ. Lãi vay vốn hóa vào dự án sảnh quý 2–4 (1,15 tỷ, trong đó 0,35 tỷ quý 4 khi dự án đã sắp hoàn thành) nối với BOR-02 ở Bài 3.5.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={5} label="Recalculation · disposals" title="Tính lại khấu hao, kiểm tra thanh lý" assertion={['Valuation', 'Accuracy', 'Existence']} output="Bảng tính lại khấu hao so với sổ · danh sách thanh lý đã kiểm tra">
+<div class="b-card" style="text-align:center;font-weight:600">Khấu hao năm 2025 = Nguyên giá **÷** Thời gian sử dụng **×** Số tháng dùng trong năm **÷** 12</div>
+
+Tính lại toàn bộ hoặc theo nhóm, không cần chọn mẫu → so với 214 · chi phí khấu hao. **Thanh lý:** biên bản thanh lý → ghi giảm nguyên giá + hao mòn lũy kế → lãi, lỗ thanh lý 711 · 811.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 5" source="Tài sản cố định.xlsx / 02 Bien dong trong nam · Sổ cái GL 211x">
+Tính lại khấu hao 2025 cho 3 tài sản tăng trong năm (khấu hao từ tháng kế tiếp tháng đưa vào sử dụng):
+
+| Tài sản | Đưa vào sử dụng | Nguyên giá | Thời gian | Khấu hao 2025 trên sổ |
+|---|---|---|---|---|
+| Máy phát điện 1.250 kVA | 14/03/2025 | 7,4 tỷ | 10 năm | 555,0 triệu |
+| Camera an ninh | 08/07/2025 | 3,2 tỷ | 5 năm | 266,7 triệu |
+| Thang máy số 5 | 04/12/2025 | 5,9 tỷ | 12 năm | 0 |
+<Solution>
+1. Máy phát: 7,4 tỷ ÷ 10 ÷ 12 = 61,67 triệu/tháng × **9 tháng** (T4–T12) = **555,0 triệu** ✓.
+2. Camera: 3,2 tỷ ÷ 5 ÷ 12 = 53,33 triệu × **5 tháng** (T8–T12) = **266,7 triệu** ✓.
+3. Thang máy: đưa vào sử dụng tháng 12 → khấu hao **từ tháng 1/2026** → 0 ✓.
+
+→ Khấu hao tài sản mua mới đúng **chính sách của đơn vị**. Sai sót lớn của TSCĐ nằm ở **những gì không được ghi** (kết chuyển 241, ghi giảm thang máy cũ).
+
+<Extended basis="Thông tư 45/2013/TT-BTC Điều 9: trích khấu hao từ ngày tài sản tăng, theo số ngày của tháng">
+Chính sách "từ tháng kế tiếp" của Biscore lệch với cách tính theo ngày. Tính lại 8 tài sản tăng trong năm theo ngày: khấu hao 2025 cao hơn sổ khoảng **226 triệu** (máy phát +39, camera +43,7, máy chủ +40, thang máy +37,7…). Cộng gộp vượt CTT 180 triệu → nêu với đơn vị về chính sách khấu hao; trong bài này xếp **Further evidence required** (FA-03), chưa cộng vào bảng tổng hợp.
+</Extended>
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={6} label="Conclude" title="Tổng hợp sai sót, kết luận" output="Kết luận TSCĐ · mini working paper cho từng finding">
+**Sai sót đã lượng hóa** → **So CTT · PM** → **Bút toán điều chỉnh đề xuất**.
+
+Biscore: roll-forward khớp, khấu hao tài sản mới đúng chính sách đơn vị; FA-01 241 chưa kết chuyển, FA-02 thang máy cũ chưa ghi giảm, FA-03 khấu hao theo ngày (khoảng 0,23 tỷ) là **Further evidence required**, ưu tiên trong yêu cầu cung cấp tài liệu.
+</AuditStep>
+
+<RedFlags items={[
+  { title: 'Sửa chữa ghi tăng nguyên giá', text: 'Chi phí thường xuyên bị vốn hóa' },
+  { title: 'Khấu hao sai thời điểm', text: 'Hết khấu hao vẫn trích, tài sản mới chưa trích' },
+  { title: 'Hoàn thành vẫn nằm 241', text: 'Chưa kết chuyển, chưa khấu hao' },
+]} />
+
+<IfSkipped>bước đối chiếu mốc bàn giao, công trình đã dùng vẫn nằm trên 241 không khấu hao, dù mọi hóa đơn trên 241 đều có chứng từ hợp lệ.</IfSkipped>
+
+<KeyPrinciple>Mốc quyết định của TSCĐ là **ngày đưa vào sử dụng**, không phải ngày hóa đơn hay ngày thanh toán.</KeyPrinciple>
+
+<QuickCheck q="Công ty A (CTT 12,5 triệu, PM 175 triệu): tài sản 1,2 tỷ, dùng 10 năm, đưa vào sử dụng 01/10/2025 nhưng chưa trích khấu hao. Khấu hao 2025 thiếu bao nhiêu, có vào bảng tổng hợp không?" short="30 triệu · có">
+1,2 tỷ ÷ 10 năm ÷ 12 × 3 tháng = 30 triệu, vượt CTT 12,5 triệu nên vào bảng tổng hợp; vẫn dưới PM 175 triệu. Nếu cùng nguyên nhân lặp lại ở nhiều tài sản thì cộng gộp rồi mới so ngưỡng.
+</QuickCheck>
+
+## Kiểm tra phần hành
+<Quiz client:visible id="a3-6-tscd" questions={[
+  { q: 'Công trình đã nghiệm thu, đưa vào sử dụng từ tháng 10/2025 nhưng vẫn nằm trên 241 tại 31/12. Hệ quả chính:', options: ['Không ảnh hưởng BCTC', 'TSCĐ phân loại sai và khấu hao ghi thiếu 3 tháng', 'Doanh thu ghi thiếu', 'Nợ phải trả ghi thừa'], answer: 1, explain: 'Phải kết chuyển sang 211 và trích khấu hao từ ngày đưa vào sử dụng. Lãi vay sau ngày hoàn thành cũng không được vốn hóa.' },
+  { q: 'Khấu hao các tài sản trong năm nên kiểm tra thế nào?', options: ['MUS 20 tài sản', 'Tính lại toàn bộ hoặc theo nhóm', 'Chỉ hỏi kế toán TSCĐ', 'Không cần vì đã có bảng tính'], answer: 1, explain: 'Khấu hao là phép tính có quy luật; tính lại toàn bộ hoặc theo nhóm, không cần chọn mẫu.' },
+  { q: 'Đơn vị "thay thế toàn bộ" một thang máy nhưng không ghi giảm tài sản nào. Assertion bị đe dọa:', options: ['Completeness của doanh thu', 'Existence của TSCĐ', 'Cut-off của phải trả', 'Classification của chi phí'], answer: 1, explain: 'Thang máy cũ không còn nhưng vẫn trên sổ: tài sản ghi thừa (existence).' },
+  { q: 'Khoản sửa chữa định kỳ 200 triệu được ghi tăng nguyên giá máy móc. Ảnh hưởng:', options: ['Không ảnh hưởng', 'Tài sản ghi thừa, chi phí ghi thiếu', 'Doanh thu ghi thiếu', 'Chỉ ảnh hưởng thuyết minh'], answer: 1, explain: 'Sửa chữa thường xuyên không làm tăng công suất hay thời gian sử dụng, phải ghi chi phí trong kỳ.' },
+]} />
+
+<LessonNotes client:only="react" id="a3-6-tscd" />

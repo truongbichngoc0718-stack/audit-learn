@@ -14,6 +14,7 @@ export default defineConfig({
       logo: { src: './src/assets/bisc-logo.png', replacesTitle: false },
       customCss: ['./src/styles/bisc.css'],
       lastUpdated: false,
+      head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }],
       pagination: true,
       components: {
         PageTitle: './src/components/overrides/PageTitle.astro',

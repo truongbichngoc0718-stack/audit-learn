@@ -1,13 +1,54 @@
 ---
 title: "AI tại Big4"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id wrap).
+description: "Big4 đang dùng AI nào, và kiểm toán viên dùng AI để làm gì. Thông tin công cụ cần cập nhật định kỳ."
 id: b9-ai-big4
 nhanh: B
 phan: b
 bai: "3"
-loai: khung
-trang_thai: khung
+nhan: AI
+loai: excel
+thoi_luong: 5
 nguon: ["X#wrap"]
-sidebar: { order: 9, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+lien_ket: []
+sidebar: { order: 9 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: —.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Nêu được các nhóm công cụ AI đang dùng tại Big4
+- Viết prompt đọc hợp đồng và trau chuốt bài phân tích
+</Objectives>
+
+<Eyebrow>Công cụ</Eyebrow>
+## Big4 đang dùng AI nào?
+Theo ebook gốc (cập nhật 5/2026; thông tin thay đổi nhanh, kiểm tra lại trước khi dạy):
+
+| Firm | Công cụ |
+|---|---|
+| Deloitte | Microsoft Copilot (Việt Nam) · Claude (toàn cầu, từ 10/2025) · PairD (trợ lý nội bộ) · Zora AI (AI agent cùng Nvidia) |
+| PwC | Microsoft Copilot (Việt Nam) · ChatPwC (tích hợp Claude) · Claude (mở rộng liên minh 5/2026) · ChatGPT Enterprise |
+| EY | Microsoft Copilot · EY Canvas + AI agents trên Azure · EY.ai |
+| KPMG | Microsoft Copilot · Claude (liên minh toàn cầu 5/2026) · KPMG Workbench · KPMG Clara |
+
+Lý do Copilot là trợ lý chính tại Việt Nam: chạy trong Microsoft 365 của hãng, dữ liệu khách hàng không ra ngoài.
+
+<Eyebrow>Ứng dụng</Eyebrow>
+## Kiểm toán viên đang dùng AI để làm gì?
+**1. Đọc nhanh hợp đồng:** rút điều khoản ảnh hưởng số liệu (bên ký, thời hạn, giá trị, lịch thanh toán, chiết khấu, phạt, thời điểm nghiệm thu).
+
+> **Prompt mẫu:** Tóm tắt hợp đồng đính kèm thành bảng: các bên, thời hạn, giá trị, lịch thanh toán, ưu đãi/giảm giá, điều kiện chấm dứt. Ghi rõ số điều khoản cho từng ý.
+
+**2. Trau chuốt bài phân tích:** biến ghi chú thô thành đoạn phân tích theo cấu trúc biến động – nguyên nhân – rủi ro – thủ tục tiếp theo.
+
+> **Prompt mẫu:** Viết lại đoạn phân tích sau theo văn phong kiểm toán viên, cấu trúc: biến động – nguyên nhân – rủi ro – thủ tục tiếp theo. Giữ nguyên mọi con số.
+
+<KeyPrinciple>AI giúp đọc nhanh và viết gọn; **bằng chứng và kết luận vẫn là của KTV**, mọi con số phải đối chiếu lại với chứng từ.</KeyPrinciple>
+
+<QuickCheck q="Dùng AI tóm tắt hợp đồng thuê Sao Mai Land, kết quả ghi 'thời hạn 24 tháng'. Hợp đồng gốc ghi 12 tháng. Làm gì?" short="Tin chứng từ gốc">
+Luôn đối chiếu kết quả AI với điều khoản gốc (vì vậy prompt yêu cầu ghi số điều khoản). Sai thời hạn sẽ làm sai toàn bộ phép tính doanh thu và 3387 ở Bài 3.1.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b9-ai-big4" />

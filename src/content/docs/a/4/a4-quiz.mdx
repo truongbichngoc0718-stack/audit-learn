@@ -1,0 +1,22 @@
+---
+title: Phần 4 · Bài kiểm tra chốt
+description: 4 câu về finding, mini working paper và bảng tổng hợp sai sót. Mục tiêu 4/4.
+id: a4-quiz
+nhanh: A
+phan: 4
+loai: kiem-tra
+thoi_luong: 2
+nguon: ["T#fin"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: mo-rong
+style_version: "1.0"
+sidebar: { order: 9, label: "✓ Bài kiểm tra Phần 4" }
+---
+import { Quiz } from '@components';
+
+<Quiz client:visible id="a4-quiz" target={4} questions={[
+  { q: 'Trường nào của mini working paper chứa bút toán Nợ / Có?', options: ['Work performed', 'Finding & FS impact', 'Proposed adjustment', 'Conclusion'], answer: 2, explain: 'Trường 7 Proposed adjustment ghi Nợ TK … / Có TK … · số tiền; trường 6 ghi tài khoản, chiều và số tiền sai sót.' },
+  { q: 'Đã test, tìm thấy chênh lệch 120 triệu, CTT 180 triệu. Kết luận trường 8:', options: ['Confirmed misstatement', 'No adjustment', 'Further evidence required', 'Bỏ trống'], answer: 1, explain: 'Dưới CTT: không tổng hợp, kết luận No adjustment (trừ dấu hiệu gian lận).' },
+  { q: 'Tổng sai sót chưa điều chỉnh 10,7 tỷ, OM 3,6 tỷ. Nếu không điều chỉnh, ý kiến:', options: ['Chấp nhận toàn phần', 'Không còn chấp nhận toàn phần (ngoại trừ hoặc trái ngược)', 'Không ảnh hưởng vì từng sai sót dưới OM', 'Chỉ cần thuyết minh'], answer: 1, explain: 'Ý kiến dựa trên tổng sai sót chưa điều chỉnh so với OM (VSA 705).' },
+  { q: 'Finding nào chưa được cộng vào bảng tổng hợp?', options: ['Confirmed misstatement trên CTT', 'Further evidence required', 'Sai sót đã suy rộng trên CTT', 'Sai sót ở key items'], answer: 1, explain: 'Further evidence required chưa có đủ bằng chứng để lượng hóa; chỉ cộng khi chuyển thành Confirmed misstatement.' },
+]} />

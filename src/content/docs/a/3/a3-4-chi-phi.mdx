@@ -1,0 +1,148 @@
+---
+title: Chi phí hoạt động
+description: Chi phí đủ, đúng kỳ, đúng ngăn?
+id: a3-4-chi-phi
+nhanh: A
+phan: 3
+bai: "3.4"
+nhan: Chu trình 04
+loai: phan-hanh
+thoi_luong: 3
+nguon: ["T#p3l4", "N:other hành", "C#process-cycles (Quy trình 02)", "B:Chi phí trả trước.xlsx/01-03", "B:Sổ cái GL (632, 642, PKT2512-0014)", "B:BSC-120 Điều 6"]
+assertion: [Completeness, Cut-off, Classification, Occurrence]
+chuan_muc: ["VSA 550", "VAS 26"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [b3-sumifs, b6-measure]
+sidebar: { order: 4, label: "3.4 Chi phí" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, AuditCard, AuditStep, RedFlags, Quiz, DeferredRevenueCalc, LessonNotes } from '@components';
+
+<AuditCard kicker="Chu trình 04 · Operating expenses" question="Chi phí đủ, đúng kỳ, đúng ngăn?" tk={['632', '641', '642', '242', '335']} assertion={['Completeness', 'Cut-off', 'Classification', 'Occurrence']} data={['GL chi phí', 'Bảng phân bổ 242', 'Chi phí theo tháng']} />
+
+<Objectives>
+- Phân biệt ba ngăn của một khoản chi: chi phí, 242, tài sản
+- Tìm chi phí ghi thiếu bằng phân tích theo tháng
+- Tính lại phân bổ 242
+</Objectives>
+
+<Eyebrow>Audit program</Eyebrow>
+## Sáu bước cho chi phí
+| Bước | | |
+|---|---|---|
+| [1 Hiểu quy trình](#buoc-1) | Đề nghị → ghi sổ | |
+| [2 Reconcile](#buoc-2) | Chi tiết = GL | |
+| [3 Phân tích](#buoc-3) | Theo tháng | |
+| [4 Vouching](#buoc-4) | Khoản lớn, bất thường | |
+| [5 242 · cut-off](#buoc-5) | Tính lại phân bổ | |
+| [6 Kết luận](#buoc-6) | So ngưỡng | |
+
+<AuditStep n={1} label="Understanding" title="Hiểu quy trình chi và phân loại chi phí" output="Sơ đồ quy trình · chính sách phân loại và phân bổ chi phí của đơn vị">
+**Đề nghị chi** (đề nghị · hợp đồng · duyệt theo hạn mức) → **Nhận dịch vụ** (biên bản nghiệm thu · bộ phận sử dụng xác nhận) → **Nhận hóa đơn** (hóa đơn · chứng từ chi · kiểm tra hợp lệ) → **Phân loại** (632 · 641 · 642 · 242 · 211 · kế toán trưởng duyệt) → **Ghi sổ · phân bổ** (GL · bảng phân bổ 242 · phân bổ theo hợp đồng)
+
+| Rủi ro | Xử lý ở |
+|---|---|
+| **Ghi thiếu:** chi phí tháng 12 chưa ghi | → Bước 5 |
+| **Phân loại sai:** chi phí đẩy sang 242 hoặc 241 | → Bước 4–5 |
+| **Không có thật:** chi khống, chi cho bên liên quan | → Bước 4 |
+
+**Ba ngăn của một khoản chi**
+
+<div class="b-grid">
+<div class="b-card"><div class="b-kicker">Chi phí trong kỳ</div>Trừ vào lợi nhuận năm nay<br/><small>632 · 641 · 642</small></div>
+<div class="b-card"><div class="b-kicker">⇄ phân bổ sai · Chi phí trả trước</div>Phân bổ dần theo thời gian hưởng lợi<br/><small>242</small></div>
+<div class="b-card"><div class="b-kicker">⇄ vốn hóa sai · Tài sản</div>Khấu hao nhiều năm<br/><small>211 · 241</small></div>
+</div>
+</AuditStep>
+
+<AuditStep n={2} label="Reconcile" title="Chi tiết chi phí khớp GL và TB" assertion={['Completeness', 'Accuracy']} output="Bảng đối chiếu chi phí theo khoản mục và bảng phân bổ 242">
+Chi tiết theo khoản mục (632 · 641 · 642) = GL = TB. **Bảng phân bổ 242** (số dư cuối kỳ) = GL 242 = TB.
+
+Biscore: bảng theo dõi 12 mã CPT, số còn lại **17,55 tỷ** = chỉ tiêu chi phí trả trước ngắn hạn trên BCTC (mã 151), chênh lệch với sổ cái theo từng tiểu khoản bằng 0 (sheet 03).
+</AuditStep>
+
+<AuditStep n={3} label="Analytics" title="Phân tích theo tháng, so năm trước" assertion={['Completeness', 'Classification']} output="Bảng biến động chi phí theo tháng và theo khoản mục, có giải thích">
+TB (cột năm trước) + chi phí theo tháng → **tháng thấp bất thường** là nơi tìm chi phí ghi thiếu.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 3" source="Sổ cái GL 632.SC theo tháng (không gồm kết chuyển 911)">
+Giá vốn dịch vụ tòa nhà 632.SC theo tháng (tỷ đồng): T1 12,77 · T2 13,27 · T3 13,21 · T4 11,69 · T5 12,04 · T6 10,99 · T7 11,92 · T8 11,74 · T9 11,57 · T10 13,18 · T11 13,04 · **T12 10,60**. Tháng 12 là tháng thấp nhất năm dù tòa nhà vận hành đủ và cuối năm có nhiều sự kiện. Đi tìm ở đâu?
+<Solution>
+1. Lọc GL 632.SC tháng 12 các bút toán **ghi Có** (giảm chi phí) không phải kết chuyển.
+2. Thấy **PKT2512-0014** ngày 31/12/2025: Nợ 242.OTH / Có 632.SC **1,65 tỷ**, "điều chỉnh chi phí bảo trì, sửa chữa hệ thống kỹ thuật sang chi phí trả trước".
+3. Cộng lại: 10,60 + 1,65 = 12,25 tỷ, về đúng mức các tháng khác → bút toán này giải thích gần hết mức giảm → Bước 5.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={4} label="Test of details" title="Vouching khoản lớn và bất thường" assertion={['Occurrence', 'Classification']} direction="vouching" output="Danh sách mẫu, kết quả kiểm tra chứng từ và phân loại tài khoản">
+**Key items + MUS** + **chọn có chủ đích** (tư vấn · tiếp khách · bên liên quan) → hóa đơn · hợp đồng · nghiệm thu · phê duyệt.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 4" source="Sổ cái GL 6427 · đối tượng NCC100 · BSC-122">
+Chi phí 6427 có 4 hóa đơn quý của **Tổng công ty Đầu tư Biscore Holdings** (mã NCC100), "phí dịch vụ quản lý, hỗ trợ kỹ thuật và thương hiệu", tổng **4,2 tỷ** chưa thuế, theo hợp đồng số 01/2023/HĐDVQL. Vì sao khoản này phải chọn có chủ đích, và kiểm tra những gì?
+<Solution>
+1. NCC100 là **công ty mẹ** (BSC-122) → giao dịch bên liên quan: test 100%, không chọn mẫu (Bài 3.7).
+2. Kiểm tra: hợp đồng và phê duyệt của HĐQT; bằng chứng dịch vụ thực tế đã nhận; cơ sở giá phí so với bên độc lập; hóa đơn và thanh toán (3 quý đã trả 3,465 tỷ, quý 4 còn trên 331).
+3. Kiểm tra thuyết minh bên liên quan có trình bày giao dịch và số dư này không (VAS 26).
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={5} label="Recalculation · cut-off" title="Tính lại phân bổ 242, kiểm tra chi phí đúng kỳ" assertion={['Accuracy', 'Cut-off', 'Completeness']} direction="tracing" output="Bảng tính lại phân bổ 242 so với sổ · danh sách chi phí trích trước">
+Ví dụ: hợp đồng bảo hiểm 24 tháng từ 01/07/2025, giá trị 480 triệu → 480 × 6/24 = **120 triệu** chi phí 2025; **360 triệu** còn trên 242.
+
+**Thử ngay:** đổi giá trị, tháng bắt đầu và thời hạn để xem chi phí năm 2025 và số còn trên 242 (cùng logic với doanh thu chưa thực hiện).
+
+<DeferredRevenueCalc client:visible value={480000000} start={7} months={24} label="Giá trị khoản chi trả trước (đồng)" />
+
+**Cut-off chi phí** làm chung với Bước 5 của Bài 3.3: dịch vụ tháng 12, hóa đơn về tháng 1 → trích trước vào năm nay (335).
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 5" source="Chi phí trả trước.xlsx / 01 Chi tiet 242 · GL PKT2512-0014 · BSC-120 Điều 6">
+Ba mã CPT trong bảng theo dõi 242:
+
+| Mã | Nội dung | Giá trị | Bắt đầu | Số tháng | Phân bổ 2025 trên sổ |
+|---|---|---|---|---|---|
+| CPT-04 | Hợp đồng bảo trì cơ điện 01/07/2025 – 30/06/2026 | 6,0 tỷ | 01/07/2025 | 12 | 3,0 tỷ |
+| CPT-11 | Bản quyền phần mềm khách sạn | 2,4 tỷ | 01/04/2025 | 24 | 0,9 tỷ |
+| CPT-12 | Bảo trì, sửa chữa hệ thống kỹ thuật (PKT2512-0014) | 1,65 tỷ | trống | 0 | 0 |
+
+CPT-12 ghi chú "chưa xác định thời gian phân bổ, chờ Ban Giám đốc phê duyệt"; bút toán do Giám đốc Tài chính lập, nhập hệ thống 16/01/2026, số tham chiếu "Không có chứng từ gốc kèm theo". Tính lại và kết luận.
+<Solution>
+1. CPT-04: 6,0 × 6/12 = **3,0 tỷ** ✓. CPT-11: 2,4 × 9/24 = **0,9 tỷ** ✓.
+2. CPT-12: không có hợp đồng nhiều kỳ, không có thời hạn hưởng lợi → không đạt Điều 6.1–6.2; bảo trì, sửa chữa định kỳ là chi phí của kỳ hiện tại (Điều 6.3).
+3. Chi phí 2025 ghi thiếu **1,65 tỷ**, 242 ghi thừa 1,65 tỷ. ≥ CTT, dưới PM (OPEX-01).
+
+Bút toán đề xuất: **Nợ 632.SC 1.650.000.000 / Có 242.OTH 1.650.000.000**. Bút toán gốc cũng là đối tượng của Bài 3.7 (nhập sau khóa sổ, người lập bất thường).
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={6} label="Conclude" title="Tổng hợp sai sót, kết luận" output="Kết luận chi phí · mini working paper cho từng finding">
+**Sai sót đã lượng hóa** → **So CTT · PM** → **Bút toán điều chỉnh đề xuất**.
+
+Biscore: OPEX-01 chi phí ghi thiếu **1,65 tỷ** (lợi nhuận ghi thừa) · phí quản lý trả công ty mẹ chuyển sang kiểm tra bên liên quan (Bài 3.7).
+</AuditStep>
+
+<RedFlags items={[
+  { title: 'Sửa chữa đưa vào 241', text: 'Chi phí thường xuyên bị vốn hóa' },
+  { title: 'Phân bổ quá dài', text: 'Số tháng dài hơn hợp đồng' },
+  { title: 'Chi cho bên liên quan', text: 'Không có hợp đồng, nghiệm thu' },
+]} />
+
+<IfSkipped>bước phân tích theo tháng, khoản chi phí bị chuyển sang 242 bằng một phiếu kế toán cuối năm sẽ không lộ ra trong mẫu chọn từ hóa đơn.</IfSkipped>
+
+<KeyPrinciple>Mỗi khoản chi phải nằm **đúng ngăn**: chi phí kỳ này, 242 khi có thời hạn hưởng lợi rõ ràng, tài sản khi đủ điều kiện vốn hóa.</KeyPrinciple>
+
+<QuickCheck q="Phí bảo hiểm 12 tháng trả ngày 01/10/2025, ghi toàn bộ vào chi phí 2025. Sai ở đâu?" short="Chi phí ghi thừa">
+Chỉ 3/12 thuộc năm 2025. 9/12 còn lại phải nằm trên 242: chi phí ghi thừa, chi phí trả trước ghi thiếu.
+</QuickCheck>
+
+## Kiểm tra phần hành
+<Quiz client:visible id="a3-4-chi-phi" questions={[
+  { q: 'Chi phí tháng 12 thấp nhất năm trong khi hoạt động không giảm. Thủ tục tiếp theo:', options: ['Chấp nhận vì cuối năm', 'Lọc các bút toán ghi Có chi phí và tìm hóa đơn tháng 12 về sau kỳ', 'Giảm cỡ mẫu', 'Chỉ hỏi kế toán trưởng'], answer: 1, explain: 'Tháng thấp bất thường là nơi tìm chi phí ghi thiếu hoặc bị chuyển sang 242, 241.' },
+  { q: 'Hợp đồng bảo hiểm 24 tháng, 480 triệu, từ 01/07/2025. Chi phí 2025:', options: ['480 triệu', '240 triệu', '120 triệu', '0'], answer: 2, explain: '480 × 6/24 = 120 triệu; 360 triệu còn trên 242.' },
+  { q: 'Khoản sửa chữa định kỳ được chuyển sang 242 mà không có thời hạn hưởng lợi. Ảnh hưởng:', options: ['Không ảnh hưởng', 'Chi phí ghi thiếu, 242 ghi thừa', 'Doanh thu ghi thừa', 'Nợ phải trả ghi thiếu'], answer: 1, explain: 'Chỉ khoản chi có căn cứ nhiều kỳ mới vào 242; chi phí của kỳ hiện tại không được treo sang kỳ sau.' },
+  { q: 'Chi phí trả cho công ty mẹ nên được chọn thế nào?', options: ['MUS', 'Random 10%', 'Test 100% như giao dịch bên liên quan', 'Bỏ qua nếu dưới PM'], answer: 2, explain: 'Giao dịch bên liên quan trọng yếu về tính chất; test toàn bộ và đối chiếu thuyết minh (VSA 550, VAS 26).' },
+]} />
+
+<LessonNotes client:only="react" id="a3-4-chi-phi" />

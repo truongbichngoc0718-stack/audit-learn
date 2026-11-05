@@ -1,13 +1,48 @@
 ---
 title: "Ghép nhiều file cùng bố cục"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id pl1).
+description: "Từ 12 file sổ cái tháng thành 1 bảng GL cả năm bằng Power Query."
 id: b5-ghep-12-file
 nhanh: B
 phan: b
 bai: "2.1"
-loai: khung
-trang_thai: khung
-nguon: ["X#pl1"]
-sidebar: { order: 5, badge: { text: "sắp có", variant: "note" } }
+nhan: Power Query
+loai: excel
+thoi_luong: 8
+nguon: ["X#pl1", "B:So cai GL theo thang"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [a3-7-but-toan-tay-blq]
+sidebar: { order: 5 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a3-7.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Ghép 12 file sổ cái cùng bố cục bằng Folder → Combine
+- Kiểm tra số dòng population sau khi ghép
+</Objectives>
+
+<Eyebrow>Ý tưởng</Eyebrow>
+## Từ 12 file thành 1 bảng
+**1 Thư mục** (`So cai GL theo thang` chứa 12 file T01…T12) → **2 Combine** (Power Query đọc từng file theo một file mẫu) → **3 Làm sạch** (bỏ dòng tiêu đề, đặt header, chỉnh kiểu dữ liệu) → **4 Bảng GL** (Biscore: **80.496 dòng**).
+
+<Eyebrow>Từng bước</Eyebrow>
+## Thực hiện trong Power BI Desktop
+1. **Lấy dữ liệu từ thư mục:** **Home → Get data → More… → Folder → Connect**, dán đường dẫn thư mục sổ cái → OK.
+2. **Combine & Transform:** bấm **Combine → Combine & Transform Data** (không bấm Load).
+3. **Chọn sheet mẫu:** ở hộp *Combine Files*, chọn sheet **SO CAI** → OK.
+4. **Sửa file mẫu:** mở query **Transform Sample File** → **Home → Remove Rows → Remove Top Rows → 3** → **Home → Use First Row as Headers**. Mọi bước ở đây tự áp dụng cho 12 file.
+5. **Đổi tên query tổng thành GL.** Nếu bước *Changed Type* báo lỗi do tên cột cũ, xóa bước đó ở *Applied Steps*.
+6. **Chỉnh kiểu dữ liệu:** Phát sinh Nợ, Phát sinh Có → **Whole Number**; Tài khoản, Mã đối tượng → **Text**; ngày dạng dd/mm/yyyy → **Change Type → Using Locale → Date · Vietnamese**.
+7. **Thêm cột Tháng và TK cấp 1:** **Add Column → Date → Month → Month**; **Add Column → Extract → First Characters → 3** cho cột Tài khoản, đổi tên thành *TK cấp 1*.
+8. **Close & Apply** → kiểm tra số dòng ở Table view.
+
+**Dùng ở đâu trong kiểm toán:** đây là bước chốt population toàn bộ sổ cái trước khi lọc bút toán tay ([Bài 3.7 Bước 2](/a/3/a3-7-but-toan-tay-blq/#buoc-2)).
+
+<KeyPrinciple>Ghép xong phải **kiểm số dòng và tổng Nợ = tổng Có** trước khi phân tích.</KeyPrinciple>
+
+<QuickCheck q="Ghép 12 file Biscore xong, Table view báo nhiều hơn 80.496 dòng. Lỗi thường gặp ở đâu?" short="Chưa bỏ hết dòng tiêu đề">
+Mỗi file có dòng tiêu đề, dòng trống phía trên bảng. Nếu bước bỏ dòng đầu chưa áp đúng ở file mẫu, các dòng này lọt vào bảng; lọc giữ các dòng có STT bắt đầu bằng "GL" rồi kiểm lại.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b5-ghep-12-file" />

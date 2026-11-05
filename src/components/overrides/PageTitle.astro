@@ -5,7 +5,7 @@ const partNames: Record<string, string> = { '0': 'Lộ trình', '1': 'Nền tả
 const isLesson = d.loai && !['he-thong'].includes(d.loai);
 const part = d.phan !== undefined ? String(d.phan) : undefined;
 const crumb = d.nhanh === 'B' ? 'Nhánh B · Excel & Power BI' : d.nhanh === 'lib' ? 'Thư viện' : part !== undefined ? `Phần ${part} · ${partNames[part] ?? ''}` : '';
-const label = d.bai ? `Bài ${d.bai}${d.nhan ? ` — ${d.nhan}` : ''}${d.thoi_luong ? ` · ${d.thoi_luong} phút` : ''}` : d.thoi_luong ? `${d.thoi_luong} phút` : '';
+const label = d.nhanh === 'B' && d.bai ? `Bài ${d.bai}${d.nhan ? ` · ${d.nhan}` : ''}` : d.bai ? `Bài ${d.bai}${d.nhan ? ` — ${d.nhan}` : ''}${d.thoi_luong ? ` · ${d.thoi_luong} phút` : ''}` : d.thoi_luong ? `${d.thoi_luong} phút` : '';
 const pageId = d.id ?? '';
 const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const takeawayHtml = d.description ? esc(d.description).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') : '';

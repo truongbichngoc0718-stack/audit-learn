@@ -1,13 +1,44 @@
 ---
 title: "Dựng dashboard"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id pl4).
+description: "Một trang dashboard: thẻ KPI, xu hướng theo tháng, top đối tượng, slicer."
 id: b8-dashboard
 nhanh: B
 phan: b
 bai: "2.4"
-loai: khung
-trang_thai: khung
+nhan: Visualization
+loai: excel
+thoi_luong: 10
 nguon: ["X#pl4"]
-sidebar: { order: 8, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [a3-1-doanh-thu]
+sidebar: { order: 8 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a3-1-doanh-thu.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Dựng một trang dashboard phân tích doanh thu từ GL đã ghép
+- Dùng dashboard để khoanh vùng thủ tục chi tiết
+</Objectives>
+
+Phần này các bạn làm cùng trainer trên file Power BI đã dựng ở Bài 2.1–2.3. Bản gốc của buổi học dùng bộ dữ liệu đại lý ô tô giả định; ở đây áp dụng cho Biscore.
+
+<Eyebrow>Thực hành</Eyebrow>
+## Bốn khối của trang dashboard
+| Khối | Visual | Trường / measure |
+|---|---|---|
+| KPI | Card | Doanh thu, Giá vốn, Biên LN gộp % |
+| Xu hướng | Line and clustered column | Trục: Tháng · cột: Doanh thu, Giá vốn · đường: Biên LN gộp % |
+| Top | Bar chart | Doanh thu theo Tên đối tượng (Top N = 10) |
+| Lọc | Slicer | Tài khoản 5113.xx · Bộ phận · Loại CT |
+
+**Đọc dashboard như KTV:** chọn slicer Loại CT = PKT, xem tháng 12; chọn 5113.OF, so cột tháng 12 với 11 tháng trước. Mỗi điểm bất thường trên dashboard là một câu hỏi cho test chi tiết, không phải kết luận.
+
+**Dùng ở đâu trong kiểm toán:** bước phân tích của mọi phần hành, đặc biệt [Bài 3.1 Bước 3](/a/3/a3-1-doanh-thu/#buoc-3).
+
+<QuickCheck q="Dashboard Biscore cho thấy 5113.OT tháng 12 gấp đôi các tháng khác. Bước tiếp theo?" short="Drill xuống chứng từ">
+Lọc 5113.OT tháng 12, sắp theo số tiền, xem loại chứng từ và người lập: khoản 3,0 tỷ là PKT2512-0015 do Giám đốc Tài chính lập sau khóa sổ (Bài 3.1 Bước 6).
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b8-dashboard" />

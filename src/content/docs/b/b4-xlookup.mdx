@@ -1,13 +1,63 @@
 ---
 title: "XLOOKUP · tra cứu danh mục"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id xl4).
+description: "Tra tên tài khoản, tên đối tượng và tìm mã có trên sổ cái nhưng không có trong danh mục."
 id: b4-xlookup
 nhanh: B
 phan: b
 bai: "1.4"
-loai: khung
-trang_thai: khung
+nhan: Công thức
+loai: excel
+thoi_luong: 8
 nguon: ["X#xl4"]
-sidebar: { order: 4, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [a3-7-but-toan-tay-blq]
+sidebar: { order: 4 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a3-7.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Tra danh mục bằng XLOOKUP thay VLOOKUP
+- Tìm mã đối tượng lạ trên sổ cái
+</Objectives>
+
+<Eyebrow>Cú pháp</Eyebrow>
+## Cấu trúc hàm
+`=XLOOKUP(giá_trị_tìm, vùng_tìm, vùng_trả_về, [nếu_không_thấy], [kiểu_khớp], [kiểu_tìm])`
+
+| So sánh | VLOOKUP | XLOOKUP |
+|---|---|---|
+| Cột trả về nằm bên trái cột tìm | Không được | Được |
+| Chèn thêm cột vào danh mục | Sai kết quả | Không ảnh hưởng |
+| Mặc định khớp | Gần đúng (nếu quên FALSE) | Chính xác |
+| Không tìm thấy | Phải bọc IFERROR | Có sẵn tham số thứ 4 |
+
+<Eyebrow>Bài 3 · sheet BT3 XLOOKUP</Eyebrow>
+## Tra danh mục và tìm mã lạ
+| Ô | Công thức |
+|---|---|
+| B3 · Tên trong danh mục | `=XLOOKUP($A3, '03 DM DOI TUONG'!$A:$A, '03 DM DOI TUONG'!$B:$B, "KHÔNG CÓ TRONG DANH MỤC")` |
+| C3 · Số dòng trên GL | `=COUNTIFS('01 GL'!$J:$J, $A3)` |
+| D3 · Tên ghi trên GL | `=XLOOKUP($A3, '01 GL'!$J:$J, '01 GL'!$K:$K)` |
+
+<Eyebrow>Tổng hợp</Eyebrow>
+## Bảng phím tắt & công thức Phần 1
+| Thao tác | Phím tắt / Công thức |
+|---|---|
+| Nhảy tới mép dữ liệu | <kbd>Ctrl</kbd> + mũi tên |
+| Chọn tới mép dữ liệu | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + mũi tên |
+| Về đầu / tới cuối | <kbd>Ctrl</kbd> + <kbd>Home</kbd> / <kbd>Ctrl</kbd> + <kbd>End</kbd> |
+| Freeze Panes | <kbd>Alt</kbd> → <kbd>W</kbd> → <kbd>F</kbd> → <kbd>F</kbd> |
+| Filter · menu lọc | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> · <kbd>Alt</kbd> + <kbd>↓</kbd> |
+| Tạo Table | <kbd>Ctrl</kbd> + <kbd>T</kbd> |
+| Cộng có điều kiện | `=SUMIFS(vùng_cộng, vùng_đk, đk, …)` |
+| Tra cứu | `=XLOOKUP(tìm, vùng_tìm, vùng_trả_về, "nếu không thấy")` |
+
+**Dùng ở đâu trong kiểm toán:** đối tượng không có trong danh mục là một tiêu chí lọc bút toán bất thường; tra tên đối tượng theo danh sách bên liên quan ([Bài 3.7](/a/3/a3-7-but-toan-tay-blq/)).
+
+<QuickCheck q="Trên Biscore, mã KL và VAY01–VAY04 trả về 'KHÔNG CÓ TRONG DANH MỤC'. Có phải sai sót không?" short="Chưa chắc">
+KL là khách lẻ tổng hợp của khách sạn, VAY01–04 là mã khoản vay: không phải đối tượng công nợ nên không nằm trong danh mục khách hàng, nhà cung cấp. Hợp lý, nhưng ghi lại lý giải trong working paper; mã lạ không có lý giải mới là dấu hiệu.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b4-xlookup" />

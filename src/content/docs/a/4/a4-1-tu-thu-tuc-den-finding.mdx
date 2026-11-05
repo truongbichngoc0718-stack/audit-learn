@@ -1,0 +1,60 @@
+---
+title: Năm mắt xích của một finding
+description: Thủ tục, bằng chứng, sai sót, bút toán, kết luận. Thiếu một mắt xích thì finding **không đứng vững** trước người soát xét.
+id: a4-1-tu-thu-tuc-den-finding
+nhanh: A
+phan: 4
+bai: "4.1"
+nhan: Ghi finding
+loai: ky-thuat
+thoi_luong: 1
+nguon: ["T#fin (Năm mắt xích · Ghi nhớ)", "Bài 3.1–3.7"]
+assertion: []
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 1 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, FlowDiagram, LessonNotes } from '@components';
+
+<Objectives>
+- Kiểm tra một finding có đủ năm mắt xích chưa
+</Objectives>
+
+Mỗi finding cần một mini working paper. Người soát xét đọc xong phải **đi lại được đúng con đường** của đội.
+
+<Eyebrow>Chuỗi bằng chứng</Eyebrow>
+## Năm mắt xích
+Bấm từng mắt xích để xem cần ghi gì.
+
+<FlowDiagram client:visible steps={[
+  { label: 'Thủ tục', sub: '1', detail: 'Test cái gì, vì sao chọn.' },
+  { label: 'Bằng chứng', sub: '2', detail: 'Tên, số tham chiếu tài liệu.' },
+  { label: 'Sai sót', sub: '3', detail: 'Thừa hay thiếu · số tiền (đã suy rộng nếu từ mẫu).' },
+  { label: 'Bút toán', sub: '4', detail: '<b>Nợ … / Có …</b> · số tiền.' },
+  { label: 'Kết luận', sub: '5', detail: 'So CTT · PM · OM.' },
+]} />
+
+<BiscoreExample source="Bài 3.4 Bước 5">
+Một đội ghi finding: "Chi phí bảo trì bị chuyển sang 242 không hợp lý, cần điều chỉnh." Finding này thiếu mắt xích nào?
+<Solution>
+1. **Thủ tục:** chưa nói đã làm gì (phân tích 632.SC theo tháng → lọc bút toán ghi Có → tính lại bảng 242).
+2. **Bằng chứng:** chưa có tham chiếu (PKT2512-0014, CPT-12, BSC-120 Điều 6).
+3. **Sai sót:** chưa có số tiền và chiều (chi phí ghi thiếu 1,65 tỷ, 242 ghi thừa 1,65 tỷ).
+4. **Bút toán:** thiếu (Nợ 632.SC / Có 242.OTH 1.650.000.000).
+5. **Kết luận:** thiếu (≥ CTT 180 triệu, dưới PM 2,2 tỷ → bảng tổng hợp).
+
+→ Có ý đúng nhưng **thiếu cả năm mắt xích**; người soát xét không đi lại được.
+</Solution>
+</BiscoreExample>
+
+<IfSkipped>bước ghi tham chiếu bằng chứng, người soát xét không tìm lại được tài liệu và finding bị trả về dù kết luận đúng.</IfSkipped>
+
+<KeyPrinciple>**TB, GL và reconcile** xác lập population. **Materiality** cho thước đo. **Assertion** cho chiều kiểm tra. **Cách chọn mẫu** cho phạm vi. **Đánh giá sai sót** cho kết luận.</KeyPrinciple>
+
+<QuickCheck q="Finding ghi 'doanh thu ghi thừa 450 triệu' nhưng không có bút toán đề xuất. Người soát xét có cộng được vào bảng tổng hợp không?" short="Chưa nên">
+Thiếu bút toán thì chưa rõ ảnh hưởng tới tài khoản nào (131, 3387 hay tiền). Bổ sung Nợ 5113.RM / Có 3387 450.000.000 (hoặc Có 131.HT nếu chưa thu tiền và hóa đơn được điều chỉnh) rồi mới cộng.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a4-1-tu-thu-tuc-den-finding" />

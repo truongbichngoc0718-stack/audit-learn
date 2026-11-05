@@ -102,7 +102,7 @@ Quy ước: viết hoa trên chip/nhãn (Occurrence), viết thường trong câ
 | — | Finding | Phát hiện kiểm toán | finding |
 | WP | Working paper | Giấy làm việc | working paper / mini working paper |
 | — | 1 Area / Finding ID · 2 Item tested · 3 Objective · 4 Evidence obtained · 5 Work performed · 6 Finding & FS impact · 7 Proposed adjustment · 8 Conclusion | 8 trường mini WP | giữ tiếng Anh như mẫu |
-| — | Finding ID | Mã finding: **{mã phần hành}-{số}** theo case (REV-01 doanh thu · AR · AP · OPEX · BOR vay · FA · JE) | theo case Biscore; ebook 1 ví dụ "DT-01" chỉ là minh họa |
+| — | Finding ID | Mã finding: **{mã phần hành}-{số}** theo case (REV-01 doanh thu · AR · AP · OPEX · BOR vay · FA · JE bút toán tay · RP bên liên quan) | theo case Biscore; ebook 1 ví dụ "DT-01" chỉ là minh họa |
 | — | Confirmed misstatement · No adjustment · Further evidence required | 3 kết luận | giữ tiếng Anh |
 
 ## Phần hành & tài khoản (TT200, mã Biscore)

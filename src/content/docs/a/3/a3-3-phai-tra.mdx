@@ -1,0 +1,144 @@
+---
+title: Phải trả người bán
+description: Có khoản nợ nào chưa ghi?
+id: a3-3-phai-tra
+nhanh: A
+phan: 3
+bai: "3.3"
+nhan: Chu trình 03
+loai: phan-hanh
+thoi_luong: 3
+nguon: ["T#p3l3", "C#process-cycles (Quy trình 03)", "B:Công nợ phải trả.xlsx/01-04", "B:Báo cáo tài chính.xlsx/01", "B:Bảng cân đối phát sinh.xlsx (335)", "B:Sổ cái GL"]
+assertion: [Completeness, Cut-off, Classification]
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [b7-join]
+sidebar: { order: 3, label: "3.3 Phải trả" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, AuditCard, AuditStep, RedFlags, Quiz, LessonNotes } from '@components';
+
+<AuditCard kicker="Chu trình 03 · Accounts payable" question="Có khoản nợ nào chưa ghi?" risk="Rủi ro chính là ghi thiếu. Đi từ nguồn bên ngoài vào sổ." tk={['331', '335']} assertion={['Completeness', 'Cut-off', 'Classification']} data={['Sổ chi tiết 331', 'Sổ phụ', 'Chứng từ chi sau kỳ', 'Hóa đơn nhận sau kỳ']} />
+
+<Objectives>
+- Chọn nhà cung cấp để đối chiếu theo phát sinh, không theo số dư
+- Tìm nợ chưa ghi nhận từ chứng từ sau kỳ
+- Tách dư Nợ 331 khỏi dư Có
+</Objectives>
+
+<Eyebrow>Audit program</Eyebrow>
+## Sáu bước cho phải trả
+| Bước | | |
+|---|---|---|
+| [1 Hiểu quy trình](#buoc-1) | Mua hàng → thanh toán | |
+| [2 Reconcile](#buoc-2) | Chi tiết NCC = GL | |
+| [3 Phân tích](#buoc-3) | Số ngày phải trả | |
+| [4 Đối chiếu NCC](#buoc-4) | Theo phát sinh | |
+| [5 Nợ chưa ghi nhận](#buoc-5) | Sau 31/12 | |
+| [6 Kết luận](#buoc-6) | So ngưỡng | |
+
+<AuditStep n={1} label="Understanding" title="Hiểu quy trình mua hàng và thanh toán" output="Sơ đồ quy trình · thời điểm đơn vị ghi nhận nợ phải trả">
+**Đặt mua** (đơn mua hàng PO · phê duyệt mua) → **Nhận hàng** (phiếu nhập · biên bản nghiệm thu · kiểm nhận số lượng) → **Nhận hóa đơn** (hóa đơn nhà cung cấp · đối chiếu 3 chiều) → **Ghi sổ** (Nợ hàng · chi phí / Có 331 · ghi nợ khi nhận hàng) → **Thanh toán** (sổ phụ · Nợ 331 · duyệt chi)
+
+**Kiểm soát chính:** đối chiếu 3 chiều PO · phiếu nhập · hóa đơn.
+
+| Rủi ro | Xử lý ở |
+|---|---|
+| **Ghi thiếu:** đã nhận hàng nhưng chưa ghi nợ | → Bước 5 |
+| **Sai kỳ:** hóa đơn về sau 31/12 nên ghi năm sau | → Bước 5 |
+| **Phân loại sai:** dư Nợ 331 bù trừ vào dư Có | → Bước 2 |
+</AuditStep>
+
+<AuditStep n={2} label="Reconcile" title="Chi tiết công nợ khớp GL và TB" assertion={['Completeness', 'Classification']} output="Danh sách nhà cung cấp đã đối chiếu với GL, TB">
+**Sổ chi tiết** (theo từng nhà cung cấp) = **GL 331** = **TB**. Tách ra: **dư Nợ 331 → trả trước người bán** (tài sản).
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 2" source="Công nợ phải trả.xlsx / 01 Cong no theo nha cung cap · Báo cáo tài chính.xlsx / 01 Bang can doi ke toan (mã 311)">
+Bảng công nợ 64 nhà cung cấp: tổng **dư Có 50,02 tỷ**, tổng **dư Nợ 4,98 tỷ** (lớn nhất: Công ty CP Xây lắp Công trình Đại Thành 3,5 tỷ). BCTC trình bày "Phải trả người bán ngắn hạn" (mã 311) **45,04 tỷ** và không có dòng "Trả trước cho người bán". Có vấn đề gì?
+<Solution>
+1. 50,02 − 4,98 = **45,04 tỷ** → BCTC đã **bù trừ** dư Nợ vào dư Có.
+2. Dư Nợ là khoản trả trước, là **tài sản**; dư Có là **nợ phải trả**. Không được bù trừ.
+3. Sai phân loại (AP-01): phải trả người bán và trả trước cho người bán cùng trình bày thiếu **4,98 tỷ** (> PM 2,2 tỷ). Không ảnh hưởng lợi nhuận.
+4. Đề xuất trình bày lại: 311 = 50,02 tỷ; trả trước cho người bán (mã 132) = 4,98 tỷ. Khoản trả trước 3,5 tỷ cho Đại Thành cần thêm hợp đồng và tiến độ thi công: nhà thầu này không xuất hiện trong các đợt nghiệm thu 241.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={3} label="Analytics" title="Số dư phải trả có hợp lý?" assertion={['Completeness']} output="Bảng phân tích 331 và số ngày phải trả so với năm trước">
+<div class="b-card" style="text-align:center;font-weight:600">Số ngày phải trả bình quân = Phải trả bình quân **÷** Giá trị mua hàng **×** 365</div>
+
+**331 giảm mạnh + mua hàng, chi phí không giảm** → nghi ghi thiếu → dồn trọng tâm vào Bước 5.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 3" source="Báo cáo tài chính.xlsx / 01 · Sổ cái GL 331 theo tháng">
+Phải trả người bán (mã 311) giảm từ **82,0 tỷ** xuống **45,04 tỷ** (−45%). Ghi Có 331 hằng tháng ổn định 23–53 tỷ; riêng tháng 12, ghi Nợ 331 (trả tiền) là **57,4 tỷ**, cao nhất năm sau tháng 2. Kết luận gì cho kế hoạch kiểm toán?
+<Solution>
+1. Mua hàng không giảm, nhưng số dư giảm gần một nửa → hai khả năng: trả tiền dồn cuối năm, **hoặc** hóa đơn tháng 12 chưa ghi.
+2. Một phần đã giải thích bằng bù trừ dư Nợ ở Bước 2 (4,98 tỷ).
+3. Phần còn lại phải kiểm bằng tracing từ nguồn bên ngoài ở Bước 5, không thể kết luận chỉ từ số dư.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={4} label="Supplier confirmation" title="Chọn NCC theo phát sinh, không theo số dư" assertion={['Completeness']} direction="tracing" output="Bảng đối chiếu số dư theo NCC, chênh lệch và giải thích">
+| Theo số dư (MUS) ✕ | Theo giá trị mua trong năm ✓ |
+|---|---|
+| Ưu tiên số dư lớn | Ưu tiên NCC giao dịch nhiều |
+| NCC số dư 0 không được chọn | Gồm cả NCC số dư 0 |
+| Hợp với rủi ro ghi khống | Hợp với rủi ro ghi thiếu |
+
+Chọn theo phát sinh mua → supplier statement (bảng đối chiếu công nợ của NCC) · thư xác nhận → so với sổ chi tiết 331.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 4" source="Công nợ phải trả.xlsx / 01 Cong no theo nha cung cap">
+Top 3 theo giá trị mua trong năm: Hoàng Gia 28,60 tỷ (số dư 3,98 tỷ), Bách Khoa 24,86 tỷ (0,34 tỷ), Sạch Việt 20,55 tỷ (1,72 tỷ). Có **4 nhà cung cấp** mua trên 5 tỷ trong năm nhưng **số dư bằng 0**. Nếu chọn MUS trên số dư, 4 nhà cung cấp này có được chọn không? Nên chọn thế nào?
+<Solution>
+1. MUS trên số dư: số dư 0 → **không bao giờ** được chọn.
+2. Chọn theo phát sinh: đưa cả 4 nhà cung cấp số dư 0 và các nhà cung cấp mua lớn (Hoàng Gia 28,60 tỷ, Bách Khoa 24,86 tỷ) vào mẫu đối chiếu, dù số dư không lớn.
+3. So supplier statement với sổ chi tiết: hóa đơn tháng 12 có trên statement mà không có trên sổ → nợ ghi thiếu.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={5} label="Search for unrecorded liabilities" title="Nợ sinh ra khi nhận hàng, không phải khi nhận hóa đơn" assertion={['Completeness', 'Cut-off']} direction="tracing" output="Danh sách khoản chi, hóa đơn sau kỳ đã kiểm tra · khoản nợ ghi thiếu (nếu có)">
+**Chi tiền đầu năm sau** (sổ phụ) + **hóa đơn nhận sau kỳ** → nhận hàng, dịch vụ khi nào? → trước 31/12 → ghi nợ năm nay. Test 100% khoản vượt ngưỡng: **chọn item cụ thể, không phải sampling**.
+
+**Chi phí phải trả 335:** tính lại khoản trích trước (lãi vay · điện nước · dịch vụ) → so với số thực tế phát sinh đầu năm sau.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 5" source="Bảng cân đối phát sinh.xlsx (TK 335) · Sổ cái GL 335 · Case 02 / Quy trình 03 bước 3">
+Chính sách của Biscore: dịch vụ đã nhận nhưng chưa có hóa đơn tại ngày khóa sổ thì trích trước vào 335. Trên TB, 335 có số dư đầu kỳ **26,0 tỷ**, phát sinh Có **58,55 tỷ**, phát sinh Nợ **58,55 tỷ**, cuối kỳ **26,0 tỷ**. Toàn bộ phát sinh trong năm là **lãi vay** (trích trước và trả). Không có bút toán trích trước chi phí vận hành nào cuối năm 2025. Bạn đặt câu hỏi gì, và cần tài liệu gì?
+<Solution>
+1. Số dư đầu kỳ 26 tỷ **không được sử dụng hay hoàn nhập** trong cả năm → hoặc là khoản phải trả cũ còn treo, hoặc là trích trước đã hết căn cứ (chi phí 2024 ghi thừa, 2025 không có).
+2. Cuối 2025 không trích trước dịch vụ nào, trong khi đơn vị có nhiều hợp đồng dịch vụ định kỳ (vệ sinh, bảo trì, điện nước) → rủi ro **nợ chưa ghi nhận**.
+3. Cần qua yêu cầu cung cấp tài liệu (document request): chi tiết 26 tỷ theo nội dung; hóa đơn nhận tháng 1–2/2026; sổ phụ chi tiền tháng 1–2/2026; biên bản nghiệm thu dịch vụ tháng 12/2025.
+4. Kết luận lúc này: **Further evidence required** (AP-02). Không ước tính số sai sót khi chưa có chứng từ.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={6} label="Conclude" title="Tổng hợp sai sót, kết luận" output="Kết luận phải trả · mini working paper cho từng finding">
+**Sai sót đã lượng hóa** → **So CTT · PM** → **Bút toán điều chỉnh đề xuất**.
+
+Biscore: AP-01 sai phân loại **4,98 tỷ** (> PM, trình bày lại, không ảnh hưởng lợi nhuận) · AP-02 335 đầu kỳ và nợ chưa ghi nhận: **Further evidence required**.
+</AuditStep>
+
+<RedFlags items={[
+  { title: 'Hóa đơn về muộn', text: 'Dùng dịch vụ tháng 12, ghi nợ tháng 1' },
+  { title: '331 giảm mạnh', text: 'Chi phí không giảm tương ứng' },
+]} />
+
+<IfSkipped>bước tìm nợ chưa ghi nhận từ chứng từ sau kỳ, mọi thủ tục chọn từ sổ đều không thấy khoản nợ chưa từng được ghi.</IfSkipped>
+
+<KeyPrinciple>Nợ phải trả: **tracing từ nguồn bên ngoài**, chọn nhà cung cấp **theo phát sinh**, không theo số dư.</KeyPrinciple>
+
+<QuickCheck q="Hóa đơn điện tháng 12/2025 về ngày 08/01/2026, kế toán ghi chi phí tháng 1/2026. Đúng chưa?" short="Chưa">
+Điện đã dùng trong tháng 12/2025 nên nghĩa vụ phát sinh năm 2025. Phải trích chi phí và nợ phải trả (hoặc 335) vào năm 2025, dù hóa đơn về sau.
+</QuickCheck>
+
+## Kiểm tra phần hành
+<Quiz client:visible id="a3-3-phai-tra" questions={[
+  { q: 'Vì sao không chọn mẫu xác nhận phải trả theo MUS trên số dư?', options: ['MUS tốn thời gian', 'Khoản bị ghi thiếu có số dư nhỏ hoặc bằng 0 nên ít khi được chọn', 'Nhà cung cấp không trả lời', 'Chuẩn mực cấm dùng MUS'], answer: 1, explain: 'MUS ưu tiên số dư lớn, phù hợp rủi ro ghi khống. Với rủi ro ghi thiếu, chọn theo giá trị mua trong năm.' },
+  { q: 'Nguồn tốt nhất để tìm nợ chưa ghi nhận tại 31/12:', options: ['Sổ chi tiết 331 tại 31/12', 'Sổ phụ chi tiền và hóa đơn nhận đầu năm sau', 'Bảng tuổi nợ phải thu', 'Biên bản họp HĐQT'], answer: 1, explain: 'Khoản chưa ghi không có trên sổ; phải đi từ nguồn bên ngoài sau kỳ (tracing).' },
+  { q: 'Nhà cung cấp có dư Nợ 3,5 tỷ (đã ứng trước). Trình bày trên BCTC:', options: ['Bù trừ vào phải trả người bán', 'Trình bày riêng là trả trước cho người bán', 'Ghi giảm chi phí', 'Không cần trình bày'], answer: 1, explain: 'Dư Nợ 331 là tài sản; không bù trừ với dư Có của nhà cung cấp khác.' },
+  { q: 'Tìm nợ chưa ghi nhận theo danh sách khoản chi vượt ngưỡng sau kỳ, phát hiện 1 khoản thiếu 300 triệu. Xử lý:', options: ['Suy rộng ra toàn bộ 331', 'Cộng thẳng 300 triệu, không suy rộng', 'Bỏ qua vì dưới PM', 'Chờ kiểm toán năm sau'], answer: 1, explain: 'Test 100% khoản vượt ngưỡng là chọn item cụ thể, không phải sampling.' },
+]} />
+
+<LessonNotes client:only="react" id="a3-3-phai-tra" />

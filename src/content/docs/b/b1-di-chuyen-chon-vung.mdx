@@ -1,13 +1,51 @@
 ---
 title: "Di chuyển & chọn vùng nhanh"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id xl1).
+description: "Không cuộn chuột qua 6.000 dòng sổ cái. Nhảy tới mép dữ liệu, chọn cả vùng bằng bàn phím."
 id: b1-di-chuyen-chon-vung
 nhanh: B
 phan: b
 bai: "1.1"
-loai: khung
-trang_thai: khung
+nhan: Phím tắt
+loai: excel
+thoi_luong: 6
 nguon: ["X#xl1"]
-sidebar: { order: 1, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+lien_ket: [a1-1-tb-gl-subledger]
+sidebar: { order: 1 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a1-1-tb-gl-subledger.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Nhảy tới dòng cuối sổ cái trong một phím
+- Chọn toàn bộ bảng để tạo Table hoặc copy
+</Objectives>
+
+Mở file thực hành [thuc-hanh-excel-biscore-T12.xlsx](/files/thuc-hanh-excel-biscore-T12.xlsx), sheet **01 GL** (6.382 dòng sổ cái tháng 12/2025).
+
+<Eyebrow>Nhóm 1</Eyebrow>
+## Nhảy tới mép vùng dữ liệu
+<kbd>Ctrl</kbd> + <kbd>↓</kbd> <kbd>↑</kbd> <kbd>→</kbd> <kbd>←</kbd>
+
+Con trỏ nhảy tới **ô cuối cùng có dữ liệu** theo hướng mũi tên. Nếu ô kế tiếp đang trống, con trỏ nhảy tới ô có dữ liệu tiếp theo.
+
+<Eyebrow>Nhóm 2</Eyebrow>
+## Chọn cả vùng
+| Phím tắt | Tác dụng |
+|---|---|
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + mũi tên | Bôi đen từ ô hiện tại tới ô cuối có dữ liệu. Làm hai lần (↓ rồi →) để chọn cả bảng |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd> | Chọn vùng dữ liệu liền mạch chứa ô hiện tại; bấm lần hai chọn cả sheet |
+| <kbd>Ctrl</kbd> + <kbd>Space</kbd> / <kbd>Shift</kbd> + <kbd>Space</kbd> | Chọn cả **cột** / cả **dòng** |
+
+<Eyebrow>Nhóm 3</Eyebrow>
+## Về đầu, tới cuối
+<kbd>Ctrl</kbd> + <kbd>Home</kbd>: về ô A1 (hoặc ô đầu tiên ngay dưới vùng đã freeze). <kbd>Ctrl</kbd> + <kbd>End</kbd>: tới ô cuối cùng đã từng được dùng của sheet.
+
+**Dùng ở đâu trong kiểm toán:** đếm nhanh số dòng population và kiểm tra dòng cuối có phải dòng tổng không trước khi reconcile ([Bài 1.1](/a/1/a1-1-tb-gl-subledger/)).
+
+<QuickCheck q="Đứng ở A5 sheet 01 GL, bấm Ctrl + ↓ mà con trỏ dừng ở dòng 120 chứ không phải dòng cuối. Vì sao?" short="Có ô trống">
+Cột A có ô trống ở dòng 121: Ctrl + mũi tên dừng ở mép vùng liền mạch. Kiểm tra dòng trống trước khi tin số dòng của population.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b1-di-chuyen-chon-vung" />

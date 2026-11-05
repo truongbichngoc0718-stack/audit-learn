@@ -13,20 +13,20 @@ style_version: "1.0"
 sidebar: { order: 0, label: "Tổng quan Phần 3" }
 ---
 import { Eyebrow } from '@components';
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 <Eyebrow>Audit scope</Eyebrow>
 ## Sáu chu trình và lớp xuyên suốt
-Số hiệu tài khoản theo hệ thống tài khoản VAS. Bài đã có thì bấm thẻ để mở.
+Bấm vào thẻ để mở bài. Số hiệu tài khoản theo hệ thống tài khoản VAS.
 
 <CardGrid>
 <LinkCard title="01 · Doanh thu · Revenue" description="511 · 521 · 3387 · Occurrence · Cut-off · 7 phút" href="/a/3/a3-1-doanh-thu/" />
-<Card title="02 · Phải thu khách hàng">131 · 2293 · Existence · Valuation · sắp có</Card>
-<Card title="03 · Phải trả người bán">331 · 335 · Completeness · Cut-off · sắp có</Card>
-<Card title="04 · Chi phí hoạt động">632 · 641 · 642 · 242 · Completeness · Classification · sắp có</Card>
-<Card title="05 · Vay và lãi vay">341 · 635 · 335 · Completeness · Presentation · sắp có</Card>
-<Card title="06 · Tài sản cố định">211 · 214 · 241 · Existence · Valuation · sắp có</Card>
-<Card title="07 · Bút toán tay & bên liên quan">Toàn bộ GL · danh sách bên liên quan · Occurrence · Completeness · Presentation · sắp có</Card>
+<LinkCard title="02 · Phải thu khách hàng · Receivables" description="131 · 2293 · Existence · Valuation · 3 phút" href="/a/3/a3-2-phai-thu/" />
+<LinkCard title="03 · Phải trả người bán · Payables" description="331 · 335 · Completeness · Cut-off · 3 phút" href="/a/3/a3-3-phai-tra/" />
+<LinkCard title="04 · Chi phí hoạt động · Operating expenses" description="632 · 641 · 642 · 242 · Completeness · Classification · 3 phút" href="/a/3/a3-4-chi-phi/" />
+<LinkCard title="05 · Vay và lãi vay · Borrowings" description="341 · 635 · 335 · Completeness · Presentation · 3 phút" href="/a/3/a3-5-vay/" />
+<LinkCard title="06 · Tài sản cố định · Fixed assets" description="211 · 214 · 241 · Existence · Valuation · 3 phút" href="/a/3/a3-6-tscd/" />
+<LinkCard title="07 · Bút toán tay & bên liên quan · xuyên suốt" description="Toàn bộ GL · danh sách bên liên quan · Occurrence · Completeness · Presentation · 5 phút" href="/a/3/a3-7-but-toan-tay-blq/" />
 </CardGrid>
 
 <Eyebrow>Khung chung · audit program</Eyebrow>
@@ -43,3 +43,5 @@ Số hiệu tài khoản theo hệ thống tài khoản VAS. Bài đã có thì 
 Bước 1, 2 và bước Kết luận cố định; bước 3–5 thay đổi theo đặc thù từng phần hành. Doanh thu có 7 bước vì tách riêng cut-off và soát xét sau kỳ.
 
 Mỗi trang phần hành: audit program từng bước (Technique Training), mỗi bước kèm một bài tập trên Biscore (dữ kiện + câu hỏi, lời giải ẩn) → Red flags → Kiểm tra nhanh → quiz 4 câu.
+
+[✓ Bài kiểm tra Phần 3](/a/3/a3-quiz/) · 7 câu · mục tiêu 6/7

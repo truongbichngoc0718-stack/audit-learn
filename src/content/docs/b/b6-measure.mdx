@@ -1,13 +1,75 @@
 ---
 title: "Measure đơn giản: SUM & DIVIDE"
-description: Đang xây dựng ở Bước 4. Nội dung gốc trong source/ebooks/md/03-excel-powerbi (id pl2).
+description: "Xây measure gốc rồi ghép dần: tổng phát sinh, doanh thu, giá vốn, biên lợi nhuận gộp."
 id: b6-measure
 nhanh: B
 phan: b
 bai: "2.2"
-loai: khung
-trang_thai: khung
+nhan: DAX
+loai: excel
+thoi_luong: 7
 nguon: ["X#pl2"]
-sidebar: { order: 6, badge: { text: "sắp có", variant: "note" } }
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [a3-1-doanh-thu, a3-4-chi-phi]
+sidebar: { order: 6 }
 ---
-Bài này sẽ được viết theo BISC_STYLE §10 ở Bước 4. Liên kết phần hành: a3-1-doanh-thu, a3-4.
+import { Objectives, Eyebrow, KeyPrinciple, QuickCheck, Extended, LessonNotes } from '@components';
+
+<Objectives title="Học xong bài này, các bạn làm được:">
+- Tạo measure SUM, COUNTROWS, DIVIDE
+- Tính doanh thu, giá vốn, biên lợi nhuận gộp bằng CALCULATE
+</Objectives>
+
+<Eyebrow>Cách tạo</Eyebrow>
+## Tạo measure đầu tiên
+Ở khung *Data*, chuột phải bảng **GL → New measure**, gõ công thức vào thanh công thức, Enter.
+
+<Eyebrow>SUM</Eyebrow>
+## Nhóm measure cộng
+```
+Tổng PS Nợ = SUM ( GL[Phát sinh Nợ] )
+Tổng PS Có = SUM ( GL[Phát sinh Có] )
+Phát sinh ròng = [Tổng PS Nợ] - [Tổng PS Có]
+Số dòng = COUNTROWS ( GL )
+```
+Measure gọi lại measure khác bằng tên trong ngoặc vuông. Xây measure gốc trước rồi ghép dần.
+
+<Eyebrow>DIVIDE</Eyebrow>
+## Chia an toàn
+| Dùng dấu / | Dùng DIVIDE |
+|---|---|
+| `[A] / [B]`: B = 0 → lỗi hoặc ∞ trên biểu đồ | `DIVIDE([A], [B], 0)`: B = 0 → trả giá trị thay thế (tham số thứ 3, mặc định là trống) |
+
+```
+Bình quân mỗi dòng = DIVIDE ( [Tổng PS Nợ], [Số dòng] )
+```
+
+<Eyebrow>Mở rộng</Eyebrow>
+## Doanh thu, giá vốn và biên lợi nhuận gộp
+Muốn cộng **có điều kiện** (như SUMIFS), bọc measure trong `CALCULATE`. Dùng cột *TK cấp 1* đã tạo ở Bài 2.1:
+
+```
+Doanh thu = CALCULATE ( [Tổng PS Có], GL[TK cấp 1] = "511" )
+Giá vốn = CALCULATE ( [Tổng PS Nợ], GL[TK cấp 1] = "632" )
+Biên LN gộp % = DIVIDE ( [Doanh thu] - [Giá vốn], [Doanh thu] )
+```
+**Measure tools → Format → Percentage** cho measure %.
+
+<Extended basis="Đặc thù sổ cái Biscore: có bút toán kết chuyển 911 và bút toán đảo doanh thu">
+Với sổ cái có kết chuyển cuối kỳ, lấy Có trừ Nợ và loại dòng có TK đối ứng 911 (cột *TK đối ứng* có sẵn trong file sổ cái, giữ nguyên khi ghép ở Bài 2.1):
+
+```
+Doanh thu = CALCULATE ( [Tổng PS Có] - [Tổng PS Nợ], GL[TK cấp 1] = "511", GL[TK đối ứng] <> "911" )
+```
+Kết quả là doanh thu trước giảm trừ; doanh thu thuần = 511 − 521.
+</Extended>
+
+**Dùng ở đâu trong kiểm toán:** biên lợi nhuận gộp theo tháng là kỳ vọng phân tích cho doanh thu và giá vốn ([Bài 3.1 Bước 3](/a/3/a3-1-doanh-thu/#buoc-3), [Bài 3.4 Bước 3](/a/3/a3-4-chi-phi/#buoc-3)).
+
+<QuickCheck q="Measure Doanh thu chỉ dùng SUM phát sinh Có 511 cho Biscore và ra con số lớn hơn BCTC nhiều. Vì sao?" short="Chưa loại kết chuyển và bút toán đảo">
+Kết chuyển cuối kỳ và các bút toán đảo làm phát sinh 511 phình ra ở cả hai phía. Thêm điều kiện TK đối ứng khác 911 và lấy phát sinh Có trừ phát sinh Nợ. Muốn so với doanh thu thuần trên BCTC, trừ thêm giảm trừ 521.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="b6-measure" />

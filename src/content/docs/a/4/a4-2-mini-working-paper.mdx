@@ -1,0 +1,89 @@
+---
+title: Mini working paper
+description: Một finding, một bản, 8 trường. Kết luận là **một trong ba**, không có lựa chọn thứ tư.
+id: a4-2-mini-working-paper
+nhanh: A
+phan: 4
+bai: "4.2"
+nhan: Mẫu nộp bài
+loai: ky-thuat
+thoi_luong: 2
+nguon: ["T#fin (Mini working paper: 8 trường · Ba kết luận)", "C#mini-wp", "C#deliverables", "B:Mẫu working paper.xlsx", "Bài 3.1–3.7"]
+assertion: []
+chuan_muc: []
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+sidebar: { order: 2 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, Extended, MiniWPForm, LessonNotes } from '@components';
+
+<Objectives>
+- Điền đủ 8 trường mini working paper
+- Chọn đúng một trong ba kết luận
+- Lập bảng tổng hợp sai sót và so với OM
+</Objectives>
+
+<Eyebrow>Mẫu nộp bài</Eyebrow>
+## Mini working paper: 8 trường
+| # | Trường | Ghi gì |
+|---|---|---|
+| 1 | Area / Finding ID | Phần hành và mã finding, ví dụ REV-02 · Cut-off doanh thu |
+| 2 | Item tested | Giao dịch, số dư, mẫu đã test · key item · MUS · lọc tiêu chí |
+| 3 | Objective | Occurrence · Cut-off · Completeness… |
+| 4 | Evidence obtained | Bằng chứng kèm tham chiếu: tên tài liệu, số chứng từ |
+| 5 | Work performed | 2–4 dòng: đối chiếu, tính lại, xác minh |
+| 6 | Finding & FS impact | Tài khoản · ghi thừa hay thiếu · số tiền (đã suy rộng nếu từ mẫu) |
+| 7 | Proposed adjustment | **Nợ** TK … / **Có** TK … · số tiền |
+| 8 | Conclusion | Một trong ba kết luận bên dưới |
+
+<Eyebrow>Trường số 8</Eyebrow>
+## Ba kết luận
+<div class="b-grid">
+<div class="b-card"><div class="b-kicker">Confirmed misstatement</div>Có bằng chứng, có số tiền, có bút toán</div>
+<div class="b-card"><div class="b-kicker">No adjustment</div>Đã test, không sai hoặc dưới CTT (trừ khi có dấu hiệu cố ý, gian lận: khi đó vẫn vào bảng tổng hợp)</div>
+<div class="b-card"><div class="b-kicker">Further evidence required</div>Ghi rõ còn thiếu bằng chứng gì</div>
+</div>
+
+Tải mẫu Excel của đề (Finding Register · Mini Working Paper · Ví dụ): [mau-working-paper.xlsx](/files/mau-working-paper.xlsx).
+
+<BiscoreExample title="Biscore · Bảng tổng hợp sai sót" source="Bài 3.1–3.7 · Báo cáo tài chính.xlsx / 02 (LNTT 53.533.029.000 đ)">
+Tổng hợp các finding Biscore đã tìm ở Phần 3. Tổng ảnh hưởng tới lợi nhuận trước thuế là bao nhiêu, so với OM 3,6 tỷ thì sao?
+<Solution>
+**Confirmed misstatement · ảnh hưởng lợi nhuận** (LNTT ghi thừa):
+
+| ID | Nội dung | Bút toán đề xuất | LNTT |
+|---|---|---|---|
+| REV-01 | Sao Mai Land ghi 12 tháng | Nợ 5113.OF/.SC/.PK · Có 3387 | −3,42 tỷ |
+| REV-02 | Global Summit đêm 01/01/2026 | Nợ 5113.RM · Có 3387 | −0,45 tỷ |
+| REV-03 | Đại Nam Việt quý 4 | Nợ 5113.EV, 3331 · Có 131.OT | −3,50 tỷ |
+| AR-01 | Dự phòng nhóm 181–365 ngày | Nợ 6426 · Có 2293 | −0,89 tỷ |
+| OPEX-01 | Bảo trì chuyển sang 242 | Nợ 632.SC · Có 242.OTH | −1,65 tỷ |
+| BOR-01 | Lãi VAY04 quý 4 chưa trích | Nợ 635 · Có 335 | −0,81 tỷ |
+| **Cộng** | | | **−10,72 tỷ** |
+
+**Confirmed · trình bày (không ảnh hưởng lợi nhuận):** AP-01 dư Nợ 331 bù trừ 4,98 tỷ · BOR-03 VAY03 120 tỷ chuyển sang ngắn hạn · RP-01 thiếu thuyết minh bên liên quan.
+
+**Further evidence required:** REV-04 Liên Việt 3,0 tỷ · AP-02 335 đầu kỳ 26 tỷ và nợ chưa ghi nhận · BOR-02 vốn hóa lãi 1,15 tỷ · BOR-04 phân loại VAY04 · FA-01 241 chưa kết chuyển · FA-02 thang máy cũ chưa ghi giảm · FA-03 khấu hao theo ngày khoảng 0,23 tỷ.
+
+1. LNTT sau điều chỉnh: 53,53 − 10,72 = **42,81 tỷ** (chưa tính REV-04).
+2. 10,72 tỷ chưa điều chỉnh **gần gấp 3 lần OM 3,6 tỷ** → nếu Ban Giám đốc không điều chỉnh, ý kiến không thể chấp nhận toàn phần (Bài 1.2).
+3. Các khoản Further evidence có thể làm tổng tăng thêm; phải giải quyết trước khi phát hành báo cáo.
+</Solution>
+</BiscoreExample>
+
+<Eyebrow>Thử ngay</Eyebrow>
+## Soạn mini working paper
+Điền 8 trường cho một finding bạn đã tìm. Dữ liệu lưu trên trình duyệt này; bấm "Xuất Markdown" để lấy bản nộp.
+
+<MiniWPForm client:only="react" />
+
+<IfSkipped>bước chọn một trong ba kết luận, finding "cần xem thêm" sẽ lơ lửng: không vào bảng tổng hợp, cũng không có danh sách bằng chứng còn thiếu.</IfSkipped>
+
+<KeyPrinciple>**Một finding = một bản.** Kết luận chỉ là Confirmed misstatement, No adjustment hoặc Further evidence required.</KeyPrinciple>
+
+<QuickCheck q="Bút toán PKT2512-0015 (Liên Việt, 3,0 tỷ) chưa có hợp đồng, hóa đơn; đơn vị hứa gửi sau. Trường 8 ghi gì?" short="Further evidence required">
+Ghi rõ còn thiếu: hợp đồng có chữ ký đối tác, bằng chứng dịch vụ đã cung cấp, hóa đơn GTGT, tiền về trên sổ phụ. Chưa cộng vào bảng tổng hợp cho tới khi chuyển thành Confirmed hoặc No adjustment.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="a4-2-mini-working-paper" />

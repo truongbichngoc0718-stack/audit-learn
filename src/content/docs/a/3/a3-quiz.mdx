@@ -1,0 +1,25 @@
+---
+title: Phần 3 · Bài kiểm tra chốt
+description: 7 câu về thứ tự audit program và các kỹ thuật chính của Phần 3. Mục tiêu 6/7.
+id: a3-quiz
+nhanh: A
+phan: 3
+loai: kiem-tra
+thoi_luong: 3
+nguon: ["T#p3t"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "1.0"
+sidebar: { order: 9, label: "✓ Bài kiểm tra Phần 3" }
+---
+import { Quiz } from '@components';
+
+<Quiz client:visible id="a3-quiz" target={6} questions={[
+  { q: 'Thứ tự hợp lý khi kiểm toán một phần hành:', options: ['Vouching → Reconcile → Hiểu quy trình → Kết luận', 'Hiểu quy trình → Reconcile → Phân tích → Test chi tiết → Cut-off → Kết luận', 'Phân tích → Kết luận → Reconcile → Test chi tiết', 'Cut-off → Vouching → Hiểu quy trình → Reconcile'], answer: 1, explain: 'Hiểu quy trình để biết rủi ro nằm ở khâu nào; reconcile để chốt population trước khi chọn mẫu; phân tích để khoanh vùng; test chi tiết và cut-off để lấy bằng chứng; cuối cùng tổng hợp sai sót và kết luận.' },
+  { q: 'Phương pháp chọn mẫu phù hợp để kiểm tra cut-off doanh thu:', options: ['MUS trên GL 511', 'Block selection quanh ngày 31/12', 'Random trên danh sách hợp đồng', 'Test 100% key items'], answer: 1, explain: 'Cut-off nhắm vào một khoảng thời gian cụ thể, nên chọn một khối giao dịch trước và sau ngày khóa sổ.' },
+  { q: 'Vì sao không chọn mẫu xác nhận phải trả theo MUS trên số dư?', options: ['MUS tốn thời gian', 'Khoản bị ghi thiếu có số dư nhỏ hoặc bằng 0 nên ít khi được chọn', 'Nhà cung cấp không trả lời', 'Chuẩn mực cấm dùng MUS'], answer: 1, explain: 'MUS ưu tiên số dư lớn, phù hợp với rủi ro ghi khống. Với rủi ro ghi thiếu, chọn theo giá trị mua trong năm.' },
+  { q: 'Khách hàng dư nợ 2 tỷ, quá hạn 30 tháng. Dự phòng tối thiểu theo khung Thông tư 48/2019:', options: ['600 triệu', '1 tỷ', '1,4 tỷ', '2 tỷ'], answer: 2, explain: 'Quá hạn từ 2 đến dưới 3 năm: 70% × 2 tỷ = 1,4 tỷ.' },
+  { q: 'Công trình đã nghiệm thu, đưa vào sử dụng từ tháng 10/2025 nhưng vẫn nằm trên 241 tại 31/12. Hệ quả chính:', options: ['Không ảnh hưởng BCTC', 'TSCĐ phân loại sai và khấu hao ghi thiếu 3 tháng', 'Doanh thu ghi thiếu', 'Nợ phải trả ghi thừa'], answer: 1, explain: 'Phải kết chuyển sang 211 và trích khấu hao từ ngày đưa vào sử dụng. Lãi vay sau ngày hoàn thành cũng không được vốn hóa.' },
+  { q: 'Bút toán thủ công được lọc theo tiêu chí bất thường. Kết quả kiểm tra:', options: ['Suy rộng ra toàn bộ GL', 'Ghi nhận đúng số tìm được, không suy rộng', 'Chỉ cần kiểm tra 25 bút toán', 'Bỏ qua nếu dưới CTT'], answer: 1, explain: 'Chọn theo tiêu chí không phải sampling, nên không suy rộng.' },
+  { q: 'Giao dịch với bên liên quan nên được kiểm tra thế nào?', options: ['MUS', 'Random 10%', 'Test 100%', 'Chỉ giao dịch lớn hơn PM'], answer: 2, explain: 'Bên liên quan trọng yếu về tính chất, nên test toàn bộ giao dịch và thuyết minh (VSA 550, VAS 26).' },
+]} />

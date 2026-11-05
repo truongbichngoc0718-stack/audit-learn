@@ -1,0 +1,31 @@
+---
+title: Thuật ngữ
+description: Viết tắt · tiếng Anh · tiếng Việt · cách viết chuẩn trong hệ thống. Kèm flashcard để ôn.
+nhanh: lib
+loai: thu-vien
+nguon: ["docs/GLOSSARY.md"]
+sidebar: { order: 1 }
+---
+import { Flashcards } from '@components';
+import Glossary from '../../../../docs/GLOSSARY.md';
+
+## Ôn nhanh bằng flashcard
+<Flashcards client:visible cards={[
+  { front: 'OM', back: 'Overall materiality · mức trọng yếu tổng thể. Thước đo cho toàn bộ BCTC. Biscore: 3,6 tỷ.' },
+  { front: 'PM', back: 'Performance materiality · mức trọng yếu thực hiện. Thiết kế thủ tục từng khoản mục. Biscore: 2,2 tỷ. (EY: PM = Planning materiality)' },
+  { front: 'CTT', back: 'Clearly trivial · ngưỡng sai sót không đáng kể. Dưới mức này không tổng hợp. Biscore: 180 triệu.' },
+  { front: 'Vouching', back: 'Chọn từ sổ, đi tìm chứng từ (top-down). Rủi ro ghi khống · Occurrence, Existence.' },
+  { front: 'Tracing', back: 'Đi từ nguồn dò vào sổ (bottom-up). Rủi ro ghi thiếu · Completeness.' },
+  { front: 'Population', back: 'Tổng thể để chọn mẫu, phải reconcile với TB trước khi dùng.' },
+  { front: 'Key items', back: 'Phần tử test 100% (ngưỡng ≤ PM). Sai sót cộng thẳng, không suy rộng.' },
+  { front: 'MUS', back: 'Monetary Unit Sampling · chọn mẫu theo đơn vị tiền tệ. Hợp với rủi ro ghi khống; không dùng tìm ghi thiếu.' },
+  { front: 'Block selection', back: 'Chọn khối giao dịch quanh ngày khóa sổ, dùng cho cut-off.' },
+  { front: 'Suy rộng', back: 'Sai sót trong mẫu ÷ giá trị mẫu × giá trị population. Suy rộng rồi mới so ngưỡng.' },
+  { front: 'Cut-off', back: 'Đúng kỳ: giao dịch ghi vào đúng năm phát sinh.' },
+  { front: 'Management override', back: 'Ban giám đốc vượt quyền kiểm soát, thường qua bút toán tay. Lọc theo tiêu chí (Bài 3.7).' },
+  { front: 'Further evidence required', back: 'Kết luận mini WP khi còn thiếu bằng chứng; ghi rõ thiếu gì.' },
+  { front: 'Roll-forward', back: 'Đầu kỳ + tăng − giảm = cuối kỳ. Dùng cho TSCĐ, vay, dự phòng.' },
+  { front: 'Night audit', back: 'Khóa sổ doanh thu khách sạn cuối mỗi đêm; căn cứ cut-off doanh thu buồng phòng.' },
+]} />
+
+<Glossary />

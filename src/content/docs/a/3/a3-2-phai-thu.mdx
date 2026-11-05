@@ -1,0 +1,161 @@
+---
+title: Phải thu khách hàng
+description: Khoản phải thu có tồn tại và thu được?
+id: a3-2-phai-thu
+nhanh: A
+phan: 3
+bai: "3.2"
+nhan: Chu trình 02
+loai: phan-hanh
+thoi_luong: 3
+nguon: ["T#p3l2", "N:other hành", "C#process-cycles (Quy trình 04)", "C#business-risks", "B:Công nợ phải thu.xlsx/01-04", "B:Báo cáo tài chính.xlsx/04 Thuyet minh", "B:BSC-120 Điều 7"]
+assertion: [Existence, Valuation, Classification]
+chuan_muc: ["VSA 500", "Thông tư 48/2019"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: gop
+style_version: "1.0"
+lien_ket: [b7-join, b4-xlookup]
+sidebar: { order: 2, label: "3.2 Phải thu" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, AuditCard, AuditStep, RedFlags, Quiz, AllowanceCalc, LessonNotes } from '@components';
+
+<AuditCard kicker="Chu trình 02 · Accounts receivable" question="Khoản phải thu có tồn tại và thu được?" tk={['131', '2293', '642']} assertion={['Existence', 'Valuation', 'Classification']} data={['Bảng tuổi nợ', 'Sổ chi tiết 131', 'Sổ phụ', 'Thư xác nhận']} />
+
+<Objectives>
+- Reconcile bảng tuổi nợ với GL và TB
+- Xác nhận số dư và chọn thủ tục thay thế khi không có phản hồi
+- Tính lại dự phòng theo tuổi nợ
+</Objectives>
+
+<Eyebrow>Audit program</Eyebrow>
+## Sáu bước cho phải thu
+| Bước | | |
+|---|---|---|
+| [1 Hiểu quy trình](#buoc-1) | Bán chịu → thu tiền | |
+| [2 Reconcile](#buoc-2) | Aging = GL | |
+| [3 Phân tích](#buoc-3) | Số ngày thu tiền | |
+| [4 Xác nhận](#buoc-4) | Existence | |
+| [5 Dự phòng](#buoc-5) | Valuation | |
+| [6 Trình bày · kết luận](#buoc-6) | Không bù trừ | |
+
+Bước 1–6 kèm bài tập Biscore (khoảng 15 phút). Ngưỡng: **OM 3,6 tỷ · PM 2,2 tỷ · CTT 180 triệu**.
+
+<AuditStep n={1} label="Understanding" title="Hiểu quy trình bán chịu và thu tiền" output="Sơ đồ quy trình · chính sách tín dụng và trích lập dự phòng của đơn vị">
+**Bán chịu** (hóa đơn · Nợ 131 · duyệt hạn mức tín dụng) → **Theo dõi công nợ** (sổ chi tiết theo khách hàng · đối chiếu công nợ định kỳ) → **Thu tiền** (sổ phụ · Có 131 · người thu ≠ người ghi sổ) → **Đánh giá nợ quá hạn** (bảng tuổi nợ · 2293 · duyệt trích lập, xóa nợ)
+
+| Rủi ro | Xử lý ở |
+|---|---|
+| **Không tồn tại:** số dư không có khách hàng thật | → Bước 4 |
+| **Đánh giá cao:** nợ khó đòi chưa trích dự phòng | → Bước 5 |
+| **Phân loại sai:** dư Có bù trừ vào dư Nợ | → Bước 6 |
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 1" source="Case 02 / Quy trình 04 · Kế toán phải thu (hạn thanh toán, FIFO, TK 344, CS-DP-2025) · BSC-120 Điều 7 (khung dự phòng)">
+Biscore cho khách thuê văn phòng hạn thanh toán **15 ngày**, khách sạn và sự kiện **30 ngày**; tiền thu đối trừ theo hóa đơn cũ nhất trước (FIFO); tiền cọc theo dõi riêng trên TK 344; dự phòng trích cuối quý theo tuổi nợ quá hạn (30% · 50% · 70% · 100%) và theo đánh giá thực tế. Với ba rủi ro ở trên, bạn cần lấy những tài liệu nào?
+<Solution>
+1. **Tồn tại:** bảng tuổi nợ theo hóa đơn (sheet 02), hợp đồng · biên bản nghiệm thu, thư xác nhận, sổ phụ tiền về sau 31/12.
+2. **Đánh giá:** chính sách CS-DP-2025, bảng tuổi nợ theo nhóm quá hạn, công văn đòi nợ, thông tin khách hàng ngừng hoạt động hoặc tranh chấp.
+3. **Phân loại:** danh sách dư Có 131 (người mua trả tiền trước), tiền cọc 344 tách khỏi 131.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={2} label="Reconcile" title="Bảng tuổi nợ khớp GL và TB" assertion={['Completeness', 'Accuracy']} output="Bảng tuổi nợ đã đối chiếu · population cho Bước 4 và 5">
+**Bảng tuổi nợ** (theo từng khách hàng) = **GL 131** = **TB**. Kiểm tra thêm: cộng dọc, cộng ngang, tách dư Có 131.
+
+Biscore đã khớp ba tầng ở [Bài 1.1](/a/1/a1-1-tb-gl-subledger/): **137.499.526.000 đ**, chênh lệch 0. Key items ≥ PM: 11 dòng, 34,29 tỷ ([Bài 2.2](/a/2/a2-2-scoping-key-items/)).
+</AuditStep>
+
+<AuditStep n={3} label="Analytics" title="Số ngày thu tiền có bất thường?" assertion={['Existence', 'Valuation']} output="Bảng phân tích số ngày thu tiền, tỷ trọng nợ quá hạn so với năm trước">
+<div class="b-card" style="text-align:center;font-weight:600">Số ngày thu tiền bình quân = Phải thu bình quân **÷** Doanh thu **×** 365</div>
+
+So năm trước · so chính sách tín dụng → tăng mạnh? → nghi ghi khống hoặc nợ khó đòi → dồn trọng tâm vào Bước 4–5.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 3" source="Công nợ phải thu.xlsx / 03 Bien dong theo thang">
+Số ngày thu tiền của Biscore dao động 27–36 ngày từ tháng 3 đến tháng 11, rồi lên **46,6 ngày** ở tháng 12. Tháng 12: phát sinh Nợ 131 là **69,29 tỷ**, phát sinh Có chỉ **6,68 tỷ** (các tháng khác 32–78 tỷ). Số dư 131 tăng từ 74,89 tỷ lên **137,50 tỷ** trong một tháng. Bạn đọc dữ kiện này thế nào?
+<Solution>
+1. Tiền thu tháng 12 thấp bất thường trong khi bán chịu tăng mạnh → số dư tăng gần gấp đôi chỉ trong tháng cuối năm.
+2. Hai giải thích cần kiểm: (a) **doanh thu tháng 12 không có thật hoặc sai kỳ**, nên không có tiền về; (b) **khách chậm trả**, ảnh hưởng dự phòng.
+3. Bài 3.1 đã tìm thấy một phần: hai PKT ghi Nợ 131.OT 3,85 tỷ và 3,3 tỷ (chưa có hợp đồng, hóa đơn), cùng hóa đơn Sao Mai Land 4,11 tỷ (hóa đơn thật, phải thu có thể vẫn tồn tại; sai ở doanh thu, không ở 131). Tổng 11,26 tỷ, mới giải thích một phần mức tăng 62,61 tỷ.
+
+→ Dồn xác nhận và tiền thu sau kỳ vào các số dư phát sinh tháng 12.
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={4} label="Confirmation" title="Xác nhận số dư với khách hàng" assertion={['Existence']} direction="vouching" output="Bảng theo dõi thư xác nhận: gửi, nhận, chênh lệch và cách giải quyết">
+Chọn mẫu: **key items + MUS**. KTV **tự gửi, tự nhận** thư; khách hàng là bên thứ ba độc lập, phản hồi thẳng KTV.
+
+Không phản hồi → **thủ tục thay thế**: tiền thu sau 31/12, hoặc hóa đơn + bằng chứng giao hàng (nghiệm thu).
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 4" source="Công nợ phải thu.xlsx / 01 · Bài 2.2 · Bài 3.1 Bước 6">
+Hai key items của 131.OT: Đại Nam Việt **3,85 tỷ** và Liên Việt **3,3 tỷ**. **Tình huống giả định** (hồ sơ không có thư phản hồi): bạn gửi thư xác nhận cho cả hai. Đại Nam Việt trả lời "chỉ có thỏa thuận nguyên tắc, chưa có hợp đồng và chưa nhận dịch vụ quý 4". Liên Việt không phản hồi. Xử lý tiếp thế nào?
+<Solution>
+1. **Đại Nam Việt:** nếu khách hàng không thừa nhận nợ → chênh lệch 3,85 tỷ, số dư không tồn tại; thư này củng cố thêm cho finding REV-03 (Bài 3.1): đảo doanh thu 3,5 tỷ và 3331 0,35 tỷ, giảm 131.OT 3,85 tỷ. **Không ghi hai lần** ở phải thu.
+2. **Liên Việt:** thủ tục thay thế. Tìm tiền về sau 31/12 trên sổ phụ và hợp đồng, bằng chứng dịch vụ. Không có → giữ "Further evidence required" như REV-04.
+3. Thư xác nhận là bằng chứng bên ngoài, gửi thẳng KTV, mạnh nhất trên thang VSA 500 ([Bài 1.4](/a/1/a1-4-do-tin-cay-bang-chung/)).
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={5} label="Valuation" title="Test tuổi nợ, tính lại dự phòng" assertion={['Valuation']} output="Bảng tính lại dự phòng, chênh lệch so với số đã trích trên 2293">
+Chọn hóa đơn → ngày đến hạn đúng nhóm tuổi? → tính lại 2293 theo khung trích lập.
+
+**Thử ngay: từ tuổi nợ đến dự phòng.** Đổi số dư và số tháng quá hạn để xem nhóm tuổi nợ và mức dự phòng tối thiểu (khung Thông tư 48/2019).
+
+<AllowanceCalc client:visible />
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 5" source="Công nợ phải thu.xlsx / 01 Tuoi no theo khach hang · Báo cáo tài chính.xlsx / 04 Thuyet minh · BSC-120 Điều 7">
+Bảng tuổi nợ tại 31/12/2025: nhóm **quá hạn 181–365 ngày 2.969,8 triệu**, nhóm **trên 365 ngày 5.300 triệu** (4 khách hàng, cùng quá hạn 426 ngày). Dự phòng đã trích **2.650 triệu**. Thuyết minh BCTC ghi: "trích lập dự phòng cho các khoản phải thu đã quá hạn thanh toán **trên 12 tháng**". Dự phòng đã đủ chưa?
+<Solution>
+1. Trên 365 ngày (426 ngày, nhóm 1 – dưới 2 năm): 5.300 × 50% = **2.650 triệu** = số đã trích ✓.
+2. 181–365 ngày (6 tháng – dưới 1 năm): khung trích lập của đơn vị (BSC-120 Điều 7, CS-DP-2025) theo Thông tư 48/2019 là **30%** → 2.969,8 × 30% = **890,9 triệu**, đơn vị chưa trích.
+3. Thuyết minh mô tả chính sách khác với chính sách kế toán đã ban hành (chỉ trích trên 12 tháng) → nguyên nhân của sai sót.
+4. 890,9 triệu ≥ CTT 180 triệu → vào bảng tổng hợp; dưới PM.
+
+Bút toán đề xuất (AR-01): **Nợ 6426 890.940.000 / Có 2293 890.940.000**. Thêm: xem 4 khách hàng quá hạn 426 ngày có ngừng hoạt động hoặc tranh chấp không (trích 100% theo đánh giá thực tế).
+</Solution>
+</BiscoreExample>
+
+<AuditStep n={6} label="Presentation · conclude" title="Trình bày đúng, rồi kết luận" assertion={['Classification', 'Presentation']} output="Kết luận phải thu · mini working paper cho từng finding">
+**Dư Nợ 131** (tài sản) ≠ **dư Có 131** (người mua trả tiền trước) → **không bù trừ**, trình bày riêng hai bên. Tách riêng: phải thu bên liên quan · ngắn hạn, dài hạn.
+
+**Sai sót đã lượng hóa** → **So CTT · PM** → **Bút toán điều chỉnh đề xuất**.
+</AuditStep>
+
+<BiscoreExample title="Biscore · Bước 6" source="Tổng hợp Bước 3–5 · Bài 3.1">
+Tổng hợp kết luận cho khoản mục phải thu.
+<Solution>
+| Finding | Nội dung | Ảnh hưởng |
+|---|---|---|
+| AR-01 | Dự phòng nhóm 181–365 ngày chưa trích | 2293 thiếu 0,89 tỷ · chi phí thiếu 0,89 tỷ |
+| (REV-03; REV-04 nếu xác nhận) | Phải thu 131.OT đi kèm doanh thu ghi thừa | Ghi nhận ở Bài 3.1, không cộng lại. REV-01 ghi Có 3387, không chạm 131 |
+
+1. AR-01 ≥ CTT → bảng tổng hợp; cộng với các finding khác để so OM.
+2. Bảng tuổi nợ không có dư Có; tiền cọc của khách thuê theo dõi riêng trên 344 (ví dụ Sao Mai Land đặt cọc 622,4 triệu) → không bù trừ vào 131.
+</Solution>
+</BiscoreExample>
+
+<RedFlags items={[
+  { title: 'Phát sinh lớn tháng 12', text: 'Không có tiền về sau kỳ' },
+  { title: 'Quá hạn lâu', text: 'Dự phòng thấp hoặc bằng 0' },
+  { title: 'Bên liên quan', text: 'Số dư lớn, kéo dài, không tính lãi' },
+]} />
+
+<IfSkipped>bước tính lại dự phòng theo chính sách đã ban hành, bạn sẽ chấp nhận số dự phòng chỉ vì nó khớp với thuyết minh do chính đơn vị viết.</IfSkipped>
+
+<KeyPrinciple>Phải thu: **xác nhận** cho existence, **tuổi nợ và chính sách** cho valuation, **không bù trừ** cho presentation.</KeyPrinciple>
+
+<QuickCheck q="Khách hàng dư nợ 2 tỷ, quá hạn 30 tháng, đơn vị trích dự phòng 1 tỷ. Theo khung Thông tư 48/2019, dự phòng thiếu bao nhiêu?" short="400 triệu">
+Quá hạn từ 2 đến dưới 3 năm → 70% × 2 tỷ = 1,4 tỷ. Đã trích 1 tỷ → thiếu 400 triệu, lợi nhuận ghi thừa tương ứng.
+</QuickCheck>
+
+## Kiểm tra phần hành
+<Quiz client:visible id="a3-2-phai-thu" questions={[
+  { q: 'Thư xác nhận phải thu nên được gửi và nhận thế nào?', options: ['Đơn vị gửi, đơn vị chuyển lại cho KTV', 'KTV tự gửi, khách hàng phản hồi thẳng KTV', 'Gửi qua kế toán công nợ cho nhanh', 'Chỉ cần biên bản đối chiếu đơn vị đã có'], answer: 1, explain: 'Bằng chứng mạnh khi đi thẳng từ bên thứ ba tới KTV, không qua tay đơn vị (VSA 500).' },
+  { q: 'Khách hàng không phản hồi thư xác nhận. Thủ tục thay thế tốt nhất:', options: ['Bỏ qua khoản đó', 'Hỏi kế toán công nợ', 'Kiểm tra tiền thu sau 31/12, hoặc hóa đơn + bằng chứng giao hàng', 'Gửi lại thư cho đến khi có phản hồi, không làm gì thêm'], answer: 2, explain: 'Tiền về sau kỳ chứng minh khoản phải thu có thật và thu được; hóa đơn kèm bằng chứng giao hàng chứng minh giao dịch đã xảy ra.' },
+  { q: 'Số ngày thu tiền tháng 12 tăng từ khoảng 30 lên 47 ngày. Phản ứng đúng:', options: ['Bình thường vì cuối năm', 'Dồn trọng tâm xác nhận, tiền thu sau kỳ và dự phòng vào số dư tháng 12', 'Giảm cỡ mẫu xác nhận', 'Chỉ cần ghi chú trong hồ sơ'], answer: 1, explain: 'Tăng mạnh là dấu hiệu ghi khống hoặc nợ khó đòi; phân tích dùng để khoanh vùng cho test chi tiết.' },
+  { q: 'Dư Có 131 của một khách hàng (khách trả trước) được trình bày thế nào?', options: ['Bù trừ vào dư Nợ của khách khác', 'Trình bày riêng là người mua trả tiền trước', 'Ghi giảm doanh thu', 'Chuyển sang 2293'], answer: 1, explain: 'Không bù trừ: dư Nợ là tài sản, dư Có là nợ phải trả (người mua trả tiền trước).' },
+]} />
+
+<LessonNotes client:only="react" id="a3-2-phai-thu" />
