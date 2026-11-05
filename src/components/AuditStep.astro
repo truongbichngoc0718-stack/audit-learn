@@ -1,0 +1,20 @@
+---
+interface Props { n: number; label: string; title: string; assertion?: string[]; direction?: 'vouching' | 'tracing' | 'ca-hai' | ''; output?: string; id?: string }
+const { n, label, title, assertion = [], direction = '', output, id } = Astro.props;
+const dirLabel = { vouching: 'Vouching ↓ sổ → chứng từ', tracing: 'Tracing ↑ nguồn → sổ', 'ca-hai': 'Vouching + Tracing', '': '' }[direction];
+---
+<section class="b-step" id={id ?? `buoc-${n}`}>
+  <div class="hd">
+    <div class="n">{n}</div>
+    <div>
+      <div class="lbl">Bước {n} · {label}</div>
+      <h3 class="ttl">{title}</h3>
+      <div style="margin-top:.35rem;display:flex;gap:.3rem;flex-wrap:wrap">
+        {assertion.map(a => <span class="b-chip as">{a}</span>)}
+        {dirLabel && <span class={`b-dir ${direction}`}>{dirLabel}</span>}
+      </div>
+    </div>
+  </div>
+  <div class="bd"><slot /></div>
+  {output && <div class="out"><b>Output:</b> {output}</div>}
+</section>

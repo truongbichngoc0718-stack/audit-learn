@@ -1,0 +1,5 @@
+---
+interface Props { label?: string }
+const { label = 'Xem lời giải' } = Astro.props;
+---
+<details class="b-reveal" style="margin-top:.8rem"><summary>{label} ▾</summary><div class="ans"><slot /></div></details>

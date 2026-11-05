@@ -1,0 +1,392 @@
+[
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "top",
+  "text": "Tổng quan ngành"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "mo-hinh",
+  "text": "Ngành này trông như thế nào"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "doanh-thu",
+  "text": "Doanh thu hình thành thế nào"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "luu-tru",
+  "text": "Bán tồn kho phòng theo từng ngày"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "luu-tru",
+  "text": "3.1. Khách đặt phòng và lưu trú thế nào"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "luu-tru",
+  "text": "3.2. Chỉ số vận hành khách sạn theo tháng"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "van-phong",
+  "text": "Biến diện tích sàn thành doanh thu lặp lại"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "van-phong",
+  "text": "4.1. Ai thuê văn phòng"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "van-phong",
+  "text": "4.2. Chỉ số thị trường văn phòng 2022–2025"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "su-kien",
+  "text": "Bán mặt bằng, ăn uống và dịch vụ quanh một ngày đã định"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "su-kien",
+  "text": "5.1. Ai mua dịch vụ sự kiện"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "su-kien",
+  "text": "5.2. Hoạt động sự kiện theo quý"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "canh-tranh",
+  "text": "Ba mô hình, ba chuẩn so sánh"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "canh-tranh",
+  "text": "6.1. Chỉ số tham chiếu cấp tập đoàn"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "canh-tranh",
+  "text": "6.2. Nhóm so sánh cấp tài sản"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "boi-canh",
+  "text": "Bối cảnh 2025 – 2026"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "d2top",
+  "text": "BIS CORE"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "doc2",
+  "text": "Mục lục chi tiết"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "doc2",
+  "text": "01 Hồ sơ doanh nghiệp"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "doc2",
+  "text": "02 Tài chính & vận hành"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "doc2",
+  "text": "03 Doanh nghiệp & mô hình kinh doanh"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "doc2",
+  "text": "04 Bối cảnh & vận hành"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "doc2",
+  "text": "05 Sự kiện & phụ lục"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "p1",
+  "text": "Giới thiệu chung & Tóm tắt điều hành"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "company-overview",
+  "text": "Về chúng tôi"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "company-history",
+  "text": "Lịch sử phát triển"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "assets",
+  "text": "Hai dòng kinh doanh"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "p2",
+  "text": "Chỉ tiêu tài chính & chỉ số hiệu quả trọng yếu"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "financial-summary",
+  "text": "Báo cáo tài chính FY2025 (chưa kiểm toán)"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "financial-summary",
+  "text": "2.1.1. Kết quả hoạt động kinh doanh (đơn vị: đồng)"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "financial-summary",
+  "text": "2.1.2. Bảng cân đối kế toán (đơn vị: đồng)"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "working-capital",
+  "text": "Công nợ phải thu và phải trả"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "working-capital",
+  "text": "2.2.1. Phải thu khách hàng tại 31/12/2025"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "working-capital",
+  "text": "2.2.2. Phải trả người bán tại 31/12/2025"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "hotel-kpi",
+  "text": "Chỉ số vận hành khách sạn"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "office-kpi",
+  "text": "Chỉ số vận hành toà văn phòng"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "p3",
+  "text": "Về doanh nghiệp & mô hình kinh doanh"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "ownership-structure",
+  "text": "Cơ cấu cổ đông"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "group-structure",
+  "text": "Cấu trúc pháp nhân và hai dòng kinh doanh"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "directors",
+  "text": "Hội đồng quản trị & Ban điều hành"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "key-management",
+  "text": "Bộ máy tài chính – kế toán"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "revenue-model",
+  "text": "Hai dòng doanh thu, hai cách ghi sổ"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "revenue-model",
+  "text": "3.5.1. Quy ước số chứng từ"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "tenant-base",
+  "text": "Danh mục khách thuê"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "hotel-model",
+  "text": "Cấu phần dịch vụ khách sạn"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "event-business",
+  "text": "Mảng hội nghị, tiệc và sự kiện"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "process-cycles",
+  "text": "Quy trình các khoản mục khác trong phạm vi kiểm toán"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "p4",
+  "text": "Bối cảnh kinh doanh, chiến lược & vận hành"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "business-environment",
+  "text": "Môi trường kinh doanh"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "bizEnv",
+  "text": "Thị trường văn phòng cho thuê"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "bizEnv",
+  "text": "Thị trường lưu trú và sự kiện"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "bizEnv",
+  "text": "Yếu tố tài chính và pháp lý"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "business-risks",
+  "text": "Yếu tố kinh doanh trong FY2025"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "purpose-values",
+  "text": "Tôn chỉ – Tầm nhìn – Sứ mệnh – Giá trị cốt lõi"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "purpose-values",
+  "text": "Giá trị cốt lõi — C.O.R.E"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "strategy-control",
+  "text": "Chiến lược & môi trường kiểm soát"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "business-operations",
+  "text": "11 nhóm hoạt động trọng yếu"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "p5",
+  "text": "Sự kiện trọng yếu & cột mốc trong năm"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "p6",
+  "text": "Dữ liệu và tài liệu cho các đội thi"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "appendix-data",
+  "text": "Bộ dữ liệu phát cho thí sinh"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "d3top",
+  "text": "YÊU CẦU"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "scope",
+  "text": "Phạm vi kiểm toán"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "materiality",
+  "text": "Mức trọng yếu áp dụng cho cuộc kiểm toán"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "deliverables",
+  "text": "Bốn sản phẩm đội thi phải nộp"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "mini-wp",
+  "text": "Mẫu mini working paper"
+ }
+]

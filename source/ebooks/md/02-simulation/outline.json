@@ -1,0 +1,1064 @@
+[
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-home",
+  "text": "Technique Training"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "caseband",
+  "text": "Từ số liệu đến finding"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "caseband",
+  "text": "Dữ liệu là điểm xuất phát"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "caseband",
+  "text": "Materiality là thước đo"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1",
+  "text": "Sau Phần 1, bạn sẽ:"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p1l1",
+  "text": "TB, GL và subledger"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l1",
+  "text": "Từ chứng từ lên BCTC"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l1",
+  "text": "Dùng tài liệu nào để làm gì"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p1l1",
+  "text": "Trial Balance Bảng cân đối phát sinh"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p1l1",
+  "text": "General Ledger Sổ cái"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p1l1",
+  "text": "Subledger Sổ chi tiết"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l1",
+  "text": "Một con số, ba tầng: TK 131"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l1",
+  "text": "Reconcile trước khi test"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p1l2",
+  "text": "Mục đích cuối cùng của kiểm toán"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l2",
+  "text": "Bốn việc để đi tới ý kiến"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p1l2",
+  "text": "Tìm sai sót"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p1l2",
+  "text": "Lượng hóa"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p1l2",
+  "text": "Đề xuất điều chỉnh"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p1l2",
+  "text": "So với OM"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l2",
+  "text": "Từ tổng sai sót đến ý kiến"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l2",
+  "text": "Vouching hay tracing"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p1l2",
+  "text": "Bằng chứng nào đáng tin hơn"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p1t",
+  "text": "Phần 1 — Bài kiểm tra chốt"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2",
+  "text": "Sau Phần 2, bạn sẽ:"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p2l1",
+  "text": "Ba mức trọng yếu"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l1",
+  "text": "Benchmark tham khảo cho OM"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l1",
+  "text": "Công ty A: lợi nhuận trước thuế 5 tỷ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l1",
+  "text": "Overall materiality Mức trọng yếu tổng thể"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l1",
+  "text": "Performance materiality Mức trọng yếu thực hiện"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l1",
+  "text": "Clearly trivial Ngưỡng sai sót không đáng kể"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l1",
+  "text": "Đặt sai sót lên thước đo"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l1",
+  "text": "Vùng đệm cho sai sót chưa phát hiện"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l1",
+  "text": "Cùng chữ “PM”, hai nghĩa khác nhau"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p2l2",
+  "text": "Test dựa vào materiality"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l2",
+  "text": "Bốn bước"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l2",
+  "text": "Khoản mục nào phải test?"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l2",
+  "text": "Tách key items, test 100%"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l2",
+  "text": "Chọn mẫu đúng phương pháp"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l2",
+  "text": "Suy rộng rồi mới so ngưỡng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l2",
+  "text": "Sai sót doanh thu suy rộng thế nào?"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l2",
+  "text": "Ví dụ — MUS trên GL doanh thu"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p2l2",
+  "text": "Bài làm của bạn"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p2l2",
+  "text": "Máy tính suy rộng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p2t",
+  "text": "Phần 2 — Bài kiểm tra chốt"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3",
+  "text": "Sáu chu trình và lớp xuyên suốt"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Doanh thu"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Phải thu khách hàng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Phải trả người bán"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Chi phí hoạt động"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Vay và lãi vay"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Tài sản cố định"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Bút toán tay & bên liên quan"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3",
+  "text": "Mọi phần hành, 6 bước"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Hiểu quy trình"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Reconcile"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Phân tích"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Test chi tiết"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Cut-off & sau kỳ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-p3",
+  "text": "Kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3l1",
+  "text": "Chu trình doanh thu"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l1",
+  "text": "Bảy bước, đi đúng thứ tự"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "rv1",
+  "text": "Hiểu quy trình bán hàng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "rv1",
+  "text": "Doanh thu ghi nhận khi nào?"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "rv1",
+  "text": "Giao hàng xong mới ghi"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "rv1",
+  "text": "Gói hội viên 12 tháng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "rv1",
+  "text": "Bán vé tháng 3, bay tháng 6"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "rv2",
+  "text": "Detail listing khớp GL, TB và BCTC"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "rv3",
+  "text": "Lập kỳ vọng, so với sổ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "rv4",
+  "text": "Test chi tiết theo hai chiều"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "rv5",
+  "text": "Ghi đúng kỳ quanh 31/12"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "rv6",
+  "text": "Soát xét sau kỳ và bút toán tay"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "rv7",
+  "text": "Tổng hợp sai sót, kết luận phần hành"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l1",
+  "text": "Red flags"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3l2",
+  "text": "Phải thu khách hàng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l2",
+  "text": "Sáu bước cho phải thu"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ar1",
+  "text": "Hiểu quy trình bán chịu và thu tiền"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ar2",
+  "text": "Bảng tuổi nợ khớp GL và TB"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ar3",
+  "text": "Số ngày thu tiền có bất thường?"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ar4",
+  "text": "Xác nhận số dư với khách hàng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ar5",
+  "text": "Test tuổi nợ, tính lại dự phòng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ar6",
+  "text": "Trình bày đúng, rồi kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l2",
+  "text": "Red flags"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3l3",
+  "text": "Phải trả người bán"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l3",
+  "text": "Sáu bước cho phải trả"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ap1",
+  "text": "Hiểu quy trình mua hàng và thanh toán"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ap2",
+  "text": "Chi tiết công nợ khớp GL và TB"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ap3",
+  "text": "Số dư phải trả có hợp lý?"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ap4",
+  "text": "Chọn NCC theo phát sinh, không theo số dư"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ap5",
+  "text": "Nợ sinh ra khi nhận hàng , không phải khi nhận hóa đơn"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ap6",
+  "text": "Tổng hợp sai sót, kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l3",
+  "text": "Red flags"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3l4",
+  "text": "Chi phí hoạt động"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l4",
+  "text": "Sáu bước cho chi phí"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ox1",
+  "text": "Hiểu quy trình chi và phân loại chi phí"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "ox1",
+  "text": "Ba ngăn của một khoản chi"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "ox1",
+  "text": "Chi phí trong kỳ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "ox1",
+  "text": "Chi phí trả trước"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "ox1",
+  "text": "Tài sản"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ox2",
+  "text": "Chi tiết chi phí khớp GL và TB"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ox3",
+  "text": "Phân tích theo tháng, so năm trước"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ox4",
+  "text": "Vouching khoản lớn và bất thường"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ox5",
+  "text": "Tính lại phân bổ 242, kiểm tra chi phí đúng kỳ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "ox6",
+  "text": "Tổng hợp sai sót, kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l4",
+  "text": "Red flags"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3l5",
+  "text": "Vay và lãi vay"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l5",
+  "text": "Sáu bước cho vay"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "bw1",
+  "text": "Hiểu quy trình vay và trả nợ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "bw2",
+  "text": "Đối chiếu từng khoản vay"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "bw3",
+  "text": "Tính lại lãi, rồi khớp vào sổ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "bw4",
+  "text": "Tách phần đến hạn của khoản vay dài hạn"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "bw5",
+  "text": "Kiểm tra cam kết với ngân hàng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "bw6",
+  "text": "Tổng hợp sai sót, kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l5",
+  "text": "Red flags"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3l6",
+  "text": "Tài sản cố định"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l6",
+  "text": "Sáu bước cho TSCĐ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "fa1",
+  "text": "Hiểu vòng đời một tài sản"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "fa2",
+  "text": "Roll-forward nguyên giá, khớp FAR với GL"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "fa3",
+  "text": "Tỷ lệ khấu hao có hợp lý?"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "fa4",
+  "text": "Vouching tài sản tăng và 241"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "fa5",
+  "text": "Tính lại khấu hao, kiểm tra thanh lý"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "fa6",
+  "text": "Tổng hợp sai sót, kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l6",
+  "text": "Red flags"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3l7",
+  "text": "Bút toán tay & bên liên quan"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l7",
+  "text": "Sáu bước cho lớp xuyên suốt"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "je1",
+  "text": "Hiểu quy trình ghi sổ và khóa sổ"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "je2",
+  "text": "Lấy toàn bộ sổ cái, khớp với TB"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "je3",
+  "text": "Bật tiêu chí, xem bút toán nào lọt lưới"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "je4",
+  "text": "Kiểm tra từng bút toán trong danh sách ngắn"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "je5",
+  "text": "Bên liên quan: test 100%"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "je6",
+  "text": "Tổng hợp sai sót, kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-p3l7",
+  "text": "Red flags"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-p3t",
+  "text": "Phần 3 — Bài kiểm tra chốt"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": "page-fin",
+  "text": "Từ thủ tục đến finding"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-fin",
+  "text": "Năm mắt xích"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "Thủ tục"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "Bằng chứng"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "Sai sót"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "Bút toán"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "Kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-fin",
+  "text": "Mini working paper: 8 trường"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": "page-fin",
+  "text": "Ba kết luận"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "Confirmed misstatement"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "No adjustment"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h3",
+  "id": "page-fin",
+  "text": "Further evidence required"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h1",
+  "id": "page-intro",
+  "text": "Kỹ năng mềm cho associate mới"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-intro",
+  "text": "6 block, 40 phút"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h1",
+  "id": "page-b1",
+  "text": "Ấn tượng đầu tiên"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b1",
+  "text": "Bốn điều tạo nên ấn tượng đầu tiên"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h1",
+  "id": "page-b2",
+  "text": "Một ngày tại văn phòng khách hàng"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b2",
+  "text": "Một ngày làm việc qua 4 thời điểm"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h1",
+  "id": "page-b3",
+  "text": "Trao đổi với khách hàng"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b3",
+  "text": "Hết on field nhưng vẫn thiếu chứng từ"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b3",
+  "text": "Nhưng mọi chuyện không đơn giản"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b3",
+  "text": "Bốn mảnh ghép để cân bằng"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h1",
+  "id": "page-b4",
+  "text": "Xử lý số liệu và làm việc với team"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b4",
+  "text": "Số không khớp, deadline thì gấp"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b4",
+  "text": "Bốn bước trọng tâm"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b4",
+  "text": "Giao tiếp trong team"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h1",
+  "id": "page-b5",
+  "text": "Khi mọi việc không như kế hoạch"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b5",
+  "text": "Bốn tình huống, mỗi tình huống 1–2 phút"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "fan4",
+  "text": "Một sai sót ngoài ý muốn"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "fan4",
+  "text": "Khi bạn không thể hoàn thành đúng hạn"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "fan4",
+  "text": "Khi khách hàng không đồng tình"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "fan4",
+  "text": "Khi bạn chưa biết hướng xử lý"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h3",
+  "id": "page-b5",
+  "text": ""
+ },
+ {
+  "file": "main_frame2",
+  "level": "h1",
+  "id": "page-b6",
+  "text": "5 điều ước gì mình biết sớm hơn"
+ },
+ {
+  "file": "main_frame2",
+  "level": "h2",
+  "id": "page-b6",
+  "text": "Ghi vào sổ trước khi bắt đầu job"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "mid",
+  "text": "Xong phần kỹ thuật. Giờ là cách làm việc với con người."
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "mid",
+  "text": "Technique Training"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "mid",
+  "text": "Kỹ năng mềm"
+ }
+]

@@ -1,0 +1,8 @@
+---
+interface Props { q: string; short: string }
+const { q, short } = Astro.props;
+---
+<details class="b-reveal">
+  <summary><div class="b-kicker">Kiểm tra nhanh</div><div class="q"><span class="mark">?</span><span>{q}</span></div><div class="hint">Bấm để xem đáp án</div></summary>
+  <div class="ans"><div class="short">{short}</div><slot /></div>
+</details>

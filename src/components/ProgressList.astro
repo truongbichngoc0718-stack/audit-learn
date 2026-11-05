@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import ProgressPage from './ProgressPage';
+const groupName = (d: any) => d.nhanh === 'B' ? 'Nhánh B · Excel & Power BI' : d.nhanh === 'lib' ? 'Thư viện' : `Phần ${d.phan}`;
+const docs = (await getCollection('docs')).filter(e => e.data.id && !['he-thong', 'khung'].includes(e.data.loai));
+const lessons = docs
+  .sort((a, b) => a.id.localeCompare(b.id, 'vi', { numeric: true }))
+  .map(e => ({ id: e.data.id!, title: e.data.title, path: `/${e.id}/`, group: groupName(e.data), minutes: e.data.thoi_luong }));
+---
+<ProgressPage client:only="react" lessons={lessons} />
+{lessons.length === 0 && <p>Chưa có bài nào. Các bài sẽ xuất hiện ở đây khi được xuất bản.</p>}

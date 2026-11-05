@@ -1,0 +1,9 @@
+---
+interface Props { source: string; title?: string }
+const { source, title = 'Ví dụ Biscore' } = Astro.props;
+---
+<div class="b-biscore">
+  <div class="b-kicker">{title} · số liệu thật FY2025</div>
+  <slot />
+  <div class="src">Nguồn: {source}</div>
+</div>

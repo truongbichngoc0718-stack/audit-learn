@@ -1,0 +1,5 @@
+---
+interface Props { title?: string }
+const { title = 'Sau bài này, bạn sẽ:' } = Astro.props;
+---
+<div class="b-objectives"><div class="ttl">{title}</div><slot /></div>

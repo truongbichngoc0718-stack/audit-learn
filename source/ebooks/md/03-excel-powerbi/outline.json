@@ -1,0 +1,242 @@
+[
+ {
+  "file": "main_frame1",
+  "level": "h1",
+  "id": null,
+  "text": "Excel & Power BI cho kiểm toán viên"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": null,
+  "text": "Khánh Bùi"
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": null,
+  "text": "9 bài trong 65 phút."
+ },
+ {
+  "file": "main_frame1",
+  "level": "h2",
+  "id": null,
+  "text": "Học xong buổi này, các bạn làm được gì."
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-xl1",
+  "text": "Di chuyển & chọn vùng nhanh"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl1",
+  "text": "Nhảy tới mép vùng dữ liệu"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl1",
+  "text": "Chọn cả vùng"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl1",
+  "text": "Về đầu, tới cuối"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-xl2",
+  "text": "Freeze, Filter & Vẽ bảng"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl2",
+  "text": "Giữ dòng tiêu đề đứng yên"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl2",
+  "text": "Bật bộ lọc và lọc nhanh"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl2",
+  "text": "Table và kẻ viền"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-xl3",
+  "text": "SUMIFS · cộng có điều kiện"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl3",
+  "text": "Cấu trúc hàm"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl3",
+  "text": "Đối chiếu sổ cái với bảng cân đối phát sinh"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl3",
+  "text": "Nhiều điều kiện: tài khoản × tháng"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-xl4",
+  "text": "XLOOKUP · tra cứu danh mục"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl4",
+  "text": "Cấu trúc hàm"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl4",
+  "text": "Tra danh mục và tìm mã lạ"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-xl4",
+  "text": "Bảng phím tắt & công thức Phần 1"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-pl1",
+  "text": "Ghép nhiều file cùng bố cục"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl1",
+  "text": "Từ 12 file thành 1 bảng"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl1",
+  "text": "Thực hiện trong Power BI Desktop"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-pl2",
+  "text": "Measure đơn giản: SUM & DIVIDE"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl2",
+  "text": "Tạo measure đầu tiên"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl2",
+  "text": "Nhóm measure cộng"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl2",
+  "text": "Chia an toàn"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl2",
+  "text": "Doanh thu, giá vốn và biên lợi nhuận gộp"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-pl3",
+  "text": "Join dữ liệu: sổ cái + danh mục"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl3",
+  "text": "Nạp 2 bảng danh mục"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl3",
+  "text": "Tạo Relationship trong Model view"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl3",
+  "text": "Merge Queries trong Power Query"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-pl4",
+  "text": "Dựng dashboard"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-pl4",
+  "text": "Thực hành trực tiếp trên Power BI"
+ },
+ {
+  "file": "main",
+  "level": "h1",
+  "id": "page-wrap",
+  "text": "AI tại Big4"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-wrap",
+  "text": "Big4 đang dùng AI nào?"
+ },
+ {
+  "file": "main",
+  "level": "h2",
+  "id": "page-wrap",
+  "text": "Kiểm toán viên đang dùng AI để làm gì?"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "page-wrap",
+  "text": "Đọc nhanh hợp đồng"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "page-wrap",
+  "text": "Trau chuốt bài phân tích"
+ },
+ {
+  "file": "main",
+  "level": "h3",
+  "id": "page-wrap",
+  "text": "Tóm lược audit guide"
+ }
+]

@@ -1,0 +1,47 @@
+---
+title: {Tiêu đề ≤ 6 từ}
+description: {Takeaway 1 câu, có vế song song}
+id: {id}
+nhanh: A
+phan: {n}
+bai: "{n.m}"
+nhan: {chủ đề ngắn}
+loai: ky-thuat
+thoi_luong: {3-4}
+nguon: ["T#{idgoc}"]
+assertion: []
+chuan_muc: []
+ngay_cap_nhat: {YYYY-MM-DD}
+trang_thai: goc
+style_version: "1.0"
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, Extended, AuditCard, AuditStep, RedFlags, Quiz, LessonNotes, FlowDiagram } from '@components';
+
+
+<Objectives>
+- {Động từ} …
+</Objectives>
+
+<Eyebrow>Dòng chảy số liệu</Eyebrow>
+## {Câu hành động}
+<FlowDiagram client:visible steps={[]} />
+
+<Eyebrow>Ba tài liệu, ba vai trò</Eyebrow>
+## Dùng tài liệu nào để làm gì
+<div class="b-grid">{3 thẻ: tài liệu · làm gì · vai trò}</div>
+
+<Eyebrow>Ví dụ minh họa</Eyebrow>
+## {…}
+Số liệu minh họa, đơn vị tỷ đồng.
+
+<BiscoreExample source="{file.xlsx / sheet}">
+{Dữ kiện + câu hỏi}
+<Solution>{1 … 2 … 3 … → hệ quả}</Solution>
+</BiscoreExample>
+
+<IfSkipped>{hậu quả cụ thể}</IfSkipped>
+<KeyPrinciple>{1 câu}</KeyPrinciple>
+
+<QuickCheck q="{tình huống}" short="{Chưa/Không/…}">{giải thích 2–3 câu}</QuickCheck>
+
+<LessonNotes client:only="react" id="{id}" />

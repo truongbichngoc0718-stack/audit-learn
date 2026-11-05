@@ -1,0 +1,7 @@
+---
+interface Props { items: { title: string; text: string }[] }
+const { items } = Astro.props;
+---
+<p class="b-eyebrow">Dấu hiệu cần đào sâu</p>
+<h2 id="red-flags">Red flags</h2>
+<div class="b-flags">{items.map(i => <div><b>{i.title}</b>{i.text}</div>)}</div>

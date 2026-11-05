@@ -1,0 +1,15 @@
+// Import một dòng trong mọi bài: import { Eyebrow, QuickCheck, … } from '@components';
+export { default as Objectives } from './Objectives.astro';
+export { default as Eyebrow } from './Eyebrow.astro';
+export { default as IfSkipped } from './IfSkipped.astro';
+export { default as KeyPrinciple } from './KeyPrinciple.astro';
+export { default as QuickCheck } from './QuickCheck.astro';
+export { default as BiscoreExample } from './BiscoreExample.astro';
+export { default as Solution } from './Solution.astro';
+export { default as Extended } from './Extended.astro';
+export { default as AuditCard } from './AuditCard.astro';
+export { default as AuditStep } from './AuditStep.astro';
+export { default as RedFlags } from './RedFlags.astro';
+export { default as Quiz } from './Quiz';
+export { default as LessonNotes } from './LessonNotes';
+export { default as FlowDiagram } from './FlowDiagram';

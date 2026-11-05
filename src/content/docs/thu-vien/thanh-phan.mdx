@@ -1,0 +1,60 @@
+---
+title: Bộ thành phần bài giảng (demo)
+description: Trang kiểm tra hiển thị các thành phần dùng trong bài. Số liệu minh họa lấy từ ebook gốc (T#p1l1, T#p1l2).
+nhanh: lib
+loai: thu-vien
+sidebar: { label: "Bộ thành phần (demo)", order: 99 }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, BiscoreExample, Solution, Extended, AuditCard, AuditStep, RedFlags, Quiz, LessonNotes, FlowDiagram } from '@components';
+
+<Objectives title="Sau bài này, bạn sẽ:">
+- Phân biệt TB, GL và subledger
+- Reconcile trước khi test
+</Objectives>
+
+<Eyebrow>Dòng chảy số liệu</Eyebrow>
+## Từ chứng từ lên BCTC
+Bấm vào thẻ để đi lên tầng tiếp theo.
+
+<FlowDiagram client:visible footer="Mỗi lần chuyển tầng là một điểm có thể sai: ghi thiếu · sai kỳ · kết chuyển sai" steps={[
+  { label: 'Chứng từ gốc', sub: 'Hợp đồng · hóa đơn', detail: 'Bằng chứng giao dịch có thật. Nơi <b>vouching</b> đi tới.' },
+  { label: 'Subledger', sub: 'Theo đối tượng', detail: 'Theo khách hàng, nhà cung cấp, tài sản, khoản vay. Tổng phải bằng sổ cái.' },
+  { label: 'GL', sub: 'Từng bút toán', detail: '<b>Population</b> để chọn mẫu. Có người lập, ngày nhập.' },
+  { label: 'TB', sub: 'Số dư từng TK', detail: '<b>Kết luận</b> trên con số này.' },
+  { label: 'BCTC', sub: 'Số công bố', detail: 'Ý kiến kiểm toán nói về con số này.' },
+]} />
+
+<IfSkipped>bút toán thiếu trong GL không bao giờ nằm trong population, nên không mẫu nào tìm ra.</IfSkipped>
+
+<KeyPrinciple>**Chọn sai chiều** thì test kỹ đến mấy cũng không thấy sai sót.</KeyPrinciple>
+
+<QuickCheck q="Tổng GL 511 thấp hơn số dư 511 trên TB 1,2 tỷ. Có chọn mẫu MUS ngay được không?" short="Chưa">
+Tìm nguyên nhân chênh lệch trước: bút toán thiếu, kết chuyển, bút toán đảo. Mẫu chọn trên population thiếu thì kết luận không áp dụng được cho số trên BCTC.
+</QuickCheck>
+
+<BiscoreExample source="Biscore_Group_2025_Công nợ phải thu.xlsx / 04 Doi chieu so cai">
+Số dư cuối kỳ 131.OF theo bảng tuổi nợ là 69.150.830.000 đ. Số dư trên Bảng CĐPS là bao nhiêu, và đã đủ điều kiện dùng bảng tuổi nợ làm population chưa?
+<Solution>1 Bảng CĐPS 131.OF: **69.150.830.000 đ** · 2 Chênh lệch **0** · 3 → bảng tuổi nợ 131.OF dùng được làm population (vẫn phải cộng lại dọc, ngang và tách dư Có).</Solution>
+</BiscoreExample>
+
+<Extended basis="VSA 530">Ví dụ khối nội dung mở rộng ngoài ebook, luôn ghi căn cứ.</Extended>
+
+<AuditCard kicker="Chu trình 01 · Revenue · VSA 240" question="Doanh thu có thật và ghi đúng kỳ?" risk="Rủi ro gian lận được giả định có ở doanh thu." tk={['511','521','3387','131']} assertion={['Occurrence','Completeness','Cut-off','Accuracy']} data={['Detail listing','GL 511','Hợp đồng · hóa đơn','Sổ phụ']} />
+
+<AuditStep n={4} label="Test of details" title="Test chi tiết theo hai chiều" assertion={['Occurrence','Accuracy','Completeness']} direction="ca-hai" output="Danh sách mẫu và cách chọn · kết quả từng mẫu · sai sót đã suy rộng">
+**Vouching** chọn từ sổ, đi tìm chứng từ. **Tracing** chọn từ nguồn, dò vào sổ.
+</AuditStep>
+
+<RedFlags items={[
+  { title: 'Dồn vào tháng 12', text: 'Không khớp sản lượng, số hợp đồng' },
+  { title: 'Ghi tay', text: 'Không qua hóa đơn hay hệ thống bán hàng' },
+  { title: 'Trả lại đầu năm', text: 'Doanh thu tháng 12 bị đảo ở tháng 1' },
+  { title: 'Thu trước ghi ngay', text: 'Dịch vụ chưa thực hiện đã vào 511' },
+]} />
+
+## Quiz
+<Quiz client:visible id="demo-quiz" questions={[
+  { q: 'Kiểm toán viên đưa ra kết luận trên số liệu của tài liệu nào?', options: ['Subledger', 'GL', 'TB, vì BCTC được lập từ TB', 'Chứng từ gốc'], answer: 2, explain: 'BCTC được lập từ TB, nên kết luận cuối cùng là về số trên TB/BCTC. GL là population để chọn mẫu, chứng từ là nơi lấy bằng chứng.' },
+]} />
+
+<LessonNotes client:only="react" id="demo-thanh-phan" />

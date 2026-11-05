@@ -1,0 +1,30 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+const d = Astro.locals.starlightRoute.entry.data as any;
+const partNames: Record<string, string> = { '0': 'Lộ trình', '1': 'Nền tảng', '2': 'Materiality', '3': 'Thủ tục theo phần hành', '4': 'Ghi finding', b: 'Excel & Power BI' };
+const isLesson = d.loai && !['he-thong'].includes(d.loai);
+const part = d.phan !== undefined ? String(d.phan) : undefined;
+const crumb = d.nhanh === 'B' ? 'Nhánh B · Excel & Power BI' : d.nhanh === 'lib' ? 'Thư viện' : part !== undefined ? `Phần ${part} · ${partNames[part] ?? ''}` : '';
+const label = d.bai ? `Bài ${d.bai}${d.nhan ? ` — ${d.nhan}` : ''}${d.thoi_luong ? ` · ${d.thoi_luong} phút` : ''}` : d.thoi_luong ? `${d.thoi_luong} phút` : '';
+const pageId = d.id ?? '';
+---
+{isLesson ? (
+  <div class="b-header" data-lesson-id={pageId} data-lesson-title={d.title}>
+    {crumb && <div class="crumb">{crumb}{d.bai && <> / <b>Bài {d.bai}</b></>}</div>}
+    {label && <div class="label">{label}{d.trang_thai === 'mo-rong' && ' · Mở rộng'}{d.trang_thai === 'khung' && ' · Đang xây dựng'}</div>}
+    <Default />
+    {d.description && <div class="takeaway">{d.description}</div>}
+    {(d.assertion?.length > 0 || d.chuan_muc?.length > 0) && (
+      <div class="meta">
+        {d.assertion.map((a: string) => <span class="b-chip as">{a}</span>)}
+        {d.chuan_muc.map((s: string) => <span class="b-chip std">{s}</span>)}
+      </div>
+    )}
+  </div>
+) : <Default />}
+<script>
+  // Ghi nhận đã xem trang (tiến độ) — lib/store
+  import { markVisited } from '../../lib/store';
+  const el = document.querySelector<HTMLElement>('[data-lesson-id]');
+  if (el?.dataset.lessonId) markVisited(el.dataset.lessonId, el.dataset.lessonTitle ?? '', location.pathname);
+</script>

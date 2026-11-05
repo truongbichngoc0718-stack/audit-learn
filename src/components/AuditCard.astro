@@ -1,0 +1,14 @@
+---
+interface Props { kicker: string; question: string; risk?: string; tk: string[]; assertion: string[]; data: string[] }
+const { kicker, question, risk, tk, assertion, data } = Astro.props;
+---
+<div class="b-auditcard">
+  <div class="k">{kicker}</div>
+  <div class="qq">{question}</div>
+  {risk && <div class="risk">{risk}</div>}
+  <dl>
+    <dt>Tài khoản</dt><dd>{tk.map(t => <span class="b-chip">{t}</span>)}</dd>
+    <dt>Assertion</dt><dd>{assertion.map(a => <span class="b-chip as">{a}</span>)}</dd>
+    <dt>Dữ liệu</dt><dd>{data.map(x => <span class="b-chip">{x}</span>)}</dd>
+  </dl>
+</div>
