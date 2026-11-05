@@ -11,7 +11,6 @@ export default defineConfig({
       description: 'BISC Training Center · Audit Simulation 2026: học kiểm toán theo phần hành, thực hành trên case Biscore.',
       defaultLocale: 'root',
       locales: { root: { label: 'Tiếng Việt', lang: 'vi' } },
-      logo: { src: './src/assets/bisc-logo.png', replacesTitle: false },
       customCss: ['./src/styles/bisc.css'],
       lastUpdated: false,
       head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }],

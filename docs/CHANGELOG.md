@@ -46,3 +46,6 @@
 - `vercel.json`, `package-lock.json`, `engines.node = 22.x`; `noindex` + `robots.txt`
 - `docs/HUONG_DAN_TRIEN_KHAI.md`: GitHub Desktop → Vercel, quy trình cập nhật, Cloudflare Pages dự phòng
 - Sửa theo review độc lập Bước 4: tách BOR-03 (VAY03, Confirmed) và BOR-04 (VAY04, Further evidence); thêm FA-03 khấu hao theo ngày (TT45/2013, khoảng 0,23 tỷ, Further evidence); ghi rõ tình huống giả định ở thư xác nhận 3.2; trích đúng nguồn chính sách; khôi phục bài tập gốc SUMIFS (BT1 TB, BT2 tháng) và công thức gốc DAX ở nhánh B, phần Biscore đánh dấu mở rộng; thêm mã RP vào GLOSSARY.
+
+## 2026-11-05 · Giao diện
+- Bỏ logo BISC ở thanh tiêu đề (file `src/assets/bisc-logo.png` giữ lại, không còn dùng).
