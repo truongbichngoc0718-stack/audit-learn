@@ -47,5 +47,10 @@
 - `docs/HUONG_DAN_TRIEN_KHAI.md`: GitHub Desktop → Vercel, quy trình cập nhật, Cloudflare Pages dự phòng
 - Sửa theo review độc lập Bước 4: tách BOR-03 (VAY03, Confirmed) và BOR-04 (VAY04, Further evidence); thêm FA-03 khấu hao theo ngày (TT45/2013, khoảng 0,23 tỷ, Further evidence); ghi rõ tình huống giả định ở thư xác nhận 3.2; trích đúng nguồn chính sách; khôi phục bài tập gốc SUMIFS (BT1 TB, BT2 tháng) và công thức gốc DAX ở nhánh B, phần Biscore đánh dấu mở rộng; thêm mã RP vào GLOSSARY.
 
-## 2026-11-05 · Giao diện
-- Bỏ logo BISC ở thanh tiêu đề (file `src/assets/bisc-logo.png` giữ lại, không còn dùng).
+## 2026-11-05 · Nạp ACCA AA (chờ duyệt)
+- Nạp slide ACCA AA (341 trang, 20 chương) và 5 Skills Checkpoint vào `source/library/acca-aa/` (`scripts/ingest_acca_aa.py`, giữ số trang gốc, index.md).
+- Lập `docs/ACCA_AA_MAP.md`: đề xuất nhánh C · ACCA AA, liên kết chéo nhánh A, danh sách chức năng web cần build.
+
+## 2026-11-05 · Nạp ACCA AA (chờ duyệt)
+- Nạp slide ACCA AA (341 trang, 20 chương) và 5 Skills Checkpoint vào `source/library/acca-aa/` (`scripts/ingest_acca_aa.py`, giữ số trang gốc, index.md). PDF gốc để ở folder Ebook, không commit.
+- Lập `docs/ACCA_AA_MAP.md`: đề xuất nhánh C · ACCA AA, liên kết chéo nhánh A, danh sách chức năng web cần build.
