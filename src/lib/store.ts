@@ -3,7 +3,8 @@
  * Giai đoạn 1: localStorage. Mọi truy cập đi qua interface `Backend` để sau này
  * thay bằng Supabase (cùng shape dữ liệu, thêm user_id) mà không sửa component.
  */
-export interface LessonState { title: string; path: string; visitedAt?: string; done?: boolean; note?: string; quiz?: { score: number; total: number; at: string } }
+export interface LessonState { title: string; path: string; visitedAt?: string; done?: boolean; note?: string; quiz?: { score: number; total: number; at: string }; scores?: Record<string, Score>; drafts?: Record<string, string> }
+export interface Score { score: number; total: number; at: string; label?: string }
 export interface HubData { version: 1; lessons: Record<string, LessonState> }
 
 interface Backend { load(): HubData; save(d: HubData): void }
@@ -31,6 +32,10 @@ export const markVisited = (id: string, title: string, path: string) => update(i
 export const setDone = (id: string, done: boolean) => update(id, s => ({ ...s, done }));
 export const setNote = (id: string, note: string) => update(id, s => ({ ...s, note }));
 export const setQuiz = (id: string, score: number, total: number) => update(id, s => ({ ...s, quiz: { score, total, at: new Date().toISOString() } }));
+
+/** Điểm phụ trong một trang (practice, mock, constructed response…) — key ví dụ 'mock', 'cr-montana'. */
+export const setScore = (id: string, key: string, score: number, total: number, label?: string) => update(id, s => ({ ...s, scores: { ...s.scores, [key]: { score, total, label, at: new Date().toISOString() } } }));
+export const setDraft = (id: string, key: string, text: string) => update(id, s => ({ ...s, drafts: { ...s.drafts, [key]: text } }));
 
 export function exportJSON(): string { return JSON.stringify({ ...backend.load(), exportedAt: new Date().toISOString() }, null, 2); }
 export function importJSON(text: string, mode: 'merge' | 'replace' = 'merge') {

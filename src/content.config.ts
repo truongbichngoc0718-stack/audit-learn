@@ -6,14 +6,14 @@ import { docsSchema } from '@astrojs/starlight/schema';
 /** Frontmatter chuẩn bài giảng (docs/LESSON_GUIDE.md §2). Trang hệ thống (trang chủ, tiến độ…) để trống các trường bài. */
 const lesson = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/).optional(),
-  nhanh: z.enum(['A', 'B', 'lib', 'he-thong']).default('he-thong'),
-  phan: z.union([z.number().int().min(0).max(4), z.literal('b')]).optional(),
+  nhanh: z.enum(['A', 'B', 'C', 'lib', 'he-thong']).default('he-thong'),
+  phan: z.union([z.number().int().min(0).max(4), z.literal('b'), z.enum(['c0', 'cA', 'cB', 'cC', 'cD', 'cE'])]).optional(),
   bai: z.string().optional(),
   nhan: z.string().optional(),
-  loai: z.enum(['tong-quan', 'ky-thuat', 'phan-hanh', 'kiem-tra', 'thu-vien', 'excel', 'khung', 'he-thong']).default('he-thong'),
+  loai: z.enum(['tong-quan', 'ky-thuat', 'phan-hanh', 'kiem-tra', 'thu-vien', 'excel', 'acca', 'checkpoint', 'khung', 'he-thong']).default('he-thong'),
   thoi_luong: z.number().positive().optional(),
   nguon: z.array(z.string()).default([]),
-  assertion: z.array(z.enum(['Occurrence', 'Existence', 'Completeness', 'Accuracy', 'Cut-off', 'Valuation', 'Classification', 'Presentation', 'Rights', 'Management override'])).default([]),
+  assertion: z.array(z.enum(['Occurrence', 'Existence', 'Completeness', 'Accuracy', 'Cut-off', 'Valuation', 'Classification', 'Presentation', 'Rights', 'Management override', 'Rights & obligations', 'Valuation & allocation'])).default([]),
   chuan_muc: z.array(z.string()).default([]),
   ngay_cap_nhat: z.coerce.date().optional(),
   trang_thai: z.enum(['goc', 'mo-rong', 'gop', 'khung']).optional(),
@@ -21,7 +21,7 @@ const lesson = z.object({
   lien_ket: z.array(z.string()).default([]),
 }).superRefine((d, ctx) => {
   // Bài giảng thật phải đủ trường bắt buộc
-  if (['ky-thuat', 'phan-hanh', 'kiem-tra', 'excel', 'tong-quan'].includes(d.loai)) {
+  if (['ky-thuat', 'phan-hanh', 'kiem-tra', 'excel', 'tong-quan', 'acca', 'checkpoint'].includes(d.loai)) {
     for (const k of ['id', 'phan', 'thoi_luong', 'ngay_cap_nhat', 'trang_thai', 'style_version'] as const) {
       if (d[k] === undefined) ctx.addIssue({ code: 'custom', message: `Thiếu trường bắt buộc "${k}" (LESSON_GUIDE §2)`, path: [k] });
     }

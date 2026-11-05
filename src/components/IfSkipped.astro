@@ -1,1 +1,5 @@
-<div class="b-callout warn"><span class="ic">⚠️</span><div><strong>Nếu bỏ qua:</strong> <slot /></div></div>
+---
+interface Props { lang?: 'vi' | 'en' }
+const { lang = 'vi' } = Astro.props;
+---
+<div class="b-callout warn"><span class="ic">⚠️</span><div><strong>{lang === 'en' ? 'If you skip this:' : 'Nếu bỏ qua:'}</strong> <slot /></div></div>

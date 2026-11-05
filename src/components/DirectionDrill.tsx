@@ -1,7 +1,8 @@
 import { useState } from 'react';
 export interface Drill { s: string; answer: 'vouching' | 'tracing'; assertion: string; why: string }
 /** Bài tập chọn chiều vouching / tracing [SITE MỚI, căn cứ T#p1l2]. */
-export default function DirectionDrill({ items }: { items: Drill[] }) {
+export default function DirectionDrill({ items, lang = 'vi' }: { items: Drill[]; lang?: 'vi' | 'en' }) {
+  const en = lang === 'en';
   const [pick, setPick] = useState<Record<number, string>>({});
   const score = items.filter((it, i) => pick[i] === it.answer).length;
   return (
@@ -13,14 +14,14 @@ export default function DirectionDrill({ items }: { items: Drill[] }) {
             {(['vouching', 'tracing'] as const).map(d => (
               <button key={d} type="button" className={`b-dir ${pick[i] === d ? d : ''}`} disabled={!!pick[i]} onClick={() => setPick({ ...pick, [i]: d })}
                 style={{ border: 0, cursor: pick[i] ? 'default' : 'pointer', opacity: pick[i] && pick[i] !== d ? .4 : 1, padding: '.3rem .8rem' }}>
-                {d === 'vouching' ? 'Vouching ↓ sổ → chứng từ' : 'Tracing ↑ nguồn → sổ'}
+                {d === 'vouching' ? (en ? 'Records → evidence (errors)' : 'Vouching ↓ sổ → chứng từ') : (en ? 'Source → records (omissions)' : 'Tracing ↑ nguồn → sổ')}
               </button>
             ))}
           </div>
-          {pick[i] && <p style={{ marginTop: '.5rem', fontSize: '.9rem' }}><b style={{ color: pick[i] === it.answer ? 'var(--bisc-emerald)' : 'var(--bisc-rose)' }}>{pick[i] === it.answer ? 'Đúng.' : `Chưa đúng: ${it.answer}.`}</b> {it.assertion} · {it.why}</p>}
+          {pick[i] && <p style={{ marginTop: '.5rem', fontSize: '.9rem' }}><b style={{ color: pick[i] === it.answer ? 'var(--bisc-emerald)' : 'var(--bisc-rose)' }}>{pick[i] === it.answer ? (en ? 'Correct.' : 'Đúng.') : (en ? 'Not quite.' : `Chưa đúng: ${it.answer}.`)}</b> {it.assertion} · {it.why}</p>}
         </div>
       ))}
-      {Object.keys(pick).length === items.length && <p><b>Kết quả: {score}/{items.length}</b></p>}
+      {Object.keys(pick).length === items.length && <p><b>{en ? 'Score' : 'Kết quả'}: {score}/{items.length}</b></p>}
     </div>
   );
 }

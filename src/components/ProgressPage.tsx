@@ -31,7 +31,7 @@ export default function ProgressPage({ lessons }: { lessons: LessonRef[] }) {
             {lessons.filter(l => l.group === g).map(l => { const s = d.lessons[l.id]; return (
               <tr key={l.id}><td><a href={l.path}>{l.title}</a>{l.minutes ? ` · ${l.minutes}′` : ''}</td>
                 <td>{s?.done ? '✅ Xong' : s?.visitedAt ? '👀 Đã xem' : '—'}</td>
-                <td>{s?.quiz ? `${s.quiz.score}/${s.quiz.total}` : '—'}</td>
+                <td>{s?.quiz ? `${s.quiz.score}/${s.quiz.total}` : ''}{s?.scores && Object.values(s.scores).map((x, k) => <div key={k} style={{ fontSize: '.8rem' }}>{x.label ?? ''}: {x.score}/{x.total}</div>)}{!s?.quiz && !s?.scores ? '—' : null}</td>
                 <td style={{ whiteSpace: 'pre-wrap', fontSize: '.85rem' }}>{s?.note || '—'}</td></tr>); })}
           </tbody></table>
         </div>

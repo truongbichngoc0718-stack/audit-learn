@@ -1,5 +1,6 @@
 # LESSON_GUIDE: quy trình & khuôn bài giảng
 Áp dụng cho mọi bài trong `src/content/docs/`. Phong cách: **BISC_STYLE.md** (bắt buộc đọc trước). Ngưỡng ví dụ Biscore: OM 3,6 tỷ · PM 2,2 tỷ · CTT 180 triệu. Thuật ngữ: **GLOSSARY.md**.
+**Nhánh C · ACCA AA** theo `docs/STYLE_C.md` (tiếng Anh, nguồn `source/library/acca-aa/`); bài mẫu nhánh C: `c07a-evidence-assertions`, `c07b-procedures-directional-testing`, `c-cp4`. Thành phần riêng: `ExamMcq` (practice/mock có đồng hồ), `ConstructedResponse`, `ProcedureBuilder`, `Mindmap`; các thành phần dùng chung nhận `lang="en"`.
 Bài mẫu chuẩn (golden lessons): `a1-1-tb-gl-subledger`, `a2-1-om-pm-ctt`, `a3-1-doanh-thu`. Mọi bài mới phải đối chiếu với bài mẫu cùng loại.
 
 ## 1. Quy trình viết một bài

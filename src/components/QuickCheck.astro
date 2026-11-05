@@ -1,8 +1,9 @@
 ---
-interface Props { q: string; short: string }
-const { q, short } = Astro.props;
+interface Props { q: string; short: string; lang?: 'vi' | 'en' }
+const { q, short, lang = 'vi' } = Astro.props;
+const t = lang === 'en' ? { k: 'Quick check', h: 'Click to reveal the answer' } : { k: 'Kiểm tra nhanh', h: 'Bấm để xem đáp án' };
 ---
 <details class="b-reveal">
-  <summary><div class="b-kicker">Kiểm tra nhanh</div><div class="q"><span class="mark">?</span><span>{q}</span></div><div class="hint">Bấm để xem đáp án</div></summary>
+  <summary><div class="b-kicker">{t.k}</div><div class="q"><span class="mark">?</span><span>{q}</span></div><div class="hint">{t.h}</div></summary>
   <div class="ans"><div class="short">{short}</div><slot /></div>
 </details>

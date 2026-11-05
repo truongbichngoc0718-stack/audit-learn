@@ -54,3 +54,13 @@
 ## 2026-11-05 · Nạp ACCA AA (chờ duyệt)
 - Nạp slide ACCA AA (341 trang, 20 chương) và 5 Skills Checkpoint vào `source/library/acca-aa/` (`scripts/ingest_acca_aa.py`, giữ số trang gốc, index.md). PDF gốc để ở folder Ebook, không commit.
 - Lập `docs/ACCA_AA_MAP.md`: đề xuất nhánh C · ACCA AA, liên kết chéo nhánh A, danh sách chức năng web cần build.
+
+## 2026-11-05 · Nhánh C · ACCA AA: khung + trang mẫu (chờ duyệt)
+- Duyệt cấu trúc: nhánh C riêng + link chéo nhánh A · toàn bộ tiếng Anh · giữ nguyên văn câu hỏi checkpoint (`docs/ACCA_AA_MAP.md`).
+- `docs/STYLE_C.md` C-1.0-draft (khuôn bài chương, khuôn trang Checkpoint, checklist); LESSON_GUIDE trỏ sang.
+- Schema: `nhanh: C`, `phan: c0/cA–cE`, `loai: acca | checkpoint`; header tiếng Anh cho nhánh C; sidebar "C · ACCA Audit & Assurance"; trang Tiến độ hiện điểm phụ (practice, mock, constructed response).
+- Thành phần mới: ExamMcq (practice / mock có đồng hồ), ConstructedResponse (viết bài → model answer → tự chấm, lưu nháp), ProcedureBuilder (công thức 3W), Mindmap; IfSkipped, QuickCheck, LessonNotes, DirectionDrill, FlowDiagram nhận tiếng Anh.
+- [c0-tong-quan] tổng quan nhánh C, sơ đồ syllabus (gốc)
+- [c07a-evidence-assertions] [c07b-procedures-directional-testing] Ch 7 tách 2 bài, 3 activity HMA Co, bài tập chọn chiều (gốc)
+- [c-cp4] Skills Checkpoint 4: 10 MCQ practice, Montana Co, Gooseberry Co (b–d), mock test 10 MCQ có đồng hồ + Rigel Co, nguyên văn (gốc)
+- Sửa theo review độc lập: bỏ nhãn "60 minutes", examiner's report đặt sau cả 3 phần Gooseberry, khôi phục nguyên văn định nghĩa assertion và AEIOU, tách Ch 7 cho đúng thời lượng, ghi chú cách ACCA dùng chữ "trace".

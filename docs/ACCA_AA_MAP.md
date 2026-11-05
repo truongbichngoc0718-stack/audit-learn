@@ -1,5 +1,5 @@
 # ACCA_AA_MAP: đối chiếu slide ACCA AA + 5 Skills Checkpoint với site
-Trạng thái: **NHÁP · chờ duyệt** · 05/11/2026 · nguồn: `source/library/acca-aa/` (index.md)
+Trạng thái: **ĐÃ DUYỆT cấu trúc 05/11/2026** (nhánh C riêng + link chéo · toàn bộ tiếng Anh · giữ nguyên văn câu hỏi checkpoint) · trang mẫu C0, Ch 7, Checkpoint 4 chờ duyệt · nguồn: `source/library/acca-aa/` (index.md)
 
 ## 1. Nguồn đã nạp
 | Nguồn | Quy mô | Đặc điểm |
@@ -14,7 +14,7 @@ Trạng thái: **NHÁP · chờ duyệt** · 05/11/2026 · nguồn: `source/libr
 ## 2. Xung đột với chuẩn hiện hành
 1. **BISC_STYLE §1 (bộ lọc):** kiến thức mới phải nằm trong 6 chu trình Simulation và dùng được trên dữ liệu Biscore. Phần lớn ACCA AA **không qua** (đạo đức, quản trị công ty, kiểm soát nội bộ, hàng tồn kho, tiền, NFP, báo cáo kiểm toán). Theo quy tắc hiện tại, các phần đó phải ở lại thư viện.
 2. **Ngôn ngữ và chuẩn mực:** ACCA dùng ISA/IFRS bằng tiếng Anh; nhánh A dùng VSA/VAS bằng tiếng Việt.
-3. **Bản quyền:** câu hỏi checkpoint ghi nguồn *BPP Workbook* và đề thi ACCA (Dec 2024, Mar/Jun 2024, Dec 2013, sample 2018). Đây là tài liệu bên thứ ba: đề xuất viết lại tình huống bằng lời mình và ghi nguồn, không chép nguyên văn lên web. Mindmap, kỹ thuật làm bài, lời giảng trên slide là của BISC → dùng được.
+3. **Bản quyền:** câu hỏi checkpoint ghi nguồn *BPP Workbook* và đề thi ACCA (Dec 2024, Mar/Jun 2024, Dec 2013, sample 2018). Quyết định 05/11/2026: bạn xác nhận dùng nguyên văn; mỗi câu giữ dòng nguồn như checkpoint.
 
 ## 3. Đề xuất: nhánh C · ACCA AA + liên kết chéo sang nhánh A
 Nhánh C độc lập (như nhánh B), theo 5 phần syllabus; mỗi phần kết thúc bằng 1 Checkpoint.

@@ -1,0 +1,702 @@
+---
+title: "Checkpoint 4 · Substantive procedures"
+description: "Assertions, the **3W formula** and standard procedures by account area, then 10 practice MCQs, three past-exam constructed responses and a timed mock test."
+id: c-cp4
+nhanh: C
+phan: cD
+bai: "4"
+nhan: Audit substantive procedures
+loai: checkpoint
+thoi_luong: 75
+nguon: ["ACCA-CP4: bisc-acca-aa-check-point-4.pdf tr. 1–18"]
+assertion: [Existence, Occurrence, Completeness, Accuracy, Valuation & allocation, Cut-off, Rights & obligations, Presentation]
+chuan_muc: ["ISA 240", "ISA 500", "ISA 580", "IAS 1", "IAS 2", "IAS 8", "IAS 16", "IAS 38", "IFRS 15"]
+ngay_cap_nhat: 2026-11-05
+trang_thai: goc
+style_version: "C-1.0-draft"
+lien_ket: [c07a-evidence-assertions, c07b-procedures-directional-testing]
+sidebar: { order: 99, label: "✓ Checkpoint 4 · Substantive procedures" }
+---
+import { Eyebrow, ExamMcq, ConstructedResponse, ProcedureBuilder, LessonNotes } from '@components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+**Topic:** Audit substantive procedures (Part D). **Time:** practice MCQs approx. 15 minutes · Montana Co approx. 20 minutes · Gooseberry Co approx. 30 minutes · mock test (Section A approx. 10 minutes, Section B approx. 20 minutes). Your scores are saved to [Progress](/tien-do/).
+
+| Section | Format | Content / Marks |
+|---|---|---|
+| Section A | 3 × 10 marks (5 questions each) | Any area of syllabus — MCQ / multi-response / fill-in |
+| Section B | 1 × 30 marks | Planning & risk assessment · Internal control · Audit evidence |
+| | 2 × 20 marks | Constructed response — broader syllabus areas |
+
+<Eyebrow>1 · Knowledge revision</Eyebrow>
+## Financial statement assertions: what they mean and how to test them
+
+| Assertion | What it means | Key procedures | Common trap |
+|---|---|---|---|
+| **Existence / Occurrence** | Recorded assets/transactions actually exist or occurred | Physical inspection (book → floor); third-party confirmation; post-year-end cash receipts | Trace direction: book→floor = existence. floor→book = completeness. Never mix them. |
+| **Completeness** | All assets/transactions that should be recorded ARE recorded | Trace floor→book; sequence checks on pre-numbered documents; post-year-end payment testing for liabilities | Completeness of liabilities is often MORE at risk than existence. Test both directions. |
+| **Valuation / Accuracy** | Assets recorded at correct amounts; transactions at correct values | Recalculate; agree to invoices/contracts; review aged listings; NRV assessment; allowance review | Recalculate = auditor does the maths. Agree = compare to source document. Both needed. |
+| **Cut-off** | Transactions recorded in the correct accounting period | Agree GDNs around year end to invoice dates; agree GRNs to accrual dates; review pre/post year-end journal entries | Revenue cut-off: test from GDN date, NOT invoice date. Performance obligation determines timing. |
+| **Rights & Obligations** | Entity has the right to assets; obligations are the entity's own | Inspect title documents; legal confirmations; loan agreements; confirm no charge over assets if needed | Often combined with existence — but they are different: you can exist without having the right. |
+| **Presentation & Disclosure** | Amounts are correctly classified and disclosed per accounting standards | Review disclosures against IAS/IFRS checklist; confirm classification in FS | Always include a disclosure procedure — exam frequently awards a mark for this. |
+
+## The 3W formula: how to write a full-mark procedure
+Every substantive procedure must contain three elements. Missing any one element loses marks.
+
+| Element | What it means | Strong verbs / examples | Avoid |
+|---|---|---|---|
+| **VERB** (What to do) | The audit action — must be specific and professional | Inspect · Recalculate · Reperform · Reconcile · Agree · Trace · Enquire · Obtain · Cast · Confirm · Vouch | Check / Look at / Ensure / See if — too vague, score zero |
+| **NOUN** (To what) | The specific document or item being tested — name it exactly | Sales invoice / GDN / GRN / Payroll sheet / Supplier statement / Aged receivables listing / Service contract / Board minutes / Bank statement | "Supporting documents" alone — must name at least one specific document |
+| **WHY** (For what purpose) | The assertion being addressed or the risk being tested — link to the scenario | To confirm existence / To test cut-off / To verify arithmetical accuracy / To assess recoverability / To ensure compliance with IAS X | Can be omitted only when the purpose is self-evident (e.g. cast the listing). Usually include it. |
+
+**Full mark vs half mark vs no mark** (R&D context)
+
+| Mark | Example Procedure |
+|---|---|
+| ✅ Full mark | Obtain the GL and select a sample of development cost additions. Trace each to supporting documents (invoices, payroll sheets, timesheets) to verify the existence and accuracy of the capitalised amount. |
+| ◐ Half mark | Obtain the GL and select a sample of development cost additions. Trace each to supporting documents. (No purpose stated — why are we tracing? What assertion?) |
+| ✗ No mark | Perform vouching procedures on R&D costs. (Too general — no noun, no purpose. Which documents? What are we checking?) |
+
+<Eyebrow>Try it · 3W builder</Eyebrow>
+### Build a procedure, then mark it
+Pick a verb, a document and a purpose for each scenario. The marker applies the checkpoint rules above.
+
+<ProcedureBuilder client:visible tasks={[
+ {
+  "task": "Scenario 1 · Non-current assets: test the EXISTENCE of additions recorded in the fixed asset register.",
+  "nouns": [
+   {
+    "t": "physical assets for a sample of additions selected from the fixed asset register",
+    "ok": true
+   },
+   {
+    "t": "supporting documents",
+    "ok": false
+   },
+   {
+    "t": "assets on the factory floor, then find them in the register",
+    "ok": false,
+    "why": "Floor → book tests COMPLETENESS. Book → floor tests existence. Never mix them."
+   },
+   {
+    "t": "board minutes approving capital expenditure",
+    "ok": false,
+    "why": "Approval does not show the recorded asset physically exists."
+   }
+  ],
+  "whys": [
+   {
+    "t": "to confirm existence",
+    "ok": true
+   },
+   {
+    "t": "to confirm completeness",
+    "ok": false,
+    "why": "Starting from the register cannot test completeness; completeness needs floor → book."
+   },
+   {
+    "t": "(no purpose stated)",
+    "ok": false
+   }
+  ],
+  "model": "Select a sample of additions from the fixed asset register and inspect the physical assets to confirm existence; agree the cost to supplier invoices to confirm accuracy."
+ },
+ {
+  "task": "Scenario 2 · Revenue: test CUT-OFF around the year end.",
+  "nouns": [
+   {
+    "t": "goods despatch notes (GDNs) either side of the year end, agreed to the date revenue was recognised",
+    "ok": true
+   },
+   {
+    "t": "supporting documents",
+    "ok": false
+   },
+   {
+    "t": "sales invoices dated around the year end",
+    "ok": false,
+    "why": "Revenue cut-off: test from the GDN date, NOT the invoice date. The performance obligation is satisfied on despatch."
+   },
+   {
+    "t": "aged receivables listing",
+    "ok": false,
+    "why": "The aged listing supports valuation of receivables, not revenue cut-off."
+   }
+  ],
+  "whys": [
+   {
+    "t": "to confirm revenue is recorded in the correct period (cut-off)",
+    "ok": true
+   },
+   {
+    "t": "to confirm recoverability (valuation)",
+    "ok": false,
+    "why": "Recoverability is a receivables valuation issue, not cut-off."
+   },
+   {
+    "t": "(no purpose stated)",
+    "ok": false
+   }
+  ],
+  "model": "Select a sample of GDNs from before and after the year end and agree the despatch date to the date the related revenue was recognised, to test cut-off."
+ },
+ {
+  "task": "Scenario 3 · Payables: test the COMPLETENESS of trade payables.",
+  "nouns": [
+   {
+    "t": "post-year-end cash book payments, matched back to the year-end payables listing and accruals",
+    "ok": true
+   },
+   {
+    "t": "supporting documents",
+    "ok": false
+   },
+   {
+    "t": "purchase invoices already posted to the payables ledger",
+    "ok": false,
+    "why": "Starting from items already recorded can never reveal omitted liabilities."
+   },
+   {
+    "t": "bank confirmation of loan balances",
+    "ok": false,
+    "why": "A bank letter supports borrowings, not trade payables."
+   }
+  ],
+  "whys": [
+   {
+    "t": "to identify unrecorded liabilities (completeness)",
+    "ok": true
+   },
+   {
+    "t": "to confirm the recorded balances exist",
+    "ok": false,
+    "why": "Existence is the lower risk for liabilities; the scenario asks for completeness."
+   },
+   {
+    "t": "(no purpose stated)",
+    "ok": false
+   }
+  ],
+  "model": "Inspect the cash book for payments made after the year end and agree them to the year-end payables listing and accruals, to identify unrecorded liabilities (completeness)."
+ },
+ {
+  "task": "Scenario 4 · Receivables: assess the VALUATION of a large overdue customer balance.",
+  "nouns": [
+   {
+    "t": "post-year-end cash receipts from the customer and correspondence with the slow payer",
+    "ok": true
+   },
+   {
+    "t": "supporting documents",
+    "ok": false
+   },
+   {
+    "t": "a direct confirmation letter from the customer",
+    "ok": false,
+    "why": "Confirmation only verifies the balance exists, not collectability."
+   },
+   {
+    "t": "sales invoices and GDNs for the balance",
+    "ok": false,
+    "why": "Invoices and GDNs test occurrence and cut-off, not recoverability."
+   }
+  ],
+  "whys": [
+   {
+    "t": "to assess recoverability and the adequacy of the allowance (valuation)",
+    "ok": true
+   },
+   {
+    "t": "to confirm existence",
+    "ok": false,
+    "why": "Existence is not the risk in this scenario; recoverability is."
+   },
+   {
+    "t": "(no purpose stated)",
+    "ok": false
+   }
+  ],
+  "model": "Review post-year-end cash receipts from the customer and inspect correspondence with the slow payer to assess recoverability and whether the allowance for doubtful receivables is adequate (valuation)."
+ }
+]} />
+
+## Standard procedures by account area
+These procedures appear across many exam questions. Know the pattern, adapt to the scenario. Click a tab.
+
+<Tabs>
+<TabItem label="Non-current assets">
+- Reconcile FA register to GL and financial statements · Cast the register for accuracy
+- Inspect physical assets for a sample of additions (existence) · Trace a sample of physical assets to the register (completeness)
+- Agree cost of additions to supplier invoices / architects' certificates · Check capital vs revenue distinction
+- Recalculate depreciation and compare to client's charge · Review useful lives and residual values for reasonableness
+- Inspect title documents / land registry / invoices to confirm rights and ownership
+- For disposals: agree proceeds to sale documentation; recompute profit/loss on disposal
+</TabItem>
+<TabItem label="Inventory">
+- Attend the inventory count: trace test-counted items to final listing (existence) · Trace listing to count sheets (completeness)
+- For count performed before year end: review continuous records for movements to year end
+- Obtain final inventory listing; cast and agree to GL and financial statements
+- Review for slow-moving, damaged or obsolete items · Obtain NRV evidence (scrap quotes, post-year-end sales) and compare to cost (IAS 2)
+- Agree unit costs of a sample of items to recent supplier invoices (cost accuracy)
+</TabItem>
+<TabItem label="Receivables">
+- Cast the aged receivables listing and agree total to GL and FS
+- Send direct confirmation letters to a sample of customers · Follow up non-responses
+- Review post-year-end cash receipts: cash received after year end confirms existence and collectability
+- Review aged listing for old/overdue balances · Inspect correspondence with slow payers · Assess adequacy of allowance for doubtful receivables
+- Agree year-end balances to sales invoices and GDNs (cut-off and occurrence)
+</TabItem>
+<TabItem label="Revenue">
+- Perform proof-in-total analytical procedure (e.g. units × price = expected revenue); compare to recorded amount
+- Select GDNs around year end; agree despatch date to revenue recognition date (cut-off)
+- Trace a sample of revenue transactions from sales order → GDN → invoice → ledger (completeness, occurrence)
+- For long-term contracts: obtain percentage of completion evidence; recalculate revenue under IFRS 15
+- Review credit notes raised post-year end for evidence of returns or adjustments relating to the current period
+</TabItem>
+<TabItem label="Payables & accruals">
+- Obtain payables listing; cast and agree to GL and FS
+- Reconcile a sample of supplier statements to the purchase ledger accounts
+- Test for unrecorded liabilities: review post-year-end payments and match to year-end accruals
+- Trace a sample of payable balances to purchase orders, GRNs and invoices (existence and accuracy)
+- Perform analytical procedures: compare payables days to prior year and industry norms
+</TabItem>
+<TabItem label="Payroll">
+- Trace a sample of employees from payroll to HR records and employment contracts (occurrence — confirm real, current employees)
+- Recast payroll records and agree net pay to bank transfer summary
+- Recalculate gross-to-net pay for a sample of employees (agree deductions: PAYE, NIC, pension)
+- Review payroll for joiners and leavers around year end (cut-off)
+- For bonuses/directors' emoluments: agree to service contracts; recalculate; confirm disclosure per local legislation
+</TabItem>
+</Tabs>
+
+<Eyebrow>2 · Exam techniques</Eyebrow>
+## Question types
+
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">Type 1</div><b>Describe substantive procedures for a specific account area or transaction class</b><br/>Answer structure: Start with an overall/analytical procedure → then test-of-detail procedures targeting specific assertions flagged in the scenario (e.g. completeness and cut-off of income).</div>
+  <div class="b-card"><div class="b-kicker">Type 2</div><b>Which TWO procedures best address a specific risk?</b><br/>Read the requirement carefully — it will specify the assertion or risk. Eliminate options that address a different assertion. Prioritise procedures that are direct, evidence-rich (third-party &gt; internal &gt; analytical).</div>
+</div>
+
+## Common exam mistakes
+<div class="b-flags">
+  <div><b>Procedure too vague to score</b>'Vouching to supporting documents' scores zero. Name the document. State the purpose. Use an ISA verb.</div>
+  <div><b>Wrong direction of testing</b>Book → floor = existence. Floor → book = completeness. Mixing these is a fundamental error.</div>
+  <div><b>Test of control instead of substantive procedure</b>Tests of control test whether a CONTROL works. Substantive procedures test whether a BALANCE is correct. Never mix them.</div>
+  <div><b>Cut-off tested using the invoice, not the GDN</b>Revenue cut-off must be tested from the despatch date (GDN), not the invoice date. Performance obligation is satisfied on despatch.</div>
+  <div><b>Analytical procedure used for fraud items</b>Analytical procedures are ineffective for one-off fraudulent transactions — they are already embedded in the totals. Use tests of detail for specific fraud risks.</div>
+  <div><b>Forgetting the disclosure procedure</b>Exam questions frequently award one mark for reviewing disclosures against the relevant accounting standard checklist. Always include it.</div>
+  <div><b>'Increase professional scepticism' without a specific procedure</b>This scores 0.5 marks alone. Must be followed by a specific additional test: 'focus on testing X by performing Y.'</div>
+  <div><b>Management representations as primary evidence</b>Written representations are supplementary evidence, not a substitute for procedures the auditor could perform directly.</div>
+</div>
+
+<Eyebrow>3 · Practice questions</Eyebrow>
+## Part A · MCQ practice
+10 questions · approx. 15 minutes · past exam & application questions. The answer and explanation appear as soon as you choose.
+
+<ExamMcq client:visible id="c-cp4" scoreKey="practice" label="Practice MCQ" mode="practice" questions={[
+ {
+  "source": "Sep 2016",
+  "q": "Cannavaro.com is a website design company. A key customer, Pirlo Co, has a receivables balance of $285,000 at year end and has notified the company it cannot make any payments for the foreseeable future. The finance director plans to write this off in the next year. Which TWO audit procedures should be performed to conclude on whether the financial statements require amendment?",
+  "items": [
+   "Discuss with management the reasons for not amending the financial statements",
+   "Review the cash book post year end for receipts from Pirlo Co",
+   "Send a request to Pirlo Co to confirm the outstanding balance",
+   "Agree the outstanding balance to invoices and sales orders"
+  ],
+  "options": [
+   "1 and 2",
+   "1 and 4",
+   "2 and 3",
+   "2 and 4"
+  ],
+  "answer": 0,
+  "explain": "(1) Discussing with management addresses the risk that FS are misstated and management refuses to adjust — directly relevant to audit conclusion. (2) Post-year-end cash receipts from Pirlo Co confirm whether the balance existed and is collectable — addresses existence and valuation. (3) Confirmation only verifies the balance exists, not collectability. (4) Agreeing to invoices tests occurrence — already established; does not address the write-down decision."
+ },
+ {
+  "source": "Application",
+  "q": "Which of the following BEST describes the 3W formula for writing an audit procedure?",
+  "options": [
+   "What to do (verb) + Who performs it + When it is performed",
+   "What to do (verb) + To what document/item (noun) + For what purpose (assertion/reason)",
+   "What assertion is tested + What risk is addressed + What evidence is obtained",
+   "What is the procedure + What is the expected result + What is the conclusion"
+  ],
+  "answer": 1,
+  "explain": "The 3W formula: Verb (inspect/recalculate/reconcile/enquire) + Noun (specific document: invoice, GDN, payroll sheet) + Why (assertion covered: existence, completeness, accuracy, valuation, cut-off). Without all three, procedures are too vague to score full marks."
+ },
+ {
+  "source": "Application",
+  "q": "The auditor selects a sample of non-current assets from the asset register and physically locates them in the client's premises. Which assertion does this procedure PRIMARILY address?",
+  "options": [
+   "Completeness",
+   "Valuation",
+   "Existence",
+   "Rights and obligations"
+  ],
+  "answer": 2,
+  "explain": "Tracing from records to physical assets (book to floor) tests EXISTENCE — confirming recorded assets actually exist. The reverse direction (floor to book) tests COMPLETENESS — confirming all existing assets are recorded. This directional distinction is a common exam trap."
+ },
+ {
+  "source": "Application",
+  "q": "Which of the following audit procedures BEST addresses the completeness assertion for accounts payable?",
+  "options": [
+   "Trace a sample of purchase invoices to the payables ledger",
+   "Review post-year-end payments and agree back to year-end payables listing",
+   "Obtain supplier statements and reconcile to the payables ledger",
+   "Inspect board minutes for evidence of unrecorded liabilities"
+  ],
+  "answer": 1,
+  "explain": "Completeness = all liabilities that exist have been recorded. Post-year-end payments reveal obligations that existed at year-end but may not have been accrued. Options A and C test existence/accuracy (recorded balances are real and correct). D supports completeness but is less direct than post-year-end payment testing."
+ },
+ {
+  "source": "Application",
+  "q": "The auditor wants to test the cut-off assertion for revenue. Which procedure is MOST appropriate?",
+  "options": [
+   "Agree a sample of year-end sales invoices to the sales ledger",
+   "Select a sample of goods despatch notes (GDNs) around the year end and agree to the date the corresponding revenue was recognised",
+   "Confirm year-end receivable balances with customers by direct confirmation",
+   "Review the aged receivables listing for old or unusual balances"
+  ],
+  "answer": 1,
+  "explain": "Cut-off tests whether revenue is recognised in the CORRECT PERIOD. Under IFRS 15, revenue is recognised when (or as) performance obligations are satisfied — typically on despatch. Agreeing GDNs around year end to revenue recognition dates directly tests this. Option A tests existence/accuracy; C tests existence; D tests valuation."
+ },
+ {
+  "source": "Dec 2024",
+  "q": "Montana Co is a charity with revenue of $0.8m. Which procedure BEST addresses the completeness and cut-off of ticket income from charity events?",
+  "options": [
+   "Confirm the ticket price with the charity's website listing",
+   "Perform a proof-in-total by multiplying tickets sold by price per ticket and compare to recorded income",
+   "Agree ticket income to bank statements",
+   "Review post-year-end refund claims from attendees"
+  ],
+  "answer": 1,
+  "explain": "Proof-in-total (analytical procedure): tickets sold × $40 = expected income. If the result materially differs from recorded income, it signals completeness or cut-off issues. This is the most direct and efficient test. Option C only confirms cash received, not entitlement; A only confirms price; D tests a different risk."
+ },
+ {
+  "source": "Mar/Jun 2018",
+  "q": "Gooseberry Co changed the useful lives and depreciation rates of many PPE categories during the year, resulting in significantly different depreciation charges. Which procedure MOST directly addresses the risk that this change is not accounted for correctly?",
+  "options": [
+   "Physically inspect a sample of assets to confirm they exist",
+   "Review the change in useful lives and depreciation methods against IAS 8 to confirm prospective treatment and adequate disclosure",
+   "Agree the cost of additions to supplier invoices",
+   "Confirm that assets are insured at replacement cost"
+  ],
+  "answer": 1,
+  "explain": "A change in useful life is a change in accounting estimate under IAS 8 — must be applied PROSPECTIVELY with disclosure. The key risk is: was the change applied correctly and is it disclosed? Options A, C and D address other assertions (existence, accuracy of additions, valuation) unrelated to the change in depreciation policy."
+ },
+ {
+  "source": "Mar/Jun 2018",
+  "q": "Gooseberry Co's directors receive a bonus based on draft year-end net assets excluding intangibles. The bonus was accrued in the year. Which procedure MOST directly addresses the risk of overstatement of net assets to inflate bonuses?",
+  "options": [
+   "Recalculate the bonus for each director using the formula in their service contracts and compare to the amount accrued",
+   "Agree the bonus payment to the bank statement after year end",
+   "Review board minutes to confirm the bonus scheme was approved",
+   "Confirm with HR that all directors are still employed at year end"
+  ],
+  "answer": 0,
+  "explain": "Management has a financial incentive to overstate net assets (bonus motivation = fraud risk under ISA 240). Recalculating the bonus from the service contracts directly tests accuracy and the correct application of the formula. Options B–D provide supporting evidence but do not directly address the overstatement risk."
+ },
+ {
+  "source": "Application",
+  "q": "Which of the following is a SUBSTANTIVE procedure rather than a test of control?",
+  "options": [
+   "Observe the client performing a bank reconciliation to confirm segregation of duties",
+   "Inspect a sample of purchase invoices for evidence of manager authorisation",
+   "Reperform the calculation of the allowance for doubtful receivables and compare to management's estimate",
+   "Review exception reports to confirm they are produced and reviewed monthly"
+  ],
+  "answer": 2,
+  "explain": "Substantive procedures test whether BALANCES and TRANSACTIONS are free from material misstatement. Recalculating the allowance for doubtful receivables tests the VALUATION assertion of a balance. Options A, B and D are tests of control — they test whether CONTROLS are operating effectively."
+ },
+ {
+  "source": "Application",
+  "q": "Which TWO of the following are classified as substantive ANALYTICAL procedures?",
+  "items": [
+   "Calculating the inventory turnover ratio and comparing to prior year and industry benchmarks",
+   "Agreeing year-end inventory to count sheets signed by management",
+   "Comparing payroll expense as a % of revenue to prior year and investigating significant variances",
+   "Tracing a sample of GDNs to sales invoices to confirm completeness of revenue"
+  ],
+  "options": [
+   "1 and 2",
+   "1 and 3",
+   "2 and 4",
+   "3 and 4"
+  ],
+  "answer": 1,
+  "explain": "(1) Inventory turnover ratio = analytical procedure using relationships between data items. (3) Payroll % of revenue = trend/ratio analysis. Both are substantive analytical procedures — they form expectations and investigate differences. (2) Agreeing to count sheets = test of detail (vouching). (4) Tracing GDNs = test of detail (tracing). Analytical procedures use plausibility and relationships; tests of detail examine individual items."
+ }
+]} />
+
+## Part B · Montana Co
+<ConstructedResponse client:visible id="c-cp4" crKey="cr-montana" title="Montana Co · Income" marks={10} minutes={20} source="December 2024 Exam — Question 3(a)"
+  requirement="(a) Describe substantive procedures the auditor should perform to obtain sufficient and appropriate audit evidence in relation to Montana Co's INCOME. Note: You should assume the charity adopts IFRS Accounting Standards. [10 marks]"
+  answer={[
+ {
+  "heading": "Overall / Analytical",
+  "points": [
+   "Obtain a schedule of all Montana Co's income streams and cast to confirm arithmetical accuracy; agree the total to the trial balance and draft financial statements.",
+   "Perform analytical procedures by comparing each category of income (donations, ticket sales, merchandise) to prior year. Calculate the expected change using known drivers (e.g. ticket price × attendance) and investigate any significant unexplained differences with management."
+  ]
+ },
+ {
+  "heading": "Monthly Donations",
+  "points": [
+   "For a sample of monthly donors, trace the signed-up direct debit amount and start date from sign-up documentation to monthly bank receipts, the bank ledger account, and the income listing to confirm completeness and accuracy.",
+   "Compare the average value and number of donations received per month to prior year; investigate any significant decrease that may indicate unrecorded income or donors who have lapsed."
+  ]
+ },
+ {
+  "heading": "Charity Event Ticket Sales — Completeness & Cut-off",
+  "points": [
+   "Perform a proof-in-total: April event 6,500 tickets + December event 6,000 tickets = 12,500 tickets × $40 = $500,000 expected ticket income. Compare to recorded income and discuss any significant differences with management.",
+   "Select a sample of advance ticket sales made online relating to the April 20X5 event (held after the year end of 31 March 20X5). Confirm that these sales have been EXCLUDED from current year income and followed through to inclusion in contract liabilities, to test cut-off.",
+   "Agree the journal entry to release prior year contract liabilities (April 20X4 advance tickets) to current year income. Agree the opening balance to last year's signed financial statements to confirm completeness of income in the correct period."
+  ]
+ },
+ {
+  "heading": "Merchandise Sales",
+  "points": [
+   "Obtain a breakdown of merchandise income by stall for each event and agree a sample of individual sales to supporting documentation such as till receipts, card terminal summaries, and cash count records to confirm accuracy and completeness.",
+   "Reconcile the total cash and card receipts per the stall records to the amounts banked and trace to bank statements to confirm that all merchandise income has been received and recorded."
+  ]
+ }
+]}>
+<p><b>Background.</b> It is 1 July 20X5. You are an audit manager of Tennessee &amp; Co and you are in charge of the final audit of Montana Co, a not-for-profit charitable organisation which raises funds for mental health research. Montana Co's financial year ended 31 March 20X5.</p>
+<p><b>Income — Donations.</b> Montana Co generates income in a number of ways and the draft financial statements show total revenue of $0.8m. The company receives monthly donations from its many supporters, and these are paid by bank transfer to the charity.</p>
+<p><b>Income — Charity events.</b> Montana Co raises significant income via two charity events held every year in April and December. Tickets, which are $40 each, are sold via the charity's website during the four months leading up to each event. The events in April and December 20X4 were attended by 6,500 and 6,000 people respectively.</p>
+<p><b>Income — Merchandise.</b> Attendees at the events can purchase charity branded merchandise such as T-shirts at one of three stalls, paying by cash or credit card.</p>
+<p><b>Key audit risk.</b> During audit planning, completeness and cut-off of income was flagged as a key risk.</p>
+</ConstructedResponse>
+
+## Part C · Gooseberry Co
+15 marks · approx. 30 minutes · Source: March/June 2018 Sample Questions. The background applies to all three parts.
+
+<div class="b-card x-cr" style="margin-top:.6rem">
+<p><b>Background.</b> You are the audit senior for Gooseberry Co, a company that develops health and beauty products. The year end is 31 January 20X8. You are preparing substantive procedures for three specific areas identified during planning.</p>
+<p><b>Area 1 — Research &amp; Development.</b> Gooseberry Co spent $1.9m in the current year developing nine new health and beauty products, all at different stages of development. Once they meet the recognition criteria under IAS 38, development costs are capitalised as intangible assets. Once production commences, the intangible assets are amortised on a straight-line basis over three years. Management believes this amortisation policy is a reasonable approximation of the assets' useful lives.</p>
+<p><b>Area 2 — Depreciation.</b> Gooseberry Co has a large portfolio of property, plant and equipment. In March 20X7, the company carried out a full review of all PPE and updated the useful lives, residual values, depreciation rates and methods for many categories of asset. The finance director felt the changes were necessary to better reflect the use of the assets. This resulted in significantly different depreciation charges for the current year.</p>
+<p><b>Area 3 — Directors' Bonuses.</b> The company's board comprises seven directors, each entitled to a bonus based on the draft year-end net assets excluding intangible assets. Details of the bonus entitlement are included in directors' service contracts. The bonus relating to the 20X8 year end was paid to each director in February 20X8 and costs were accrued and recognised within wages and salaries. Separate disclosure of the bonus, by director, is required by local legislation.</p>
+</div>
+
+<ConstructedResponse client:visible id="c-cp4" crKey="cr-goose-b" title="Gooseberry Co · (b) Research & development" marks={5} minutes={10}
+  requirement="(b) Describe substantive procedures the auditor should perform in relation to Gooseberry Co's RESEARCH & DEVELOPMENT expenditure. [5 marks]" answer={[
+ {
+  "heading": "Substantive Procedures — R&D Expenditure [5 marks]",
+  "points": [
+   "Reconcile the balance on the R&D intangible asset account in the general ledger to the intangible fixed asset schedule and agree the total to the trial balance and financial statements.",
+   "Obtain the GL and select a sample of capitalised development transactions. Trace each to supporting documents (invoices, payroll sheets, timesheets, calculation sheets) to verify existence and accuracy of the amounts capitalised.",
+   "For each of the nine development projects, discuss with management the circumstances and conditions under which the PIRATE criteria under IAS 38 are met. Inspect supporting evidence (technical feasibility reports, budgets, committed resource evidence, management intention documentation) to confirm capitalisation is appropriate.",
+   "Obtain the amortisation schedule. Recalculate amortisation for a sample of intangible assets using the straight-line method over three years from the commencement of production, and compare to the amounts recorded. Obtain explanations for any differences.",
+   "Perform analytical procedures by comparing the amortisation rate and useful lives applied to industry norms and prior year policy. Investigate any significant changes and discuss the reasonableness of the three-year amortisation period with management.",
+   "Review research phase costs expensed to profit or loss and inspect supporting documents to confirm no development phase costs have been incorrectly expensed (and vice versa).",
+   "Review notes to the financial statements and agree disclosures to the IAS 38 disclosure checklist to confirm compliance — including cost, accumulated amortisation, amortisation method and useful life."
+  ]
+ }
+]} />
+<ConstructedResponse client:visible id="c-cp4" crKey="cr-goose-c" title="Gooseberry Co · (c) Depreciation of PPE" marks={5} minutes={10}
+  requirement="(c) Describe substantive procedures the auditor should perform in relation to the DEPRECIATION of property, plant and equipment. [5 marks]" answer={[
+ {
+  "heading": "Substantive Procedures — Depreciation [5 marks]",
+  "points": [
+   "Reconcile and cast the fixed asset register and PPE depreciation calculation schedule to the general ledger, trial balance, and financial statements.",
+   "Perform analytical procedures: compare the depreciation charge for the current year to prior year by asset category. Investigate any significant changes and obtain management's explanation for the revised useful lives, residual values and methods.",
+   "For a sample of assets where useful lives or depreciation rates were revised, inspect the internal review documentation and discuss with management the basis for the change. Assess whether the revised rates better reflect the pattern of use of the asset.",
+   "Recalculate depreciation for a sample of assets using the revised useful lives and depreciation methods. Compare to amounts recorded in the depreciation schedule and investigate any differences.",
+   "Review the accounting treatment of changes in useful life and method against IAS 8 (changes in accounting estimates). Confirm that changes have been applied prospectively and that the prior year figures have NOT been restated.",
+   "Inspect the notes to the financial statements and agree disclosures about changes in useful lives and depreciation methods to the IAS 16 and IAS 8 disclosure requirements.",
+   "Obtain written representation from management confirming the basis for changes in useful lives and depreciation rates and that these changes represent management's best estimate."
+  ]
+ }
+]} />
+<ConstructedResponse client:visible id="c-cp4" crKey="cr-goose-d" title="Gooseberry Co · (d) Directors' bonuses" marks={5} minutes={10}
+  requirement="(d) Describe substantive procedures the auditor should perform in relation to the DIRECTORS' BONUSES. [5 marks]" answer={[
+ {
+  "heading": "Substantive Procedures — Directors' Bonuses [5 marks]",
+  "points": [
+   "Obtain a copy of each director's service contract and inspect the bonus entitlement clause. Confirm the formula (net assets excluding intangibles) and any caps or conditions applicable.",
+   "Obtain the final bonus calculation schedule. Recalculate each director's bonus using the formula in their service contract applied to the draft year-end net assets (excluding intangible assets). Compare to the amount accrued and investigate any differences.",
+   "Reconcile the total accrued bonus per the payroll records to the amount recognised in wages and salaries in the income statement and the accruals balance in the statement of financial position.",
+   "For the bonus payments made in February 20X8, agree the amounts paid to each director to the bank transfer summary and individual bank statements to confirm completeness and accuracy of the post-year-end settlement.",
+   "Review the notes to the financial statements and agree the disclosure of bonuses by director to local legislative requirements and the IAS 1 presentation requirements. Confirm that all seven directors' bonuses are separately disclosed.",
+   "Consider the incentive for management to overstate net assets (excluding intangibles) to inflate bonuses — apply heightened professional scepticism when reviewing year-end asset valuations and any judgements that affect net assets."
+  ]
+ }
+]} />
+
+<details class="b-reveal"><summary><div class="b-kicker">Gooseberry Co · parts (b)–(d)</div><div class="q"><span class="mark">!</span><span>Examiner's Report — Key Observations</span></div><div class="hint">Read after you have marked your answers</div></summary><div class="ans"><ul><li><b>Procedures must be specific:</b> Name the exact document. 'Trace to supporting documents' alone is half marks. Add '…such as invoices, payroll sheets, timesheets' for full marks.</li><li><b>Purpose must be stated:</b> Why are you performing the procedure? Link it to an assertion: 'to verify existence and accuracy', 'to confirm compliance with IAS 8'.</li><li><b>Context matters — read the scenario:</b> The bonus is based on net assets EXCLUDING intangibles. A good answer will specifically consider whether intangibles have been correctly excluded when recalculating.</li><li><b>IAS 8 for depreciation changes:</b> Changes in useful life = changes in accounting estimate → prospective treatment. State this explicitly. Prior year comparatives should NOT be restated.</li><li><b>Fraud risk — bonus scenario:</b> Directors have a financial incentive to overstate net assets. Apply heightened scepticism to all year-end assets and judgements that affect net assets. This earns a mark.</li></ul></div></details>
+
+<Eyebrow>4 · Mock test · 15 minutes</Eyebrow>
+## Mock test
+Do NOT check answers until you have finished all questions.
+
+### Section A · MCQ
+10 questions · approx. 10 minutes.
+
+<ExamMcq client:visible id="c-cp4" scoreKey="mock" label="Mock test · Section A" mode="mock" minutes={10} questions={[
+ {
+  "q": "An auditor selects items from the PHYSICAL inventory count and traces them to the inventory listing. Which assertion does this PRIMARILY test?",
+  "options": [
+   "Existence",
+   "Completeness",
+   "Valuation",
+   "Rights and obligations"
+  ],
+  "answer": 1,
+  "explain": "Tracing FROM the physical count TO the records (floor to book) tests COMPLETENESS — confirming all existing items are recorded. The reverse (book to floor) tests EXISTENCE. This directional logic applies to all assets."
+ },
+ {
+  "q": "Which of the following is the MOST appropriate verb to use when describing an audit procedure to maximise marks?",
+  "options": [
+   "Check",
+   "Look at",
+   "Inspect",
+   "Confirm that"
+  ],
+  "answer": 2,
+  "explain": "ISA-standard verbs: Inspect, Recalculate, Reperform, Reconcile, Enquire, Observe, Confirm. 'Check' and 'look at' are too vague and score zero or half marks. 'Confirm that' describes an outcome, not a procedure."
+ },
+ {
+  "q": "The auditor wants to test the VALUATION of the allowance for doubtful receivables. Which procedure is MOST appropriate?",
+  "options": [
+   "Send direct confirmation letters to a sample of customers",
+   "Trace year-end receivable balances to sales invoices",
+   "Inspect the aged receivables listing for old/overdue amounts and review post-year-end cash receipts to assess recoverability",
+   "Reconcile the total receivables to the general ledger"
+  ],
+  "answer": 2,
+  "explain": "Valuation = the balance is stated at the correct recoverable amount. Reviewing aged balances identifies potentially irrecoverable debts; post-year-end cash receipts confirm actual recovery. Options A and B test existence; D tests accuracy/completeness of the ledger."
+ },
+ {
+  "q": "Which procedure BEST tests the OCCURRENCE assertion for payroll expense?",
+  "options": [
+   "Recast the payroll listing and agree the total to the income statement",
+   "Select a sample of employees from the payroll and agree to HR records, employment contracts and timesheets to confirm they are real, current employees working the recorded hours",
+   "Compare total payroll expense to prior year and investigate significant variances",
+   "Agree net pay per payroll records to bank transfer summaries"
+  ],
+  "answer": 1,
+  "explain": "Occurrence (payroll) = only real, current employees are paid for hours actually worked. Tracing from payroll to HR records and timesheets directly addresses ghost employees and inflated hours. Option A tests completeness/accuracy; C is analytical; D tests accuracy of payment amounts."
+ },
+ {
+  "q": "During the audit of a manufacturing company, the auditor is testing NCA additions. Which combination of procedures BEST covers both existence AND accuracy?",
+  "options": [
+   "(i) Physically inspect a sample of additions | (ii) Agree cost to supplier invoice",
+   "(i) Reconcile opening balance to closing balance | (ii) Review depreciation rates",
+   "(i) Agree additions to board minutes | (ii) Confirm assets are insured",
+   "(i) Trace from asset register to nominal ledger | (ii) Reperform depreciation calculation"
+  ],
+  "answer": 0,
+  "explain": "Existence = physically inspecting the asset confirms it is real. Accuracy = agreeing cost to supplier invoice confirms the correct amount was capitalised. These two procedures together give direct evidence for both assertions. Options B and D test valuation/accuracy but not existence directly."
+ },
+ {
+  "q": "A client has recognised a large provision for a legal claim at year end. Which procedure MOST directly tests the VALUATION of the provision?",
+  "options": [
+   "Review board minutes for discussion of the legal claim",
+   "Agree the provision to the client's legal department correspondence",
+   "Obtain a direct written confirmation from the client's external legal advisers of their assessment of the probable outcome and best estimate of the amount",
+   "Check that the provision is disclosed correctly in the financial statements"
+  ],
+  "answer": 2,
+  "explain": "Valuation of a provision = best estimate of the expenditure required. External legal advisers are the most reliable source to confirm (i) probability of loss and (ii) the quantum. This is a third-party confirmation — the highest reliability evidence. Options A and B use internal sources; D tests presentation, not valuation."
+ },
+ {
+  "q": "Which of the following procedures tests the COMPLETENESS of non-current liabilities?",
+  "options": [
+   "Obtain direct confirmation from banks of outstanding loan balances",
+   "Review board minutes and post-year-end cash book for evidence of new borrowings not recorded at year end",
+   "Recalculate finance charges and agree interest rates to loan agreements",
+   "Inspect security documentation to confirm charges over assets"
+  ],
+  "answer": 1,
+  "explain": "Completeness of liabilities = all borrowings that exist have been recorded. Board minutes may reveal unrecorded loans; post-year-end cash book may show receipts from new borrowings entered after year end that should have been accrued. Option A tests existence of recorded balances; C tests accuracy; D tests rights and obligations."
+ },
+ {
+  "q": "The audit team plans to use substantive analytical procedures for revenue. Which statement is CORRECT regarding when this is most effective?",
+  "options": [
+   "Analytical procedures are more effective when there is no predictable relationship between revenue and other data",
+   "Analytical procedures are most effective when the client's accounting records are unreliable",
+   "Analytical procedures are more effective when data is available to form a precise expectation, such as units sold × price",
+   "Analytical procedures alone are sufficient for revenue without any tests of detail"
+  ],
+  "answer": 2,
+  "explain": "Analytical procedures are most powerful when the auditor can form a PRECISE independent expectation (e.g. proof-in-total: units × price = expected revenue). A weak expectation yields weak evidence. Option A is wrong — predictability is required. B is wrong — unreliable records make analytical procedures unreliable. D is wrong — analytical procedures alone are rarely sufficient for significant revenue."
+ },
+ {
+  "q": "Which of the following is an example of a 'subsequent events' procedure relevant to accounts receivable?",
+  "options": [
+   "Sending direct confirmation letters to customers at the year-end date",
+   "Reviewing cash receipts from customers after the year end to assess whether year-end balances have been collected",
+   "Agreeing year-end balances to sales invoices",
+   "Recasting the aged receivables listing"
+  ],
+  "answer": 1,
+  "explain": "Subsequent events testing for receivables = reviewing post-year-end cash receipts. If a balance has been collected after year end, this is strong evidence of existence and recoverability (valuation). Options A, C and D are direct substantive procedures at year-end, not subsequent events procedures."
+ },
+ {
+  "q": "Management representation letters are used as audit evidence. Which statement BEST describes their limitations?",
+  "options": [
+   "Management representations cannot be used as audit evidence under any ISA",
+   "Management representations are highly reliable because they are signed by senior management",
+   "Management representations provide supporting evidence but cannot substitute for other sufficient appropriate audit evidence that the auditor could reasonably obtain",
+   "Management representations are only required for fraud-related matters"
+  ],
+  "answer": 2,
+  "explain": "ISA 580: management representations are written confirmations of management's responsibility for the FS and specific assertions where other evidence is limited (e.g. litigation, completeness of transactions). They are less reliable than third-party evidence (internal source) and must be corroborated by other procedures. They cannot replace evidence the auditor could otherwise obtain."
+ }
+]} />
+
+### Section B · Rigel Manufacturing Co
+Constructed response · 14 marks · approx. 20 minutes.
+
+<div class="b-card x-cr" style="margin-top:.6rem">
+<p><b>Background.</b> You are an audit senior at Cassini &amp; Co, working on the final audit of Rigel Manufacturing Co for the year ended 30 June 20X6. Rigel manufactures specialist industrial components and supplies them to a small number of large customers on credit. Profit before tax is $4.2m and revenue is $28.6m.</p>
+<p><b>Area 1 — Revenue recognition.</b> Rigel has two types of sales contracts: (i) standard contracts where revenue is recognised on despatch, and (ii) long-term contracts where revenue is recognised over the contract term based on percentage of completion. The finance director has applied a 65% completion rate to three long-term contracts, resulting in $3.1m of revenue being recognised in the current year. No independent review of the percentage of completion estimates has been performed.</p>
+<p><b>Area 2 — Inventory.</b> Inventory at year end is $6.8m. The inventory count was performed on 28 June 20X6, two days before the year end. Rigel uses a continuous inventory system which records all movements. The count revealed that 12 pallets of raw materials, with a cost of $180,000, were damaged and unsaleable. The finance director has not yet adjusted the inventory records to reflect this.</p>
+<p><b>Area 3 — Receivables.</b> The three largest customers account for 74% of the total trade receivables balance of $5.4m. One of these customers, Vega Corp, has a balance of $1.6m and has recently announced a restructuring programme. Rigel's finance director has not provided against the Vega Corp balance, stating that the relationship is long-standing and payment is expected.</p>
+</div>
+
+<ConstructedResponse client:visible id="c-cp4" crKey="mock-rigel-a" title="Rigel · (a) Revenue (long-term contracts)" marks={5}
+  requirement="(a) Describe substantive procedures the auditor should perform in relation to Rigel Co's REVENUE, focusing on the long-term contracts. [5 marks]" answer={[
+ {
+  "heading": "Substantive Procedures — Revenue [5 marks]",
+  "points": [
+   "Obtain the revenue schedule and agree the total to the trial balance and draft financial statements. Cast the schedule to confirm arithmetical accuracy.",
+   "For standard contract sales, select a sample of sales invoices around the year end and agree the date of despatch per the GDN to the date of revenue recognition, to test cut-off.",
+   "For each of the three long-term contracts, obtain the contract documentation and agree the contract value, start date and expected completion date to the revenue recognition schedule.",
+   "Discuss with management the basis for the 65% completion rate applied to each long-term contract. Inspect supporting documentation (e.g. engineers' progress reports, project milestone records, costs incurred to date vs total expected costs) to assess the reasonableness of the estimate.",
+   "Perform a proof-in-total for each long-term contract: independently recalculate the percentage of completion using costs incurred to date ÷ total expected costs. Compare to management's 65% estimate and investigate any significant differences.",
+   "Apply heightened professional scepticism to the long-term contract estimates given the absence of independent review and the potential incentive to accelerate revenue recognition."
+  ]
+ }
+]} />
+<ConstructedResponse client:visible id="c-cp4" crKey="mock-rigel-b" title="Rigel · (b) Inventory" marks={5}
+  requirement="(b) Describe substantive procedures the auditor should perform in relation to INVENTORY, including the damaged goods. [5 marks]" answer={[
+ {
+  "heading": "Substantive Procedures — Inventory [5 marks]",
+  "points": [
+   "Obtain the final inventory listing and cast it to confirm arithmetical accuracy; agree the total to the general ledger and financial statements.",
+   "Because the count was performed two days before year end, review the continuous inventory records for movements between 28 June 20X6 and 30 June 20X6 (year end). Confirm that additions and despatches in this period have been correctly included in or excluded from the year-end balance.",
+   "Trace a sample of test-counted items from the auditor's count attendance working papers to the final inventory listing to confirm they are included (completeness) and at the correct quantity (accuracy).",
+   "For the 12 damaged pallets with a cost of $180,000, inspect the count records and warehouse documentation confirming the damage. Discuss with management why no write-down has been recorded. Obtain evidence of the net realisable value (e.g. scrap quotes, disposal correspondence) to assess whether inventory is stated at the lower of cost and NRV per IAS 2.",
+   "Review the inventory listing for any other slow-moving, obsolete or damaged items by inspecting goods received dates and discussing with the warehouse manager. Assess whether further write-downs are required.",
+   "For a sample of raw materials, agree unit cost to recent supplier invoices to confirm the cost basis is accurate."
+  ]
+ }
+]} />
+<ConstructedResponse client:visible id="c-cp4" crKey="mock-rigel-c" title="Rigel · (c) Trade receivables (Vega Corp)" marks={4}
+  requirement="(c) Describe substantive procedures the auditor should perform in relation to TRADE RECEIVABLES, focusing on the Vega Corp balance. [4 marks — part (c) only in mock]" answer={[
+ {
+  "heading": "Substantive Procedures — Receivables [4 marks]",
+  "points": [
+   "Obtain the aged receivables listing, cast it and agree the total to the general ledger. Agree the three largest customer balances to individual sales ledger accounts.",
+   "For the Vega Corp balance of $1.6m, obtain the most recent publicly available information regarding Vega Corp's restructuring programme (e.g. press releases, statutory filings) to assess the severity of financial difficulty.",
+   "Review post-year-end cash receipts from Vega Corp. If no material receipts have been received after the year end, this provides evidence that the balance may not be fully recoverable.",
+   "Inspect correspondence between Rigel's management and Vega Corp regarding the outstanding balance and any payment plan discussions. Obtain and review any legal advice received on the recoverability of the debt.",
+   "Discuss with management their basis for not providing against the Vega Corp balance. Assess whether management's assertion is supported by sufficient evidence, given the customer's announced restructuring.",
+   "Consider requesting a written representation from management confirming their assessment of the recoverability of the Vega Corp balance and the completeness of the allowance for doubtful receivables."
+  ]
+ }
+]} />
+
+<LessonNotes client:only="react" id="c-cp4" lang="en" />

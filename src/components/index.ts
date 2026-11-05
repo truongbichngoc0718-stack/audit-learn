@@ -22,3 +22,8 @@ export { default as InterestCalc } from './InterestCalc';
 export { default as JEFilter } from './JEFilter';
 export { default as MiniWPForm } from './MiniWPForm';
 export { default as Flashcards } from './Flashcards';
+// Nhánh C · ACCA AA
+export { default as ExamMcq } from './ExamMcq';
+export { default as ConstructedResponse } from './ConstructedResponse';
+export { default as ProcedureBuilder } from './ProcedureBuilder';
+export { default as Mindmap } from './Mindmap';

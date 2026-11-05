@@ -31,6 +31,10 @@ export default defineConfig({
         { label: 'A4 · Ghi finding', items: [{ autogenerate: { directory: 'a/4' } }] },
         { label: 'Thư viện', collapsed: true, items: [{ autogenerate: { directory: 'thu-vien' } }] },
         { label: 'B · Excel & Power BI', collapsed: true, items: [{ autogenerate: { directory: 'b' } }] },
+        { label: 'C · ACCA Audit & Assurance', collapsed: true, items: [
+          { label: 'Overview', link: '/c/' },
+          { label: 'D · Audit evidence', collapsed: true, items: [{ autogenerate: { directory: 'c/d' } }] },
+        ] },
       ],
     }),
     react(),

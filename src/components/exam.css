@@ -1,0 +1,42 @@
+/* Nhánh C · ACCA: MCQ, mock test, constructed response, 3W builder, mindmap */
+.x-q { margin-top: .8rem; }
+.x-q .src { font-size: .7rem; font-weight: 700; color: var(--bisc-muted); letter-spacing: .06em; text-transform: uppercase; }
+.x-q .stem { font-weight: 600; margin-top: .2rem; }
+.x-q ol.items { margin: .4rem 0 0 1.2rem; font-weight: 400; }
+.x-opts { display: grid; gap: .35rem; margin-top: .6rem; }
+.x-opt { text-align: left; padding: .5rem .75rem; border-radius: 10px; border: 1.5px solid var(--bisc-line); background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.x-opt:disabled { cursor: default; }
+.x-opt.sel { border-color: var(--bisc-amber); background: var(--bisc-amber-soft); }
+.x-opt.ok { border-color: var(--bisc-emerald); background: var(--bisc-emerald-soft); }
+.x-opt.bad { border-color: var(--bisc-rose); background: var(--bisc-rose-soft); }
+.x-explain { margin-top: .6rem; font-size: .92rem; }
+.x-bar { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-top: .9rem; }
+.x-timer { position: sticky; top: calc(var(--sl-nav-height, 4rem) + .5rem); z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: .6rem;
+  background: var(--bisc-navy); color: #fff; border-radius: 12px; padding: .55rem .9rem; margin-top: .8rem; }
+.x-timer b { color: var(--bisc-amber); font-family: ui-monospace, monospace; font-size: 1.2rem; }
+.x-timer.low b { color: #ff8a80; }
+.x-cr textarea { width: 100%; border-radius: 10px; border: 1px solid var(--bisc-line); padding: .6rem; font: inherit; background: transparent; color: inherit; }
+.x-cr .scenario { border-left: 4px solid var(--bisc-navy-2); padding: .2rem 0 .2rem 1rem; margin: .6rem 0; }
+.x-cr .req { background: var(--bisc-amber-soft); border-radius: 10px; padding: .6rem .8rem; font-weight: 600; }
+.x-pt { display: flex; gap: .55rem; align-items: flex-start; padding: .45rem 0; border-bottom: 1px dashed var(--bisc-line); }
+.x-pt input { margin-top: .3rem; accent-color: var(--bisc-emerald); }
+.x-pt .n { flex: none; font-weight: 700; color: var(--bisc-muted); width: 1.4rem; }
+.x-note { background: var(--sl-color-gray-6); border-radius: 10px; padding: .6rem .8rem; margin-top: .8rem; font-size: .9rem; }
+.x-3w { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .6rem; align-items: end; }
+.x-3w label { display: flex; flex-direction: column; gap: .25rem; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--bisc-muted); }
+.x-3w select { font: inherit; text-transform: none; letter-spacing: 0; font-weight: 400; padding: .45rem; border-radius: 8px; border: 1px solid var(--bisc-line); background: var(--bisc-card); color: var(--sl-color-white); }
+.x-sentence { font-family: var(--bisc-serif); font-size: 1.05rem; margin-top: .8rem; padding: .7rem .9rem; border-radius: 10px; background: var(--sl-color-gray-6); }
+.x-sentence .w { border-bottom: 2px solid var(--bisc-amber); }
+.x-mm { display: grid; gap: .6rem; }
+.x-mm .root { background: linear-gradient(135deg, var(--bisc-navy), var(--bisc-navy-2)); color: #fff; border-radius: var(--bisc-radius); padding: .9rem 1.1rem; font-family: var(--bisc-serif); font-size: 1.15rem; }
+.x-mm .root small { display: block; font-family: var(--sl-font); font-size: .8rem; color: #cfe0e7; margin-top: .2rem; }
+.x-mm .branches { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .6rem; }
+.x-mm .br { border: 1px solid var(--bisc-line); border-top: 4px solid var(--bisc-amber); border-radius: 12px; background: var(--bisc-card); }
+.x-mm .br > button { width: 100%; text-align: left; background: transparent; border: 0; color: inherit; font: inherit; padding: .7rem .85rem; cursor: pointer; display: flex; justify-content: space-between; gap: .4rem; }
+.x-mm .br > button b { color: var(--sl-color-white); }
+.x-mm .br ul { margin: 0; padding: 0 .85rem .7rem 1.9rem; font-size: .9rem; }
+.x-mm .br li { margin: .2rem 0; }
+.x-mm .br li small { color: var(--bisc-muted); }
+.x-tabs { display: flex; gap: .35rem; flex-wrap: wrap; }
+.x-tabs button { font: inherit; font-size: .85rem; padding: .3rem .8rem; border-radius: 99px; border: 1px solid var(--bisc-line); background: transparent; color: inherit; cursor: pointer; }
+.x-tabs button.on { background: var(--bisc-navy); color: var(--bisc-amber); border-color: var(--bisc-navy); }
