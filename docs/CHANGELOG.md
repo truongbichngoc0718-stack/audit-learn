@@ -83,3 +83,6 @@
 - Thành phần mới `CGuide` (gắn tự động vào mọi trang nhánh C qua PageTitle): pop-up tiếng Việt tự mở **mỗi lần vào trang**, 3 bước (điều hướng · cách học · mẹo/lưu ý) + "Từ vựng nhanh" Anh → Việt; note nhỏ tự hiện khi cuộn tới từng mục; nút "💡 Hướng dẫn" để mở lại. Tắt được: ✕/Esc, "Không tự mở pop-up ở nhánh C", "Tắt note theo từng mục" (lưu localStorage, bật lại từ nút Hướng dẫn).
 - Dữ liệu `src/lib/cGuide.ts`: 18 trang · 54 bước intro · 87 note theo mục · link chéo sang nhánh A và trang C liên quan. Note chỉ hướng dẫn, không thêm kiến thức; thuật ngữ theo GLOSSARY.
 - STYLE_C §3 thêm ngoại lệ note tiếng Việt, checklist thêm tiêu chí 8 (*C-1.2-draft, chờ duyệt*). Nội dung bài không đổi, chưa cần nâng `style_version`.
+
+## 2026-11-08 · Duyệt STYLE_C C-1.2
+- Bạn duyệt chú thích hướng dẫn tiếng Việt → khóa STYLE_C **C-1.2**; 18 trang nhánh C đều đã có note trong `cGuide.ts` (đạt tiêu chí 8), cập nhật `style_version: "C-1.2"`, không cần sửa nội dung bài.

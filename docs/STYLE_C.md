@@ -1,6 +1,6 @@
 ---
-style_version: "C-1.1"
-trạng_thái: ĐÃ DUYỆT 08/11/2026 · khóa C-1.1 (cấu trúc Elite method thay khuôn "một trang = một chương" của C-1.0-draft)
+style_version: "C-1.2"
+trạng_thái: ĐÃ DUYỆT 08/11/2026 · khóa C-1.2 (C-1.1: cấu trúc Elite method thay khuôn "một trang = một chương" của C-1.0-draft; C-1.2: thêm chú thích hướng dẫn tiếng Việt CGuide)
 căn_cứ: slide ACCA AA (source/library/acca-aa/slide) + 5 Skills Checkpoint; quyết định 05/11/2026: nhánh C riêng, toàn bộ tiếng Anh, giữ nguyên văn câu hỏi checkpoint; yêu cầu 08/11/2026: không build theo từng bài, liên kết mọi phần hành thành một bản đồ
 ---
 # STYLE_C: chuẩn nhánh C · ACCA AA
@@ -28,7 +28,7 @@ Mọi chương slide phải có chỗ trong bảng §1 của `c/index.mdx`; khô
 ## 3. Ngôn ngữ
 Toàn bộ tiếng Anh (UK spelling).
 
-**Ngoại lệ · chú thích hướng dẫn tiếng Việt** (yêu cầu 08/11/2026, *C-1.2-draft, chờ duyệt*): mỗi trang nhánh C có pop-up tiếng Việt (`CGuide`, dữ liệu `src/lib/cGuide.ts`) tự mở mỗi lần vào trang, tắt được; gồm 2–3 bước intro (🧭 điều hướng · 📘 cách học · 💡 mẹo · ⚠️ lưu ý), "Từ vựng nhanh" Anh → Việt theo GLOSSARY, và note theo mục (khớp chữ đầu tiêu đề h2/h3). Note **không chứa kiến thức mới**, không dịch nguyên văn câu hỏi/đáp án; nội dung bài vẫn 100% tiếng Anh. Trang C mới phải có mục tương ứng trong `cGuide.ts`. Tên khoản mục kèm tên tiếng Việt và số hiệu TK VAS/Biscore chỉ trong bản đồ và dòng "Link to Branch A". Chuẩn mực dạng nhãn: "ISA 505 · IAS 37".
+**Ngoại lệ · chú thích hướng dẫn tiếng Việt** (yêu cầu 08/11/2026, đã duyệt, khóa C-1.2): mỗi trang nhánh C có pop-up tiếng Việt (`CGuide`, dữ liệu `src/lib/cGuide.ts`) tự mở mỗi lần vào trang, tắt được; gồm 2–3 bước intro (🧭 điều hướng · 📘 cách học · 💡 mẹo · ⚠️ lưu ý), "Từ vựng nhanh" Anh → Việt theo GLOSSARY, và note theo mục (khớp chữ đầu tiêu đề h2/h3). Note **không chứa kiến thức mới**, không dịch nguyên văn câu hỏi/đáp án; nội dung bài vẫn 100% tiếng Anh. Trang C mới phải có mục tương ứng trong `cGuide.ts`. Tên khoản mục kèm tên tiếng Việt và số hiệu TK VAS/Biscore chỉ trong bản đồ và dòng "Link to Branch A". Chuẩn mực dạng nhãn: "ISA 505 · IAS 37".
 
 ## 4. Khuôn trang chu trình (C3 · loai: acca)
 Header (Module C3.n · phút · takeaway) → Learning outcomes (≤ 4) → **The cycle on one screen**: `FlowDiagram` theo stage (risk · control objective · control · test of control) + thẻ assertion chính → **Substantive playbook**: bảng theo assertion (Tabs nếu > 1 khoản mục) → **Activities** từ slide (đề tóm tắt, lời giải nguyên văn trong `Solution`, MCQ trong `ExamMcq`) → **Links to other cycles** (`<CycleLinks cycle=… />`, sinh từ dữ liệu bản đồ) → **Exam angle** (bảng requirement · what scores · trap) → ⚠️ IfSkipped + 🔑 KeyPrinciple + QuickCheck → Link Branch A + link node trên bản đồ (`/c/1/c1-master-map/#node-<id>`) → LessonNotes.
@@ -49,5 +49,5 @@ Exam structure → Knowledge revision → Exam techniques → Practice MCQ → C
 | 4 | Tương tác | ≥ 1 tương tác có lời dẫn; ≥ 1 retrieval drill (trừ C0) |
 | 5 | ⚠️ + 🔑 + Quick check | Đủ (trừ C0 và checkpoint) |
 | 6 | Ngôn ngữ | Tiếng Anh UK, thuật ngữ ISA đúng |
+| 7 | Frontmatter | Đủ trường; `phan` ∈ c0–c5; `style_version` = "C-1.2" |
 | 8 | Note tiếng Việt | Có mục trong `cGuide.ts` theo `id`; mọi note theo mục khớp tiêu đề thật; link trong note không chết |
-| 7 | Frontmatter | Đủ trường; `phan` ∈ c0–c5; `style_version` = "C-1.1" |
