@@ -1,0 +1,205 @@
+---
+/**
+ * Chú thích hướng dẫn tiếng Việt cho nhánh C (dữ liệu: src/lib/cGuide.ts).
+ * - Pop-up nhiều bước tự mở MỖI LẦN vào trang; tắt được (✕, Esc) hoặc tắt hẳn cho cả nhánh C.
+ * - Note theo mục: tự hiện khi cuộn tới tiêu đề tương ứng, mỗi mục 1 lần/lượt xem.
+ * - Nút "💡 Hướng dẫn" luôn có để mở lại hoặc bật lại.
+ * Cài đặt lưu localStorage (bọc try/catch).
+ */
+import { cGuide } from '../lib/cGuide';
+interface Props { pageId: string }
+const { pageId } = Astro.props;
+const guide = cGuide[pageId];
+---
+{guide && (
+  <div class="cg-root" data-cg-page={pageId}>
+    <script type="application/json" class="cg-data" set:html={JSON.stringify(guide).replace(/</g, '\\u003c')} />
+  </div>
+)}
+
+<style is:global>
+  .cg-panel, .cg-toast, .cg-fab { font-family: var(--sl-font); box-sizing: border-box; }
+  .cg-panel {
+    position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60; width: min(390px, calc(100vw - 2rem));
+    background: #1C3A4A; color: #f1f5f7; border-radius: 14px; border-top: 4px solid #F9C31F;
+    box-shadow: 0 18px 50px rgba(8, 25, 34, .45); padding: 1rem 1.1rem .9rem; line-height: 1.55;
+    animation: cg-in .25s ease-out;
+  }
+  .cg-panel[hidden], .cg-toast[hidden], .cg-fab[hidden] { display: none !important; }
+  @keyframes cg-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  .cg-top { display: flex; align-items: center; gap: .5rem; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #F9C31F; }
+  .cg-top .cg-count { margin-left: auto; color: #9fb7c3; letter-spacing: 0; font-weight: 600; }
+  .cg-x { background: none; border: 0; color: #cfe0e7; font-size: 1.15rem; line-height: 1; cursor: pointer; padding: .15rem .3rem; border-radius: 6px; }
+  .cg-x:hover { background: rgba(255,255,255,.1); color: #fff; }
+  .cg-title { margin: .45rem 0 .3rem !important; font-size: 1.02rem; font-weight: 700; color: #fff; }
+  .cg-body { margin: 0 !important; font-size: .9rem; color: #e3edf1; }
+  .cg-body a, .cg-toast a { color: #F9C31F; text-decoration: underline; }
+  .cg-body strong, .cg-toast strong { color: #fff; }
+  .cg-terms { margin-top: .7rem !important; padding-top: .6rem; border-top: 1px dashed rgba(255,255,255,.18); }
+  .cg-terms .cg-terms-h { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: #9fb7c3; font-weight: 700; margin-bottom: .35rem; }
+  .cg-terms ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .2rem; font-size: .82rem; }
+  .cg-terms li { margin: 0; } .cg-terms b { color: #F9C31F; font-weight: 600; }
+  .cg-foot { display: flex; align-items: center; gap: .4rem; margin-top: .85rem !important; }
+  .cg-dots { display: flex; gap: .3rem; margin-right: auto; }
+  .cg-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.25); }
+  .cg-dots i.on { background: #F9C31F; }
+  .cg-btn { border: 1px solid rgba(255,255,255,.3); background: transparent; color: #fff; font: 600 .82rem var(--sl-font); padding: .38rem .75rem; border-radius: 8px; cursor: pointer; margin: 0 !important; }
+  .cg-btn:hover { background: rgba(255,255,255,.1); }
+  .cg-btn.primary { background: #F9C31F; border-color: #F9C31F; color: #1C3A4A; }
+  .cg-btn.primary:hover { background: #ffd54f; }
+  .cg-opts { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin-top: .65rem !important; font-size: .76rem; color: #9fb7c3; }
+  .cg-opts button { background: none; border: 0; padding: 0; color: #9fb7c3; text-decoration: underline; cursor: pointer; font: inherit; margin: 0 !important; }
+  .cg-opts button:hover { color: #fff; }
+  .cg-toast {
+    position: fixed; right: 1.25rem; bottom: 4.6rem; z-index: 59; width: min(340px, calc(100vw - 2rem));
+    background: #fffaf0; color: #1C3A4A; border: 1px solid #f1d27a; border-left: 4px solid #F9C31F; border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(8,25,34,.22); padding: .65rem .8rem .6rem; font-size: .86rem; line-height: 1.5; animation: cg-in .25s ease-out;
+  }
+  :root[data-theme='dark'] .cg-toast { background: #22343d; color: #e3edf1; border-color: #5a4a10; border-left-color: #F9C31F; }
+  :root[data-theme='dark'] .cg-toast strong { color: #fff; }
+  :root[data-theme='light'] .cg-toast strong { color: #1C3A4A; }
+  :root[data-theme='light'] .cg-toast a { color: #8a6508; }
+  .cg-toast .cg-th { display: flex; align-items: center; gap: .4rem; font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #b7860b; margin-bottom: .2rem; }
+  :root[data-theme='dark'] .cg-toast .cg-th { color: #F9C31F; }
+  .cg-toast .cg-x { margin-left: auto; color: inherit; font-size: 1rem; }
+  .cg-toast p { margin: 0 !important; }
+  .cg-toast .cg-off { margin-top: .35rem !important; background: none; border: 0; padding: 0; font: .72rem var(--sl-font); color: #7a8d96; text-decoration: underline; cursor: pointer; }
+  .cg-fab {
+    position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 58; display: inline-flex; align-items: center; gap: .35rem;
+    background: #1C3A4A; color: #fff; border: 2px solid #F9C31F; border-radius: 999px; padding: .45rem .9rem .45rem .75rem;
+    font: 700 .82rem var(--sl-font); cursor: pointer; box-shadow: 0 8px 22px rgba(8,25,34,.3);
+  }
+  .cg-fab:hover { background: #24495c; }
+  .cg-fab .cg-dot { width: 8px; height: 8px; border-radius: 50%; background: #F9C31F; }
+  .cg-fab.off .cg-dot { background: #7a8d96; }
+  @media (max-width: 50rem) {
+    .cg-panel { right: .75rem; left: .75rem; bottom: .75rem; width: auto; }
+    .cg-toast { right: .75rem; left: .75rem; width: auto; bottom: 4rem; }
+    .cg-fab { right: .75rem; bottom: .75rem; }
+  }
+  @media print { .cg-panel, .cg-toast, .cg-fab { display: none !important; } }
+</style>
+
+<script>
+  type NoteType = 'nav' | 'study' | 'tip' | 'warn';
+  interface Step { type: NoteType; title: string; body: string }
+  interface Sec { h: string; type: NoteType; body: string }
+  interface Guide { intro: Step[]; terms?: [string, string][]; sections?: Sec[] }
+
+  const KEY = 'bisc-cguide-v1';
+  const LABEL: Record<NoteType, string> = { nav: '🧭 Điều hướng', study: '📘 Cách học', tip: '💡 Mẹo', warn: '⚠️ Lưu ý' };
+  type Settings = { auto: boolean; sections: boolean };
+  const load = (): Settings => { try { return { auto: true, sections: true, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { return { auto: true, sections: true }; } };
+  const save = (s: Settings) => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch { /* storage bị chặn */ } };
+
+  const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const md = (t: string) => esc(t)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, '<a href="$2">$1</a>');
+
+  function init() {
+    const root = document.querySelector<HTMLElement>('.cg-root');
+    const raw = root?.querySelector('.cg-data')?.textContent;
+    if (!root || !raw || document.querySelector('.cg-panel')) return;
+    const g: Guide = JSON.parse(raw);
+    let s = load();
+    let step = 0;
+
+    const panel = document.createElement('div');
+    panel.className = 'cg-panel'; panel.hidden = true;
+    panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Hướng dẫn học bằng tiếng Việt');
+    const toast = document.createElement('div');
+    toast.className = 'cg-toast'; toast.hidden = true; toast.setAttribute('role', 'status'); toast.setAttribute('aria-live', 'polite');
+    const fab = document.createElement('button');
+    fab.className = 'cg-fab'; fab.type = 'button'; fab.hidden = true;
+    document.body.append(toast, panel, fab);
+
+    const renderFab = () => {
+      fab.classList.toggle('off', !s.auto);
+      fab.innerHTML = `<span class="cg-dot"></span>💡 Hướng dẫn`;
+      fab.title = s.auto ? 'Mở lại hướng dẫn tiếng Việt' : 'Hướng dẫn đang tắt tự hiện. Bấm để xem và bật lại';
+    };
+
+    const render = () => {
+      const st = g.intro[step];
+      const last = step === g.intro.length - 1;
+      const terms = last && g.terms?.length
+        ? `<div class="cg-terms"><div class="cg-terms-h">Từ vựng nhanh</div><ul>${g.terms.map(([en, vi]) => `<li><b>${esc(en)}</b>: ${esc(vi)}</li>`).join('')}</ul></div>` : '';
+      panel.innerHTML = `
+        <div class="cg-top"><span>${LABEL[st.type]}</span><span class="cg-count">${step + 1}/${g.intro.length}</span>
+          <button class="cg-x" type="button" data-a="close" aria-label="Đóng hướng dẫn">✕</button></div>
+        <p class="cg-title">${md(st.title)}</p>
+        <p class="cg-body">${md(st.body)}</p>${terms}
+        <div class="cg-foot"><span class="cg-dots">${g.intro.map((_, i) => `<i class="${i === step ? 'on' : ''}"></i>`).join('')}</span>
+          ${step > 0 ? '<button class="cg-btn" type="button" data-a="prev">← Trước</button>' : ''}
+          ${last ? '<button class="cg-btn primary" type="button" data-a="close">Bắt đầu học</button>' : '<button class="cg-btn primary" type="button" data-a="next">Tiếp →</button>'}</div>
+        <div class="cg-opts">
+          <button type="button" data-a="auto">${s.auto ? 'Không tự mở pop-up ở nhánh C' : 'Bật lại pop-up tự mở'}</button>
+          <button type="button" data-a="sec">${s.sections ? 'Tắt note theo từng mục' : 'Bật note theo từng mục'}</button>
+        </div>`;
+    };
+
+    const open = () => { step = 0; render(); panel.hidden = false; fab.hidden = true; toast.hidden = true; (panel.querySelector('[data-a="next"],[data-a="close"].primary') as HTMLElement | null)?.focus({ preventScroll: true }); };
+    let onClose = () => {};
+    const close = () => { panel.hidden = true; renderFab(); fab.hidden = false; onClose(); };
+
+    panel.addEventListener('click', (e) => {
+      const a = (e.target as HTMLElement).closest<HTMLElement>('[data-a]')?.dataset.a;
+      if (a === 'close') close();
+      else if (a === 'next') { step = Math.min(step + 1, g.intro.length - 1); render(); }
+      else if (a === 'prev') { step = Math.max(step - 1, 0); render(); }
+      else if (a === 'auto') { s = { ...s, auto: !s.auto }; save(s); render(); }
+      else if (a === 'sec') { s = { ...s, sections: !s.sections }; save(s); render(); }
+    });
+    fab.addEventListener('click', open);
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (!panel.hidden) close(); else if (!toast.hidden) toast.hidden = true;
+    });
+
+    // Note theo mục
+    let hideTimer: number | undefined;
+    const showToast = (n: Sec) => {
+      if (!s.sections || !panel.hidden) return;
+      toast.innerHTML = `<div class="cg-th"><span>${LABEL[n.type]} · theo mục</span><button class="cg-x" type="button" aria-label="Đóng note">✕</button></div>
+        <p>${md(n.body)}</p><button class="cg-off" type="button">Tắt note theo từng mục</button>`;
+      toast.hidden = false;
+      window.clearTimeout(hideTimer);
+      hideTimer = window.setTimeout(() => { toast.hidden = true; }, 15000);
+    };
+    toast.addEventListener('click', (e) => {
+      const t = e.target as HTMLElement;
+      if (t.closest('.cg-x')) toast.hidden = true;
+      else if (t.closest('.cg-off')) { s = { ...s, sections: false }; save(s); toast.hidden = true; }
+    });
+    toast.addEventListener('mouseenter', () => window.clearTimeout(hideTimer));
+
+    if (g.sections?.length && 'IntersectionObserver' in window) {
+      const heads = Array.from(document.querySelectorAll<HTMLElement>('.sl-markdown-content h2, .sl-markdown-content h3'));
+      const map = new Map<Element, Sec>();
+      for (const n of g.sections) {
+        const key = n.h.toLowerCase();
+        const el = heads.find((h) => !map.has(h) && (h.textContent || '').trim().toLowerCase().startsWith(key));
+        if (el) map.set(el, n);
+      }
+      const seen = new Set<Element>();
+      const io = new IntersectionObserver((entries) => {
+        for (const en of entries) {
+          if (!en.isIntersecting || seen.has(en.target)) continue;
+          if (!panel.hidden || !s.sections) continue; // chưa đóng pop-up thì chưa tính là đã xem
+          seen.add(en.target); io.unobserve(en.target);
+          showToast(map.get(en.target)!);
+        }
+      }, { rootMargin: '0px 0px -55% 0px' });
+      map.forEach((_, el) => io.observe(el));
+      // Khi đóng pop-up: các tiêu đề đang trong vùng nhìn sẽ được báo lại ở lần cuộn kế tiếp
+      onClose = () => map.forEach((_, el) => { if (!seen.has(el)) { io.unobserve(el); io.observe(el); } });
+    }
+
+    renderFab();
+    if (s.auto) window.setTimeout(open, 500); else fab.hidden = false;
+  }
+
+  init();
+  document.addEventListener('astro:page-load', init);
+</script>

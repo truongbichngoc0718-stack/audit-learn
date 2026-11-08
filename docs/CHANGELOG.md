@@ -78,3 +78,8 @@
 
 ## 2026-11-08 · Duyệt nhánh C
 - Bạn duyệt cấu trúc Elite method, STYLE_C và ACCA_AA_MAP v2 → khóa STYLE_C **C-1.1**; 18 trang nhánh C cập nhật `style_version: "C-1.1"`.
+
+## 2026-11-08 · Nhánh C · Chú thích hướng dẫn tiếng Việt
+- Thành phần mới `CGuide` (gắn tự động vào mọi trang nhánh C qua PageTitle): pop-up tiếng Việt tự mở **mỗi lần vào trang**, 3 bước (điều hướng · cách học · mẹo/lưu ý) + "Từ vựng nhanh" Anh → Việt; note nhỏ tự hiện khi cuộn tới từng mục; nút "💡 Hướng dẫn" để mở lại. Tắt được: ✕/Esc, "Không tự mở pop-up ở nhánh C", "Tắt note theo từng mục" (lưu localStorage, bật lại từ nút Hướng dẫn).
+- Dữ liệu `src/lib/cGuide.ts`: 18 trang · 54 bước intro · 87 note theo mục · link chéo sang nhánh A và trang C liên quan. Note chỉ hướng dẫn, không thêm kiến thức; thuật ngữ theo GLOSSARY.
+- STYLE_C §3 thêm ngoại lệ note tiếng Việt, checklist thêm tiêu chí 8 (*C-1.2-draft, chờ duyệt*). Nội dung bài không đổi, chưa cần nâng `style_version`.

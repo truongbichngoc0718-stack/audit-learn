@@ -1,5 +1,6 @@
 ---
 import Default from '@astrojs/starlight/components/PageTitle.astro';
+import CGuide from '../CGuide.astro';
 const d = Astro.locals.starlightRoute.entry.data as any;
 const partNames: Record<string, string> = { '0': 'Lộ trình', '1': 'Nền tảng', '2': 'Materiality', '3': 'Thủ tục theo phần hành', '4': 'Ghi finding', b: 'Excel & Power BI' };
 const isLesson = d.loai && !['he-thong'].includes(d.loai);
@@ -33,6 +34,7 @@ const takeawayHtml = d.description ? esc(d.description).replace(/\*\*(.+?)\*\*/g
     )}
   </div>
 ) : <Default />}
+{isC && pageId && <CGuide pageId={pageId} />}
 <script>
   // Ghi nhận đã xem trang (tiến độ) — lib/store
   import { markVisited } from '../../lib/store';
