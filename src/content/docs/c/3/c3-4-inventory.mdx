@@ -1,0 +1,106 @@
+---
+title: "Inventory cycle"
+description: "Inventory joins three cycles: purchases bring it in, sales take it out, and closing inventory sets **cost of sales**. Attend the count (existence, completeness), test **cut-off** with GDNs and GRNs, then value at the **lower of cost and NRV**."
+id: c3-4-inventory
+nhanh: C
+phan: c3
+bai: "C3.4"
+nhan: Inventory & cost of sales
+loai: acca
+thoi_luong: 16
+nguon: ["ACCA-slide: ch09 tr. 170–174 (inventory system)", "ACCA-slide: ch13 tr. 225–242 (count, cut-off, valuation, experts, internal audit)", "ACCA-slide: ch05 tr. 88–89, 98–99 (risk → response)", "ACCA-CP3 practice Q6, mock Q9 · ACCA-CP5 Panda Co event 1"]
+assertion: [Existence, Completeness, Valuation & allocation, Cut-off, Rights & obligations]
+chuan_muc: ["ISA 501", "ISA 505", "ISA 610", "ISA 620", "IAS 2"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, c3-1-revenue-receivables, c3-2-purchases-payables]
+sidebar: { order: 4, label: "Inventory" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, FlowDiagram, ExamMcq, Solution, CycleLinks, LessonNotes } from '@components';
+
+<Objectives title="Learning outcomes">
+- Plan and attend an inventory count (ISA 501), including inventory held by third parties
+- Apply test counts in both directions and the GRN/GDN cut-off test
+- Audit cost and NRV under IAS 2, and the use of an auditor's expert
+- Explain when internal audit's work or direct assistance can be used (ISA 610)
+</Objectives>
+
+<Eyebrow>Why it matters</Eyebrow>
+## One balance, three cycles
+Inventory is usually crucial to assurance about profit, may be complex and is subject to estimation (Ch 13). Closing inventory is deducted in cost of sales, so **every $1 of overstated inventory is $1 of overstated profit**. Biscore (Branch A) holds no inventory, so this cycle exists only in Branch C.
+
+<FlowDiagram client:visible stepLabel="Control objective" steps={[
+  { label: 'Only goods ordered accepted', sub: 'Order copy · GRN', detail: '<b>Risk:</b> goods not ordered are accepted · purchases and sales recorded in the wrong period.<br/><b>Control:</b> copy of the authorised order to the warehouse; goods matched and the GRN signed · all GDNs and GRNs processed daily.<br/><b>Test of control:</b> inspect GRNs for a signature evidencing the match · inspect documentation of daily processing.' },
+  { label: 'Damaged goods refused · valued correctly', sub: 'Standard costs', detail: '<b>Risk:</b> damaged/faulty goods accepted · inventory not at lower of cost and NRV.<br/><b>Control:</b> goods checked for condition on receipt · standard costs reviewed regularly; inventory managers review slow-moving, obsolete and excess lines.<br/><b>Test of control:</b> observe receipt · test standard costs against current cost · observe the review / inspect its reports.' },
+  { label: 'No stock-outs', sub: 'GRN matched to order', detail: '<b>Control:</b> multi-part, sequentially numbered GRN matched to the order; unmatched orders reviewed and suppliers chased.<br/><b>Test of control:</b> observe goods in; verify matching; enquire about unfulfilled orders and reperform.' },
+  { label: 'Kept securely · movements recorded', sub: 'Access · reconciliations', detail: '<b>Control:</b> suitable storage environment; access restricted; issues only against a customer order · movements only with a pre-numbered GDN/GRN; regular reconciliation of records to the GL; segregation between record-keeping and custody.<br/><b>Test of control:</b> inspect storage and identity cards · inspect GDNs for genuine orders · review reconciliations · observe segregation.' },
+]} footer="Source: Ch 9 §3.4. CP3 Granstan Co: checking quantity but not quality at receipt → defective goods accepted, inventory overstated." />
+
+<Eyebrow>Substantive playbook · the count</Eyebrow>
+## Before, during and after the count (ISA 501)
+Where inventory is material, attend the count unless impracticable: **evaluate** management's instructions → **observe** the count → **inspect** inventory → **perform test counts** → afterwards, check the final records reflect the count. Attendance can serve as a test of control or a substantive procedure.
+
+| When | Procedures |
+|---|---|
+| **Planning** | Risks of misstatement · controls · whether proper count instructions exist · timing · perpetual system? · locations, including **third parties** (confirm directly under ISA 505 and/or inspect) · need for an auditor's expert |
+| **During** | Observe staff follow instructions · **test counts both ways: floor → sheets (completeness), sheets → floor (existence)**, focusing on high-value items · check damaged, obsolete and slow-moving items are identified, and WIP stage of completion · third-party inventory separately identified · record GRN/GDN last numbers · conclude whether the count is reliable |
+| **After** | Trace test counts to final sheets · sequence of sheets · all count records included · records adjusted to counted amounts, differences investigated · **cut-off** with last GRN/GDN numbers · third-party replies · reperform the final computation |
+
+**Continuous (perpetual) counting:** counts through the year; focus on controls; all lines counted at least once a year. Counts before or after the year end need **roll back / roll forward** testing of movements.
+
+<Eyebrow>Cut-off · one boundary, three cycles</Eyebrow>
+| Document | Before the year end → include in | After the year end → |
+|---|---|---|
+| **GRN** (purchase) | Purchases · payables · closing inventory | Not in the FS |
+| **GDN** (sale) | Revenue · receivables · **not** in closing inventory | Not in revenue; still in closing inventory |
+
+<Eyebrow>Valuation · IAS 2</Eyebrow>
+**Lower of cost and NRV.** Cost = purchase + other costs to bring inventory to its present location and condition (standard costs allowed if they approximate actual). NRV = estimated selling price less costs of completion and costs to sell. Audit aims: the method of determining cost and overhead allocation is appropriate · inventory is at the lower of cost and NRV.
+
+**Auditor's expert (ISA 620):** evaluate competence, capability and objectivity; do not refer to the expert in an unmodified report. **Internal audit (ISA 610):** evaluate and reperform some of the work you use; **direct assistance** is prohibited for significant judgements, higher-risk areas needing more than limited judgement, work internal audit was involved in, and decisions about the internal audit function (e.g. IA may check the ageing, not the adequacy of the allowance).
+
+<Eyebrow>Activities · Dress You Like Co</Eyebrow>
+<ExamMcq client:visible id="c3-4-inventory" scoreKey="activities" label="Inventory questions" mode="practice" questions={[
+  { source: 'Ch 13 Activity 2 · Completeness', q: 'Which ONE of the following audit procedures provides evidence of the completeness of inventory?',
+    options: ['Test counts from inventory in the warehouse to the inventory records', 'Review an aged inventory listing and identify any slow moving items of inventory', 'Test counts from the inventory records to the inventory in the warehouse', 'Observe the location of any inventories held by third parties and that they are not being included in the inventory count'], answer: 0 },
+  { source: 'CP3 mock test Q9', q: 'During the audit of Orion Co, the auditor observes that damaged inventory is moved to a separate area but no write-off request is submitted to management. Which financial statement assertion is MOST at risk?',
+    options: ['Occurrence', 'Completeness', 'Valuation', 'Cut-off'], answer: 2,
+    explain: 'Damaged goods remaining at cost in the system = inventory stated above NRV, breaching IAS 2 lower of cost and NRV. This is a VALUATION assertion risk.' },
+]} />
+
+**Activity 3 · Test counts.** DYL883722G: 125 per records, 50 counted · DYL879239X: blue dye has rubbed onto white shirts · DYL261567L: 87 per records, 88 counted.
+<Solution label="Show the slide answer">
+DYL883722G could indicate an **overstatement** of inventory. DYL879239X may need writing off if the dye cannot be removed: possible **overstatement**. DYL261567L is a small difference, possibly a counting error, to be looked into for **completeness**.
+
+**Procedures:** inspect count sheets for notes on damaged inventory; enquire whether it has been sold or scrapped since the year end; agree any sales to invoices; otherwise discuss saleability so that inventory is at the lower of cost and NRV · note differences between records and counts; check management followed up and adjusted the ledgers (existence and completeness).
+</Solution>
+
+**Activity 4–5 · Cost and NRV.** A breakdown shows raw material, labour and overheads per line; DYL120008P cost **$16** per unit but sold for **$10** after the year end.
+<Solution label="Show the slide answer">
+**Cost:** recalculate the breakdown; agree the total to the TB and FS · agree raw materials to purchase invoices · agree labour to time sheets · enquire into the overhead basis and compare with prior years · agree overheads to supporting documents and ensure they are attributable to production.
+
+**NRV:** DYL120008P cost exceeds NRV and must be written down, or inventory is overstated. For a sample, agree post year-end selling prices to invoices and compare cost per unit with selling price per unit.
+</Solution>
+
+<Eyebrow>Links to other cycles</Eyebrow>
+<CycleLinks cycle="inv" />
+
+<Eyebrow>Exam angle</Eyebrow>
+| Requirement | What scores |
+|---|---|
+| Audit risk: fashion/seasonal goods (Ch 5) | Inventory may be at cost above NRV → aged inventory report, discuss saleability, post year-end selling prices |
+| Audit risk: two sites, transfers between them (Ch 5) | Items counted twice or not at all → review count instructions; raise weaknesses before the count |
+| Subsequent event: defective batch made before YE (CP5 Panda Co) | Adjusting: write down to NRV ($850k → $100k, $750k = 13.6% of PBT) |
+
+<IfSkipped lang="en">the cut-off, a lorry that left on 30 September can sit in both revenue and closing inventory, and profit is overstated twice over.</IfSkipped>
+
+<KeyPrinciple>**Count both ways, cut off on the documents, value at the lower of cost and NRV:** that covers existence, completeness, cut-off and valuation of inventory and cost of sales together.</KeyPrinciple>
+
+<QuickCheck lang="en" q="Material inventory is held at a third-party warehouse. What evidence does ISA 501 require?" short="Confirmation and/or inspection">
+Direct confirmation from the third party of quantities and condition (ISA 505), and/or inspection or other procedures, for example if the third party's integrity and objectivity are doubtful.
+</QuickCheck>
+
+On the map: [Inventory](/c/1/c1-master-map/#node-inv) · [Cost of sales](/c/1/c1-master-map/#node-cos).
+
+<LessonNotes client:only="react" id="c3-4-inventory" lang="en" />

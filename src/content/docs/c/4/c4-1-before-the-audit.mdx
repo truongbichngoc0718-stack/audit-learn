@@ -1,0 +1,102 @@
+---
+title: "Before the audit: may we, should we?"
+description: "Part A as three gates: **is it an assurance engagement** (CREST), **who appoints and protects the auditor** (law, governance, audit committee), and **can we accept** (ethics threats and safeguards, professional clearance, engagement letter)."
+id: c4-1-before-the-audit
+nhanh: C
+phan: c4
+bai: "C4.1"
+nhan: Framework, governance, ethics, acceptance
+loai: acca
+thoi_luong: 16
+nguon: ["ACCA-slide: ch01 tr. 4–16 (assurance, CREST, levels)", "ACCA-slide: ch02 tr. 16–28 (statutory audit, regulation)", "ACCA-slide: ch03 tr. 28–36 (corporate governance, audit committee)", "ACCA-slide: ch04 tr. 36–71 (ethics, acceptance, quality management)", "ACCA-slide: ch10 tr. 180–191 (internal audit)", "ACCA-CP1 §1–2 · ACCA-CP2 §1–2"]
+chuan_muc: ["ISA 200", "ISA 210", "ISA 610", "ISAE 3000", "ACCA Code of Ethics"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c-cp1, c-cp2, a1-2-muc-dich-kiem-toan]
+sidebar: { order: 1, label: "Before the audit" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, SortDrill, LessonNotes } from '@components';
+
+<Objectives title="Learning outcomes">
+- Identify the five elements of an assurance engagement and the two levels of assurance
+- Explain appointment, removal, resignation and rights of the external auditor
+- Describe the composition and role of an audit committee and contrast internal and external audit
+- Match ethical threats to safeguards and list the steps before accepting an audit
+</Objectives>
+
+<Eyebrow>Gate 1 · what kind of engagement?</Eyebrow>
+## CREST and the level of assurance
+An **assurance engagement** is one in which a practitioner aims to obtain sufficient appropriate evidence to express a conclusion that enhances the confidence of intended users (other than the responsible party) about a subject matter measured against criteria. Five elements, **CREST**:
+
+| | Element |
+|---|---|
+| **C** | Criteria: the subject matter is evaluated or measured against criteria |
+| **R** | Report: a written report with the conclusion, in the form for reasonable or limited assurance |
+| **E** | Evidence: sufficient appropriate evidence for the level of assurance |
+| **S** | Subject matter: data prepared by the responsible party (financial, KPIs, processes, compliance) |
+| **T** | Three-party relationship: intended user, responsible party, practitioner |
+
+**Reasonable assurance:** high, not absolute; positive opinion (statutory audit). **Limited assurance:** lower; negative form (review engagements). An audit never gives absolute assurance (CP1 practice Q6). Why audits exist: directors are **agents** managing the shareholders' property, accountable for their **stewardship**; the auditor adds credibility to the FS they prepare.
+
+<Eyebrow>Gate 2 · who appoints and protects the auditor?</Eyebrow>
+## Statutory rules and governance (CP1)
+| Topic | Key rules |
+|---|---|
+| Appointment | First auditor: directors (before first AGM). Subsequent: shareholders at AGM. Casual vacancy: directors can fill |
+| Removal | Ordinary resolution with special notice (28 days); auditor can attend the AGM and address shareholders |
+| Resignation | Deposit a **statement of circumstances** at the registered office; no suppression of matters shareholders should know |
+| Rights | Access to books and records; information from officers; attend and speak at general meetings |
+| Liability | Unlimited at law (unless an LLP); cannot contract out of negligence |
+| True & fair | The FS as a whole must give a true and fair view, even if individual items comply with IFRS |
+
+**Audit committee:** a board sub-committee of at least three independent NEDs, one with recent relevant financial experience, no executive directors. Role: monitor the integrity of the FS · review internal control and risk management · monitor internal audit · whistleblowing arrangements · recommend appointment/removal of the external auditor, approve remuneration, monitor independence, set policy on non-audit services. Fraud prevention and detection is the responsibility of **management and those charged with governance** (CP1 practice Q8).
+
+| | External audit | Internal audit |
+|---|---|---|
+| Purpose | Independent opinion on the FS | Evaluate and improve governance, risk management and internal control; add value |
+| Appointed by / reports to | Shareholders | Management / audit committee · TCWG |
+| Status | Statutory; ISA-governed | Voluntary (recommended for larger entities); IIA standards; can be outsourced |
+| Scope (Ch 10) | Statutory opinion | Value for money (economy, efficiency, effectiveness), IT, financial, compliance, fraud investigations, operational audits |
+
+**External auditor using internal audit (ISA 610):** evaluate its scope, organisational status, due skill and care and technical competence; **reperform some of the work used**; direct assistance is prohibited for significant judgements and high-risk areas. **Outsourcing internal audit:** expertise without permanent cost, more independence, no training, ad hoc services · but staff morale, time of other staff, less company knowledge, data access, cost.
+
+**Regulation (Ch 2).** Auditors are regulated by national legislation, professional bodies (e.g. ACCA) and national and international standard setters. **IFAC** (ACCA is a member) supports the **IAASB**, which sets ISAs and ISAEs to serve the public interest. IAASB pronouncements do not override local law. Standards go through research and a task force → public debate → exposure draft (at least 120 days) → consideration of comments → approval by at least 2/3 of members. ISAs may be adopted as they are, adopted with added guidance (e.g. ISAs (UK)), or used as the basis for national standards.
+
+<Eyebrow>Gate 3 · can we accept?</Eyebrow>
+## Ethics: five principles, five threats
+**Principles:** integrity · objectivity · professional competence and due care · confidentiality · professional behaviour. **Threats:** self-interest · self-review · advocacy · familiarity · intimidation. Confidential information may be disclosed when required by law, under a professional duty or right not prohibited by law, or with client consent, but never for the firm's commercial interest (CP1 mock M5).
+
+<SortDrill client:visible id="c4-1-before-the-audit" scoreKey="threats" label="Threat spotting" options={['Self-interest', 'Self-review', 'Advocacy', 'Familiarity', 'Intimidation']} items={[
+  { s: 'An audit team member owns shares in the client.', answer: 'Self-interest', why: 'Dispose of the interest, or do not accept (CP2 technique).' },
+  { s: 'The firm prepared the client\'s tax return / financial statements and audits them.', answer: 'Self-review', why: 'Separate teams; management takes responsibility (CP2 practice Q4, mock M11).' },
+  { s: 'The firm is asked to represent the client in a major tax dispute.', answer: 'Advocacy', why: 'Promoting the client\'s position compromises objectivity (CP2 practice Q6).' },
+  { s: 'The engagement partner has audited a listed client for nine years.', answer: 'Familiarity', why: 'Listed entity: rotate after 7 years; 5-year cooling-off (CP2 practice Q1).' },
+  { s: 'The client threatens to remove the auditor if the opinion is qualified.', answer: 'Intimidation', why: 'Resign if necessary; never compromise the opinion (CP2 technique).' },
+  { s: 'The audit partner\'s spouse is the client\'s financial director.', answer: 'Familiarity', why: 'Close family member in a key position (CP1 practice Q7).' },
+  { s: 'The auditor owes money to the audit client.', answer: 'Self-interest', why: 'Loans only on normal commercial terms, e.g. a bank client (CP2 mock M1).' },
+  { s: 'Fees from a PIE client exceed 15% of total fees for two consecutive years.', answer: 'Self-interest', why: 'Disclose to TCWG and arrange a pre- or post-issuance review (CP2 practice Q9).' },
+]} />
+
+## Acceptance checklist (Ch 4 · CP1 Beech & Co)
+1. **Competence and resources:** technical expertise and staff.
+2. **Ethics, especially independence:** financial interests, relationships.
+3. **Professional clearance:** write to the outgoing auditor asking for professional reasons not to accept (1 guaranteed mark).
+4. **Why did the previous auditor leave?** A management disagreement is an integrity/risk flag.
+5. **Outgoing auditor properly removed/resigned** (statement of circumstances) and new appointment properly made.
+6. **Preconditions (ISA 210):** acceptable financial reporting framework; management agrees its responsibility for internal control and to give **unrestricted access** to records and people.
+7. **Engagement letter before work starts:** scope, basis, responsibilities, fees, limitations; reviewed each year. Lowballing (a fee well below market to win the client) is an ethical issue (CP2 mock M8).
+
+**Quality management:** an engagement quality review evaluates the significant judgements made by the team and the conclusions reached (Ch 4 round up). **Non-audit services** that raise threats: preparing accounting records and FS, tax services, internal audit services. **NOCLAR (ISA 250):** acts of omission or commission, intentional or not, by the entity, TCWG, management or others under its direction, contrary to laws or regulations (e.g. fraud, money laundering, data protection, tax, health and safety); the auditor's response must comply with integrity and professional behaviour.
+
+<IfSkipped lang="en">the gates, you can do a perfect audit for a client you should never have accepted, and the independence breach invalidates the opinion before fieldwork begins.</IfSkipped>
+
+<KeyPrinciple>**Three gates before any testing:** is it assurance, is the appointment valid and protected, and are we independent and competent enough to accept?</KeyPrinciple>
+
+<QuickCheck lang="en" q="Which is NOT a precondition for an audit: (a) unrestricted access to personnel, (b) an active internal audit department?" short="(b)">
+Management's agreement to provide unrestricted access is a precondition; an internal audit department is not (CP1 mock M9).
+</QuickCheck>
+
+Practise in [Checkpoint 1](/c/5/cp1-framework-governance/) and [Checkpoint 2](/c/5/cp2-ethics-risk/). **Link to Branch A:** [Bài 1.2 Mục đích kiểm toán](/a/1/a1-2-muc-dich-kiem-toan/).
+
+<LessonNotes client:only="react" id="c4-1-before-the-audit" lang="en" />

@@ -1,0 +1,116 @@
+---
+title: "Planning: risk, materiality and internal control"
+description: "Part B and C as one planning job: **understand the entity and its controls**, set **materiality**, turn scenario facts into **audit risks and responses**, decide **controls reliance or full substantive**, and choose how to **sample**."
+id: c4-2-planning-risk-control
+nhanh: C
+phan: c4
+bai: "C4.2"
+nhan: Risk, materiality, controls, sampling
+loai: acca
+thoi_luong: 20
+nguon: ["ACCA-slide: ch05 tr. 71–109 (ISA 200, 315, 320, 520, 240, 250; Dress You Like Co activities 1–2)", "ACCA-slide: ch06 tr. 109–119 (strategy, plan, interim/final, documentation)", "ACCA-slide: ch08 tr. 134–149 (internal control, recording, IT controls)", "ACCA-slide: ch09 tr. 179–180 (ISA 265, ISA 260)", "ACCA-slide: ch11 tr. 191–205 (sampling, automated tools)", "ACCA-CP2 · ACCA-CP3 §1.1, §2"]
+assertion: [Existence, Completeness, Valuation & allocation, Occurrence]
+chuan_muc: ["ISA 200", "ISA 240", "ISA 250", "ISA 260", "ISA 265", "ISA 315", "ISA 320", "ISA 330", "ISA 520", "ISA 530"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c2-operating-system, c-cp2, c-cp3, a2-1-om-pm-ctt, a2-3-chon-mau]
+sidebar: { order: 2, label: "Planning, risk & controls" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, SortDrill, FlowDiagram, LessonNotes } from '@components';
+
+<Objectives title="Learning outcomes">
+- Follow the risk-based audit from understanding the entity to the auditor's report
+- Identify audit risks from a scenario and ratios, and explain the auditor's response
+- Describe the five components of internal control, its limitations and IT controls
+- Choose a sampling method and explain the factors that change sample size
+</Objectives>
+
+<Eyebrow>The route through the audit (ISA 200)</Eyebrow>
+## Where planning leads
+<FlowDiagram client:visible stepLabel="Step" steps={[
+  { label: 'Plan', sub: 'Strategy · plan', detail: '<b>Overall audit strategy</b> sets scope, timing and direction (e.g. overall materiality). The <b>audit plan</b> sets detailed procedures: timetable, staff, procedures per account area, sample sizes. Changes are documented and reviewed (Ch 6).' },
+  { label: 'Understand', sub: 'ISA 315', detail: 'Entity and environment (structure, ownership, governance, business model and IT, industry and regulation, performance measures, policies) · the framework (IFRS) · the system of internal control. Procedures: enquiry, analytical procedures, observation and inspection, without bias toward corroborating evidence.' },
+  { label: 'Assess risk', sub: 'FS & assertion level', detail: 'FS-level risks are pervasive (e.g. poor management attitude to control); assertion-level risks are specific (e.g. inventory at multiple locations). Inherent risk factors: complexity · subjectivity · change · uncertainty · susceptibility to management bias or fraud. Significant risks need special consideration.' },
+  { label: 'Respond', sub: 'ISA 330', detail: 'If controls are expected to operate effectively → <b>tests of controls</b>; satisfactory → reduced substantive procedures; unsatisfactory → report to TCWG and full substantive procedures. If no reliance is expected → full substantive procedures.' },
+  { label: 'Finish', sub: 'Review · report', detail: 'Overall review of the FS (Ch 19) and the auditor\'s report (Ch 20). See <a href="/c/4/c4-3-completion-reporting/">C4.3</a>.' },
+]} />
+
+**Interim vs final audit:** interim (during the year) → risk, understanding, recording and testing controls, some substantive work · final (after year end) → substantive procedures, confirmations, analytical procedures, subsequent events, going concern, written representations. **Documentation:** enough for an experienced auditor with no previous connection to understand the work and conclusions; permanent file (engagement letters, legal documents, prior signed FS) vs current file; ACCA recommends keeping papers at least seven years.
+
+<SortDrill client:visible id="c4-2-planning-risk-control" scoreKey="strategy-plan" label="Strategy or plan" options={['Overall audit strategy', 'Detailed audit plan']} items={[
+  { s: 'The overall materiality level for the financial statements.', answer: 'Overall audit strategy', why: 'CP2 mock M10: determined and documented in the overall strategy.' },
+  { s: 'The timing of the inventory count observation.', answer: 'Detailed audit plan', why: 'Timetable of planned audit work belongs to the plan (Ch 6; CP2 mock M10).' },
+  { s: 'The specific substantive procedures for trade receivables.', answer: 'Detailed audit plan', why: 'Procedures for each major account area (Ch 6).' },
+  { s: 'The sample size for testing payment authorisations.', answer: 'Detailed audit plan', why: 'Detailed procedure design (CP2 mock M10).' },
+]} />
+
+<Eyebrow>Risk · materiality</Eyebrow>
+## From scenario facts to audit risks
+**Materiality (ISA 320):** information is material if its omission or misstatement could reasonably be expected to influence users' economic decisions; quantitative and qualitative. Benchmarks: 0.5–1% of revenue · 5–10% of profit · 1–2% of total assets. **Performance materiality** is set lower. Revise as the audit progresses and document everything.
+
+**Ratios as risk radar (Ch 5 Activity 2, Dress You Like Co):**
+| Ratio | 20X6 | 20X5 | Signal |
+|---|---|---|---|
+| Gross margin · supermarket | 3% | 8% | Margin collapse on the main customer |
+| Receivables days · supermarket | 81 | 62 | Slower collection: recoverability |
+| Inventory holding period | 85 days | 35 days | Inventory $13.8m vs $4.9m: NRV and existence |
+
+**Six risks and responses (Ch 5 Activity 1, abridged):**
+| Audit risk | Auditor's response |
+|---|---|
+| New audit: less understanding → higher detection risk | Understand the business fully, brief the team, more experienced staff, test opening balances |
+| Fashion inventory may be below cost (IAS 2) | Aged inventory report; discuss saleability; check valuation at lower of cost and NRV |
+| Two sites with transfer errors: double or missed counts | Review count instructions; raise weaknesses before the count |
+| 60-day credit to the supermarket + worsening cash flow → going concern | Cash flow forecasts and their assumptions; supermarket's ability to pay; access to finance |
+| Former FD suing; no provision or disclosure | Correspondence with the director and legal advisers; discuss treatment; minutes and subsequent events |
+| No FD since March; internal audit (bank and supplier reconciliations) cancelled | Personnel to answer queries; detailed review of year-end bank and supplier reconciliations; larger samples; post year-end payments |
+
+**Fraud (ISA 240):** fraudulent financial reporting vs misappropriation of assets; fraud needs **pressure/incentive** and **opportunity**. Prevention and detection is management's and TCWG's responsibility; the auditor obtains reasonable assurance the FS are free from material misstatement whether due to fraud or error. Where fraud risk exists: treat as significant, assign and supervise staff carefully, evaluate accounting policies, **build in unpredictability**. **Laws and regulations (ISA 250):** those with a direct effect on amounts (tax, pensions) vs those fundamental to operations (licences, regulatory compliance).
+
+Write risks for marks with the [risk chain in C2](/c/2/c2-operating-system/) and practise on [Checkpoint 2 · Blackberry Co](/c/5/cp2-ethics-risk/).
+
+<Eyebrow>Internal control</Eyebrow>
+## Five components, known limits
+| Component (ISA 315 · CP3) | Core idea | Examples |
+|---|---|---|
+| Control environment | Tone at the top: culture, integrity, ethics | Board oversight, code of conduct, HR policies |
+| Risk assessment process | Identify and analyse risks to objectives | Fraud risk assessment, risk registers |
+| Control activities | Policies and procedures that address risks | Authorisation, reconciliations, sequence checks, IT controls, segregation |
+| Information & communication | Relevant information captured and communicated | Accounting system, management reports, whistleblowing |
+| Monitoring | Ongoing evaluation of controls | Internal audit, management reviews, exception reports |
+
+**Limitations:** human error · deliberate circumvention / collusion · management override · unforeseen circumstances · cost vs benefit. Insufficient segregation of duties is a **deficiency**, not an inherent limitation (CP3 practice Q1). **Smaller entities:** limited segregation, override risk → mostly substantive approach.
+
+**Recording systems:** narrative notes (simple, flexible; hard to spot missing controls) · flowcharts (easy to review, show deficiencies; only standard systems) · ICQs/ICEQs (all controls considered, easy to delegate; may miss unusual controls, no weighting).
+
+**IT controls:** **general controls** apply across systems (development and testing of applications, prevention of unauthorised program changes, passwords, back-ups, disaster recovery) · **application (information processing) controls** work on individual transactions (control totals, document counts, one-for-one checks, digit verification, reasonableness, existence and range checks, batch reconciliations, master-file controls).
+
+<SortDrill client:visible id="c4-2-planning-risk-control" scoreKey="ic" label="Internal control" options={['Control environment', 'Control activity', 'IT general control', 'IT application control', 'Inherent limitation']} items={[
+  { s: 'The board\'s commitment to ethical values, reflected in a code of conduct and governance structures.', answer: 'Control environment', why: 'Tone at the top (CP3 mock Q1).' },
+  { s: 'Automated three-way match between purchase order, GRN and invoice before payment can be processed.', answer: 'IT application control', why: 'Embedded in an application, operates on individual transactions (CP3 mock Q10).' },
+  { s: 'Periodic review of user access rights across all systems.', answer: 'IT general control', why: 'Applies across all systems (CP3 mock Q10).' },
+  { s: 'Monthly bank reconciliations performed by an independent clerk.', answer: 'Control activity', why: 'A specific procedure, not culture (CP3 mock Q1).' },
+  { s: 'Two employees collude to bypass a control.', answer: 'Inherent limitation', why: 'Collusion cannot be fully prevented by design (CP3 practice Q1).' },
+]} />
+
+**Communicating deficiencies (ISA 265):** significant deficiencies go **in writing to TCWG**. Significance depends on susceptibility to loss or fraud, likelihood of material misstatement, interaction with other deficiencies, cause and frequency, volume of activity, subjectivity of estimates, amounts exposed and importance of the control. **ISA 260** also covers the auditor's responsibilities, planned scope and timing, significant findings and, for listed entities, independence. Exam format: deficiency → recommendation → test of control (see [C3.2](/c/3/c3-2-purchases-payables/)).
+
+<Eyebrow>Sampling and automated tools (Ch 11 · ISA 530)</Eyebrow>
+## How many, which ones
+- **100% testing:** few high-value items, significant risk where nothing else works, repetitive calculations by automated tools. **Specific items** (high-value, key, all over an amount, stratification): not sampling, cannot be projected.
+- **Statistical:** random, systematic (constant interval, random start), monetary unit sampling (picks material items; struggles with negative items and non-random order). **Non-statistical:** haphazard, block (used for cut-off).
+- **Larger sample when:** higher risk of material misstatement · higher required confidence · higher expected error · lower tolerable misstatement. **Evaluate:** is an error anomalous? Tests of details → project monetary errors; tests of controls → error rate.
+- **Automated tools:** audit software (substantive), test data (controls), audit data analytics (examine all data). They extract and calculate but cannot evaluate, e.g. the adequacy of an allowance (Ch 14 Activity 4).
+
+Branch A practises the same ideas on Biscore: [Bài 2.3 Chọn mẫu](/a/2/a2-3-chon-mau/) · [Bài 2.1 Materiality](/a/2/a2-1-om-pm-ctt/).
+
+<IfSkipped lang="en">planning, risk becomes a list of facts copied from the scenario. Without the FS area, the assertion and the direction, each risk earns half a mark at most.</IfSkipped>
+
+<KeyPrinciple>**Plan once, use everywhere:** materiality decides how much, risk decides where, control reliance decides how, and sampling decides which items.</KeyPrinciple>
+
+<QuickCheck lang="en" q="High staff turnover in finance and no segregation of duties: which audit risk component rises, and what changes in the plan?" short="Control risk → more substantive work">
+Control risk rises (CP2 practice Q10). With control risk high, detection risk must be lower: less reliance on controls, more and larger substantive tests.
+</QuickCheck>
+
+<LessonNotes client:only="react" id="c4-2-planning-risk-control" lang="en" />

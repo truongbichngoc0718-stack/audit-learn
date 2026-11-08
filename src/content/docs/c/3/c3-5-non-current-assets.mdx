@@ -1,0 +1,127 @@
+---
+title: "Non-current assets cycle"
+description: "A **roll-forward**: opening (agreed to signed FS) + additions − disposals − depreciation = closing. Additions are vouched for existence and rights; repairs are searched for completeness; depreciation is proved in total."
+id: c3-5-non-current-assets
+nhanh: C
+phan: c3
+bai: "C3.5"
+nhan: PPE, intangibles, depreciation
+loai: acca
+thoi_luong: 18
+nguon: ["ACCA-slide: ch09 tr. 177–179 (non-current assets system)", "ACCA-slide: ch12 tr. 205–225 (assertions, audit plan, activities 1–6, R&D, ISA 540, management's expert)", "ACCA-slide: ch05 tr. 99 (risk → response)", "ACCA-CP4 Gooseberry Co · ACCA-CP5 practice Q5"]
+assertion: [Existence, Completeness, Rights & obligations, Valuation & allocation, Classification, Presentation]
+chuan_muc: ["ISA 500", "ISA 540", "IAS 16", "IAS 23", "IAS 38"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, a3-6-tscd, c-cp4]
+sidebar: { order: 5, label: "Non-current assets" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, FlowDiagram, ExamMcq, Solution, CycleLinks, LessonNotes } from '@components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Objectives title="Learning outcomes">
+- Audit a non-current asset roll-forward: opening balances, additions, disposals, revaluation, depreciation
+- Separate capital from revenue expenditure in both directions
+- Audit development costs against the IAS 38 (PIRATE) criteria
+- Evaluate a management's expert and an accounting estimate such as useful life
+</Objectives>
+
+<Eyebrow>The cycle on one screen</Eyebrow>
+## Controls first: classify, register, safeguard
+<FlowDiagram client:visible stepLabel="Control objective" steps={[
+  { label: 'Classified correctly', sub: 'Capital order form', detail: '<b>Risk:</b> revenue expenditure recorded as capital, or vice versa.<br/><b>Control:</b> separate order forms for capital items; authorised by one or two managers/directors depending on value; coded to the right NCA account · periodic review of revenue and capital ledger accounts for large or unusual items.<br/><b>Test of control:</b> inspect capital orders for the right level of authorisation and coding · discuss the ledger reviews; inspect correcting journals for authorisation.' },
+  { label: 'Recorded in the register', sub: 'NCA register', detail: '<b>Risk:</b> capital items not recorded in the register.<br/><b>Control:</b> periodically trace assets held to the register · monthly reconciliation of NCA ledger codes to the register; differences investigated; adjustments authorised.<br/><b>Test of control:</b> inspect the register for a sample of assets · review the reconciliation and the level of adjustments.' },
+  { label: 'Safe custody', sub: 'Locks · insurance', detail: '<b>Risk:</b> capital items misappropriated.<br/><b>Control:</b> physical safeguards (locks, safes, keypads, CCTV, guards) · adequate insurance.<br/><b>Test of control:</b> test physical controls (try to enter a restricted area) · inspect insurance documents for adequacy and dates.' },
+]} footer="Source: Ch 9 §3.6. Ch 5 risk → response: desirable assets susceptible to theft → test physical controls; increase samples for inspecting recorded assets." />
+
+**Account schedule (Ch 12):** OB + additions (purchase, self-construction completed, revaluation, reclassification) − reductions (depreciation, impairment, disposal, reclassification) = balance, supported by the FA register and a physical count. Key assertions: existence (additions acquired; recorded assets in use) · completeness (all additions and disposals recorded) · rights and obligations · accuracy, classification and valuation (cost less accumulated depreciation).
+
+<ExamMcq client:visible id="c3-5-non-current-assets" scoreKey="assertions" label="Ch 12 Activity 1" mode="practice" questions={[
+  { source: 'Ch 12 Activity 1 · Assertions', q: 'Which of the following audit procedures would provide audit evidence as to the existence of a tangible non-current asset?',
+    options: ['Inspecting board minutes approving authorisation of the asset', 'Physically inspecting the asset', 'Reviewing the non-current asset register for inclusion of the asset', 'Inspecting the invoice and purchase order documentation of the asset'], answer: 1 },
+  { source: 'Ch 12 Activity 1 · Assertions', q: 'Inspecting the title deeds of a building provides audit evidence concerning which one of the following financial statement assertions?',
+    options: ['Existence', 'Valuation', 'Rights and obligations', 'Completeness'], answer: 2 },
+]} />
+
+<Eyebrow>Substantive playbook</Eyebrow>
+## Audit plan by assertion (Ch 12 §2)
+
+<Tabs>
+<TabItem label="Existence · completeness">
+
+**Existence:** confirm the company inspects all register items each year · inspect assets, concentrating on high-value items and additions: exist, in use, in good condition, correct serial numbers · review records of income-yielding assets · reconcile vehicles by number as well as amount.
+
+**Completeness:** summary reconciling gross book value, accumulated depreciation and net book value with the opening position · compare the GL with the register · **for a sample of assets that physically exist, agree they are in the register** · if no register, schedule of original cost and depreciated value · reconcile the schedule with the GL.
+
+</TabItem>
+<TabItem label="Rights · additions · disposals">
+
+**Rights and obligations:** title deeds, land registry certificates, leases · certificate from solicitors/bankers (custody only; free from mortgage or lien) · vehicle registration documents in the client's name · documents of title for other assets · charges in statutory books / company search · lease covenants · invoices after the year end, orders and minutes for **capital commitments**.
+
+**Additions** (rights, valuation, completeness): architects' certificates, completion statements, invoices · **review repairs, motor and sundry expenses for capital items** (capital/revenue distinction, consistent policy) · grants claimed and received · additions recorded in the register and GL. **Self-constructed:** materials, labour and overheads to invoices and wage records; capitalise only enhancements, replaced components or major overhauls; no profit element; finance costs capitalised consistently and not exceeding total finance costs.
+
+**Disposals** (rights, completeness, accuracy): supporting documents for title transfer, price and dates · recalculate profit or loss · proceeds reasonable · release from security.
+
+</TabItem>
+<TabItem label="Valuation · depreciation">
+
+**Revaluation:** agree to the valuation certificate · assess the valuer (experience, scope, methods, assumptions, basis in line with standards) · reperform the surplus · full valuation every five years, interim in year three · losses to SPL unless a credit in equity for that asset; gains to equity · insurance values and expiry dates.
+
+**Depreciation:** review rates against asset lives, residual values, replacement policy, past gains/losses on disposal, consistency, obsolescence · all limited-life assets depreciated · revalued assets on the revalued amount · reperform · ratio of depreciation to cost by category vs prior years and policy · policy disclosed. **Classification:** IAS 16 disclosures; no further charge on fully depreciated assets.
+
+**Accounting estimates (ISA 540):** useful life is an estimate, like the allowance for receivables, litigation provisions, inventory obsolescence, accrued revenue and warranties. Obtain evidence that estimates and disclosures are reasonable.
+
+</TabItem>
+<TabItem label="Intangibles · R&D">
+
+**Research** cannot be capitalised. **Development** must be capitalised if ALL the IAS 38 criteria are met: **P**robable future economic benefits · **I**ntention to complete and use/sell · **R**esources adequate and available · **A**bility to use/sell · **T**echnical feasibility · **E**xpenditure measured reliably.
+
+Procedures: confirm capitalised costs meet IAS 38 by inspecting project details and discussing with technical managers · feasibility and viability from budgets · recalculate amortisation, starting with production · inspect invoices for R&D spend. **Goodwill:** agree consideration to the agreement; review impairment with management. **Other intangibles:** agree to purchase documents; inspect specialist valuations; recalculate amortisation.
+
+</TabItem>
+</Tabs>
+
+<Eyebrow>Activities · Dress You Like Co</Eyebrow>
+**Activity 3 · Additions ($176,000).** Includes cutting machinery $15,000 + set-up $2,500 + **training $2,500**; sewing equipment **$45,000** (deposit $20,000 paid 1/09/20X6, balance on delivery 10/10/20X6); 4 delivery vehicles $80,000.
+<Solution label="Show the slide answer">
+**Training costs** ($2,500) are not allowed in the cost of an asset under IAS 16: otherwise NCA overstated and expenses understated. The **sewing equipment** was not in the company's possession and use at the year end: the $20,000 deposit is a payment on account (disclose if material), and the $45,000 must be removed from additions.
+
+**Procedures:** recalculate the listing and agree to the NCA note · trace a sample to invoices/contracts (accurate, excluding recoverable sales tax) · inspect that invoices are addressed to the company and vehicle registrations are in its name (rights) · physically verify a sample (existence, condition) · confirm inclusion in the register · review additions for items that should be expensed · review repairs, motor and sundry expenses for items that should be capitalised · examine post year-end invoices, orders and minutes for capital commitments.
+</Solution>
+
+**Activity 4 · Disposals.** Old delivery vehicles: cost $41,000 (March 20X0), accumulated depreciation $24,000 at disposal in March 20X6, sold for $10,000.
+<Solution label="Show the slide answer">
+Obtain and cast the list of disposals; agree to the FS · confirm they are removed from the register · verify to the buyer's invoice (title, price, dates) · **recalculate the loss on disposal**: carrying amount $17,000 ($41,000 − $24,000) less proceeds $10,000 · consider whether proceeds are reasonable · recalculate depreciation to the disposal date · trace proceeds to the cash book and bank statement.
+
+*Note: the slide prints the loss as $17,000; with a carrying amount of $17,000 and proceeds of $10,000 the arithmetic gives a loss of **$7,000**.*
+</Solution>
+
+**Activity 5–6 · Revaluation (+$1.2m) and depreciation.**
+<Solution label="Show the slide answer">
+**Revaluation:** trace to the valuer's report ($1,200,000) · agree the transfer to the revaluation reserve · agree the basis of valuation and its disclosure · assess the specialist's competence, capability and objectivity (experience, qualifications, reputation, scope, methods, assumptions, basis per standards) · compare with similar properties recently sold · recalculate depreciation on the revalued amount · review the IAS 16 disclosure.
+
+**Depreciation:** confirm the policy is unchanged and disclosed per IAS 16 · assess rates for reasonableness · compare depreciation/cost ratios · all limited-life assets depreciated · recalculate a sample · revalued sites on the revalued amount · or **proof in total** per category: ((opening cost + closing cost)/2) × rate, investigating differences.
+</Solution>
+
+<Eyebrow>Links to other cycles</Eyebrow>
+<CycleLinks cycle="nca" />
+
+<Eyebrow>Exam angle</Eyebrow>
+| Requirement | What scores |
+|---|---|
+| Audit risk: extensive refurbishment (Ch 5) | Capital vs revenue misclassification → breakdown of costs vs invoices/work done; review repairs; review the register |
+| R&D (CP4 Gooseberry, CP5 Czech Co) | PIRATE criteria; research expensed; $2.1m = 8% PBT, single account → qualified |
+| Depreciation (CP4 Gooseberry) | Policy, rates vs lives, recalculation, proof in total, disclosure |
+
+<IfSkipped lang="en">the repairs review, you vouch every addition perfectly and still miss the capital items expensed (completeness), or sign off training costs dressed as machinery (existence).</IfSkipped>
+
+<KeyPrinciple>**Roll it forward and look both ways across the capital/revenue line:** additions from the register to evidence, and repairs from the expense accounts back to the register.</KeyPrinciple>
+
+<QuickCheck lang="en" q="Which procedure tests completeness of PPE: (a) inspect assets selected from the register, or (b) agree assets seen on the premises to the register?" short="(b)">
+For a sample of assets which physically exist, agree that they are recorded in the register (floor → book). Starting from the register (a) tests existence (Ch 12 §2).
+</QuickCheck>
+
+**Link to Branch A:** [Bài 3.6 TSCĐ](/a/3/a3-6-tscd/) (roll-forward, XDCB 241 trên dữ liệu Biscore). On the map: [PPE](/c/1/c1-master-map/#node-ppe).
+
+<LessonNotes client:only="react" id="c3-5-non-current-assets" lang="en" />

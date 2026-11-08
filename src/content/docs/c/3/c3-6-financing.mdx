@@ -1,0 +1,117 @@
+---
+title: "Financing cycle: loans, provisions, capital"
+description: "How the business is funded and what it owes. Loans and provisions are tested for **completeness** (minutes, lender and legal letters, after-date payments); interest is **proved in total**; capital is tested for **authority and legality**."
+id: c3-6-financing
+nhanh: C
+phan: c3
+bai: "C3.6"
+nhan: Loans, finance costs, provisions, capital
+loai: acca
+thoi_luong: 16
+nguon: ["ACCA-slide: ch17 tr. 289–300 (non-current liabilities, provisions, litigation, capital)", "ACCA-slide: ch05 tr. 103 (borrowing → going concern response)", "ACCA-CP2 Blackberry Co (covenant) · ACCA-CP5 Cookit Co (redundancy provision)"]
+assertion: [Completeness, Existence, Accuracy, Valuation & allocation, Classification, Presentation, Rights & obligations]
+chuan_muc: ["ISA 501", "ISA 505", "ISA 570", "IAS 37"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, a3-5-vay, c4-3-completion-reporting]
+sidebar: { order: 6, label: "Financing" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, ExamMcq, Solution, CycleLinks, LessonNotes } from '@components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Objectives title="Learning outcomes">
+- Audit loans for completeness, accuracy of interest and current/non-current classification
+- Apply IAS 37 tests (obligation, probable outflow, best estimate) to provisions and contingencies
+- Use a letter to legal advisers and post year-end evidence for litigation (ISA 501)
+- Audit share capital, dividends and reserves for authority and legality
+</Objectives>
+
+<Eyebrow>The cycle on one screen</Eyebrow>
+## Three balances, one question: is everything owed recorded?
+<div class="b-grid">
+  <div class="b-card" style="border-top:4px solid #e11d48"><div class="b-kicker">Loans · finance costs</div>Key: <b>completeness</b> (all liabilities recognised), <b>accuracy</b> (interest calculated and in the right period), <b>classification</b> (current / non-current, disclosure).</div>
+  <div class="b-card" style="border-top:4px solid #e11d48"><div class="b-kicker">Provisions · contingencies</div>A liability of uncertain timing or amount. Judgement-heavy, so a risky area: <b>completeness and valuation</b> (best estimate), plus disclosure of contingencies.</div>
+  <div class="b-card" style="border-top:4px solid #e11d48"><div class="b-kicker">Capital · dividends · reserves</div>Has the company complied with the law? Changes <b>authorised, allowed and supported</b> by minutes and resolutions.</div>
+</div>
+
+<Eyebrow>Substantive playbook</Eyebrow>
+<Tabs>
+<TabItem label="Loans">
+
+| Objective | Example tests (Ch 17 §1) |
+|---|---|
+| **Existence · rights** | Direct confirmation from banks and lenders of amounts outstanding, accrued interest and security held |
+| **Completeness** | Breakdown vs prior year working papers; items no longer included agreed to repayment in the cash book or reclassification to current · board minutes for new borrowings · cash book for new loans |
+| **Accuracy, valuation** | Proof in total of finance charges · agree capital and interest to confirmations · recalculate finance charges using rates in the loan agreements |
+| **Classification · presentation** | Current/non-current split agreed to repayment dates in the agreements · disclosure checklist |
+
+**Risk → response (Ch 5):** significant borrowing and cash-flow problems may indicate going concern problems → review correspondence with the lender for withdrawal or extension of facilities · review **covenant** compliance and increase testing where management could manipulate the measures (e.g. provisions) · review post year-end results and cash flow forecasts. CP2 Blackberry: net assets $8.5m vs an $8m covenant → flag **both** manipulation risk (assets overstated, liabilities understated) **and** going concern.
+
+<ExamMcq client:visible id="c3-6-financing" scoreKey="loan" label="Proof in total" mode="practice" questions={[
+  { source: 'Ch 7 Activity 1 (HMA Co)', q: 'Opening loan $400,000 on 1 January 20X6, fixed interest 2% per month paid monthly, $50,000 capital repaid on 1 April 20X6; finance charge recorded $81,000 for the year ended 30 September 20X6. What is the expected finance charge and the impact on profit?',
+    options: ['Finance charge should be $96,000, profit is overstated', 'Finance charge should be $72,000, profit is understated', 'Finance charge should be $67,000, profit is understated', 'Finance charge should be $66,000, profit is understated'], answer: 3,
+    explain: 'Worked answer: $400,000 × 2% × 3 months = $24,000 + $350,000 × 2% × 6 months = $42,000 → $66,000.' },
+]} />
+
+**Ch 17 Activity 1.** Schedule: loan with CR Bank $2,597k (20X5: $2,896k). *Which TWO procedures give sufficient appropriate evidence over the COMPLETENESS of this schedule?* A. Review board minutes for discussions regarding long term borrowings · B. Agree the loan interest rate to the loan agreement with CR Bank · C. Review prior year audit working papers for any non-current liabilities no longer included · D. Trace loan repayments to entries in the cash book.
+<Solution label="Show the answer">**A and C.** Board minutes reveal new borrowings that may be unrecorded; prior year papers reveal liabilities that have dropped out of the schedule.</Solution>
+
+</TabItem>
+<TabItem label="Provisions · contingencies">
+
+**Definitions (IAS 37):** provision = liability of uncertain timing or amount · liability = present obligation from past events, settlement expected to cause an outflow · obligating event creates a **legal** (contract, legislation, operation of law) or **constructive** obligation (established practice, published policy or a specific current statement creating a valid expectation) · contingent liability = possible obligation, or present obligation not recognised because the outflow is not probable or cannot be measured reliably · contingent asset = possible asset dependent on uncertain future events.
+
+**Audit plan:** obtain details of all provisions and contingencies · analysis of opening, movements, closing · recalculate · compare with post year-end payments and past settlements · if no reliable estimate, check a contingent liability is disclosed · would you expect other provisions (e.g. warranties)? · IAS 37 disclosures. For each material provision: **present obligation?** (correspondence; discussion with directors on valid expectations) · **probable outflow?** (after-date cash; correspondence with solicitors, banks, customers, insurers, suppliers; letter to the solicitor; history of similar provisions; reimbursement).
+
+**Litigation (ISA 501):** enquiries of management and in-house lawyers · minutes and correspondence with external legal advisers · legal expense accounts · with management's permission, a **letter of enquiry to external legal advisers**.
+
+</TabItem>
+<TabItem label="Capital · dividends">
+
+- **Share capital:** authorised capital agreed to statutory documents; changes to resolutions.
+- **Issues:** to general and board minutes; within the constitution and directors' authority; consideration received, or called-up capital not paid.
+- **Transfers:** correspondence, stamped transfer forms, cancelled certificates, minutes; register of members agreed to issued capital in the GL.
+- **Dividends:** to minute book authority; reperform against shares issued; agree payments to returned dividend warrants; not in breach of distribution rules.
+- **Reserves:** movements authorised and legal; distributable vs non-distributable identified; disclosures.
+
+</TabItem>
+</Tabs>
+
+<Eyebrow>Activities · Dress You Like Co</Eyebrow>
+**Activity 2 · Warranty provision.** Revenue rose from $55.7m to $61.7m, but the warranty provision fell (the slide gives 0.005% of revenue in 20X5 → 0.004% in 20X6). *Note: $279k / $55,700k = 0.50% and $263k / $61,700k = 0.43%; the slide's percentages are misprinted, the conclusion is unchanged.* *Which TWO statements are most likely true?* A. potential understatement of the provision · B. potential overstatement of the provision · C. potential understatement of the expense · D. potential overstatement of the expense.
+<Solution label="Show the answer">**A and C.** We would expect the provision to increase in line with revenue unless there is a valid reason (e.g. better quality goods from higher quality fabrics).</Solution>
+
+<ExamMcq client:visible id="c3-6-financing" scoreKey="warranty" label="Ch 17 Activity 2 (2)" mode="practice" questions={[
+  { source: 'Ch 17 Activity 2 · Warranty provision', q: 'Which of the following audit procedures provides evidence over the completeness of the warranty provision?',
+    options: ['Enquiring of management as to why the warranty provision has fallen since the prior year', 'Reviewing customer correspondence after year end for discussions relating to warranty claims', 'Recalculation of the warranty provision', 'Obtaining a copy of the warranty policy at Dress You Like Co and discussing this with management to gain a thorough understanding'], answer: 1,
+    explain: 'This procedure would enable the auditor to consider the level of claims made after the end of the reporting period and therefore assess whether the level of warranty provision made is sufficient, namely is it complete.' },
+]} />
+
+**Activity 3 · Litigation.** The finance director, whose salary was frozen while other directors received 5%, left in March 20X6 and is suing for constructive dismissal. No provision or disclosure: the company believes the claim has no merit.
+<Solution label="Show the slide answer">
+With management's permission, send a **letter of enquiry to the external legal advisers** for their opinion of the likely outcome and financial implications (most will not meet the auditor) · review post year-end correspondence with the legal advisers · read post year-end board minutes · review correspondence with the former director · discuss the accounting treatment with the current directors. *Follow-up (Ch 19 Activity 1): the court awards $500,000 against a $100,000 provision before the report is signed → adjusting event; provision understated by $400,000 (39% of PBT).*
+</Solution>
+
+<Eyebrow>Links to other cycles</Eyebrow>
+<CycleLinks cycle="fin" />
+
+<Eyebrow>Exam angle · CP5 Cookit Co (Mar/Jun 2024 Q3)</Eyebrow>
+Closure of three stores announced publicly and to staff on **28 May** (YE 31 May); redundancy cost **$1.8m** not provided. PBT $22.7m, total assets $85m.
+
+| Step | Model answer (CP5) |
+|---|---|
+| Procedures | Cast the schedule and agree to TB/FS · board minutes for the decision date · press release and staff communication (constructive obligation before YE) · recalculate a sample of entitlements from policy, service and salary; agree to HR · written representation · post-YE payments |
+| Effect on the report | Constructive obligation crystallised → liabilities understated, profit overstated by $1.8m · 7.9% of PBT, 2.1% of total assets: material · confined to one area: not pervasive → **qualified "except for"**, Basis for Qualified Opinion immediately after the Opinion |
+
+<IfSkipped lang="en">the minutes and the legal letter, the liabilities that sink companies (new loans, lawsuits, restructuring promises) never reach your schedule, because they were never posted.</IfSkipped>
+
+<KeyPrinciple>**Financing liabilities are found in words before numbers:** minutes, agreements, announcements and lawyers' letters tell you what should be on the balance sheet.</KeyPrinciple>
+
+<QuickCheck lang="en" q="A dividend is declared after the year end. Adjust or disclose?" short="Non-adjusting: disclose if material">
+The obligation to pay only arises when declared, after the year end (CP5 mock Q5; IAS 10).
+</QuickCheck>
+
+**Link to Branch A:** [Bài 3.5 Vay & lãi vay](/a/3/a3-5-vay/) (VAY01–04, phân loại ngắn hạn, lãi chưa trích). On the map: [Loans](/c/1/c1-master-map/#node-loan) · [Provisions](/c/1/c1-master-map/#node-prov).
+
+<LessonNotes client:only="react" id="c3-6-financing" lang="en" />

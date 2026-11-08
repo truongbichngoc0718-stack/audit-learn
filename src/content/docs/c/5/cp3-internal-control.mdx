@@ -1,0 +1,208 @@
+---
+title: "Checkpoint 3 · Internal control"
+description: "Five components, sales and purchases systems, the deficiency → recommendation → test of control formula and the six-question scan; then 10 MCQs, Granstan Co (Dec 2024 Q1) and a timed mock with Solaris Co."
+id: c-cp3
+nhanh: C
+phan: c5
+bai: "3"
+nhan: Internal control
+loai: checkpoint
+thoi_luong: 75
+nguon: ["ACCA-CP3: bisc-acca-aa-check-point-3.pdf tr. 1–15"]
+chuan_muc: ["ISA 265", "ISA 315", "IAS 2"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: goc
+style_version: "C-1.1-draft"
+lien_ket: [c4-2-planning-risk-control, c3-1-revenue-receivables, c3-2-purchases-payables, c3-3-payroll]
+sidebar: { order: 3, label: "Checkpoint 3 · Internal control" }
+---
+import { Eyebrow, ExamMcq, ConstructedResponse, LessonNotes } from '@components';
+
+**Topic:** Internal control (Part C). **Time:** practice MCQs approx. 15 minutes · Granstan Co approx. 25 minutes · mock test (Section A approx. 10 minutes, Section B approx. 20 minutes). Your scores are saved to [Progress](/tien-do/). **Revise first:** the stage diagrams in [Revenue](/c/3/c3-1-revenue-receivables/), [Purchases](/c/3/c3-2-purchases-payables/) and [Payroll](/c/3/c3-3-payroll/), and [C4.2](/c/4/c4-2-planning-risk-control/).
+
+| Section | Format | Content / Marks |
+|---|---|---|
+| Section A | 3 × 10 marks (5 questions each) | Any area of syllabus — MCQ / multi-response / fill-in |
+| Section B | 1 × 30 marks | Planning & risk assessment · Internal control · Audit evidence |
+| | 2 × 20 marks | Constructed response — broader syllabus areas |
+
+<Eyebrow>1 · Knowledge revision</Eyebrow>
+## 1.1 Five components of internal control (ISA 315 / COSO)
+| Component | Core idea | Examples in practice |
+|---|---|---|
+| Control Environment | Tone at the top — culture, integrity, ethics | Board oversight; code of conduct; HR policies; management philosophy; commitment to competence |
+| Risk Assessment | Identify & analyse risks to objectives | Fraud risk assessment; change management; risk registers |
+| Control Activities | Policies & procedures that address risks | Authorisations; reconciliations; sequence checks; IT controls; segregation of duties |
+| Information & Communication | Relevant info identified & communicated | Accounting system captures transactions; management reports; whistleblowing channels |
+| Monitoring | Ongoing evaluation of controls' quality | Internal audit; management reviews; exception reports; self-assessments |
+
+## 1.2 Sales system
+Overall objective: All valid sales are recorded accurately and cash received promptly.
+
+| Stage | Risk | Control objective | Control example | Test of control |
+|---|---|---|---|---|
+| Order placed | Low-creditworthy customer accepted | Goods supplied only to customers with good credit rating | Credit check by independent dept; credit limit authorised & reviewed | Inspect credit check docs; test credit limit acceptance process |
+| | Unfulfilled orders | All goods ordered are despatched/fulfilled | Sequentially numbered orders; copy to sales dept; open order review | Test numerical sequence; review open orders file |
+| Despatch of goods | Goods not despatched to correct destination | Goods despatched to correct destination | Customer signs GDN; copies to customer/driver/warehouse/invoicing | Inspect sample of GDNs for customer signatures |
+| Goods invoiced & recorded | Despatched goods not invoiced / invoiced wrongly | All goods despatched correctly invoiced | Sequential invoices; GDN matched to invoice; authorised invoice | Sequence check; agree sample invoices to GDN and price list |
+| | Invoice posted to wrong customer account | Invoices posted to correct accounts | Monthly customer statement reconciliations; review unpaid amounts | Reperform reconciliation on sample; review complaint log |
+| Payment received | Cash not received | Money received for all invoices raised | Aged receivables report produced periodically; pursue overdue balances | Review ageing report; trace cash receipts to bank statement |
+| | Cash misappropriated | Money safeguarded and banked promptly | Segregation of duties: receivables updater ≠ invoice raiser ≠ cash handler | Observe banking procedures; check segregation in practice |
+
+## 1.3 Purchases system
+| Stage | Risk | Control objective | Control example | Test of control |
+|---|---|---|---|---|
+| Order stage | Unauthorised order placed | Orders placed only once authorised, for business purpose | POs raised only by authorised individuals; preferred supplier list | Review sample of orders for authorisation evidence |
+| | Items not bought at competitive price | Items bought at most competitive price | Preferred supplier list; separate quotations for non-standard items | Vouch order to preferred supplier list; inspect quotation files |
+| Goods received | Ordered goods not received → stockout | All goods ordered are received | Sequential GRNs; unmatched orders reviewed periodically | Observe receipt of goods; verify GRN matched to order |
+| | Faulty goods accepted | Only high-quality goods accepted | Goods inspected for condition on receipt; employee signs GRN | Observe receipt process; inspect GRN for quality sign-off |
+| Invoiced & recorded | Goods received not recognised in system | All liabilities recognised accurately | GRN copies to accounts; 3-way match GRN ↔ Invoice ↔ Order | Trace GRN vs invoice; verify accruals made for unmatched GRNs |
+| Payment made | Payment to wrong supplier / duplicate payment | Suppliers paid accurately and to correct party | Invoices authorised for payment; stamp 'PAID'; supplier reconciliations | Inspect invoices for authorisation; reperform supplier reconciliation |
+
+<Eyebrow>2 · Exam techniques</Eyebrow>
+## 2.1 Answer structure — Deficiency → Recommendation → Test of Control
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">Control deficiency (½ p identify + ½ p explain)</div><b>Step 1:</b> Pick the fact from scenario — spot what is MISSING or WRONG vs best practice. Do not copy the scenario text.<br/><b>Step 2:</b> Explain the risk — be specific about what could go wrong and the financial impact.<br/><small>✗ Bad: "No credit checks are performed" — this is just copying the scenario.<br/>✓ Good: "Goods may be supplied to customers who are unable to pay, leading to irrecoverable debts and overstatement of receivables."</small></div>
+  <div class="b-card"><div class="b-kicker">Control recommendation (1 p)</div><b>Step 3:</b> Phrased as a specific, practical ACTION. State WHO does WHAT and HOW. Never use 'ensure that…'<br/><small>✗ Bad: "Ensure credit limits are enforced."<br/>✓ Good: "The system should automatically block sales orders where the customer outstanding balance exceeds their approved credit limit; any exceptions must be reviewed and approved by the credit controller before despatch."</small></div>
+  <div class="b-card"><div class="b-kicker">Test of control (1 p)</div><b>Step 4:</b> Test the SPECIFIC recommended control — not a general audit procedure. Verbs: Inspect / Observe / Enquire / Reperform / Recalculate.<br/><small>✗ Bad: "Check credit limits" — too vague, no detail.<br/>✓ Good: "For a sample of sales orders, inspect the system log to confirm the automatic block triggered for orders exceeding the credit limit; for any overrides, agree to evidence of approval by the credit controller."</small></div>
+</div>
+
+## 2.2 Checklist — scanning the scenario for controls
+| Control type | Question to ask when reading scenario | Example (Sales / Purchases cycle) |
+|---|---|---|
+| Authorisation | Is there someone approving this? Who? At what level? What is the threshold? | Credit limits authorised by finance director; POs approved by manager before submission to supplier |
+| Segregation of duties | Is one person doing two incompatible functions? (Maker / Checker / Recorder / Custodian) | Person who records sales ≠ person who handles cash receipts; AP clerk ≠ cheque signer |
+| Information processing | Is there a check that data input/output is valid, complete and accurate? | GDN matched to invoice before raising; 3-way match (PO ↔ GRN ↔ Invoice) before payment |
+| Performance reviews | Is there a comparison of actual vs expected? By whom? How often? Followed up? | Sales director reviews monthly revenue analysis by store; investigates unexpected variances |
+| Physical controls | Is there physical security, restricted access, asset safeguarding? | Warehouse access restricted; CCTV; inventory stored in locked area |
+| IT / Application controls | Are there system-enforced checks, access rights, exception reports, automated blocks? | System blocks order if customer exceeds credit limit; exception report on supplier master file changes reviewed monthly |
+
+<div class="b-flags">
+  <div><b>Confuse tests of control with substantive procedures</b>Tests of controls test whether a CONTROL is operating. Substantive procedures test whether a BALANCE is misstated. Never mix them.</div>
+  <div><b>Vague procedures score zero</b>'Check credit limits' scores zero. State WHAT document, HOW you check it, FOR WHAT purpose.</div>
+  <div><b>Recommendations phrased as objectives</b>'Ensure all invoices are authorised' scores zero. Must be an action: 'The finance manager should approve all invoices above $5,000 before payment, evidenced by signature.'</div>
+  <div><b>Copying the scenario as the deficiency</b>The deficiency is often what is NOT described. 'A report is generated and filed' — the deficiency is that no one REVIEWS it.</div>
+  <div><b>Direct control explanation too vague</b>'This will prevent fraud' scores zero. Explain specifically what misstatement the control prevents or detects.</div>
+</div>
+
+<Eyebrow>3 · Practice questions</Eyebrow>
+## Part A · MCQ practice
+10 questions · approx. 15 minutes · past exam & application questions.
+
+<ExamMcq client:visible id="c-cp3" scoreKey="practice" label="Practice MCQ" mode="practice" questions={[
+  { source: 'F8 Past Exam', q: 'Which of the following is NOT an inherent limitation of internal control systems?', options: ['Possibility that employees may collude together fraudulently', 'Possibility of human error in undertaking tasks', 'Insufficient segregation of duties', 'Management override of controls'], answer: 2, explain: 'Insufficient segregation of duties is a CONTROL DEFICIENCY — it can be corrected by design. Inherent limitations exist even in a well-designed system: collusion (A), human error (B), and management override (D) cannot be fully eliminated.' },
+  { source: 'F8 Past Exam', q: 'Which TWO of the following controls of a sales system ensure that all goods despatched are completely and accurately invoiced?', items: ['Goods despatched notes are matched to sales invoices', 'Sales invoices are sequentially numbered', 'Sales invoices are matched to customer orders', 'Regular review of unfulfilled orders'], options: ['1 and 2', '2 and 4', '2 and 3', '1 and 4'], answer: 0, explain: '(1) GDN matched to invoice → ensures every despatch is invoiced (completeness + accuracy). (2) Sequential invoices + sequence check → detects missing invoice numbers (completeness). (3) Matching to orders does not confirm despatch happened. (4) Unfulfilled orders relates to goods not yet sent — different objective.' },
+  { source: 'F8 Past Exam', q: 'Which of the following is NOT set out as a component of internal control within ISA 315?', options: ['Control environment', 'The information system relevant to financial reporting', 'Human resource policies and practices', 'Monitoring activities'], answer: 2, explain: 'ISA 315 identifies 5 components: Control Environment, Risk Assessment, Control Activities, Information & Communication, Monitoring. HR policies may contribute to the Control Environment culture but are not a standalone ISA 315 component.' },
+  { source: 'F8 Past Exam', q: 'Which of the following statements relating to internal and external auditors is correct?', options: ['Internal auditors are required to be members of a professional body', "Internal auditors' scope of work should be determined by those charged with governance", 'External auditors report to those charged with governance', 'Internal auditors can never be independent of the company'], answer: 2, explain: 'External auditors report their opinion to shareholders / those charged with governance. Internal auditors are not required to be members of a professional body (A is wrong); their scope is set by management (B is wrong); internal auditors CAN be independent, especially if reporting to the audit committee (D is wrong).' },
+  { source: 'Dec 2024 Exam', q: 'A monthly exception report of any changes made to the supplier master file data is automatically generated, printed and then filed without being reviewed. Which statement BEST identifies the control deficiency?', options: ['The report should be produced weekly, not monthly', 'The report is produced but not reviewed before being filed', 'Only the finance director should have access to the supplier master file', 'The report should be stored electronically rather than printed'], answer: 1, explain: 'Classic exam trap: the report EXISTS but no one REVIEWS it. Deficiency = report generated and filed without review. Risk: unauthorised changes to supplier master file (fictitious suppliers, amended bank details) go undetected, potentially causing fraudulent payments.' },
+  { source: 'Dec 2024 Exam', q: "Granstan Co's store employees check the QUANTITY of goods received against the delivery note and purchase order, but do not inspect the quality. What is the PRIMARY risk arising from this deficiency?", options: ['Goods may be recorded in the wrong inventory account', "Defective goods may be accepted, making it harder to dispute the supplier's invoice and potentially overstating inventory", 'Purchase orders may be raised without proper authorisation', 'Supplier payments may be made before goods are received'], answer: 1, explain: 'No quality check = risk that defective/unusable goods are accepted and a GRN raised. Once accepted, it is difficult to dispute the invoice. Defective goods not sold may be scrapped or discounted, causing inventory overstatement. Options A, C, D relate to other controls, not quality inspection.' },
+  { source: 'Application', q: 'An auditor identifies that the same employee who adds new suppliers to the purchase ledger master file also authorises payments to those suppliers. This represents a failure of which control principle?', options: ['Physical controls', 'Performance reviews', 'Segregation of duties', 'Information processing controls'], answer: 2, explain: 'Segregation of duties: incompatible functions (creating suppliers AND approving payments) must be separated to prevent fraud. One person controlling both can create fictitious suppliers and pay them. This is one of the most commonly tested IC weaknesses in F8.' },
+  { source: 'Application', q: 'Which of the following is an example of a DETECTIVE control in the purchases cycle?', options: ['Purchase orders must be authorised by a manager before being sent to the supplier', 'A three-way match between purchase order, GRN and invoice is performed before payment', 'Monthly reconciliation of supplier statements to the purchase ledger', 'New suppliers are added to the master file only after approval by the finance director'], answer: 2, explain: 'Monthly supplier statement reconciliation identifies discrepancies AFTER transactions have been processed — detective. A and D are preventive (stop unauthorised transactions). B (three-way match before payment) is also preventive — it stops payment before the error occurs.' },
+  { source: 'Application', q: 'Management of Sirius Co regularly override the three-quote tendering requirement for large purchases, citing commercial urgency. Which of the following statements is CORRECT?', options: ['This is acceptable as management has authority over all controls', 'This is an inherent limitation only and need not be communicated to those charged with governance', 'This is a control deficiency that should be reported to those charged with governance', 'This only becomes a problem if fraud is subsequently detected'], answer: 2, explain: 'Systematic management override is a reportable control deficiency under ISA 265. While management override is an inherent limitation when occasional, regular and deliberate override undermines the control environment and must be communicated to the audit committee / those charged with governance.' },
+  { source: 'Application', q: 'Which combination correctly links the control objective to the appropriate control activity in a payroll cycle? (1) Completeness: all employees are included in the payroll run (2) Occurrence: payroll is only processed for currently employed staff (3) Accuracy: gross pay is calculated correctly', options: ['(1) Payroll reconciled to HR records monthly | (2) Independent review of payroll before payment | (3) System calculates pay based on authorised rates and hours', '(1) System calculates pay based on authorised rates | (2) HR adds leavers on last day | (3) Sequence check on payslip numbers', '(1) Sequence check on employee numbers | (2) Manager approves overtime | (3) Payroll reconciled to bank statement', '(1) HR approval of new starters | (2) Payroll reconciled to HR records | (3) Manager approves overtime hours'], answer: 0, explain: 'A correctly matches: (1) Reconciling payroll to HR records detects missing employees (completeness). (2) Independent review before payment ensures only current employees are paid (occurrence). (3) System applying authorised rates to approved hours ensures correct gross pay (accuracy). Other options mix up the objectives and controls.' },
+]} />
+
+## Part B · Granstan Co
+12 marks · approx. 25 minutes · Source: December 2024 Exam — Question 1.
+
+<div class="b-card x-cr" style="margin-top:.6rem">
+<p><b>Background.</b> It is 1 July 20X5. You are an audit supervisor with Flinda &amp; Co and you are working on the audit of Granstan Co, which sells electronic kitchen appliances from 40 stores across the country. You are reviewing documentation provided by the finance director of Granstan Co, including extracts of the company's system of internal control, in advance of the interim audit for the year ending 30 September 20X5.</p>
+<p><b>Integrated systems note.</b> Although the website, payroll and inventory systems are stand-alone, the sales and purchases modules are fully integrated into the computerised accounting system.</p>
+<p><b>Sales — Credit customers.</b> Granstan Co has both business and retail customers. Business customers can apply for a credit account through Granstan Co's central credit control department. After performing necessary checks, the credit control department sets a credit limit which is authorised and then regularly reviewed by the finance director.</p>
+<p><b>Sales — Online and in-store purchases.</b> As well as purchasing in store, business customers can purchase goods via the company's website and collect them from their nearest store or have them delivered. As part of the invoicing process, a member of the finance team matches the details on the online order with the goods dispatched note (GDN) before the sales invoice is raised based on these documents.</p>
+<p><b>Sales — Discount scheme.</b> Each store charges the same prices for goods but customers who are on the mailing list receive weekly emails with discount offers. To claim the discount, customers must show this email at the cash tills (cash registers) and have the discount barcode within the email scanned. The system then deducts the discount from the price charged.</p>
+<p><b>Sales — Management review.</b> Granstan Co's monthly management accounts analyse revenue by store, product and type of customer. Percentage movements in each of the categories are reported, with comparison to the previous month and the previous year. On a monthly basis, the sales director reviews this information, investigates any unexpected movements and completes a report which is presented at the next board meeting.</p>
+<p><b>Purchases — Supplier master file.</b> Granstan Co has a central purchasing department. A monthly exception report of any changes made to the supplier master file data is automatically generated, printed and then filed.</p>
+<p><b>Purchases — Ordering.</b> When goods are ordered, a purchase order is generated within the purchase ordering module, authorised by the relevant individual and sent to the supplier. The purchasing and finance departments as well as the stores are able to access the ordering module to view orders.</p>
+<p><b>Purchases — Goods received.</b> Goods are delivered directly to the relevant store where a store employee checks the quantity supplied to the supplier's delivery note and the purchase order. On completion of the checks, an electronic goods received note (GRN) is produced. Only the stores and the finance department have access rights to view the completed GRNs within the module.</p>
+<p><b>Purchases — Supplier reconciliations.</b> Due to staff shortages in the finance department, supplier statement reconciliations are no longer performed.</p>
+</div>
+
+<ConstructedResponse client:visible id="c-cp3" crKey="cr-granstan-b" title="Granstan Co · (b) Direct controls & tests of control" marks={6} minutes={12}
+  requirement="(b)(i) Identify and explain THREE DIRECT CONTROLS in the SALES system which the auditor may seek to place reliance on; and (b)(ii) Describe a TEST OF CONTROL the auditor should perform to assess if each of these controls is operating effectively. [6 marks]"
+  answer={[
+  { heading: '1. Credit limit check — authorisation & performance review control', points: [
+    'A credit check is performed on all new customers by the credit control department, after which a credit limit is set and authorised by the finance director, who also regularly reviews limits. This reduces the risk of goods being supplied to customers who are unlikely to pay, preventing irrecoverable debts and overstatement of receivables.',
+    'Inspect the documentation in credit application files for a sample of customers to confirm that appropriate credit checks were performed before credit was granted · For a sample of new customers accepted during the year, inspect the credit limit for evidence of authorisation by the finance director · Review the credit files for evidence of regular review — look for dated sign-off by the finance director.' ] },
+  { heading: '2. GDN matched to order before invoice raised — information processing control', points: [
+    'A member of the finance team matches the details on the online order with the GDN before raising the sales invoice. This ensures customers are only invoiced for goods actually despatched and that revenue is complete and accurate, reducing the risk of over- or under-invoicing.',
+    'For a sample of online orders received by the finance department, inspect the working papers for evidence that the order was matched to the GDN before the invoice was raised · Agree the invoice amount and details to both the online order and the GDN to confirm accuracy.' ] },
+  { heading: '3. Monthly revenue analysis reviewed by sales director — performance review control', points: [
+    'The sales director reviews monthly management accounts analysing revenue by store, product and customer type, investigates unexpected movements and presents a report to the board. Investigation of unusual movements means that misstatements due to fraud or error will be identified and corrected promptly.',
+    'For a sample of monthly revenue analyses, obtain copies of the source reports and assess whether variances exceeded the threshold requiring investigation · For the same months, inspect the board meeting agendas and minutes to confirm the report was presented and discussed · Enquire of the sales director about their process for following up unexpected movements.' ] },
+]} />
+
+<ConstructedResponse client:visible id="c-cp3" crKey="cr-granstan-c" title="Granstan Co · (c) Purchases deficiencies & recommendations" marks={6} minutes={12}
+  requirement="(c) Identify and explain THREE DEFICIENCIES in the PURCHASES system and provide a CONTROL RECOMMENDATION to address each deficiency. [6 marks]"
+  answer={[
+  { heading: '1. Exception report for master file changes NOT reviewed', points: [
+    'A monthly exception report of changes to the supplier master file is generated, printed and filed but is not reviewed by anyone. This increases the risk that unauthorised or fraudulent changes — such as adding fictitious suppliers or amending bank details — go undetected, potentially resulting in payments being made to incorrect parties and financial loss for the company.',
+    'The monthly exception report should be reviewed promptly by a responsible official (e.g. financial controller or head of finance) who is independent of those with access to amend the master file. Any unusual or unexpected changes should be investigated and the review should be evidenced by signature and date.' ] },
+  { heading: '2. Goods received — quality NOT checked, only quantity', points: [
+    "When goods are delivered to stores, the employee only checks quantity against the delivery note and purchase order — there is no inspection for quality or condition. If defective goods are accepted and a GRN raised, it will be difficult to dispute the supplier's invoice, potentially leading to payment for unusable goods and overstatement of inventory in the financial statements.",
+    'Goods received procedures should be updated to require the store employee to inspect all goods for quality and condition as well as quantity. When completing the electronic GRN, the employee should record their initials as evidence that both quantity and quality checks have been performed.' ] },
+  { heading: '3. Supplier statement reconciliations no longer performed', points: [
+    'Due to staff shortages, supplier statement reconciliations have been discontinued. Without these reconciliations, errors in individual supplier accounts — such as duplicate payments, invoices not yet posted, or credits not applied — will not be identified promptly, potentially resulting in misstatement of payables and suppliers being under- or overpaid.',
+    'Supplier statement reconciliations should be reinstated on a monthly basis for all material suppliers. All reconciling items should be investigated and resolved promptly. The completed reconciliations should be reviewed and signed off by a responsible official as evidence of the review.' ] },
+]} notes={[
+  "Direct controls must be complete: The fact that a credit limit 'is set' is not in itself a direct control. The control is effective only if it is also authorised and regularly reviewed by a responsible official.",
+  "Explanation must be specific: Do not write 'this will prevent fraud and error' — explain exactly what misstatement the control prevents or detects.",
+  "Tests must name document and purpose: 'Check' is insufficient. State: inspect / agree / review / reperform + WHAT document + FOR WHAT purpose.",
+  'Deficiencies = what is MISSING: Do not copy the scenario. Identify the gap between what IS described and what SHOULD be in place.',
+  "Recommendations must be management actions: Recommendations phrased as 'ensure that…' score zero. Be specific about who does what.",
+]} />
+
+<Eyebrow>4 · Mock test · 15 minutes</Eyebrow>
+## Mock test
+Do NOT check answers until you have finished all questions.
+
+### Section A · MCQ
+<ExamMcq client:visible id="c-cp3" scoreKey="mock" label="Mock test · Section A" mode="mock" minutes={10} questions={[
+  { q: "Which of the following BEST illustrates the 'Control Environment' component of ISA 315?", options: ['Monthly bank reconciliations performed by an independent clerk', "The board's commitment to ethical values, reflected in a code of conduct and governance structures", 'Automated system checks that prevent duplicate invoice payments', 'Quarterly inventory counts reconciled to ledger balances'], answer: 1, explain: 'Control Environment = tone at the top: management philosophy, integrity, ethical values, governance structures. Options A, C and D are all Control Activities — specific procedures, not culture.' },
+  { q: "A purchase order system automatically rejects any order above $10,000 without a second manager's approval. This control is BEST classified as:", options: ['Detective', 'Corrective', 'Preventive', 'Directive'], answer: 2, explain: 'Preventive: the system STOPS the transaction from proceeding without proper authorisation. Detective controls identify errors after the fact. Corrective controls fix errors once detected.' },
+  { q: 'Which of the following is NOT an inherent limitation of internal control?', options: ['Management override of controls', 'Collusion between two employees', 'Segregation of duties between incompatible functions', 'Human error and lapses in judgement'], answer: 2, explain: 'Segregation of duties is a CONTROL STRENGTH, not a limitation. Inherent limitations exist even in well-designed systems: human error (D), collusion (B), and management override (A) cannot be fully prevented by design.' },
+  { q: 'An auditor identifies that the same payroll clerk who inputs employee data also generates and submits the bank payment file. What is the PRIMARY risk?', options: ['Payroll calculations may be inaccurate due to input errors', 'PAYE deductions may not be remitted to tax authorities on time', 'The clerk could input fictitious employees and authorise fraudulent payments without detection', 'Employee start dates may be recorded incorrectly in the system'], answer: 2, explain: 'No segregation between recording payroll and authorising payment = fraud risk. The clerk can create ghost employees and pay them. Options A and D are accuracy risks; B relates to a different control objective (timely remittance).' },
+  { q: 'Which of the following is a DIRECT CONTROL in the purchases cycle that an auditor could seek to rely on?', options: ['The purchasing manager has many years of experience in the role', 'Purchase orders are generated within the system, authorised by the relevant individual and sent to the supplier', 'The company operates in a stable industry with few supplier changes', 'Management reviews the annual financial statements before approval'], answer: 1, explain: 'A direct control is a specific, operating control designed to prevent or detect a misstatement. Authorised POs (B) directly prevent unauthorised purchases. Options A and C are general background factors; D is a financial reporting control, not a purchases cycle control.' },
+  { q: 'Sigma Co performs a monthly reconciliation of its purchase ledger to supplier statements. Which control objective does this PRIMARILY address?', options: ['Occurrence — ensuring only valid purchases are recorded', 'Authorisation — ensuring all purchases are approved', 'Completeness and accuracy — ensuring all liabilities are recorded at the correct amount', 'Cut-off — ensuring purchases are recorded in the correct period'], answer: 2, explain: "Supplier statement reconciliation detects differences between the company's ledger and the supplier's records — catching missing invoices (completeness) and incorrect amounts (accuracy). It is detective in nature and primarily addresses C and A assertions." },
+  { q: 'HR at Vega Co adds new employees to payroll but relies on line managers to informally notify payroll when employees leave. What is the BEST control recommendation to address this weakness?', options: ['The external auditor should verify payroll each month', "HR should complete a formal leaver notification form on the employee's last working day and submit directly to the payroll department", 'Line managers should be given read-only access to the payroll system', 'Payroll should be reviewed annually by management'], answer: 1, explain: 'The recommendation must be a practical management ACTION that directly addresses the deficiency (informal, delayed notification). B gives a specific, actionable procedure: formal form + direct submission + timely (last working day). A is an audit procedure; C does not fix the notification gap; D (annual) is too infrequent.' },
+  { q: "Which of the following BEST describes a 'test of control' as distinct from a 'substantive procedure'?", options: ['A test of control confirms whether a balance or transaction is materially misstated', 'A test of control assesses whether a control is designed and operating effectively to prevent or detect misstatement', 'A test of control involves recalculating depreciation to agree it to the financial statements', 'A test of control is only performed when the auditor has identified a material misstatement'], answer: 1, explain: 'Tests of control test the CONTROL itself — is it in place? Is it working? Substantive procedures (A, C) test whether BALANCES or TRANSACTIONS are correct. Tests of control are performed when the auditor intends to rely on internal controls to reduce the extent of substantive testing.' },
+  { q: 'During the audit of Orion Co, the auditor observes that damaged inventory is moved to a separate area but no write-off request is submitted to management. Which financial statement assertion is MOST at risk?', options: ['Occurrence', 'Completeness', 'Valuation', 'Cut-off'], answer: 2, explain: 'Damaged goods remaining at cost in the system = inventory stated above NRV, breaching IAS 2 lower of cost and NRV. This is a VALUATION assertion risk. Occurrence relates to whether transactions happened; Completeness = all transactions recorded; Cut-off = correct period.' },
+  { q: 'Which of the following is an example of an IT APPLICATION control (as opposed to an IT general control)?', options: ['Periodic review of user access rights across all systems', 'Change management procedures for updating software', 'Automated three-way match between purchase order, GRN and invoice before a payment can be processed', 'Backup and recovery procedures for the accounting system'], answer: 2, explain: 'IT Application controls are embedded within specific applications and operate on individual transactions: automated matching (C) prevents payment without all three documents. Options A, B and D are IT General Controls — they apply across all systems and support the overall control environment.' },
+]} />
+
+### Section B · Solaris Co
+10 marks · approx. 20 minutes.
+
+<ConstructedResponse client:visible id="c-cp3" crKey="mock-solaris-a" title="Solaris Co · (a) Four deficiencies" marks={8} minutes={16}
+  requirement="(a) Identify and explain FOUR DEFICIENCIES in Solaris Co's internal control systems. For each deficiency, explain the potential risk and recommend an appropriate control. [8 marks] (Any FOUR of the weaknesses below for full marks.)"
+  answer={[
+  { heading: 'AP supervisor also signs cheques — segregation of duties failure', points: [
+    'Risk: One individual can both process payables and authorise payments, creating the opportunity to make fraudulent or inflated payments without detection, causing financial loss.',
+    'Recommendation: Cheque signing should remain the exclusive responsibility of the finance director or another senior manager independent of the payables function. A formal cover policy should be documented and board-approved.' ] },
+  { heading: 'No formal process to remove leavers from payroll', points: [
+    'Risk: Ex-employees may continue to receive salary, as there is no timely notification to payroll. This overstates payroll costs and creates a fraud risk (ghost employees).',
+    "Recommendation: HR should complete a formal leaver notification form on the employee's last working day and submit it directly to the payroll department. A monthly independent review of the payroll listing should confirm all employees are currently employed." ] },
+  { heading: 'Damaged inventory not formally written off — carried at cost', points: [
+    'Risk: Inventory may be stated above NRV, breaching IAS 2, and overstating assets in the statement of financial position.',
+    'Recommendation: Warehouse staff must complete a formal damage report for items moved to the quarantine area. Management should review and authorise write-downs promptly, and inventory records updated to reflect the lower of cost and NRV.' ] },
+  { heading: 'Any purchasing staff can add suppliers to master file without approval or exception report', points: [
+    'Risk: Fictitious suppliers may be added and fraudulent orders placed and paid, causing financial loss. With no exception report, such additions go completely undetected.',
+    'Recommendation: Only designated individuals (e.g. finance manager) should have access to add suppliers to the master file, subject to approval. An automated exception report of all master file changes should be produced and reviewed by an independent manager each month.' ] },
+]}>
+<p><b>Background.</b> You are an audit junior at Kappa &amp; Co, currently working on the interim audit of Solaris Co, a manufacturer of industrial lighting equipment for the year ending 31 December 20X6.</p>
+<p><b>Payables — Cheque signing.</b> The finance team at Solaris Co recently experienced high staff turnover. As a result, the accounts payable supervisor now also handles cheque signing for supplier payments when the finance director is unavailable — a task previously performed exclusively by the finance director.</p>
+<p><b>Payroll — Leaver process.</b> During your review of the payroll system, you note that the HR department adds new employees to the payroll master file. However, there is no formal process requiring HR to notify payroll when an employee resigns or is dismissed — line managers are expected to pass this information informally to payroll.</p>
+<p><b>Inventory — Damaged goods.</b> In the inventory system, damaged goods identified by warehouse staff are moved to a separate area but no formal write-off request is submitted to management. The inventory records continue to show these items at cost.</p>
+<p><b>Purchases — Supplier approval.</b> Any member of the purchasing department can add a new supplier to the supplier master file without independent review or approval. There is no exception report produced for changes made to the master file.</p>
+</ConstructedResponse>
+
+<ConstructedResponse client:visible id="c-cp3" crKey="mock-solaris-b" title="Solaris Co · (b) Procedures for a deficiency" marks={2} minutes={4}
+  requirement="(b) For TWO of the deficiencies identified in (a), describe ONE audit procedure you would perform to assess whether the weakness has resulted in a material misstatement. [2 marks] (Model answer given for: AP supervisor also signs cheques.)"
+  answer={[
+  { heading: 'Sample audit procedures for: AP supervisor also signs cheques', points: [
+    "Inspect authorisation records for a sample of supplier payments made during the finance director's absences and confirm whether the AP supervisor both processed and signed off the payments.",
+    'Review system access logs to confirm that the same individual submitted payable data and the bank payment file for the same transactions.',
+    'Perform analytical procedures on payments made during identified absence periods; investigate any unusual amounts, new payees or round-sum payments.' ] },
+]} />
+
+<LessonNotes client:only="react" id="c-cp3" lang="en" />

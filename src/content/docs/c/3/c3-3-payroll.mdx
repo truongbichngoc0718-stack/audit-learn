@@ -1,0 +1,105 @@
+---
+title: "Payroll cycle"
+description: "Work recorded → payroll liability → payment. The big risks are **ghost employees and wrong rates**; the big test is a **proof in total**, then joiners, leavers and net pay to the bank. Directors' emoluments are material by nature."
+id: c3-3-payroll
+nhanh: C
+phan: c3
+bai: "C3.3"
+nhan: Payroll & directors' emoluments
+loai: acca
+thoi_luong: 14
+nguon: ["ACCA-slide: ch09 tr. 164–170 (payroll system)", "ACCA-slide: ch16 tr. 284–289 (payroll, ISA 402)", "ACCA-slide: ch17 tr. 300–304 (directors' emoluments)", "ACCA-CP3 practice Q10 · mock Q4, Q7 · Solaris Co"]
+assertion: [Occurrence, Completeness, Accuracy, Existence, Rights & obligations, Presentation]
+chuan_muc: ["ISA 402", "ISA 520"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, c3-2-purchases-payables, c3-7-bank-cash]
+sidebar: { order: 3, label: "Payroll" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, FlowDiagram, ExamMcq, Solution, CycleLinks, LessonNotes } from '@components';
+
+<Objectives title="Learning outcomes">
+- Describe the payroll system (HR vs payroll processing) with its fraud and error risks
+- Apply proof in total, joiner/leaver tests and net pay to bank to the payroll expense
+- Audit directors' emoluments as a disclosure that is material by nature
+- Explain the auditor's position when payroll is outsourced (ISA 402)
+</Objectives>
+
+<Eyebrow>The cycle on one screen</Eyebrow>
+## Two functions, three stages
+**HR** appoints, removes and appraises staff and notifies salary changes; **payroll processing** runs the monthly payroll. They should be different people; small businesses may lack the segregation. Inherent risks: **fraud** (fake payroll records, unauthorised pay-rate changes, claims for hours not worked, theft of cash wages) and **errors** (tax complexity, other deductions).
+
+<FlowDiagram client:visible stepLabel="Stage" steps={[
+  { label: 'Work recorded', sub: 'Timesheets', detail: '<b>Risk:</b> hours worked not recorded accurately · hours paid that were not worked.<br/><b>Control:</b> timesheets or clocking in/out, reviewed by a responsible official · overtime authorised in advance on an overtime form.<br/><b>Test of control:</b> observe employees clocking in and out; inspect timesheets · trace overtime payments to authorised overtime forms.' },
+  { label: 'Payroll liability', sub: 'Payroll records', detail: '<b>Risk:</b> fictitious employees paid · wages or deductions at the wrong rate.<br/><b>Control:</b> joiners/leavers forms completed and signed by HR, acknowledged by payroll, amendments reviewed · personnel files and unique employee numbers; only valid numbers can be paid · changes to standing data authorised; monthly report of changes reviewed.<br/><b>Test of control:</b> trace a sample of joiners/leavers to HR documentation and system amendments · trace starters and leavers to personnel files · review reports of standing-data changes; recalculate PAYE and deductions.' },
+  { label: 'Payment', sub: 'Payslips · BACS', detail: '<b>Risk:</b> employees not paid the amount due per payroll and payslip.<br/><b>Control:</b> printout of amounts reviewed for unusual items and recast · bank details verified and amounts agreed to payroll and payslip · BACS transfer authorised by payroll manager / finance director · cash wages made up by two staff, signed for.<br/><b>Test of control:</b> review the printout for follow-up of unusual items · recast · reperform controls for a sample · vouch authorisation · observe cash payment.' },
+]} footer="Source: Ch 9 §3.3. CP3 practice Q10: reconcile payroll to HR records (completeness) · independent review before payment (occurrence) · system applies authorised rates to approved hours (accuracy)." />
+
+<Eyebrow>Substantive playbook</Eyebrow>
+## Expectation first, then the people
+| Procedure (Ch 16 §2.1) | Why |
+|---|---|
+| Reconcile gross payroll costs to the wages cost in the FS · recast payroll records | Completeness and accuracy of the journals |
+| Confirm net pay per payroll to the cheque/bank transfer summary; agree net pay per cash book to payroll | Occurrence: money left the bank for these people |
+| Inspect payroll for unusual items; discuss with management | Ghosts, one-off payments |
+| **Proof in total:** estimated average wage (last year + expected increases) × average number of employees (incorporating starters and leavers); investigate differences | Overall reasonableness |
+| Reperform statutory deductions; recalculate gross and net pay for a sample | Accuracy |
+| Agree pay for a sample to contracts | Occurrence, accuracy |
+| Joiners and leavers: agree dates to contracts/resignation letters; check added/removed in the correct month; recalculate that month | Occurrence, cut-off |
+
+**Outsourced payroll (ISA 402).** The client is a *user entity*, the payroll bureau a *service organisation*; a *service auditor* may report on its controls. The user auditor must not refer to the service auditor's work in an unmodified report.
+
+<Eyebrow>Activity · Dress You Like Co payroll expense</Eyebrow>
+Monthly payroll totals **$12,677k** in 20X5-20X6 against **$11,721k** in 20X4-20X5; November and December are much higher in both years, December 20X5 was **$1,508k**.
+<Solution label="Show the slide answer">
+November and December are significantly higher in both periods and need investigation. The increase could be legitimate (bonuses, overtime, temporary staff for a busy period). December 20X5 at $1,508,000 is **28% higher** than the prior December and must be investigated. Excluding November and December, payroll increased by **6%**: find the reason (annual increases, more staff) rather than a misstatement.
+
+**Procedure:** analytical procedures on the monthly payroll expense compared with the prior year; investigate significant differences. **Also:** cast the schedule · agree the total to the TB · agree prior year to prior FS and audit file · agree monthly totals to the wages system and to the bank statements and cash book · compare with budget.
+</Solution>
+
+<Eyebrow>Directors' emoluments · Ch 17 §4</Eyebrow>
+## Material by nature
+| Assertion | Procedures |
+|---|---|
+| **Existence** | Agree the disclosure to a schedule per director split into salary, bonus, benefits, pension and other amounts · vouch salary and pension to monthly payroll and bank · vouch bonuses and one-off payments to board minutes, payroll and bank |
+| **Rights & obligations** | Verify to contracts of employment · board / remuneration committee minutes for bonuses and authorisation · review cash book during and after the year for significant sums |
+| **Completeness** | Written confirmation from directors that disclosed emoluments are complete · analytical review per director vs prior year and expectations |
+| **Accuracy** | Recast the schedule; agree to the FS |
+| **Presentation** | Agree to returns to tax authorities for benefits · review the note against standards and local law |
+
+**Activity 4:** G Lewis (Chairman) $250,000 · K Escombe (CFO) $162,000 · M Batter (CEO, joined in the year) $41,500 including a $10,000 incentive payment; total $453,500.
+<Solution label="Show the slide answer">
+**Salary:** vouch to monthly payroll and bank · for M Batter, obtain her start date from HR, vouch to board minutes and recalculate her salary pro rata. **Pension:** vouch to payroll and bank. **Bonuses:** vouch to board minutes, payroll and bank (authorised and accurate). **Incentive payment:** review M Batter's contract for the clause; vouch to board minutes, payroll and bank. **General:** recast the schedule; review the disclosure against law and standards.
+</Solution>
+
+<ExamMcq client:visible id="c3-3-payroll" scoreKey="cp3" label="CP3 payroll questions" mode="practice" questions={[
+  { source: 'CP3 mock test Q4', q: 'An auditor identifies that the same payroll clerk who inputs employee data also generates and submits the bank payment file. What is the PRIMARY risk?',
+    options: ['Payroll calculations may be inaccurate due to input errors', 'PAYE deductions may not be remitted to tax authorities on time', 'The clerk could input fictitious employees and authorise fraudulent payments without detection', 'Employee start dates may be recorded incorrectly in the system'], answer: 2,
+    explain: 'No segregation between recording payroll and authorising payment = fraud risk. The clerk can create ghost employees and pay them. Options A and D are accuracy risks; B relates to a different control objective (timely remittance).' },
+  { source: 'CP3 mock test Q7', q: 'HR at Vega Co adds new employees to payroll but relies on line managers to informally notify payroll when employees leave. What is the BEST control recommendation to address this weakness?',
+    options: ['The external auditor should verify payroll each month', "HR should complete a formal leaver notification form on the employee's last working day and submit directly to the payroll department", 'Line managers should be given read-only access to the payroll system', 'Payroll should be reviewed annually by management'], answer: 1,
+    explain: 'The recommendation must be a practical management ACTION that directly addresses the deficiency (informal, delayed notification). B gives a specific, actionable procedure: formal form + direct submission + timely (last working day). A is an audit procedure; C does not fix the notification gap; D (annual) is too infrequent.' },
+]} />
+
+<Eyebrow>Links to other cycles</Eyebrow>
+<CycleLinks cycle="pay" />
+
+<Eyebrow>Exam angle</Eyebrow>
+| Requirement | What scores |
+|---|---|
+| Payroll deficiencies (CP3 Solaris) | No formal leaver process → ex-employees paid, payroll overstated, ghost employees → formal leaver form on the last day + monthly independent review of the payroll listing |
+| Substantive procedures on wages | Proof in total first, then net pay to bank, joiners/leavers, recalculations |
+| Directors' emoluments | Schedule per director, board minutes, contracts, written representation, disclosure |
+
+<IfSkipped lang="en">the proof in total, a ghost employee paid every month blends into a payroll that "looks normal" line by line; only the expectation (headcount × average pay) shows the excess.</IfSkipped>
+
+<KeyPrinciple>**Payroll = people × rate × time:** build that expectation, then prove the people exist (HR files, joiners/leavers) and the money reached them (bank).</KeyPrinciple>
+
+<QuickCheck lang="en" q="Why are directors' bonuses tested even when the amount is below performance materiality?" short="They are material by nature">
+Directors' emoluments are a sensitive area and deemed material by their nature, so the disclosure must be accurate (Ch 17 §4; CP2 mock M6).
+</QuickCheck>
+
+Branch A has no separate payroll lesson; wages sit in [Bài 3.4 Chi phí](/a/3/a3-4-chi-phi/). On the map: [Wages & salaries](/c/1/c1-master-map/#node-pay).
+
+<LessonNotes client:only="react" id="c3-3-payroll" lang="en" />

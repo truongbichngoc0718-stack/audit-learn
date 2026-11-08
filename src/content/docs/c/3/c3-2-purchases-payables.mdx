@@ -1,0 +1,137 @@
+---
+title: "Purchases & payables cycle"
+description: "Requisition → PO → **GRN** → invoice → payment. Liabilities are tested for **understatement**: start outside the ledger (supplier statements, payments after the year end, unmatched GRNs) and match back."
+id: c3-2-purchases-payables
+nhanh: C
+phan: c3
+bai: "C3.2"
+nhan: Purchases, payables, accruals & expenses
+loai: acca
+thoi_luong: 18
+nguon: ["ACCA-slide: ch09 tr. 158–164 (purchases system)", "ACCA-slide: ch16 tr. 274–284 (payables, accruals, purchases)", "ACCA-slide: ch05 tr. 102 (risk → response)", "ACCA-CP3 §1.3, §2, practice Q5–Q9, Granstan Co (c)"]
+assertion: [Completeness, Cut-off, Existence, Rights & obligations, Valuation & allocation, Presentation, Occurrence, Classification]
+chuan_muc: ["ISA 505", "ISA 265"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, a3-3-phai-tra, a3-4-chi-phi]
+sidebar: { order: 2, label: "Purchases & payables" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, FlowDiagram, SortDrill, Solution, CycleLinks, LessonNotes } from '@components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Objectives title="Learning outcomes">
+- Describe the four stages of the purchases system with risks, controls and tests of control
+- Explain why the audit of payables focuses on understatement
+- Apply supplier statement reconciliations, after-date payments and zero-balance confirmations
+- Link payables to inventory, expenses, accruals, non-current assets and cash
+</Objectives>
+
+<Eyebrow>The cycle on one screen</Eyebrow>
+## Four stages, five documents
+<FlowDiagram client:visible stepLabel="Stage" steps={[
+  { label: 'Order', sub: 'Requisition · PO', detail: '<b>Risk:</b> an order is unauthorised and not for business use · items not bought at the most competitive price.<br/><b>Control:</b> orders raised only on an authorised purchase requisition approved by the department manager · preferred supplier list; separate quotations for non-standard items.<br/><b>Test of control:</b> review a sample of orders for authorised requisitions · vouch suppliers used to the preferred supplier list; inspect quotation files.' },
+  { label: 'Goods received', sub: 'GRN', detail: '<b>Risk:</b> goods ordered are not received (stock-outs) · faulty goods accepted.<br/><b>Control:</b> multi-part, sequentially numbered GRN; one copy matched to the order; unmatched orders reviewed and suppliers chased · goods inspected for condition on receipt; employee signs the GRN.<br/><b>Test of control:</b> observe receipt of goods and GRN raised; verify GRN matched to order · observe the quality check; inspect GRNs for quality sign-off.' },
+  { label: 'Invoiced & recorded', sub: 'Supplier invoice', detail: '<b>Risk:</b> the liability for goods received is not recognised · a liability is recognised for goods not received.<br/><b>Control:</b> GRN copy to accounts; invoices matched to GRN (3-way match GRN ↔ invoice ↔ order); unmatched GRNs reviewed periodically and <b>an accrual posted</b> · invoice given the GRN sequence number.<br/><b>Test of control:</b> trace a sample of GRNs to invoices and the ledger; where no invoice, verify the accrual · vouch recorded invoices back to GRN and order.' },
+  { label: 'Payment', sub: 'Remittance advice', detail: '<b>Risk:</b> payment to the wrong supplier · invoice paid twice or for the wrong amount.<br/><b>Control:</b> invoices authorised for payment and coded by the budget holder (signature) · monthly supplier statement reconciliations; changes authorised · invoices agreed to GRN and order, calculations checked, stamped "PAID".<br/><b>Test of control:</b> inspect invoices for authorisation and coding · reperform supplier reconciliations · inspect invoices for "PAID" and reperformed calculations.' },
+]} footer="Source: Ch 9 §3.2 · CP3 §1.3. The supplier statement reconciliation is a direct control over the completeness of payables (Ch 16 §1.1)." />
+
+<Eyebrow>Retrieval drill · CP3</Eyebrow>
+### Preventive or detective?
+<SortDrill client:visible id="c3-2-purchases-payables" scoreKey="prev-det" label="Preventive vs detective" options={['Preventive', 'Detective']} items={[
+  { s: 'Purchase orders must be authorised by a manager before being sent to the supplier.', answer: 'Preventive', why: 'It stops unauthorised transactions (CP3 practice Q8).' },
+  { s: 'A three-way match between purchase order, GRN and invoice is performed before payment.', answer: 'Preventive', why: 'It stops payment before the error occurs (CP3 practice Q8).' },
+  { s: 'Monthly reconciliation of supplier statements to the purchase ledger.', answer: 'Detective', why: 'It identifies discrepancies after transactions have been processed (CP3 practice Q8).' },
+  { s: 'The system automatically rejects any order above $10,000 without a second manager\'s approval.', answer: 'Preventive', why: 'The system stops the transaction from proceeding (CP3 mock Q2).' },
+  { s: 'New suppliers are added to the master file only after approval by the finance director.', answer: 'Preventive', why: 'Approval before the change prevents fictitious suppliers (CP3 practice Q8).' },
+]} />
+
+<Eyebrow>Substantive playbook</Eyebrow>
+## Hunting for what is not there
+Auditors should be particularly aware of the possibility of **understatement of liabilities** to improve liquidity and profits (by understating the corresponding purchases). Two detailed objectives: is there a satisfactory **cut-off** between goods received and invoices received? Do payables represent the **bona fide amounts due**? Testing for completeness is harder because you are looking for something that has not been recorded (Ch 16 §1.2).
+
+<Tabs>
+<TabItem label="Payables & accruals">
+
+| Assertion | Procedures (Ch 16 §1.6) |
+|---|---|
+| **Completeness** | Cast the payables listing and agree to the GL · enquire how unrecorded liabilities and accruals are identified; examine post year-end transactions · reconcile selected supplier statements · examine unmatched purchase orders and invoices · confirm a sample of payables · disclosure checklist · compare balances and amounts per supplier with the prior year · payables payment period vs prior year and industry |
+| **Existence** | Vouch selected balances and accruals to purchase orders and invoices · supplier statements · confirmation · analytical comparison with the prior year |
+| **Rights & obligations** | Vouch a sample of balances to purchase orders and invoices |
+| **Valuation** | Trace to supporting documents (orders, minutes, invoices) · supplier statements · **recalculate a sample of accruals** · compare with the prior year · recalculate invoices |
+| **Cut-off** | Compare voucher dates with recording dates · test transactions around the year end · purchase returns as % of sales or cost of sales vs prior year |
+
+</TabItem>
+<TabItem label="Supplier statements">
+
+For selected suppliers: obtain statements at the year end → compare with the client's records → seek explanations for differences.
+
+**Reasons for differences:** timing (invoices not yet received by the client; payments not yet received by the supplier; returns and credit notes not yet on the statement) · errors (supplier errors that stay until corrected; client errors to adjust) · administrative (not yet processed).
+
+| Supplier's statement reconciliation | |
+|---|---|
+| Balance per supplier statement | xx |
+| Less: returns/credit notes not yet credited · payments not yet received by supplier | (xx) |
+| Balance per purchase ledger | xxx |
+| Add: invoices not yet posted · goods received not invoiced | xxx |
+| **Reconciled balance** (both routes should be the same) | xxx |
+
+</TabItem>
+<TabItem label="Confirmation of payables">
+
+Strong controls → confirm large balances. Weak controls → confirm large balances, suppliers with a **small or zero balance**, and a sample of other accounts. Use a positive **blank (zero-balance) confirmation**: it does not state the balance; the supplier declares the amount owed and sends a detailed statement. Reconcile differences (goods in transit, cash in transit, disputed invoices). Rarely carried out in practice (Ch 16 round up).
+
+</TabItem>
+<TabItem label="Purchases & expenses">
+
+- Inspect a sample of purchase invoices to the amount posted in the GL.
+- Compare administrative expenses with the prior year and expectations line by line; investigate differences.
+- Enquire about unsettled claims or obligations before the year end and ensure they are provided for.
+- Recalculate accruals and prepayments.
+- Gross profit margin vs prior year, budget and expectations.
+- **Risk → response (Ch 5):** invoices received or payments made in advance/arrears → review post year-end bank statements and cash book payments for amounts relating to the year; for documents either side of the year end (e.g. GRNs) verify cost and liability are in the right period.
+
+</TabItem>
+</Tabs>
+
+<Eyebrow>Activities · Dress You Like Co</Eyebrow>
+## Supplier statements and payments after the year end
+**Activity 1.** Only the main supplier (LHT Ltd, $1,300k, agrees) is reconciled each month. For the sample, total supplier statement balances are **$2,308k** against purchase ledger balances of **$2,060k**; Freda's Fabrics, Fabricated, Three Linens Ltd and Penelope Prints Shop differ.
+<Solution label="Show the slide answer">
+The purchase ledger balances for Freda's Fabrics, Fabricated, Three Linens Ltd and Penelope Prints Shop are higher than the balances in the supplier statements and should all be investigated. *(Note: the totals show the supplier statements are higher, $2,308k vs $2,060k, which fits the understatement conclusion.)* The difference totals **$248k, which is 12% of the total purchase ledger balance**, and could be indicative of an **understatement of trade payables**.
+
+**Procedure:** for a sample of suppliers, reconcile the year-end balance on the purchase ledger to the supplier statement and investigate any differences, to ensure completeness, existence and valuation of trade payables.
+</Solution>
+
+**Activity 2.** Payments on 1–7 October 20X6 include: Freda's Fabrics for an invoice dated 12/09/20X6 (not in the ledger) · Three Linens Ltd for an invoice dated 29/09/20X6 (not in the ledger) · Fabricated for an invoice dated 1/10/20X6 (not in the ledger) · $8,000 internet for July–September (not in accruals).
+<Solution label="Show the slide answer">
+The payments to Freda's Fabrics and Three Linens Ltd relate to invoices dated before the year end but not in the year-end purchase ledger: **payables and purchases are understated by $71,000**; propose an adjustment. Fabricated is correctly excluded (invoice after the year end). The **$8,000 internet** relates to the year: **accruals and expenses understated**; propose an adjustment.
+
+**Procedure:** for a sample of post year-end payments in the cash book, determine whether they relate to the year; if so, vouch that they are included in the purchase ledger or accruals listing. This test looks for **unrecorded liabilities**.
+</Solution>
+
+<Eyebrow>Links to other cycles</Eyebrow>
+## Where this cycle touches the rest of the map
+<CycleLinks cycle="pur" />
+
+<Eyebrow>Exam angle · CP3 Granstan Co (Dec 2024 Q1)</Eyebrow>
+## Deficiency → recommendation → test of control
+| Deficiency in the scenario | Why it matters | Recommendation |
+|---|---|---|
+| Exception report of supplier master file changes printed and filed, **not reviewed** | Fictitious suppliers or amended bank details go undetected → payments to the wrong party | Reviewed promptly by an official independent of those who can amend the file; investigate; sign and date |
+| GRN checks **quantity only**, not quality | Defective goods accepted → hard to dispute the invoice; inventory overstated | Inspect quality and condition too; initial the GRN as evidence |
+| Supplier statement reconciliations **stopped** | Duplicate payments, unposted invoices, credits not applied → payables misstated | Reinstate monthly for material suppliers; investigate reconciling items; reviewed and signed off |
+
+**Examiner:** the deficiency is often what is NOT described ("generated and filed" = nobody reviews it) · recommendations phrased "ensure that…" score zero · tests of control test the control, substantive procedures test the balance.
+
+<IfSkipped lang="en">the direction, you vouch every recorded payable to an invoice and sign off a balance that is $71,000 short, because the missing invoices were never in the ledger you started from.</IfSkipped>
+
+<KeyPrinciple>**Liabilities hide by omission:** start from supplier statements, payments after the year end and unmatched GRNs, then match back to the ledger.</KeyPrinciple>
+
+<QuickCheck lang="en" q="The same employee adds new suppliers to the master file and authorises payments to them. Which control principle has failed, and why does it matter?" short="Segregation of duties">
+Creating suppliers and approving payments are incompatible functions. One person controlling both can create fictitious suppliers and pay them: one of the most commonly tested weaknesses (CP3 practice Q7).
+</QuickCheck>
+
+**Link to Branch A:** [Bài 3.3 Phải trả](/a/3/a3-3-phai-tra/) (chọn NCC theo phát sinh) · [Bài 3.4 Chi phí](/a/3/a3-4-chi-phi/). On the map: [Trade payables](/c/1/c1-master-map/#node-ap).
+
+<LessonNotes client:only="react" id="c3-2-purchases-payables" lang="en" />

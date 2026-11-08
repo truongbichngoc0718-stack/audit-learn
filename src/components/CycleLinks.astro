@@ -1,0 +1,23 @@
+---
+/** Liên kết của một chu trình sang khoản mục/chu trình khác, sinh từ dữ liệu Audit Master Map (src/lib/auditMap.ts). */
+import { linksOf, nodeById, cycleById, type CycleId } from '../lib/auditMap';
+import './map.css';
+interface Props { cycle: CycleId }
+const { cycle } = Astro.props;
+const links = linksOf(cycle);
+---
+<div class="cl-grid">
+  {links.map(e => {
+    const A = nodeById(e.a), B = nodeById(e.b);
+    const other = A.cycle === cycle ? B : A;
+    const c = cycleById(other.cycle);
+    return (
+      <div class="cl-card" style={`--c:${c.color}`}>
+        <div class="t">{A.name} ⇄ {B.name}</div>
+        <div class="e">{e.tx} · {e.entry}</div>
+        <div>{e.shared}</div>
+        <div class="s">{other.cycle === cycle ? 'Inside this cycle' : <>Links to <a href={c.href}>{c.name}</a></>} · <a href={`/c/1/c1-master-map/#node-${other.id}`}>see on the map</a> · {e.src}</div>
+      </div>
+    );
+  })}
+</div>

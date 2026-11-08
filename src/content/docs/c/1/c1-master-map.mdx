@@ -1,0 +1,93 @@
+---
+title: The Audit Master Map
+description: "Every balance is the **twin of another balance**. Learn the links once, and one test answers two questions: that is how strong auditors cover a whole set of accounts without memorising 20 chapters."
+id: c1-master-map
+nhanh: C
+phan: c1
+bai: "C1"
+nhan: Every account, every link
+loai: acca
+thoi_luong: 15
+nguon: ["ACCA-slide: ch07 tr. 128–131 (directional testing)", "ACCA-slide: ch09 · ch12–ch17 (systems, account audit plans, activities)", "ACCA-slide: ch05 tr. 98–103 (risk → response examples)", "ACCA-CP2 · CP3 · CP4 · CP5 (scenarios)"]
+assertion: [Existence, Completeness, Occurrence, Cut-off, Valuation & allocation]
+chuan_muc: ["ISA 315", "ISA 330", "ISA 500", "ISA 505"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c2-operating-system, c3-1-revenue-receivables, a3-tong-quan]
+tableOfContents: false
+sidebar: { order: 1, label: "C1 · Audit Master Map" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, AuditMasterMap, SortDrill, LessonNotes } from '@components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<Objectives title="Learning outcomes">
+- Explain why every account balance is linked to at least one other through double entry
+- Apply the direction rule: debit items tested for overstatement, credit items for understatement
+- Trace how one misstatement ripples through several balances and profit
+- Name the cross-cycle lenses (cut-off, estimates, bias, third-party evidence, subsequent events)
+</Objectives>
+
+<Eyebrow>The idea in one sentence</Eyebrow>
+## A misstated debit means a misstated credit
+The slides on directional testing (Ch 7) give the whole map in one line: directional testing derives from **double entry**. A misstated debit means a misstated credit, or an opposite misstatement of another debit. So **testing one side gives evidence about the other**. Strong auditors do not learn receivables, revenue and cash as three topics; they learn one link and three ways to look at it.
+
+<div class="b-grid">
+  <div class="b-card" style="border-top:4px solid var(--bisc-rose)"><div class="b-kicker">Rule 1 · direction</div><b>Debit items (assets, expenditure) → test for overstatement.</b> Start from the records and go to evidence.<br/><b>Credit items (income, liabilities) → test for understatement.</b> Start outside the records and match back.</div>
+  <div class="b-card" style="border-top:4px solid var(--bisc-amber)"><div class="b-kicker">Rule 2 · twins</div>Every SPL line has a SOFP twin: revenue ⇄ receivables, cost of sales ⇄ inventory, expenses ⇄ payables and accruals, depreciation ⇄ PPE, finance costs ⇄ loans.</div>
+  <div class="b-card" style="border-top:4px solid var(--bisc-navy-2)"><div class="b-kicker">Rule 3 · the hub</div>Most accounting transactions pass through the cash account, so cash is affected by all the entity's business processes (Ch 15). Every cycle ends at the bank.</div>
+  <div class="b-card" style="border-top:4px solid var(--bisc-emerald)"><div class="b-kicker">Rule 4 · lenses</div>Some tests cut across cycles: one GDN/GRN cut-off test covers revenue, receivables, inventory, purchases and payables (Ch 13 §2.5).</div>
+</div>
+
+<Eyebrow>Interactive · the map</Eyebrow>
+## Explore, ripple, lens
+**Explore:** click an account to see its risk, assertions, key procedures and every linked account; click a line to see the double entry and the test that answers both sides. **Ripple:** pick a misstatement from the slides or checkpoints and watch where it lands. **Lenses:** see which balances one kind of test covers. Use **Full screen** on a laptop.
+
+<AuditMasterMap client:only="react" />
+
+<Eyebrow>How to study with the map</Eyebrow>
+## Three loops, ten minutes a day
+1. **Say it before you click.** Pick an account. Out loud: its twin, its risk direction, three procedures. Then open the panel and mark yourself.
+2. **Predict the ripple.** Read a Ripple story, write which balances move and whether profit is over- or understated, then switch to the scenario.
+3. **One test, many balances.** Pick a lens and list every balance it covers before you look.
+
+This is the order the exam rewards: **risk → assertion → procedure** (CP4, CP5 Skill A). The models behind each step are in [C2 · Audit operating system](/c/2/c2-operating-system/).
+
+<Eyebrow>Retrieval drill</Eyebrow>
+### Overstatement or understatement first?
+Choose the direction the slides test each item for.
+
+<SortDrill client:visible id="c1-master-map" scoreKey="direction" label="Direction drill" options={['Overstatement · start from records', 'Understatement · start outside records']} items={[
+  { s: 'A $1,000 debit entry for a non-current asset addition.', answer: 'Overstatement · start from records', why: 'Debit items are tested for overstatement: the asset may be worth less, not owned or not exist (Ch 7 directional testing).' },
+  { s: 'A sale recorded in revenue (credit item).', answer: 'Understatement · start outside records', why: 'Select a GDN and agree the sale is recorded at full value: $1,000 recorded as $900 is a $100 understatement (Ch 7).' },
+  { s: 'Trade payables at the year end.', answer: 'Understatement · start outside records', why: 'Auditors focus on understatement of liabilities to improve liquidity and profits (Ch 16 §1.2).' },
+  { s: 'Trade receivables at the year end.', answer: 'Overstatement · start from records', why: 'Key assertions are existence and valuation: confirmation and after-date cash start from the recorded balance (Ch 14 §1).' },
+  { s: 'Accruals for services used before the year end.', answer: 'Understatement · start outside records', why: 'Post year-end payments reveal accruals that should exist but are not recorded (Ch 16 Activity 2).' },
+  { s: 'Prepayments.', answer: 'Overstatement · start from records', why: 'Verify recorded prepayments to invoices, cash book and correspondence (existence); recalculate the amount prepaid (Ch 14 §3).' },
+]} />
+
+<Eyebrow>Seven cycles</Eyebrow>
+## Open a cycle playbook
+Each playbook joins the controls (Ch 9) and the substantive tests (Ch 12–17) for the same flow, then lists its links to other cycles.
+
+<CardGrid>
+<LinkCard title="Revenue & receivables" description="Order → GDN → invoice → receipt · Revenue, receivables" href="/c/3/c3-1-revenue-receivables/" />
+<LinkCard title="Purchases & payables" description="Requisition → PO → GRN → invoice → payment · Payables, accruals, expenses, prepayments" href="/c/3/c3-2-purchases-payables/" />
+<LinkCard title="Payroll" description="Work recorded → payroll → payment · Wages, directors' emoluments" href="/c/3/c3-3-payroll/" />
+<LinkCard title="Inventory" description="Count, cut-off, cost vs NRV · Inventory, cost of sales" href="/c/3/c3-4-inventory/" />
+<LinkCard title="Non-current assets" description="Roll-forward, additions, disposals, depreciation, R&D" href="/c/3/c3-5-non-current-assets/" />
+<LinkCard title="Financing" description="Loans, finance costs, provisions, capital, dividends" href="/c/3/c3-6-financing/" />
+<LinkCard title="Bank & cash: the hub" description="Bank letter, reconciliation, window dressing · NFP variant" href="/c/3/c3-7-bank-cash/" />
+</CardGrid>
+
+<IfSkipped lang="en">the links, you test receivables and revenue as separate topics, spend the time twice, and still miss that a post year-end credit note reduces both.</IfSkipped>
+
+<KeyPrinciple>**Test one side, conclude on both:** choose the test that gives evidence over the account AND its twin, in the right direction.</KeyPrinciple>
+
+<QuickCheck lang="en" q="A GRN dated 29 September (year end 30 September) has no invoice and no accrual. Which balances are misstated?" short="Purchases and payables (and check the goods are in inventory)">
+All purchases for which goods have been received before the year end must be included as a liability, an expense (purchases) and closing inventory (Ch 13 §2.5). With no invoice and no accrual, payables and purchases are understated; the GRN cut-off test also checks that the goods are in closing inventory.
+</QuickCheck>
+
+**Link to Branch A:** the same cycles in Vietnamese practice on Biscore data: [Phần 3 · Thủ tục theo phần hành](/a/3/).
+
+<LessonNotes client:only="react" id="c1-master-map" lang="en" />

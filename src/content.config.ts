@@ -7,7 +7,7 @@ import { docsSchema } from '@astrojs/starlight/schema';
 const lesson = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   nhanh: z.enum(['A', 'B', 'C', 'lib', 'he-thong']).default('he-thong'),
-  phan: z.union([z.number().int().min(0).max(4), z.literal('b'), z.enum(['c0', 'cA', 'cB', 'cC', 'cD', 'cE'])]).optional(),
+  phan: z.union([z.number().int().min(0).max(4), z.literal('b'), z.enum(['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'cA', 'cB', 'cC', 'cD', 'cE'])]).optional(),
   bai: z.string().optional(),
   nhan: z.string().optional(),
   loai: z.enum(['tong-quan', 'ky-thuat', 'phan-hanh', 'kiem-tra', 'thu-vien', 'excel', 'acca', 'checkpoint', 'khung', 'he-thong']).default('he-thong'),

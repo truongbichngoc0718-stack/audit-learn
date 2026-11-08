@@ -27,3 +27,7 @@ export { default as ExamMcq } from './ExamMcq';
 export { default as ConstructedResponse } from './ConstructedResponse';
 export { default as ProcedureBuilder } from './ProcedureBuilder';
 export { default as Mindmap } from './Mindmap';
+export { default as AuditMasterMap } from './AuditMasterMap';
+export { default as SortDrill } from './SortDrill';
+export { default as OpinionDecider } from './OpinionDecider';
+export { default as CycleLinks } from './CycleLinks.astro';

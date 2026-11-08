@@ -1,21 +1,51 @@
 ---
 title: ACCA Audit & Assurance (AA)
-description: "The full AA syllabus in five parts, each closed by a **Skills Checkpoint**: knowledge revision, exam techniques, past-exam practice and a timed mock test."
+description: "Not 20 chapters in a row: **one map, six models, seven cycles, three engagement gates, five checkpoints**. The way experienced auditors hold the whole audit in their head."
 id: c0-tong-quan
 nhanh: C
 phan: c0
-nhan: Branch overview
+nhan: The elite method
 loai: tong-quan
-thoi_luong: 3
+thoi_luong: 5
 nguon: ["ACCA-slide: ch00 tr. 1–3", "ACCA-CP1…CP5: Exam structure", "source/library/acca-aa/index.md"]
-ngay_cap_nhat: 2026-11-05
-trang_thai: goc
-style_version: "C-1.0-draft"
-sidebar: { order: 0, label: Overview }
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+sidebar: { order: 0, label: Start here }
 ---
-import { Eyebrow, Mindmap } from '@components';
+import { Eyebrow } from '@components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Branch C follows the BISC Audit & Assurance course (Ha Long Giang, FCCA, CPA) and the five Skills Checkpoints (with Nguyen Kien Cuong, ACCA). It runs in English, like the exam. Where a topic has a practical twin in Branch A (Vietnamese standards, Biscore data), each page links to it.
+Branch C follows the BISC Audit & Assurance course (Ha Long Giang, FCCA, CPA) and the five Skills Checkpoints (with Nguyen Kien Cuong, ACCA). It runs in English, like the exam. It is **not built chapter by chapter**: the 20 chapters are regrouped the way an experienced auditor uses them, and every page links to its practical twin in Branch A (Vietnamese standards, Biscore data).
+
+<Eyebrow>The method</Eyebrow>
+## Learn the structure, then hang the detail on it
+| Layer | What you learn | Why it works |
+|---|---|---|
+| **C1 · Master Map** | Every account and the double entry that links it to others | One test answers two balances; one misstatement moves several. You stop learning topics twice. |
+| **C2 · Operating system** | Six models: risk chain, assertions, evidence/AEIOU, direction, roll-forward, proof in total | The same loop answers every Part B–D requirement; cycles only change the documents. |
+| **C3 · Cycle playbooks** | Controls (Ch 9) and substantive tests (Ch 12–17) for the same flow, on one page | Exams test a scenario, not a chapter: controls and balances in one cycle come together. |
+| **C4 · Engagement frame** | Before the audit · planning · completion and reporting | Parts A, B and E become three decisions in time order. |
+| **C5 · Checkpoints** | Past-exam MCQs, constructed responses with model answers, timed mocks | Retrieval under time pressure is what turns knowledge into marks. |
+
+**Daily loop (about 30 minutes):** 10 min on the [Master Map](/c/1/c1-master-map/) (say each account's twin, direction and three procedures before you click) → 15 min on one cycle playbook or engagement page, doing its drills without looking → 5 min writing one constructed-response answer from a checkpoint. Revisit a page after 1, 3 and 7 days; your drill scores are saved in [Progress](/tien-do/).
+
+<Eyebrow>Start</Eyebrow>
+<CardGrid>
+<LinkCard title="C1 · The Audit Master Map" description="Explore accounts, follow a misstatement, apply lenses across cycles" href="/c/1/c1-master-map/" />
+<LinkCard title="C2 · The audit operating system" description="Risk chain · assertions · AEIOU & 3W · direction · roll-forward · proof in total" href="/c/2/c2-operating-system/" />
+</CardGrid>
+
+<Eyebrow>Where every chapter went</Eyebrow>
+## Nothing is lost, only regrouped
+| Slide chapter | Where it lives now |
+|---|---|
+| 1 Audit & assurance · 2 Statutory audit · 3 Governance · 4 Ethics · 10 Internal audit | [C4.1 Before the audit](/c/4/c4-1-before-the-audit/) · [Checkpoint 1](/c/5/cp1-framework-governance/) |
+| 5 Risk assessment · 6 Planning & documentation · 8 Internal control · 11 Sampling & automated tools | [C4.2 Planning, risk & controls](/c/4/c4-2-planning-risk-control/) · [Checkpoint 2](/c/5/cp2-ethics-risk/) |
+| 7 Audit evidence | [C2 Operating system](/c/2/c2-operating-system/) · [C1 Master Map](/c/1/c1-master-map/) |
+| 9 Tests of controls (by system) | Stage-by-stage diagrams in each [cycle playbook](/c/3/c3-1-revenue-receivables/) · [Checkpoint 3](/c/5/cp3-internal-control/) |
+| 12 NCA · 13 Inventory · 14 Receivables · 15 Bank & cash · 16 Payables · 17 Liabilities, capital, directors · 18 NFP | [C3 cycle playbooks](/c/3/c3-1-revenue-receivables/) · [Checkpoint 4](/c/5/cp4-substantive-procedures/) |
+| 19 Review & finalisation · 20 Reports | [C4.3 Completion & reporting](/c/4/c4-3-completion-reporting/) · [Checkpoint 5](/c/5/cp5-review-reporting/) |
 
 <Eyebrow>Exam format</Eyebrow>
 ## 3 hours (+10 minutes), computer-based, 100 marks
@@ -25,32 +55,3 @@ Branch C follows the BISC Audit & Assurance course (Ha Long Giang, FCCA, CPA) an
 | Section B · 70% | 1 × 30-mark question + 2 × 20-mark questions (constructed response) | 70 |
 
 The 30-mark question covers planning & risk assessment, internal control or audit evidence; the 20-mark questions cover broader syllabus areas. Global pass rate Mar-22 to Dec-23: 39%–45%.
-
-<Eyebrow>Syllabus map</Eyebrow>
-## Five parts, 20 chapters, 5 checkpoints
-Click a part to see its chapters. Linked items are published; the rest are coming next.
-
-<Mindmap client:visible root="Audit & Assurance" sub="Main capabilities A–E · plus employability and technology skills (F)" openAll branches={[
-  { t: 'A · Audit framework and regulation', sub: 'Chapters 1–4 · Checkpoint 1', items: [
-    { t: 'Ch 1 · The concept of audit and other assurance engagements' }, { t: 'Ch 2 · Statutory audits and regulation' },
-    { t: 'Ch 3 · Corporate governance' }, { t: 'Ch 4 · Professional ethics and quality management procedures' },
-    { t: '✓ Checkpoint 1 · Audit framework & corporate governance' } ] },
-  { t: 'B · Planning and risk assessment', sub: 'Chapters 5–6 · Checkpoint 2', items: [
-    { t: 'Ch 5 · Risk assessment' }, { t: 'Ch 6 · Audit planning and documentation' }, { t: '✓ Checkpoint 2 · Ethics & risk assessment' } ] },
-  { t: 'C · Internal control', sub: 'Chapters 8–10 · Checkpoint 3', items: [
-    { t: 'Ch 8 · Internal control' }, { t: 'Ch 9 · Tests of controls' }, { t: 'Ch 10 · Internal audit' }, { t: '✓ Checkpoint 3 · Internal control' } ] },
-  { t: 'D · Audit evidence', sub: 'Chapters 7, 11–18 · Checkpoint 4', items: [
-    { t: 'Ch 7a · Audit evidence and assertions', href: '/c/d/c07a-evidence-assertions/', note: 'Published' }, { t: 'Ch 7b · Procedures and directional testing', href: '/c/d/c07b-procedures-directional-testing/', note: 'Published' },
-    { t: 'Ch 11 · Audit sampling and automated tools and techniques' }, { t: 'Ch 12 · Non-current assets' }, { t: 'Ch 13 · Inventory' },
-    { t: 'Ch 14 · Receivables' }, { t: 'Ch 15 · Bank and cash' }, { t: 'Ch 16 · Payables and accruals' },
-    { t: "Ch 17 · Non-current liabilities, capital and directors' emoluments" }, { t: 'Ch 18 · Not-for-profit organisations' },
-    { t: '✓ Checkpoint 4 · Substantive procedures', href: '/c/d/cp4-substantive-procedures/', note: 'Published' } ] },
-  { t: 'E · Review and reporting', sub: 'Chapters 19–20 · Checkpoint 5', items: [
-    { t: 'Ch 19 · Audit review and finalisation' }, { t: 'Ch 20 · Reports' }, { t: '✓ Checkpoint 5 · Audit review & reporting' } ] },
-]} />
-
-<Eyebrow>How to use this branch</Eyebrow>
-## Learn a chapter, then prove it in the checkpoint
-1. Read the chapter page and do its activities and quick check.
-2. When a part is finished, sit its Skills Checkpoint: revision → techniques → practice → mock test.
-3. Your scores and notes are saved in [Progress](/tien-do/). Export them as JSON to move devices.

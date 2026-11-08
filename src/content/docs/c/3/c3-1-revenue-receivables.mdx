@@ -1,0 +1,142 @@
+---
+title: "Revenue & receivables cycle"
+description: "Order → **GDN** → invoice → cash. Revenue is tested for occurrence, completeness and cut-off; receivables for **existence and valuation**. After-date cash and post year-end credit notes answer both."
+id: c3-1-revenue-receivables
+nhanh: C
+phan: c3
+bai: "C3.1"
+nhan: Revenue & receivables
+loai: acca
+thoi_luong: 18
+nguon: ["ACCA-slide: ch09 tr. 151–158 (sales system)", "ACCA-slide: ch14 tr. 242–262 (receivables, revenue, prepayments)", "ACCA-slide: ch05 tr. 100–102 (risk → response)", "ACCA-CP3 §1.2 (sales system table) · ACCA-CP4 §1"]
+assertion: [Occurrence, Completeness, Cut-off, Accuracy, Existence, Rights & obligations, Valuation & allocation]
+chuan_muc: ["ISA 505", "ISA 240", "IFRS 15", "IAS 1"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, a3-1-doanh-thu, a3-2-phai-thu]
+sidebar: { order: 1, label: "Revenue & receivables" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, FlowDiagram, ExamMcq, Solution, CycleLinks, LessonNotes } from '@components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Objectives title="Learning outcomes">
+- Describe the four stages of the sales system with its risks, controls and tests of control
+- Apply external confirmation, after-date cash and credit-note review to receivables
+- Test revenue for completeness (GDN → ledger), occurrence and cut-off
+- Link revenue and receivables to cash, inventory, expenses and provisions
+</Objectives>
+
+<Eyebrow>The cycle on one screen</Eyebrow>
+## Four stages, four documents
+Overall objective (CP3): **all valid sales are recorded accurately and cash received promptly.** Click a stage to see what can go wrong, the control and how you test it.
+
+<FlowDiagram client:visible stepLabel="Stage" steps={[
+  { label: 'Order placed', sub: 'Order form', detail: '<b>Risk:</b> an order is accepted from, and goods despatched to, a customer who is not creditworthy · an order is not fulfilled.<br/><b>Control objective:</b> goods only supplied to customers with good credit ratings · all goods ordered are despatched.<br/><b>Control:</b> credit check on all new customers by someone separate from sales; credit limits authorised and reviewed regularly · sequentially numbered order forms and GDNs; open orders reviewed.<br/><b>Test of control:</b> inspect a sample of new customer accounts for credit checks before the order was accepted · attempt to process an order over the credit limit to see if it is rejected · test the numerical sequence; review unfulfilled orders.' },
+  { label: 'Despatch', sub: 'GDN', detail: '<b>Risk:</b> wrong items, quantity or damaged goods despatched · goods not despatched to the required destination.<br/><b>Control:</b> spot checks on packed goods against the order · customer signs the multi-part GDN; copies to customer, driver, warehouse, sales and invoicing.<br/><b>Test of control:</b> vouch a sample of packed items to GDNs and order forms · review customer complaint files · review a sample of GDNs for the customer\'s signature.' },
+  { label: 'Invoiced & recorded', sub: 'Sales invoice', detail: '<b>Risk:</b> goods despatched are not invoiced, or invoiced incorrectly · invoices posted to the wrong customer account.<br/><b>Control:</b> sequentially numbered invoices generated from GDNs; authorised and agreed to price lists and credit terms · monthly customer statements; unpaid amounts reviewed.<br/><b>Test of control:</b> match a sample of GDNs to invoices · sequence check of invoices · compare invoices with the authorised price list · reperform customer statement reconciliations; review complaints.' },
+  { label: 'Payment received', sub: 'Remittance advice', detail: '<b>Risk:</b> cash not received for invoices raised · cash misappropriated.<br/><b>Control:</b> monthly aged receivables report; overdue balances pursued · segregation: the person updating the receivables ledger does not raise invoices or credit notes, follow up statement queries or open and count cash; cash banked promptly.<br/><b>Test of control:</b> review the aged report and discuss action on overdue balances with credit control · observe segregation and banking procedures; trace receipts to the bank statement.' },
+]} footer="Source: Ch 9 §3.1 · CP3 §1.2. Tests of control apply only if you plan to rely on the control; otherwise go straight to substantive testing." />
+
+<div class="b-grid">
+  <div class="b-card" style="border-top:4px solid #2563eb"><div class="b-kicker">Revenue · SPL</div>Key assertions: <b>occurrence, completeness, accuracy</b> (+ cut-off). IFRS 15: five steps; revenue is recognised when (or as) a performance obligation is satisfied. Revenue may be overstated where management has incentives such as profit-based bonuses (CP2).</div>
+  <div class="b-card" style="border-top:4px solid #2563eb"><div class="b-kicker">Receivables · SOFP</div>Key assertions: <b>existence, completeness, valuation</b>. Valued at invoiced price less allowance for doubtful debts; receivables due after 12 months are still shown in current assets (IAS 1).</div>
+</div>
+
+<Eyebrow>Substantive playbook</Eyebrow>
+## What to do, by assertion
+
+<Tabs>
+<TabItem label="Receivables">
+
+| Assertion | Procedures (Ch 14 §1.5) |
+|---|---|
+| **Existence** | Direct confirmation of a sample of balances; investigate disagreements and vouch explanations · review monies received after the year end · inspect customer correspondence and complaint files |
+| **Rights & obligations** | After-date receipts show the debt was due to the client · confirmation replies show the customer agrees the balance is due to the client · vouch balances to sales invoices and GDNs |
+| **Valuation** | Inspect the aged listing for old and overdue amounts; discuss recoverability · receivables collection period vs prior year · after-date cash agreed to the cash book · post year-end credit notes for pre year-end sales · adequacy of the allowance through discussion and customer correspondence |
+| **Completeness** | Compare the breakdown per customer with the prior year · vouch a sample of GDNs to invoices and the ledger · recast the aged listing and agree to the nominal ledger and FS |
+
+**One test, two assertions.** Reviewing after-date cash receipts tests **valuation and existence**. Comparing gross profit per product line with the prior year tests existence and completeness of receivables, occurrence and accuracy of sales, and cost of sales (Ch 14 §1.5).
+
+</TabItem>
+<TabItem label="External confirmation">
+
+**Positive** requests ask the customer to reply whether they agree or disagree; **negative** requests ask for a reply only if they disagree. Positive is generally preferable. Negative may be the sole procedure only if: risk assessed as low · controls tested effective · large number of small homogeneous balances · very low exception rate expected · no reason customers would ignore requests (ISA 505).
+
+**Process:** obtain the listing → review for omissions vs last year → agree the total to the nominal ledger → select the sample (aged report) → send on client paper, reply direct to auditor → second request if no reply → follow up by phone/email → alternative procedures for non-replies → further work on disagreements.
+
+**Include in the sample:** old unpaid accounts · accounts written off in the period · credit balances · accounts settled by round sum payments · large balances · nil balances.
+
+**Exceptions** (a difference) must be investigated; evaluate whether they indicate fraud (ISA 240) or a control deficiency; some are timing or clerical. **Non-responses** need alternative procedures: invoices, GDNs and orders · cash received after the year end · discussion with a responsible official.
+
+</TabItem>
+<TabItem label="Revenue">
+
+- **Analytical procedures** (key for completeness): revenue month by month vs prior year · effect of quantities, products and prices · returns, allowances and discounts · revenue or PBT per employee · gross margin by product and month.
+- **Directional test for completeness:** start with the documents that first record revenue (GDNs, till rolls), trace through sales summaries to the sales ledger. Check the GDN sequence first, so the population you sample from is itself complete.
+- **Cut-off:** GDNs either side of the year end matched to invoices; goods that left before the year end are in revenue and receivables, not inventory (Ch 13 §2.5).
+- **Risk → response (Ch 5):** cash collected and held before banking → analytical review of seasonal patterns; reconcile till records to banking · deposits and contracts spanning the year end → agree pre year-end entries to contracts; trace post year-end transactions back; verify revenue was recognised on provision of goods/services.
+
+</TabItem>
+<TabItem label="Prepayments">
+
+Often tested with receivables (Ch 14 §3). **Completeness:** compare with the prior year; review the detailed SOFP for likely prepayments. **Valuation:** recalculate a sample from the listing. **Existence:** verify to invoices, cash book and correspondence.
+
+</TabItem>
+</Tabs>
+
+<Eyebrow>Activities · Dress You Like Co, year ended 30 September 20X6</Eyebrow>
+## Read the evidence like a senior
+Jasco Supermarket owes **$11,800,000** of total receivables of $12,500,000; it gets 60-day credit terms and **$5,900,000** of its balance is 90 days or older ($2,300,000 > 90 days, $3,600,000 at 90 days). Small old balances: Clothing Terrain $2,000, Fred's Fashions $4,000, Holly Aristocrat $12,000, Ivory Gowns $2,000, Look the Part $1,000. Everyday Wear shows a credit balance of $6,000.
+
+**Activity 1 · Aged listing.** Which items need investigating, and what is the procedure?
+<Solution label="Show the slide answer">
+The balance of $11,800,000 due from Jasco Supermarket is the largest balance owed and $5,900,000 of this has been outstanding for 90 days or more. Any issues with the recoverability of this amount could impact the financial statements. The old balances (Clothing Terrain, Fred's Fashions, Holly Aristocrat, Ivory Gowns, Look the Part) need investigating to assess the likelihood of payment. Everyday Wear has a credit balance of $6,000: why, and should it be shown as a payable?
+
+**Procedure:** inspect/review the aged receivables listing for old, overdue and unusual amounts. Discuss the recoverability/accounting treatment of these items with management to ensure that receivables are appropriately valued in the financial statements.
+</Solution>
+
+**Activity 2–3 · After-date cash and credit notes.** Jasco paid **$5,680,000** in October–November. A credit note was issued after the year end for a disputed invoice due > 90 days (invoice 126425), another (**$10,000**) for Holly Aristocrat's $12,000 due > 90 days, and one (**$5,000**) to Odd One Out for an invoice sent in error.
+<Solution label="Show the slide answer">
+Because the supermarket gets 60-days credit, the amount which should have been paid in October and November is $5,900,000 ($2,300,000 + $3,600,000): **$220,000 should have been paid but has not**. That $220,000 relates to the disputed invoice. Given that a credit note has been issued post year-end for this amount, the balance was not an asset at the year end and **revenue and receivables should both be reduced by $220,000**. The same applies to the credit notes for Holly Aristocrat and Odd One Out.
+
+**Procedures:** review post year-end cash receipts for evidence that the balance exists, is due to the client and is recoverable · review credit notes issued post year-end; where they relate to pre year-end invoices, discuss the need for an adjustment so that receivables are appropriately valued.
+</Solution>
+
+**Activity 5 · Confirmation replies.** Dress for the Occasion: cash in transit $39,000 · Fred's Fashions and Jasco: disputed invoices · Girls on the Go and Upward Trends: goods not received at the year end (GDNs 127057, 127058).
+<Solution label="Show the slide answer">
+- **Cash in transit:** trace the $39,000 to the cash receipts book post year-end; vouch that it was received within a few days of the year end.
+- **Disputed invoices:** discuss the reason with management and review the customer correspondence file · enquire whether a credit note has been issued post year-end and physically verify it · if none, discuss recoverability with credit control/management.
+- **Goods not received:** inspect GDNs 127057 and 127058 and determine the despatch date. If goods were not despatched until after the year end, request that management remove the amount from revenue and receivables and record the goods as inventory at the year end.
+</Solution>
+
+<ExamMcq client:visible id="c3-1-revenue-receivables" scoreKey="activities" label="Ch 14 activity" mode="practice" questions={[
+  { source: 'Ch 14 Activity 4 · Audit procedures', q: 'The audit assistant intends to use automated tools and techniques on the receivables balance of Dress You Like Co to save time and cost. Which of the following procedures could NOT be performed using automated tools and techniques?',
+    options: ['Selection of a sample of receivables for confirmation', 'Calculation of receivables days', 'Evaluation of the adequacy of the allowance for receivables', 'Production of receivables confirmation letters'], answer: 2,
+    explain: 'Automated tools and techniques can be used to extract samples and perform calculations but they cannot evaluate this information.' },
+]} />
+
+<Eyebrow>Links to other cycles</Eyebrow>
+## Where this cycle touches the rest of the map
+<CycleLinks cycle="rev" />
+
+<Eyebrow>Exam angle</Eyebrow>
+## How it is tested
+| Requirement | What scores | Trap |
+|---|---|---|
+| Direct controls in the sales system + test of control (CP3 Granstan Co) | A control is complete only if set, **authorised and reviewed** (credit limit) · test names the document and purpose | "Check credit limits" scores zero |
+| Substantive procedures for receivables | Confirmation + alternative procedures, after-date cash, aged listing, credit notes, disclosure | Stopping at the confirmation |
+| Revenue cut-off | GDNs around the year end to the revenue period | Testing from the invoice date |
+| Subsequent insolvency of a customer (CP5 Mercury) | Adjusting event → allowance; quantify vs PBT | Calling it non-adjusting because it happened after YE |
+
+<IfSkipped lang="en">the after-date evidence, you can confirm a balance that existed at the year end and still overstate it: a credit note issued in October can wipe out an invoice the customer never owed.</IfSkipped>
+
+<KeyPrinciple>**Receivables and revenue are one test:** confirm the balance, follow the cash and the credit notes after the year end, and the sale is tested at the same time.</KeyPrinciple>
+
+<QuickCheck lang="en" q="Which TWO procedures address the VALUATION of a disputed $200,000 receivable: (i) post-fieldwork cash receipts, (ii) trace to the sales ledger control account, (iii) vouch the original invoice, (iv) post year-end customer correspondence?" short="(i) and (iv)">
+Reviewing cash received after the year end and post year-end correspondence both address valuation of the disputed receivable. Tracing to the control account and vouching the invoice test other assertions (CP5 mock Q1).
+</QuickCheck>
+
+**Link to Branch A:** the same cycle on Biscore data: [Bài 3.1 Doanh thu](/a/3/a3-1-doanh-thu/) · [Bài 3.2 Phải thu](/a/3/a3-2-phai-thu/). See it on the [Master Map](/c/1/c1-master-map/#node-ar).
+
+<LessonNotes client:only="react" id="c3-1-revenue-receivables" lang="en" />

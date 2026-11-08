@@ -1,5 +1,27 @@
 # ACCA_AA_MAP: đối chiếu slide ACCA AA + 5 Skills Checkpoint với site
-Trạng thái: **ĐÃ DUYỆT cấu trúc 05/11/2026** (nhánh C riêng + link chéo · toàn bộ tiếng Anh · giữ nguyên văn câu hỏi checkpoint) · trang mẫu C0, Ch 7, Checkpoint 4 chờ duyệt · nguồn: `source/library/acca-aa/` (index.md)
+Trạng thái: **v2 · 08/11/2026 · chờ duyệt.** Mục 3 (bảng theo 20 chương) được thay bằng mục 0 dưới đây theo yêu cầu "không build theo từng bài". Giữ nguyên: nhánh C riêng + link chéo · toàn bộ tiếng Anh · nguyên văn câu hỏi checkpoint. Nguồn: `source/library/acca-aa/` (index.md)
+
+## 0. Cấu trúc v2 · Elite method (đã build)
+| Trang | id | Gộp từ | Link nhánh A |
+|---|---|---|---|
+| C0 Start here | c0-tong-quan | ch00 + exam structure CP1–5 | — |
+| C1 Audit Master Map | c1-master-map | ch07 directional testing; ch09, ch12–17 (18 khoản mục, 27 bút toán, 9 tình huống ripple, 6 lens) | A3 tổng quan, từng bài A3 qua node |
+| C2 Audit operating system | c2-operating-system | ch05 (risk, materiality), ch07 (evidence, assertions, AEIOU, direction, HMA), ch12/13/16 account schedule, CP2 §2, CP4 §1 | A1.3, A1.4, A2.1 |
+| C3.1 Revenue & receivables | c3-1-revenue-receivables | ch09 §3.1, ch14, CP3 §1.2 | A3.1, A3.2 |
+| C3.2 Purchases & payables | c3-2-purchases-payables | ch09 §3.2, ch16 §1, CP3 | A3.3, A3.4 |
+| C3.3 Payroll | c3-3-payroll | ch09 §3.3, ch16 §2, ch17 §4 | A3.4 |
+| C3.4 Inventory | c3-4-inventory | ch09 §3.4, ch13 | — (Biscore không có) |
+| C3.5 Non-current assets | c3-5-non-current-assets | ch09 §3.6, ch12 | A3.6 |
+| C3.6 Financing | c3-6-financing | ch17 §1–3 | A3.5 |
+| C3.7 Bank & cash (+NFP) | c3-7-bank-cash | ch09 §3.5, ch15, ch18 | A3.3 |
+| C4.1 Before the audit | c4-1-before-the-audit | ch01–04, ch10, CP1–2 | A1.2 |
+| C4.2 Planning, risk & controls | c4-2-planning-risk-control | ch05, 06, 08, 09 §4–5, 11 | A2.1, A2.3 |
+| C4.3 Completion & reporting | c4-3-completion-reporting | ch19, ch20, CP5 | A1.2, A4.1 |
+| C5 Checkpoint 1–5 | c-cp1 … c-cp5 | CP1–CP5 nguyên văn | — |
+
+Trang cũ theo chương (c07a, c07b) đã gộp vào C1/C2; bản gốc chuyển vào `Ebook/_to_delete/c-chapter-pages/`.
+
+**Lỗi nguồn cần tác giả xem (giữ nguyên văn, có ghi chú trên trang):** Ch 12 Activity 4 in lỗ thanh lý $17,000 (đúng là $7,000) · Ch 16 Activity 1 viết "sổ cái cao hơn sao kê" trong khi tổng sổ cái $2,060k thấp hơn $2,308k · CP5 Mercury Issue 3 nói KAM "likely include" going concern song song MURGC, mâu thuẫn với CP5 §2.3/Q3 (MURGC có mục riêng) · CP2 bảng materiality (PBT 5%, revenue 1–2%) khác slide ch05 (revenue 0,5–1%, profit 5–10%).
 
 ## 1. Nguồn đã nạp
 | Nguồn | Quy mô | Đặc điểm |

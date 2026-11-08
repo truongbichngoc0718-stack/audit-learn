@@ -1,0 +1,115 @@
+---
+title: "Bank & cash: the hub"
+description: "Most transactions pass through cash, so every cycle ends here. Get the **bank letter**, then audit the **reconciliation** (outstanding cheques, uncleared lodgements) and watch for **window dressing** at the year end."
+id: c3-7-bank-cash
+nhanh: C
+phan: c3
+bai: "C3.7"
+nhan: Bank, cash & the NFP variant
+loai: acca
+thoi_luong: 15
+nguon: ["ACCA-slide: ch09 tr. 174–177 (bank and cash system)", "ACCA-slide: ch15 tr. 262–274 (bank letter, cut-off, reconciliation, cash counts)", "ACCA-slide: ch18 tr. 304–312 (not-for-profit organisations)", "ACCA-CP4 Montana Co (link)"]
+assertion: [Existence, Completeness, Rights & obligations, Valuation & allocation, Cut-off, Classification, Presentation]
+chuan_muc: ["ISA 505"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, c-cp4]
+sidebar: { order: 7, label: "Bank & cash: the hub" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, FlowDiagram, Solution, SortDrill, CycleLinks, LessonNotes } from '@components';
+
+<Objectives title="Learning outcomes">
+- Describe controls over receipts, banking, custody and payments, and their tests
+- Obtain and use a bank confirmation letter (ISA 505)
+- Audit the year-end bank reconciliation and detect window dressing
+- Adapt risk, controls and evidence to a not-for-profit organisation
+</Objectives>
+
+<Eyebrow>The cycle on one screen</Eyebrow>
+## Five control objectives
+<FlowDiagram client:visible stepLabel="Objective" steps={[
+  { label: 'All receipts recorded', sub: 'Receipts listing', detail: '<b>Control:</b> segregation between those receiving and those recording monies; two people open the post and list receipts; another records the cash book and paying-in slip; another banks.<br/><b>Test of control:</b> observe post opening and recording · inspect paying-in slips for evidence of each person\'s part.' },
+  { label: 'All receipts banked', sub: 'Bank reconciliation', detail: '<b>Control:</b> weekly/monthly bank reconciliation by someone not responsible for banking, reviewed by a supervisor · monthly customer statements.<br/><b>Test of control:</b> reperform the reconciliation · review for evidence of supervisor review · enquire about customer statements; review correspondence for errors.' },
+  { label: 'Cash safeguarded', sub: 'Safe · cheque books', detail: '<b>Control:</b> unbanked receipts in a locked safe; cheque books held by a supervisor in a secure place.<br/><b>Test of control:</b> physically verify where receipts and cheque books are kept.' },
+  { label: 'Payments authorised & recorded', sub: 'Authorised invoice', detail: '<b>Control:</b> invoices authorised and coded by the budget holder before payment (signature) · monthly supplier statement reconciliations; changes authorised.<br/><b>Test of control:</b> inspect invoices for authorisation and coding · review supplier reconciliations.' },
+  { label: 'No double payment', sub: '"PAID" stamp', detail: '<b>Control:</b> paid invoices stamped "paid"; sequentially numbered and flagged paid on the system so it blocks a second payment.<br/><b>Test of control:</b> inspect invoices for the stamp and reperformed calculations · attempt to pay an invoice already paid to see if the system blocks it.' },
+]} footer="Source: Ch 9 §3.5. CP3 Solaris: the AP supervisor signing cheques when the FD is away breaks segregation between processing and authorising payments." />
+
+<Eyebrow>Substantive playbook</Eyebrow>
+## Bank letter + reconciliation, never one without the other
+**Bank confirmation letter (ISA 505):** the auditor chooses which banks (size of balance, volume of activity, reliance on controls, materiality) · the client gives the bank **written authority** (often a standing authority; all parties for joint accounts) · letter on the auditor's paper, sent at least a month before the year end · replies **direct to the auditor**; check every item requested is answered; no negative confirmation · agree the amounts to the client's records and investigate differences.
+
+| Assertion | Procedures (Ch 15 §2.3) |
+|---|---|
+| **Completeness & existence** | Standard confirmations from every bank used in the period · reperform the reconciliation · trace outstanding cheques to the pre-YE cash book and after-date statements; explain items not cleared · compare cash book and bank statements for the last month in detail; explain unmatched items |
+| **Valuation** | Prior month's reconciliation items cleared or carried forward · contra items verified to original entry · **paying-in slips prove uncleared lodgements were banked before the year end** · dishonoured lodgements followed up · balances agreed to the bank letter and statements |
+| **Rights & obligations** | Enquire about restrictions on accounts |
+| **Classification** | Accounts secured on company assets · legal right of set-off of overdrafts against positive balances · disclosures |
+
+**Window dressing (cut-off):** (a) keeping the cash book open to take credit for remittances received after the year end (bank up, receivables down) · (b) recording cheques in the period that are not despatched until after the year end (bank down, payables down). Together they make the current ratio look healthier. Hence: paying-in slips for uncleared lodgements; check that large numbers of outstanding cheques clear within a reasonable time.
+
+**Cash balances:** often individually immaterial, but fraud opportunities where controls are weak, and possibly material in total → cash count at the period end: planning, count, follow-up.
+
+<Eyebrow>Activity · Dress You Like Co bank reconciliation, 30 September 20X6</Eyebrow>
+| | $ |
+|---|---|
+| Balance per bank statement (overdraft) | (758,389) |
+| Add: deposits outstanding · 29 Sep ref 1122: 10,222 · 30 Sep ref 1123: 25,000 | 35,222 |
+| | (723,167) |
+| Less: outstanding cheques 2411 · 2721–2730 | (26,833) |
+| **Balance per bank in the general ledger** | **(750,000)** |
+
+<Solution label="Show the slide answer">
+**Cheque 2411 ($10,250)** has a reference suggesting it was raised much earlier in the year; it is unusual that it has not cleared → enquire. Trace outstanding cheques to the pre-YE cash book and confirm they cleared on after-date statements, so the bank balance is not understated; explain any not cleared.
+
+**Deposits 1122 and 1123:** verify on paying-in slips that they were paid in before the year end; check they cleared quickly after the year end. Any that did not could indicate **window dressing** and overstated cash.
+
+**Other:** agree $758,389 to the statement and the bank letter · recast the reconciliation · review the August reconciliation for items cleared or carried forward · agree $750,000 to the GL and FS.
+</Solution>
+
+**Exam focus (Ch 15):** the bank letter shows the balance per the bank's records, which must be reconciled to the client's records. Candidates lose marks for not suggesting procedures on the **year-end reconciliation**.
+
+<Eyebrow>Retrieval drill · Ch 15</Eyebrow>
+### Which assertion does each procedure address?
+<SortDrill client:visible id="c3-7-bank-cash" scoreKey="assertions" label="Bank assertions" options={['Completeness & existence', 'Valuation', 'Rights & obligations', 'Classification']} items={[
+  { s: 'Trace outstanding cheques to the cash book before the year end and to after-date bank statements.', answer: 'Completeness & existence', why: 'Ch 15 §2.3 lists it under completeness and existence.' },
+  { s: 'Inspect paying-in slips to verify uncleared bankings were paid in before the year end.', answer: 'Valuation', why: 'Ch 15 §2.3 (valuation): guards against window dressing.' },
+  { s: 'Enquire of management whether any bank accounts are subject to restrictions.', answer: 'Rights & obligations', why: 'Ch 15 §2.3.' },
+  { s: 'Consider whether there is a legal right of set-off of overdrafts against positive balances.', answer: 'Classification', why: 'Ch 15 §2.3: presentation of overdrafts.' },
+  { s: 'Compare the cash book and bank statements in detail for the last month of the year.', answer: 'Completeness & existence', why: 'Ch 15 §2.3.' },
+]} />
+
+<Eyebrow>Exam angle</Eyebrow>
+| Requirement | What scores | Trap |
+|---|---|---|
+| Substantive procedures for bank balances | Bank letter **plus** reconciliation work: recast, agree to statement and letter, outstanding cheques and lodgements to after-date statements and paying-in slips, prior month's reconciliation, GL agreement | Stopping at the bank confirmation (Ch 15 exam focus) |
+| Controls over cash (CP3 Solaris) | Segregation between processing and authorising payments; cheque signing kept with an independent senior manager | Recommending "ensure" instead of who does what |
+| NFP income (CP4 Montana Co) | Completeness of donations and event income; proof in total; cut-off of advance ticket sales | Treating NFP like a trading company and ignoring cash-receipt controls |
+
+<Eyebrow>Variant · not-for-profit organisations (Ch 18)</Eyebrow>
+## Same hub, different risks
+NFP entities (e.g. a hospital, a charity) aim to deliver services, not profit; many use **value for money** indicators and must show funds were used cost-effectively. Small NFPs share small-entity weaknesses: little segregation, unqualified staff, volunteers who resent formal procedures. The auditor must consider whether records reflect **all** transactions.
+
+| | Key factors (Ch 18) |
+|---|---|
+| **Inherent risk** | Complex regulation · significance of donations and cash receipts · ownership and timing of voluntary income raised by non-controlled bodies · unpredictable income · restricted funds and governing documents (charities) · trading compatible with charitable status · tax complexity · sensitive statistics (e.g. share of admin costs) |
+| **Control risk** | Time and skills trustees commit · frequency and content of meetings · independence of trustees · division of duties between management and trustees |
+| **Controls over cash donations** | Collecting boxes: numbered, sealed, regular collection, dual control over counting · post: unopened mail secure, dual control over opening, immediate recording, paying-in slips agreed by an independent person · restricted funds: separate records, terms, independent oversight |
+
+Practise an NFP constructed response in [Checkpoint 4 · Montana Co](/c/5/cp4-substantive-procedures/).
+
+<Eyebrow>Links to other cycles</Eyebrow>
+<CycleLinks cycle="cash" />
+
+<IfSkipped lang="en">the reconciliation, the bank letter confirms a balance that no one disputes while cheques written on 30 September and posted in October quietly understate both cash and payables and flatter the current ratio.</IfSkipped>
+
+<KeyPrinciple>**Cash is where every cycle settles:** confirm with the bank, prove the reconciliation, and test the items either side of the year end.</KeyPrinciple>
+
+<QuickCheck lang="en" q="Why should the bank confirmation never be a negative confirmation?" short="A response is needed for every request">
+It is important that a response is sought for all confirmation requests; auditors should not request a response only if the information is incorrect or incomplete (Ch 15 §2.1.4).
+</QuickCheck>
+
+On the map: [Bank & cash](/c/1/c1-master-map/#node-cash). Branch A uses the bank statements (sổ phụ) for unrecorded liabilities in [Bài 3.3](/a/3/a3-3-phai-tra/).
+
+<LessonNotes client:only="react" id="c3-7-bank-cash" lang="en" />

@@ -9,9 +9,9 @@ export interface AnswerGroup { heading?: string; points: string[] }
  * Người học viết câu trả lời (lưu nháp) → mở model answer → tick các ý đã có → điểm = min(số ý, marks).
  * Tình huống (scenario) truyền qua children (HTML tĩnh từ MDX).
  */
-export default function ConstructedResponse({ id, crKey, title, marks, minutes, source, requirement, answer, notes, children }:
+export default function ConstructedResponse({ id, crKey, title, marks, minutes, source, requirement, answer, notes, perPoint = 1, children }:
   { id: string; crKey: string; title: string; marks: number; minutes?: number; source?: string; requirement: string;
-    answer: AnswerGroup[]; notes?: string[]; children?: ReactNode }) {
+    answer: AnswerGroup[]; notes?: string[]; perPoint?: number; children?: ReactNode }) {
   const [text, setText] = useState('');
   const [open, setOpen] = useState(false);
   const [ticks, setTicks] = useState<Record<string, boolean>>({});
@@ -19,7 +19,7 @@ export default function ConstructedResponse({ id, crKey, title, marks, minutes, 
   useEffect(() => { setText(getLesson(id)?.drafts?.[crKey] ?? ''); }, [id, crKey]);
   useEffect(() => { const t = setTimeout(() => { if (text !== (getLesson(id)?.drafts?.[crKey] ?? '')) { setDraft(id, crKey, text); setSaved('Draft saved'); } }, 700); return () => clearTimeout(t); }, [text, id, crKey]);
   const ticked = Object.values(ticks).filter(Boolean).length;
-  const score = Math.min(ticked, marks);
+  const score = Math.min(ticked * perPoint, marks);
   let k = 0;
   return (
     <div className="b-card x-cr" style={{ marginTop: '1rem' }}>
@@ -53,7 +53,7 @@ export default function ConstructedResponse({ id, crKey, title, marks, minutes, 
           ))}
           <div className="x-bar">
             <b>Your mark: {score}/{marks}</b>
-            <span style={{ fontSize: '.8rem', color: 'var(--bisc-muted)' }}>({ticked} of {k} points ticked; maximum {marks})</span>
+            <span style={{ fontSize: '.8rem', color: 'var(--bisc-muted)' }}>({ticked} of {k} points ticked{perPoint !== 1 ? ` × ${perPoint} marks` : ''}; maximum {marks})</span>
             <button type="button" className="b-btn ghost" onClick={() => { setScore(id, crKey, score, marks, title); setSaved('Mark saved to Progress'); }}>Save mark</button>
           </div>
           {notes && notes.length > 0 && (

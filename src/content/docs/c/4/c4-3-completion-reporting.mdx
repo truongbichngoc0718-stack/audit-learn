@@ -1,0 +1,100 @@
+---
+title: "Completion and the auditor's report"
+description: "Part E is short on volume and high on traps. Five completion stages feed **one decision tree**: misstatement or scope limitation → material? → pervasive? Everything else (MURGC, KAM, EOM, OM) leaves the opinion **unmodified**."
+id: c4-3-completion-reporting
+nhanh: C
+phan: c4
+bai: "C4.3"
+nhan: Subsequent events, going concern, opinions
+loai: acca
+thoi_luong: 20
+nguon: ["ACCA-slide: ch19 tr. 312–323 (ISA 560, 570, 580, 450, overall review)", "ACCA-slide: ch20 tr. 323–341 (ISA 700, 701, 705, 706, 720)", "ACCA-CP5 §1–3 (decision tree, report sections, 5 topic areas)"]
+chuan_muc: ["ISA 450", "ISA 560", "ISA 570", "ISA 580", "ISA 700", "ISA 701", "ISA 705", "ISA 706", "ISA 720", "IAS 10"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c-cp5, a1-2-muc-dich-kiem-toan, a4-1-tu-thu-tuc-den-finding]
+sidebar: { order: 3, label: "Completion & reporting" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, SortDrill, OpinionDecider, LessonNotes } from '@components';
+
+<Objectives title="Learning outcomes">
+- Sequence the completion stages and the auditor's duties before and after the report date
+- Classify subsequent events as adjusting or non-adjusting and choose the response
+- Evaluate going concern and written representations
+- Choose the opinion and the report sections affected, in three steps
+</Objectives>
+
+<Eyebrow>The completion roadmap (CP5 §1.2)</Eyebrow>
+## Five stages, each feeds the opinion
+| Stage | What happens | ISA |
+|---|---|---|
+| ① Fieldwork complete | Misstatements identified, accumulated, evaluated | ISA 450 |
+| ② Final review | Subsequent events · going concern · final analytical procedures · written representations · other information | ISA 560 · 570 · 520 · 580 · 720 |
+| ③ Form the opinion | Decision tree on uncorrected misstatements, scope limitations, GC | ISA 700 · 705 · 706 · 701 |
+| ④ Issue the report | Sign and date: end of the **active** duty for subsequent events | ISA 700 |
+| ⑤ Post-issue | **Passive** duty: act only if new facts come to attention | ISA 560 |
+
+**Uncorrected misstatements (ISA 450):** keep a schedule; consider them individually and in aggregate; ask management to correct; communicate them (material ones individually) to TCWG with prior-period effects; obtain a written representation on them. **Overall review:** acceptable, consistent policies · FS compatible with audit findings · adequate disclosure and classification · statutory compliance · substance over form.
+
+<Eyebrow>Subsequent events · ISA 560 + IAS 10</Eyebrow>
+## Did the condition exist at the year end?
+**Adjusting** events give evidence of conditions at the year end (court case settled, sale of inventory showing NRV, fraud or error). **Non-adjusting** events reflect conditions that arose after it (dividends declared, fire destroying plant, a major restructuring announced): disclose if material.
+
+<SortDrill client:visible id="c4-3-completion-reporting" scoreKey="se" label="Adjusting or not" options={['Adjusting', 'Non-adjusting']} items={[
+  { s: 'Customer files for insolvency after the year end; the receivable was outstanding at the year end.', answer: 'Adjusting', why: 'Financial difficulty existed at the year end: the allowance is insufficient (CP5 §3.1).' },
+  { s: 'A defective batch made before the year end; the defect is discovered after it.', answer: 'Adjusting', why: 'Impaired NRV existed at the year end (CP5 Panda Co event 1: $750k write-down).' },
+  { s: 'A legal case is settled after the year end for an amount different from the provision.', answer: 'Adjusting', why: 'Evidence of the correct year-end liability (Ch 19 Activity 1: $500k vs $100k).' },
+  { s: 'New shares of $5m are issued six weeks after the year end.', answer: 'Non-adjusting', why: 'A new condition after the year end; disclose if material (CP5 practice Q7).' },
+  { s: 'An uninsured explosion destroys a warehouse three weeks after the year end.', answer: 'Non-adjusting', why: 'Carrying amounts were right at the year end; disclose (CP5 Panda Co event 2: 16.4% of PBT).' },
+  { s: 'Directors declare a dividend after the year end.', answer: 'Non-adjusting', why: 'The obligation arises when declared (CP5 mock Q5).' },
+]} />
+
+| Window | Duty | Action |
+|---|---|---|
+| Year end → report signed | **Active** | Procedures to find events: management's procedures, board minutes after the year end, latest interim FS, budgets and cash flow forecasts, enquiry of legal counsel and management, written representation |
+| Report signed → FS issued | **Passive** | If facts emerge that would have changed the report: discuss with management; if FS amended, extend procedures and issue a new report dated no earlier than the amended FS |
+| After FS issued | **Passive + prevent reliance** | Management should reissue; new report with an **Emphasis of Matter** on the reissue. If management refuses: take steps to prevent reliance (legal advice, regulator, statement at the AGM) |
+
+<Eyebrow>Going concern · ISA 570 (Revised)</Eyebrow>
+## Two judgements: basis appropriate? material uncertainty?
+The FS assume the entity continues for the foreseeable future unless management intends or has no realistic alternative but to liquidate or cease trading; otherwise a **break-up basis**. Management's assessment must cover **at least 12 months from the date of the FS** (not from the report date).
+
+| Indicators (Ch 19 · CP5) | Not indicators (CP5 traps) |
+|---|---|
+| **Financial:** net liabilities · borrowings near maturity without renewal · withdrawal of creditor support · negative operating cash flows · adverse ratios · substantial losses · dividend arrears · inability to pay creditors or meet loan terms · suppliers move to cash on delivery · no new finance | Long-term loan with no breach · a fall in inventory days (cash cycle improves) |
+| **Operating:** intention to liquidate · loss of key management, market, customer, licence or supplier · labour difficulties · supply shortages · strong new competitor | Departure of a single non-finance director · funded reorganisation |
+| **Other:** capital or statutory non-compliance · litigation unlikely to be satisfied · adverse law changes · uninsured catastrophes | Routine legal proceedings within insurance cover |
+
+**Procedures:** analyse cash flow, profit and other forecasts and their assumptions · latest interim FS · loan agreement terms and breaches · minutes for financing difficulties · lawyers on litigation · confirm support arrangements and the supporter's ability to pay · plans for unfilled orders · events after the period end · regulatory reports · written representations on plans and their feasibility.
+
+**Written representations (ISA 580):** always for management's responsibilities, complete transactions and subsequent events; required by other ISAs; supplementary evidence only, never a substitute. Dated as close as possible to, but not after, the report date. If refused: discuss, re-evaluate management's integrity, consider the report (pervasive → disclaimer, otherwise qualified).
+
+<Eyebrow>Interactive · the decision tree (CP5 §2)</Eyebrow>
+## Three questions, five outcomes
+<OpinionDecider client:visible />
+
+**Basic elements of the auditor's report (ISA 700):** title · addressee · opinion · basis for opinion · going concern (if relevant) · emphasis of matter (if relevant) · key audit matters (listed entities) · other matter (if relevant) · responsibilities for the FS (management and TCWG) · auditor's responsibilities · other legal and regulatory requirements (if relevant) · engagement partner · signature · address · date.
+
+| Section | When | Opinion |
+|---|---|---|
+| Basis for Qualified / Adverse / Disclaimer of Opinion | Any modified opinion; **immediately after the Opinion section**, quantifies the matter | Modified |
+| Material Uncertainty Related to Going Concern (MURGC) | GC appropriate, material uncertainty, **adequately disclosed** | Unmodified |
+| Key Audit Matters (ISA 701) | **Listed** entities only; matters of most significance, with how they were addressed | Unmodified |
+| Emphasis of Matter (ISA 706) | A matter already disclosed that the auditor highlights (e.g. reissue of FS) | Unmodified |
+| Other Matter (ISA 706) | A matter not in the FS but relevant to users | Unmodified |
+| Other Information (ISA 720) | Material inconsistency in the annual report the directors refuse to fix: described here | Unmodified (the FS are right) |
+
+**3-step answer for "discuss the effect on the auditor's report" (5 marks):** ① identify and **quantify** (% of PBT, revenue, assets; material or not) → ② apply the tree (misstatement or inability; pervasive or not, using ISA 705's words) → ③ name the sections that change and where the Basis paragraph goes.
+
+<IfSkipped lang="en">the tree, "material" turns into "adverse" without a pervasiveness test, and a going-concern note that is properly disclosed gets a qualification it never deserved: two of the most common lost marks.</IfSkipped>
+
+<KeyPrinciple>**Quantify, classify, then place:** the number decides material, ISA 705's three tests decide pervasive, and only misstatements or scope limitations ever change the opinion.</KeyPrinciple>
+
+<QuickCheck lang="en" q="$4m misstatement in a single account; PBT $20m; total assets $40m. Material? Pervasive?" short="Material, not pervasive">
+20% of PBT and 10% of total assets = material. Confined to a single account, not a substantial proportion of the FS = not pervasive → qualified (CP5 mock Q10).
+</QuickCheck>
+
+Practise in [Checkpoint 5](/c/5/cp5-review-reporting/). **Link to Branch A:** [Bài 1.2 VSA 700/705](/a/1/a1-2-muc-dich-kiem-toan/) · [Bài 4.1 Từ thủ tục đến finding](/a/4/a4-1-tu-thu-tuc-den-finding/).
+
+<LessonNotes client:only="react" id="c4-3-completion-reporting" lang="en" />

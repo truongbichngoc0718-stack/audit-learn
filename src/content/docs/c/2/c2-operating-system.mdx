@@ -1,0 +1,229 @@
+---
+title: The audit operating system
+description: "Six models run every cycle: **risk chain, assertions, evidence, direction, roll-forward, proof in total**. Learn them once; each cycle playbook just plugs in its own documents."
+id: c2-operating-system
+nhanh: C
+phan: c2
+bai: "C2"
+nhan: Six models for every cycle
+loai: acca
+thoi_luong: 20
+nguon: ["ACCA-slide: ch05 tr. 74–80, 98–103 (ISA 200/315/320, risk → response)", "ACCA-slide: ch07 tr. 119–134 (evidence, assertions, AEIOU, directional testing, HMA Co)", "ACCA-slide: ch12 tr. 206, ch13 tr. 226, ch16 tr. 275 (account schedule)", "ACCA-slide: ch12 Activity 2, 6 · ch16 §2.1", "ACCA-CP2 §2 (risk writing technique) · ACCA-CP4 §1 (3W)"]
+assertion: [Occurrence, Completeness, Cut-off, Classification, Accuracy, Presentation, Existence, Rights & obligations, Valuation & allocation]
+chuan_muc: ["ISA 200", "ISA 315", "ISA 320", "ISA 330", "ISA 500", "ISA 520"]
+ngay_cap_nhat: 2026-11-08
+trang_thai: gop
+style_version: "C-1.1-draft"
+lien_ket: [c1-master-map, c-cp2, c-cp4, a1-3-vouching-tracing, a1-4-do-tin-cay-bang-chung, a2-1-om-pm-ctt]
+sidebar: { order: 2, label: "C2 · Audit operating system" }
+---
+import { Objectives, Eyebrow, IfSkipped, KeyPrinciple, QuickCheck, Mindmap, ExamMcq, DirectionDrill, SortDrill, LessonNotes } from '@components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Objectives title="Learning outcomes">
+- Write an audit risk the way the marker wants it: scenario factor → FS area + assertion → response
+- Explain sufficient appropriate evidence and the two families of assertions (ISA 500, ISA 315)
+- Generate procedures with AEIOU and the 3W formula; separate tests of control from substantive procedures
+- Apply directional testing, the account roll-forward and proof in total to any balance
+</Objectives>
+
+<Eyebrow>The engine</Eyebrow>
+## One loop, six models
+Every exam requirement in Parts B–D runs the same loop: **risk → assertion → evidence → procedure → conclusion** (CP5 calls it the Checkpoint 4 risk-driven workflow). The six tabs below are the parts of that loop. Learn them here; the [cycle playbooks](/c/1/c1-master-map/) only change the documents.
+
+| # | Model | Question it answers | Exam use |
+|---|---|---|---|
+| 1 | Risk chain | What could go wrong, and where? | "Describe audit risks and the auditor's response" (2 marks each) |
+| 2 | Assertions | Which claim by management is at risk? | Every procedure's WHY |
+| 3 | Evidence & AEIOU | What evidence, from which source, how reliable? | Generating procedures; MCQ on reliability |
+| 4 | Direction | Start from the records or from outside? | Existence vs completeness |
+| 5 | Roll-forward | Does opening + movements = closing? | NCA, inventory, payables, provisions, loans |
+| 6 | Proof in total | What should the number be? | Depreciation, interest, payroll, warranty |
+
+<Tabs>
+<TabItem label="1 · Risk chain">
+
+### Audit risk = inherent risk × control risk × detection risk
+- **Inherent risk:** the susceptibility of an assertion to a misstatement that could be material, before consideration of any related internal controls. Affected by the industry, regulation, complex calculations and standards, and estimates (ISA 200).
+- **Control risk:** the risk that a material misstatement will not be prevented or detected and corrected on a timely basis by the entity's internal control.
+- **Detection risk:** the risk that the auditor's procedures will not detect a material misstatement. Split into **sampling risk** and **non-sampling risk** (lack of experience, time pressure, financial constraints, poor planning, new client, lack of industry knowledge).
+
+Detection risk is the only component the auditor controls: if IR and CR are both high, DR must be set very low → extensive substantive testing (CP2). Worked example (CP2 practice Q3): DR = AR / (IR × CR) = 4% / (80% × 50%) = **10%**.
+
+<SortDrill client:visible id="c2-operating-system" scoreKey="risk-components" label="Risk components" options={['Inherent risk', 'Control risk', 'Detection risk']} items={[
+  { s: 'The company operates in a rapidly changing, highly regulated tech industry.', answer: 'Inherent risk', why: 'Susceptibility before controls: a complex, regulated industry raises the risk of error regardless of controls (CP2 practice Q7).' },
+  { s: 'Very high turnover of finance staff and a severe lack of segregation of duties.', answer: 'Control risk', why: 'Weaknesses in internal control mean misstatements will not be prevented or detected (CP2 practice Q10).' },
+  { s: 'The audit was won this year and the team lacks industry knowledge.', answer: 'Detection risk', why: 'New client and lack of industry knowledge are non-sampling risk factors (Ch 5 §2.4).' },
+  { s: 'Balances depend on accounting estimates such as warranty provisions.', answer: 'Inherent risk', why: 'Amounts derived from estimates rather than routine, factual data raise inherent risk (Ch 5 §2.2).' },
+  { s: 'Management regularly overrides the three-quote tendering requirement.', answer: 'Control risk', why: 'Systematic override is a control deficiency to report to TCWG (CP3 practice Q9).' },
+]} />
+
+### How to write one risk for 2 marks (CP2)
+| Step | What to write | Mark |
+|---|---|---|
+| 1 · Identify | The scenario factor that gives rise to the risk (FS level, or assertion level: completeness, existence, occurrence…) | ½ |
+| 2 · Explain | The implication: which FS area, which assertion, over or understated. *E.g. Overstate inventory · Valuation* | ½ |
+| 3 · Respond | The auditor's approach as a procedure: verb + noun + reason. Use specific methods, general procedures (analytical review, casting, reconcile GL to sub-ledger) or more experienced staff / larger samples | 1 |
+
+**Notes from CP2:** answer from the **audit** perspective, not the business perspective · two facts with the same risk score once · use "misstate" only when the balance could go either way, otherwise over/understate · the response is written like a procedure.
+
+| Scenario factor (CP2) | Audit risk identified |
+|---|---|
+| Company is loss-making / directors have bonus scheme based on profit | Management may overstate revenue or understate expenses to hit targets |
+| New accounting system implemented during year | Risk of data migration errors; transactions may be processed incorrectly or lost |
+| Significant related party transactions | May not be at arm's length; may not be properly disclosed per IAS 24 |
+| Going concern doubt / bank loan covenant close to breach | Inappropriate going concern basis used; disclosures may be inadequate (ISA 570) |
+| Inventory held at multiple locations / third parties | Existence and completeness of inventory unverifiable; overstatement risk |
+| Director estimates involved (e.g. warranty provision) | Subjectivity in management estimates may lead to material misstatement of provisions |
+
+Materiality sets how far down the chain you go: 0.5–1% of revenue, 5–10% of profit, 1–2% of total assets (Ch 5 §3.2), with **performance materiality** set lower to keep the aggregate of uncorrected and undetected misstatements below materiality. Branch A works the same thresholds on Biscore: [Bài 2.1 OM · PM · CTT](/a/2/a2-1-om-pm-ctt/).
+
+</TabItem>
+<TabItem label="2 · Assertions">
+
+### Evidence must answer the right claim
+> **Audit evidence** is all the information used by the auditor in arriving at the conclusions on which the auditor's opinion is based (ISA 500: para. 5(c)).
+
+Evidence must be **sufficient** (quantity: risk assessment, controls, materiality, previous experience, results of procedures, source and reliability) and **appropriate** (relevant to the assertion, reliable for its source). Assertions are representations by management, explicit or otherwise, that the auditor uses to consider the different types of potential misstatement. Click each family.
+
+<Mindmap client:visible root="Financial statement assertions" sub="Evidence must be relevant to the assertion being tested" branches={[
+  { t: 'Classes of transactions and events', sub: 'and related disclosures · for the period', items: [
+    { t: 'Occurrence', note: 'Transactions and events that have been recorded or disclosed have occurred and pertain to the entity.' },
+    { t: 'Completeness', note: 'All transactions and events that should have been recorded have been recorded and all related disclosures that should have been included in the financial statements have been included.' },
+    { t: 'Cut-off', note: 'Transactions and events have been recorded in the correct accounting period.' },
+    { t: 'Classification', note: 'Transactions and events have been recorded in the proper accounts.' },
+    { t: 'Accuracy', note: 'Amounts and other data relating to recorded transactions and events have been recorded appropriately, and related disclosures have been appropriately measured and described.' },
+    { t: 'Presentation', note: 'Transactions and events are appropriately aggregated or disaggregated and are clearly described, and related disclosures are relevant and understandable in the context of the requirements of the applicable financial reporting framework.' },
+  ] },
+  { t: 'Account balances', sub: 'and related disclosures · at the period end', items: [
+    { t: 'Completeness', note: 'All assets, liabilities and equity interests that should have been recorded have been recorded and all related disclosures that should have been included in the financial statements have been included.' },
+    { t: 'Obligations and rights', note: 'The entity holds or controls the rights to assets, and liabilities are the obligations of the entity.' },
+    { t: 'Valuation, accuracy and allocation', note: 'Assets, liabilities, and equity interests are included in the financial statements at appropriate amounts and any resulting valuation or allocation adjustments are appropriately recorded, and related disclosures have been appropriately measured and described.' },
+    { t: 'Existence', note: 'Assets, liabilities and equity interests exist.' },
+    { t: 'Classification', note: 'Assets, liabilities and equity interests have been recorded in the proper account.' },
+    { t: 'Presentation', note: 'Assets, liabilities and equity instruments are appropriately aggregated or disaggregated and are clearly described, and related disclosures are relevant and understandable in the context of the requirements of the applicable financial reporting framework.' },
+  ] },
+]} />
+
+**Management's expert** (e.g. a chartered surveyor): to rely on the work, evaluate the expert's **competence, capabilities and objectivity**, understand the work done, and evaluate its appropriateness as audit evidence (ISA 500).
+
+| Assertion | Key procedures (CP4) | Common trap (CP4) |
+|---|---|---|
+| Existence / Occurrence | Physical inspection (book → floor); third-party confirmation; post-year-end cash receipts | Book→floor = existence. Floor→book = completeness. Never mix them. |
+| Completeness | Trace floor→book; sequence checks; post-year-end payment testing for liabilities | Completeness of liabilities is often MORE at risk than existence. |
+| Valuation / Accuracy | Recalculate; agree to invoices/contracts; aged listings; NRV; allowance review | Recalculate = auditor does the maths. Agree = compare to source. Both needed. |
+| Cut-off | GDNs around year end to invoice dates; GRNs to accrual dates; pre/post year-end journals | Revenue cut-off: test from GDN date, NOT invoice date. |
+| Rights & obligations | Title documents; legal confirmations; loan agreements | Often combined with existence, but you can exist without having the right. |
+| Presentation & disclosure | Disclosure checklist; classification in FS | Always include a disclosure procedure. |
+
+</TabItem>
+<TabItem label="3 · Evidence & AEIOU">
+
+### Two kinds of evidence
+<div class="b-grid">
+  <div class="b-card"><div class="b-kicker">Tests of control</div>Evaluate the <b>operating effectiveness of controls</b>. The control must be properly designed, exist, and have operated throughout the period (Ch 9). Conclusion depends on the <b>number of times</b> the control failed.</div>
+  <div class="b-card"><div class="b-kicker">Substantive procedures</div>Detect <b>material misstatement at the assertion level</b>: tests of details and substantive analytical procedures. Conclusion depends on the <b>monetary value</b> of errors.</div>
+</div>
+
+### Generating procedures: AEIOU
+| | Audit procedure | Description | Type |
+|---|---|---|---|
+| **A** | Analytical procedures | Evaluation of financial information by comparison to financial and non-financial data, investigating significant differences and inconsistent relationships | Substantive |
+| **E** | Enquiry (and confirmation) | Seeking information of knowledgeable persons inside or outside the entity; obtaining representations directly from a third party | Enquiry: both · Confirmation: substantive |
+| **I** | Inspection | Examining records, documents and tangible assets | Both |
+| **O** | Observation | Looking at a process or procedure being performed by others | Tests of controls |
+| **U** | Recalculation (and re-performance) | Verifying arithmetical accuracy; the auditor's independent execution of procedures or controls | Recalculation: substantive · Re-performance: tests of controls |
+
+### Which source is stronger (ISA 500)
+External better than internal · auditor-generated better than client-generated · internal more reliable when controls are effective · documentary better than oral · originals better than copies. *CP1 practice Q9: a bank confirmation received directly by the auditor is the most reliable.*
+
+### The 3W formula (CP4)
+Every substantive procedure = **VERB** (inspect, recalculate, reperform, reconcile, agree, trace, enquire, obtain, cast, confirm, vouch) + **NOUN** (name the document: GDN, GRN, supplier statement, aged receivables listing, board minutes…) + **WHY** (the assertion or risk). "Check", "look at", "ensure" score zero. Build procedures in [Checkpoint 4](/c/5/cp4-substantive-procedures/).
+
+<SortDrill client:visible id="c2-operating-system" scoreKey="toc-vs-sub" label="ToC or substantive" options={['Test of control', 'Substantive procedure']} items={[
+  { s: 'For a sample of supplier statement reconciliations, inspect for evidence that differences were investigated and the review was signed off.', answer: 'Test of control', why: 'It tests whether the reconciliation control operated (Ch 7 completeness of payables).' },
+  { s: 'Inspect post year-end cash book payments to suppliers to ensure the year-end liability is accurately recorded.', answer: 'Substantive procedure', why: 'It tests the balance itself for misstatement (Ch 7).' },
+  { s: 'Attempt to process an order that takes a customer over their credit limit to see if it is rejected.', answer: 'Test of control', why: 'Re-performance / test data on a system control (Ch 9 sales system).' },
+  { s: 'Recalculate depreciation for a sample of assets and agree to the register.', answer: 'Substantive procedure', why: 'Recalculation of an amount tests valuation (CP3 mock Q8 option C).' },
+  { s: 'Observe the receipt of goods into the warehouse to ensure a GRN is raised.', answer: 'Test of control', why: 'Observation is a test of control (Ch 9 purchases system).' },
+]} />
+
+</TabItem>
+<TabItem label="4 · Direction">
+
+### Errors from the records, omissions from outside
+<div class="b-grid">
+  <div class="b-card" style="border-top:4px solid var(--bisc-rose)"><div class="b-kicker">Tests designed to discover errors</div>Start with the <b>accounting records</b> and go to supporting documents. Detects overstatement, and understatement through causes other than omission.<br/><small><b>Test debit items</b> (expenditure or assets) <b>for overstatement</b>.</small></div>
+  <div class="b-card" style="border-top:4px solid var(--bisc-emerald)"><div class="b-kicker">Tests designed to discover omissions</div>Start <b>outside the accounting records</b> and match back. Omissions are never revealed by starting with the account itself.<br/><small><b>Test credit items</b> (income or liabilities) <b>for understatement</b>.</small></div>
+</div>
+
+Directional testing derives from **double entry**: a misstated debit means a misstated credit, or an opposite misstatement of another debit. That is why the [Master Map](/c/1/c1-master-map/) works. Choose the direction:
+
+<DirectionDrill client:visible lang="en" items={[
+  { s: 'Select a sample of non-current assets from the asset register and physically locate them on the premises.', answer: 'vouching', assertion: 'Existence', why: 'Book → floor tests that recorded assets exist (CP4 practice Q3).' },
+  { s: 'Select items from the physical inventory count and trace them to the inventory listing.', answer: 'tracing', assertion: 'Completeness', why: 'Floor → book confirms all existing items are recorded (CP4 mock Q1).' },
+  { s: 'Select goods despatch notes and agree that each sale has been recorded in the revenue account at full value.', answer: 'tracing', assertion: 'Completeness · Accuracy', why: 'Credit items are tested for understatement, starting outside the ledger (Ch 7).' },
+  { s: 'Select debit entries for additions in the nominal ledger and confirm value, existence and ownership.', answer: 'vouching', assertion: 'Existence · Rights · Valuation', why: 'Debit items are tested for overstatement, starting from the ledger (Ch 7).' },
+  { s: 'Review post-year-end payments and agree them back to the year-end payables listing.', answer: 'tracing', assertion: 'Completeness', why: 'Obligations not accrued only show up from outside the ledger (CP4 practice Q4).' },
+]} />
+
+In ACCA wording the verb is often **trace** in both directions; what scores is the **starting point**. Branch A names the two directions *vouching* and *tracing*: [Bài 1.3](/a/1/a1-3-vouching-tracing/).
+
+</TabItem>
+<TabItem label="5 · Roll-forward">
+
+### Opening + additions − reductions = closing
+The slides open the PPE, inventory and payables chapters with the same **account schedule**. Learn the frame once and you have an audit plan for any balance-sheet account.
+
+| Account | Opening | + Additions | − Reductions | Closing evidence |
+|---|---|---|---|---|
+| Non-current assets (Ch 12) | Agreed to signed FS / prior file | Purchase · self-construction completed · revaluation · reclassification | Depreciation · impairment · disposal · reclassification | FA register · physical count |
+| Inventory (Ch 13) | Prior year | Purchase · reclassification | Cost of goods sold · impairment · reclassification | Inventory listing · physical count |
+| Payables (Ch 16) | Prior year | Purchase · forex revaluation · reclassification | Payment · goods returned · debit notes · reclassification | Supplier listing · supplier statements · reconciliation |
+
+**Each line maps to an assertion.** Opening = accuracy of brought-forward figures (cumulative balances carry errors forward, Ch 12 Activity 2). Additions = existence/occurrence and rights (vouch) plus completeness (search outside). Reductions = valuation (depreciation, impairment, NRV) and completeness of disposals. Closing = existence and completeness against the count, the register or a third party.
+
+> **Ch 12 Activity 2 · Opening balances.** The opening balances should be agreed to the signed financial statements and any breakdown provided by the client to ensure they have been carried forward accurately from the previous year. Normally also agree to the previous year's audit file, but in a first-year audit this is not possible.
+
+The same frame audits provisions (opening, movements, closing: Ch 17 §2.2) and loans (prior-year working papers, repayments in the cash book, new loans in minutes: Ch 17 §1).
+
+</TabItem>
+<TabItem label="6 · Proof in total">
+
+### Build an expectation, then compare
+ISA 520 analytical procedures as substantive evidence: **variance analysis** (vs prior period or budget), **ratio analysis**, **proof in total** (interrelationships between financial and non-financial data to estimate an expected value). Factors: suitability for the assertion · reliability of the data · precision of the expectation · acceptable difference.
+
+| Balance | Expectation (slides) |
+|---|---|
+| Depreciation | (Opening cost + closing cost) / 2 × depreciation rate, per category (Ch 12 Activity 6) |
+| Payroll | Estimated average wage (last year + expected increases) × average number of employees (Ch 16 §2.1) |
+| Finance costs | Loan balance × rate × months, adjusted for repayments (Ch 7 Activity 1) |
+| Warranty provision | Provision as % of revenue vs prior year (Ch 17 Activity 2) |
+| Rent | Rental agreement × months for each floor occupied (Ch 7 Activity 2) |
+
+<ExamMcq client:visible id="c2-operating-system" scoreKey="hma" label="HMA Co activities (Ch 7)" mode="practice" questions={[
+  { source: 'Ch 7 Activity 1 · Analytical procedures', q: 'HMA took a loan on 1 January 20X6: opening liability $400,000, fixed interest of 2% per month paid at the end of each month, capital of $50,000 repaid on 1 April 20X6. Finance charge in the statement of profit or loss: $81,000 (year ended 30 September 20X6). Perform a proof in total. What is the expected finance charge and the resultant impact on profit?',
+    options: ['Finance charge should be $96,000, profit is overstated', 'Finance charge should be $72,000, profit is understated', 'Finance charge should be $67,000, profit is understated', 'Finance charge should be $66,000, profit is understated'], answer: 3,
+    explain: 'Worked answer (the slide answer is not in the extracted text): 1.1.X6 – 31.3.X6: ($400,000 × 2%) = $8,000 × 3 months = $24,000. 1.4.X6 – 30.9.X6: ($400,000 − $50,000) × 2% = $7,000 × 6 months = $42,000. Total $66,000.' },
+  { source: 'Ch 7 Activity 2 · Analytical procedures', q: 'In relation to the rent expense for the office premises, which of the following audit procedures would provide the auditor with the MOST reliable audit evidence regarding the rent expense?',
+    options: ['Calculate the rent expense variance this year compared to last year and discuss any significant differences with management.', 'Obtain a copy of the latest rental agreement and recalculate the expected rent expense for the year.', 'Agree the rent expense to copies of invoices provided by management.', "Determine the general level of rent increases during the year for offices near to HMA's location and recalculate the expected rent expense. Discuss any significant differences with management."], answer: 1,
+    explain: 'The latest rental agreement is documented evidence from a third party and should stipulate the rental charge for both floors which are now occupied by HMA.' },
+  { source: 'Ch 7 Activity 3 · Analytical procedures', q: 'Which of the following audit procedures provide evidence over the CUT-OFF assertion for revenue?',
+    options: ['Obtain a breakdown of revenue for the period and vouch a sample of revenue values to sales invoices.', 'Calculate the gross profit margin for the years ended 30 September and 20X5 and investigate any significant differences in the ratio with management.', 'Review credit notes issued post year end to determine the levels of returns and whether any adjustment is required in the financial statements.', 'Review cash book receipts during the post year end period to determine whether any sales need to be removed due to irrecoverable debts.'], answer: 1,
+    explain: "Generally speaking, an entity's gross profit margin tends to remain relatively stable, so any unexpected change should be investigated as it could indicate material misstatement. For example, an unexpected increase in gross profit margin could indicate a cut-off error where sales after the year end have been included in the year-end figures." },
+]} />
+
+**When not to use analytics (CP4):** one-off fraudulent transactions are embedded in totals, so use tests of detail for specific fraud risks; an analytical procedure is only as good as the precision of its expectation.
+
+</TabItem>
+</Tabs>
+
+<IfSkipped lang="en">the operating system, each cycle becomes a new list to memorise, and under exam pressure you write procedures that test the wrong assertion in the wrong direction.</IfSkipped>
+
+<KeyPrinciple>**Assertion first, direction second, procedure last:** the risk tells you the assertion, the assertion tells you where to start, and the 3W formula turns it into marks.</KeyPrinciple>
+
+<QuickCheck lang="en" q="An assistant reviews the payables ledger, selects 25 recorded balances and agrees each to supplier invoices. Will this find unrecorded liabilities?" short="No">
+Starting from the ledger can only test what is recorded (existence, accuracy). Omissions are found by starting outside the records: post-year-end payments matched back to the year-end payables listing (completeness).
+</QuickCheck>
+
+<LessonNotes client:only="react" id="c2-operating-system" lang="en" />

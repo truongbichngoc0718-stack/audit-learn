@@ -55,7 +55,7 @@ export default function ExamMcq({ id, scoreKey, label, questions, mode = 'practi
         <div key={i} className="b-card x-q">
           {qq.source && <div className="src">{qq.source}</div>}
           <div className="stem">Q{i + 1}. {qq.q}</div>
-          {qq.items && <ol className="items">{qq.items.map((it, k) => <li key={k} value={k + 1}>{it}</li>)}</ol>}
+          {qq.items && (qq.items[0]?.startsWith('(') ? <ul className="items" style={{ listStyle: 'none', paddingLeft: '.4rem' }}>{qq.items.map((it, k) => <li key={k}>{it}</li>)}</ul> : <ol className="items">{qq.items.map((it, k) => <li key={k} value={k + 1}>{it}</li>)}</ol>)}
           <div className="x-opts">
             {qq.options.map((o, j) => {
               const rv = reveal(i); const sel = picked[i] === j;
