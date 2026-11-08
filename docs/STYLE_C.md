@@ -1,6 +1,6 @@
 ---
-style_version: "C-1.1-draft"
-trạng_thái: NHÁP · chờ duyệt (thay khuôn "một trang = một chương" của C-1.0-draft bằng cấu trúc Elite method, theo yêu cầu 08/11/2026)
+style_version: "C-1.1"
+trạng_thái: ĐÃ DUYỆT 08/11/2026 · khóa C-1.1 (cấu trúc Elite method thay khuôn "một trang = một chương" của C-1.0-draft)
 căn_cứ: slide ACCA AA (source/library/acca-aa/slide) + 5 Skills Checkpoint; quyết định 05/11/2026: nhánh C riêng, toàn bộ tiếng Anh, giữ nguyên văn câu hỏi checkpoint; yêu cầu 08/11/2026: không build theo từng bài, liên kết mọi phần hành thành một bản đồ
 ---
 # STYLE_C: chuẩn nhánh C · ACCA AA
@@ -47,4 +47,4 @@ Exam structure → Knowledge revision → Exam techniques → Practice MCQ → C
 | 4 | Tương tác | ≥ 1 tương tác có lời dẫn; ≥ 1 retrieval drill (trừ C0) |
 | 5 | ⚠️ + 🔑 + Quick check | Đủ (trừ C0 và checkpoint) |
 | 6 | Ngôn ngữ | Tiếng Anh UK, thuật ngữ ISA đúng |
-| 7 | Frontmatter | Đủ trường; `phan` ∈ c0–c5; `style_version` = "C-1.1-draft" đến khi duyệt |
+| 7 | Frontmatter | Đủ trường; `phan` ∈ c0–c5; `style_version` = "C-1.1" |

@@ -1,5 +1,5 @@
 # ACCA_AA_MAP: đối chiếu slide ACCA AA + 5 Skills Checkpoint với site
-Trạng thái: **v2 · 08/11/2026 · chờ duyệt.** Mục 3 (bảng theo 20 chương) được thay bằng mục 0 dưới đây theo yêu cầu "không build theo từng bài". Giữ nguyên: nhánh C riêng + link chéo · toàn bộ tiếng Anh · nguyên văn câu hỏi checkpoint. Nguồn: `source/library/acca-aa/` (index.md)
+Trạng thái: **v2 · ĐÃ DUYỆT 08/11/2026.** Mục 3 (bảng theo 20 chương) được thay bằng mục 0 dưới đây theo yêu cầu "không build theo từng bài". Giữ nguyên: nhánh C riêng + link chéo · toàn bộ tiếng Anh · nguyên văn câu hỏi checkpoint. Nguồn: `source/library/acca-aa/` (index.md)
 
 ## 0. Cấu trúc v2 · Elite method (đã build)
 | Trang | id | Gộp từ | Link nhánh A |

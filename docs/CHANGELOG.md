@@ -65,7 +65,7 @@
 - [c-cp4] Skills Checkpoint 4: 10 MCQ practice, Montana Co, Gooseberry Co (b–d), mock test 10 MCQ có đồng hồ + Rigel Co, nguyên văn (gốc)
 - Sửa theo review độc lập: bỏ nhãn "60 minutes", examiner's report đặt sau cả 3 phần Gooseberry, khôi phục nguyên văn định nghĩa assertion và AEIOU, tách Ch 7 cho đúng thời lượng, ghi chú cách ACCA dùng chữ "trace".
 
-## 2026-11-08 · Nhánh C · Elite method: bản đồ liên kết toàn bộ phần hành (chờ duyệt)
+## 2026-11-08 · Nhánh C · Elite method: bản đồ liên kết toàn bộ phần hành
 - Tái cấu trúc nhánh C theo yêu cầu "không build theo từng bài": C0 Start here · C1 Audit Master Map · C2 Audit operating system · C3 bảy cycle playbook · C4 ba trang khung engagement · C5 năm Checkpoint. Phủ đủ 20 chương slide + CP1–CP5 (`docs/ACCA_AA_MAP.md` §0).
 - [c1-master-map] Bản đồ tương tác 18 khoản mục, 27 liên kết bút toán kép ("one test, two answers"), chế độ Ripple (9 sai sót từ slide/checkpoint) và Lens (cut-off, ước tính, gian lận, bằng chứng bên thứ ba, sự kiện sau, trọng yếu theo bản chất); mỗi khoản mục có TK VAS/Biscore và link bài nhánh A (gộp + mở rộng giao diện)
 - [c2-operating-system] 6 mô hình: risk chain, assertions, evidence/AEIOU/3W, direction, roll-forward, proof in total; gộp nội dung trang c07a, c07b (gộp)
@@ -75,3 +75,6 @@
 - Thành phần mới: AuditMasterMap (full screen, deep link `#node-…`), CycleLinks, SortDrill, OpinionDecider; ConstructedResponse thêm `perPoint`. STYLE_C lên C-1.1-draft. Trang chủ và A3 tổng quan thêm link sang bản đồ.
 - Ghi chú lỗi nguồn: xem `docs/ACCA_AA_MAP.md` §0.
 - Sửa theo review độc lập: QuickCheck GRN (C1); bỏ câu "fraud risk presumed" không có trong nguồn; ghi chú lỗi % bảo hành (0,50% → 0,43%) và lỗi số dư NCC trong slide; bổ sung số tiền credit note ($10k, $5k); sửa logic 3 liên kết/tình huống trên bản đồ; C3.7 thêm drill + exam angle; C4.1 thêm regulation (IFAC/IAASB), NOCLAR, non-audit services, VFM, outsourcing IA; C4.3 thêm các phần cơ bản của báo cáo ISA 700; đáp án HMA ghi rõ là lời giải tự tính. Đối chiếu 80 câu MCQ checkpoint: khớp 100%.
+
+## 2026-11-08 · Duyệt nhánh C
+- Bạn duyệt cấu trúc Elite method, STYLE_C và ACCA_AA_MAP v2 → khóa STYLE_C **C-1.1**; 18 trang nhánh C cập nhật `style_version: "C-1.1"`.
