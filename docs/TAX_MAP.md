@@ -383,7 +383,7 @@ Chưa có cây cho phần A (quản lý thuế). Phần A chủ yếu là hạn 
 3. **Thẻ ★ (86):** viết `atlas.json` theo §4–§5, đọc nguồn trước khi viết; cờ `conflict` theo §9.
 4. **Máy tính D6** (PIT, CIT, FCT, VAT) + **Bảng thuế D7**: mọi hằng số lấy từ một file `src/data/tax/tables-j26.ts`.
 5. **Thẻ còn lại (57)** + dây nối bổ sung.
-6. **Gắn đề:** chạy nốt OCR (Dec24 + J20 sample question), lập `exam-bank.json`, cập nhật `exam_refs` trong thẻ.
+6. **Gắn đề (xong 2026-11-16: 66 câu, 63 thẻ có exam_refs):** chạy nốt OCR (Dec24 + J20 sample question), lập `exam-bank.json`, cập nhật `exam_refs` trong thẻ.
 7. **Kiểm tra:** `npm run build` không lỗi; script kiểm tra mọi `cards[]` trong trees và mọi `from/to` trong edges đều có trong nodes; mọi `sources` trỏ tới trang có thật; mở `/d/atlas/` và 3 cây bất kỳ để kiểm tra hiển thị. Sau đó giao **một agent review độc lập**: đối chiếu 20 thẻ ngẫu nhiên với nguồn, báo lệch.
 8. Ghi `CHANGELOG.md`, commit. **Không push / deploy khi chưa hỏi.** CHANGELOG cần ghi bù cả phần Opus đã làm ngày 16/11 nhưng chưa commit được vì mất kết nối: nạp thư viện `acca-tx-vnm` (`scripts/ingest_tax.py`, `scripts/ocr_tax_exams.py`), `docs/TAX_MAP.md` D-map 1.0, `src/data/tax/trees.json` D-trees-1.0.
 
