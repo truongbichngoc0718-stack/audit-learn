@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
-import { docsLoader } from '@astrojs/starlight/loaders';
-import { docsSchema } from '@astrojs/starlight/schema';
+import { docsLoader, i18nLoader } from '@astrojs/starlight/loaders';
+import { docsSchema, i18nSchema } from '@astrojs/starlight/schema';
 
 /** Frontmatter chuẩn bài giảng (docs/LESSON_GUIDE.md §2). Trang hệ thống (trang chủ, tiến độ…) để trống các trường bài. */
 const lesson = z.object({
@@ -31,4 +31,5 @@ const lesson = z.object({
 
 export const collections = {
   docs: defineCollection({ loader: docsLoader(), schema: docsSchema({ extend: lesson }) }),
+  i18n: defineCollection({ loader: i18nLoader(), schema: i18nSchema() }),
 };

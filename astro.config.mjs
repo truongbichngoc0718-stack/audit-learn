@@ -7,6 +7,7 @@ export default defineConfig({
   site: 'https://audit-learning-hub.vercel.app',
   integrations: [
     starlight({
+      disable404Route: true,
       title: 'Audit Learning Hub',
       description: 'BISC Training Center · Audit Simulation 2026: học kiểm toán theo phần hành, thực hành trên case Biscore.',
       defaultLocale: 'root',

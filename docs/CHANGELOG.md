@@ -112,3 +112,7 @@
 - `DecisionTree`: thêm sơ đồ nhánh trái → phải cho cả 16 cây; bấm nhãn nhánh (Có/Không…) để chọn, bấm ô để quay về bước đó; đường đang đi tô vàng, nhánh không chọn làm mờ; phóng to/thu nhỏ; ẩn/hiện sơ đồ. Khung từng bước giữ nguyên, dùng chung trạng thái. Danh sách cây hiện câu hỏi đầu tiên và số câu/kết luận.
 - Trang cây và trang tra cứu: tắt mục lục bên phải, nới rộng khung nội dung. Không đổi nội dung thẻ hay cây.
 - Sinh/áp bằng `_gen/add_lookup.py` (+ `_gen/tax_add.css`), chạy sau `setup_d.py`. Build: 89 trang, không lỗi.
+
+## 2026-11-16 · Dọn cảnh báo build Vercel
+- Khai báo collection `i18n` (`src/content/i18n/vi.json`) → hết cảnh báo "collection i18n does not exist".
+- Thêm trang 404 tiếng Việt (`src/content/docs/404.md`, có nút về trang chủ và Tra cứu nhanh), bật `disable404Route` → hết cảnh báo "Entry docs → 404 was not found". Build: 89 trang, 0 cảnh báo.
