@@ -1,0 +1,104 @@
+{
+ "intro_vi": "Mức hiện tại: danh mục 11 kỳ thi và cảnh báo luật. Gắn từng câu hỏi vào thẻ (exam_refs) và tự chấm theo câu sẽ làm khi OCR đề Dec 2024, Dec 2025 và J20 sample hoàn tất. Tích ô để đánh dấu kỳ đã làm.",
+ "sittings": [
+  {
+   "id": "until-dec17",
+   "label": "Đến Dec 2017 (gộp)",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2018-dec",
+   "label": "Dec 2018",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2018-jun",
+   "label": "Jun 2018",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2019-jun",
+   "label": "Jun 2019",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2020-sample",
+   "label": "J20 Sample",
+   "law_status": "old-law",
+   "has_question": false,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2021-dec",
+   "label": "Dec 2021",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2021-jun",
+   "label": "Jun 2021",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2022-dec",
+   "label": "Dec 2022",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2022-jun",
+   "label": "Jun 2022",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2023-dec",
+   "label": "Dec 2023",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  },
+  {
+   "id": "2023-jun",
+   "label": "Jun 2023",
+   "law_status": "old-law",
+   "has_question": true,
+   "has_answer": true,
+   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
+   "topics": []
+  }
+ ]
+}

@@ -1,0 +1,684 @@
+[
+ {
+  "id": "a-system-purpose",
+  "part": "A",
+  "group": "Tax system",
+  "title_en": "Purpose & types of tax",
+  "title_vi": "Chức năng và phân loại thuế",
+  "summary_vi": "Thuế có chức năng kinh tế, xã hội, môi trường; phân loại theo bản chất (trực thu, gián thu) và theo đối tượng (thu nhập, hàng hóa dịch vụ, tài sản tài nguyên, hoạt động đặc thù).",
+  "rules_vi": [
+   "Chức năng của thuế trong nền kinh tế hiện đại: yếu tố kinh tế, xã hội, môi trường.",
+   "Theo bản chất: thuế trực thu và gián thu.",
+   "Theo đối tượng chịu thuế: thuế thu nhập; thuế hàng hóa, dịch vụ; thuế tài sản và tài nguyên; thuế hoạt động đặc thù."
+  ],
+  "sources": [
+   "r1:2"
+  ],
+  "qa": [
+   {
+    "q_en": "How are taxes classified by nature?",
+    "a_vi": "Trực thu và gián thu."
+   }
+  ]
+ },
+ {
+  "id": "a-legal-hierarchy",
+  "part": "A",
+  "group": "Tax system",
+  "title_en": "Law → Decree → Circular → Official letter",
+  "title_vi": "Hệ thống văn bản: Luật, Nghị định, Thông tư, Công văn",
+  "summary_vi": "Luật do Quốc hội ban hành; Nghị định do Chính phủ; Thông tư do các bộ có thẩm quyền; Công văn do Bộ Tài chính, Tổng cục Thuế, Cục Thuế hướng dẫn chi tiết từng trường hợp.",
+  "rules_vi": [
+   "Luật: Quốc hội. Nghị định: Chính phủ. Thông tư: bộ có thẩm quyền.",
+   "Công văn: Bộ Tài chính, Tổng cục Thuế, Cục Thuế hướng dẫn thực hiện cụ thể cho từng trường hợp.",
+   "Thứ bậc: Luật cao nhất, rồi Nghị định, Thông tư, Công văn."
+  ],
+  "sources": [
+   "r1:2"
+  ],
+  "qa": [
+   {
+    "q_en": "Who issues a Decree?",
+    "a_vi": "Chính phủ."
+   }
+  ]
+ },
+ {
+  "id": "a-avoidance-evasion",
+  "part": "A",
+  "group": "Tax system",
+  "title_en": "Avoidance vs evasion",
+  "title_vi": "Tránh thuế và trốn thuế",
+  "summary_vi": "Tránh thuế là hợp pháp (tận dụng quy định để giảm thuế); trốn thuế là bất hợp pháp (khai sai, che giấu thông tin); nhà chuyên môn ACCA phản đối trốn thuế và cân nhắc kỹ tránh thuế.",
+  "rules_vi": [
+   "Trốn thuế: hành vi bất hợp pháp cố ý khai sai hoặc che giấu thông tin tài chính; ví dụ khai thấp thu nhập, tăng khống chi phí, giấu tài sản, dùng hóa đơn bất hợp pháp; hậu quả: phạt nặng, có thể truy cứu hình sự; ví dụ công ty làm giả sổ sách.",
+   "Tránh thuế: hợp pháp nhưng có thể bị xem là phi đạo đức; ví dụ lập kế hoạch thuế, cấu trúc giao dịch để hưởng ưu đãi, chuyển lợi nhuận sang nước thuế thấp; hậu quả: không bị phạt luật nhưng bị giám sát và rủi ro danh tiếng.",
+   "Nhà chuyên môn ACCA phản đối trốn thuế, đánh giá cẩn thận các phương án tránh thuế để tuân thủ pháp luật và chuẩn mực đạo đức."
+  ],
+  "sources": [
+   "r1:3"
+  ],
+  "qa": [
+   {
+    "q_en": "Which is illegal: tax avoidance or tax evasion?",
+    "a_vi": "Trốn thuế (evasion); tránh thuế (avoidance) là hợp pháp nhưng có thể phi đạo đức."
+   }
+  ]
+ },
+ {
+  "id": "a-registration",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Tax registration",
+  "title_vi": "Đăng ký thuế",
+  "summary_vi": "Đăng ký trực tiếp với cơ quan thuế trong 10 ngày kể từ ngày được cấp giấy phép, bắt đầu kinh doanh, phát sinh trách nhiệm khấu trừ, nghĩa vụ PIT hoặc số thuế VAT được hoàn.",
+  "rules_vi": [
+   "Đối tượng: tổ chức, hộ, cá nhân kinh doanh; cá nhân có thu nhập chịu PIT; tổ chức, cá nhân có trách nhiệm khấu trừ và nộp thuế thay; các đối tượng khác theo luật.",
+   "Đăng ký trực tiếp với cơ quan thuế: 10 ngày kể từ ngày được cấp giấy chứng nhận đăng ký kinh doanh, giấy phép thành lập và hoạt động, giấy chứng nhận đầu tư; từ ngày bắt đầu hoạt động (tổ chức không phải đăng ký kinh doanh; hộ, cá nhân chưa có giấy phép); từ ngày phát sinh trách nhiệm khấu trừ, nộp thuế thay; từ ngày phát sinh nghĩa vụ PIT; từ ngày phát sinh số VAT được hoàn.",
+   "Đăng ký thuế cùng đăng ký kinh doanh thì hạn theo hạn đăng ký kinh doanh."
+  ],
+  "sources": [
+   "r1:3",
+   "r1:4"
+  ],
+  "numbers": [
+   {
+    "label": "Thời hạn đăng ký thuế trực tiếp",
+    "value": "10 ngày",
+    "src": "r1:4"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Deadline to register directly with the tax authority?",
+    "a_vi": "10 ngày kể từ ngày phát sinh sự kiện."
+   }
+  ]
+ },
+ {
+  "id": "a-filing-deadlines",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Filing deadlines",
+  "title_vi": "Hạn nộp hồ sơ khai thuế",
+  "summary_vi": "Tháng: ngày 20 tháng sau; quý: ngày cuối của tháng đầu quý sau (tạm nộp CIT: ngày 30); năm: ngày cuối của tháng đầu năm; từng lần: 10 ngày; quyết toán: ngày cuối tháng thứ 3; chấm dứt: 45 ngày.",
+  "rules_vi": [
+   "Khai theo năm: ngày cuối cùng của tháng đầu tiên của năm dương lịch hoặc năm tài chính.",
+   "Khai theo quý: ngày cuối cùng của tháng đầu tiên của quý sau. Tạm nộp CIT: ngày thứ 30 của tháng đầu tiên của quý sau.",
+   "Khai theo tháng: ngày 20 của tháng sau.",
+   "Khai theo từng lần phát sinh: 10 ngày kể từ ngày phát sinh nghĩa vụ thuế.",
+   "Quyết toán: ngày cuối cùng của tháng thứ 3 kể từ ngày kết thúc năm dương lịch hoặc năm tài chính.",
+   "Chấm dứt hoạt động, hết hạn hợp đồng, chuyển đổi hình thức sở hữu, tổ chức lại doanh nghiệp: 45 ngày kể từ ngày chấm dứt, hết hạn, chuyển đổi hoặc tổ chức lại.",
+   "Hạn rơi vào ngày nghỉ, ngày lễ thì là ngày làm việc tiếp theo."
+  ],
+  "sources": [
+   "r1:4"
+  ],
+  "numbers": [
+   {
+    "label": "Khai tháng",
+    "value": "Ngày 20 tháng sau",
+    "src": "r1:4"
+   },
+   {
+    "label": "Khai quý",
+    "value": "Ngày cuối tháng đầu quý sau",
+    "src": "r1:4"
+   },
+   {
+    "label": "Tạm nộp CIT",
+    "value": "Ngày 30 tháng đầu quý sau",
+    "src": "r1:4"
+   },
+   {
+    "label": "Từng lần",
+    "value": "10 ngày",
+    "src": "r1:4"
+   },
+   {
+    "label": "Quyết toán",
+    "value": "Ngày cuối tháng thứ 3",
+    "src": "r1:4"
+   },
+   {
+    "label": "Chấm dứt, tổ chức lại",
+    "value": "45 ngày",
+    "src": "r1:4"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Deadline for annual finalization of CIT for a calendar year?",
+    "a_vi": "Ngày cuối cùng của tháng thứ 3 sau khi kết thúc năm."
+   }
+  ]
+ },
+ {
+  "id": "a-payment-matrix",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Payment matrix by tax",
+  "title_vi": "Ma trận khai và nộp theo sắc thuế",
+  "summary_vi": "Mỗi sắc thuế có kỳ khai riêng: VAT, PIT theo tháng hoặc quý, CIT tạm nộp theo quý (không nộp tờ khai) rồi quyết toán, FCT từng lần hoặc theo tháng và quyết toán khi thanh lý hợp đồng.",
+  "rules_vi": [
+   "VAT: tháng hoặc quý (theo quy định về kỳ khai).",
+   "PIT: tháng hoặc quý khi phát sinh khấu trừ; quyết toán cho người trả thu nhập (kể cả khi không phát sinh khấu trừ).",
+   "CIT: tạm nộp theo quý, không phải nộp tờ khai tạm nộp; quyết toán năm.",
+   "FCT: từng lần phát sinh trong 10 ngày, hoặc theo tháng ngày 20 tháng sau (đã đăng ký); quyết toán khi thanh lý hợp đồng."
+  ],
+  "sources": [
+   "r1:5"
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Bảng trong slide r1:5 mất khung cột khi trích xuất; nội dung ghép từ chữ còn đọc được. Đối chiếu slide gốc trước khi dùng làm đáp án.",
+  "qa": [
+   {
+    "q_en": "Is a provisional CIT return filed?",
+    "a_vi": "Không. Tạm nộp CIT theo quý, không phải nộp tờ khai."
+   }
+  ]
+ },
+ {
+  "id": "a-late-interest",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Late payment interest",
+  "title_vi": "Tiền chậm nộp",
+  "summary_vi": "Tiền chậm nộp 0,03% mỗi ngày trên số tiền chậm nộp, tính liên tục từ ngày sau ngày phát sinh chậm nộp đến ngày trước ngày nộp đủ vào ngân sách, gồm cả ngày bắt đầu và ngày kết thúc.",
+  "rules_vi": [
+   "Mức: 0,03%/ngày (từ 01/07/2016 đến nay).",
+   "Thời gian tính tiền chậm nộp: liên tục từ ngày liền sau ngày phát sinh chậm nộp đến ngày liền trước ngày người nộp thuế nộp số tiền thuế còn nợ vào ngân sách nhà nước (tính cả ngày đầu và ngày cuối của khoảng đó)."
+  ],
+  "sources": [
+   "r1:5",
+   "r1:7"
+  ],
+  "numbers": [
+   {
+    "label": "Mức tiền chậm nộp",
+    "value": "0,03%/ngày",
+    "src": "r1:5"
+   }
+  ],
+  "formula": "Tiền chậm nộp = số thuế chậm nộp × 0,03% × số ngày chậm nộp",
+  "traps": [
+   {
+    "text_vi": "Đếm sai số ngày chậm nộp (thiếu hoặc thừa ngày đầu, ngày cuối).",
+    "src": "r1:7"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Daily late payment interest rate?",
+    "a_vi": "0,03% mỗi ngày."
+   }
+  ]
+ },
+ {
+  "id": "a-penalties",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Penalties",
+  "title_vi": "Mức phạt",
+  "summary_vi": "Khai sai: phạt 20% số thuế khai thiếu; trốn thuế: phạt 1 đến 3 lần số thuế trốn; vi phạm thủ tục: tối đa 200 triệu mỗi hành vi; nộp tờ khai chậm: 2–5 triệu (1–30 ngày), 5–8 triệu (31–60 ngày).",
+  "rules_vi": [
+   "Khai thiếu thuế: phạt 20% số thuế khai thiếu; nếu bị coi là trốn thuế: phạt 1 hoặc 3 lần số thuế trốn.",
+   "Vi phạm thủ tục thuế: phạt tối đa 200 triệu đồng mỗi hành vi.",
+   "Nộp hồ sơ khai thuế chậm: 2 đến 5 triệu đồng khi chậm 1–30 ngày; 5 đến 8 triệu đồng khi chậm 31–60 ngày; các trường hợp khác xem Điều 13 Nghị định 125.",
+   "Tiền chậm nộp (0,03%/ngày) khác với tiền phạt."
+  ],
+  "sources": [
+   "r1:5"
+  ],
+  "numbers": [
+   {
+    "label": "Khai sai",
+    "value": "20% số thuế khai thiếu",
+    "src": "r1:5"
+   },
+   {
+    "label": "Trốn thuế",
+    "value": "1 hoặc 3 lần số thuế trốn",
+    "src": "r1:5"
+   },
+   {
+    "label": "Vi phạm thủ tục",
+    "value": "Tối đa 200 triệu/hành vi",
+    "src": "r1:5"
+   }
+  ],
+  "traps": [
+   {
+    "text_vi": "Nhầm tiền chậm nộp với tiền phạt khai sai.",
+    "src": "r1:5"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Penalty for under-declaration (not evasion)?",
+    "a_vi": "20% số thuế khai thiếu."
+   }
+  ]
+ },
+ {
+  "id": "a-limitation",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Statute of limitation",
+  "title_vi": "Thời hiệu",
+  "summary_vi": "Thời hiệu xử phạt vi phạm thủ tục là 2 năm; khai thiếu, trốn thuế là 5 năm; tiền chậm nộp áp thời hiệu 10 năm nếu có đăng ký thuế.",
+  "rules_vi": [
+   "Vi phạm thủ tục thuế (kể cả nộp tờ khai chậm): 2 năm.",
+   "Khai thiếu thuế, trốn thuế: 5 năm.",
+   "Tiền chậm nộp: 10 năm nếu đã đăng ký thuế."
+  ],
+  "sources": [
+   "r1:5"
+  ],
+  "numbers": [
+   {
+    "label": "Thủ tục",
+    "value": "2 năm",
+    "src": "r1:5"
+   },
+   {
+    "label": "Khai thiếu, trốn thuế",
+    "value": "5 năm",
+    "src": "r1:5"
+   },
+   {
+    "label": "Nghĩa vụ nộp thuế (đã đăng ký)",
+    "value": "10 năm",
+    "src": "r1:5"
+   }
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide r1:5 mất khung bảng, thời hiệu 10 năm chỉ ghi \"nếu đã đăng ký thuế\"; xác nhận nhóm vi phạm nào thuộc 10 năm với giảng viên.",
+  "qa": [
+   {
+    "q_en": "Limitation period for a procedural violation?",
+    "a_vi": "2 năm."
+   }
+  ]
+ },
+ {
+  "id": "a-currency-fx",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Tax currency & FX rate",
+  "title_vi": "Đồng tiền khai thuế và tỷ giá",
+  "summary_vi": "Khai thuế bằng VND; tỷ giá dùng cho mục đích thuế là tỷ giá thực tế theo quy định của luật kế toán.",
+  "rules_vi": [
+   "Đồng tiền khai thuế: đồng Việt Nam.",
+   "Tỷ giá dùng cho mục đích thuế: tỷ giá thực tế theo quy định của pháp luật kế toán.",
+   "Đề thi cho tỷ giá trong bảng thuế (USD 1 = VND 26.500)."
+  ],
+  "sources": [
+   "r1:7",
+   "tt:1"
+  ],
+  "qa": [
+   {
+    "q_en": "Currency used on tax returns?",
+    "a_vi": "VND."
+   }
+  ]
+ },
+ {
+  "id": "a-multi-province",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Multi-province allocation",
+  "title_vi": "Phân bổ thuế cho đơn vị ở tỉnh khác",
+  "summary_vi": "Người nộp thuế hạch toán tập trung có đơn vị phụ thuộc, địa điểm kinh doanh ở tỉnh khác trụ sở thì khai với cơ quan thuế quản lý trực tiếp và phân bổ số thuế phải nộp cho từng tỉnh (VAT, PIT, CIT).",
+  "rules_vi": [
+   "Áp dụng cho VAT, PIT, CIT: người nộp thuế hạch toán tập trung, có đơn vị phụ thuộc hoặc địa điểm kinh doanh ở tỉnh khác tỉnh đặt trụ sở: khai với cơ quan thuế quản lý trực tiếp và phân bổ số thuế phải nộp cho từng tỉnh (Khoản 1 Điều 12 Thông tư 80).",
+   "Quy tắc phân bổ CIT cho đơn vị phụ thuộc xem thẻ CIT liên quan."
+  ],
+  "sources": [
+   "r1:9",
+   "r3:59"
+  ],
+  "legal": [
+   "Circular 80/2021"
+  ],
+  "qa": [
+   {
+    "q_en": "Which taxes are allocated across provinces?",
+    "a_vi": "VAT, PIT và CIT."
+   }
+  ]
+ },
+ {
+  "id": "a-tax-audit",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Tax audit vs inspection",
+  "title_vi": "Kiểm tra thuế và thanh tra thuế",
+  "summary_vi": "Kiểm tra thuế tại trụ sở người nộp thuế: 10 ngày làm việc (gia hạn thêm tối đa 10 ngày); thanh tra thuế: 15 ngày làm việc kể từ quyết định, thời gian thanh tra 30 ngày (cấp tỉnh) hoặc 45 ngày (Tổng cục).",
+  "rules_vi": [
+   "Kiểm tra tại trụ sở cơ quan thuế: tối đa 02 lần yêu cầu giải trình, bổ sung thông tin, tài liệu.",
+   "Kiểm tra thuế (kiểm tra) tại trụ sở người nộp thuế: tiến hành trong 10 ngày làm việc kể từ ngày ban hành quyết định kiểm tra, trừ khi bị thu hồi hoặc hoãn. Thời gian kiểm tra: 10 ngày làm việc, gia hạn tối đa thêm 10 ngày làm việc nếu phạm vi lớn, phức tạp.",
+   "Thanh tra thuế: bắt đầu trong 15 ngày làm việc kể từ ngày quyết định. Thời gian thanh tra: 30 ngày làm việc ở cấp tỉnh, gia hạn tối đa 15 ngày làm việc ở vùng núi, xa, khó tiếp cận; 45 ngày làm việc ở Tổng cục Thuế, gia hạn tối đa 25 ngày làm việc nếu phức tạp.",
+   "Kế hoạch, mục tiêu thanh tra, kiểm tra hằng năm công bố trên trang thông tin của cơ quan thuế hoặc thông báo trong 30 ngày làm việc kể từ ngày quyết định phê duyệt hoặc sửa đổi."
+  ],
+  "sources": [
+   "r1:9",
+   "r1:10"
+  ],
+  "numbers": [
+   {
+    "label": "Kiểm tra tại trụ sở NNT",
+    "value": "10 ngày làm việc (+10)",
+    "src": "r1:10"
+   },
+   {
+    "label": "Thanh tra cấp tỉnh",
+    "value": "30 ngày làm việc (+15)",
+    "src": "r1:10"
+   },
+   {
+    "label": "Thanh tra Tổng cục",
+    "value": "45 ngày làm việc (+25)",
+    "src": "r1:10"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Length of a tax audit (kiểm tra) at the taxpayer’s premises?",
+    "a_vi": "10 ngày làm việc, gia hạn tối đa thêm 10 ngày."
+   }
+  ]
+ },
+ {
+  "id": "a-rights-complaints",
+  "part": "A",
+  "group": "Administration",
+  "title_en": "Rights, obligations, complaints",
+  "title_vi": "Quyền, nghĩa vụ của người nộp thuế",
+  "summary_vi": "Luật Quản lý thuế 38/2019/QH14: Điều 16 quyền, Điều 17 trách nhiệm người nộp thuế, Điều 18 nhiệm vụ và Điều 19 quyền hạn cơ quan thuế, Điều 50 ấn định thuế, Điều 143 trốn thuế.",
+  "rules_vi": [
+   "Điều 16: quyền của người nộp thuế. Điều 17: trách nhiệm của người nộp thuế.",
+   "Điều 18: nhiệm vụ của cơ quan quản lý thuế. Điều 19: quyền hạn của cơ quan quản lý thuế.",
+   "Điều 50: ấn định thuế khi người nộp thuế vi phạm. Điều 143: trốn thuế."
+  ],
+  "sources": [
+   "r1:10"
+  ],
+  "legal": [
+   "Law 38/2019/QH14"
+  ],
+  "qa": [
+   {
+    "q_en": "Which article of the Law on Tax Administration covers taxpayers’ rights?",
+    "a_vi": "Điều 16."
+   }
+  ]
+ },
+ {
+  "id": "a-tp-principles",
+  "part": "A",
+  "group": "Transfer pricing",
+  "title_en": "TP principles",
+  "title_vi": "Nguyên tắc chuyển giá",
+  "summary_vi": "Giao dịch liên kết phải loại bỏ yếu tố làm giảm nghĩa vụ thuế do quan hệ liên kết, theo nguyên tắc giao dịch độc lập (arm’s length) và bản chất quyết định hình thức.",
+  "rules_vi": [
+   "Người nộp thuế có giao dịch liên kết phải loại trừ các yếu tố do quan hệ liên kết kiểm soát, chi phối làm giảm nghĩa vụ thuế, kê khai nghĩa vụ thuế tương đương giao dịch độc lập cùng yêu cầu.",
+   "Cơ quan thuế quản lý, kiểm tra theo nguyên tắc giao dịch độc lập và bản chất quyết định hình thức; không công nhận giao dịch liên kết vi phạm nguyên tắc độc lập làm giảm nghĩa vụ thuế, và điều chỉnh giá để xác định đúng nghĩa vụ.",
+   "Phân tích so sánh theo bản chất: so sánh nội dung giao dịch theo hợp đồng, văn bản với thực tế thực hiện; thu thập thông tin, bằng chứng, dữ liệu về giao dịch, rủi ro trong thực tế.",
+   "Định nghĩa: bên liên kết, giao dịch độc lập, giao dịch liên kết (Luật 38/2019); hiệp định thuế, khoản so sánh độc lập, chênh lệch trọng yếu, cơ sở dữ liệu của cơ quan thuế (NĐ 132/2020)."
+  ],
+  "sources": [
+   "r3:48",
+   "r3:49",
+   "r3:50",
+   "r3:53"
+  ],
+  "legal": [
+   "Decree 132/2020",
+   "Law 38/2019/QH14"
+  ],
+  "qa": [
+   {
+    "q_en": "What principle must related-party prices follow?",
+    "a_vi": "Nguyên tắc giao dịch độc lập (arm’s length) và bản chất quyết định hình thức."
+   }
+  ]
+ },
+ {
+  "id": "a-tp-related-parties",
+  "part": "A",
+  "group": "Transfer pricing",
+  "title_en": "Related parties",
+  "title_vi": "Các trường hợp bên liên kết",
+  "summary_vi": "Quan hệ về quản lý, kiểm soát, góp vốn: nắm ≥ 25% vốn, bên thứ ba nắm ≥ 25% vốn của cả hai, cổ đông lớn nhất hoặc ≥ 10%, khoản vay hoặc bảo lãnh ≥ 25% vốn chủ và > 50% nợ trung dài hạn, nhân sự HĐQT > 50%, người trong gia đình.",
+  "rules_vi": [
+   "Chung: một bên trực tiếp hoặc gián tiếp tham gia điều hành, kiểm soát, góp vốn, đầu tư vào bên kia; hoặc hai bên cùng chịu ảnh hưởng như vậy.",
+   "Một doanh nghiệp nắm trực tiếp hoặc gián tiếp ≥ 25% vốn chủ sở hữu của doanh nghiệp kia; hoặc cả hai cùng có ≥ 25% vốn chủ sở hữu do một bên thứ ba nắm.",
+   "Doanh nghiệp là cổ đông lớn nhất của doanh nghiệp kia, hoặc nắm trực tiếp, gián tiếp ≥ 10% tổng vốn cổ phần.",
+   "Bảo lãnh hoặc cho vay: số vay ≥ 25% vốn chủ sở hữu và > 50% tổng nợ trung, dài hạn của bên đi vay. Không áp dụng (mới): bên cho vay, bảo lãnh là tổ chức tín dụng (Luật 32/2024) không tham gia điều hành, kiểm soát, góp vốn; hoặc cả doanh nghiệp và tổ chức tín dụng không chịu chung sự điều hành, kiểm soát, góp vốn của bên khác.",
+   "Nhân sự: một doanh nghiệp bổ nhiệm thành viên ban điều hành doanh nghiệp kia chiếm > 50% số thành viên, hoặc người được bổ nhiệm có quyền quyết định chính sách tài chính, hoạt động kinh doanh; cả hai doanh nghiệp có > 50% thành viên ban điều hành, hoặc một người quyết định chính sách tài chính do bên thứ ba bổ nhiệm.",
+   "Cả hai doanh nghiệp do cá nhân có quan hệ gia đình (vợ chồng, cha mẹ đẻ, nuôi, con, anh chị em ruột, nuôi, anh chị em rể dâu, ông bà, cháu, cô dì chú bác và cháu) điều hành về nhân sự, tài chính, kinh doanh.",
+   "Giao dịch giữa trụ sở chính và PE, giữa các PE của tổ chức, cá nhân nước ngoài; doanh nghiệp chịu sự kiểm soát của một cá nhân qua góp vốn hoặc điều hành; doanh nghiệp bị doanh nghiệp khác quản lý, kiểm soát, quyết định thực tế.",
+   "Doanh nghiệp mua bán ≥ 25% vốn chủ sở hữu trong kỳ tính thuế, hoặc vay, cho vay ≥ 10% vốn chủ sở hữu tại thời điểm giao dịch với người giữ chức vụ điều hành, nắm quyền kiểm soát hoặc người thân đã nêu.",
+   "Mới: doanh nghiệp và chi nhánh độc lập của mình được xếp là bên liên kết; tổ chức tín dụng có nhóm bên liên kết riêng (công ty con: sở hữu > 50% vốn hoặc quyền biểu quyết, hoặc kiểm soát hội đồng; công ty kiểm soát: sở hữu > 20% của ngân hàng thương mại; công ty liên kết: sở hữu > 11%, không phải công ty con)."
+  ],
+  "sources": [
+   "r3:51",
+   "r3:52",
+   "r3:53"
+  ],
+  "numbers": [
+   {
+    "label": "Sở hữu vốn trực tiếp hoặc gián tiếp",
+    "value": "≥ 25%",
+    "src": "r3:51"
+   },
+   {
+    "label": "Cổ đông lớn nhất hoặc sở hữu",
+    "value": "≥ 10%",
+    "src": "r3:51"
+   },
+   {
+    "label": "Vay hoặc bảo lãnh",
+    "value": "≥ 25% vốn chủ và > 50% nợ trung dài hạn",
+    "src": "r3:52"
+   },
+   {
+    "label": "Nhân sự điều hành",
+    "value": "> 50% thành viên",
+    "src": "r3:52"
+   }
+  ],
+  "legal": [
+   "Decree 132/2020",
+   "Law 32/2024/QH15"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Capital ownership threshold making two enterprises related?",
+    "a_vi": "Nắm trực tiếp hoặc gián tiếp ít nhất 25% vốn chủ sở hữu của bên kia."
+   }
+  ]
+ },
+ {
+  "id": "a-tp-methods",
+  "part": "A",
+  "group": "Transfer pricing",
+  "title_en": "TP methods",
+  "title_vi": "Phương pháp xác định giá giao dịch liên kết",
+  "summary_vi": "So sánh giá giao dịch độc lập; so sánh tỷ suất lợi nhuận (giá bán lại, chi phí cộng lãi, lợi nhuận thuần); phân bổ lợi nhuận.",
+  "rules_vi": [
+   "So sánh giá: dùng khi không có khác biệt trọng yếu về đặc tính sản phẩm và điều khoản hợp đồng; nếu có khác biệt trọng yếu ảnh hưởng giá thì phải loại bỏ. Yếu tố: đặc tính, chất lượng, nhãn hiệu, quy mô giao dịch, điều khoản thanh toán, quyền phân phối, điều kiện kinh tế và chức năng của doanh nghiệp.",
+   "So sánh tỷ suất lợi nhuận: dùng khi không đủ dữ liệu để so sánh giá, không so sánh được từng giao dịch theo sản phẩm, hoặc doanh nghiệp không tự chủ trong toàn chuỗi hoạt động hoặc không tham gia thực hiện giao dịch liên kết.",
+   "Giá bán lại / tỷ suất lợi nhuận gộp trên doanh thu: dùng với khác biệt ảnh hưởng tỷ suất lợi nhuận gộp (đại lý bán hàng, nhà phân phối độc quyền, chức năng tiếp thị, giai đoạn phát triển thị trường, chức năng trong chuỗi cung ứng, phương pháp kế toán của các bên).",
+   "Chi phí cộng lãi: doanh nghiệp không sở hữu tài sản vô hình, rủi ro kinh doanh hạn chế (gia công, chế biến, lắp ráp, lắp đặt thiết bị, mua hoặc cung cấp sản phẩm, dịch vụ, nghiên cứu theo hợp đồng cho bên liên kết); không áp dụng cho doanh nghiệp độc lập sản xuất có nghiên cứu phát triển, xây dựng thương hiệu, chiến lược thị trường, hậu mãi, chăm sóc khách hàng.",
+   "Lợi nhuận thuần: dùng khi có khác biệt ảnh hưởng đến tỷ suất lợi nhuận thuần (chức năng, tài sản, rủi ro, điều kiện kinh tế, điều khoản hợp đồng, đặc điểm sản phẩm).",
+   "Phân bổ lợi nhuận: chia tổng lợi nhuận thực tế và tiềm năng của các giao dịch liên kết để xác định lợi nhuận của người nộp thuế trong chuỗi giá trị, dựa trên dữ liệu tài chính có chứng từ hợp lý, nhất quán một phương pháp kế toán trong suốt thời gian áp dụng."
+  ],
+  "sources": [
+   "r3:54",
+   "r3:55",
+   "r3:56"
+  ],
+  "legal": [
+   "Decree 132/2020"
+  ],
+  "qa": [
+   {
+    "q_en": "When is the cost plus method used?",
+    "a_vi": "Với doanh nghiệp không sở hữu tài sản vô hình, rủi ro hạn chế (gia công, lắp ráp, dịch vụ theo hợp đồng cho bên liên kết)."
+   }
+  ]
+ },
+ {
+  "id": "a-tp-range",
+  "part": "A",
+  "group": "Transfer pricing",
+  "title_en": "Arm’s length range",
+  "title_vi": "Khoảng giá trị chuẩn giao dịch độc lập",
+  "summary_vi": "Khoảng giá trị chuẩn gồm các giá trị từ bách phân vị thứ 35 đến thứ 75; giá trị trung vị là bách phân vị thứ 50.",
+  "rules_vi": [
+   "Khoảng giá trị giao dịch độc lập (arm’s length range): tập giá, tỷ suất lợi nhuận hoặc tỷ lệ phân bổ lợi nhuận của các giao dịch độc lập so sánh do cơ quan thuế và người nộp thuế chọn từ cơ sở dữ liệu; khi cần dùng phương pháp xác suất để tính khoảng chuẩn và khoảng trung vị.",
+   "Khoảng chuẩn: từ bách phân vị 35 đến bách phân vị 75; trung vị là bách phân vị 50."
+  ],
+  "sources": [
+   "r3:51"
+  ],
+  "numbers": [
+   {
+    "label": "Khoảng chuẩn",
+    "value": "Bách phân vị 35 đến 75",
+    "src": "r3:51"
+   },
+   {
+    "label": "Trung vị",
+    "value": "Bách phân vị 50",
+    "src": "r3:51"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Standard arm’s length range?",
+    "a_vi": "Bách phân vị 35 đến 75; trung vị là bách phân vị 50."
+   }
+  ]
+ },
+ {
+  "id": "a-tp-nondeductible-costs",
+  "part": "A",
+  "group": "Transfer pricing",
+  "title_en": "TP non-deductible costs",
+  "title_vi": "Chi phí không được trừ theo quy định chuyển giá",
+  "summary_vi": "Chi phí giao dịch liên kết không đúng bản chất giao dịch độc lập hoặc không tạo ra doanh thu, thu nhập thì không được trừ; phí dịch vụ nhóm có lợi chủ yếu cho cổ đông, dịch vụ trùng lặp, quyền lợi thành viên tập đoàn, phụ phí không tạo giá trị bị loại.",
+  "rules_vi": [
+   "Chi phí của giao dịch liên kết không phù hợp bản chất giao dịch độc lập, hoặc không góp phần tạo ra doanh thu, thu nhập của người nộp thuế: không được tính là chi phí được trừ khi xác định thu nhập chịu CIT.",
+   "Phí dịch vụ giữa các bên liên kết không được trừ gồm: dịch vụ chủ yếu mang lại lợi ích cho cổ đông của bên liên kết; dịch vụ trùng lặp do nhiều bên liên kết cung cấp mà không tạo giá trị rõ ràng cho người nộp thuế; quyền lợi do là thành viên của tập đoàn; phụ phí trên dịch vụ chuyển tiếp mà bên liên kết không tạo thêm giá trị."
+  ],
+  "sources": [
+   "r3:56"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Nhầm phí dịch vụ tập đoàn (chuyển giá) với phí quản lý phân bổ cho PE.",
+    "src": "r3:56"
+   }
+  ],
+  "legal": [
+   "Decree 132/2020"
+  ],
+  "qa": [
+   {
+    "q_en": "Is a group membership fee paid to a related party deductible?",
+    "a_vi": "Không, quyền lợi do là thành viên tập đoàn không được trừ."
+   }
+  ]
+ },
+ {
+  "id": "a-tp-interest-30-ebitda",
+  "part": "A",
+  "group": "Transfer pricing",
+  "title_en": "30% EBITDA interest cap",
+  "title_vi": "Trần lãi vay 30% EBITDA",
+  "summary_vi": "Tổng chi phí lãi vay ròng (sau khi trừ lãi tiền gửi, lãi cho vay) được trừ tối đa 30% EBITDA; phần vượt được chuyển sang tối đa 5 năm liên tiếp; không áp dụng cho tổ chức tín dụng, doanh nghiệp bảo hiểm, vay ODA cho vay lại.",
+  "rules_vi": [
+   "Tổng chi phí lãi vay (đã trừ lãi tiền gửi, lãi cho vay phát sinh trong kỳ tính thuế) được trừ tối đa 30% EBITDA.",
+   "Phần chi phí lãi vay không được trừ do quy định trên được chuyển sang kỳ tính thuế sau nếu tổng chi phí lãi vay được trừ của kỳ sau thấp hơn mức trần, tối đa 5 năm liên tục, tính từ năm liền sau năm phát sinh chi phí không được trừ.",
+   "Không áp dụng cho tổ chức tín dụng, doanh nghiệp bảo hiểm, vốn vay ODA và vay ưu đãi của Chính phủ theo hình thức cho vay lại.",
+   "Mới: quy định chuyển tiếp 2020–2023 cho doanh nghiệp chỉ có giao dịch liên kết với tổ chức tín dụng (nay bị loại trừ): không còn quan hệ liên kết từ 2024 thì phần lãi chưa được trừ đến cuối 2023 được phân bổ đều cho các kỳ còn lại của thời gian chuyển; vẫn có quan hệ liên kết từ 2024 thì tiếp tục theo Nghị định 132 (chuyển tối đa 5 năm, chịu trần 30% EBITDA)."
+  ],
+  "sources": [
+   "r3:57"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Trần lãi vay",
+    "value": "30% EBITDA",
+    "src": "r3:57"
+   },
+   {
+    "label": "Thời gian chuyển phần vượt",
+    "value": "Tối đa 5 năm liên tục",
+    "src": "r3:57"
+   }
+  ],
+  "formula": "Lãi vay được trừ tối đa = 30% × EBITDA\nLãi vay ròng = lãi vay − lãi tiền gửi − lãi cho vay",
+  "traps": [
+   {
+    "text_vi": "Dùng lãi vay gộp thay vì lãi vay ròng; quên điều kiện có bên liên kết.",
+    "src": "r3:57"
+   }
+  ],
+  "legal": [
+   "Decree 132/2020",
+   "Decree 20/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Net interest deductibility cap under the transfer pricing decree?",
+    "a_vi": "30% EBITDA; phần vượt chuyển tối đa 5 năm."
+   }
+  ]
+ },
+ {
+  "id": "a-tp-documentation",
+  "part": "A",
+  "group": "Transfer pricing",
+  "title_en": "TP documentation",
+  "title_vi": "Hồ sơ chuyển giá",
+  "summary_vi": "Người nộp thuế lưu giữ và cung cấp thông tin về quan hệ liên kết và giao dịch liên kết, hồ sơ quốc gia (local file), hồ sơ toàn cầu (master file), báo cáo theo quốc gia (CbCR); xuất trình trong 30 ngày làm việc, gia hạn 15 ngày làm việc.",
+  "rules_vi": [
+   "Bốn loại: (1) thông tin về quan hệ liên kết và giao dịch liên kết; (2) hồ sơ quốc gia (local file); (3) hồ sơ toàn cầu (master file); (4) báo cáo lợi nhuận theo quốc gia (country-by-country report).",
+   "Hồ sơ phải lưu giữ và xuất trình khi cơ quan thuế yêu cầu; thời điểm lập: khi nộp hồ sơ quyết toán CIT.",
+   "Hạn cung cấp theo yêu cầu: 30 ngày làm việc kể từ ngày nhận yêu cầu; gia hạn thêm 15 ngày làm việc nếu có lý do chính đáng."
+  ],
+  "sources": [
+   "r3:58"
+  ],
+  "legal": [
+   "Decree 132/2020"
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide r3:58 có sơ đồ thời hạn mất bố cục khi trích xuất (30 ngày làm việc / 15 ngày làm việc gia hạn); xem slide gốc để chắc chắn hạn nào gắn với bước nào.",
+  "qa": [
+   {
+    "q_en": "Four transfer pricing documents?",
+    "a_vi": "Thông tin liên kết và giao dịch liên kết, local file, master file, CbCR."
+   }
+  ]
+ }
+]

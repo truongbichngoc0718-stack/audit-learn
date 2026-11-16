@@ -6,11 +6,11 @@ import { docsSchema } from '@astrojs/starlight/schema';
 /** Frontmatter chuẩn bài giảng (docs/LESSON_GUIDE.md §2). Trang hệ thống (trang chủ, tiến độ…) để trống các trường bài. */
 const lesson = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/).optional(),
-  nhanh: z.enum(['A', 'B', 'C', 'lib', 'he-thong']).default('he-thong'),
-  phan: z.union([z.number().int().min(0).max(4), z.literal('b'), z.enum(['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'cA', 'cB', 'cC', 'cD', 'cE'])]).optional(),
+  nhanh: z.enum(['A', 'B', 'C', 'D', 'lib', 'he-thong']).default('he-thong'),
+  phan: z.union([z.number().int().min(0).max(4), z.literal('b'), z.enum(['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'cA', 'cB', 'cC', 'cD', 'cE', 'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7'])]).optional(),
   bai: z.string().optional(),
   nhan: z.string().optional(),
-  loai: z.enum(['tong-quan', 'ky-thuat', 'phan-hanh', 'kiem-tra', 'thu-vien', 'excel', 'acca', 'checkpoint', 'khung', 'he-thong']).default('he-thong'),
+  loai: z.enum(['tong-quan', 'ky-thuat', 'phan-hanh', 'kiem-tra', 'thu-vien', 'excel', 'acca', 'checkpoint', 'khung', 'thue', 'he-thong']).default('he-thong'),
   thoi_luong: z.number().positive().optional(),
   nguon: z.array(z.string()).default([]),
   assertion: z.array(z.enum(['Occurrence', 'Existence', 'Completeness', 'Accuracy', 'Cut-off', 'Valuation', 'Classification', 'Presentation', 'Rights', 'Management override', 'Rights & obligations', 'Valuation & allocation'])).default([]),

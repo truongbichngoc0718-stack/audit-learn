@@ -1,0 +1,1478 @@
+[
+ {
+  "id": "c-law-timeline",
+  "part": "C",
+  "group": "Overview & rates",
+  "title_en": "New law timeline",
+  "title_vi": "Luật mới và mốc hiệu lực",
+  "summary_vi": "CIT hiện hành theo Luật 67/2025 (từ 01/10/2025) và Nghị định 320/2025 (từ 15/12/2025); Thông tư 20/2026 chưa thi trong kỳ Jun 2026 – Jun 2027.",
+  "rules_vi": [
+   "Law No. 67/2025/QH15, hiệu lực 01/10/2025: nguyên tắc chung, người nộp thuế, thu nhập chịu thuế, thuế suất.",
+   "Decree 320/2025/ND-CP, hiệu lực 15/12/2025: hướng dẫn doanh thu, điều kiện chi phí được trừ, phương pháp tính.",
+   "Circular 20/2026/TT-BTC, hiệu lực 12/03/2026: hồ sơ, thủ tục, biểu mẫu. Không thuộc phạm vi thi kỳ Jun 2026 – Jun 2027.",
+   "Quy định áp dụng cho kỳ tính thuế từ năm 2025."
+  ],
+  "sources": [
+   "r3:2"
+  ],
+  "traps": [
+   {
+    "text_vi": "Đề cũ (Jun 21 → Dec 24) làm theo luật trước 2025: đáp án CIT có thể khác luật hiện hành.",
+    "src": "r3:20"
+   }
+  ],
+  "legal": [
+   "Law 67/2025/QH15",
+   "Decree 320/2025",
+   "Circular 20/2026 (chưa thi)"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Which CIT regulations are examinable for the June 2026 – June 2027 exams?",
+    "a_vi": "Luật 67/2025/QH15 và Nghị định 320/2025; Thông tư 20/2026 chưa thuộc phạm vi thi."
+   }
+  ]
+ },
+ {
+  "id": "c-pe-scope",
+  "part": "C",
+  "group": "Overview & rates",
+  "title_en": "PE & territorial scope",
+  "title_vi": "Cơ sở thường trú (PE) và phạm vi chịu thuế",
+  "summary_vi": "Doanh nghiệp Việt Nam chịu thuế trên thu nhập toàn cầu; doanh nghiệp nước ngoài có PE chịu thuế trên thu nhập nguồn VN và thu nhập nước ngoài có liên quan PE; không có PE chỉ chịu thuế trên thu nhập nguồn VN.",
+  "rules_vi": [
+   "PE: cơ sở sản xuất, kinh doanh qua đó doanh nghiệp nước ngoài thực hiện toàn bộ hay một phần hoạt động tại VN.",
+   "Gồm: chi nhánh, văn phòng điều hành, nhà máy, xưởng, phương tiện vận tải, mỏ, công trình xây dựng, lắp đặt; cơ sở cung cấp dịch vụ (kể cả tư vấn) qua nhân viên hoặc tổ chức, cá nhân khác tại VN; đại lý; đại diện có quyền ký hợp đồng hoặc thường xuyên giao hàng, cung cấp dịch vụ; thương mại điện tử, nền tảng số.",
+   "Vietnamese enterprise: worldwide income. Foreign enterprise with PE: Vietnam-sourced income (có và không liên quan PE) + thu nhập nước ngoài liên quan PE. Without PE: Vietnam-sourced income."
+  ],
+  "sources": [
+   "r3:2",
+   "r3:3"
+  ],
+  "legal": [
+   "Law 67/2025/QH15"
+  ],
+  "qa": [
+   {
+    "q_en": "Scope of CIT for a foreign enterprise with a PE in Vietnam?",
+    "a_vi": "Thu nhập nguồn VN (liên quan hoặc không liên quan PE) cộng thu nhập nước ngoài liên quan đến PE."
+   }
+  ]
+ },
+ {
+  "id": "c-tax-period",
+  "part": "C",
+  "group": "Overview & rates",
+  "title_en": "Tax period",
+  "title_vi": "Kỳ tính thuế",
+  "summary_vi": "Kỳ tính thuế là năm dương lịch hoặc năm tài chính 12 tháng; kỳ đầu hoặc cuối tối đa 3 tháng được gộp, và không quá 15 tháng.",
+  "rules_vi": [
+   "Kỳ đầu hoặc kỳ cuối ≤ 3 tháng: có thể cộng vào kỳ năm sau hoặc năm trước; tổng không quá 15 tháng.",
+   "Đổi kỳ tính thuế (năm dương lịch ↔ năm tài chính): kỳ không quá 12 tháng.",
+   "Doanh nghiệp đang hưởng ưu đãi mà đổi kỳ được chọn: ưu đãi ngay năm đổi kỳ, hoặc nộp thuế theo thuế suất phổ thông của năm đổi kỳ và hưởng ưu đãi từ năm sau."
+  ],
+  "sources": [
+   "r3:3",
+   "r3:4"
+  ],
+  "qa": [
+   {
+    "q_en": "Maximum length of a CIT tax period after merging a short first period?",
+    "a_vi": "15 tháng (kỳ đầu hoặc cuối ≤ 3 tháng được gộp)."
+   }
+  ]
+ },
+ {
+  "id": "c-rates",
+  "part": "C",
+  "group": "Overview & rates",
+  "title_en": "CIT rates",
+  "title_vi": "Thuế suất CIT",
+  "summary_vi": "Thuế suất phổ thông 20%; doanh nghiệp doanh thu nhỏ có mức riêng theo luật mới; dầu khí và tài nguyên quý hiếm có mức cao hơn.",
+  "rules_vi": [
+   "Standard rate 20% (bảng thuế đề thi chỉ cho 20%).",
+   "Theo Luật 67/2025 (slide): tổng doanh thu năm ≤ 3 tỷ: 15%; trên 3 tỷ đến ≤ 50 tỷ: 17%.",
+   "Dầu khí: 25%–50% (Thủ tướng quyết định mức cụ thể). Tài nguyên quý hiếm (bạch kim, vàng, bạc, thiếc, vonfram, antimon, đá quý, đất hiếm…): 50%, hoặc 40% nếu ≥ 70% diện tích ở địa bàn đặc biệt khó khăn."
+  ],
+  "sources": [
+   "r3:4",
+   "tt:1"
+  ],
+  "numbers": [
+   {
+    "label": "Standard rate",
+    "value": "20%",
+    "src": "tt:1"
+   },
+   {
+    "label": "Revenue ≤ VND3bn (slide)",
+    "value": "15%",
+    "src": "r3:4"
+   },
+   {
+    "label": "Revenue > 3 – ≤ 50bn (slide)",
+    "value": "17%",
+    "src": "r3:4"
+   }
+  ],
+  "legal": [
+   "Law 67/2025/QH15"
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Bảng thuế đề thi (J26–J27) chỉ cho thuế suất 20%, còn slide ghi 15% và 17% cho doanh nghiệp doanh thu nhỏ. Trong bài tính theo đề, dùng 20% trừ khi đề nêu rõ.",
+  "qa": [
+   {
+    "q_en": "Standard CIT rate in the tax table?",
+    "a_vi": "20%."
+   }
+  ]
+ },
+ {
+  "id": "c-methods",
+  "part": "C",
+  "group": "Turnover & methods",
+  "title_en": "Direct vs declaration method",
+  "title_vi": "Phương pháp tỷ lệ trên doanh thu và phương pháp kê khai",
+  "summary_vi": "Kê khai áp dụng cho doanh nghiệp thực hiện đầy đủ chế độ kế toán VAS; tỷ lệ trên doanh thu áp dụng khi chỉ xác định được doanh thu.",
+  "rules_vi": [
+   "Declaration method: thuế = (thu nhập tính thuế − trích quỹ KH&CN) × thuế suất; thu nhập tính thuế = thu nhập chịu thuế − thu nhập miễn thuế + lỗ chuyển; thu nhập chịu thuế = doanh thu − chi phí được trừ + thu nhập khác.",
+   "Direct method: không có đầy đủ VAS, chỉ xác định được doanh thu. Gồm 4 nhóm: nhà thầu nước ngoài có PE (thu nhập không liên quan PE); nhà thầu nước ngoài không có PE (kể cả thương mại điện tử); hợp tác xã, đơn vị sự nghiệp ghi nhận được doanh thu nhưng không xác định chi phí; doanh nghiệp doanh thu năm ≤ 3 tỷ không xác định được chi phí (mới)."
+  ],
+  "sources": [
+   "r3:5",
+   "r3:8"
+  ],
+  "qa": [
+   {
+    "q_en": "When can a taxpayer use the direct method for CIT?",
+    "a_vi": "Khi không áp dụng đầy đủ VAS và chỉ xác định được doanh thu (nhà thầu nước ngoài, hợp tác xã, đơn vị sự nghiệp, doanh nghiệp doanh thu ≤ 3 tỷ)."
+   }
+  ]
+ },
+ {
+  "id": "c-direct-rates",
+  "part": "C",
+  "group": "Turnover & methods",
+  "title_en": "Direct method rates",
+  "title_vi": "Tỷ lệ % theo 4 nhóm đối tượng",
+  "summary_vi": "Nhà thầu nước ngoài áp tỷ lệ CIT của FCT trên doanh thu đã gồm VAT; nhóm doanh nghiệp doanh thu nhỏ có tỷ lệ riêng.",
+  "rules_vi": [
+   "Nhóm 1–2 (nhà thầu nước ngoài): dùng bảng tỷ lệ CIT của FCT (xem thẻ FCT rates), tính trên tổng doanh thu đã gồm VAT.",
+   "Nhóm 3 (ghi nhận được doanh thu, không xác định được chi phí): dịch vụ kể cả lãi tiền gửi, cho vay 5%; sản xuất, bán hàng hóa 1%; giáo dục, y tế, biểu diễn nghệ thuật và hoạt động khác 2%.",
+   "Nhóm 4 (doanh thu ≤ 3 tỷ): phân phối, cung cấp hàng hóa 0,3%; sản xuất, vận tải, dịch vụ gắn hàng hóa, xây dựng bao thầu vật tư 1,2%; dịch vụ, lãi, xây dựng không bao thầu vật tư 1,5%; các nhóm cho thuê tài sản, đại lý bảo hiểm, xổ số, bán hàng đa cấp, nội dung số và hoạt động khác còn có các mức 4% và 0,5%."
+  ],
+  "sources": [
+   "r3:6",
+   "r3:7"
+  ],
+  "flags": [
+   "off-focus"
+  ],
+  "conflict_vi": "Bố cục slide r3:7 làm lệch cột nên chưa gán chắc 4% và 0,5% cho nhóm nào; nhóm 4 là quy định mới, kiểm lại bằng ảnh slide nếu đề hỏi.",
+  "qa": [
+   {
+    "q_en": "CIT rate on revenue for a foreign contractor’s royalty income?",
+    "a_vi": "10% trên doanh thu (đã gồm VAT)."
+   }
+  ]
+ },
+ {
+  "id": "c-computation-template",
+  "part": "C",
+  "group": "Turnover & methods",
+  "title_en": "Computation template",
+  "title_vi": "Mẫu bảng điều chỉnh từ lợi nhuận kế toán",
+  "summary_vi": "Bài CIT bắt đầu từ lợi nhuận kế toán trước thuế, cộng khoản không được trừ và trừ khoản miễn thuế, rồi mới tính thuế.",
+  "rules_vi": [
+   "Net profit before tax per accounting.",
+   "Less: exempt income; omitted expense; other adjustments that reduce profit.",
+   "Add: omitted turnover/other income; non-deductible expenses; other adjustments that increase profit.",
+   "= Taxable income; × 20% = tax liability; trừ tax credit = tax payable.",
+   "Liệt kê mọi khoản trong đề, ghi 0 cho khoản không cần điều chỉnh."
+  ],
+  "sources": [
+   "r3:8",
+   "r3:60"
+  ],
+  "mvp": true,
+  "formula": "Taxable income = PBT − exempt income − omitted expense + omitted income + non-deductible expenses\nTax payable = (Taxable income − loss b/f − S&T fund) × 20% − tax credit",
+  "traps": [
+   {
+    "text_vi": "Bài điều chỉnh CIT: liệt kê mọi khoản; khoản không điều chỉnh ghi 0.",
+    "src": "r3:60"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Why list items with zero adjustment in a CIT reconciliation answer?",
+    "a_vi": "Đề chấm theo từng khoản: liệt kê mọi khoản và ghi 0 cho khoản không điều chỉnh để chắc điểm."
+   }
+  ]
+ },
+ {
+  "id": "c-revenue-timing",
+  "part": "C",
+  "group": "Turnover & methods",
+  "title_en": "Revenue timing",
+  "title_vi": "Thời điểm và giá trị doanh thu tính CIT",
+  "summary_vi": "Doanh thu tính thuế gồm doanh thu bán hàng, gia công, dịch vụ, phụ thu dù đã thu tiền hay chưa, ghi nhận theo thời điểm chuyển giao.",
+  "rules_vi": [
+   "Hàng hóa: khi chuyển giao quyền sở hữu hoặc quyền sử dụng cho người mua. Dịch vụ: khi hoàn thành hoặc hoàn thành theo tiến độ. Vận tải hàng không: khi hoàn thành dịch vụ.",
+   "Xây dựng, lắp đặt: khi bàn giao công trình, không phụ thuộc đã thanh toán. Điện, nước: ngày xác nhận chỉ số công tơ ghi trên hóa đơn.",
+   "Doanh nghiệp khấu trừ VAT: doanh thu không gồm VAT; doanh nghiệp tính VAT trực tiếp: doanh thu gồm VAT."
+  ],
+  "sources": [
+   "r3:9",
+   "r3:10"
+  ],
+  "traps": [
+   {
+    "text_vi": "Thời điểm lập hóa đơn khác thời điểm ghi nhận doanh thu tính CIT (xem thẻ Invoicing time).",
+    "src": "r4:4"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Is VAT included in CIT taxable turnover?",
+    "a_vi": "Không nếu khấu trừ VAT; có nếu nộp VAT theo phương pháp trực tiếp."
+   }
+  ]
+ },
+ {
+  "id": "c-deductible-3-conditions",
+  "part": "C",
+  "group": "General deduction rules",
+  "title_en": "3 conditions for deductible expense",
+  "title_vi": "Ba điều kiện của chi phí được trừ",
+  "summary_vi": "Chi phí được trừ khi liên quan hoạt động kinh doanh, có hóa đơn và chứng từ hợp lệ, và thanh toán không dùng tiền mặt (khi đủ ngưỡng); không thuộc nhóm bị cấm.",
+  "rules_vi": [
+   "1. Thực tế phát sinh, liên quan đến hoạt động sản xuất kinh doanh (kể cả chi phí R&D và chi phí trừ thêm tính theo tỷ lệ).",
+   "2. Hóa đơn và chứng từ hợp lệ, trừ trường hợp mua từ cá nhân, hộ kinh doanh theo danh mục được lập bảng kê.",
+   "3. Thanh toán không dùng tiền mặt từ 5 triệu trở lên mỗi giao dịch (điều kiện mới).",
+   "Chi phí không thuộc danh mục không được trừ trong Nghị định 320."
+  ],
+  "sources": [
+   "r3:10",
+   "r3:11",
+   "r3:12"
+  ],
+  "mvp": true,
+  "legal": [
+   "Decree 320/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Name the three general conditions for a CIT-deductible expense.",
+    "a_vi": "Liên quan hoạt động kinh doanh; hóa đơn, chứng từ hợp lệ; thanh toán không dùng tiền mặt (từ 5 triệu)."
+   }
+  ]
+ },
+ {
+  "id": "c-rnd-200",
+  "part": "C",
+  "group": "General deduction rules",
+  "title_en": "R&D 200%",
+  "title_vi": "Chi phí R&D được trừ 200%",
+  "summary_vi": "Chi phí nghiên cứu và phát triển được trừ tối đa 200% chi phí thực tế, với điều kiện sau khi trừ thêm doanh nghiệp không bị lỗ.",
+  "rules_vi": [
+   "Được trừ đến 200% chi phí R&D thực tế phát sinh trong kỳ.",
+   "Điều kiện: sau khi áp dụng khoản trừ thêm, doanh nghiệp không phát sinh lỗ.",
+   "R&D xác định theo pháp luật về khoa học, công nghệ và đổi mới sáng tạo."
+  ],
+  "sources": [
+   "r3:11"
+  ],
+  "mvp": true,
+  "legal": [
+   "Law 67/2025/QH15"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "What condition limits the 200% R&D deduction?",
+    "a_vi": "Sau khi trừ thêm, doanh nghiệp không được phát sinh lỗ."
+   }
+  ]
+ },
+ {
+  "id": "c-no-invoice-purchases",
+  "part": "C",
+  "group": "General deduction rules",
+  "title_en": "No-invoice purchases",
+  "title_vi": "Mua hàng không có hóa đơn: bảng kê 01/TNDN",
+  "summary_vi": "Mua từ cá nhân, hộ kinh doanh không có hóa đơn vẫn được trừ nếu lập bảng kê 01/TNDN và (nếu đủ ngưỡng) thanh toán không dùng tiền mặt.",
+  "rules_vi": [
+   "Các trường hợp: nông, lâm, thủy sản mua trực tiếp từ người sản xuất; hàng thủ công mỹ nghệ từ người làm trực tiếp; phế liệu từ người thu gom; đồ dùng, tài sản đã qua sử dụng mua từ hộ, cá nhân; hàng hóa, dịch vụ từ hộ, cá nhân có doanh thu dưới ngưỡng đăng ký VAT.",
+   "Cần bảng kê hàng hóa, dịch vụ mua vào (mẫu 01/TNDN) do công ty ký.",
+   "Tổng giá trị mua trong ngày từ 5 triệu trở lên trên mỗi người bán: phải thanh toán không dùng tiền mặt.",
+   "Hộ kinh doanh có doanh thu từ 100 triệu/năm trở lên: cần hóa đơn (theo slide r3:19); thiếu bảng kê 01/TNDN thì chi phí không được trừ."
+  ],
+  "sources": [
+   "r3:11",
+   "r3:18",
+   "r3:19"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "What document supports deductible purchases from individuals without invoices?",
+    "a_vi": "Bảng kê mua vào mẫu 01/TNDN, kèm thanh toán không dùng tiền mặt nếu từ 5 triệu mỗi người bán mỗi ngày."
+   }
+  ]
+ },
+ {
+  "id": "c-5m-noncash",
+  "part": "C",
+  "group": "General deduction rules",
+  "title_en": "VND5m non-cash rule",
+  "title_vi": "Ngưỡng 5 triệu thanh toán không dùng tiền mặt",
+  "summary_vi": "Giao dịch mua hàng hóa, dịch vụ từ 5 triệu (đã gồm VAT) phải thanh toán không dùng tiền mặt; nhiều lần cùng ngày cộng lại.",
+  "rules_vi": [
+   "Áp dụng cho mua hàng hóa, dịch vụ (gồm VAT nếu có) hoặc khoản chi khác từ 5 triệu mỗi giao dịch.",
+   "Nhiều giao dịch trong cùng ngày cộng lại từ 5 triệu cũng phải trả không dùng tiền mặt.",
+   "Nhân viên mua hộ: được trừ nếu có hóa đơn hợp lệ, có chính sách hoặc ủy quyền nội bộ và công ty hoàn tiền cho nhân viên không dùng tiền mặt.",
+   "Chi phí chưa thanh toán: tạm tính là chi phí được trừ, nhưng phải điều chỉnh giảm nếu sau đó thanh toán bằng tiền mặt."
+  ],
+  "sources": [
+   "r3:12"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Hàng trả tiền mặt từ 5 triệu bị loại ở cả CIT lẫn VAT đầu vào, và phần VAT đó cũng không được đưa vào chi phí.",
+    "src": "r4:39"
+   }
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "A purchase of VND6 million is paid in cash. CIT and VAT consequences?",
+    "a_vi": "Chi phí không được trừ khi tính CIT; VAT đầu vào không được khấu trừ, và VAT đó không được đưa vào chi phí."
+   }
+  ]
+ },
+ {
+  "id": "c-salary-nondeductible",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Salary non-deductible cases",
+  "title_vi": "Các trường hợp tiền lương không được trừ",
+  "summary_vi": "Lương không có hợp đồng, quy chế, không chi trả đúng hạn quyết toán hoặc chi cho chủ doanh nghiệp tư nhân không được trừ.",
+  "rules_vi": [
+   "Lương, tiền công của chủ doanh nghiệp tư nhân, chủ công ty TNHH một thành viên là cá nhân.",
+   "Thù lao của sáng lập viên, thành viên Hội đồng thành viên, HĐQT không trực tiếp tham gia quản lý, điều hành.",
+   "Lương, thưởng, phúc lợi không có hợp đồng lao động, thỏa ước, quy chế hoặc chứng từ hợp lệ; chi cho gia đình nhân viên.",
+   "Trợ cấp thôi việc, mất việc không đúng quy định lao động.",
+   "Lương, thưởng trích nhưng chưa trả trước hạn nộp tờ khai quyết toán, trừ phần trích lập quỹ dự phòng lương năm sau; quỹ này phải dùng trong 6 tháng sau năm tài chính."
+  ],
+  "sources": [
+   "r3:12"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Is a bonus accrued but unpaid by the CIT finalisation deadline deductible?",
+    "a_vi": "Không, trừ khi nằm trong quỹ dự phòng lương hợp lệ (≤ 17%, dùng trong 6 tháng)."
+   }
+  ]
+ },
+ {
+  "id": "c-salary-provision-17",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Salary provision 17%",
+  "title_vi": "Quỹ dự phòng tiền lương 17%",
+  "summary_vi": "Trích dự phòng lương không quá 17% quỹ lương thực chi và sau khi trích doanh nghiệp không bị lỗ.",
+  "rules_vi": [
+   "Không vượt 17% quỹ lương thực chi trong năm (tính đến hạn nộp tờ khai quyết toán, không kể phần dùng từ quỹ dự phòng năm trước).",
+   "Sau khi trích lập, doanh nghiệp không phát sinh lỗ; nếu lỗ thì không được trích đủ 17%.",
+   "Quỹ phải được sử dụng trong 6 tháng sau kết thúc năm tài chính; không dùng hết thì ghi giảm chi phí được trừ kỳ sau."
+  ],
+  "sources": [
+   "r3:12",
+   "r3:13"
+  ],
+  "mvp": true,
+  "formula": "Dự phòng được trừ tối đa = 17% × quỹ lương thực chi (và không để doanh nghiệp lỗ)",
+  "qa": [
+   {
+    "q_en": "Cap on the salary provision for CIT?",
+    "a_vi": "17% quỹ lương thực chi; không được làm doanh nghiệp lỗ."
+   }
+  ]
+ },
+ {
+  "id": "c-employment-caps",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Uniform 5m · welfare 1 month · pension 5m/month",
+  "title_vi": "Trần chi phí nhân viên",
+  "summary_vi": "Đồng phục tiền mặt tối đa 5 triệu/người/năm; phúc lợi tối đa 1 tháng lương bình quân; hưu trí tự nguyện, bảo hiểm nhân thọ tối đa 5 triệu/tháng/người.",
+  "rules_vi": [
+   "Uniform: tiền mặt tối đa 5 triệu/người/năm; hiện vật được trừ đủ nếu có chứng từ; phần tiền mặt vượt 5 triệu không được trừ.",
+   "Welfare: không vượt 1 tháng lương bình quân thực tế phát sinh.",
+   "Quỹ hưu trí tự nguyện, bảo hiểm nhân thọ cho người lao động: tối đa 5 triệu/tháng/người (mới; trước đây 3 triệu), có quy định trong quy chế nội bộ.",
+   "Không được trừ nếu công ty chưa thực hiện đủ nghĩa vụ bảo hiểm bắt buộc."
+  ],
+  "sources": [
+   "r3:13"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Uniform (cash)",
+    "value": "5 triệu/người/năm",
+    "src": "r3:13"
+   },
+   {
+    "label": "Welfare",
+    "value": "1 tháng lương bình quân",
+    "src": "r3:13"
+   },
+   {
+    "label": "Voluntary pension / life insurance",
+    "value": "5 triệu/tháng/người",
+    "src": "r3:13"
+   }
+  ],
+  "traps": [
+   {
+    "text_vi": "Trần 5 triệu/tháng của CIT khác giảm trừ PIT cho quỹ hưu trí tự nguyện (1 triệu/tháng).",
+    "src": "r2:14"
+   }
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Annual cap on cash uniform allowance for CIT?",
+    "a_vi": "5 triệu đồng mỗi người mỗi năm."
+   }
+  ]
+ },
+ {
+  "id": "c-depreciation-nondeductible",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Depreciation non-deductible cases",
+  "title_vi": "Khấu hao không được trừ",
+  "summary_vi": "Khấu hao tài sản không có chứng từ sở hữu, không phục vụ kinh doanh, vượt khung, đất sử dụng lâu dài, xe vượt 1,6 tỷ… không được trừ.",
+  "rules_vi": [
+   "Tài sản không có giấy tờ sở hữu hợp lệ; không phục vụ hoạt động kinh doanh trong kỳ.",
+   "Ngừng tạm thời: sản xuất theo mùa vụ không quá 9 tháng, hoặc sửa chữa, di dời, bảo trì định kỳ không quá 12 tháng thì vẫn được trừ; vượt thời hạn thì không.",
+   "Khấu hao vượt mức khung theo Thông tư 45/2013; tài sản đã khấu hao hết.",
+   "Quyền sử dụng đất lâu dài không được trích khấu hao; công trình trên đất không dùng cho sản xuất kinh doanh.",
+   "Ô tô từ 9 chỗ trở xuống: phần nguyên giá vượt 1,6 tỷ không được trừ. Phương tiện vận tải không có giấy phép trong kinh doanh vận tải, du lịch, khách sạn; máy bay dân dụng, du thuyền: không được trừ."
+  ],
+  "sources": [
+   "r3:14",
+   "r3:15"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "When is depreciation on temporarily idle assets still deductible?",
+    "a_vi": "Ngừng do mùa vụ không quá 9 tháng, hoặc do sửa chữa, di dời, bảo trì định kỳ không quá 12 tháng."
+   }
+  ]
+ },
+ {
+  "id": "c-car-1-6bn",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Car ≤ 9 seats 1.6bn",
+  "title_vi": "Ô tô dưới 10 chỗ: trần nguyên giá 1,6 tỷ",
+  "summary_vi": "Ô tô từ 9 chỗ trở xuống (không dùng kinh doanh vận tải) chỉ được trừ khấu hao trên nguyên giá tối đa 1,6 tỷ chưa gồm VAT.",
+  "rules_vi": [
+   "Nguyên giá tính khấu hao tối đa 1,6 tỷ (chưa gồm VAT); phần vượt không được trừ.",
+   "Khi thanh lý, chuyển nhượng: giá trị còn lại = nguyên giá − khấu hao lũy kế theo kế toán.",
+   "Cùng mốc 1,6 tỷ áp cho trần VAT đầu vào được khấu trừ của ô tô."
+  ],
+  "sources": [
+   "r3:14"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Nguyên giá tối đa",
+    "value": "1,6 tỷ (chưa VAT)",
+    "src": "r3:14"
+   }
+  ],
+  "formula": "Khấu hao được trừ = khấu hao kế toán × (1,6 tỷ / nguyên giá) nếu nguyên giá > 1,6 tỷ",
+  "qa": [
+   {
+    "q_en": "Car costing VND2 billion: how much cost is depreciable for CIT?",
+    "a_vi": "Chỉ 1,6 tỷ (chưa gồm VAT); khấu hao phần 0,4 tỷ vượt không được trừ."
+   }
+  ]
+ },
+ {
+  "id": "c-depreciation-methods",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Depreciation methods",
+  "title_vi": "Phương pháp khấu hao",
+  "summary_vi": "Ba phương pháp: đường thẳng, số dư giảm dần có điều chỉnh (hệ số 1,5 hoặc 2,0) và theo sản lượng.",
+  "rules_vi": [
+   "Đường thẳng: mức khấu hao = nguyên giá / thời gian sử dụng; năm đầu tính theo số tháng sử dụng. VD máy 10 tỷ, 10 năm, đưa vào dùng 1/7: năm đầu 1 tỷ × 6/12 = 500 triệu.",
+   "Số dư giảm dần: cho tài sản đầu tư mới (không phải đã qua sử dụng) là máy móc, thiết bị hoặc dụng cụ đo lường, thử nghiệm ở lĩnh vực công nghệ thay đổi nhanh. Mức khấu hao năm = giá trị còn lại × tỷ lệ khấu hao nhanh; tỷ lệ nhanh = tỷ lệ đường thẳng × hệ số điều chỉnh (≤ 4 năm: 1,5; > 4 năm: 2,0).",
+   "Theo sản lượng: tài sản trực tiếp tạo sản phẩm, xác định được tổng sản lượng theo công suất thiết kế, công suất thực tế tháng không thấp hơn 100% công suất thiết kế. Khấu hao tháng = sản lượng tháng × (nguyên giá / sản lượng theo thiết kế)."
+  ],
+  "sources": [
+   "r3:16",
+   "r3:17"
+  ],
+  "qa": [
+   {
+    "q_en": "Adjustment ratio for reducing-balance depreciation of an asset with a 3-year life?",
+    "a_vi": "1,5 (thời gian sử dụng ≤ 4 năm); trên 4 năm thì 2,0."
+   }
+  ]
+ },
+ {
+  "id": "c-repair-vs-upgrade",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Repair vs upgrade",
+  "title_vi": "Sửa chữa và nâng cấp tài sản",
+  "summary_vi": "Nâng cấp cộng vào nguyên giá để khấu hao; sửa chữa tính hết vào chi phí năm nay hoặc phân bổ tối đa 3 năm.",
+  "rules_vi": [
+   "Upgrading expenses: cộng vào nguyên giá tài sản và khấu hao.",
+   "Repair expenses: hạch toán hết vào chi phí kỳ hiện tại, hoặc phân bổ tối đa 3 năm."
+  ],
+  "sources": [
+   "r3:16"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "How are repair costs treated differently from upgrade costs?",
+    "a_vi": "Sửa chữa: ghi chi phí ngay hoặc phân bổ tối đa 3 năm; nâng cấp: cộng vào nguyên giá khấu hao."
+   }
+  ]
+ },
+ {
+  "id": "c-lur",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Land use rights",
+  "title_vi": "Quyền sử dụng đất",
+  "summary_vi": "Quyền sử dụng đất có thời hạn được phân bổ nếu có chứng từ và phục vụ kinh doanh; quyền sử dụng đất lâu dài không được khấu hao.",
+  "rules_vi": [
+   "Finite LUR: phân bổ được trừ nếu có chứng từ theo quy định và phục vụ hoạt động kinh doanh.",
+   "Infinite LUR: không được khấu hao (phân bổ không được trừ)."
+  ],
+  "sources": [
+   "r3:15",
+   "r3:14"
+  ],
+  "qa": [
+   {
+    "q_en": "Is amortisation of indefinite-term land use right deductible?",
+    "a_vi": "Không. Chỉ quyền sử dụng đất có thời hạn, có chứng từ và phục vụ kinh doanh mới được phân bổ."
+   }
+  ]
+ },
+ {
+  "id": "c-materials-norm",
+  "part": "C",
+  "group": "Employment & asset costs",
+  "title_en": "Materials over norm",
+  "title_vi": "Vật tư vượt định mức",
+  "summary_vi": "Chi phí nguyên vật liệu, nhiên liệu, điện, hàng hóa vượt mức tiêu hao hợp lý không được trừ.",
+  "rules_vi": [
+   "Mức tiêu hao hợp lý do doanh nghiệp xác định từ đầu năm hoặc trước khi sản xuất và lưu tại doanh nghiệp.",
+   "Nếu Nhà nước có định mức thì áp dụng định mức đó."
+  ],
+  "sources": [
+   "r3:18"
+  ],
+  "qa": [
+   {
+    "q_en": "Which expense is non-deductible for materials?",
+    "a_vi": "Phần chi phí vượt mức tiêu hao hợp lý (hoặc định mức Nhà nước nếu có)."
+   }
+  ]
+ },
+ {
+  "id": "c-interest",
+  "part": "C",
+  "group": "Interest, provisions, FX",
+  "title_en": "Interest expense",
+  "title_vi": "Chi phí lãi vay",
+  "summary_vi": "Lãi vay phải qua 3 lớp kiểm tra: lãi vay ngoài tổ chức tín dụng vượt 20%/năm, lãi tương ứng vốn điều lệ góp thiếu, và trần 30% EBITDA khi có bên liên kết.",
+  "rules_vi": [
+   "Lớp 1: lãi vay từ đối tượng không phải tổ chức tín dụng vượt 20%/năm không được trừ (mới; trước là 1,5 lần lãi suất cơ bản của Ngân hàng Nhà nước).",
+   "Lớp 2: lãi của khoản vay tương ứng phần vốn điều lệ góp thiếu theo tiến độ góp vốn. Khoản vay ≤ vốn góp thiếu: toàn bộ lãi không được trừ. Khoản vay > vốn góp thiếu: nhiều khoản vay: lãi không được trừ = (vốn góp thiếu / tổng vay) × tổng lãi; một khoản vay: = vốn góp thiếu × lãi suất × thời gian góp thiếu.",
+   "Lớp 3: tổng chi phí lãi vay ròng (đã trừ lãi tiền gửi, lãi cho vay) không quá 30% EBITDA theo quy định chuyển giá; phần vượt chuyển sang 5 năm sau. Không áp dụng cho tổ chức tín dụng, doanh nghiệp bảo hiểm, vốn ODA và vay ưu đãi của Chính phủ cho vay lại; có quy định chuyển tiếp 2020–2023 (Nghị định 20), xem thẻ 30% EBITDA ở phần A."
+  ],
+  "sources": [
+   "r3:20",
+   "r3:57"
+  ],
+  "mvp": true,
+  "formula": "Một khoản vay: lãi không được trừ = vốn góp thiếu × lãi suất × thời gian góp thiếu\nNhiều khoản vay: lãi không được trừ = (vốn góp thiếu / tổng vay) × tổng lãi",
+  "traps": [
+   {
+    "text_vi": "Trần 20%/năm là quy định mới; đề cũ dùng 1,5 lần lãi suất cơ bản.",
+    "src": "r3:20"
+   },
+   {
+    "text_vi": "Công thức vốn góp thiếu khác nhau giữa một khoản vay và nhiều khoản vay.",
+    "src": "r3:60"
+   }
+  ],
+  "legal": [
+   "Decree 320/2025",
+   "Decree 132/2020"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Interest cap for loans from non-credit institutions under the new CIT rules?",
+    "a_vi": "20% mỗi năm; vượt thì không được trừ (trước đây 1,5 lần lãi suất cơ bản)."
+   }
+  ]
+ },
+ {
+  "id": "c-lease-allocation",
+  "part": "C",
+  "group": "Interest, provisions, FX",
+  "title_en": "Over-allocated lease",
+  "title_vi": "Chi phí thuê tài sản trả trước phân bổ quá mức",
+  "summary_vi": "Chi phí thuê tài sản được phân bổ đúng thời gian thuê; phần phân bổ quá mức không được trừ. Chi phí trích trước phải tương ứng doanh thu và đúng tiến độ thanh toán.",
+  "rules_vi": [
+   "Chỉ phần phân bổ đúng được trừ.",
+   "Chi phí trích trước (accrual): được trừ khi tương ứng doanh thu đã khai, có cơ sở hợp lý, thanh toán đúng tiến độ đã thỏa thuận; trường hợp khác không được trừ."
+  ],
+  "sources": [
+   "r3:20"
+  ],
+  "qa": [
+   {
+    "q_en": "Which portion of prepaid lease expense is non-deductible?",
+    "a_vi": "Phần phân bổ vượt quá thời gian thuê thực tế (phân bổ quá mức)."
+   }
+  ]
+ },
+ {
+  "id": "c-provisions",
+  "part": "C",
+  "group": "Interest, provisions, FX",
+  "title_en": "Provisions (Circular 48)",
+  "title_vi": "Dự phòng theo Thông tư 48",
+  "summary_vi": "Chỉ 5 loại dự phòng lập theo Thông tư 48/2019 mới được tính vào chi phí được trừ.",
+  "rules_vi": [
+   "Dự phòng giảm giá hàng tồn kho; tổn thất đầu tư tài chính; nợ phải thu khó đòi; bảo hành sản phẩm, hàng hóa, công trình xây lắp; rủi ro nghề nghiệp của doanh nghiệp thẩm định giá và kiểm toán độc lập.",
+   "Mức trích lập xác định đúng hướng dẫn Thông tư 48/2019; trình bày báo cáo vẫn theo Luật Kế toán.",
+   "Hoàn nhập dự phòng đã được trừ là thu nhập khác."
+  ],
+  "sources": [
+   "r3:21",
+   "r3:30"
+  ],
+  "mvp": true,
+  "legal": [
+   "Circular 48/2019"
+  ],
+  "qa": [
+   {
+    "q_en": "Name the five provisions deductible for CIT.",
+    "a_vi": "Giảm giá hàng tồn kho, tổn thất đầu tư tài chính, nợ khó đòi, bảo hành, rủi ro nghề nghiệp (thẩm định giá, kiểm toán)."
+   }
+  ]
+ },
+ {
+  "id": "c-pe-mgmt-allocation",
+  "part": "C",
+  "group": "Interest, provisions, FX",
+  "title_en": "Management fee to PE",
+  "title_vi": "Chi phí quản lý công ty nước ngoài phân bổ cho PE",
+  "summary_vi": "PE chỉ được trừ phần chi phí quản lý do công ty mẹ nước ngoài phân bổ theo tỷ lệ doanh thu.",
+  "rules_vi": [
+   "A = B / C × D.",
+   "A: chi phí quản lý được trừ phân bổ cho PE tại VN; B: doanh thu của PE tại VN; C: tổng doanh thu của công ty nước ngoài (kể cả PE ở nước khác); D: tổng chi phí quản lý kinh doanh của công ty nước ngoài trong kỳ.",
+   "Phần vượt A không được trừ."
+  ],
+  "sources": [
+   "r3:22"
+  ],
+  "mvp": true,
+  "formula": "A = (B / C) × D",
+  "qa": [
+   {
+    "q_en": "Formula for management expenses deductible at a PE?",
+    "a_vi": "A = doanh thu PE / tổng doanh thu công ty nước ngoài × tổng chi phí quản lý."
+   }
+  ]
+ },
+ {
+  "id": "c-fx-unrealised",
+  "part": "C",
+  "group": "Interest, provisions, FX",
+  "title_en": "Unrealised FX",
+  "title_vi": "Chênh lệch tỷ giá chưa thực hiện",
+  "summary_vi": "Lỗ đánh giá lại cuối kỳ khoản phải thu, tiền, phải trả trong giai đoạn hoạt động không được trừ và lãi không tính thuế.",
+  "rules_vi": [
+   "Lỗ chênh lệch tỷ giá do đánh giá lại phải thu, tiền, phải trả: loại khỏi chi phí (điều chỉnh tăng thu nhập tính thuế).",
+   "Lãi do đánh giá lại các khoản này: không tính thuế (điều chỉnh giảm).",
+   "Giai đoạn xây dựng cơ bản: chênh lệch tỷ giá thực hiện và chưa thực hiện được bù trừ rồi phân bổ vào doanh thu hoặc chi phí trong tối đa 5 năm kể từ năm hoạt động."
+  ],
+  "sources": [
+   "r3:22",
+   "r3:60"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Lỗ chênh lệch tỷ giá đánh giá lại cuối năm không được trừ; lãi thì không tính thuế.",
+    "src": "r3:60"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Treatment of unrealised FX gain on year-end revaluation of receivables?",
+    "a_vi": "Không tính thuế (loại khỏi thu nhập chịu thuế); lỗ tương ứng cũng không được trừ."
+   }
+  ]
+ },
+ {
+  "id": "c-specialised-law",
+  "part": "C",
+  "group": "Other non-deductible & special deductible",
+  "title_en": "Non-compliance with specialised laws",
+  "title_vi": "Chi phí vi phạm luật chuyên ngành",
+  "summary_vi": "Chi phí làm thêm giờ vượt giới hạn luật, quảng cáo hàng cấm hoặc chưa đăng ký không được trừ.",
+  "rules_vi": [
+   "Làm thêm giờ vượt giới hạn (200 giờ hoặc 300 giờ/người/năm; 40 giờ/người/tháng…).",
+   "Quảng cáo hàng hóa, dịch vụ bị cấm, hoặc phải đăng ký mà chưa hoàn tất đăng ký.",
+   "Chi phí sản xuất kinh doanh không phù hợp hoặc vượt giới hạn theo quy định chuyên ngành."
+  ],
+  "sources": [
+   "r3:23"
+  ],
+  "mvp": true,
+  "legal": [
+   "Decree 320/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Is overtime pay beyond statutory limits deductible?",
+    "a_vi": "Không (quy định mới: không tuân thủ luật chuyên ngành)."
+   }
+  ]
+ },
+ {
+  "id": "c-other-nondeductible",
+  "part": "C",
+  "group": "Other non-deductible & special deductible",
+  "title_en": "Other non-deductible expenses",
+  "title_vi": "Các khoản không được trừ khác",
+  "summary_vi": "Danh mục dài: golf, phạt hành chính, chi phí vốn chủ, phí tập đoàn không gắn với kinh doanh, chi phí đầu tư vốn hóa, khoản đã được quỹ tài trợ…",
+  "rules_vi": [
+   "Golf (thẻ hội viên, phí chơi); phạt vi phạm hành chính (thuế, kế toán, đăng ký kinh doanh; phạt vi phạm hợp đồng thì khác).",
+   "Chi phí vốn chủ: phát hành cổ phiếu, cổ tức, mua lại cổ phiếu quỹ.",
+   "Phí tập đoàn, công ty mẹ không gắn rõ với hoạt động kinh doanh của người nộp thuế.",
+   "Chi phí đầu tư vốn hóa (trước hoạt động hình thành tài sản); góp vốn bằng lợi thế thương mại, nhãn hiệu.",
+   "Tài sản không đủ điều kiện là tài sản cố định, phân bổ quá 3 năm; khoản chi nhân viên không đúng quy định (trợ cấp thất nghiệp trái luật, thưởng sáng kiến không quy chế, khoản không đúng cho lao động nữ, dân tộc thiểu số).",
+   "Chi phí đã được quỹ khác hoặc Quỹ phát triển KH&CN bù đắp; phí quản lý casino và trò chơi có thưởng vượt 4% doanh thu.",
+   "Chi phí chưa tương ứng doanh thu (trừ các khoản được liệt kê ở thẻ Expenses before revenue).",
+   "PIT và FCT nộp thay theo phương pháp gross-up: slide xếp là không được trừ (xem mâu thuẫn)."
+  ],
+  "sources": [
+   "r3:23"
+  ],
+  "mvp": true,
+  "legal": [
+   "Decree 320/2025"
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide r3:23 xếp \"PIT & FCT paid under gross-up method\" vào nhóm không được trừ. Nghị định 320/2025 Điều 10 khoản 12 loại trừ (cho trừ) CIT nộp thay nhà thầu theo hợp đồng giá net và PIT nộp thay theo hợp đồng lao động giá net. Chưa kết luận: hỏi giảng viên.",
+  "qa": [
+   {
+    "q_en": "Name three expenses that are never deductible for CIT.",
+    "a_vi": "Phạt hành chính, chi phí golf, cổ tức và chi phí phát hành cổ phiếu (còn: phí tập đoàn không gắn với kinh doanh)."
+   }
+  ]
+ },
+ {
+  "id": "c-donations",
+  "part": "C",
+  "group": "Other non-deductible & special deductible",
+  "title_en": "Donations",
+  "title_vi": "Tài trợ, từ thiện được trừ",
+  "summary_vi": "Chỉ khoản tài trợ cho 7 mục đích luật cho phép và có biên bản xác nhận theo mẫu mới được trừ.",
+  "rules_vi": [
+   "7 mục đích: giáo dục; y tế; văn hóa (mới); phòng chống thiên tai, dịch bệnh, khắc phục thiên tai (mới); xây nhà đại đoàn kết, nhà tình nghĩa, nhà cho đối tượng chính sách; theo quy định của Chính phủ hoặc Thủ tướng tại địa bàn đặc biệt khó khăn; nghiên cứu khoa học, phát triển công nghệ, đổi mới sáng tạo, chuyển đổi số (mới).",
+   "Hồ sơ: biên bản xác nhận khoản tài trợ theo mẫu, người đại diện pháp luật bên tài trợ và bên nhận ký.",
+   "Tài trợ cho cá nhân (các mục 1–4): biên bản còn phải được tổ chức vận động tài trợ xác nhận và người thụ hưởng ký."
+  ],
+  "sources": [
+   "r3:24"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Tài trợ ngoài các mục đích cho phép, hoặc thiếu biên bản, không được trừ.",
+    "src": "r3:60"
+   }
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "When is a donation CIT-deductible?",
+    "a_vi": "Khi thuộc một trong các mục đích luật cho phép (giáo dục, y tế, văn hóa, thiên tai…) và có biên bản xác nhận theo mẫu."
+   }
+  ]
+ },
+ {
+  "id": "c-funds-contribution",
+  "part": "C",
+  "group": "Other non-deductible & special deductible",
+  "title_en": "Contributions to Government funds",
+  "title_vi": "Đóng góp vào quỹ do Nhà nước lập",
+  "summary_vi": "Khoản đóng góp vào quỹ theo quyết định của Thủ tướng hoặc quy định của Chính phủ được trừ.",
+  "rules_vi": [
+   "Ví dụ: Quỹ Viễn thông công ích, Quỹ phòng chống tác hại của thuốc lá, Quỹ bảo vệ môi trường Việt Nam, các quỹ khác theo quyết định của Thủ tướng hoặc Chính phủ."
+  ],
+  "sources": [
+   "r3:24"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Name one government fund whose contribution is CIT-deductible.",
+    "a_vi": "Quỹ Viễn thông công ích, Quỹ phòng chống tác hại thuốc lá hoặc Quỹ bảo vệ môi trường Việt Nam."
+   }
+  ]
+ },
+ {
+  "id": "c-expenses-no-revenue",
+  "part": "C",
+  "group": "Other non-deductible & special deductible",
+  "title_en": "Expenses before revenue",
+  "title_vi": "Chi phí chưa tương ứng doanh thu nhưng được trừ",
+  "summary_vi": "Một số chi phí phát sinh trước khi có doanh thu vẫn được trừ nếu có đủ chứng từ.",
+  "rules_vi": [
+   "Mở thị trường: chi phí dự thầu không trúng; nghiên cứu thị trường; R&D sản phẩm mới (kể cả dự án thất bại); marketing, giới thiệu trước khi bán.",
+   "Giai đoạn trước hoạt động: tiền thuê đất; chi phí quản lý, bảo trì hạ tầng khu kinh tế, khu công nghiệp, khu công nghệ cao.",
+   "Tài sản cho thuê nhàn rỗi: khấu hao, phân bổ trong thời gian chưa có người thuê.",
+   "Thành lập, tạm ngừng, chấm dứt: chi phí thành lập doanh nghiệp, chi nhánh; khôi phục sau tạm ngừng (trừ chi phí vốn hóa); khôi phục mặt bằng khi chấm dứt.",
+   "Hủy bỏ: hàng tồn kho hỏng, hết hạn, không đạt chuẩn; tài sản không dùng, hỏng; phế phẩm (gồm giá trị còn lại và chi phí hủy).",
+   "Phải lưu đầy đủ chứng từ."
+  ],
+  "sources": [
+   "r3:25"
+  ],
+  "mvp": true,
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Is a failed tender cost deductible?",
+    "a_vi": "Có (chi phí dự thầu không trúng là chi phí mở thị trường được trừ), với đủ chứng từ."
+   }
+  ]
+ },
+ {
+  "id": "c-special-deductible",
+  "part": "C",
+  "group": "Other non-deductible & special deductible",
+  "title_en": "Other deductible (new)",
+  "title_vi": "Các khoản trừ khác: đào tạo, bất khả kháng, VAT không khấu trừ…",
+  "summary_vi": "Đào tạo theo hợp đồng hoặc quy chế, tổn thất bất khả kháng chưa được bồi thường, VAT đầu vào không được khấu trừ nhưng không được hoàn…",
+  "rules_vi": [
+   "Đào tạo, đào tạo lại, nâng cao nghề nghiệp theo hợp đồng lao động, thỏa ước hoặc quy chế.",
+   "Tổn thất do thiên tai, dịch bệnh, bất khả kháng chưa được bồi thường: được trừ = tổn thất thực tế − bồi thường; bồi thường nhận kỳ khác là thu nhập khác kỳ nhận.",
+   "VAT đầu vào gắn trực tiếp với sản xuất kinh doanh mà chưa được khấu trừ và không đủ điều kiện hoàn (mới). Không áp dụng cho VAT đầu vào bị loại vì thanh toán tiền mặt từ 5 triệu.",
+   "Chi phí nghiên cứu khoa học, công nghệ, đổi mới, chuyển đổi số; xây dựng công trình công cộng phục vụ doanh nghiệp; giảm phát thải, trung hòa carbon, giảm ô nhiễm; quốc phòng, an ninh; hoạt động của Đảng và tổ chức chính trị – xã hội; phòng chống HIV/AIDS tại nơi làm việc."
+  ],
+  "sources": [
+   "r3:26",
+   "r3:12"
+  ],
+  "mvp": true,
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Is non-creditable input VAT deductible for CIT?",
+    "a_vi": "Có nếu gắn với sản xuất kinh doanh và không đủ điều kiện hoàn, trừ phần VAT bị loại vì thanh toán tiền mặt từ 5 triệu."
+   }
+  ]
+ },
+ {
+  "id": "c-capital-transfer-vn",
+  "part": "C",
+  "group": "Other income & transfers",
+  "title_en": "Capital/securities transfer (VN enterprise)",
+  "title_vi": "Chuyển nhượng vốn, chứng khoán của doanh nghiệp VN",
+  "summary_vi": "Doanh nghiệp Việt Nam tính 20% trên lãi chuyển nhượng vốn hoặc chứng khoán.",
+  "rules_vi": [
+   "Thu nhập = giá chuyển nhượng − giá mua (giá trị vốn góp ban đầu hoặc giá mua trước) − chi phí chuyển nhượng; thuế 20%.",
+   "Giá chuyển nhượng có thể bị cơ quan thuế điều chỉnh nếu không theo giá thị trường.",
+   "Chi phí chuyển nhượng: pháp lý, cấp phép, đàm phán… có hóa đơn, chứng từ."
+  ],
+  "sources": [
+   "r3:27"
+  ],
+  "formula": "Thu nhập chịu thuế = giá chuyển nhượng − giá mua − chi phí chuyển nhượng; thuế = 20%",
+  "qa": [
+   {
+    "q_en": "CIT on a Vietnamese enterprise’s capital transfer?",
+    "a_vi": "20% trên lãi: giá chuyển nhượng − giá mua − chi phí chuyển nhượng."
+   }
+  ]
+ },
+ {
+  "id": "c-capital-transfer-foreign",
+  "part": "C",
+  "group": "Other income & transfers",
+  "title_en": "Capital transfer (foreign)",
+  "title_vi": "Chuyển nhượng vốn của nhà đầu tư nước ngoài",
+  "summary_vi": "Nhà đầu tư nước ngoài chịu 2% trên giá chuyển nhượng vốn, không xét lãi lỗ; chứng khoán niêm yết 0,1%.",
+  "rules_vi": [
+   "Vốn và chứng khoán chưa niêm yết: 2% trên giá chuyển nhượng, bất kể lãi hay lỗ; khấu trừ tại nguồn, bên nhận chuyển nhượng khai và nộp (nước ngoài → VN).",
+   "Gồm cả chuyển nhượng trực tiếp và gián tiếp (chuyển nhượng ở nước ngoài một công ty nắm vốn tại VN).",
+   "Miễn: tái cơ cấu nội bộ không đổi công ty mẹ tối cao của các bên nắm trực tiếp, gián tiếp cổ phần của doanh nghiệp VN và không phát sinh lãi.",
+   "Chứng khoán niêm yết: 0,1% trên giá chuyển nhượng, công ty chứng khoán hoặc ngân hàng lưu ký khai, nộp; nhà đầu tư nước ngoài không phải khai riêng."
+  ],
+  "sources": [
+   "r3:28",
+   "r3:29",
+   "tt:2"
+  ],
+  "numbers": [
+   {
+    "label": "Capital contributions & shares",
+    "value": "2% giá chuyển nhượng",
+    "src": "tt:2"
+   },
+   {
+    "label": "Listed securities",
+    "value": "0,1% giá chuyển nhượng",
+    "src": "tt:2"
+   }
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "CIT on a foreign investor’s transfer of unlisted shares in a Vietnamese company?",
+    "a_vi": "2% trên giá chuyển nhượng (không xét lãi lỗ); chứng khoán niêm yết 0,1%."
+   }
+  ]
+ },
+ {
+  "id": "c-real-estate-transfer",
+  "part": "C",
+  "group": "Other income & transfers",
+  "title_en": "Real estate transfer",
+  "title_vi": "Chuyển nhượng bất động sản của doanh nghiệp",
+  "summary_vi": "Thu nhập chuyển nhượng BĐS = doanh thu − giá vốn và chi phí; doanh thu không thấp hơn giá đất do UBND tỉnh quy định hằng năm.",
+  "rules_vi": [
+   "Doanh thu theo giá chuyển nhượng thực tế nhưng không thấp hơn giá đất UBND cấp tỉnh quy định (khi có chuyển quyền sử dụng đất).",
+   "Giá vốn và chi phí: tiền sử dụng đất, tiền mua, đền bù giải phóng mặt bằng, cải tạo đất, đầu tư hạ tầng và công trình, phí và lệ phí quyền sử dụng đất.",
+   "Tạm nộp theo quý tại từng tỉnh nơi có BĐS chuyển nhượng, không kê khai; quyết toán cuối năm."
+  ],
+  "sources": [
+   "r3:29",
+   "r3:30"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "How is the revenue for CIT on a land use right transfer floored?",
+    "a_vi": "Không thấp hơn giá đất do UBND tỉnh quy định hằng năm."
+   }
+  ]
+ },
+ {
+  "id": "c-other-income",
+  "part": "C",
+  "group": "Other income & transfers",
+  "title_en": "Other income list",
+  "title_vi": "Danh mục thu nhập khác theo Nghị định 320",
+  "summary_vi": "Hoàn nhập dự phòng, nợ khó đòi đã xóa thu hồi được, nợ phải trả không xác định chủ, thu nhập các năm trước, tiền phạt hợp đồng, tài trợ, chuyển nhượng vốn, chênh lệch tỷ giá…",
+  "rules_vi": [
+   "Dự phòng không dùng hoặc không dùng hết; nợ khó đòi đã xóa nay thu hồi được; nợ phải trả không xác định được chủ; thu nhập các năm trước phát hiện sót.",
+   "Tiền phạt và bồi thường vi phạm hợp đồng (không gồm phạt hành chính), thưởng theo hợp đồng, quà tặng, tài trợ, chiết khấu.",
+   "Chuyển nhượng vốn, chứng khoán, quyền góp vốn; BĐS; dự án đầu tư; quyền thăm dò, khai thác khoáng sản (thu nhập = doanh thu − chi phí được trừ).",
+   "Cho thuê tài sản (không phải BĐS), thanh lý tài sản (doanh thu trừ giá trị còn lại và chi phí), bán phế liệu, phụ phẩm, thu nhập từ di dời cơ sở.",
+   "Lãi tiền gửi, cho vay; chênh lệch tỷ giá (không gồm đánh giá lại cuối năm); chuyển nhượng, sử dụng quyền sở hữu tài sản, sở hữu trí tuệ, chuyển giao công nghệ.",
+   "Đánh giá lại tài sản góp vốn, chia tách, sáp nhập; BCC; hoàn thuế xuất nhập khẩu."
+  ],
+  "sources": [
+   "r3:30",
+   "r3:31",
+   "r3:32"
+  ],
+  "mvp": true,
+  "legal": [
+   "Decree 320/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Is the reversal of a deductible provision taxable?",
+    "a_vi": "Có, là thu nhập khác chịu CIT (nếu trước đó khoản dự phòng không được trừ thì khoản thu hồi có thể không chịu thuế)."
+   }
+  ]
+ },
+ {
+  "id": "c-overseas-income-credit",
+  "part": "C",
+  "group": "Other income & transfers",
+  "title_en": "Overseas income & tax credit",
+  "title_vi": "Thu nhập nước ngoài và khấu trừ thuế đã nộp",
+  "summary_vi": "Thu nhập nước ngoài tính trước thuế nước ngoài (gross-up); thuế nước ngoài được trừ tối đa bằng thuế CIT Việt Nam trên khoản thu nhập đó.",
+  "rules_vi": [
+   "Thu nhập chịu thuế từ hoạt động nước ngoài là thu nhập trước khi nộp thuế thu nhập ở nước đó.",
+   "Thuế nước ngoài (kể cả phần được miễn, giảm và thuế cổ tức) được trừ khi tính CIT VN: = MIN (thuế nước ngoài ; thuế VN tính trên thu nhập đó).",
+   "Phần thuế nước ngoài vượt thuế VN không được chuyển sang năm sau."
+  ],
+  "sources": [
+   "r3:33",
+   "r3:61"
+  ],
+  "formula": "Credit = MIN (CIT nước ngoài ; CIT VN tính trên thu nhập nước ngoài)",
+  "traps": [
+   {
+    "text_vi": "Khấu trừ thuế nước ngoài: phải gross-up thu nhập; không lấy chênh lệch thuế suất; không chuyển phần vượt sang năm sau.",
+    "src": "r3:61"
+   },
+   {
+    "text_vi": "Không cộng lại thuế nước ngoài, hoặc cộng lại cả lợi nhuận là sai.",
+    "src": "r3:61"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Can excess foreign tax credit be carried forward?",
+    "a_vi": "Không. Số vượt thuế VN phải nộp trên khoản thu nhập đó không được chuyển sang năm sau."
+   }
+  ]
+ },
+ {
+  "id": "c-exempt-income",
+  "part": "C",
+  "group": "Loss, funds & exemptions",
+  "title_en": "Exempt income",
+  "title_vi": "Thu nhập miễn thuế",
+  "summary_vi": "Thu nhập đã nộp thuế ở công ty nhận đầu tư, doanh nghiệp sử dụng lao động đặc biệt, nông nghiệp, khoa học công nghệ, carbon… được miễn.",
+  "rules_vi": [
+   "Phân chia lợi nhuận từ góp vốn đầu tư trong nước, mua cổ phần, liên doanh với doanh nghiệp trong nước (tránh đánh thuế hai lần).",
+   "Doanh nghiệp có ≥ 30% lao động là người khuyết tật, người nhiễm HIV, người sau cai nghiện (tối thiểu 20 lao động bình quân), không áp dụng cho tài chính, BĐS; chỉ miễn thu nhập hoạt động.",
+   "Đào tạo nghề cho nhóm yếu thế; chuyển nhượng chứng chỉ giảm phát thải, tín chỉ carbon, trái phiếu xanh (mới); hợp đồng R&D, đổi mới và chuyển đổi số (tối đa 3 năm, mới).",
+   "Nông, lâm, ngư nghiệp, muối; hợp tác xã nông nghiệp; dịch vụ kỹ thuật nông nghiệp trực tiếp.",
+   "Thu nhập của Ngân hàng Phát triển, Ngân hàng Chính sách xã hội, quỹ nhà nước, tổ chức phi lợi nhuận (thu nhập theo nhiệm vụ Nhà nước giao); xã hội hóa; tài trợ; chênh lệch đánh giá lại khi cổ phần hóa doanh nghiệp nhà nước 100% vốn; đơn vị sự nghiệp công."
+  ],
+  "sources": [
+   "r3:33",
+   "r3:34",
+   "r3:35"
+  ],
+  "flags": [
+   "off-focus"
+  ],
+  "qa": [
+   {
+    "q_en": "Why are dividends from a Vietnamese subsidiary exempt from CIT?",
+    "a_vi": "Vì đã nộp CIT tại công ty nhận đầu tư; miễn để tránh đánh thuế hai lần."
+   }
+  ]
+ },
+ {
+  "id": "c-loss-cf",
+  "part": "C",
+  "group": "Loss, funds & exemptions",
+  "title_en": "Loss carry-forward",
+  "title_vi": "Chuyển lỗ",
+  "summary_vi": "Lỗ được chuyển liên tục tối đa 5 năm sau năm phát sinh; bù ngang giữa các hoạt động trong kỳ trước rồi mới bù lỗ năm trước.",
+  "rules_vi": [
+   "Lỗ chuyển đầy đủ, liên tục, không quá 5 năm kể từ năm đầu tiên sau năm phát sinh lỗ.",
+   "Horizontal first: bù lỗ giữa các hoạt động trong kỳ hiện tại trước, sau đó mới bù lỗ các năm trước.",
+   "Lỗ chuyển nhượng BĐS, dự án đầu tư, quyền tham gia dự án: không được bù vào thu nhập sản xuất kinh doanh đang hưởng ưu đãi.",
+   "Quy định mới (Nghị định 320): lãi chuyển nhượng BĐS được bù với lỗ hoạt động khác; lỗ BĐS bù thu nhập không ưu đãi nhưng không bù thu nhập ưu đãi. Lỗ BĐS phát sinh trước Nghị định 320 vẫn chuyển tiếp nhưng không bù thu nhập ưu đãi.",
+   "Không tách được lỗ theo từng hoạt động: bù vào thu nhập đang hưởng ưu đãi trước."
+  ],
+  "sources": [
+   "r3:36",
+   "r3:37"
+  ],
+  "mvp": true,
+  "legal": [
+   "Decree 320/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "How long can a tax loss be carried forward?",
+    "a_vi": "Liên tục tối đa 5 năm kể từ năm sau năm phát sinh lỗ."
+   }
+  ]
+ },
+ {
+  "id": "c-st-fund",
+  "part": "C",
+  "group": "Loss, funds & exemptions",
+  "title_en": "S&T fund 20%",
+  "title_vi": "Quỹ phát triển khoa học và công nghệ 20%",
+  "summary_vi": "Doanh nghiệp được trích tối đa 20% thu nhập tính thuế vào quỹ KH&CN; dùng dưới 70% sau 5 năm thì phải nộp lại thuế và lãi.",
+  "rules_vi": [
+   "Mức trích tối đa 20% thu nhập tính thuế (trước đây 10%).",
+   "Trình tự: trừ lỗ trước, rồi mới trích quỹ KH&CN.",
+   "Trong 5 năm kể từ năm trích: không sử dụng, dùng chưa đủ 70%, hoặc dùng sai mục đích thì phải nộp CIT trên thu nhập đã trích; áp thuế suất của năm lập quỹ.",
+   "Lãi: phần không dùng, dùng dưới 70%: theo lãi trái phiếu Chính phủ kỳ hạn 1 năm (5 hoặc 10 năm nếu không có) tại thời điểm thu hồi, cho 2 năm; phần dùng sai mục đích: theo tiền chậm nộp từ ngày trích đến ngày thu hồi."
+  ],
+  "sources": [
+   "r3:37",
+   "r3:38"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Mức trích tối đa",
+    "value": "20% thu nhập tính thuế",
+    "src": "r3:37"
+   },
+   {
+    "label": "Ngưỡng sử dụng tối thiểu",
+    "value": "70%",
+    "src": "r3:38"
+   },
+   {
+    "label": "Thời hạn",
+    "value": "5 năm",
+    "src": "r3:38"
+   }
+  ],
+  "legal": [
+   "Law 67/2025/QH15"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "What triggers clawback of the S&T fund tax benefit?",
+    "a_vi": "Trong 5 năm không dùng, dùng dưới 70% hoặc dùng sai mục đích: nộp lại CIT cùng lãi."
+   }
+  ]
+ },
+ {
+  "id": "c-incentive-concepts",
+  "part": "C",
+  "group": "Incentives",
+  "title_en": "Incentive concepts 1–3",
+  "title_vi": "Ba khái niệm nền tảng của ưu đãi",
+  "summary_vi": "Hạch toán riêng từng hoạt động, loại trừ một số thu nhập, và ưu đãi theo ngành nghề, địa bàn, quy mô.",
+  "rules_vi": [
+   "Concept 1: hạch toán riêng thu nhập từng hoạt động được ưu đãi; không tách được thì phân bổ theo tỷ lệ doanh thu của hoạt động ưu đãi / tổng doanh thu, hoặc chi phí được trừ của hoạt động ưu đãi / tổng chi phí được trừ.",
+   "Concept 2: không được ưu đãi: chuyển nhượng vốn, quyền góp vốn; chuyển nhượng BĐS (trừ nhà ở xã hội); chuyển nhượng dự án, quyền tham gia dự án, quyền thăm dò khai thác khoáng sản; hoạt động ngoài VN; dầu khí và tài nguyên quý hiếm; dịch vụ chịu thuế tiêu thụ đặc biệt; thu nhập khác không liên quan hoạt động ưu đãi.",
+   "Concept 3: ưu đãi áp cho thu nhập liên quan trực tiếp hoạt động được ưu đãi, gồm thanh lý phế liệu, phế phẩm, chênh lệch tỷ giá, lãi tiền gửi không kỳ hạn.",
+   "Ưu đãi xét theo ngành, địa bàn, quy mô; hình thức: thuế suất ưu đãi trong thời gian nhất định hoặc miễn rồi giảm 50% (tax holiday).",
+   "Ngành ưu đãi mới gồm công nghệ chiến lược, số, an ninh mạng, bán dẫn, trung tâm dữ liệu AI; quốc phòng an ninh; hóa chất, cơ khí trọng điểm; nông, lâm, ngư nghiệp và chế biến; ô tô; hỗ trợ SME, ươm tạo, không gian làm việc chung (mới)."
+  ],
+  "sources": [
+   "r3:38",
+   "r3:39",
+   "r3:40",
+   "r3:41"
+  ],
+  "mvp": true,
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "If an incentive activity’s income cannot be separately accounted, how is it pro-rated?",
+    "a_vi": "Theo tỷ lệ doanh thu hoạt động ưu đãi / tổng doanh thu, hoặc chi phí được trừ của hoạt động ưu đãi / tổng chi phí được trừ."
+   }
+  ]
+ },
+ {
+  "id": "c-location-incentive",
+  "part": "C",
+  "group": "Incentives",
+  "title_en": "Location incentives",
+  "title_vi": "Ưu đãi theo địa bàn",
+  "summary_vi": "Ưu đãi cho địa bàn đặc biệt khó khăn, khó khăn, khu kinh tế, khu công nghệ cao, khu nông nghiệp công nghệ cao, khu công nghệ số tập trung, khu công nghiệp.",
+  "rules_vi": [
+   "Danh sách địa bàn cụ thể không thuộc nội dung thi; chỉ cần biết các nhóm địa bàn được ưu đãi và điều kiện áp dụng theo đề."
+  ],
+  "sources": [
+   "r3:41"
+  ],
+  "flags": [
+   "off-focus",
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Name the location groups eligible for CIT incentives.",
+    "a_vi": "Địa bàn đặc biệt khó khăn, khó khăn, khu kinh tế, khu công nghệ cao, khu nông nghiệp công nghệ cao, khu công nghệ số tập trung, khu công nghiệp."
+   }
+  ]
+ },
+ {
+  "id": "c-large-scale",
+  "part": "C",
+  "group": "Incentives",
+  "title_en": "Large-scale projects",
+  "title_vi": "Dự án đầu tư quy mô lớn",
+  "summary_vi": "Dự án sản xuất vốn đăng ký từ 12.000 tỷ, áp dụng công nghệ thẩm định và giải ngân đủ trong 5 năm được hưởng thuế suất 10%, tối đa 30 năm.",
+  "rules_vi": [
+   "Điều kiện: vốn đăng ký ban đầu ≥ 12.000 tỷ; áp dụng công nghệ cao hoặc chiến lược được thẩm định; giải ngân đủ vốn trong 5 năm kể từ ngày cấp giấy chứng nhận đăng ký đầu tư.",
+   "Không áp dụng cho dự án sản xuất hàng chịu thuế tiêu thụ đặc biệt và khai thác khoáng sản.",
+   "Ưu đãi: thuế suất 10%, có thể gia hạn theo phê duyệt, tổng không quá 30 năm theo quyết định của Thủ tướng.",
+   "Bỏ các ngưỡng cũ: vốn 6.000 tỷ, doanh thu 10.000 tỷ/năm, hơn 3.000 lao động; thêm tiêu chí công nghệ bắt buộc."
+  ],
+  "sources": [
+   "r3:42"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Vốn đăng ký tối thiểu",
+    "value": "12.000 tỷ",
+    "src": "r3:42"
+   },
+   {
+    "label": "Thuế suất",
+    "value": "10%",
+    "src": "r3:42"
+   },
+   {
+    "label": "Thời gian tối đa",
+    "value": "30 năm",
+    "src": "r3:42"
+   }
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Preferential CIT rate and maximum duration for a large-scale project?",
+    "a_vi": "10%, tối đa 30 năm (vốn đăng ký từ 12.000 tỷ)."
+   }
+  ]
+ },
+ {
+  "id": "c-expansion",
+  "part": "C",
+  "group": "Incentives",
+  "title_en": "Expansion investment",
+  "title_vi": "Dự án đầu tư mở rộng",
+  "summary_vi": "Dự án mở rộng cùng lĩnh vực hoặc địa bàn ưu đãi: tiếp tục hưởng ưu đãi còn lại, hoặc hưởng miễn giảm như dự án mới nếu đạt một trong ba tiêu chí.",
+  "rules_vi": [
+   "Dự án đang trong thời gian ưu đãi: thu nhập tăng thêm từ mở rộng tiếp tục hưởng ưu đãi trong thời gian còn lại của dự án đang thực hiện.",
+   "Dự án đã hết ưu đãi nhưng mở rộng đạt một trong 3 tiêu chí: miễn, giảm như dự án đầu tư mới (không gồm thuế suất ưu đãi).",
+   "3 tiêu chí: nguyên giá tài sản cố định tăng thêm ≥ 40 tỷ (20 tỷ ở địa bàn khó khăn, đặc biệt khó khăn); nguyên giá tăng thêm ≥ 20% tổng nguyên giá trước đầu tư; công suất thiết kế tăng ≥ 20% so với báo cáo kinh tế kỹ thuật ban đầu.",
+   "Tách thu nhập của dự án mở rộng: Cách 1 theo tài sản cố định = tổng thu nhập tính thuế (trừ thu nhập khác không ưu đãi) × nguyên giá tài sản cố định hình thành từ dự án mở rộng / tổng nguyên giá tài sản cố định thực dùng. Cách 2 theo vốn đầu tư = tổng thu nhập × vốn đầu tư mở rộng / tổng vốn đầu tư thực tế."
+  ],
+  "sources": [
+   "r3:42",
+   "r3:43",
+   "r3:44"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Tài sản cố định tăng thêm (thông thường)",
+    "value": "≥ 40 tỷ",
+    "src": "r3:43"
+   },
+   {
+    "label": "Tài sản cố định tăng thêm (địa bàn khó khăn)",
+    "value": "≥ 20 tỷ",
+    "src": "r3:43"
+   },
+   {
+    "label": "Tỷ lệ nguyên giá tăng thêm",
+    "value": "≥ 20%",
+    "src": "r3:43"
+   },
+   {
+    "label": "Công suất tăng",
+    "value": "≥ 20%",
+    "src": "r3:43"
+   }
+  ],
+  "formula": "Thu nhập từ dự án mở rộng = tổng thu nhập tính thuế (trừ thu nhập khác) × nguyên giá TSCĐ từ dự án mở rộng / tổng nguyên giá TSCĐ",
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Minimum additional fixed asset cost for an expansion project to get a new tax holiday?",
+    "a_vi": "40 tỷ (20 tỷ ở địa bàn khó khăn), hoặc ≥ 20% nguyên giá hiện có, hoặc công suất tăng ≥ 20%."
+   }
+  ]
+ },
+ {
+  "id": "c-transition",
+  "part": "C",
+  "group": "Incentives",
+  "title_en": "Transition rules",
+  "title_vi": "Quy tắc chuyển tiếp ưu đãi",
+  "summary_vi": "Dự án đủ điều kiện ưu đãi theo luật cũ tiếp tục hưởng theo luật cũ; nếu cũng đủ điều kiện theo luật mới thì được chọn áp dụng ưu đãi mới cho thời gian còn lại.",
+  "rules_vi": [
+   "Đủ điều kiện theo quy định cũ (theo ngày cấp phép): áp dụng ưu đãi cũ.",
+   "Cũng đủ điều kiện theo luật mới: có quyền chọn ưu đãi mới cho thời gian ưu đãi còn lại.",
+   "Chỉ đủ điều kiện theo luật mới: áp dụng ưu đãi mới từ năm 2025."
+  ],
+  "sources": [
+   "r3:45"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Project eligible under both old and new incentive rules: which applies?",
+    "a_vi": "Được chọn: giữ ưu đãi cũ hoặc áp dụng ưu đãi mới cho thời gian còn lại."
+   }
+  ]
+ },
+ {
+  "id": "c-incentive-duration",
+  "part": "C",
+  "group": "Incentives",
+  "title_en": "Incentive start dates",
+  "title_vi": "Thời điểm bắt đầu hưởng ưu đãi",
+  "summary_vi": "Thuế suất ưu đãi tính liên tục từ năm đầu có doanh thu; miễn giảm tính từ năm đầu có thu nhập chịu thuế, hoặc năm thứ 4 có doanh thu.",
+  "rules_vi": [
+   "Thuế suất ưu đãi dự án mới: liên tục từ năm đầu có doanh thu từ dự án. Doanh nghiệp công nghệ cao, nông nghiệp công nghệ cao: từ năm được công nhận; dự án ứng dụng công nghệ cao: từ năm được cấp giấy chứng nhận.",
+   "Miễn, giảm: liên tục từ năm đầu có thu nhập chịu thuế (không tính lỗ chuyển); nếu 3 năm đầu có doanh thu mà chưa có thu nhập chịu thuế thì miễn giảm từ năm thứ 4 có doanh thu.",
+   "Năm đầu có thu nhập chịu thuế nhưng dự án hoạt động dưới 12 tháng: được chọn hưởng ngay kỳ đó hoặc từ kỳ sau (nếu chọn kỳ sau thì thuế kỳ đầu phải nộp).",
+   "Dự án mở rộng: tính từ năm hoàn thành vốn đầu tư đăng ký (nguyên giá tài sản cố định tăng thêm trên bảng cân đối), không phải từ năm có thu nhập chịu thuế."
+  ],
+  "sources": [
+   "r3:45",
+   "r3:46",
+   "r3:47"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "When does a tax holiday start for a new investment with taxable profit in year 1?",
+    "a_vi": "Liên tục từ năm đầu tiên có thu nhập chịu thuế (không tính lỗ chuyển); nếu 3 năm đầu chưa có thu nhập thì từ năm thứ 4 có doanh thu."
+   }
+  ]
+ },
+ {
+  "id": "c-other-reductions",
+  "part": "C",
+  "group": "Incentives",
+  "title_en": "Other tax reductions",
+  "title_vi": "Các ưu đãi giảm thuế khác",
+  "summary_vi": "Trừ kép chi phí tăng thêm cho lao động nữ, dân tộc thiểu số; giảm 50% thuế chuyển giao công nghệ; miễn 2 năm khi hộ kinh doanh chuyển thành doanh nghiệp.",
+  "rules_vi": [
+   "Trừ chi phí hai lần (vào doanh thu khi tính thu nhập và trừ lại vào thuế phải nộp): chi phí tăng thêm cho lao động nữ; chi phí tăng thêm cho lao động dân tộc thiểu số.",
+   "Điều kiện lao động nữ (sản xuất, xây dựng, vận tải): 10–100 lao động nữ chiếm trên 50% tổng lao động thường xuyên, hoặc trên 100 lao động nữ chiếm trên 30%.",
+   "Chuyển giao công nghệ thuộc lĩnh vực ưu tiên cho tổ chức, cá nhân ở địa bàn khó khăn: giảm 50% CIT phải nộp trên thu nhập chuyển giao.",
+   "Hộ, cá nhân kinh doanh hoạt động liên tục ≥ 12 tháng chuyển thành doanh nghiệp: miễn CIT 2 năm liên tục kể từ khi có thu nhập chịu thuế (mới)."
+  ],
+  "sources": [
+   "r3:47",
+   "r3:48"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "CIT exemption for a household business converting into an enterprise?",
+    "a_vi": "Miễn 2 năm liên tục kể từ khi phát sinh thu nhập chịu thuế (hoạt động liên tục ≥ 12 tháng trước khi chuyển đổi)."
+   }
+  ]
+ },
+ {
+  "id": "c-admin",
+  "part": "C",
+  "group": "Administration & exam approach",
+  "title_en": "CIT administration",
+  "title_vi": "Quản lý CIT: tạm nộp, quyết toán, đơn vị phụ thuộc",
+  "summary_vi": "Tạm nộp quý trong 30 ngày của quý sau; quyết toán ngày cuối tháng đầu tiên của quý 1 năm sau; tạm nộp dưới 80% thì tính tiền chậm nộp phần thiếu vượt 20%.",
+  "rules_vi": [
+   "Tạm nộp CIT quý: chậm nhất ngày thứ 30 của tháng đầu quý sau (không kê khai). Quyết toán: ngày cuối của tháng thứ 3 sau kết thúc năm tài chính.",
+   "Nếu tổng tạm nộp 4 quý ≤ 80% số CIT cả năm: phần thiếu vượt 20% tính tiền chậm nộp 0,03%/ngày từ hạn nộp quý 4 đến ngày nộp bổ sung.",
+   "Khai theo từng lần phát sinh: chuyển nhượng BĐS, nhà thầu nước ngoài có thu nhập chuyển nhượng vốn. Theo tỷ lệ trên doanh thu: cơ quan nhà nước thực hiện dịch vụ; doanh nghiệp doanh thu ≤ 3 tỷ không xác định được chi phí.",
+   "Đơn vị phụ thuộc, địa điểm kinh doanh ngoài tỉnh trụ sở: quyết toán tập trung tại trụ sở (mẫu 03-TNDN); nhà máy có ưu đãi thì khai riêng theo mẫu 03-3A,B,C,D; nhà máy phân bổ thuế cho địa phương (phụ lục 03-8); dịch vụ, thương mại không phân bổ."
+  ],
+  "sources": [
+   "r3:59",
+   "r1:9"
+  ],
+  "traps": [
+   {
+    "text_vi": "Tạm nộp CIT 4 quý dưới 80%: tính tiền chậm nộp trên phần thiếu vượt 20%.",
+    "src": "r3:59"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Late payment interest when provisional CIT is below 80% of the annual liability?",
+    "a_vi": "0,03%/ngày trên phần thiếu vượt 20%, tính từ hạn nộp quý 4 đến ngày nộp bổ sung."
+   }
+  ]
+ },
+ {
+  "id": "c-exam-approach",
+  "part": "C",
+  "group": "Administration & exam approach",
+  "title_en": "CIT exam approach",
+  "title_vi": "Cách làm bài CIT trong phòng thi",
+  "summary_vi": "Bài CIT thường là bài điều chỉnh truyền thống kèm ưu đãi, chuyển lỗ, tín dụng thuế nước ngoài và chuyển nhượng vốn, bất động sản.",
+  "rules_vi": [
+   "Dạng đề: xác định điều chỉnh và chi phí không được trừ để tính CIT; áp dụng ưu đãi cho dự án mới và dự án mở rộng; xác định lỗ chuyển; tín dụng thuế; CIT từ chuyển nhượng vốn, bất động sản.",
+   "Liệt kê mọi khoản trong đề với cách xử lý đúng, ghi 0 cho khoản không cần điều chỉnh.",
+   "Bẫy hay gặp: lợi ích nhân viên so với người nhà (vé máy bay); lãi vay (vốn góp thiếu, trần 30% EBITDA); tài trợ (chỉ 6–7 mục đích và hồ sơ đủ); lỗ tỷ giá đánh giá lại.",
+   "Tín dụng thuế nước ngoài: gross-up, cộng lại thuế nước ngoài, lấy MIN, không chuyển phần vượt."
+  ],
+  "sources": [
+   "r3:60",
+   "r3:61"
+  ],
+  "qa": [
+   {
+    "q_en": "What should you do with items that need no CIT adjustment?",
+    "a_vi": "Vẫn liệt kê và ghi 0 để chứng tỏ đã xem xét."
+   }
+  ]
+ }
+]

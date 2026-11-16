@@ -1,0 +1,74 @@
+/* Nhánh D · Tax Atlas */
+.tx { --tx-gap: .7rem; }
+.tx-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: .7rem; }
+.tx-bar input[type=search], .tx-bar select { font: inherit; padding: .4rem .6rem; border-radius: 10px; border: 1px solid var(--bisc-line); background: var(--bisc-card); color: var(--sl-color-white); }
+.tx-bar input[type=search] { flex: 1 1 200px; min-width: 160px; }
+.tx-body { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr); gap: var(--tx-gap); align-items: start; }
+.tx-full { position: fixed; inset: 0; z-index: 2147483000; background: var(--sl-color-bg); padding: 1rem 1.2rem; overflow: auto; }
+.tx-full .tx-body { grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr) minmax(240px, 1fr); }
+.tx-full .tx-tree, .tx-full .tx-side { max-height: calc(100vh - 7rem); overflow: auto; position: sticky; top: 0; }
+@media (max-width: 800px) { .tx-body, .tx-full .tx-body { grid-template-columns: 1fr; } .tx-full .tx-tree, .tx-full .tx-side { position: static; max-height: none; } }
+.tx-tree { border: 1px solid var(--bisc-line); border-radius: 12px; background: var(--bisc-card); padding: .4rem; max-height: 70vh; overflow: auto; }
+.tx-part { width: 100%; text-align: left; background: var(--bisc-navy); color: var(--bisc-amber); border: 0; border-radius: 8px; padding: .45rem .6rem; margin-top: .3rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; font: inherit; font-weight: 700; }
+.tx-grp { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--bisc-muted); font-weight: 700; margin: .5rem .3rem .1rem; }
+.tx-node { width: 100%; text-align: left; background: transparent; border: 0; border-radius: 6px; padding: .22rem .4rem; color: inherit; font: inherit; font-size: .84rem; cursor: pointer; display: flex; gap: .35rem; align-items: baseline; }
+.tx-node:hover { background: var(--sl-color-gray-6); }
+.tx-node.sel { background: var(--bisc-amber-soft); outline: 1.5px solid var(--bisc-amber); }
+.tx-dot { flex: none; width: .55rem; height: .55rem; border-radius: 50%; border: 1.5px solid var(--bisc-muted); display: inline-block; transform: translateY(1px); }
+.tx-dot.learning { background: var(--bisc-amber); border-color: var(--bisc-amber); }
+.tx-dot.known { background: var(--bisc-emerald); border-color: var(--bisc-emerald); }
+.tx-star { color: var(--bisc-amber); font-size: .7rem; }
+.tx-card { border: 1px solid var(--bisc-line); border-top: 4px solid var(--bisc-amber); border-radius: 12px; background: var(--bisc-card); padding: 1rem 1.15rem; box-shadow: var(--bisc-shadow); }
+.tx-card h3 { margin: .1rem 0 .3rem !important; font-size: 1.25rem; }
+.tx-card .vi { color: var(--bisc-muted); font-weight: 600; margin-bottom: .5rem; }
+.tx-sum { font-size: 1.02rem; margin: .4rem 0 .7rem; }
+.tx-card ul.rules { margin: .3rem 0 .6rem 1.1rem; padding: 0; }
+.tx-card ul.rules li { margin: .25rem 0; }
+.tx-card table { width: 100%; font-size: .88rem; margin: .4rem 0; }
+.tx-formula { font-family: ui-monospace, monospace; background: var(--sl-color-gray-6); border-radius: 8px; padding: .5rem .7rem; font-size: .88rem; white-space: pre-wrap; }
+.tx-trap { background: var(--bisc-rose-soft); border-left: 4px solid var(--bisc-rose); border-radius: 8px; padding: .5rem .75rem; margin: .4rem 0; font-size: .92rem; }
+.tx-conflict { background: var(--bisc-amber-soft); border-left: 4px solid var(--bisc-amber); border-radius: 8px; padding: .5rem .75rem; margin: .4rem 0; font-size: .92rem; }
+.tx-chips { display: flex; flex-wrap: wrap; gap: .3rem; margin: .4rem 0; }
+.tx-src { font: 600 .68rem ui-monospace, monospace; padding: .1rem .4rem; border-radius: 6px; background: var(--sl-color-gray-6); border: 1px solid var(--bisc-line); color: var(--bisc-muted); }
+.tx-status { display: flex; gap: .35rem; flex-wrap: wrap; margin: .7rem 0 .3rem; }
+.tx-status button.on { background: var(--bisc-amber); color: var(--bisc-ink); border-color: var(--bisc-amber); }
+.tx-note { width: 100%; min-height: 4rem; border-radius: 10px; border: 1px solid var(--bisc-line); padding: .5rem; font: inherit; background: transparent; color: inherit; }
+.tx-side { border: 1px solid var(--bisc-line); border-radius: 12px; background: var(--bisc-card); padding: .7rem .8rem; font-size: .88rem; }
+.tx-side h4 { margin: 0 0 .3rem !important; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--bisc-muted); }
+.tx-rel { display: block; width: 100%; text-align: left; background: transparent; border: 1px solid var(--bisc-line); border-radius: 8px; padding: .35rem .5rem; margin: .25rem 0; color: inherit; font: inherit; cursor: pointer; }
+.tx-rel:hover { border-color: var(--bisc-amber); }
+.tx-rel small { display: block; color: var(--bisc-muted); margin-top: .1rem; }
+.tx-rel .t { font-weight: 700; }
+/* Cây quyết định */
+.dt-q { border: 1px solid var(--bisc-line); border-left: 5px solid var(--bisc-navy); border-radius: 12px; background: var(--bisc-card); padding: 1rem 1.1rem; margin-top: .7rem; }
+.dt-q .en { font-weight: 700; font-size: 1.05rem; }
+.dt-q .vi { color: var(--bisc-muted); margin: .15rem 0 .5rem; }
+.dt-q .hint { font-size: .85rem; background: var(--sl-color-gray-6); border-radius: 8px; padding: .4rem .6rem; margin: .4rem 0; }
+.dt-opt { display: block; width: 100%; text-align: left; margin-top: .35rem; padding: .55rem .75rem; border-radius: 10px; border: 1.5px solid var(--bisc-line); background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.dt-opt:hover { border-color: var(--bisc-amber); background: var(--bisc-amber-soft); }
+.dt-opt small { color: var(--bisc-muted); display: block; }
+.dt-path { display: flex; flex-wrap: wrap; gap: .3rem; font-size: .78rem; margin-top: .6rem; color: var(--bisc-muted); }
+.dt-path span { background: var(--sl-color-gray-6); border-radius: 6px; padding: .1rem .4rem; }
+.dt-res { border: 1px solid var(--bisc-emerald); border-left: 6px solid var(--bisc-emerald); background: var(--bisc-emerald-soft); border-radius: 12px; padding: 1rem 1.1rem; margin-top: .7rem; }
+.dt-res .en { font-weight: 700; font-size: 1.1rem; }
+.dt-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .6rem; }
+.dt-list a { border: 1px solid var(--bisc-line); border-radius: 12px; padding: .7rem .85rem; text-decoration: none; background: var(--bisc-card); color: inherit; display: block; }
+.dt-list a:hover { border-color: var(--bisc-amber); }
+.dt-list b { display: block; color: var(--sl-color-white); }
+/* Chung */
+.tx-pill { display: inline-block; font-size: .72rem; font-weight: 700; padding: .1rem .5rem; border-radius: 999px; border: 1px solid var(--bisc-line); background: var(--sl-color-gray-6); }
+.tx-pill.old { background: var(--bisc-rose-soft); border-color: #efc6c3; color: var(--bisc-rose); }
+.tx-pill.cur { background: var(--bisc-emerald-soft); color: var(--bisc-emerald); }
+.tx-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .7rem; }
+.tx-in { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; font-weight: 600; color: var(--bisc-muted); }
+.tx-in input, .tx-in select { font: inherit; padding: .4rem .5rem; border-radius: 8px; border: 1px solid var(--bisc-line); background: var(--bisc-card); color: var(--sl-color-white); }
+.tx-out { background: var(--bisc-amber-soft); border-radius: 10px; padding: .6rem .8rem; margin-top: .6rem; }
+.tx-out table { width: 100%; font-size: .9rem; }
+.tx-out td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.tx-out tr.tot td { font-weight: 700; border-top: 1.5px solid var(--bisc-navy); }
+
+.tx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .6rem; margin: .5rem 0; }
+.tx-field { display: flex; flex-direction: column; gap: .15rem; font-size: .85rem; }
+.tx-field input, .tx-field select { font: inherit; padding: .4rem .6rem; border-radius: 10px; border: 1px solid var(--bisc-line); background: var(--bisc-card); color: var(--sl-color-white); }
+.tx-note { font-size: .85rem; color: var(--bisc-muted); margin: .5rem 0; }
+.tx-tables table { width: 100%; font-size: .9rem; }

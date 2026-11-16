@@ -134,6 +134,27 @@ Quy ước: viết hoa trên chip/nhãn (Occurrence), viết thường trong câ
 | TK cấp 1 | 3 số đầu của số hiệu tài khoản | TK cấp 1 |
 | SUMIFS · XLOOKUP · DIVIDE | Hàm Excel / DAX | viết hoa như tên hàm |
 
+## Thuế (nhánh D · ACCA TX-VNM)
+| Thuật ngữ | Nghĩa | Dùng trong bài |
+|---|---|---|
+| PIT · CIT · VAT · FCT | Thuế thu nhập cá nhân · thu nhập doanh nghiệp · giá trị gia tăng · nhà thầu nước ngoài | giữ viết tắt tiếng Anh như đề thi |
+| Resident · Non-resident | Cá nhân cư trú · không cư trú | thẻ PIT |
+| PE (Permanent Establishment) | Cơ sở thường trú | thẻ CIT, FCT |
+| Assessable income | Thu nhập tính thuế | PIT, CIT |
+| Deductible · Non-deductible | Chi phí được trừ · không được trừ khi tính CIT | thẻ CIT |
+| Gross-up | Quy đổi giá net (chưa gồm thuế) sang gross | PIT, FCT |
+| VAS · Hybrid · Direct (non-VAS) method | Ba phương pháp nộp thuế nhà thầu nước ngoài | thẻ FCT |
+| Credit (deduction) method · Direct method | Phương pháp khấu trừ · trực tiếp (VAT) | thẻ VAT |
+| Input VAT · Output VAT | VAT đầu vào · đầu ra | thẻ VAT |
+| Non-taxable (KCT) · Zero-rated (0%) | Không chịu thuế · thuế suất 0% | thẻ VAT |
+| Tax point | Thời điểm xác định thuế | thẻ VAT |
+| E-invoice · Adjusting · Replacement invoice | Hóa đơn điện tử · hóa đơn điều chỉnh · thay thế | thẻ hóa đơn |
+| Arm's length · Related party | Giao dịch độc lập · bên liên kết | thẻ chuyển giá |
+| EBITDA cap (30%) | Trần chi phí lãi vay 30% EBITDA | thẻ CIT, chuyển giá |
+| DTA (Double Tax Agreement) | Hiệp định tránh đánh thuế hai lần | thẻ PIT, FCT |
+| Royalty · Withholding | Tiền bản quyền · khấu trừ tại nguồn | thẻ FCT |
+| Statute of limitation · Late payment interest | Thời hiệu · tiền chậm nộp | thẻ quản lý thuế |
+
 ## Chuẩn mực & văn bản
 **Ebook đã dẫn:** VSA 200 · 240 · 500 · 550 · 700 · 705 · VAS 03 (TSCĐ hữu hình) · VAS 16 (chi phí đi vay) · VAS 26 (bên liên quan) · TT48/2019 (dự phòng) · TT45/2013 (ngưỡng TSCĐ 30 triệu) · TT200/2014 (chế độ kế toán, case).
 **Chỉ dùng trong khối Mở rộng:** VSA 320 · 450 · 505 · 530 · 540 · 560 và các ISA tương ứng.

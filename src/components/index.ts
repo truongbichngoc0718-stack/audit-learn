@@ -31,3 +31,11 @@ export { default as AuditMasterMap } from './AuditMasterMap';
 export { default as SortDrill } from './SortDrill';
 export { default as OpinionDecider } from './OpinionDecider';
 export { default as CycleLinks } from './CycleLinks.astro';
+// Nhánh D · Thuế (ACCA TX-VNM)
+export { default as TaxAtlas } from './TaxAtlas';
+export { default as DecisionTree, DecisionList } from './DecisionTree';
+export { default as TrapList } from './TrapList';
+export { default as TaxFlashcards } from './TaxFlashcards';
+export { default as TaxCalc } from './TaxCalc';
+export { default as TaxTables } from './TaxTables';
+export { default as ExamBank } from './ExamBank';

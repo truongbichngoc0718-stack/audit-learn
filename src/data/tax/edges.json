@@ -1,0 +1,310 @@
+{
+ "edges": [
+  {
+   "from": "c-5m-noncash",
+   "to": "e-input-conditions",
+   "type": "same-number",
+   "why_vi": "Ngưỡng 5 triệu thanh toán không dùng tiền mặt áp cho cả chi phí CIT và khấu trừ VAT"
+  },
+  {
+   "from": "e-input-noncreditable-to-cit",
+   "to": "c-special-deductible",
+   "type": "affects",
+   "why_vi": "VAT đầu vào không được khấu trừ thì tính vào chi phí CIT, trừ khoản ≥ 5 triệu trả tiền mặt"
+  },
+  {
+   "from": "c-car-1-6bn",
+   "to": "e-input-specific",
+   "type": "same-number",
+   "why_vi": "1,6 tỷ: trần nguyên giá khấu hao và trần VAT được khấu trừ của ô tô ≤ 9 chỗ"
+  },
+  {
+   "from": "c-employment-caps",
+   "to": "b-emp-meal-uniform",
+   "type": "same-number",
+   "why_vi": "Đồng phục tiền mặt 5 triệu/năm: trần chi phí CIT = ngưỡng miễn PIT"
+  },
+  {
+   "from": "c-employment-caps",
+   "to": "b-emp-exempt-benefits",
+   "type": "confused-with",
+   "why_vi": "Phúc lợi CIT ≤ 1 tháng lương bình quân vs hiếu hỉ PIT ≤ 1 tháng lương"
+  },
+  {
+   "from": "c-employment-caps",
+   "to": "b-deductions",
+   "type": "confused-with",
+   "why_vi": "Hưu trí tự nguyện: CIT trừ ≤ 5 triệu/tháng; PIT giảm trừ ≤ 1 triệu/tháng"
+  },
+  {
+   "from": "c-other-nondeductible",
+   "to": "b-gross-up-net",
+   "type": "affects",
+   "why_vi": "PIT gánh thay (lương net) có được trừ khi tính CIT không: xem §9-1"
+  },
+  {
+   "from": "c-other-nondeductible",
+   "to": "d-nonvas-gross-up",
+   "type": "affects",
+   "why_vi": "CIT-FCT nộp thay (hợp đồng net): xem §9-1"
+  },
+  {
+   "from": "c-pe-scope",
+   "to": "d-methods",
+   "type": "computed-with",
+   "why_vi": "Có PE là điều kiện đầu tiên của phương pháp VAS / hybrid"
+  },
+  {
+   "from": "c-direct-rates",
+   "to": "d-rates",
+   "type": "same-number",
+   "why_vi": "Tỷ lệ CIT trên doanh thu của doanh nghiệp nước ngoài = tỷ lệ CIT-FCT"
+  },
+  {
+   "from": "c-capital-transfer-foreign",
+   "to": "d-rates",
+   "type": "same-number",
+   "why_vi": "2% chuyển nhượng vốn, 0,1% chứng khoán"
+  },
+  {
+   "from": "c-overseas-income-credit",
+   "to": "b-foreign-tax-credit",
+   "type": "same-number",
+   "why_vi": "Cùng nguyên tắc MIN(thuế nước ngoài; thuế VN tương ứng)"
+  },
+  {
+   "from": "a-tp-interest-30-ebitda",
+   "to": "c-interest",
+   "type": "affects",
+   "why_vi": "Tầng thứ 3 của kiểm tra lãi vay"
+  },
+  {
+   "from": "a-tp-nondeductible-costs",
+   "to": "c-pe-mgmt-allocation",
+   "type": "confused-with",
+   "why_vi": "Phí tập đoàn (chuyển giá) vs phí quản lý phân bổ cho PE (công thức)"
+  },
+  {
+   "from": "a-tp-related-parties",
+   "to": "c-interest",
+   "type": "affects",
+   "why_vi": "Có bên liên kết thì mới áp trần 30% EBITDA"
+  },
+  {
+   "from": "b-business-income",
+   "to": "e-non-taxable",
+   "type": "confused-with",
+   "why_vi": "PIT: ngưỡng 100 triệu (bảng thuế); VAT: cá nhân thu nhập ≤ 200 triệu không chịu thuế (slide). Xem §9-2"
+  },
+  {
+   "from": "b-business-income",
+   "to": "e-direct-method",
+   "type": "same-number",
+   "why_vi": "Tỷ lệ VAT của hộ, cá nhân kinh doanh 1% / 5% / 3% / 2%"
+  },
+  {
+   "from": "d-vat-subject",
+   "to": "e-taxable-value",
+   "type": "affects",
+   "why_vi": "Hàng đã nộp VAT nhập khẩu thì không chịu VAT-FCT nữa"
+  },
+  {
+   "from": "e-scope-taxpayer",
+   "to": "d-vat-subject",
+   "type": "same-number",
+   "why_vi": "Bên VN mua dịch vụ của nhà cung cấp nước ngoài không có PE là người nộp VAT"
+  },
+  {
+   "from": "a-filing-deadlines",
+   "to": "b-deadlines",
+   "type": "same-number",
+   "why_vi": "Hạn ngày 20 / ngày cuối tháng đầu quý dùng chung"
+  },
+  {
+   "from": "a-filing-deadlines",
+   "to": "d-admin",
+   "type": "same-number",
+   "why_vi": "FCT: từng lần 10 ngày, theo tháng ngày 20"
+  },
+  {
+   "from": "a-filing-deadlines",
+   "to": "c-admin",
+   "type": "same-number",
+   "why_vi": "Tạm nộp CIT ngày 30 tháng đầu quý sau; quyết toán ngày cuối tháng 3"
+  },
+  {
+   "from": "a-late-interest",
+   "to": "c-admin",
+   "type": "computed-with",
+   "why_vi": "Tạm nộp < 80% → tiền chậm nộp 0,03%/ngày trên phần thiếu vượt 20%"
+  },
+  {
+   "from": "e-zero-rate",
+   "to": "e-non-taxable",
+   "type": "confused-with",
+   "why_vi": "0% được khấu trừ, được hoàn; KCT thì không"
+  },
+  {
+   "from": "e-invoicing-time",
+   "to": "c-revenue-timing",
+   "type": "confused-with",
+   "why_vi": "Thời điểm lập hóa đơn vs thời điểm ghi nhận doanh thu tính CIT"
+  },
+  {
+   "from": "e-taxing-time",
+   "to": "e-invoicing-time",
+   "type": "confused-with",
+   "why_vi": "Thời điểm xác định VAT vs thời điểm lập hóa đơn"
+  },
+  {
+   "from": "b-real-estate",
+   "to": "c-real-estate-transfer",
+   "type": "contrast",
+   "why_vi": "Cá nhân 2% giá bán vs doanh nghiệp tính trên thu nhập (doanh thu − chi phí)"
+  },
+  {
+   "from": "b-capital-transfer",
+   "to": "c-capital-transfer-vn",
+   "type": "contrast",
+   "why_vi": "Cá nhân resident 20% lãi vs doanh nghiệp VN 20% lãi (cùng số, khác cơ sở pháp lý)"
+  },
+  {
+   "from": "c-st-fund",
+   "to": "c-loss-cf",
+   "type": "computed-with",
+   "why_vi": "Thứ tự: trừ lỗ trước, trừ quỹ KH&CN sau"
+  },
+  {
+   "from": "c-incentive-concepts",
+   "to": "c-loss-cf",
+   "type": "affects",
+   "why_vi": "Không tách được lỗ thì bù vào thu nhập ưu đãi trước; lỗ BĐS không bù vào thu nhập ưu đãi"
+  },
+  {
+   "from": "c-provisions",
+   "to": "c-other-income",
+   "type": "affects",
+   "why_vi": "Hoàn nhập dự phòng là thu nhập khác"
+  },
+  {
+   "from": "e-input-specific",
+   "to": "e-invoice-special",
+   "type": "computed-with",
+   "why_vi": "Quà tặng, khuyến mại: VAT đầu vào được khấu trừ; đầu ra tính theo giá thị trường hoặc 0 nếu đăng ký khuyến mại"
+  },
+  {
+   "from": "b-dta",
+   "to": "d-dta-procedure",
+   "type": "computed-with",
+   "why_vi": "Cùng hồ sơ 01/HTQT, giấy chứng nhận cư trú"
+  },
+  {
+   "from": "b-scope-resident-vs-non",
+   "to": "d-concept",
+   "type": "affects",
+   "why_vi": "Cá nhân nước ngoài là nhà thầu → phần thuế thu nhập là PIT"
+  },
+  {
+   "from": "e-zero-rate",
+   "to": "e-refund-export",
+   "type": "computed-with",
+   "why_vi": "Đủ điều kiện 0% mới tính được số hoàn cho hàng xuất khẩu"
+  },
+  {
+   "from": "b-emp-housing-15",
+   "to": "e-input-specific",
+   "type": "affects",
+   "why_vi": "Nhà cho người nước ngoài: PIT tiền nhà 15%, còn VAT đầu vào thì tùy ai là người sử dụng lao động"
+  },
+  {
+   "from": "d-methods",
+   "to": "d-hybrid",
+   "type": "affects",
+   "why_vi": "Hybrid là một trong ba phương pháp; điều kiện nằm ở thẻ 3 methods"
+  },
+  {
+   "from": "d-nonvas-vat",
+   "to": "d-nonvas-gross-up",
+   "type": "computed-with",
+   "why_vi": "Gross-up VAT dùng công thức doanh thu net / (1 − tỷ lệ VAT)"
+  },
+  {
+   "from": "d-nonvas-cit",
+   "to": "d-nonvas-gross-up",
+   "type": "computed-with",
+   "why_vi": "Gross-up CIT làm trước, rồi gross-up VAT"
+  },
+  {
+   "from": "d-rates",
+   "to": "d-nonvas-vat",
+   "type": "computed-with",
+   "why_vi": "Tỷ lệ VAT tra từ bảng thuế để nhân với doanh thu tính VAT"
+  },
+  {
+   "from": "d-rates",
+   "to": "d-nonvas-cit",
+   "type": "computed-with",
+   "why_vi": "Tỷ lệ CIT tra từ bảng thuế để nhân với doanh thu tính CIT"
+  },
+  {
+   "from": "d-mixed-contracts",
+   "to": "d-vat-subject",
+   "type": "affects",
+   "why_vi": "Hợp đồng hỗn hợp: tách được hay không quyết định tỷ lệ"
+  },
+  {
+   "from": "e-zero-rate",
+   "to": "e-zero-not-entitled",
+   "type": "exception-of",
+   "why_vi": "Danh sách trường hợp không được áp 0% là ngoại lệ của 0%"
+  },
+  {
+   "from": "e-input-conditions",
+   "to": "e-input-noncreditable-to-cit",
+   "type": "affects",
+   "why_vi": "Thiếu chứng từ không dùng tiền mặt ≥ 5 triệu thì không được khấu trừ và cũng không tính vào chi phí CIT"
+  },
+  {
+   "from": "e-refund-export",
+   "to": "e-input-apportion",
+   "type": "computed-with",
+   "why_vi": "Không tách được đầu vào xuất khẩu thì phân bổ theo tỷ lệ doanh thu xuất khẩu"
+  },
+  {
+   "from": "e-invoice-errors",
+   "to": "e-returns-discounts",
+   "type": "confused-with",
+   "why_vi": "Hóa đơn điều chỉnh dùng cho cả hóa đơn sai và trả hàng, chiết khấu, nhưng kỳ khai khác nhau"
+  },
+  {
+   "from": "e-declaration-timing",
+   "to": "e-invoice-errors",
+   "type": "affects",
+   "why_vi": "Loại hóa đơn điều chỉnh quyết định khai bổ sung kỳ gốc hay kỳ hiện tại"
+  },
+  {
+   "from": "e-direct-method",
+   "to": "d-rates",
+   "type": "same-number",
+   "why_vi": "Tỷ lệ VAT 1% 5% 3% 2% của phương pháp trực tiếp tương tự tỷ lệ FCT"
+  },
+  {
+   "from": "a-penalties",
+   "to": "a-late-interest",
+   "type": "confused-with",
+   "why_vi": "Tiền phạt 20% khác tiền chậm nộp 0,03%/ngày"
+  },
+  {
+   "from": "a-tax-audit",
+   "to": "a-limitation",
+   "type": "affects",
+   "why_vi": "Thời hiệu quyết định có thể truy thu và xử phạt đến kỳ nào"
+  },
+  {
+   "from": "c-interest",
+   "to": "a-tp-interest-30-ebitda",
+   "type": "computed-with",
+   "why_vi": "Kiểm tra trần lãi vay CIT cùng lúc với trần 30% EBITDA"
+  }
+ ]
+}

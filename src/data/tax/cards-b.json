@@ -1,0 +1,864 @@
+[
+ {
+  "id": "b-scope-resident-vs-non",
+  "part": "B",
+  "group": "Residence & tax period",
+  "title_en": "Resident vs non-resident treatment",
+  "title_vi": "Phạm vi chịu thuế, giảm trừ và thuế suất theo cư trú",
+  "summary_vi": "Resident chịu thuế trên thu nhập toàn cầu, được giảm trừ gia cảnh và khấu trừ thuế nước ngoài; non-resident chỉ chịu thuế trên thu nhập nguồn Việt Nam theo thuế suất toàn phần.",
+  "rules_vi": [
+   "Taxable income: resident = worldwide income; non-resident = Vietnam-sourced income (dù trả ở đâu).",
+   "Deductions: resident được giảm trừ bảo hiểm, từ thiện, gia cảnh (bản thân, người phụ thuộc); non-resident không có.",
+   "Double tax relief: resident được khấu trừ thuế nước ngoài; non-resident không.",
+   "Tax rate: resident biểu lũy tiến cho tiền lương và thuế suất toàn phần cho thu nhập còn lại; non-resident toàn phần (20% với tiền lương)."
+  ],
+  "sources": [
+   "r2:3",
+   "tt:2"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Non-resident nhận lương từ nước ngoài vẫn có phần thu nhập nguồn Việt Nam: phân bổ theo số ngày (thẻ Non-resident employment).",
+    "src": "r2:17"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "List three differences between a resident and a non-resident for PIT.",
+    "a_vi": "Phạm vi thu nhập (toàn cầu vs nguồn VN), giảm trừ gia cảnh (có vs không), khấu trừ thuế nước ngoài (có vs không); thuế suất lương (lũy tiến vs 20%)."
+   }
+  ]
+ },
+ {
+  "id": "b-residence-test",
+  "part": "B",
+  "group": "Residence & tax period",
+  "title_en": "Residence test",
+  "title_vi": "Điều kiện xác định cá nhân cư trú",
+  "summary_vi": "Cư trú nếu có mặt tại Việt Nam từ 183 ngày; chưa đủ thì xét nơi ở thường xuyên hoặc thuê nhà đủ 183 ngày.",
+  "rules_vi": [
+   "Có mặt tại VN ≥ 183 ngày (trong năm dương lịch hoặc 12 tháng liên tục kể từ ngày đến): tax resident.",
+   "Chưa đủ 183 ngày: xét cá nhân có phải resident ở nước khác không; nếu không thì tiếp tục xét nơi ở thường xuyên tại VN hoặc thuê nhà ở VN từ 183 ngày trở lên.",
+   "Có một trong hai điều kiện nơi ở (thường xuyên hoặc thuê nhà ≥ 183 ngày): resident; không có: non-resident."
+  ],
+  "sources": [
+   "r2:3",
+   "s2:3"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Có mặt dưới 183 ngày nhưng hợp đồng thuê nhà đủ 183 ngày vẫn có thể là resident. Đề hay cài chi tiết hợp đồng thuê nhà 12 tháng.",
+    "src": "r2:3"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "When is an individual with fewer than 183 days in Vietnam still a tax resident?",
+    "a_vi": "Khi không là resident nước khác và có nơi ở thường xuyên tại VN hoặc thuê nhà ở VN từ 183 ngày trở lên."
+   }
+  ]
+ },
+ {
+  "id": "b-tax-period-first-year",
+  "part": "B",
+  "group": "Residence & tax period",
+  "title_en": "First tax year",
+  "title_vi": "Năm tính thuế đầu tiên của người nước ngoài",
+  "summary_vi": "Người nước ngoài đến VN dưới 183 ngày trong năm dương lịch đầu thì năm tính thuế đầu là 12 tháng liên tục từ ngày đến; từ 183 ngày trở lên thì năm đầu là năm dương lịch.",
+  "rules_vi": [
+   "Đến VN < 183 ngày trong năm dương lịch đầu: năm tính thuế đầu = 12 tháng liên tục từ ngày đến; năm thứ hai là năm dương lịch.",
+   "Đến VN ≥ 183 ngày trong năm đầu: năm tính thuế đầu = năm dương lịch.",
+   "Nước chưa ký DTA với VN: tính thu nhập từ 01/01 (được khấu trừ thuế nước ngoài).",
+   "Nước đã ký DTA với VN: tính thu nhập kể từ ngày đến VN."
+  ],
+  "sources": [
+   "r2:4",
+   "s2:3"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Người nước ngoài ở năm đầu đến hoặc năm cuối rời đi: giảm trừ gia cảnh theo tỷ lệ thời gian; người Việt luôn đủ 12 tháng.",
+    "src": "r2:23"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "First tax year for a foreigner arriving with less than 183 days in the calendar year?",
+    "a_vi": "12 tháng liên tục kể từ ngày đến; năm thứ hai là năm dương lịch (phần chồng lấn quyết toán riêng)."
+   }
+  ]
+ },
+ {
+  "id": "b-cross-year-finalisation",
+  "part": "B",
+  "group": "Residence & tax period",
+  "title_en": "Cross-year finalisation",
+  "title_vi": "Quyết toán năm chồng lấn",
+  "summary_vi": "Khi năm đầu là 12 tháng liên tục, năm dương lịch thứ hai bị chồng lấn: phải trừ phần thuế của tháng chồng lấn đã tính ở năm đầu.",
+  "rules_vi": [
+   "PIT payable năm 2 = PIT năm 2 − PIT phần chồng lấn được trừ − PIT đã khấu trừ, nộp, khấu trừ nước ngoài ở phần không chồng lấn.",
+   "PIT phần chồng lấn được trừ = Tổng PIT năm 1 × số tháng chồng lấn / 12.",
+   "PIT phải nộp cuối cùng = Tổng PIT − PIT đã khấu trừ − PIT đã nộp − PIT nộp nước ngoài được khấu trừ."
+  ],
+  "sources": [
+   "r2:22"
+  ],
+  "mvp": true,
+  "formula": "PIT chồng lấn được trừ = PIT năm 1 × (số tháng chồng lấn / 12)",
+  "qa": [
+   {
+    "q_en": "How is the overlapped period dealt with in the second tax year?",
+    "a_vi": "Trừ PIT phần chồng lấn = tổng PIT năm 1 × số tháng chồng lấn / 12 khi tính PIT phải nộp năm 2."
+   }
+  ]
+ },
+ {
+  "id": "b-income-types",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "8 income types & 5 steps",
+  "title_vi": "8 loại thu nhập và 5 bước tính thuế toàn phần",
+  "summary_vi": "Tám loại thu nhập chịu PIT; ngoài tiền lương và kinh doanh, sáu loại còn lại tính theo thuế suất toàn phần.",
+  "rules_vi": [
+   "Employment, business, capital investment, capital transfer, real estate transfer, prize winning, royalties/franchising, inheritance/gift.",
+   "Sáu loại flat rate: bước 1 xác định nguồn thu nhập; bước 2 thu nhập tính thuế (VD trừ 10 triệu); bước 3 thuế suất (khác nhau resident/non-resident); bước 4 thời điểm tính thuế; bước 5 bên khai và nộp."
+  ],
+  "sources": [
+   "r2:4",
+   "r2:7"
+  ],
+  "qa": [
+   {
+    "q_en": "Name the five steps to compute PIT on a flat-rate income.",
+    "a_vi": "Nguồn thu nhập → thu nhập tính thuế → thuế suất → thời điểm tính thuế → bên khai nộp."
+   }
+  ]
+ },
+ {
+  "id": "b-emp-taxable",
+  "part": "B",
+  "group": "Employment income",
+  "title_en": "Taxable employment income",
+  "title_vi": "Thu nhập từ tiền lương, tiền công chịu thuế",
+  "summary_vi": "Mọi khoản người lao động nhận từ người sử dụng lao động, bằng tiền hoặc hiện vật, trừ khoản được miễn theo danh mục.",
+  "rules_vi": [
+   "Lương, thưởng bằng tiền hoặc hiện vật (kể cả cổ phiếu thưởng, quyền chọn cổ phiếu); phụ cấp, hoa hồng; thù lao giảng bài, thành viên HĐQT.",
+   "Lợi ích: nhà ở, điện nước, lái xe, xe; bảo hiểm nhân thọ và bảo hiểm tự nguyện có tích lũy; quỹ hưu trí tự nguyện công ty đóng; phí hội viên; điện thoại; công tác phí vượt mức; đồng phục vượt mức; thuế công ty nộp thay cho cá nhân; lợi ích liên quan nghỉ lễ.",
+   "Làm thêm giờ, làm đêm: chỉ phần trả cao hơn lương giờ chuẩn được miễn; phần lương chuẩn vẫn chịu thuế.",
+   "Công tác phí: cơ quan nhà nước 200.000 đ/ngày tiền mặt; tổ chức khác theo quy chế nội bộ, vượt quy chế thì chịu thuế."
+  ],
+  "sources": [
+   "r2:8",
+   "r2:9"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Is the standard-rate part of overtime pay taxable?",
+    "a_vi": "Có. Chỉ phần trả cao hơn mức lương chuẩn cho giờ làm thêm được miễn thuế."
+   }
+  ]
+ },
+ {
+  "id": "b-emp-housing-15",
+  "part": "B",
+  "group": "Employment income",
+  "title_en": "Housing 15% rule",
+  "title_vi": "Tiền nhà 15%",
+  "summary_vi": "Tiền nhà công ty trả bằng tiền mặt chịu thuế toàn bộ; phụ cấp nhà ở bằng hiện vật chịu thuế tối đa 15% thu nhập chịu thuế khác.",
+  "rules_vi": [
+   "Bằng tiền mặt: chịu thuế toàn bộ.",
+   "Bằng hiện vật: phần chịu thuế = MIN (tiền nhà thực tế; 15% thu nhập chịu thuế không gồm tiền nhà).",
+   "Lương gross: 15% tính trên thu nhập chịu thuế chưa gồm tiền nhà (chưa trừ giảm trừ).",
+   "Lương net: gross-up thu nhập chưa gồm tiền nhà, cộng lại các khoản giảm trừ, rồi mới lấy 15%; sau khi cộng tiền nhà phải gross-up lần nữa."
+  ],
+  "sources": [
+   "r2:9",
+   "r2:16",
+   "r2:17"
+  ],
+  "mvp": true,
+  "formula": "Tiền nhà chịu thuế = MIN (tiền nhà thực tế ; 15% × thu nhập chịu thuế chưa gồm tiền nhà)",
+  "traps": [
+   {
+    "text_vi": "Lương net: lấy 15% trên số net là sai; phải gross-up trước, cộng lại giảm trừ rồi mới lấy 15%.",
+    "src": "r2:16"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "How is taxable in-kind housing computed?",
+    "a_vi": "MIN của tiền nhà thực tế và 15% thu nhập chịu thuế chưa gồm tiền nhà."
+   }
+  ]
+ },
+ {
+  "id": "b-emp-meal-uniform",
+  "part": "B",
+  "group": "Employment income",
+  "title_en": "Meal 730k · uniform 5m",
+  "title_vi": "Ăn ca, đồng phục",
+  "summary_vi": "Ăn ca bằng tiền được miễn đến 730.000 đ/tháng; đồng phục tiền mặt chỉ phần vượt 5 triệu/năm chịu thuế; hiện vật không chịu thuế.",
+  "rules_vi": [
+   "Ăn ca bằng tiền: miễn tối đa 730.000 đ/tháng, phần vượt chịu thuế.",
+   "Ăn ca hiện vật (công ty trả thẳng cho nhà cung cấp, có chứng từ): không giới hạn.",
+   "Đồng phục bằng tiền: chỉ phần vượt 5 triệu/năm chịu thuế. Đồng phục hiện vật: không chịu thuế."
+  ],
+  "sources": [
+   "r2:9"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Ăn ca tiền mặt (miễn)",
+    "value": "730.000 đ/tháng",
+    "src": "r2:9"
+   },
+   {
+    "label": "Đồng phục tiền mặt (miễn)",
+    "value": "5 triệu/năm",
+    "src": "r2:9"
+   }
+  ],
+  "traps": [
+   {
+    "text_vi": "Cùng ngưỡng 5 triệu/năm với trần chi đồng phục tiền mặt được trừ khi tính CIT.",
+    "src": "r3:13"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Tax treatment of cash meal allowance?",
+    "a_vi": "Miễn đến 730.000 đ/tháng; vượt thì chịu thuế. Hiện vật trả thẳng nhà cung cấp: không giới hạn."
+   }
+  ]
+ },
+ {
+  "id": "b-emp-life-insurance",
+  "part": "B",
+  "group": "Employment income",
+  "title_en": "Life insurance 10%",
+  "title_vi": "Bảo hiểm nhân thọ và bảo hiểm có tích lũy phí",
+  "summary_vi": "Phí bảo hiểm nhân thọ và bảo hiểm tự nguyện có tích lũy do công ty đóng là thu nhập chịu thuế, khấu trừ 10% trên tổng phí.",
+  "rules_vi": [
+   "PIT 10% trên tổng phí công ty đóng.",
+   "Mua của công ty bảo hiểm thành lập theo luật VN: công ty bảo hiểm khấu trừ khi đáo hạn.",
+   "Mua của công ty bảo hiểm nước ngoài được phép bán tại VN: người sử dụng lao động khấu trừ trước khi trả lương.",
+   "Bảo hiểm tự nguyện không tích lũy (VD bảo hiểm sức khỏe): không chịu thuế nếu có quy chế, hợp đồng, hóa đơn, chứng từ."
+  ],
+  "sources": [
+   "r2:10",
+   "r2:12"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Who withholds PIT on employer-paid life insurance premiums with cash value?",
+    "a_vi": "Công ty bảo hiểm VN khấu trừ khi đáo hạn; với bảo hiểm nước ngoài được bán tại VN thì người sử dụng lao động khấu trừ trước khi trả lương."
+   }
+  ]
+ },
+ {
+  "id": "b-emp-exempt-benefits",
+  "part": "B",
+  "group": "Employment income",
+  "title_en": "Non-taxable benefits list",
+  "title_vi": "Danh sách lợi ích không chịu thuế",
+  "summary_vi": "Một danh sách lợi ích được miễn khi đủ điều kiện về hợp đồng, quy chế và chứng từ; đề thi hay hỏi điều kiện đi kèm.",
+  "rules_vi": [
+   "Vé về phép: 1 lượt/năm, chỉ cho bản thân nhân viên, hành trình giữa VN và nước nhà; ghi trong hợp đồng hoặc quy chế.",
+   "Học phí con: mẫu giáo đến hết THPT; ghi trong hợp đồng hoặc quy chế; hóa đơn đứng tên công ty.",
+   "Chuyển vùng một lần: vùng khó khăn, hải đảo; hoặc người nước ngoài/Việt Kiều chuyển về VN hoặc chuyển ra nước ngoài; ghi trong hợp đồng hoặc thỏa ước.",
+   "Điện thoại: hiện vật có chứng từ; tiền mặt trong mức quy chế. Hiếu hỉ cho nhân viên và gia đình: tối đa 1 tháng lương bình quân.",
+   "Đào tạo phù hợp chuyên môn hoặc kế hoạch công ty. Xe đưa đón nhà ↔ nơi làm việc: không chịu thuế; dùng riêng chịu thuế.",
+   "Dịch vụ chăm sóc sức khỏe, giải trí, làm đẹp: ghi rõ tên nhân viên thì chịu thuế; chi chung cho tập thể thì không.",
+   "Phí giấy phép lao động, visa, thẻ tạm trú là nghĩa vụ của công ty: không chịu thuế. Trợ cấp thôi việc đúng Bộ luật Lao động: không chịu thuế.",
+   "Trợ cấp từ cơ quan bảo hiểm xã hội (thai sản, tai nạn lao động…): không chịu thuế; khoản công ty chi thêm có thể chịu thuế."
+  ],
+  "sources": [
+   "r2:10",
+   "r2:11",
+   "r2:12",
+   "r2:13"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Vé về phép cho người thân của expat thì chịu thuế.",
+    "src": "r3:60"
+   },
+   {
+    "text_vi": "Trợ cấp thôi việc chi vượt Bộ luật Lao động thì phần vượt chịu thuế.",
+    "src": "r2:13"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Is a return airfare for an expatriate’s family member taxable?",
+    "a_vi": "Có. Chỉ vé của bản thân nhân viên (1 lượt/năm, VN ↔ nước nhà) được miễn."
+   }
+  ]
+ },
+ {
+  "id": "b-exempt-income",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Exempt income",
+  "title_vi": "Thu nhập miễn thuế",
+  "summary_vi": "Các khoản miễn PIT phổ biến: lãi tiền gửi, lãi bảo hiểm nhân thọ, trái phiếu Chính phủ, học bổng, kiều hối, bồi thường bảo hiểm, quỹ từ thiện.",
+  "rules_vi": [
+   "Lãi tiền gửi tại tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại VN theo luật VN; lãi hợp đồng bảo hiểm nhân thọ; lãi trái phiếu Chính phủ.",
+   "Học bổng; tiền Việt kiều gửi về cho người thân; bồi thường hợp đồng bảo hiểm nhân thọ, phi nhân thọ, sức khỏe.",
+   "Thu nhập từ quỹ từ thiện; viện trợ nước ngoài vì mục đích từ thiện, nhân đạo.",
+   "Thừa kế, quà tặng là bất động sản giữa người thân trong danh sách miễn thuế chuyển nhượng BĐS."
+  ],
+  "sources": [
+   "r2:6",
+   "r2:14"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Name three types of PIT-exempt income.",
+    "a_vi": "Lãi tiền gửi ngân hàng VN, kiều hối, học bổng (còn: lãi trái phiếu Chính phủ, bồi thường bảo hiểm, quỹ từ thiện)."
+   }
+  ]
+ },
+ {
+  "id": "b-deductions",
+  "part": "B",
+  "group": "Deductions & rates",
+  "title_en": "Deductions",
+  "title_vi": "Các khoản giảm trừ",
+  "summary_vi": "Resident được trừ 11 triệu cho bản thân, 4,4 triệu cho mỗi người phụ thuộc mỗi tháng, bảo hiểm bắt buộc, hưu trí tự nguyện tối đa 1 triệu/tháng và quỹ từ thiện.",
+  "rules_vi": [
+   "Self: 11.000.000 đ/tháng. Dependant: 4.400.000 đ/tháng/người.",
+   "Bảo hiểm bắt buộc (SHUI). Quỹ hưu trí tự nguyện: tối đa 1 triệu/tháng. Quỹ từ thiện, nhân đạo, khuyến học.",
+   "Non-resident không có giảm trừ.",
+   "Đăng ký người phụ thuộc: cha mẹ, vợ chồng, con khi quyết toán; người khác trước 31/12."
+  ],
+  "sources": [
+   "r2:14",
+   "tt:3"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Self",
+    "value": "11.000.000 đ/tháng",
+    "src": "tt:3"
+   },
+   {
+    "label": "Dependant",
+    "value": "4.400.000 đ/tháng",
+    "src": "tt:3"
+   },
+   {
+    "label": "Quỹ hưu trí tự nguyện (tối đa)",
+    "value": "1.000.000 đ/tháng",
+    "src": "r2:14"
+   }
+  ],
+  "traps": [
+   {
+    "text_vi": "Hưu trí tự nguyện: PIT giảm trừ tối đa 1 triệu/tháng, còn CIT trừ công ty tối đa 5 triệu/tháng/người. Đừng lẫn.",
+    "src": "r3:13"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Monthly personal and dependant deductions (J26–J27)?",
+    "a_vi": "Self 11 triệu; dependant 4,4 triệu mỗi người."
+   }
+  ]
+ },
+ {
+  "id": "b-shui",
+  "part": "B",
+  "group": "Deductions & rates",
+  "title_en": "Compulsory insurance",
+  "title_vi": "Bảo hiểm bắt buộc (BHXH, BHYT, BHTN)",
+  "summary_vi": "Người lao động đóng 8% hưu trí tử tuất, 1,5% y tế, 1% thất nghiệp trên lương tối đa 46,8 triệu/tháng; người nước ngoài không đóng bảo hiểm thất nghiệp.",
+  "rules_vi": [
+   "Pension and survivor’s funds 8%; health insurance 1,5%; unemployment insurance 1% (không áp dụng cho expat).",
+   "Mức lương đóng tối đa: 46.800.000 đ/tháng (đề thi giả định áp dụng cả năm).",
+   "Khoản này là giảm trừ khi tính thu nhập tính thuế."
+  ],
+  "sources": [
+   "tt:3",
+   "r2:24"
+  ],
+  "numbers": [
+   {
+    "label": "Pension",
+    "value": "8%",
+    "src": "tt:3"
+   },
+   {
+    "label": "Health",
+    "value": "1,5%",
+    "src": "tt:3"
+   },
+   {
+    "label": "Unemployment (VN)",
+    "value": "1%",
+    "src": "tt:3"
+   },
+   {
+    "label": "Trần lương đóng",
+    "value": "46.800.000 đ/tháng",
+    "src": "tt:3"
+   }
+  ],
+  "formula": "BH bắt buộc = MIN (lương đóng ; 46,8 triệu) × (8% + 1,5% + 1%)  [expat: không có 1%]",
+  "qa": [
+   {
+    "q_en": "Employee compulsory insurance rates for a Vietnamese and an expat?",
+    "a_vi": "VN: 8% + 1,5% + 1% = 10,5%; expat: 8% + 1,5% = 9,5%; trên lương tối đa 46,8 triệu."
+   }
+  ]
+ },
+ {
+  "id": "b-progressive-quick-formula",
+  "part": "B",
+  "group": "Deductions & rates",
+  "title_en": "Progressive rates & quick formula",
+  "title_vi": "Biểu lũy tiến và công thức rút gọn",
+  "summary_vi": "Thu nhập tính thuế hằng tháng áp 7 bậc 5% đến 35%; dùng T = tỷ lệ × G − số trừ để tính nhanh.",
+  "rules_vi": [
+   "Bậc: đến 5 triệu 5%; 5–10 triệu 10%; 10–18 triệu 15%; 18–32 triệu 20%; 32–52 triệu 25%; 52–80 triệu 30%; trên 80 triệu 35%.",
+   "Công thức rút gọn theo khoảng của G (thu nhập tính thuế): T = 5%G; 10%G − 0,25; 15%G − 0,75; 20%G − 1,65; 25%G − 3,25; 30%G − 5,85; 35%G − 9,85 (triệu đồng).",
+   "Bảng thuế trong đề cho sẵn, không cần học thuộc nhưng phải biết cách chọn khoảng."
+  ],
+  "sources": [
+   "r2:15",
+   "tt:2"
+  ],
+  "mvp": true,
+  "formula": "T = rate × G − số trừ (theo khoảng của G)\nVD: G = 20 triệu → T = 20% × 20 − 1,65 = 2,35 triệu",
+  "qa": [
+   {
+    "q_en": "Quick formula for assessable income of VND 25 million per month?",
+    "a_vi": "T = 0,2 × 25 − 1,65 = 3,35 triệu (khoảng 18–32 triệu)."
+   }
+  ]
+ },
+ {
+  "id": "b-gross-up-net",
+  "part": "B",
+  "group": "Deductions & rates",
+  "title_en": "Net-to-gross",
+  "title_vi": "Quy đổi lương net sang gross",
+  "summary_vi": "Khi hợp đồng ghi lương net, công ty chịu thuế nên phải gross-up thu nhập tính thuế net bằng bảng Net to gross trước khi tính thuế.",
+  "rules_vi": [
+   "Công thức theo khoảng của N (net tính thuế/tháng): G = N/0,95; (N − 0,25)/0,9; (N − 0,75)/0,85; (N − 1,65)/0,8; (N − 3,25)/0,75; (N − 5,85)/0,7; (N − 9,85)/0,65 (triệu đồng).",
+   "Các mốc N: 4,75; 9,25; 16,05; 27,25; 42,25; 61,85 triệu.",
+   "Đường net (có tiền nhà): gross-up thu nhập chưa gồm tiền nhà, cộng lại giảm trừ, tính 15% tiền nhà, rồi gross-up lần hai khi đã cộng tiền nhà."
+  ],
+  "sources": [
+   "r2:15",
+   "r2:16",
+   "r2:17",
+   "tt:2"
+  ],
+  "mvp": true,
+  "formula": "G = (N − số trừ) / hệ số  (theo khoảng của N)",
+  "traps": [
+   {
+    "text_vi": "Lỗi hay gặp: chỉ gross-up một lần sau khi đã cộng tiền nhà, hoặc lấy 15% tiền nhà trên số net.",
+    "src": "r2:16"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Gross-up formula for monthly net assessable income of VND 20 million?",
+    "a_vi": "G = (20 − 1,65) / 0,8 = 22,94 triệu (khoảng N 16,05–27,25)."
+   }
+  ]
+ },
+ {
+  "id": "b-nonresident-employment",
+  "part": "B",
+  "group": "Employment income",
+  "title_en": "Non-resident employment 20%",
+  "title_vi": "Lương của non-resident: 20% theo số ngày",
+  "summary_vi": "Non-resident nộp 20% trên thu nhập tiền lương nguồn Việt Nam, phân bổ theo ngày làm việc hoặc ngày có mặt.",
+  "rules_vi": [
+   "Không có mặt tại VN: thu nhập nguồn VN = thu nhập toàn cầu × số ngày làm việc cho VN / tổng số ngày làm việc trong năm.",
+   "Có mặt tại VN: thu nhập nguồn VN = thu nhập toàn cầu × số ngày có mặt tại VN / 365.",
+   "Thuế suất 20% toàn phần, không giảm trừ gia cảnh, không khấu trừ thuế nước ngoài."
+  ],
+  "sources": [
+   "r2:17",
+   "tt:2"
+  ],
+  "mvp": true,
+  "formula": "PIT = 20% × (thu nhập toàn cầu × ngày tại VN / 365)",
+  "qa": [
+   {
+    "q_en": "How is the Vietnam-sourced portion of a non-resident’s salary determined?",
+    "a_vi": "Theo tỷ lệ ngày: ngày làm việc cho VN / tổng ngày làm việc (nếu không có mặt), hoặc ngày có mặt tại VN / 365."
+   }
+  ]
+ },
+ {
+  "id": "b-multiple-employers",
+  "part": "B",
+  "group": "Employment income",
+  "title_en": "Several payers",
+  "title_vi": "Nhiều nơi trả thu nhập",
+  "summary_vi": "Lương gross thì cộng ngang các nguồn; lương net thì gross-up riêng từng nơi, giảm trừ chỉ áp một lần.",
+  "rules_vi": [
+   "Lương gross: cộng tất cả nguồn để ra tổng thu nhập chịu thuế. Giảm trừ: người Việt luôn 12 tháng; người nước ngoài năm đầu đến hoặc cuối rời đi thì theo tỷ lệ thời gian.",
+   "Lương net: tách thu nhập net của từng nơi trả và gross-up riêng; giảm trừ áp một lần. Phân biệt chuyển việc (lần lượt) với làm nhiều nơi cùng lúc.",
+   "Làm thêm (part-time) bình quân dưới 10 triệu/tháng đã khấu trừ 10%: không bắt buộc gộp để quyết toán."
+  ],
+  "sources": [
+   "r2:23"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Người nước ngoài chỉ được giảm trừ theo tỷ lệ thời gian ở năm đầu và năm cuối; người Việt luôn đủ 12 tháng.",
+    "src": "r2:23"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Net salary from two employers: how many times are deductions applied?",
+    "a_vi": "Một lần. Gross-up riêng từng nơi trả, giảm trừ chỉ áp một lần."
+   }
+  ]
+ },
+ {
+  "id": "b-business-income",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Business income",
+  "title_vi": "Thu nhập từ kinh doanh của cá nhân",
+  "summary_vi": "Doanh thu năm từ 100 triệu trở xuống không phải nộp PIT; vượt thì tính PIT theo tỷ lệ % trên doanh thu từng ngành.",
+  "rules_vi": [
+   "Doanh thu > 100 triệu: nộp PIT và VAT; ≤ 100 triệu: không nộp (theo bảng thuế và slide PIT).",
+   "Tỷ lệ PIT theo bảng thuế: bán hàng 0,5%; dịch vụ, xây dựng 2%; cho thuê tài sản, đại lý 5%; sản xuất, xây dựng bao thầu vật liệu, dịch vụ gắn hàng hóa 1,5%; khác 1%.",
+   "Ba phương pháp: kê khai định kỳ (quy mô lớn, hóa đơn điện tử, sổ sách), khoán (quy mô nhỏ), từng lần phát sinh (không thường xuyên, không địa điểm cố định).",
+   "Nhiều ngành: khai và tính theo từng tỷ lệ; không tách được thì cơ quan thuế ấn định."
+  ],
+  "sources": [
+   "r2:18",
+   "r2:19",
+   "r2:20",
+   "tt:3"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Ngưỡng PIT",
+    "value": "100 triệu/năm",
+    "src": "tt:3"
+   },
+   {
+    "label": "Sales of goods",
+    "value": "0,5%",
+    "src": "tt:3"
+   },
+   {
+    "label": "Services & construction",
+    "value": "2%",
+    "src": "tt:3"
+   },
+   {
+    "label": "Lease & agency",
+    "value": "5%",
+    "src": "tt:3"
+   },
+   {
+    "label": "Manufacturing/construction + goods",
+    "value": "1,5%",
+    "src": "tt:3"
+   },
+   {
+    "label": "Others",
+    "value": "1%",
+    "src": "tt:3"
+   }
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Ngưỡng 100 triệu là của PIT. Slide VAT (r4:13) ghi cá nhân kinh doanh có doanh thu từ 200 triệu/năm trở xuống không chịu VAT. Đừng dùng lẫn; hỏi giảng viên nếu đề trộn cả hai.",
+  "qa": [
+   {
+    "q_en": "PIT rate for an individual’s lease of property?",
+    "a_vi": "5% trên doanh thu (khi doanh thu năm vượt 100 triệu)."
+   }
+  ]
+ },
+ {
+  "id": "b-capital-investment",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Investment income 5%",
+  "title_vi": "Thu nhập từ đầu tư vốn 5%",
+  "summary_vi": "Cổ tức, lãi chia từ góp vốn chịu thuế 5% trên toàn bộ thu nhập, cho cả resident và non-resident.",
+  "rules_vi": [
+   "Thuế suất 5% trên tổng thu nhập đầu tư vốn.",
+   "Miễn: lãi tiền gửi tại ngân hàng theo luật VN, lãi bảo hiểm nhân thọ, lãi trái phiếu Chính phủ.",
+   "Cổ tức bằng tiền: tính thuế khi nhận. Cổ tức bằng cổ phiếu: xem thẻ Taxing time."
+  ],
+  "sources": [
+   "r2:5",
+   "tt:3"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "PIT rate on dividends for a resident individual?",
+    "a_vi": "5% trên tổng thu nhập (cổ tức bằng cổ phiếu chưa tính thuế khi nhận)."
+   }
+  ]
+ },
+ {
+  "id": "b-capital-transfer",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Capital & securities transfer",
+  "title_vi": "Chuyển nhượng vốn và chứng khoán",
+  "summary_vi": "Resident chuyển nhượng vốn (không phải chứng khoán) chịu 20% trên lãi; chuyển nhượng chứng khoán chịu 0,1% trên giá bán; non-resident luôn 0,1% giá bán.",
+  "rules_vi": [
+   "Capital (non-securities): resident 20% trên lãi; non-resident 0,1% trên giá chuyển nhượng.",
+   "Securities: 0,1% trên giá bán cho cả hai, không xét lãi hay lỗ.",
+   "Lãi = giá chuyển nhượng − giá vốn − chi phí chuyển nhượng."
+  ],
+  "sources": [
+   "r2:5",
+   "tt:3"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Capital transfer (resident)",
+    "value": "20% trên lãi",
+    "src": "tt:3"
+   },
+   {
+    "label": "Capital transfer (non-resident)",
+    "value": "0,1% giá bán",
+    "src": "tt:3"
+   },
+   {
+    "label": "Securities transfer",
+    "value": "0,1% giá bán",
+    "src": "tt:3"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "PIT on securities transfer for a resident?",
+    "a_vi": "0,1% trên giá bán, không phụ thuộc lãi lỗ."
+   }
+  ]
+ },
+ {
+  "id": "b-real-estate",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Real property transfer 2%",
+  "title_vi": "Chuyển nhượng bất động sản 2%",
+  "summary_vi": "2% trên giá chuyển nhượng cho cả resident và non-resident; miễn thuế trong gia đình và khi cá nhân chỉ có một nhà ở duy nhất.",
+  "rules_vi": [
+   "Thuế suất 2% trên giá chuyển nhượng.",
+   "Miễn khi chuyển nhượng giữa vợ–chồng; cha mẹ–con (kể cả con nuôi); cha mẹ vợ/chồng–con dâu/rể; ông bà–cháu; anh chị em ruột.",
+   "Miễn khi chuyển nhượng nhà ở, quyền sử dụng đất ở và tài sản gắn liền với đất của cá nhân chỉ có một nhà ở hoặc đất ở duy nhất tại Việt Nam."
+  ],
+  "sources": [
+   "r2:5",
+   "tt:3"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "When is real property transfer by an individual PIT-exempt?",
+    "a_vi": "Giữa người thân trong danh sách (vợ chồng, cha mẹ con…) hoặc khi chuyển nhượng nhà ở/đất ở duy nhất của cá nhân."
+   }
+  ]
+ },
+ {
+  "id": "b-royalty-prize-gift",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Royalty 5% · prize & gift 10%",
+  "title_vi": "Bản quyền 5% · trúng thưởng, thừa kế, quà tặng 10%",
+  "summary_vi": "Royalties/franchises chịu 5% và prize, inheritance, gift chịu 10%, đều chỉ trên phần thu nhập vượt 10 triệu.",
+  "rules_vi": [
+   "Royalties/franchises: 5% trên phần vượt 10 triệu (resident và non-resident).",
+   "Prizes/inheritances/gifts: 10% trên phần vượt 10 triệu.",
+   "Miễn: thừa kế, quà tặng là bất động sản (slide có chú thích (*) không đọc được; xem điều kiện về người thân ở slide gốc), kiều hối, từ thiện, học bổng. Các khoản thừa kế, quà tặng khác vẫn chịu 10% trên phần vượt 10 triệu."
+  ],
+  "sources": [
+   "r2:6",
+   "tt:3"
+  ],
+  "mvp": true,
+  "formula": "PIT = tỷ lệ × (thu nhập − 10 triệu)",
+  "qa": [
+   {
+    "q_en": "PIT on a VND 50 million prize?",
+    "a_vi": "10% × (50 − 10) = 4 triệu."
+   }
+  ]
+ },
+ {
+  "id": "b-taxing-time-shares",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Taxing time: dividends, share awards, options",
+  "title_vi": "Thời điểm tính thuế: cổ tức, thưởng cổ phiếu, quyền chọn",
+  "summary_vi": "Tiền thì tính khi nhận; cổ phiếu thì thường chưa tính khi nhận mà tính khi chuyển nhượng sau này.",
+  "rules_vi": [
+   "Cổ tức bằng tiền: khi nhận tiền (đầu tư vốn). Cổ tức bằng cổ phiếu: khi chuyển nhượng cổ phiếu.",
+   "Thưởng bằng tiền: khi nhận (tiền lương). Thưởng bằng cổ phiếu: khi chuyển nhượng (tiền lương theo giá thị trường hoặc giá hợp đồng).",
+   "Quyền chọn cổ phiếu: khi chuyển nhượng cổ phiếu mua được; tiền lương = chênh lệch giữa giá thị trường và giá thực hiện.",
+   "Có cổ phiếu từ nhiều nguồn: PIT tính trên cổ phiếu cổ tức trước, rồi mới đến cổ phiếu tự mua."
+  ],
+  "sources": [
+   "r2:23"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Cổ tức bằng cổ phiếu chưa tính thuế khi nhận.",
+    "src": "r2:23"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "When is PIT on stock dividends taxed?",
+    "a_vi": "Chưa tính khi nhận; tính khi chuyển nhượng số cổ phiếu đó, theo thứ tự cổ phiếu cổ tức trước."
+   }
+  ]
+ },
+ {
+  "id": "b-capital-contribution",
+  "part": "B",
+  "group": "Other income types",
+  "title_en": "Contribution in kind",
+  "title_vi": "Góp vốn bằng tài sản",
+  "summary_vi": "Góp vốn bằng vốn góp, cổ phần hoặc bất động sản không bị tính thuế lúc góp mà tính khi chuyển nhượng hoặc rút vốn.",
+  "rules_vi": [
+   "Góp vốn bằng vốn góp ở công ty A vào B: tính thuế khi chuyển nhượng vốn, trên chênh lệch giữa giá trị vốn góp thỏa thuận vào B và giá trị sổ sách vốn của A.",
+   "Góp bằng cổ phần ở A vào B: chuyển nhượng chứng khoán, tính trên giá trị vốn góp thỏa thuận.",
+   "Góp bằng BĐS: chuyển nhượng BĐS, tính trên giá trị vốn góp thỏa thuận.",
+   "Sau đó bán phần vốn tại B cho người mua Y: chuyển nhượng vốn góp."
+  ],
+  "sources": [
+   "r2:24"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Is PIT charged when an individual contributes shares in kind to a company?",
+    "a_vi": "Có. Góp bằng cổ phần coi là chuyển nhượng chứng khoán, tính trên giá trị vốn góp thỏa thuận (0,1%)."
+   }
+  ]
+ },
+ {
+  "id": "b-foreign-tax-credit",
+  "part": "B",
+  "group": "Cross-border & admin",
+  "title_en": "Foreign tax credit",
+  "title_vi": "Khấu trừ thuế nước ngoài",
+  "summary_vi": "Resident được trừ thuế đã nộp ở nước ngoài, tối đa bằng thuế VN phân bổ cho thu nhập đó.",
+  "rules_vi": [
+   "Creditable = MIN (thuế nước ngoài thực nộp ; thuế VN phân bổ cho thu nhập nước ngoài).",
+   "Thuế VN phân bổ = Tổng thuế VN × thu nhập nước ngoài / tổng thu nhập.",
+   "Non-resident không được khấu trừ."
+  ],
+  "sources": [
+   "r2:22",
+   "r2:3"
+  ],
+  "mvp": true,
+  "formula": "Creditable = MIN (thuế nước ngoài ; Tổng thuế VN × thu nhập nước ngoài / tổng thu nhập)",
+  "qa": [
+   {
+    "q_en": "Foreign tax credit cap for an individual?",
+    "a_vi": "Thuế VN phân bổ cho thu nhập nước ngoài = tổng thuế VN × thu nhập nước ngoài / tổng thu nhập."
+   }
+  ]
+ },
+ {
+  "id": "b-admin-declaration",
+  "part": "B",
+  "group": "Cross-border & admin",
+  "title_en": "Declaration & finalisation",
+  "title_vi": "Khai thuế và quyết toán PIT",
+  "summary_vi": "Công ty khấu trừ, khai theo tháng hoặc quý và quyết toán thay người lao động đủ điều kiện ủy quyền; cá nhân tự khai khi không ủy quyền.",
+  "rules_vi": [
+   "Công ty khai tháng hoặc quý (mẫu 05/KK-TNCN); quyết toán năm mẫu 05/QTT-TNCN với 3 phụ lục.",
+   "Ủy quyền quyết toán: lao động ký hợp đồng từ 3 tháng trở lên tại một công ty và đang làm việc khi quyết toán (kể cả không đủ 12 tháng); hoặc có thu nhập vãng lai khác không quá 10 triệu/tháng.",
+   "Cá nhân tự khai theo quý (hoặc tháng nếu chọn) mẫu 02/KK-TNCN; quyết toán 02/QTT-TNCN kèm chứng từ khấu trừ, nộp và thuế nước ngoài."
+  ],
+  "sources": [
+   "r2:20",
+   "r2:21"
+  ],
+  "qa": [
+   {
+    "q_en": "Who may authorise the employer to finalise PIT on their behalf?",
+    "a_vi": "Người ký hợp đồng lao động từ 3 tháng trở lên tại một công ty và còn làm việc khi quyết toán, hoặc có thu nhập khác vãng lai không quá 10 triệu/tháng."
+   }
+  ]
+ },
+ {
+  "id": "b-deadlines",
+  "part": "B",
+  "group": "Cross-border & admin",
+  "title_en": "PIT deadlines",
+  "title_vi": "Hạn khai và nộp PIT",
+  "summary_vi": "Tháng ngày 20, quý ngày cuối tháng đầu quý sau, quyết toán công ty ngày cuối tháng 3, quyết toán cá nhân ngày cuối tháng 4; rời VN thì 45 ngày.",
+  "rules_vi": [
+   "Đăng ký thuế: 10 ngày làm việc kể từ ngày phát sinh nghĩa vụ.",
+   "Khai và nộp tháng: ngày 20 tháng sau. Quý: ngày cuối của tháng đầu quý sau.",
+   "Quyết toán năm qua công ty: ngày cuối tháng 3 sau năm. Cá nhân tự quyết toán: ngày cuối tháng 4.",
+   "Kết thúc hợp đồng, rời VN: 45 ngày kể từ ngày rời đi.",
+   "Đăng ký người phụ thuộc: cha mẹ, vợ chồng, con khi quyết toán (qua công ty: trước ít nhất 10 ngày làm việc); người khác trước 31/12."
+  ],
+  "sources": [
+   "r2:21",
+   "r1:4"
+  ],
+  "qa": [
+   {
+    "q_en": "Deadline for an individual’s own PIT finalisation?",
+    "a_vi": "Ngày cuối của tháng thứ 4 sau khi kết thúc năm dương lịch (công ty quyết toán thay: ngày cuối tháng 3)."
+   }
+  ]
+ },
+ {
+  "id": "b-dta",
+  "part": "B",
+  "group": "Cross-border & admin",
+  "title_en": "DTA for individuals",
+  "title_vi": "Hiệp định thuế với cá nhân",
+  "summary_vi": "Khi VN có hiệp định thuế (DTA) với nước người đó là cư dân, quyền đánh thuế phân chia theo DTA và hồ sơ cần giấy chứng nhận cư trú.",
+  "rules_vi": [
+   "Nước có DTA với VN: năm đầu tính thu nhập kể từ ngày đến VN, không tính từ 01/01.",
+   "Muốn hưởng DTA cần nộp hồ sơ miễn, giảm thuế (mẫu 01/HTQT) và giấy chứng nhận cư trú."
+  ],
+  "sources": [
+   "r5:25",
+   "r5:26",
+   "r2:4"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "How does a DTA affect the first-year income period of an arriving foreigner?",
+    "a_vi": "Chỉ tính thu nhập từ ngày đến VN (nước không có DTA thì tính từ 01/01)."
+   }
+  ]
+ }
+]

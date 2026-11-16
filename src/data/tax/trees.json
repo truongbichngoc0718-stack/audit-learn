@@ -1,0 +1,1195 @@
+{
+  "_meta": {
+    "version": "D-trees-1.0",
+    "updated": "2026-11-16",
+    "author_note": "Soạn bằng Opus từ /source/library/acca-tx-vnm. Mỗi kết quả (result) ghi nguồn; Sonnet chỉ render, không tự sửa logic. Nếu phát hiện mâu thuẫn, ghi vào docs/TAX_MAP.md §9 thay vì sửa.",
+    "source_codes": {
+      "r1..r5": "source/library/acca-tx-vnm/revision/r{n}-*.md — 'r2:3' = Revision 2 (PIT), tr. 3",
+      "s1..s5": "source/library/acca-tx-vnm/study/ch{n}-*.md — 's2:3' = Chapter 2 study deck, tr. 3",
+      "tt": "source/library/acca-tx-vnm/tax-tables-j26-j27.md — bảng thuế cho trong đề",
+      "D320": "Decree 320/2025/ND-CP bản EN (Tax/tx26-documents-1) — chỉ dùng để đối chiếu khi slide mâu thuẫn"
+    },
+    "schema": "tree = {id, part, title_en, title_vi, intro_vi, sources[], start, nodes{}}; node câu hỏi = {q_en, q_vi, hint_vi?, options:[{label_en, label_vi, next}]}; node kết quả = {result:true, verdict_en, verdict_vi, rules_vi[], trap_vi?, cards[], sources[], next_tree?}"
+  },
+  "trees": [
+    {
+      "id": "pit-residence",
+      "part": "B",
+      "title_en": "PIT · Tax residence",
+      "title_vi": "Cá nhân này là resident hay non-resident?",
+      "intro_vi": "Câu hỏi đầu tiên của mọi bài PIT. Sai bước này thì sai cả biểu thuế, giảm trừ và phạm vi thu nhập.",
+      "sources": ["r2:3", "s2:3"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Present in Vietnam ≥ 183 days in the calendar year, or in 12 consecutive months from first arrival?",
+          "q_vi": "Có mặt ở Việt Nam từ 183 ngày trở lên trong năm dương lịch, hoặc trong 12 tháng liên tục kể từ ngày đến đầu tiên?",
+          "hint_vi": "Đếm theo ngày dương lịch; ngày đến và ngày đi cộng lại tính là 1 ngày.",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-resident" },
+            { "label_en": "No", "label_vi": "Không", "next": "q2" }
+          ]
+        },
+        "q2": {
+          "q_en": "Has a regular residential location in Vietnam: registered permanent residence (household book / resident card) OR leased accommodation (house, hotel, office…) with accumulated lease term ≥ 183 days in the tax year?",
+          "q_vi": "Có nơi ở thường xuyên tại Việt Nam: đăng ký thường trú (sổ hộ khẩu / thẻ thường trú) HOẶC thuê nhà (nhà, khách sạn, văn phòng…) với tổng thời hạn thuê ≥ 183 ngày trong năm tính thuế?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q3" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-nonresident" }
+          ]
+        },
+        "q3": {
+          "q_en": "Can the individual prove tax residence in another country?",
+          "q_vi": "Cá nhân chứng minh được mình là đối tượng cư trú thuế của nước khác không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-nonresident" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-resident" }
+          ]
+        },
+        "r-resident": {
+          "result": true,
+          "verdict_en": "Tax resident",
+          "verdict_vi": "Cá nhân cư trú",
+          "rules_vi": [
+            "Chịu thuế trên thu nhập toàn cầu (worldwide income), dù trả ở Việt Nam hay nước ngoài.",
+            "Employment income: biểu lũy tiến 5–35% trên thu nhập tính thuế theo tháng; các loại thu nhập khác: thuế suất toàn phần (flat rate).",
+            "Được giảm trừ: bản thân, người phụ thuộc, bảo hiểm bắt buộc, từ thiện.",
+            "Được khấu trừ thuế đã nộp ở nước ngoài (foreign tax credit)."
+          ],
+          "trap_vi": "Có mặt dưới 183 ngày vẫn có thể là resident nếu thuê nhà đủ 183 ngày và không chứng minh được cư trú ở nước khác. Đề hay cài chi tiết hợp đồng thuê nhà 12 tháng.",
+          "cards": ["b-residence-test", "b-scope-resident-vs-non"],
+          "sources": ["r2:3", "s2:3"],
+          "next_tree": "pit-tax-period"
+        },
+        "r-nonresident": {
+          "result": true,
+          "verdict_en": "Non-resident",
+          "verdict_vi": "Cá nhân không cư trú",
+          "rules_vi": [
+            "Chỉ chịu thuế trên thu nhập phát sinh tại Việt Nam (Vietnam-sourced income).",
+            "Employment income: thuế suất 20% toàn phần, không có giảm trừ gia cảnh.",
+            "Không được khấu trừ thuế nước ngoài (cannot claim double tax relief)."
+          ],
+          "trap_vi": "Lương non-resident nhận từ nước ngoài vẫn có phần nguồn Việt Nam: phân bổ theo số ngày làm việc/có mặt tại Việt Nam (xem thẻ b-nonresident-employment).",
+          "cards": ["b-scope-resident-vs-non", "b-nonresident-employment"],
+          "sources": ["r2:3", "r2:17", "tt:2"]
+        }
+      }
+    },
+    {
+      "id": "pit-tax-period",
+      "part": "B",
+      "title_en": "PIT · First tax year of a foreigner",
+      "title_vi": "Năm tính thuế đầu tiên của người nước ngoài tính thế nào?",
+      "intro_vi": "Dùng sau khi đã xác định là resident. Quyết định thu nhập nào bị tính và giảm trừ được bao nhiêu tháng.",
+      "sources": ["r2:4", "r2:22", "r2:23", "s2:3"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Is this the individual's first year in Vietnam?",
+          "q_vi": "Đây có phải năm đầu tiên cá nhân đến Việt Nam không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q2" },
+            { "label_en": "No (later year)", "label_vi": "Không (năm sau)", "next": "r-calendar" }
+          ]
+        },
+        "q2": {
+          "q_en": "Present ≥ 183 days in the first calendar year?",
+          "q_vi": "Có mặt từ 183 ngày trở lên ngay trong năm dương lịch đầu tiên?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q3" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-12months" }
+          ]
+        },
+        "q3": {
+          "q_en": "Is the individual from a country that has signed a DTA with Vietnam?",
+          "q_vi": "Cá nhân đến từ nước đã ký Hiệp định tránh đánh thuế hai lần (DTA) với Việt Nam?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-from-arrival" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-from-jan" }
+          ]
+        },
+        "r-calendar": {
+          "result": true,
+          "verdict_en": "Tax year = calendar year",
+          "verdict_vi": "Năm tính thuế = năm dương lịch",
+          "rules_vi": [
+            "Từ năm thứ hai trở đi, năm tính thuế là năm dương lịch.",
+            "Nếu năm đầu tính theo 12 tháng liên tục, năm thứ hai bị chồng lấn: PIT phải nộp năm 2 = PIT năm 2 − PIT phần chồng lấn − PIT đã khấu trừ/nộp/được trừ trong phần không chồng lấn; PIT phần chồng lấn = Tổng PIT năm 1 × số tháng chồng lấn / 12."
+          ],
+          "trap_vi": "Người Việt Nam luôn được giảm trừ đủ 12 tháng. Người nước ngoài ở năm đầu đến hoặc năm cuối rời Việt Nam: giảm trừ theo tỷ lệ thời gian tính thuế.",
+          "cards": ["b-tax-period-first-year", "b-cross-year-finalisation", "b-deductions"],
+          "sources": ["r2:22", "r2:23"]
+        },
+        "r-12months": {
+          "result": true,
+          "verdict_en": "First tax year = 12 consecutive months from arrival",
+          "verdict_vi": "Năm tính thuế đầu tiên = 12 tháng liên tục kể từ ngày đến",
+          "rules_vi": [
+            "Năm thứ hai tính theo năm dương lịch và phải quyết toán phần chồng lấn (cross-year finalisation).",
+            "Nếu trong 12 tháng đó không đủ 183 ngày thì quay lại cây pit-residence: có thể là non-resident."
+          ],
+          "cards": ["b-tax-period-first-year", "b-cross-year-finalisation"],
+          "sources": ["r2:4", "r2:22", "s2:3"]
+        },
+        "r-from-jan": {
+          "result": true,
+          "verdict_en": "Calendar year — income taxable from 1 January",
+          "verdict_vi": "Năm dương lịch — thu nhập chịu thuế tính từ 01/01",
+          "rules_vi": [
+            "Thu nhập từ 01/01 (kể cả thu nhập ở nước ngoài trước khi đến Việt Nam) đều chịu thuế.",
+            "Được khấu trừ thuế đã nộp ở nước ngoài."
+          ],
+          "trap_vi": "Hay quên cộng lương ở nước ngoài trước ngày đến. Với nước không có DTA, phần này chịu thuế.",
+          "cards": ["b-tax-period-first-year", "b-foreign-tax-credit"],
+          "sources": ["r2:4", "s2:3"]
+        },
+        "r-from-arrival": {
+          "result": true,
+          "verdict_en": "Calendar year — income taxable from date of arrival",
+          "verdict_vi": "Năm dương lịch — thu nhập chịu thuế tính từ ngày đến Việt Nam",
+          "rules_vi": [
+            "Nước có DTA với Việt Nam: chỉ tính thu nhập kể từ ngày đến, không tính từ 01/01."
+          ],
+          "cards": ["b-tax-period-first-year", "b-dta"],
+          "sources": ["r2:4", "s2:3"]
+        }
+      }
+    },
+    {
+      "id": "pit-income-type",
+      "part": "B",
+      "title_en": "PIT · Which rate for which income?",
+      "title_vi": "Loại thu nhập này chịu thuế suất nào, trên cơ sở nào?",
+      "intro_vi": "Quy trình 5 bước cho thu nhập thuế suất toàn phần: (1) xác định nguồn, (2) thu nhập tính thuế (trừ 10 triệu nếu có), (3) thuế suất resident/non-resident, (4) thời điểm tính thuế, (5) ai kê khai và nộp.",
+      "sources": ["r2:4", "r2:5", "r2:6", "r2:7", "tt:2", "tt:3"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "What type of income?",
+          "q_vi": "Đây là loại thu nhập nào?",
+          "options": [
+            { "label_en": "Employment", "label_vi": "Tiền lương, tiền công", "next": "q-emp" },
+            { "label_en": "Business", "label_vi": "Kinh doanh", "next": "r-business" },
+            { "label_en": "Capital investment (interest, dividends)", "label_vi": "Đầu tư vốn (lãi, cổ tức)", "next": "r-invest" },
+            { "label_en": "Capital transfer (non-securities)", "label_vi": "Chuyển nhượng vốn góp", "next": "r-capital" },
+            { "label_en": "Securities transfer", "label_vi": "Chuyển nhượng chứng khoán", "next": "r-securities" },
+            { "label_en": "Real property transfer", "label_vi": "Chuyển nhượng bất động sản", "next": "r-property" },
+            { "label_en": "Royalties / franchises", "label_vi": "Bản quyền, nhượng quyền", "next": "r-royalty" },
+            { "label_en": "Prizes / winnings", "label_vi": "Trúng thưởng", "next": "r-prize" },
+            { "label_en": "Inheritance / gift", "label_vi": "Thừa kế, quà tặng", "next": "r-gift" }
+          ]
+        },
+        "q-emp": {
+          "q_en": "Is the individual a tax resident?",
+          "q_vi": "Cá nhân là resident?",
+          "hint_vi": "Chưa chắc thì chạy cây pit-residence trước.",
+          "options": [
+            { "label_en": "Resident", "label_vi": "Resident", "next": "r-emp-res" },
+            { "label_en": "Non-resident", "label_vi": "Non-resident", "next": "r-emp-nonres" }
+          ]
+        },
+        "r-emp-res": {
+          "result": true,
+          "verdict_en": "Progressive 5–35% on monthly assessable income",
+          "verdict_vi": "Biểu lũy tiến 5–35% trên thu nhập tính thuế hằng tháng",
+          "rules_vi": [
+            "Thu nhập tính thuế = thu nhập chịu thuế − giảm trừ (bản thân 11 triệu/tháng, người phụ thuộc 4,4 triệu/tháng, bảo hiểm bắt buộc, từ thiện).",
+            "Công thức nhanh trong bảng thuế: ví dụ G từ 18 đến 32 triệu thì T = 0,2G − 1,65 triệu.",
+            "Lương net thì phải gross-up bằng bảng Net to gross trước khi tính thuế."
+          ],
+          "cards": ["b-progressive-quick-formula", "b-deductions", "b-gross-up-net"],
+          "sources": ["r2:14", "r2:15", "tt:2", "tt:3"],
+          "next_tree": "pit-computation-path"
+        },
+        "r-emp-nonres": {
+          "result": true,
+          "verdict_en": "20% flat on Vietnam-sourced employment income",
+          "verdict_vi": "20% toàn phần trên tiền lương có nguồn Việt Nam",
+          "rules_vi": [
+            "Không có giảm trừ gia cảnh.",
+            "Nếu không có mặt ở Việt Nam: thu nhập nguồn VN = thu nhập toàn cầu × số ngày làm việc cho VN / tổng số ngày làm việc trong năm.",
+            "Nếu có mặt ở Việt Nam: thu nhập nguồn VN = thu nhập toàn cầu × số ngày có mặt tại VN / 365."
+          ],
+          "cards": ["b-nonresident-employment"],
+          "sources": ["r2:17", "tt:2"]
+        },
+        "r-business": {
+          "result": true,
+          "verdict_en": "% of revenue if annual revenue > VND100 million",
+          "verdict_vi": "Tính % trên doanh thu nếu doanh thu năm vượt 100 triệu",
+          "rules_vi": [
+            "Theo bảng thuế: bán hàng hóa 0,5%; dịch vụ và xây dựng 2%; cho thuê tài sản và đại lý 5%; sản xuất, xây dựng có bao thầu vật liệu, dịch vụ gắn với hàng hóa 1,5%; khác 1%.",
+            "Doanh thu năm từ 100 triệu trở xuống: không nộp PIT.",
+            "Ba phương pháp: kê khai định kỳ (quy mô lớn), khoán (quy mô nhỏ), kê khai theo từng lần phát sinh (kinh doanh không thường xuyên)."
+          ],
+          "trap_vi": "Ngưỡng 100 triệu là của PIT (theo bảng thuế đề thi). Slide VAT ghi hàng hóa, dịch vụ của cá nhân kinh doanh có thu nhập năm từ 200 triệu trở xuống thuộc diện không chịu VAT. Đừng dùng lẫn hai ngưỡng (xem TAX_MAP §9).",
+          "cards": ["b-business-income", "e-non-taxable"],
+          "sources": ["r2:18", "r2:19", "r2:20", "tt:3", "r4:13"]
+        },
+        "r-invest": {
+          "result": true,
+          "verdict_en": "5% on total investment income (resident & non-resident)",
+          "verdict_vi": "5% trên tổng thu nhập từ đầu tư vốn (cả resident lẫn non-resident)",
+          "rules_vi": [
+            "Miễn thuế: lãi tiền gửi tại tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại VN; lãi từ hợp đồng bảo hiểm nhân thọ; lãi trái phiếu Chính phủ.",
+            "Cổ tức bằng tiền: tính thuế khi nhận tiền. Cổ tức bằng cổ phiếu: chưa tính thuế khi nhận, tính khi chuyển nhượng số cổ phiếu đó sau này."
+          ],
+          "trap_vi": "Khi bán cổ phiếu có từ nhiều nguồn, PIT tính trên cổ phiếu nhận từ cổ tức trước, sau đó mới đến cổ phiếu tự mua.",
+          "cards": ["b-capital-investment", "b-taxing-time-shares"],
+          "sources": ["r2:5", "r2:23", "tt:3"]
+        },
+        "r-capital": {
+          "result": true,
+          "verdict_en": "Resident 20% on gain · Non-resident 0.1% of selling price",
+          "verdict_vi": "Resident: 20% trên lãi chuyển nhượng · Non-resident: 0,1% trên giá bán",
+          "rules_vi": [
+            "Lãi = giá chuyển nhượng − giá mua (giá trị vốn góp) − chi phí chuyển nhượng.",
+            "Góp vốn bằng tài sản (vốn góp, cổ phần, bất động sản) vào công ty khác: chưa tính thuế lúc góp mà tính khi chuyển nhượng hoặc rút vốn (xem thẻ b-capital-contribution)."
+          ],
+          "cards": ["b-capital-transfer", "b-capital-contribution"],
+          "sources": ["r2:5", "r2:24", "tt:3"]
+        },
+        "r-securities": {
+          "result": true,
+          "verdict_en": "0.1% of selling price (resident & non-resident)",
+          "verdict_vi": "0,1% trên giá bán (cả resident lẫn non-resident)",
+          "rules_vi": ["Tính trên giá chuyển nhượng từng lần, không quan tâm lãi hay lỗ."],
+          "cards": ["b-capital-transfer"],
+          "sources": ["r2:5", "tt:3"]
+        },
+        "r-property": {
+          "result": true,
+          "verdict_en": "2% of selling price (resident & non-resident)",
+          "verdict_vi": "2% trên giá chuyển nhượng (cả resident lẫn non-resident)",
+          "rules_vi": [
+            "Miễn thuế khi chuyển nhượng giữa: vợ–chồng; cha mẹ–con (kể cả con nuôi); cha mẹ chồng/vợ–con dâu/rể; ông bà–cháu; anh chị em ruột.",
+            "Miễn thuế khi cá nhân chỉ có duy nhất một nhà ở, đất ở tại Việt Nam."
+          ],
+          "cards": ["b-real-estate"],
+          "sources": ["r2:5", "tt:3"]
+        },
+        "r-royalty": {
+          "result": true,
+          "verdict_en": "5% of the income in excess of VND10 million",
+          "verdict_vi": "5% trên phần thu nhập vượt 10 triệu",
+          "rules_vi": ["Áp dụng như nhau cho resident và non-resident."],
+          "cards": ["b-royalty-prize-gift"],
+          "sources": ["r2:6", "tt:3"]
+        },
+        "r-prize": {
+          "result": true,
+          "verdict_en": "10% of the income in excess of VND10 million",
+          "verdict_vi": "10% trên phần thu nhập vượt 10 triệu",
+          "rules_vi": ["Áp dụng như nhau cho resident và non-resident."],
+          "cards": ["b-royalty-prize-gift"],
+          "sources": ["r2:6", "tt:3"]
+        },
+        "r-gift": {
+          "result": true,
+          "verdict_en": "10% of the income in excess of VND10 million",
+          "verdict_vi": "10% trên phần thu nhập vượt 10 triệu",
+          "rules_vi": [
+            "Miễn thuế: thừa kế, quà tặng là bất động sản giữa các thành viên gia đình trong danh sách miễn thuế chuyển nhượng BĐS; kiều hối từ người Việt ở nước ngoài; tiền từ thiện, học bổng."
+          ],
+          "cards": ["b-royalty-prize-gift", "b-exempt-income"],
+          "sources": ["r2:6", "r2:14", "tt:3"]
+        }
+      }
+    },
+    {
+      "id": "pit-benefit",
+      "part": "B",
+      "title_en": "PIT · Is this employment benefit taxable?",
+      "title_vi": "Khoản phúc lợi này có tính vào thu nhập chịu thuế không?",
+      "intro_vi": "Câu PIT 15 điểm thường liệt kê 6–10 khoản phúc lợi. Với mỗi khoản: chọn loại, sau đó chọn tiền mặt hay hiện vật.",
+      "sources": ["r2:8", "r2:9", "r2:10", "r2:11", "r2:12", "r2:13"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Which benefit?",
+          "q_vi": "Khoản phúc lợi nào?",
+          "options": [
+            { "label_en": "Housing", "label_vi": "Nhà ở", "next": "q-housing" },
+            { "label_en": "Meal / shift meal", "label_vi": "Ăn giữa ca", "next": "q-meal" },
+            { "label_en": "Uniform", "label_vi": "Đồng phục", "next": "q-uniform" },
+            { "label_en": "Per diem (business trip)", "label_vi": "Công tác phí", "next": "r-perdiem" },
+            { "label_en": "Overtime / night shift", "label_vi": "Làm thêm giờ, ca đêm", "next": "r-overtime" },
+            { "label_en": "Life insurance / insurance with cumulative premium", "label_vi": "Bảo hiểm nhân thọ, bảo hiểm có tích lũy phí", "next": "r-life-ins" },
+            { "label_en": "Health insurance without cumulative premium", "label_vi": "Bảo hiểm không tích lũy phí (bảo hiểm sức khỏe)", "next": "r-nontax-ins" },
+            { "label_en": "Home-leave airfare (expatriate)", "label_vi": "Vé máy bay về phép (người nước ngoài)", "next": "r-airfare" },
+            { "label_en": "Children's school fees", "label_vi": "Học phí cho con", "next": "r-school" },
+            { "label_en": "One-time relocation allowance", "label_vi": "Trợ cấp chuyển vùng một lần", "next": "r-relocation" },
+            { "label_en": "Mobile phone", "label_vi": "Điện thoại", "next": "r-mobile" },
+            { "label_en": "Wedding / condolence payment", "label_vi": "Hiếu hỉ", "next": "r-wedding" },
+            { "label_en": "Training", "label_vi": "Đào tạo", "next": "r-training" },
+            { "label_en": "Car / shuttle", "label_vi": "Xe đưa đón", "next": "r-shuttle" },
+            { "label_en": "Health care, entertainment, beauty services", "label_vi": "Khám sức khỏe, giải trí, làm đẹp", "next": "q-named" },
+            { "label_en": "Work permit / visa / resident card", "label_vi": "Giấy phép lao động, visa, thẻ cư trú", "next": "r-permit" },
+            { "label_en": "Severance / termination allowance", "label_vi": "Trợ cấp thôi việc", "next": "r-severance" }
+          ]
+        },
+        "q-housing": {
+          "q_en": "Paid to the employee in cash, or paid by the employer directly (in kind)?",
+          "q_vi": "Trả tiền mặt cho nhân viên, hay công ty trả thẳng (hiện vật)?",
+          "options": [
+            { "label_en": "Cash allowance", "label_vi": "Tiền mặt", "next": "r-housing-cash" },
+            { "label_en": "In kind", "label_vi": "Hiện vật", "next": "r-housing-kind" }
+          ]
+        },
+        "q-meal": {
+          "q_en": "Cash allowance, or employer pays the vendor / organises meals directly?",
+          "q_vi": "Phụ cấp tiền mặt, hay công ty trả thẳng cho nhà cung cấp / tự tổ chức bữa ăn?",
+          "options": [
+            { "label_en": "Cash", "label_vi": "Tiền mặt", "next": "r-meal-cash" },
+            { "label_en": "In kind", "label_vi": "Hiện vật", "next": "r-meal-kind" }
+          ]
+        },
+        "q-uniform": {
+          "q_en": "Cash or in kind?",
+          "q_vi": "Tiền mặt hay hiện vật?",
+          "options": [
+            { "label_en": "Cash", "label_vi": "Tiền mặt", "next": "r-uniform-cash" },
+            { "label_en": "In kind", "label_vi": "Hiện vật", "next": "r-uniform-kind" }
+          ]
+        },
+        "q-named": {
+          "q_en": "Does the payment specify the individual employees who use the service?",
+          "q_vi": "Chứng từ thanh toán có ghi rõ tên nhân viên được hưởng không?",
+          "options": [
+            { "label_en": "Yes, named", "label_vi": "Có ghi tên", "next": "r-named-tax" },
+            { "label_en": "No, collective", "label_vi": "Không, chi chung cho tập thể", "next": "r-collective" }
+          ]
+        },
+        "r-housing-cash": { "result": true, "verdict_en": "Fully taxable", "verdict_vi": "Chịu thuế toàn bộ", "rules_vi": ["Phụ cấp nhà ở trả bằng tiền mặt là thu nhập chịu thuế toàn bộ."], "cards": ["b-emp-housing-15"], "sources": ["r2:9"] },
+        "r-housing-kind": {
+          "result": true,
+          "verdict_en": "Taxable = lower of actual housing and 15% of total other taxable income",
+          "verdict_vi": "Phần chịu thuế = MIN (tiền nhà thực tế; 15% tổng thu nhập chịu thuế không gồm tiền nhà)",
+          "rules_vi": [
+            "Lương gross: tính 15% trên tổng thu nhập chịu thuế chưa gồm tiền nhà.",
+            "Lương net: phải gross-up phần thu nhập chưa gồm tiền nhà, cộng lại giảm trừ, rồi mới lấy 15%."
+          ],
+          "trap_vi": "15% tính trên thu nhập chịu thuế, chưa trừ giảm trừ gia cảnh. Với lương net, không được lấy 15% trên số net.",
+          "cards": ["b-emp-housing-15", "b-gross-up-net"],
+          "sources": ["r2:9", "r2:16"],
+          "next_tree": "pit-computation-path"
+        },
+        "r-meal-cash": { "result": true, "verdict_en": "Exempt up to VND730,000/month; excess taxable", "verdict_vi": "Miễn tối đa 730.000 đ/tháng; phần vượt chịu thuế", "cards": ["b-emp-meal-uniform"], "sources": ["r2:9"], "rules_vi": [] },
+        "r-meal-kind": { "result": true, "verdict_en": "Non-taxable, no cap", "verdict_vi": "Không chịu thuế, không giới hạn", "rules_vi": ["Điều kiện: công ty trả thẳng cho nhà cung cấp và có chứng từ hợp lệ."], "cards": ["b-emp-meal-uniform"], "sources": ["r2:9"] },
+        "r-uniform-cash": { "result": true, "verdict_en": "Only the excess over VND5 million/year is taxable", "verdict_vi": "Chỉ phần vượt 5 triệu/năm chịu thuế", "rules_vi": [], "trap_vi": "Cùng con số 5 triệu/người/năm với trần chi đồng phục tiền mặt được trừ khi tính CIT (xem c-employment-caps).", "cards": ["b-emp-meal-uniform", "c-employment-caps"], "sources": ["r2:9", "r3:13"] },
+        "r-uniform-kind": { "result": true, "verdict_en": "Non-taxable", "verdict_vi": "Không chịu thuế", "rules_vi": [], "cards": ["b-emp-meal-uniform"], "sources": ["r2:9"] },
+        "r-perdiem": { "result": true, "verdict_en": "Non-taxable within the applicable limit", "verdict_vi": "Không chịu thuế trong mức quy định", "rules_vi": ["Cơ quan nhà nước: 200.000 đ/ngày (tiền mặt).", "Tổ chức khác: theo quy chế nội bộ; phần vượt mức quy chế là thu nhập chịu thuế."], "cards": ["b-emp-taxable"], "sources": ["r2:8", "r2:9"] },
+        "r-overtime": { "result": true, "verdict_en": "Only the premium above standard pay is non-taxable", "verdict_vi": "Chỉ phần trả cao hơn lương giờ chuẩn được miễn", "rules_vi": ["Phần lương chuẩn của giờ làm thêm vẫn chịu thuế."], "cards": ["b-emp-taxable"], "sources": ["r2:9"] },
+        "r-life-ins": {
+          "result": true,
+          "verdict_en": "Taxable — 10% PIT on the premium paid by the employer",
+          "verdict_vi": "Chịu thuế — PIT 10% trên phí bảo hiểm công ty đóng",
+          "rules_vi": [
+            "Mua của công ty bảo hiểm thành lập theo luật Việt Nam: công ty bảo hiểm khấu trừ khi đáo hạn.",
+            "Mua của công ty bảo hiểm không thành lập theo luật Việt Nam nhưng được phép bán tại VN: công ty (người sử dụng lao động) khấu trừ trước khi trả lương."
+          ],
+          "cards": ["b-emp-life-insurance"],
+          "sources": ["r2:10"]
+        },
+        "r-nontax-ins": { "result": true, "verdict_en": "Non-taxable", "verdict_vi": "Không chịu thuế", "rules_vi": ["Cần có: quy chế công ty, hợp đồng với công ty bảo hiểm, hóa đơn, chứng từ thanh toán."], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:12", "r2:13"] },
+        "r-airfare": { "result": true, "verdict_en": "Non-taxable (one return trip per year)", "verdict_vi": "Không chịu thuế (1 lượt khứ hồi/năm)", "rules_vi": ["Chỉ cho bản thân nhân viên; ghi trong hợp đồng lao động hoặc quy chế.", "Hành trình giữa Việt Nam và nước nhà (theo quốc tịch hoặc nơi cư trú)."], "trap_vi": "Vé cho vợ/chồng, con của nhân viên thì chịu thuế. Đề hay gộp chung vé cả gia đình.", "cards": ["b-emp-exempt-benefits"], "sources": ["r2:10", "r3:60"] },
+        "r-school": { "result": true, "verdict_en": "Non-taxable if conditions met", "verdict_vi": "Không chịu thuế nếu đủ điều kiện", "rules_vi": ["Ghi trong hợp đồng lao động hoặc quy chế.", "Từ mẫu giáo đến hết trung học phổ thông.", "Hóa đơn đứng tên công ty."], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:11"] },
+        "r-relocation": { "result": true, "verdict_en": "Non-taxable if conditions met", "verdict_vi": "Không chịu thuế nếu đủ điều kiện", "rules_vi": ["Áp dụng cho chuyển đến vùng kinh tế đặc biệt khó khăn, hải đảo; hoặc người nước ngoài / người Việt cư trú dài hạn ở nước ngoài chuyển về VN, người Việt chuyển ra nước ngoài.", "Phải ghi trong hợp đồng lao động hoặc thỏa ước lao động tập thể."], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:11"] },
+        "r-mobile": { "result": true, "verdict_en": "Non-taxable (in kind with documents; cash within company cap)", "verdict_vi": "Không chịu thuế (hiện vật có chứng từ; tiền mặt trong mức quy chế)", "rules_vi": [], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:12"] },
+        "r-wedding": { "result": true, "verdict_en": "Non-taxable up to average 1 month's salary", "verdict_vi": "Không chịu thuế, tối đa bằng 1 tháng lương bình quân", "rules_vi": [], "trap_vi": "Trần chi phúc lợi được trừ khi tính CIT cũng gắn với 1 tháng lương bình quân. Hai quy định khác bản chất, đừng gộp.", "cards": ["b-emp-exempt-benefits", "c-employment-caps"], "sources": ["r2:12", "r3:13"] },
+        "r-training": { "result": true, "verdict_en": "Non-taxable if related to the job / company plan", "verdict_vi": "Không chịu thuế nếu phù hợp chuyên môn hoặc kế hoạch công ty", "rules_vi": ["Cần quy chế, hợp đồng với đơn vị đào tạo, hóa đơn, chứng từ thanh toán."], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:12"] },
+        "r-shuttle": { "result": true, "verdict_en": "Home ↔ office shuttle non-taxable; personal use taxable", "verdict_vi": "Đưa đón nhà ↔ nơi làm việc: không chịu thuế; dùng riêng: chịu thuế", "rules_vi": [], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:12", "r2:13"] },
+        "r-named-tax": { "result": true, "verdict_en": "Taxable", "verdict_vi": "Chịu thuế", "rules_vi": ["Ghi rõ tên nhân viên được hưởng dịch vụ thì là thu nhập của người đó."], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:12"] },
+        "r-collective": { "result": true, "verdict_en": "Non-taxable", "verdict_vi": "Không chịu thuế", "rules_vi": ["Chi chung cho tập thể, không ghi tên cụ thể."], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:12"] },
+        "r-permit": { "result": true, "verdict_en": "Non-taxable when it is the company's obligation under its regulations", "verdict_vi": "Không chịu thuế khi là nghĩa vụ của công ty theo quy chế", "rules_vi": [], "cards": ["b-emp-exempt-benefits"], "sources": ["r2:13"] },
+        "r-severance": { "result": true, "verdict_en": "Non-taxable if paid per the Labour Code", "verdict_vi": "Không chịu thuế nếu chi đúng Bộ luật Lao động", "rules_vi": [], "trap_vi": "Phần chi vượt quy định Bộ luật Lao động thì chịu thuế PIT. Với CIT, phần chi trợ cấp thôi việc không đúng quy định lao động cũng không được trừ.", "cards": ["b-emp-exempt-benefits", "c-salary-nondeductible"], "sources": ["r2:13", "r3:12"] }
+      }
+    },
+    {
+      "id": "pit-computation-path",
+      "part": "B",
+      "title_en": "PIT · Gross or net — computation path",
+      "title_vi": "Lương gross hay net: đi theo đường tính nào?",
+      "intro_vi": "Chọn đúng thứ tự các bước là được nửa số điểm. Kết quả hiện ra là checklist từng bước.",
+      "sources": ["r2:16", "r2:17", "r2:23"],
+      "start": "q0",
+      "nodes": {
+        "q0": {
+          "q_en": "Employment income from more than one payer in the year?",
+          "q_vi": "Trong năm có thu nhập từ nhiều nơi trả không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-multi" },
+            { "label_en": "No", "label_vi": "Không", "next": "q1" }
+          ]
+        },
+        "q1": {
+          "q_en": "Is the salary stated gross or net?",
+          "q_vi": "Lương ghi gross hay net?",
+          "options": [
+            { "label_en": "Gross", "label_vi": "Gross", "next": "r-gross" },
+            { "label_en": "Net", "label_vi": "Net", "next": "r-net" }
+          ]
+        },
+        "r-gross": {
+          "result": true,
+          "verdict_en": "Gross path (5 steps)",
+          "verdict_vi": "Đường gross (5 bước)",
+          "rules_vi": [
+            "B1. Thu nhập chịu thuế chưa gồm tiền nhà: lương gross + các phụ cấp chịu thuế.",
+            "B2. Giảm trừ: bản thân, người phụ thuộc, bảo hiểm bắt buộc, từ thiện hợp lệ.",
+            "B3. Tiền nhà chịu thuế = MIN (tiền nhà thực tế; 15% × kết quả B1).",
+            "B4. Thu nhập tính thuế = B1 − B2 + B3.",
+            "B5. Tính thuế theo tháng/năm bằng công thức nhanh."
+          ],
+          "cards": ["b-emp-housing-15", "b-deductions", "b-progressive-quick-formula"],
+          "sources": ["r2:16"]
+        },
+        "r-net": {
+          "result": true,
+          "verdict_en": "Net path (6 steps, gross up twice when there is housing)",
+          "verdict_vi": "Đường net (6 bước, có tiền nhà thì gross-up 2 lần)",
+          "rules_vi": [
+            "B1. Thu nhập net chưa gồm tiền nhà: lương net + phụ cấp chịu thuế.",
+            "B2. Giảm trừ như đường gross.",
+            "B3. Net tính thuế chưa gồm tiền nhà = B1 − B2, gross-up theo bảng Net to gross, cộng lại B2 → tổng thu nhập chịu thuế chưa gồm tiền nhà; tiền nhà chịu thuế = MIN (thực tế; 15% × số này).",
+            "B4. Net tính thuế có tiền nhà = B1 − B2 + tiền nhà chịu thuế.",
+            "B5. Gross-up lần 2 để ra thu nhập tính thuế gross.",
+            "B6. Tính thuế."
+          ],
+          "trap_vi": "Lỗi hay gặp: lấy 15% trên số net, hoặc chỉ gross-up một lần sau khi đã cộng tiền nhà.",
+          "cards": ["b-gross-up-net", "b-emp-housing-15"],
+          "sources": ["r2:16", "r2:17", "tt:2"]
+        },
+        "r-multi": {
+          "result": true,
+          "verdict_en": "Several payers in one year",
+          "verdict_vi": "Nhiều nơi trả trong năm",
+          "rules_vi": [
+            "Lương gross: cộng ngang tất cả nguồn để ra tổng thu nhập chịu thuế.",
+            "Giảm trừ: người Việt Nam luôn được 12 tháng; người nước ngoài năm đầu đến/năm cuối rời đi thì tính theo tỷ lệ thời gian.",
+            "Lương net: gross-up riêng từng nơi trả; giảm trừ chỉ áp một lần. Phân biệt chuyển việc (làm lần lượt) với làm nhiều nơi cùng lúc.",
+            "Làm thêm (part-time) bình quân dưới 10 triệu/tháng và đã khấu trừ 10% thì không bắt buộc gộp để quyết toán."
+          ],
+          "cards": ["b-multiple-employers"],
+          "sources": ["r2:23"]
+        }
+      }
+    },
+    {
+      "id": "cit-deductible",
+      "part": "C",
+      "title_en": "CIT · Is this expense deductible?",
+      "title_vi": "Khoản chi phí này có được trừ khi tính CIT không?",
+      "intro_vi": "Dùng cho bài điều chỉnh lợi nhuận kế toán sang thu nhập chịu thuế. Qua 3 điều kiện chung trước, sau đó kiểm tra quy định riêng của từng loại chi phí. Trong bài làm, liệt kê mọi khoản đề cho, khoản không điều chỉnh ghi 0.",
+      "sources": ["r3:10", "r3:11", "r3:12", "r3:13", "r3:14", "r3:20", "r3:21", "r3:22", "r3:23", "r3:24", "r3:25", "r3:26", "r3:60"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Actually incurred and related to the business (R&D included)?",
+          "q_vi": "Chi phí thực tế phát sinh và liên quan đến hoạt động kinh doanh (kể cả R&D)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q2" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-unrelated" }
+          ]
+        },
+        "q2": {
+          "q_en": "Supported by a valid invoice / document?",
+          "q_vi": "Có hóa đơn, chứng từ hợp lệ?",
+          "hint_vi": "Lương, thưởng, dự phòng không cần hóa đơn mà cần chứng từ nội bộ (hợp đồng lao động, quy chế, bút toán).",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q3" },
+            { "label_en": "No invoice", "label_vi": "Không có hóa đơn", "next": "q2b" }
+          ]
+        },
+        "q2b": {
+          "q_en": "Purchase from individuals/households in an allowed no-invoice case (agri/forestry/aquatic products from direct producers, handicrafts, scrap, used goods, sellers below the VAT registration threshold) with a signed purchase list (Form 01/TNDN)?",
+          "q_vi": "Mua của cá nhân/hộ thuộc trường hợp được miễn hóa đơn (nông, lâm, thủy sản do người sản xuất trực tiếp bán; hàng thủ công; phế liệu; đồ cũ; người bán dưới ngưỡng đăng ký VAT) và có lập bảng kê 01/TNDN?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q3" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-no-docs" }
+          ]
+        },
+        "q3": {
+          "q_en": "Value ≥ VND5 million (VAT included; same-day purchases added up) paid in cash?",
+          "q_vi": "Giá trị từ 5 triệu trở lên (gồm VAT; cộng các lần mua trong cùng ngày) mà thanh toán bằng tiền mặt?",
+          "options": [
+            { "label_en": "Yes — cash", "label_vi": "Có — trả tiền mặt", "next": "r-cash-5m" },
+            { "label_en": "No / non-cash / still unpaid", "label_vi": "Không / không dùng tiền mặt / chưa trả", "next": "q4" }
+          ]
+        },
+        "q4": {
+          "q_en": "Which type of expense?",
+          "q_vi": "Đây là loại chi phí nào?",
+          "options": [
+            { "label_en": "Salary, bonus, remuneration", "label_vi": "Lương, thưởng, thù lao", "next": "r-salary" },
+            { "label_en": "Uniform / welfare / voluntary pension & life insurance", "label_vi": "Đồng phục / phúc lợi / hưu trí tự nguyện, bảo hiểm nhân thọ", "next": "r-emp-caps" },
+            { "label_en": "Depreciation", "label_vi": "Khấu hao", "next": "r-depreciation" },
+            { "label_en": "Interest", "label_vi": "Lãi vay", "next": "r-interest" },
+            { "label_en": "Donation", "label_vi": "Tài trợ, ủng hộ", "next": "r-donation" },
+            { "label_en": "Provision", "label_vi": "Dự phòng", "next": "r-provision" },
+            { "label_en": "Unrealised FX (year-end revaluation)", "label_vi": "Chênh lệch tỷ giá chưa thực hiện (đánh giá lại cuối năm)", "next": "r-fx" },
+            { "label_en": "Fines / penalties", "label_vi": "Tiền phạt", "next": "r-fines" },
+            { "label_en": "PIT / CIT borne for others", "label_vi": "Thuế PIT / CIT gánh thay người khác", "next": "r-borne-tax" },
+            { "label_en": "Management fee to PE / group service charge", "label_vi": "Phí quản lý phân bổ cho PE / phí dịch vụ tập đoàn", "next": "r-mgmt" },
+            { "label_en": "Golf, equity costs, materials over norm", "label_vi": "Golf, chi phí liên quan vốn chủ, vật tư vượt định mức", "next": "r-other-nd" },
+            { "label_en": "Cost before revenue / destruction / force majeure", "label_vi": "Chi phí chưa có doanh thu / tiêu hủy / bất khả kháng", "next": "r-special-ok" },
+            { "label_en": "R&D", "label_vi": "Nghiên cứu và phát triển", "next": "r-rnd" },
+            { "label_en": "Other ordinary expense", "label_vi": "Chi phí thông thường khác", "next": "r-ok" }
+          ]
+        },
+        "r-unrelated": { "result": true, "verdict_en": "Non-deductible", "verdict_vi": "Không được trừ", "rules_vi": ["Chi phí cho gia đình nhân viên, chi phí không liên quan đến hoạt động kinh doanh."], "cards": ["c-deductible-3-conditions"], "sources": ["r3:10", "r3:12"] },
+        "r-no-docs": { "result": true, "verdict_en": "Non-deductible", "verdict_vi": "Không được trừ", "rules_vi": ["Không có hóa đơn, chứng từ hợp lệ và không thuộc trường hợp được lập bảng kê."], "trap_vi": "Mua của hộ, cá nhân kinh doanh có doanh thu từ 100 triệu/năm trở lên thì bắt buộc có hóa đơn; dưới mức đó lập bảng kê 01/TNDN.", "cards": ["c-no-invoice-purchases"], "sources": ["r3:11", "r3:18", "r3:19"] },
+        "r-cash-5m": {
+          "result": true,
+          "verdict_en": "Non-deductible",
+          "verdict_vi": "Không được trừ",
+          "rules_vi": [
+            "Từ 5 triệu trở lên (gồm VAT), kể cả tổng các lần mua trong cùng ngày, phải thanh toán không dùng tiền mặt.",
+            "Chưa trả vào cuối năm: tạm được trừ; nếu sau đó trả bằng tiền mặt thì phải điều chỉnh giảm chi phí.",
+            "Nhân viên mua hộ: được trừ nếu có hóa đơn, có quy chế/ủy quyền và công ty hoàn trả cho nhân viên bằng chuyển khoản."
+          ],
+          "trap_vi": "Cùng ngưỡng 5 triệu áp cho điều kiện khấu trừ VAT đầu vào. Một khoản trả tiền mặt 6 triệu thường bị loại ở cả CIT lẫn VAT.",
+          "cards": ["c-5m-noncash", "e-input-conditions"],
+          "sources": ["r3:12", "r4:37"]
+        },
+        "r-salary": {
+          "result": true,
+          "verdict_en": "Deductible unless on the non-deductible list",
+          "verdict_vi": "Được trừ, trừ các trường hợp sau",
+          "rules_vi": [
+            "Không được trừ: lương chủ DNTN hoặc chủ công ty TNHH một thành viên do cá nhân làm chủ; thù lao thành viên HĐQT/HĐTV không trực tiếp điều hành.",
+            "Không được trừ: lương, thưởng không ghi trong hợp đồng lao động, thỏa ước, quy chế.",
+            "Không được trừ: lương trích trước nhưng chưa chi trước hạn nộp quyết toán, trừ khi trích lập quỹ dự phòng tiền lương.",
+            "Quỹ dự phòng tiền lương: tối đa 17% quỹ lương thực hiện; sau khi trích không được lỗ; phải dùng trong 6 tháng sau năm tài chính."
+          ],
+          "cards": ["c-salary-nondeductible", "c-salary-provision-17"],
+          "sources": ["r3:12", "r3:13"]
+        },
+        "r-emp-caps": {
+          "result": true,
+          "verdict_en": "Deductible within caps",
+          "verdict_vi": "Được trừ trong mức trần",
+          "rules_vi": [
+            "Đồng phục: tiền mặt tối đa 5 triệu/người/năm; hiện vật được trừ toàn bộ nếu đủ chứng từ.",
+            "Phúc lợi: tối đa 1 tháng lương bình quân thực tế thực hiện trong năm.",
+            "Hưu trí tự nguyện, bảo hiểm nhân thọ cho nhân viên: tối đa 5 triệu/người/tháng; phải ghi trong quy chế; không được trừ nếu công ty chưa đóng đủ bảo hiểm bắt buộc."
+          ],
+          "trap_vi": "Slide ghi trần hưu trí tự nguyện mới là 5 triệu (cũ 3 triệu). Với PIT, khoản giảm trừ quỹ hưu trí tự nguyện của nhân viên lại là 1 triệu/tháng. Đừng nhầm hai con số.",
+          "cards": ["c-employment-caps", "b-deductions"],
+          "sources": ["r3:13", "r2:14"]
+        },
+        "r-depreciation": {
+          "result": true,
+          "verdict_en": "Deductible except listed cases",
+          "verdict_vi": "Được trừ, trừ các trường hợp sau",
+          "rules_vi": [
+            "Không được trừ: tài sản không có giấy tờ sở hữu; không dùng cho kinh doanh (trừ tạm ngừng do mùa vụ ≤ 9 tháng, do sửa chữa/bảo dưỡng định kỳ ≤ 12 tháng); vượt mức khung TT45; quyền sử dụng đất lâu dài; tài sản đã khấu hao hết.",
+            "Ô tô dưới 10 chỗ (trừ kinh doanh vận tải, du lịch, khách sạn): chỉ được trừ khấu hao trên nguyên giá tối đa 1,6 tỷ (không gồm VAT). Máy bay dân dụng, du thuyền không dùng kinh doanh vận tải/du lịch: không được trừ.",
+            "Chi phí nâng cấp: cộng vào nguyên giá để khấu hao. Sửa chữa: hạch toán hết vào năm phát sinh hoặc phân bổ tối đa 3 năm."
+          ],
+          "trap_vi": "Ngưỡng 1,6 tỷ cũng áp cho VAT đầu vào của ô tô ≤ 9 chỗ: phần VAT tương ứng nguyên giá vượt 1,6 tỷ không được khấu trừ.",
+          "cards": ["c-depreciation-nondeductible", "c-car-1-6bn", "c-repair-vs-upgrade", "e-input-specific"],
+          "sources": ["r3:14", "r3:15", "r3:16", "r4:37"]
+        },
+        "r-interest": { "result": true, "verdict_en": "Check 3 layers", "verdict_vi": "Kiểm tra 3 tầng", "rules_vi": ["Chạy cây cit-interest."], "cards": ["c-interest"], "sources": ["r3:20", "r3:57"], "next_tree": "cit-interest" },
+        "r-donation": {
+          "result": true,
+          "verdict_en": "Deductible only for permitted purposes with proper minutes",
+          "verdict_vi": "Chỉ được trừ nếu đúng mục đích cho phép và có biên bản",
+          "rules_vi": [
+            "Mục đích cho phép: giáo dục; y tế; văn hóa (mới); phòng chống thiên tai, dịch bệnh (mới); xây nhà đại đoàn kết, nhà tình nghĩa, nhà cho đối tượng chính sách; tài trợ theo chương trình của Chính phủ/Thủ tướng cho vùng đặc biệt khó khăn; nghiên cứu khoa học, đổi mới sáng tạo, chuyển đổi số (mới).",
+            "Biên bản xác nhận tài trợ theo mẫu, có chữ ký người đại diện bên tài trợ và bên nhận; tài trợ cho cá nhân thì cần thêm xác nhận của tổ chức có chức năng huy động tài trợ.",
+            "Đóng góp vào các quỹ do Thủ tướng/Chính phủ thành lập: được trừ (mới)."
+          ],
+          "cards": ["c-donations"],
+          "sources": ["r3:24", "r3:60"]
+        },
+        "r-provision": { "result": true, "verdict_en": "Deductible only for the 5 types per Circular 48/2019", "verdict_vi": "Chỉ được trừ 5 loại dự phòng theo Thông tư 48/2019", "rules_vi": ["Giảm giá hàng tồn kho; tổn thất đầu tư tài chính; nợ phải thu khó đòi; bảo hành sản phẩm, công trình; rủi ro nghề nghiệp của doanh nghiệp thẩm định giá, kiểm toán độc lập.", "Dự phòng không dùng hết hoàn nhập vào thu nhập khác."], "cards": ["c-provisions", "c-other-income"], "sources": ["r3:21", "r3:30"] },
+        "r-fx": { "result": true, "verdict_en": "Non-deductible (loss) / non-taxable (gain)", "verdict_vi": "Lỗ không được trừ / lãi không chịu thuế", "rules_vi": ["Áp dụng cho chênh lệch đánh giá lại cuối năm khoản phải thu, tiền, phải trả trong giai đoạn hoạt động.", "Giai đoạn xây dựng cơ bản: bù trừ lãi lỗ, phân bổ vào doanh thu/chi phí tối đa 5 năm từ năm bắt đầu hoạt động."], "trap_vi": "Chênh lệch tỷ giá đã thực hiện (khi thanh toán) vẫn tính bình thường.", "cards": ["c-fx-unrealised"], "sources": ["r3:22", "r3:60"] },
+        "r-fines": { "result": true, "verdict_en": "Administrative fines non-deductible; contract penalties deductible", "verdict_vi": "Phạt hành chính không được trừ; phạt vi phạm hợp đồng được trừ", "rules_vi": ["Phạt vi phạm hành chính về thuế, kế toán, đăng ký kinh doanh… không được trừ."], "cards": ["c-other-nondeductible"], "sources": ["r3:23"] },
+        "r-borne-tax": {
+          "result": true,
+          "verdict_en": "Source conflict — check TAX_MAP §9 before answering",
+          "verdict_vi": "Nguồn đang mâu thuẫn — xem TAX_MAP §9 trước khi làm bài",
+          "rules_vi": [
+            "Slide BISC (r3:23) liệt kê 'PIT & FCT paid under gross-up method' vào nhóm không được trừ.",
+            "Decree 320/2025 Điều 10 (bản EN) loại trừ CIT nộp thay nhà thầu nước ngoài khi hợp đồng ghi doanh thu nhà thầu không gồm CIT, và PIT gánh thay khi hợp đồng lao động ghi lương net, ra khỏi danh sách không được trừ."
+          ],
+          "trap_vi": "Chưa thống nhất được câu trả lời. Hỏi giảng viên và ghi kết luận vào note của thẻ c-other-nondeductible.",
+          "cards": ["c-other-nondeductible", "d-nonvas-gross-up", "b-gross-up-net"],
+          "sources": ["r3:23", "D320:Art10"]
+        },
+        "r-mgmt": {
+          "result": true,
+          "verdict_en": "Deductible only within the formula / when it creates value",
+          "verdict_vi": "Chỉ được trừ trong mức công thức / khi tạo ra giá trị",
+          "rules_vi": [
+            "Phí quản lý công ty mẹ nước ngoài phân bổ cho PE: mức được trừ A = (doanh thu PE tại VN / tổng doanh thu công ty nước ngoài) × tổng chi phí quản lý.",
+            "Phí dịch vụ của bên liên kết không được trừ nếu: chủ yếu phục vụ cổ đông; trùng lặp không tạo giá trị; lợi ích do là thành viên tập đoàn; phí cộng thêm cho dịch vụ chuyển tiếp không gia tăng giá trị."
+          ],
+          "cards": ["c-pe-mgmt-allocation", "a-tp-nondeductible-costs"],
+          "sources": ["r3:22", "r3:56"]
+        },
+        "r-other-nd": { "result": true, "verdict_en": "Non-deductible", "verdict_vi": "Không được trừ", "rules_vi": ["Golf (thẻ hội viên, phí chơi).", "Chi phí liên quan vốn chủ: phát hành cổ phiếu, cổ tức, mua cổ phiếu quỹ.", "Vật tư, nhiên liệu, năng lượng vượt định mức hợp lý.", "Làm thêm giờ vượt giới hạn luật lao động, quảng cáo hàng bị cấm (mới)."], "cards": ["c-other-nondeductible", "c-specialised-law"], "sources": ["r3:18", "r3:23"] },
+        "r-special-ok": { "result": true, "verdict_en": "Deductible (new rules) with sufficient documents", "verdict_vi": "Được trừ (quy định mới) nếu đủ chứng từ", "rules_vi": ["Chi phí chưa tương ứng doanh thu trong kỳ: dự thầu trượt, nghiên cứu thị trường, marketing trước bán hàng, tiền thuê đất giai đoạn chuẩn bị, khấu hao tài sản cho thuê chưa có khách, chi phí thành lập, chi phí tiêu hủy hàng hỏng.", "Tổn thất do thiên tai, dịch bệnh, bất khả kháng: phần không được bồi thường."], "cards": ["c-expenses-no-revenue", "c-special-deductible"], "sources": ["r3:25", "r3:26"] },
+        "r-rnd": { "result": true, "verdict_en": "Up to 200% of actual R&D cost", "verdict_vi": "Được trừ tới 200% chi phí R&D thực tế", "rules_vi": ["Điều kiện: sau khi trừ thêm, doanh nghiệp không bị lỗ."], "cards": ["c-rnd-200"], "sources": ["r3:11"] },
+        "r-ok": { "result": true, "verdict_en": "Deductible", "verdict_vi": "Được trừ", "rules_vi": ["Đủ 3 điều kiện chung và không thuộc danh sách không được trừ. Ghi 0 trong bảng điều chỉnh."], "cards": ["c-deductible-3-conditions", "c-computation-template"], "sources": ["r3:8", "r3:60"] }
+      }
+    },
+    {
+      "id": "cit-interest",
+      "part": "C",
+      "title_en": "CIT · Interest expense",
+      "title_vi": "Chi phí lãi vay được trừ bao nhiêu?",
+      "intro_vi": "Kiểm tra lần lượt: vốn điều lệ góp đủ chưa, lãi suất vay ngoài tổ chức tín dụng có vượt 20%/năm không, và có bị trần 30% EBITDA theo quy định giao dịch liên kết không.",
+      "sources": ["r3:20", "r3:57", "r3:60"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Has charter capital been contributed in full per the contribution schedule?",
+          "q_vi": "Vốn điều lệ đã góp đủ theo tiến độ đăng ký chưa?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Đã góp đủ", "next": "q2" },
+            { "label_en": "No — deficit exists", "label_vi": "Chưa — còn thiếu", "next": "q1b" }
+          ]
+        },
+        "q1b": {
+          "q_en": "Is the loan ≤ the charter capital deficit?",
+          "q_vi": "Khoản vay có nhỏ hơn hoặc bằng số vốn còn thiếu không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-all-nd" },
+            { "label_en": "No — one loan", "label_vi": "Không — chỉ có 1 khoản vay", "next": "r-one-loan" },
+            { "label_en": "No — several loans", "label_vi": "Không — nhiều khoản vay", "next": "r-multi-loans" }
+          ]
+        },
+        "q2": {
+          "q_en": "Borrowed from a non-credit institution at a rate above 20%/year?",
+          "q_vi": "Vay của đối tượng không phải tổ chức tín dụng với lãi suất trên 20%/năm?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-over-20" },
+            { "label_en": "No", "label_vi": "Không", "next": "q3" }
+          ]
+        },
+        "q3": {
+          "q_en": "Does the company have related-party transactions (transfer pricing rules apply)?",
+          "q_vi": "Doanh nghiệp có giao dịch liên kết không (áp dụng quy định chuyển giá)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-ebitda" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-ok" }
+          ]
+        },
+        "r-all-nd": { "result": true, "verdict_en": "Whole interest non-deductible", "verdict_vi": "Toàn bộ lãi vay không được trừ", "rules_vi": ["Sau đó vẫn kiểm tra tiếp tầng 20% và 30% EBITDA cho các khoản vay khác (nếu có)."], "cards": ["c-interest"], "sources": ["r3:20"] },
+        "r-one-loan": { "result": true, "verdict_en": "Non-deductible = capital deficit × loan interest rate × period of deficit", "verdict_vi": "Không được trừ = vốn còn thiếu × lãi suất × thời gian còn thiếu", "rules_vi": ["Phần còn lại tiếp tục kiểm tra tầng 2 và 3."], "cards": ["c-interest"], "sources": ["r3:20"] },
+        "r-multi-loans": { "result": true, "verdict_en": "Non-deductible = (capital deficit / total loans) × total interest", "verdict_vi": "Không được trừ = (vốn còn thiếu / tổng dư nợ vay) × tổng lãi vay", "rules_vi": ["Phần còn lại tiếp tục kiểm tra tầng 2 và 3."], "cards": ["c-interest"], "sources": ["r3:20"] },
+        "r-over-20": { "result": true, "verdict_en": "Interest above 20%/year non-deductible", "verdict_vi": "Phần lãi vượt 20%/năm không được trừ", "rules_vi": ["Quy định mới thay cho mức cũ 1,5 lần lãi suất cơ bản của Ngân hàng Nhà nước.", "Phần lãi còn lại: nếu doanh nghiệp có giao dịch liên kết thì kiểm tra tiếp trần 30% EBITDA."], "trap_vi": "Đề cũ (trước 2025) dùng mức 1,5 lần lãi suất cơ bản. Đáp án đề cũ sẽ khác.", "cards": ["c-interest", "a-tp-interest-30-ebitda"], "sources": ["r3:20", "r3:57"] },
+        "r-ebitda": {
+          "result": true,
+          "verdict_en": "Net interest capped at 30% of EBITDA",
+          "verdict_vi": "Tổng lãi vay thuần bị giới hạn 30% EBITDA",
+          "rules_vi": [
+            "Lãi vay thuần = chi phí lãi vay − lãi tiền gửi − lãi cho vay trong kỳ.",
+            "Phần vượt được chuyển sang các kỳ sau, tối đa 5 năm liên tục, nếu kỳ sau còn dư mức trần.",
+            "Không áp dụng cho tổ chức tín dụng, doanh nghiệp bảo hiểm, khoản vay ODA, vay ưu đãi của Chính phủ cho vay lại."
+          ],
+          "cards": ["a-tp-interest-30-ebitda", "c-interest"],
+          "sources": ["r3:57"]
+        },
+        "r-ok": { "result": true, "verdict_en": "Deductible", "verdict_vi": "Được trừ", "rules_vi": ["Vẫn phải đáp ứng 3 điều kiện chung (chứng từ, thanh toán không dùng tiền mặt)."], "cards": ["c-interest"], "sources": ["r3:20"] }
+      }
+    },
+    {
+      "id": "cit-loss",
+      "part": "C",
+      "title_en": "CIT · Loss offset order",
+      "title_vi": "Lỗ được bù trừ theo thứ tự nào?",
+      "intro_vi": "Công thức: thu nhập tính thuế = thu nhập chịu thuế − thu nhập miễn thuế − lỗ kết chuyển; thuế = (thu nhập tính thuế − trích quỹ KH&CN) × thuế suất.",
+      "sources": ["r3:8", "r3:36", "r3:37", "r3:38"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Where does the loss come from?",
+          "q_vi": "Khoản lỗ phát sinh từ hoạt động nào?",
+          "options": [
+            { "label_en": "Normal business activity", "label_vi": "Hoạt động kinh doanh thông thường", "next": "r-normal" },
+            { "label_en": "Real estate transfer / investment project transfer", "label_vi": "Chuyển nhượng BĐS / dự án đầu tư", "next": "q-re" },
+            { "label_en": "Transfer of mineral exploration / mining projects or rights", "label_vi": "Chuyển nhượng dự án, quyền thăm dò, khai thác khoáng sản", "next": "r-mineral" }
+          ]
+        },
+        "q-re": {
+          "q_en": "Offsetting against which income?",
+          "q_vi": "Muốn bù trừ vào thu nhập nào?",
+          "options": [
+            { "label_en": "Business income enjoying CIT incentives", "label_vi": "Thu nhập kinh doanh đang được ưu đãi", "next": "r-re-no" },
+            { "label_en": "Business income without incentives", "label_vi": "Thu nhập kinh doanh không ưu đãi", "next": "r-re-yes" }
+          ]
+        },
+        "r-normal": {
+          "result": true,
+          "verdict_en": "Horizontal first, then carry forward ≤ 5 years",
+          "verdict_vi": "Bù ngang trong năm trước, sau đó chuyển lỗ tối đa 5 năm",
+          "rules_vi": [
+            "Bù trừ giữa các hoạt động trong cùng kỳ trước, rồi mới trừ lỗ các năm trước.",
+            "Chuyển lỗ liên tục, toàn bộ, không quá 5 năm kể từ năm sau năm phát sinh lỗ.",
+            "Không tách được lỗ của từng hoạt động: ưu tiên bù vào thu nhập của hoạt động được ưu đãi trước."
+          ],
+          "cards": ["c-loss-cf", "c-st-fund"],
+          "sources": ["r3:36"]
+        },
+        "r-re-no": { "result": true, "verdict_en": "Not allowed", "verdict_vi": "Không được bù", "rules_vi": ["Quy định mới theo Decree 320. Lỗ chuyển nhượng BĐS phát sinh trước Decree 320 cũng không được bù vào thu nhập ưu đãi."], "cards": ["c-loss-cf"], "sources": ["r3:36", "r3:37"] },
+        "r-re-yes": { "result": true, "verdict_en": "Allowed", "verdict_vi": "Được bù", "rules_vi": ["Ngược lại, lãi từ chuyển nhượng BĐS nay được bù với lỗ kinh doanh khác (trước đây không được, trừ khi giải thể)."], "cards": ["c-loss-cf", "c-real-estate-transfer"], "sources": ["r3:37"] },
+        "r-mineral": { "result": true, "verdict_en": "Separate — not offset with other activities", "verdict_vi": "Tách riêng, không bù trừ với hoạt động khác", "rules_vi": [], "cards": ["c-loss-cf"], "sources": ["r3:36"] }
+      }
+    },
+    {
+      "id": "cit-incentive",
+      "part": "C",
+      "title_en": "CIT · Which incentive applies?",
+      "title_vi": "Dự án được hưởng ưu đãi CIT nào?",
+      "intro_vi": "Ưu đãi gồm thuế suất ưu đãi trong một thời gian và miễn, giảm thuế (tax holiday), xét theo ngành nghề, địa bàn, quy mô. Thu nhập được ưu đãi phải hạch toán riêng.",
+      "sources": ["r3:38", "r3:39", "r3:40", "r3:42", "r3:43", "r3:44", "r3:45", "r3:46", "r3:47"],
+      "start": "q0",
+      "nodes": {
+        "q0": {
+          "q_en": "Is the income one of the excluded types (capital/real estate/project transfer, income from abroad, mining/petroleum, excise-taxed services, other income)?",
+          "q_vi": "Khoản thu nhập có thuộc nhóm bị loại trừ không (chuyển nhượng vốn, BĐS, dự án; thu nhập ở nước ngoài; khai thác khoáng sản, dầu khí; dịch vụ chịu thuế TTĐB; thu nhập khác)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-excluded" },
+            { "label_en": "No", "label_vi": "Không", "next": "q1" }
+          ]
+        },
+        "q1": {
+          "q_en": "New investment project or expansion investment project (EIP)?",
+          "q_vi": "Dự án đầu tư mới hay dự án đầu tư mở rộng?",
+          "options": [
+            { "label_en": "New project", "label_vi": "Dự án mới", "next": "r-new" },
+            { "label_en": "Expansion", "label_vi": "Mở rộng", "next": "q-exp1" }
+          ]
+        },
+        "q-exp1": {
+          "q_en": "Is the original project still within its incentive period?",
+          "q_vi": "Dự án gốc còn đang trong thời gian hưởng ưu đãi không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Còn", "next": "r-exp-remaining" },
+            { "label_en": "No — expired / never had", "label_vi": "Hết / không có ưu đãi", "next": "q-exp2" }
+          ]
+        },
+        "q-exp2": {
+          "q_en": "Does the expansion meet at least ONE of: (a) added fixed-asset cost ≥ VND40 billion (incentivised sectors) or ≥ VND20 billion (difficult / extremely difficult areas); (b) added fixed assets ≥ 20% of total fixed-asset cost before expansion; (c) design capacity up ≥ 20%?",
+          "q_vi": "Dự án mở rộng có đạt ÍT NHẤT MỘT tiêu chí: (a) nguyên giá TSCĐ tăng thêm ≥ 40 tỷ (ngành ưu đãi) hoặc ≥ 20 tỷ (địa bàn khó khăn, đặc biệt khó khăn); (b) TSCĐ tăng thêm ≥ 20% tổng nguyên giá trước mở rộng; (c) công suất thiết kế tăng ≥ 20%?",
+          "hint_vi": "Slide gạch số cũ (20 tỷ / 10 tỷ) nhưng khi trích xuất ra text thì mất gạch ngang. Số mới đã được đối chiếu với Decree 320.",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Đạt", "next": "r-exp-holiday" },
+            { "label_en": "No", "label_vi": "Không đạt", "next": "r-none" }
+          ]
+        },
+        "r-excluded": { "result": true, "verdict_en": "No incentive — taxed at the standard rate", "verdict_vi": "Không được ưu đãi, tính thuế suất phổ thông", "rules_vi": ["Ngoại lệ: thu nhập từ thanh lý phế liệu, chênh lệch tỷ giá, lãi tiền gửi không kỳ hạn gắn với hoạt động ưu đãi thì được hưởng ưu đãi theo ngành."], "cards": ["c-incentive-concepts"], "sources": ["r3:39", "r3:40"] },
+        "r-new": {
+          "result": true,
+          "verdict_en": "Preferential rate + tax holiday (if eligible by sector / location / scale)",
+          "verdict_vi": "Thuế suất ưu đãi + miễn, giảm (nếu đủ điều kiện ngành, địa bàn, quy mô)",
+          "rules_vi": [
+            "Thuế suất ưu đãi: tính liên tục từ năm đầu tiên có doanh thu từ dự án (doanh nghiệp công nghệ cao: từ năm được công nhận).",
+            "Miễn, giảm: tính liên tục từ năm đầu tiên có thu nhập chịu thuế, không tính đến lỗ kết chuyển; nếu 3 năm đầu có doanh thu mà chưa có thu nhập chịu thuế thì tính từ năm thứ 4 có doanh thu.",
+            "Kỳ đầu dự án hoạt động dưới 12 tháng: được chọn hưởng ưu đãi ngay kỳ đó hoặc từ kỳ sau.",
+            "Dự án quy mô lớn (mới): vốn ≥ 12.000 tỷ, công nghệ được thẩm định, giải ngân đủ trong 5 năm → 10%, tổng thời gian không quá 30 năm."
+          ],
+          "trap_vi": "Thời gian ưu đãi tính theo năm có doanh thu hoặc năm có thu nhập, không theo năm cấp phép.",
+          "cards": ["c-incentive-concepts", "c-incentive-duration", "c-large-scale"],
+          "sources": ["r3:42", "r3:45", "r3:46"]
+        },
+        "r-exp-remaining": { "result": true, "verdict_en": "Additional income enjoys the remaining incentive period of the original project", "verdict_vi": "Thu nhập tăng thêm hưởng ưu đãi cho thời gian còn lại của dự án gốc", "rules_vi": ["Quy định mới: không còn được chọn hưởng ưu đãi riêng như dự án mới."], "cards": ["c-expansion"], "sources": ["r3:43", "r3:44"] },
+        "r-exp-holiday": {
+          "result": true,
+          "verdict_en": "Tax holiday as a new project (no preferential rate)",
+          "verdict_vi": "Được miễn, giảm như dự án mới (không có thuế suất ưu đãi)",
+          "rules_vi": [
+            "Thời gian tính từ năm hoàn thành giải ngân vốn đăng ký mở rộng.",
+            "Hạch toán riêng; không tách được thì: thu nhập mở rộng = tổng thu nhập chịu thuế (không gồm thu nhập khác không ưu đãi) × nguyên giá TSCĐ đầu tư mở rộng / tổng nguyên giá TSCĐ đang dùng (cách 1), hoặc theo tỷ lệ vốn đầu tư (cách 2)."
+          ],
+          "cards": ["c-expansion"],
+          "sources": ["r3:43", "r3:44", "r3:47", "D320:Art18"]
+        },
+        "r-none": { "result": true, "verdict_en": "No incentive for the expansion income", "verdict_vi": "Thu nhập từ mở rộng không được ưu đãi", "rules_vi": [], "cards": ["c-expansion"], "sources": ["r3:44"] }
+      }
+    },
+    {
+      "id": "fct-scope",
+      "part": "D",
+      "title_en": "FCT · Is this payment within FCT?",
+      "title_vi": "Khoản thanh toán cho bên nước ngoài có thuộc diện FCT không?",
+      "intro_vi": "FCT không phải một sắc thuế riêng. Đó là phần VAT và CIT/PIT của tổ chức, cá nhân nước ngoài kinh doanh hoặc có thu nhập tại Việt Nam.",
+      "sources": ["r5:2", "r5:3", "r5:4", "r5:5", "r5:6", "r5:7", "r5:9", "r5:10", "r5:11"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Does the foreign party operate in Vietnam under the Investment Law, Petroleum Law or Credit Institutions Law (i.e. through a Vietnamese entity)?",
+          "q_vi": "Bên nước ngoài kinh doanh tại VN theo Luật Đầu tư, Luật Dầu khí hoặc Luật Các tổ chức tín dụng (tức qua pháp nhân Việt Nam)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-normal-company" },
+            { "label_en": "No", "label_vi": "Không", "next": "q2" }
+          ]
+        },
+        "q2": {
+          "q_en": "What is being paid for?",
+          "q_vi": "Khoản thanh toán cho cái gì?",
+          "options": [
+            { "label_en": "Goods only", "label_vi": "Chỉ hàng hóa", "next": "q-goods" },
+            { "label_en": "Services / services attached to goods", "label_vi": "Dịch vụ / dịch vụ gắn với hàng hóa", "next": "q-serv" },
+            { "label_en": "Royalty, loan interest, asset transfer, securities, compensation", "label_vi": "Bản quyền, lãi vay, chuyển nhượng tài sản, chứng khoán, tiền bồi thường", "next": "r-in-cit-any" },
+            { "label_en": "Digital / e-commerce services, no PE", "label_vi": "Dịch vụ số, thương mại điện tử, không có PE", "next": "r-ecommerce" }
+          ]
+        },
+        "q-goods": {
+          "q_en": "Where / how are the goods delivered?",
+          "q_vi": "Hàng giao ở đâu, như thế nào?",
+          "options": [
+            { "label_en": "At a foreign or Vietnamese border gate, no services in VN", "label_vi": "Tại cửa khẩu nước ngoài hoặc cửa khẩu VN, không kèm dịch vụ tại VN", "next": "r-out-goods" },
+            { "label_en": "Inside Vietnam (Incoterms with seller bearing risk into VN, on-the-spot import/export, distribution)", "label_vi": "Trong lãnh thổ VN (Incoterms người bán chịu rủi ro vào VN, xuất nhập khẩu tại chỗ, phân phối)", "next": "r-in-goods" },
+            { "label_en": "With services in VN (installation, test run, training, maintenance…)", "label_vi": "Kèm dịch vụ tại VN (lắp đặt, chạy thử, đào tạo, bảo dưỡng…)", "next": "r-goods-services" },
+            { "label_en": "Processing goods returned to the foreign party", "label_vi": "Hàng gia công trả lại bên nước ngoài", "next": "r-out-processing" }
+          ]
+        },
+        "q-serv": {
+          "q_en": "Where is the service performed and consumed?",
+          "q_vi": "Dịch vụ được thực hiện và tiêu dùng ở đâu?",
+          "options": [
+            { "label_en": "Performed and consumed outside VN", "label_vi": "Thực hiện và tiêu dùng ngoài VN", "next": "r-out-serv" },
+            { "label_en": "Performed outside VN, consumed in VN", "label_vi": "Thực hiện ngoài VN, tiêu dùng tại VN", "next": "q-list" },
+            { "label_en": "Performed in VN", "label_vi": "Thực hiện tại VN", "next": "r-in-serv" }
+          ]
+        },
+        "q-list": {
+          "q_en": "Is it on the 'performed outside VN' exclusion list: repair of transport/machinery; advertising & marketing (not online); investment & trade promotion; brokerage for sale of goods; training (not online); international postal/telecom fee sharing; satellite/bandwidth lease; bonded warehouse/ICD use?",
+          "q_vi": "Có thuộc danh sách loại trừ khi thực hiện ngoài VN: sửa chữa phương tiện, máy móc; quảng cáo, tiếp thị (trừ online); xúc tiến đầu tư, thương mại; môi giới bán hàng; đào tạo (trừ online); chia cước bưu chính, viễn thông quốc tế; thuê vệ tinh, đường truyền; dùng kho ngoại quan, ICD?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-out-list" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-in-serv" }
+          ]
+        },
+        "r-normal-company": { "result": true, "verdict_en": "Not FCT — taxed as a normal Vietnamese company", "verdict_vi": "Không phải FCT, nộp thuế như doanh nghiệp Việt Nam", "rules_vi": [], "cards": ["d-non-applicable"], "sources": ["r5:6"] },
+        "r-out-goods": { "result": true, "verdict_en": "Not FCT", "verdict_vi": "Không thuộc diện FCT", "rules_vi": ["Chỉ có VAT nhập khẩu do người nhập khẩu nộp."], "cards": ["d-non-applicable"], "sources": ["r5:6"] },
+        "r-out-processing": { "result": true, "verdict_en": "Not FCT (the foreign party earns no income)", "verdict_vi": "Không thuộc diện FCT (bên nước ngoài không có thu nhập)", "rules_vi": [], "cards": ["d-scope"], "sources": ["r5:4"] },
+        "r-in-goods": { "result": true, "verdict_en": "FCT: CIT 1% on goods; VAT already paid at import", "verdict_vi": "Thuộc FCT: CIT 1% trên giá trị hàng; VAT đã nộp ở khâu nhập khẩu", "rules_vi": ["Bên Việt Nam khai và nộp thay."], "cards": ["d-scope", "d-cit-subject"], "sources": ["r5:3", "r5:5", "r5:10", "tt:1"] },
+        "r-goods-services": { "result": true, "verdict_en": "FCT on the whole contract — check whether values are separated", "verdict_vi": "Thuộc FCT trên toàn hợp đồng — kiểm tra có tách giá trị không", "rules_vi": ["Bảo hành tiêu chuẩn thì không tính là dịch vụ kèm theo."], "cards": ["d-vat-subject", "d-cit-subject"], "sources": ["r5:5", "r5:9", "r5:10"], "next_tree": "fct-compute" },
+        "r-out-serv": { "result": true, "verdict_en": "Not FCT", "verdict_vi": "Không thuộc diện FCT", "rules_vi": ["Ví dụ: bốc xếp tại cảng nước ngoài; luật sư nước ngoài tư vấn cho dự án đầu tư ra nước ngoài của công ty VN; roadshow quảng bá thương hiệu VN ở nước ngoài."], "trap_vi": "Nơi thực hiện thì dễ xác định, nơi tiêu dùng mới là phần hay bị bắt lỗi trong examiner's report.", "cards": ["d-non-applicable"], "sources": ["r5:7", "r5:27"] },
+        "r-out-list": { "result": true, "verdict_en": "Not FCT (regardless of place of consumption)", "verdict_vi": "Không thuộc diện FCT (không xét nơi tiêu dùng)", "rules_vi": [], "trap_vi": "Marketing online và đào tạo online thì không được loại trừ.", "cards": ["d-non-applicable"], "sources": ["r5:7"] },
+        "r-in-serv": { "result": true, "verdict_en": "FCT: VAT + CIT (or PIT for individuals)", "verdict_vi": "Thuộc FCT: VAT + CIT (cá nhân thì PIT)", "rules_vi": ["Xác định phương pháp nộp thuế tiếp theo."], "cards": ["d-vat-subject", "d-cit-subject"], "sources": ["r5:9", "r5:10"], "next_tree": "fct-method" },
+        "r-in-cit-any": { "result": true, "verdict_en": "CIT-FCT regardless of where the business is conducted", "verdict_vi": "Chịu CIT theo FCT, không xét nơi tiến hành kinh doanh", "rules_vi": ["Theo bảng thuế: lãi vay 10%, bản quyền 10%, chuyển nhượng chứng khoán 0,1%, chuyển nhượng vốn 2% (trừ tái cấu trúc nội bộ không đổi công ty mẹ tối cao, không phát sinh lãi)."], "cards": ["d-cit-subject", "d-rates"], "sources": ["r5:10", "r5:11", "tt:1", "tt:2"] },
+        "r-ecommerce": { "result": true, "verdict_en": "Direct registration & filing via the tax portal; otherwise withheld by VN parties", "verdict_vi": "Tự đăng ký, khai nộp trực tiếp qua cổng thuế; nếu không thì bên VN khấu trừ", "rules_vi": ["Khai VAT và CIT theo quý, nộp online; áp dụng tỷ lệ thuế của phương pháp trực tiếp.", "Nếu nhà cung cấp không tự đăng ký: tổ chức VN khấu trừ, khai thay; cá nhân mua thì ngân hàng / trung gian thanh toán khấu trừ hoặc báo cáo hằng tháng."], "cards": ["d-ecommerce"], "sources": ["r5:23", "r5:24", "tt:1"] }
+      }
+    },
+    {
+      "id": "fct-method",
+      "part": "D",
+      "title_en": "FCT · VAS, hybrid or non-VAS method?",
+      "title_vi": "Nhà thầu nước ngoài nộp thuế theo phương pháp nào?",
+      "intro_vi": "Ba phương pháp khác nhau ở chỗ ai khai thuế, VAT tính khấu trừ hay theo tỷ lệ, và CIT tính trên thu nhập hay trên doanh thu.",
+      "sources": ["r5:8", "r5:11", "r5:12", "r5:22", "r5:23"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Does the contractor have a PE in Vietnam, or is it a Vietnamese tax resident?",
+          "q_vi": "Nhà thầu có cơ sở thường trú (PE) tại VN hoặc là đối tượng cư trú tại VN không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q2" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-nonvas" }
+          ]
+        },
+        "q2": {
+          "q_en": "Business period in Vietnam under the contract ≥ 183 days from the contract's effective date?",
+          "q_vi": "Thời gian kinh doanh tại VN theo hợp đồng từ 183 ngày trở lên kể từ ngày hợp đồng có hiệu lực?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q3" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-nonvas" }
+          ]
+        },
+        "q3": {
+          "q_en": "Accounting regime adopted?",
+          "q_vi": "Áp dụng chế độ kế toán nào?",
+          "options": [
+            { "label_en": "Registers tax ID and fully applies VAS", "label_vi": "Đăng ký MST, áp dụng đầy đủ chế độ kế toán Việt Nam", "next": "r-vas" },
+            { "label_en": "Registers for VAT credit method, follows MoF accounting guidance but not full VAS", "label_vi": "Đăng ký nộp VAT khấu trừ, kế toán theo hướng dẫn của BTC nhưng không đầy đủ VAS", "next": "r-hybrid" },
+            { "label_en": "Neither", "label_vi": "Không", "next": "r-nonvas" }
+          ]
+        },
+        "r-vas": { "result": true, "verdict_en": "VAS (declaration) method", "verdict_vi": "Phương pháp kê khai (VAS)", "rules_vi": ["VAT: khấu trừ (đầu ra − đầu vào).", "CIT: 20% trên thu nhập tính thuế theo luật CIT.", "Nhà thầu tự khai, nộp."], "cards": ["d-methods"], "sources": ["r5:12"] },
+        "r-hybrid": { "result": true, "verdict_en": "Hybrid method", "verdict_vi": "Phương pháp hỗn hợp", "rules_vi": ["VAT: khấu trừ, nhà thầu tự khai.", "CIT: tỷ lệ % trên doanh thu, bên Việt Nam khấu trừ khi thanh toán."], "trap_vi": "Slide r5 tr.11 ghi hybrid là '2/3 conditions' nhưng tr.22 lại liệt kê đủ cả 3 điều kiện. Xem TAX_MAP §9.", "cards": ["d-methods", "d-hybrid"], "sources": ["r5:8", "r5:11", "r5:22"] },
+        "r-nonvas": { "result": true, "verdict_en": "Non-VAS (deemed / withholding) method", "verdict_vi": "Phương pháp trực tiếp (khấu trừ tại nguồn)", "rules_vi": ["Bên Việt Nam khấu trừ VAT và CIT theo tỷ lệ % trên doanh thu trước khi thanh toán.", "Khai theo từng lần phát sinh (10 ngày) hoặc theo tháng (ngày 20 tháng sau)."], "cards": ["d-methods", "d-admin"], "sources": ["r5:8", "r5:13", "r5:23"], "next_tree": "fct-compute" }
+      }
+    },
+    {
+      "id": "fct-compute",
+      "part": "D",
+      "title_en": "FCT · Non-VAS computation",
+      "title_vi": "Tính FCT theo phương pháp trực tiếp",
+      "intro_vi": "Hai câu cần hỏi: hợp đồng có tách giá trị hàng hóa và dịch vụ không, và giá hợp đồng là net hay gross.",
+      "sources": ["r5:9", "r5:10", "r5:13", "r5:14", "r5:15", "r5:20", "r5:21", "r5:22", "tt:1", "tt:2"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Goods delivered in VN together with services in VN?",
+          "q_vi": "Có hàng hóa giao tại VN kèm dịch vụ thực hiện tại VN không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q1b" },
+            { "label_en": "No — services / other only", "label_vi": "Không — chỉ dịch vụ / khác", "next": "q2" }
+          ]
+        },
+        "q1b": {
+          "q_en": "Are the values of goods and services separated in the contract?",
+          "q_vi": "Hợp đồng có tách riêng giá trị hàng hóa và dịch vụ không?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-split" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-lump" }
+          ]
+        },
+        "q2": {
+          "q_en": "Is the contract price net of Vietnamese taxes (the VN party bears FCT)?",
+          "q_vi": "Giá hợp đồng là giá net (bên Việt Nam chịu FCT thay)?",
+          "options": [
+            { "label_en": "Net", "label_vi": "Net", "next": "r-net" },
+            { "label_en": "Gross (FCT inclusive)", "label_vi": "Gross (đã gồm FCT)", "next": "r-gross" }
+          ]
+        },
+        "r-split": {
+          "result": true,
+          "verdict_en": "Tax each part separately",
+          "verdict_vi": "Tính riêng từng phần",
+          "rules_vi": [
+            "Hàng hóa: không chịu VAT theo FCT (đã nộp VAT nhập khẩu); CIT 1%.",
+            "Dịch vụ: VAT 5%; CIT 5%.",
+            "Xây dựng, lắp đặt: VAT 3% nếu bao thầu vật tư, 5% nếu không bao thầu; CIT 2%."
+          ],
+          "trap_vi": "Ví dụ nhà máy điện (r5 tr.21): mỗi cấu phần một tỷ lệ riêng. Nếu thiếu chứng từ đã nộp VAT nhập khẩu cho máy móc thì chuyển sang trường hợp không tách.",
+          "cards": ["d-vat-subject", "d-cit-subject", "d-mixed-contracts"],
+          "sources": ["r5:9", "r5:10", "r5:21", "tt:1"]
+        },
+        "r-lump": {
+          "result": true,
+          "verdict_en": "Whole contract value: VAT 3%, CIT 2%",
+          "verdict_vi": "Toàn bộ giá trị hợp đồng: VAT 3%, CIT 2%",
+          "rules_vi": ["Không tách được giá trị từng hoạt động thì áp tỷ lệ cao nhất của ngành nghề cho toàn hợp đồng."],
+          "cards": ["d-mixed-contracts"],
+          "sources": ["r5:15", "r5:20", "r5:22"]
+        },
+        "r-net": {
+          "result": true,
+          "verdict_en": "Gross up CIT first, then VAT",
+          "verdict_vi": "Gross-up CIT trước, rồi đến VAT",
+          "rules_vi": [
+            "Doanh thu tính CIT = giá net / (1 − tỷ lệ CIT).",
+            "Doanh thu tính VAT = doanh thu tính CIT / (1 − tỷ lệ VAT).",
+            "CIT phải nộp = doanh thu tính CIT × tỷ lệ CIT; VAT = doanh thu tính VAT × tỷ lệ VAT.",
+            "Doanh thu tính thuế gồm cả chi phí bên Việt Nam trả thay nhà thầu."
+          ],
+          "trap_vi": "Lỗi hay gặp theo examiner: gross-up sai thứ tự, hoặc gross-up VAT trên giá net chưa cộng CIT.",
+          "cards": ["d-nonvas-gross-up", "d-nonvas-vat", "d-nonvas-cit"],
+          "sources": ["r5:13", "r5:15", "r5:27"]
+        },
+        "r-gross": {
+          "result": true,
+          "verdict_en": "Compute directly on the gross price",
+          "verdict_vi": "Tính thẳng trên giá gross",
+          "rules_vi": [
+            "VAT = giá gross × tỷ lệ VAT.",
+            "CIT = (giá gross − VAT) × tỷ lệ CIT (doanh thu tính CIT không gồm VAT)."
+          ],
+          "trap_vi": "Trừ phần thầu phụ (thầu phụ Việt Nam hoặc thầu phụ nước ngoài nộp theo VAS/hybrid) nếu hợp đồng chính ghi rõ. Hàng hóa, vật tư mua vào thì không được trừ.",
+          "cards": ["d-nonvas-vat", "d-nonvas-cit", "d-special-cases"],
+          "sources": ["r5:13", "r5:14", "r5:15", "r5:16"]
+        }
+      }
+    },
+    {
+      "id": "vat-treatment",
+      "part": "E",
+      "title_en": "VAT · Which treatment applies?",
+      "title_vi": "Hàng hóa, dịch vụ này: không chịu thuế, 0%, 5% hay 10%?",
+      "intro_vi": "Bẫy lớn nhất của phần VAT là nhầm 0% (được khấu trừ, được hoàn) với không chịu thuế (không được khấu trừ).",
+      "sources": ["r4:11", "r4:12", "r4:13", "r4:14", "r4:15", "r4:16", "r4:17", "r4:19", "r4:20", "r4:21", "r4:22", "r4:23", "tt:1"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Is the supply exported / consumed outside Vietnam or in a non-tariff zone (incl. international transport, aviation & maritime services at international ports)?",
+          "q_vi": "Có xuất khẩu / tiêu dùng ngoài VN hoặc trong khu phi thuế quan không (kể cả vận tải quốc tế, dịch vụ hàng không, hàng hải tại cảng quốc tế)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q-zero-excl" },
+            { "label_en": "No — domestic", "label_vi": "Không — tiêu dùng trong nước", "next": "q2" }
+          ]
+        },
+        "q-zero-excl": {
+          "q_en": "Is it on the 'not entitled to 0%' list (technology transfer, outbound IP transfer, credit / derivatives, postal & telecom outbound, re-exported tobacco & alcohol, restricted natural resources, services consumed in VN by overseas entities…)?",
+          "q_vi": "Có thuộc danh sách không được áp 0% không (chuyển giao công nghệ, chuyển quyền sở hữu trí tuệ ra nước ngoài, tín dụng, phái sinh, bưu chính viễn thông chiều đi, thuốc lá rượu nhập khẩu tái xuất, tài nguyên hạn chế xuất khẩu, dịch vụ tiêu dùng tại VN dù bên mua ở nước ngoài…)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-not-zero" },
+            { "label_en": "No", "label_vi": "Không", "next": "q-zero-docs" }
+          ]
+        },
+        "q-zero-docs": {
+          "q_en": "Has the documents: contract, customs declaration (goods), non-cash payment evidence (+ new: packing list, transport document, buyer's import declaration)?",
+          "q_vi": "Có đủ hồ sơ: hợp đồng, tờ khai hải quan (hàng hóa), chứng từ thanh toán không dùng tiền mặt (mới: thêm packing list, chứng từ vận tải, tờ khai nhập khẩu của bên mua)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Đủ", "next": "r-zero" },
+            { "label_en": "No", "label_vi": "Thiếu", "next": "r-zero-fail" }
+          ]
+        },
+        "q2": {
+          "q_en": "Is it in a non-taxable (exempt) group?",
+          "q_vi": "Có thuộc nhóm không chịu thuế không?",
+          "hint_vi": "Nông sản chưa chế biến (bán ở khâu sản xuất); giống, phân bón, thức ăn chăn nuôi; bảo hiểm nhân thọ, y tế, giáo dục; dịch vụ tài chính, ngân hàng, chứng khoán; chuyển quyền sử dụng đất; chuyển giao công nghệ, phần mềm; hàng quá cảnh, tạm nhập tái xuất; cá nhân kinh doanh có thu nhập năm ≤ 200 triệu…",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-exempt" },
+            { "label_en": "No", "label_vi": "Không", "next": "q3" }
+          ]
+        },
+        "q3": {
+          "q_en": "Is it compensation, bonus, support, financial income, amount collected on behalf, or internal transfer (not required to declare)?",
+          "q_vi": "Có phải tiền bồi thường, thưởng, hỗ trợ, thu nhập tài chính, thu hộ, điều chuyển nội bộ (không phải kê khai, tính nộp)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-not-declare" },
+            { "label_en": "No", "label_vi": "Không", "next": "q4" }
+          ]
+        },
+        "q4": {
+          "q_en": "Is it on the 5% list (clean water, teaching aids, specialised medical equipment, fertiliser, agricultural machinery, unprocessed agri products at commercial stage, sugar, social housing, children's toys, books, science & technology services…)?",
+          "q_vi": "Có thuộc danh sách 5% không (nước sạch, đồ dùng giảng dạy, thiết bị y tế chuyên dùng, phân bón, máy nông nghiệp, nông sản chưa chế biến ở khâu thương mại, đường, nhà ở xã hội, đồ chơi trẻ em, sách, dịch vụ KH&CN…)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-five" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-ten" }
+          ]
+        },
+        "r-zero": { "result": true, "verdict_en": "0% — output VAT nil, input VAT creditable and refundable", "verdict_vi": "0% — VAT đầu ra bằng 0, VAT đầu vào được khấu trừ và hoàn", "rules_vi": ["Trên hóa đơn ghi thuế suất 0%."], "cards": ["e-zero-rate", "e-zero-vs-exempt"], "sources": ["r4:16", "r4:17", "r4:19", "r4:23", "r4:37"], "next_tree": "vat-refund" },
+        "r-zero-fail": { "result": true, "verdict_en": "Cannot apply 0% without the documents", "verdict_vi": "Không đủ hồ sơ thì không được áp 0%", "rules_vi": ["Xử lý như hàng bán trong nước theo thuế suất tương ứng."], "cards": ["e-zero-rate"], "sources": ["r4:19", "r4:37"] },
+        "r-not-zero": { "result": true, "verdict_en": "Not 0% — apply the domestic treatment", "verdict_vi": "Không được 0%, áp như bán trong nước", "rules_vi": ["Quay lại kiểm tra: không chịu thuế, 5% hay 10%."], "cards": ["e-zero-not-entitled"], "sources": ["r4:20"], "next_tree": "vat-treatment" },
+        "r-exempt": { "result": true, "verdict_en": "Non-taxable (KCT) — no output VAT, input VAT NOT creditable", "verdict_vi": "Không chịu thuế (KCT) — không có VAT đầu ra, VAT đầu vào KHÔNG được khấu trừ", "rules_vi": ["Hóa đơn ghi 'KCT'.", "VAT đầu vào không được khấu trừ thì được tính vào chi phí được trừ khi tính CIT hoặc nguyên giá TSCĐ (trừ khoản từ 5 triệu không thanh toán qua ngân hàng)."], "trap_vi": "Hàng bán cả chịu thuế lẫn không chịu thuế: VAT đầu vào dùng chung phải phân bổ theo tỷ lệ doanh thu.", "cards": ["e-non-taxable", "e-zero-vs-exempt", "e-input-apportion"], "sources": ["r4:11", "r4:12", "r4:13", "r4:14", "r4:23", "r4:39"] },
+        "r-not-declare": { "result": true, "verdict_en": "Not required to declare and pay VAT", "verdict_vi": "Không phải kê khai, tính nộp VAT", "rules_vi": ["Lập chứng từ thu, chi; không lập hóa đơn.", "Bồi thường bằng hàng hóa, dịch vụ thì bên bồi thường phải xuất hóa đơn như bán hàng.", "Nhận tiền để thực hiện dịch vụ (sửa chữa, bảo hành, khuyến mại, quảng cáo) cho bên khác thì vẫn phải kê khai nộp thuế.", "VAT đầu vào phục vụ hoạt động này vẫn được khấu trừ toàn bộ."], "trap_vi": "Slide ghi: nông sản chưa chế biến bán cho doanh nghiệp, hợp tác xã khác để kinh doanh tiếp thì dùng 5% cho kỳ thi 2026 – 6/2027, dù Luật 149 (hiệu lực 01/01/2026) đã chuyển nhóm này sang 'không phải kê khai'. Đi thi theo slide.", "cards": ["e-not-required-declare"], "sources": ["r4:14", "r4:15", "r4:39"] },
+        "r-five": { "result": true, "verdict_en": "5%", "verdict_vi": "5%", "rules_vi": [], "trap_vi": "Đồ dùng giảng dạy chỉ gồm mô hình, bản vẽ, bảng, phấn, thước, compa; các thứ khác 10%. Sách thuộc nhóm không chịu thuế thì không phải 5%.", "cards": ["e-five-pct"], "sources": ["r4:21", "r4:22", "tt:1"] },
+        "r-ten": { "result": true, "verdict_en": "10% standard rate", "verdict_vi": "10% thuế suất phổ thông", "rules_vi": ["Cùng một thuế suất áp cho mọi khâu nhập khẩu, sản xuất, thương mại, kể cả phế liệu thu hồi.", "Dịch vụ của nhà cung cấp nước ngoài qua thương mại điện tử, nền tảng số cho người mua tại VN: 10%."], "trap_vi": "Mức giảm VAT 2% tạm thời của năm 2025 không thuộc phạm vi thi.", "cards": ["e-ten-pct"], "sources": ["r4:23", "tt:1"] }
+      }
+    },
+    {
+      "id": "vat-input",
+      "part": "E",
+      "title_en": "VAT · Is this input VAT creditable?",
+      "title_vi": "VAT đầu vào này có được khấu trừ không?",
+      "intro_vi": "Áp dụng cho người nộp thuế theo phương pháp khấu trừ. Nguyên tắc: phục vụ sản xuất, kinh doanh + đầu ra chịu VAT + đủ chứng từ.",
+      "sources": ["r4:34", "r4:35", "r4:36", "r4:37", "r4:38", "r4:39", "r4:40"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Valid VAT invoice (or import tax payment slip / FCT withholding voucher)?",
+          "q_vi": "Có hóa đơn GTGT hợp lệ (hoặc chứng từ nộp thuế nhập khẩu / chứng từ nộp thay nhà thầu nước ngoài)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "q2" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-no" }
+          ]
+        },
+        "q2": {
+          "q_en": "Total invoices to one seller in one day ≥ VND5 million (VAT inclusive)?",
+          "q_vi": "Tổng hóa đơn của một người bán trong cùng ngày từ 5 triệu trở lên (gồm VAT)?",
+          "options": [
+            { "label_en": "Yes — paid non-cash (bank, debt clearing, authorised 3rd party)", "label_vi": "Có — trả không dùng tiền mặt (ngân hàng, bù trừ công nợ, ủy quyền bên thứ ba)", "next": "q3" },
+            { "label_en": "Yes — paid in cash", "label_vi": "Có — trả tiền mặt", "next": "r-cash" },
+            { "label_en": "No (< 5 million)", "label_vi": "Không (dưới 5 triệu)", "next": "q3" }
+          ]
+        },
+        "q3": {
+          "q_en": "What are the purchases used for?",
+          "q_vi": "Hàng hóa, dịch vụ mua vào dùng cho việc gì?",
+          "options": [
+            { "label_en": "Only VAT-taxable (incl. 0%) supplies", "label_vi": "Chỉ đầu ra chịu VAT (kể cả 0%)", "next": "q4" },
+            { "label_en": "Both taxable and non-taxable supplies", "label_vi": "Cả đầu ra chịu thuế và không chịu thuế", "next": "r-apportion" },
+            { "label_en": "Only non-taxable supplies / personal use", "label_vi": "Chỉ đầu ra không chịu thuế / dùng cá nhân", "next": "r-non-taxable" },
+            { "label_en": "Supplies 'not required to declare'", "label_vi": "Hoạt động 'không phải kê khai'", "next": "r-full" }
+          ]
+        },
+        "q4": {
+          "q_en": "Any special asset / case?",
+          "q_vi": "Có thuộc trường hợp đặc biệt không?",
+          "options": [
+            { "label_en": "Car ≤ 9 seats (not transport/tourism/hotel business)", "label_vi": "Ô tô ≤ 9 chỗ (không kinh doanh vận tải, du lịch, khách sạn)", "next": "r-car" },
+            { "label_en": "Housing for expatriates", "label_vi": "Nhà ở cho người nước ngoài", "next": "q-expat" },
+            { "label_en": "Facilities for workers (canteen, changing room, worker housing…)", "label_vi": "Công trình phục vụ người lao động (nhà ăn, phòng thay đồ, nhà ở công nhân…)", "next": "r-full" },
+            { "label_en": "Damaged / lost goods not compensated", "label_vi": "Hàng tổn thất không được bồi thường", "next": "r-full" },
+            { "label_en": "Gifts / promotion / advertising goods", "label_vi": "Hàng làm quà tặng, khuyến mại, quảng cáo", "next": "r-full" },
+            { "label_en": "None", "label_vi": "Không", "next": "r-full" }
+          ]
+        },
+        "q-expat": {
+          "q_en": "Who employs the expatriate?",
+          "q_vi": "Người nước ngoài là nhân viên của ai?",
+          "options": [
+            { "label_en": "Vietnamese company, manager under VN labour contract", "label_vi": "Công ty Việt Nam, giữ chức vụ quản lý theo hợp đồng lao động VN", "next": "r-expat-no" },
+            { "label_en": "Foreign company; VN company arranges housing under agreement", "label_vi": "Công ty nước ngoài; công ty VN lo chỗ ở theo thỏa thuận", "next": "r-full" }
+          ]
+        },
+        "r-full": { "result": true, "verdict_en": "Fully creditable", "verdict_vi": "Được khấu trừ toàn bộ", "rules_vi": [], "cards": ["e-input-principles", "e-input-specific"], "sources": ["r4:35", "r4:36", "r4:38", "r4:39"] },
+        "r-no": { "result": true, "verdict_en": "Not creditable", "verdict_vi": "Không được khấu trừ", "rules_vi": [], "cards": ["e-input-conditions"], "sources": ["r4:37"] },
+        "r-cash": { "result": true, "verdict_en": "Not creditable (only the portion paid non-cash is creditable)", "verdict_vi": "Không được khấu trừ (chỉ phần thanh toán không dùng tiền mặt được khấu trừ)", "rules_vi": ["Khoản VAT này cũng không được đưa vào chi phí CIT hay nguyên giá TSCĐ."], "trap_vi": "Hai lần bị loại: không khấu trừ VAT được, và cũng không được tính vào chi phí khi tính CIT.", "cards": ["e-input-conditions", "c-5m-noncash", "e-input-noncreditable-to-cit"], "sources": ["r4:37", "r4:39"] },
+        "r-apportion": { "result": true, "verdict_en": "Separate accounts; if not separable, apportion by taxable revenue / total revenue", "verdict_vi": "Hạch toán riêng; không tách được thì phân bổ theo doanh thu chịu thuế / tổng doanh thu", "rules_vi": ["Tạm phân bổ theo tháng/quý, điều chỉnh vào cuối năm.", "Dự án đầu tư mới: tạm khấu trừ theo tỷ lệ doanh thu chịu thuế dự kiến, điều chỉnh theo thực tế trong 3 năm từ năm có doanh thu."], "cards": ["e-input-apportion"], "sources": ["r4:36", "r4:38"] },
+        "r-non-taxable": { "result": true, "verdict_en": "Not creditable → CIT deductible expense or fixed-asset cost", "verdict_vi": "Không được khấu trừ → tính vào chi phí được trừ khi tính CIT hoặc nguyên giá TSCĐ", "rules_vi": ["Ngoại lệ được khấu trừ: hàng viện trợ nhân đạo, không hoàn lại; thăm dò dầu khí đến ngày khai thác đầu tiên."], "cards": ["e-input-noncreditable-to-cit", "c-special-deductible"], "sources": ["r4:39", "r3:26"] },
+        "r-car": { "result": true, "verdict_en": "VAT on the portion of cost above VND1.6 billion not creditable", "verdict_vi": "Phần VAT tương ứng nguyên giá vượt 1,6 tỷ không được khấu trừ", "rules_vi": [], "trap_vi": "Cùng ngưỡng 1,6 tỷ với khấu hao ô tô khi tính CIT.", "cards": ["e-input-specific", "c-car-1-6bn"], "sources": ["r4:37", "r3:14"] },
+        "r-expat-no": { "result": true, "verdict_en": "Not creditable", "verdict_vi": "Không được khấu trừ", "rules_vi": [], "cards": ["e-input-specific", "b-emp-housing-15"], "sources": ["r4:36"] }
+      }
+    },
+    {
+      "id": "vat-refund",
+      "part": "E",
+      "title_en": "VAT · Is a refund available?",
+      "title_vi": "Có được hoàn VAT không?",
+      "intro_vi": "Điều kiện chung: nộp thuế theo phương pháp khấu trừ, có đăng ký kinh doanh, có con dấu, sổ sách kế toán và tài khoản ngân hàng theo MST.",
+      "sources": ["r4:44", "r4:45", "r4:46", "r4:47", "r4:48", "r4:49"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "Which situation?",
+          "q_vi": "Trường hợp nào?",
+          "options": [
+            { "label_en": "Investment project in investment phase", "label_vi": "Dự án đầu tư đang trong giai đoạn đầu tư", "next": "q-inv" },
+            { "label_en": "Exports (with or without domestic sales)", "label_vi": "Xuất khẩu (có hoặc không bán trong nước)", "next": "r-export" },
+            { "label_en": "Business with only 5% output", "label_vi": "Chỉ có đầu ra thuế suất 5%", "next": "r-five" },
+            { "label_en": "Restructuring / dissolution / bankruptcy", "label_vi": "Tái cấu trúc / giải thể / phá sản", "next": "r-restructure" },
+            { "label_en": "ODA / humanitarian aid / diplomats / departing foreigners", "label_vi": "ODA / viện trợ nhân đạo / ngoại giao / người nước ngoài xuất cảnh", "next": "r-other" }
+          ]
+        },
+        "q-inv": {
+          "q_en": "Any disqualifying condition (charter capital not fully contributed; conditional business without meeting conditions; resource / energy cost ≥ 51% of prime cost)?",
+          "q_vi": "Có rơi vào trường hợp bị loại không (vốn điều lệ chưa góp đủ; ngành nghề có điều kiện mà chưa đáp ứng; tài nguyên, năng lượng ≥ 51% giá thành)?",
+          "options": [
+            { "label_en": "Yes", "label_vi": "Có", "next": "r-inv-cf" },
+            { "label_en": "No", "label_vi": "Không", "next": "r-inv" }
+          ]
+        },
+        "r-inv": { "result": true, "verdict_en": "Refund if accumulated input VAT ≥ VND300 million", "verdict_vi": "Được hoàn nếu VAT đầu vào lũy kế từ 300 triệu trở lên", "rules_vi": ["Doanh nghiệp đang hoạt động có dự án đầu tư: khai riêng, bù trừ với VAT của hoạt động đang kinh doanh; phần còn lại từ 300 triệu trở lên thì được hoàn, dưới 300 triệu chuyển kỳ sau."], "cards": ["e-refund-investment"], "sources": ["r4:44"] },
+        "r-inv-cf": { "result": true, "verdict_en": "No refund — carry forward", "verdict_vi": "Không được hoàn, chuyển khấu trừ kỳ sau", "rules_vi": [], "cards": ["e-refund-investment"], "sources": ["r4:45"] },
+        "r-export": { "result": true, "verdict_en": "Refund if (input VAT for exports − VAT payable on domestic sales) ≥ VND300 million, capped at 10% of export revenue", "verdict_vi": "Được hoàn nếu (VAT đầu vào của hàng xuất khẩu − VAT phải nộp của hàng bán trong nước) ≥ 300 triệu; tối đa 10% doanh thu xuất khẩu", "rules_vi": ["Không tách được: VAT đầu vào của hàng xuất khẩu = tổng VAT đầu vào được khấu trừ từ lần hoàn trước × tỷ lệ doanh thu xuất khẩu.", "Hoàn trước, kiểm tra sau nếu 2 năm liên tiếp không vi phạm (buôn lậu, trốn thuế, gian lận). Nếu có vi phạm thì kiểm tra trước, hoàn sau."], "trap_vi": "Lỗi examiner hay nêu: tính sai số được hoàn khi doanh nghiệp vừa xuất khẩu vừa bán trong nước.", "cards": ["e-refund-export"], "sources": ["r4:45", "r4:46", "r4:50"] },
+        "r-five": { "result": true, "verdict_en": "Refund if accumulated input VAT > VND300 million after 12 months / 4 consecutive quarters (new)", "verdict_vi": "Được hoàn nếu VAT đầu vào lũy kế vượt 300 triệu sau 12 tháng hoặc 4 quý liên tiếp (mới)", "rules_vi": ["Người bán phải đã khai VAT và không còn nợ VAT khi đề nghị hoàn."], "cards": ["e-refund-other"], "sources": ["r4:46"] },
+        "r-restructure": { "result": true, "verdict_en": "Refund only on dissolution / bankruptcy (Law 48/2024)", "verdict_vi": "Chỉ hoàn khi giải thể, phá sản (Luật 48/2024)", "rules_vi": ["Chia, tách, sáp nhập, chuyển đổi: không còn được hoàn.", "Doanh nghiệp đang ở giai đoạn đầu tư mà giải thể, phá sản: số VAT còn lại không được hoàn, số đã hoàn phải nộp lại."], "cards": ["e-refund-other"], "sources": ["r4:47"] },
+        "r-other": { "result": true, "verdict_en": "Refund to the project owner / aid user / diplomat / departing traveller", "verdict_vi": "Hoàn cho chủ dự án / tổ chức dùng viện trợ / đối tượng ngoại giao / người xuất cảnh", "rules_vi": [], "cards": ["e-refund-other"], "sources": ["r4:47", "r4:48"] }
+      }
+    },
+    {
+      "id": "invoice-error",
+      "part": "E",
+      "title_en": "E-invoice · Fixing an error",
+      "title_vi": "Hóa đơn điện tử sai: xử lý thế nào, khai vào kỳ nào?",
+      "intro_vi": "Decree 70/2025 đã bỏ quy định hủy hóa đơn lập sai.",
+      "sources": ["r4:7", "r4:8", "r4:42"],
+      "start": "q1",
+      "nodes": {
+        "q1": {
+          "q_en": "What is wrong?",
+          "q_vi": "Sai ở đâu?",
+          "options": [
+            { "label_en": "Buyer name / address only (TIN correct)", "label_vi": "Chỉ sai tên, địa chỉ người mua (MST đúng)", "next": "r-notify" },
+            { "label_en": "TIN, amount, VAT rate, VAT amount or goods description", "label_vi": "Sai MST, số tiền, thuế suất, tiền thuế, hoặc hàng hóa", "next": "r-adjust" },
+            { "label_en": "Original invoice correct — later return / discount", "label_vi": "Hóa đơn gốc đúng, sau đó trả hàng / chiết khấu", "next": "r-subsequent" }
+          ]
+        },
+        "r-notify": { "result": true, "verdict_en": "No new invoice — notify buyer and tax authority (Form 04/SS-HDDT)", "verdict_vi": "Không lập hóa đơn mới, thông báo người mua và cơ quan thuế (mẫu 04/SS-HĐĐT)", "rules_vi": [], "cards": ["e-invoice-errors"], "sources": ["r4:7"] },
+        "r-adjust": { "result": true, "verdict_en": "Issue an adjusting or replacement e-invoice; amend the ORIGINAL period", "verdict_vi": "Lập hóa đơn điều chỉnh hoặc thay thế; khai bổ sung vào KỲ GỐC", "rules_vi": ["Hóa đơn ghi rõ 'Điều chỉnh cho hóa đơn…' hoặc 'Thay thế cho hóa đơn…'.", "Nhiều hóa đơn sai giống nhau của cùng người mua trong tháng: lập 1 hóa đơn kèm bảng kê 01/BK-ĐCTT.", "Người mua là tổ chức, hộ kinh doanh: phải có thỏa thuận bằng văn bản trước.", "Hóa đơn điều chỉnh/thay thế (F1) vẫn sai: tiếp tục theo đúng hình thức đã chọn lần đầu."], "cards": ["e-invoice-errors", "e-declaration-timing"], "sources": ["r4:7", "r4:8", "r4:42"] },
+        "r-subsequent": { "result": true, "verdict_en": "Adjusting invoice; declare in the period it is issued / received", "verdict_vi": "Hóa đơn điều chỉnh; khai vào kỳ lập (người bán) / kỳ nhận (người mua)", "rules_vi": ["Trả hàng: theo thỏa thuận trong hợp đồng; nếu là tài sản phải đăng ký quyền sở hữu thì người mua lập hóa đơn trả hàng.", "Chiết khấu thương mại: điều chỉnh trên hóa đơn lần mua cuối, kỳ sau, hoặc lập hóa đơn điều chỉnh kèm bảng kê."], "trap_vi": "Khác với lỗi lập sai (khai vào kỳ gốc). Đây là sự kiện phát sinh sau, khai vào kỳ hiện tại.", "cards": ["e-returns-discounts", "e-declaration-timing"], "sources": ["r4:8", "r4:9", "r4:42"] }
+      }
+    }
+  ]
+}

@@ -6,3 +6,5 @@ source/inbox/
 _to_delete/
 *.tgz
 .DS_Store
+
+__pycache__/

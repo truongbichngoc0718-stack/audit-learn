@@ -1,0 +1,522 @@
+[
+ {
+  "id": "d-concept",
+  "part": "D",
+  "group": "Scope & subjects",
+  "title_en": "FCT concept & legislation",
+  "title_vi": "Khái niệm FCT và văn bản áp dụng",
+  "summary_vi": "FCT không phải một sắc thuế riêng: đó là cách gọi nghĩa vụ CIT/PIT và VAT của tổ chức, cá nhân nước ngoài kinh doanh hoặc có thu nhập tại Việt Nam.",
+  "rules_vi": [
+   "Văn bản: Luật 48/2024/QH15 (VAT); Luật 67/2025/QH15 (CIT); Nghị định 181/2025 (VAT); Nghị định 320/2025 (CIT); Thông tư 103/2014 và Thông tư 69/2025 (phần VAT).",
+   "Từ 01/07/2025: các điều 6, 9, 12, 15 Thông tư 103/2014 về VAT-FCT bị thay bằng Điều 9 Thông tư 69/2025.",
+   "Từ kỳ CIT 2025: thuế suất và cách tính CIT-FCT theo Điều 12 khoản 3 Nghị định 320/2025.",
+   "Thông tư 103/2014 vẫn là căn cứ về phạm vi, đối tượng nộp thuế và thủ tục chưa bị thay thế.",
+   "Nhà thầu là cá nhân nước ngoài thì phần thuế thu nhập là PIT."
+  ],
+  "sources": [
+   "r5:2",
+   "r5:3"
+  ],
+  "legal": [
+   "Law 48/2024",
+   "Law 67/2025",
+   "Decree 181/2025",
+   "Decree 320/2025",
+   "Circular 103/2014",
+   "Circular 69/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Is FCT a separate tax?",
+    "a_vi": "Không. FCT là cách gọi nghĩa vụ CIT/PIT và VAT của nhà thầu nước ngoài."
+   }
+  ]
+ },
+ {
+  "id": "d-scope",
+  "part": "D",
+  "group": "Scope & subjects",
+  "title_en": "Scope (7 cases)",
+  "title_vi": "Phạm vi áp dụng: 7 trường hợp",
+  "summary_vi": "Hợp đồng cung cấp dịch vụ, hàng hóa kèm dịch vụ tại VN, nhập xuất khẩu tại chỗ, điều kiện Incoterms, kiểm soát hàng, thương mại tại VN…",
+  "rules_vi": [
+   "1. Kinh doanh hoặc có thu nhập tại VN theo hợp đồng giữa nhà thầu nước ngoài với tổ chức, cá nhân VN hoặc với nhà thầu nước ngoài khác (kể cả nhà thầu phụ).",
+   "2. Cung cấp hàng tại VN dưới hình thức xuất nhập khẩu tại chỗ (trừ gia công trả hàng cho bên nước ngoài).",
+   "3. Phân phối hàng hoặc cung cấp hàng theo điều kiện Incoterms mà người bán chịu rủi ro hàng vào lãnh thổ VN.",
+   "4. Bán hàng cho bên VN kèm dịch vụ thực hiện tại VN (trừ bảo hành tiêu chuẩn).",
+   "5. Thực hiện toàn bộ hay một phần phân phối hàng, cung cấp dịch vụ tại VN mà vẫn giữ quyền sở hữu hàng ký gửi, hoặc chịu trách nhiệm chi phí phân phối, quảng cáo, chất lượng, hoặc quyết định giá.",
+   "6. Đàm phán, ký hợp đồng nhân danh nhà thầu nước ngoài qua tổ chức, cá nhân VN.",
+   "7. Thực hiện quyền xuất khẩu, nhập khẩu, phân phối tại VN; mua hàng để xuất khẩu; bán hàng cho thương nhân VN.",
+   "Xuất nhập khẩu tại chỗ: bên nước ngoài chịu FCT, bên VN khai và nộp thay; gia công trả hàng: bên nước ngoài không có thu nhập, không chịu FCT."
+  ],
+  "sources": [
+   "r5:3",
+   "r5:4",
+   "r5:5",
+   "r5:6"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Is a foreign party supplying goods that Vietnam B will further process and return abroad subject to FCT?",
+    "a_vi": "Không. Bên nước ngoài không có thu nhập tại VN (gia công trả hàng)."
+   }
+  ]
+ },
+ {
+  "id": "d-non-applicable",
+  "part": "D",
+  "group": "Scope & subjects",
+  "title_en": "Non-applicable subjects",
+  "title_vi": "Trường hợp không áp dụng FCT",
+  "summary_vi": "Nhà đầu tư theo luật chuyên ngành, kho ngoại quan, hàng giao tại cửa khẩu không kèm dịch vụ, và dịch vụ thực hiện và tiêu dùng ngoài VN không chịu FCT.",
+  "rules_vi": [
+   "Tổ chức, cá nhân nước ngoài kinh doanh theo Luật Đầu tư, Luật Dầu khí, Luật Các tổ chức tín dụng (công ty con của họ nộp thuế như doanh nghiệp thông thường).",
+   "Sử dụng kho ngoại quan, cảng nội địa (ICD) để vận tải quốc tế, quá cảnh, lưu kho hoặc chế biến cho doanh nghiệp khác.",
+   "Cung cấp hàng cho tổ chức, cá nhân VN không kèm dịch vụ: giao tại cửa khẩu nước ngoài hoặc cửa khẩu VN.",
+   "Dịch vụ thực hiện và tiêu dùng ngoài VN: xếp dỡ tại cảng nước ngoài; luật sư nước ngoài tư vấn dự án đầu tư ra nước ngoài của công ty VN; roadshow quảng bá thương hiệu VN ở nước ngoài. Nơi thực hiện dễ xác định, nơi tiêu dùng mới là chỗ hay sai.",
+   "Dịch vụ thực hiện ngoài VN cho tổ chức, cá nhân VN (không xét nơi tiêu dùng): sửa chữa phương tiện, máy móc; quảng cáo, tiếp thị (trừ marketing online); xúc tiến đầu tư, thương mại; môi giới bán hàng; đào tạo (trừ đào tạo online); chia cước bưu chính, viễn thông quốc tế; thuê vệ tinh, băng thông; sử dụng kho ngoại quan, ICD."
+  ],
+  "sources": [
+   "r5:6",
+   "r5:7"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Nhầm nơi thực hiện với nơi tiêu dùng dịch vụ là lỗi hay gặp.",
+    "src": "r5:27"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Is online training by a foreign company excluded from FCT regardless of place of consumption?",
+    "a_vi": "Không thuộc danh sách loại trừ bất kể nơi tiêu dùng; phải xét thêm nơi tiêu dùng."
+   }
+  ]
+ },
+ {
+  "id": "d-vat-subject",
+  "part": "D",
+  "group": "Scope & subjects",
+  "title_en": "VAT-FCT subject",
+  "title_vi": "Đối tượng chịu VAT của nhà thầu nước ngoài",
+  "summary_vi": "Dịch vụ, dịch vụ gắn với hàng hóa do nhà thầu nước ngoài cung cấp và sử dụng tại VN chịu VAT dù thực hiện trong hay ngoài VN; hàng kèm dịch vụ thì xem hợp đồng có tách giá trị không.",
+  "rules_vi": [
+   "Dịch vụ, dịch vụ gắn với hàng chịu VAT thực hiện trong VN hoặc ngoài VN nhưng sử dụng tại VN (trừ các trường hợp loại trừ).",
+   "Hàng giao trong lãnh thổ VN (không phải cửa khẩu) hoặc hàng kèm dịch vụ thực hiện tại VN (lắp đặt, chạy thử, bảo hành, bảo trì, thay thế): xét hợp đồng.",
+   "Hợp đồng tách giá trị hàng và dịch vụ: giá trị hàng không chịu VAT theo FCT (chỉ VAT khi nhập khẩu); giá trị dịch vụ chịu VAT theo FCT.",
+   "Không tách được (hợp đồng trọn gói): tổng giá trị hợp đồng chịu VAT."
+  ],
+  "sources": [
+   "r5:9"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Hợp đồng tách giá trị",
+    "value": "Hàng: không VAT-FCT; dịch vụ: có",
+    "src": "r5:9"
+   },
+   {
+    "label": "Hợp đồng không tách",
+    "value": "Toàn bộ giá trị chịu VAT",
+    "src": "r5:9"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Goods and services separated in the contract: which part is subject to VAT-FCT?",
+    "a_vi": "Chỉ giá trị dịch vụ; giá trị hàng chỉ chịu VAT khi nhập khẩu."
+   }
+  ]
+ },
+ {
+  "id": "d-cit-subject",
+  "part": "D",
+  "group": "Scope & subjects",
+  "title_en": "CIT-FCT subject",
+  "title_vi": "Đối tượng chịu CIT của nhà thầu nước ngoài",
+  "summary_vi": "Thu nhập từ dịch vụ, hàng kèm dịch vụ, phân phối hàng tại VN và một số khoản thu nhập khác bất kể nơi kinh doanh: bản quyền, lãi vay, chuyển nhượng, bồi thường.",
+  "rules_vi": [
+   "Thu nhập từ dịch vụ, dịch vụ gắn với hàng, cung cấp, phân phối hàng tại VN theo hợp đồng.",
+   "Hàng giao trong lãnh thổ VN hoặc kèm dịch vụ thực hiện tại VN: hợp đồng tách giá trị thì hàng chịu CIT 1% và dịch vụ 5%; không tách thì toàn bộ hợp đồng chịu CIT.",
+   "Bất kể nơi kinh doanh: chuyển nhượng quyền sở hữu, quyền sử dụng tài sản; chuyển nhượng quyền tham gia hợp đồng, dự án kinh tế tại VN; tiền bản quyền (kể cả chuyển giao công nghệ, bản quyền phần mềm); thu nhập từ bán, thanh lý tài sản.",
+   "Lãi tiền vay (kể cả phí bên VN phải trả theo hợp đồng), lãi tiền gửi, lãi chậm thanh toán, lãi trái phiếu, chiết khấu, tín phiếu, chứng chỉ tiền gửi; chuyển nhượng chứng khoán; tiền bồi thường, phạt do vi phạm hợp đồng; thu nhập khác theo luật."
+  ],
+  "sources": [
+   "r5:10",
+   "r5:11"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "CIT-FCT rate for loan interest and royalties?",
+    "a_vi": "10% trên doanh thu (bảng thuế)."
+   }
+  ]
+ },
+ {
+  "id": "d-methods",
+  "part": "D",
+  "group": "Methods",
+  "title_en": "3 methods",
+  "title_vi": "Ba phương pháp: kê khai (VAS), hỗn hợp, trực tiếp",
+  "summary_vi": "VAS: VAT khấu trừ, CIT 20% trên thu nhập tính thuế; hybrid: VAT khấu trừ, CIT theo tỷ lệ; non-VAS (trực tiếp): cả VAT và CIT theo tỷ lệ % trên doanh thu.",
+  "rules_vi": [
+   "VAS method: nhà thầu có PE tại VN hoặc là resident; kinh doanh tại VN theo hợp đồng ≥ 183 ngày kể từ ngày hợp đồng có hiệu lực; đăng ký mã số thuế và áp dụng chế độ kế toán Việt Nam. VAT khấu trừ; CIT 20% trên thu nhập tính thuế của hợp đồng.",
+   "Hybrid method: VAT theo phương pháp khấu trừ và CIT theo tỷ lệ % trên doanh thu; nhà thầu có PE hoặc resident, ≥ 183 ngày và tuân thủ quy định kế toán của Bộ Tài chính.",
+   "Non-VAS (direct): còn lại; bên Việt Nam khấu trừ thuế trước khi thanh toán.",
+   "Với phương pháp trực tiếp và hỗn hợp, bên Việt Nam có trách nhiệm khấu trừ trước khi thanh toán cho nhà thầu hoặc nhà thầu phụ."
+  ],
+  "sources": [
+   "r5:8",
+   "r5:11",
+   "r5:12",
+   "r5:22"
+  ],
+  "mvp": true,
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide r5:11 ghi hybrid \"2/3 conditions\", còn r5:22 liệt kê đủ 3 điều kiện (PE hoặc resident; ≥ 183 ngày; tuân thủ kế toán). Chưa kết luận điều kiện nào được nới; hỏi giảng viên.",
+  "qa": [
+   {
+    "q_en": "Name the three conditions for the VAS method.",
+    "a_vi": "Có PE (hoặc là resident); kinh doanh ≥ 183 ngày từ ngày hợp đồng hiệu lực; đăng ký mã số thuế và áp dụng kế toán Việt Nam."
+   }
+  ]
+ },
+ {
+  "id": "d-hybrid",
+  "part": "D",
+  "group": "Methods",
+  "title_en": "Hybrid method",
+  "title_vi": "Phương pháp hỗn hợp",
+  "summary_vi": "Nhà thầu đăng ký VAT theo phương pháp khấu trừ và nộp CIT theo tỷ lệ trên doanh thu, nếu có PE hoặc là resident, ≥ 183 ngày và tuân thủ kế toán.",
+  "rules_vi": [
+   "Có PE tại VN (theo luật CIT, với tổ chức) hoặc là resident (theo luật PIT, với cá nhân).",
+   "Kinh doanh tại VN theo hợp đồng ít nhất 183 ngày kể từ ngày hợp đồng có hiệu lực.",
+   "Tuân thủ quy định về kế toán của Bộ Tài chính.",
+   "Nhà thầu phụ nước ngoài áp dụng hybrid hoặc kê khai cũng là loại có thể được trừ khỏi doanh thu tính thuế của nhà thầu chính."
+  ],
+  "sources": [
+   "r5:22",
+   "r5:11",
+   "r5:16"
+  ],
+  "mvp": true,
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Xem mâu thuẫn \"2/3 conditions\" ở thẻ 3 methods (slide r5:11 và r5:22).",
+  "qa": [
+   {
+    "q_en": "Under hybrid, how are VAT and CIT computed?",
+    "a_vi": "VAT theo phương pháp khấu trừ; CIT theo tỷ lệ % trên doanh thu."
+   }
+  ]
+ },
+ {
+  "id": "d-nonvas-vat",
+  "part": "D",
+  "group": "Non-VAS computation",
+  "title_en": "Non-VAS VAT",
+  "title_vi": "VAT theo phương pháp trực tiếp",
+  "summary_vi": "VAT phải nộp = doanh thu tính VAT × tỷ lệ VAT; doanh thu tính VAT là toàn bộ doanh thu nhận, không trừ thuế phải nộp, gồm chi phí bên VN trả thay.",
+  "rules_vi": [
+   "Doanh thu tính VAT = tổng doanh thu từ dịch vụ, dịch vụ gắn hàng, không trừ thuế phải nộp, gồm chi phí bên VN trả thay nhà thầu.",
+   "Giá hợp đồng chưa có VAT (net of VAT): gross-up: doanh thu tính VAT = doanh thu chưa VAT / (1 − tỷ lệ VAT).",
+   "Loại khỏi doanh thu tính VAT: phần công việc giao cho nhà thầu phụ (nêu rõ tên và phạm vi trong hợp đồng chính, kèm danh sách) là nhà thầu VN hoặc nhà thầu nước ngoài áp dụng kê khai, hybrid; chỉ loại phần thầu phụ, không loại hàng hóa, vật tư mua vào.",
+   "Thuê phương tiện, máy móc: doanh thu trừ chi phí bên thuê trả trực tiếp (bảo hiểm, bảo trì, đăng ký, người vận hành, vận chuyển về VN) khi có chứng từ.",
+   "Logistics quốc tế từ VN ra nước ngoài: trừ cước vận tải quốc tế trả cho hãng vận tải. Chuyển phát nhanh chiều đi: toàn bộ doanh thu, không trừ.",
+   "Không tách được giá trị từng hoạt động: áp tỷ lệ cao nhất cho toàn hợp đồng."
+  ],
+  "sources": [
+   "r5:13",
+   "r5:14",
+   "r5:15"
+  ],
+  "mvp": true,
+  "formula": "Doanh thu tính VAT (giá net VAT) = doanh thu chưa VAT / (1 − tỷ lệ VAT)\nVAT phải nộp = doanh thu tính VAT × tỷ lệ VAT",
+  "traps": [
+   {
+    "text_vi": "Gross-up sai khi giá hợp đồng là net.",
+    "src": "r5:27"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Gross-up for a VAT-exclusive FCT contract?",
+    "a_vi": "Doanh thu tính VAT = doanh thu chưa VAT / (1 − tỷ lệ VAT)."
+   }
+  ]
+ },
+ {
+  "id": "d-nonvas-cit",
+  "part": "D",
+  "group": "Non-VAS computation",
+  "title_en": "Non-VAS CIT",
+  "title_vi": "CIT theo phương pháp trực tiếp",
+  "summary_vi": "CIT phải nộp = doanh thu tính CIT × tỷ lệ CIT; doanh thu không gồm VAT và gồm chi phí bên VN trả thay.",
+  "rules_vi": [
+   "Doanh thu tính CIT là tổng doanh thu nhận, không trừ thuế phải nộp, không gồm VAT; gồm chi phí bên VN trả thay.",
+   "Giá hợp đồng chưa có CIT: doanh thu tính CIT = doanh thu chưa CIT / (1 − tỷ lệ CIT).",
+   "Nhà thầu phụ: trừ phần doanh thu của nhà thầu phụ nộp thuế (VN, hoặc nước ngoài kê khai/hybrid) nếu tên và phạm vi công việc ghi trong hợp đồng chính và đó là phần việc nhà thầu chính phải làm.",
+   "Nhiều hoạt động: áp tỷ lệ theo doanh thu từng hoạt động; không tách được thì áp tỷ lệ cao nhất cho toàn hợp đồng. Hợp đồng cung cấp máy móc kèm dịch vụ lắp đặt, hướng dẫn, đào tạo, chạy thử: tách được thì tính riêng; không tách thì 2%."
+  ],
+  "sources": [
+   "r5:15",
+   "r5:16",
+   "r5:20"
+  ],
+  "mvp": true,
+  "formula": "Doanh thu tính CIT (giá net CIT) = doanh thu chưa CIT / (1 − tỷ lệ CIT)\nCIT = doanh thu tính CIT × tỷ lệ CIT",
+  "qa": [
+   {
+    "q_en": "CIT-taxable turnover when the contract is net of CIT?",
+    "a_vi": "Doanh thu chưa CIT / (1 − tỷ lệ CIT)."
+   }
+  ]
+ },
+ {
+  "id": "d-nonvas-gross-up",
+  "part": "D",
+  "group": "Non-VAS computation",
+  "title_en": "Gross-up net contracts",
+  "title_vi": "Quy đổi hợp đồng giá net",
+  "summary_vi": "Hợp đồng net của cả hai thuế: gross-up CIT trước, rồi gross-up VAT trên doanh thu đã có CIT.",
+  "rules_vi": [
+   "Net CIT, net VAT: doanh thu tính CIT = giá net / (1 − tỷ lệ CIT) (gross CIT, net VAT).",
+   "Doanh thu tính VAT = doanh thu tính CIT / (1 − tỷ lệ VAT) (gross CIT, gross VAT).",
+   "CIT = doanh thu tính CIT × tỷ lệ CIT; VAT = doanh thu tính VAT × tỷ lệ VAT.",
+   "Hợp đồng giá gross (đã gồm VAT): VAT = giá gross × tỷ lệ VAT; CIT = (giá gross − VAT) × tỷ lệ CIT."
+  ],
+  "sources": [
+   "r5:13",
+   "r5:15"
+  ],
+  "mvp": true,
+  "formula": "Net 2 thuế: CIT turnover = N / (1 − c); VAT turnover = CIT turnover / (1 − v)\nGross: VAT = G × v ; CIT = (G − VAT) × c",
+  "traps": [
+   {
+    "text_vi": "Gross-up sai thứ tự, hoặc gross-up VAT trên giá net chưa cộng CIT.",
+    "src": "r5:27"
+   },
+   {
+    "text_vi": "Không rõ ai chịu thuế trong hợp đồng gross.",
+    "src": "r5:27"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Order of gross-up for a contract net of both CIT and VAT?",
+    "a_vi": "Gross-up CIT trước, rồi gross-up VAT trên doanh thu đã gồm CIT."
+   }
+  ]
+ },
+ {
+  "id": "d-special-cases",
+  "part": "D",
+  "group": "Non-VAS computation",
+  "title_en": "Special cases",
+  "title_vi": "Các trường hợp đặc biệt",
+  "summary_vi": "Thầu phụ, cho thuê, hàng không, hàng hải, logistics, bưu chính, tái bảo hiểm, chứng khoán và tín phiếu.",
+  "rules_vi": [
+   "Cho thuê: doanh thu = tổng tiền thuê trừ chi phí bên thuê trả trực tiếp có chứng từ (bảo hiểm, bảo trì, đăng ký, người vận hành, vận chuyển về VN). CIT: máy bay, trực thăng, tàu (kể cả động cơ, phụ tùng) 2%; giàn khoan, máy móc, thiết bị, phương tiện vận tải khác 5%.",
+   "Hãng hàng không nước ngoài: doanh thu = tổng vé hành khách, vận đơn hàng hóa, phụ thu tại VN, trừ khoản thu hộ Nhà nước (phí sân bay) và hoàn vé (ví dụ 100.000 − (1.000 + 2.000) = 97.000 USD); không chịu VAT.",
+   "Hãng tàu nước ngoài: doanh thu từ cảng bốc tại VN đến cảng dỡ cuối cùng, không gồm cước đã chịu CIT tại cảng VN và cước trả cho doanh nghiệp vận tải VN chặng trung chuyển (ví dụ 100.000 − 20.000 = 80.000 USD).",
+   "Logistics chiều đi: toàn bộ doanh thu trừ cước vận tải quốc tế. Bưu chính chiều đi: toàn bộ doanh thu; chiều về VN không chịu CIT.",
+   "Tái bảo hiểm ra nước ngoài: doanh thu = phí tái bảo hiểm nhận (kể cả hoa hồng, bồi thường); CIT 1%. Chuyển nhượng chứng khoán, trái phiếu, chứng chỉ tiền gửi: toàn bộ doanh thu bán tại thời điểm chuyển nhượng; hoán đổi lãi suất: chênh lệch lãi phải thu và phải trả trong năm dương lịch.",
+   "Tín phiếu kho bạc: doanh thu = (mệnh giá − giá mua bình quân gia quyền) × số tín phiếu giữ đến đáo hạn (FIFO).",
+   "Nhà thầu phụ: trừ khỏi doanh thu phần việc giao cho nhà thầu phụ VN hoặc nhà thầu phụ nước ngoài kê khai/hybrid nếu tên, phạm vi ghi trong hợp đồng chính; chỉ loại phần thầu phụ, không loại hàng hóa, vật tư mua vào (xem thẻ non-VAS VAT).",
+   "Hợp đồng nhiều hoạt động không tách được giá trị: áp tỷ lệ cao nhất cho cả hợp đồng; hợp đồng bán máy móc kèm dịch vụ không tách giá: 2% (xem thẻ non-VAS CIT)."
+  ],
+  "sources": [
+   "r5:16",
+   "r5:17",
+   "r5:18",
+   "r5:19",
+   "r5:20"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Revenue subject to CIT for a foreign airline with collected airport fee and ticket refunds?",
+    "a_vi": "Tổng doanh thu trừ phí sân bay thu hộ Nhà nước và tiền hoàn vé (ví dụ 100.000 − 3.000 = 97.000 USD)."
+   }
+  ]
+ },
+ {
+  "id": "d-rates",
+  "part": "D",
+  "group": "Non-VAS computation",
+  "title_en": "FCT rates (tables)",
+  "title_vi": "Tỷ lệ VAT và CIT theo bảng thuế",
+  "summary_vi": "Bảng thuế đề thi cho sẵn tỷ lệ VAT và CIT trên doanh thu; cần chọn đúng dòng theo bản chất hợp đồng.",
+  "rules_vi": [
+   "VAT: dịch vụ, cho thuê, bảo hiểm 5%; sản xuất, vận tải, dịch vụ kèm hàng, xây lắp có vật tư, sửa chữa, ăn uống, trọn gói 3%; xây lắp không vật tư 5%; kinh doanh khác chịu 10%: 3%; chịu 5% và chưa liệt kê: 2%; thương mại điện tử, nền tảng số: 10%.",
+   "CIT: thương mại 1%; dịch vụ, cho thuê máy móc, bảo hiểm, cho thuê giàn khoan 5%; quản lý nhà hàng, khách sạn, casino 10%; cho thuê máy bay, tàu biển 2%; xây dựng, lắp đặt, trọn gói 2%; khác và vận tải 2%; chứng khoán, tái bảo hiểm 0,1%; phái sinh 2%; lãi vay 10%; bản quyền 10%; chuyển nhượng vốn, cổ phần 2%.",
+   "Xem trang Bảng thuế để tra đầy đủ từng dòng."
+  ],
+  "sources": [
+   "tt:1",
+   "tt:2"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "FCT CIT rate for services versus construction?",
+    "a_vi": "Dịch vụ 5%; xây dựng, lắp đặt 2% (VAT: xây lắp có vật tư 3%, không có vật tư 5%)."
+   }
+  ]
+ },
+ {
+  "id": "d-mixed-contracts",
+  "part": "D",
+  "group": "Non-VAS computation",
+  "title_en": "Mixed contracts example",
+  "title_vi": "Ví dụ hợp đồng hỗn hợp hàng + dịch vụ (nhà máy điện)",
+  "summary_vi": "Hợp đồng nhà máy điện 75 triệu USD: tách được thì mỗi cấu phần một tỷ lệ; không tách thì VAT 3% và CIT 2% trên toàn hợp đồng.",
+  "rules_vi": [
+   "Trường hợp 1 (tách được): máy móc thiết bị chịu VAT nhập khẩu 30 triệu: không VAT-FCT, CIT 1%; máy móc không chịu VAT 15 triệu: không VAT, CIT 1%; bảo hành kèm theo 5 triệu: VAT 5%, CIT 5%; thiết kế dây chuyền công nghệ 5 triệu: VAT 5%, CIT 5%.",
+   "Xây dựng, lắp đặt 15 triệu: VAT 3%, CIT 2%; giám sát và hướng dẫn lắp đặt 3 triệu: VAT 5%, CIT 5%; đào tạo vận hành, chạy thử 2 triệu: VAT 5%, CIT 5%.",
+   "Trường hợp 2 (không tách được, hoặc không đủ chứng từ nộp VAT nhập khẩu cho máy móc): VAT 3% và CIT 2% trên toàn bộ 75 triệu.",
+   "Trường hợp 3 (có thầu phụ VN hoặc thầu phụ nước ngoài kê khai/hybrid): nhà thầu chính chỉ tính VAT 5%, CIT 5% trên phần dịch vụ còn lại (giám sát, hướng dẫn lắp đặt)."
+  ],
+  "sources": [
+   "r5:21",
+   "r5:22"
+  ],
+  "mvp": true,
+  "example": {
+   "q_en": "Power plant contract USD75m: supervision and installation guide USD3m, VAT and CIT?",
+   "a_vi": "VAT = 5% × 3 triệu USD = 0,15 triệu USD; CIT = 5% × 3 triệu USD = 0,15 triệu USD (dịch vụ giám sát, hướng dẫn lắp đặt).",
+   "src": "r5:21"
+  },
+  "traps": [
+   {
+    "text_vi": "Hợp đồng hỗn hợp hàng + dịch vụ áp sai tỷ lệ là lỗi hay gặp.",
+    "src": "r5:28"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Mixed contract where goods and services cannot be separated: rates?",
+    "a_vi": "VAT 3% và CIT 2% trên toàn bộ giá trị hợp đồng."
+   }
+  ]
+ },
+ {
+  "id": "d-admin",
+  "part": "D",
+  "group": "Administration & DTA",
+  "title_en": "FCT administration",
+  "title_vi": "Khai và nộp thuế nhà thầu",
+  "summary_vi": "Khai theo từng lần phát sinh trong 10 ngày hoặc theo tháng vào ngày 20 tháng sau; cuối hợp đồng thì quyết toán.",
+  "rules_vi": [
+   "Nhà thầu áp dụng non-VAS (phương pháp trực tiếp): khai theo từng lần phát sinh nghĩa vụ thuế trong 10 ngày, hoặc theo tháng chậm nhất ngày 20 tháng sau (đã đăng ký).",
+   "Quyết toán khi thanh lý hợp đồng.",
+   "Nhà cung cấp nước ngoài thương mại điện tử, nền tảng số tự khai, nộp online theo quý (Thông tư 80/2021): xem thẻ e-commerce."
+  ],
+  "sources": [
+   "r5:23",
+   "r1:5"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "FCT declaration deadlines under the direct method?",
+    "a_vi": "Từng lần phát sinh: 10 ngày; theo tháng: ngày 20 tháng sau (đã đăng ký)."
+   }
+  ]
+ },
+ {
+  "id": "d-ecommerce",
+  "part": "D",
+  "group": "Administration & DTA",
+  "title_en": "E-commerce / digital (direct filing)",
+  "title_vi": "Nhà cung cấp nước ngoài thương mại điện tử, nền tảng số",
+  "summary_vi": "Nhà cung cấp nước ngoài không có PE tự đăng ký, khai quý và nộp online (ví dụ Google, Meta, TikTok) theo tỷ lệ trực tiếp; nếu không thì bên Việt Nam hoặc ngân hàng khấu trừ.",
+  "rules_vi": [
+   "Được cấp mã số thuế, khai VAT và CIT theo quý trên cổng của Tổng cục Thuế, nộp online (Thông tư 80/2021).",
+   "Áp dụng tỷ lệ của phương pháp trực tiếp (VAT 10% với dịch vụ thương mại điện tử, nền tảng số theo bảng thuế).",
+   "Không tự đăng ký: tổ chức, doanh nghiệp VN khấu trừ và khai thay.",
+   "Người mua là cá nhân: ngân hàng hoặc trung gian thanh toán khấu trừ khai theo tháng, hoặc theo dõi và báo cáo thanh toán cho cơ quan thuế hằng tháng."
+  ],
+  "sources": [
+   "r5:23",
+   "r5:24",
+   "tt:1"
+  ],
+  "mvp": true,
+  "legal": [
+   "Circular 80/2021"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Who must withhold FCT if a foreign digital supplier does not register in Vietnam?",
+    "a_vi": "Tổ chức VN mua dịch vụ khấu trừ và khai thay; với người mua cá nhân thì ngân hàng hoặc trung gian thanh toán khấu trừ hoặc báo cáo hằng tháng."
+   }
+  ]
+ },
+ {
+  "id": "d-dta-procedure",
+  "part": "D",
+  "group": "Administration & DTA",
+  "title_en": "DTA procedure",
+  "title_vi": "Hiệp định thuế: hồ sơ và thủ tục",
+  "summary_vi": "Muốn hưởng ưu đãi hiệp định cần mẫu 01/HTQT, giấy chứng nhận cư trú đã hợp pháp hóa, hợp đồng và chứng từ thu nhập, thanh toán.",
+  "rules_vi": [
+   "Văn bản: Thông tư 205/2013 (áp dụng DTA), Thông tư 80/2021 (thủ tục, mẫu 01/HTQT), các luật thuế trong nước, các hiệp định song phương (VN có hiệp định với hơn 80 nước).",
+   "DTA ưu tiên hơn luật trong nước khi mâu thuẫn; DTA quy định mức thuế riêng cho cổ tức, lãi, bản quyền, thu nhập dịch vụ.",
+   "Hồ sơ: thư đề nghị hưởng DTA (01/HTQT); Certificate of Residence (hợp pháp hóa lãnh sự trừ khi được miễn); hợp đồng gốc; hóa đơn, biên bản nghiệm thu, chứng từ chuyển tiền quốc tế."
+  ],
+  "sources": [
+   "r5:25",
+   "r5:26"
+  ],
+  "qa": [
+   {
+    "q_en": "Which documents support a DTA claim?",
+    "a_vi": "01/HTQT, giấy chứng nhận cư trú, hợp đồng, chứng từ thu nhập và thanh toán."
+   }
+  ]
+ },
+ {
+  "id": "d-exam-traps",
+  "part": "D",
+  "group": "Administration & DTA",
+  "title_en": "FCT examiner’s notes",
+  "title_vi": "Lỗi hay gặp trong bài FCT",
+  "summary_vi": "Phân biệt nơi thực hiện và nơi tiêu dùng, gross-up giá net, ai chịu thuế khi hợp đồng gross, và tỷ lệ của hợp đồng hỗn hợp.",
+  "rules_vi": [
+   "Không phân biệt rõ dịch vụ thực hiện và tiêu dùng tại VN với ngoài VN dẫn đến áp FCT sai.",
+   "Gross-up sai khi giá hợp đồng là net, làm sai nghĩa vụ thuế bên VN chịu.",
+   "Không rõ ai chịu thuế trong hợp đồng gross và trách nhiệm liên quan.",
+   "Nhầm tỷ lệ khi hợp đồng hỗn hợp hàng hóa và dịch vụ, nhất là máy móc nhập khẩu kèm phí lắp đặt."
+  ],
+  "sources": [
+   "r5:27",
+   "r5:28"
+  ],
+  "traps": [
+   {
+    "text_vi": "Bốn lỗi: nơi thực hiện/tiêu dùng; gross-up net; ai chịu thuế trong hợp đồng gross; tỷ lệ hợp đồng hỗn hợp.",
+    "src": "r5:27"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Name common FCT exam errors.",
+    "a_vi": "Nhầm nơi thực hiện/tiêu dùng; gross-up sai; không rõ ai chịu thuế trong hợp đồng gross; tỷ lệ sai ở hợp đồng hỗn hợp."
+   }
+  ]
+ }
+]

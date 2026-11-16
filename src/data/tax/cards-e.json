@@ -1,0 +1,984 @@
+[
+ {
+  "id": "e-law",
+  "part": "E",
+  "group": "Invoices",
+  "title_en": "VAT & invoice legislation",
+  "title_vi": "Văn bản VAT và hóa đơn",
+  "summary_vi": "VAT theo Luật 48/2024, NĐ 181/2025, TT 69/2025; hóa đơn theo Luật QLT 2019, NĐ 123/2020 sửa đổi bởi NĐ 70/2025, TT 78/2021.",
+  "rules_vi": [
+   "VAT: Luật 48/2024/QH15; Nghị định 181/2025/NĐ-CP; Thông tư 69/2025/TT-BTC.",
+   "Hóa đơn: Luật Quản lý thuế 2019 (từ 01/07/2020); NĐ 123/2020 (từ 01/07/2022); NĐ 70/2025 (từ 20/03/2025) sửa đổi, bổ sung NĐ 123/2020; TT 78/2021; QĐ 1832/QĐ-BTC."
+  ],
+  "sources": [
+   "r4:2",
+   "r4:10"
+  ],
+  "legal": [
+   "Law 48/2024",
+   "Decree 181/2025",
+   "Decree 123/2020",
+   "Decree 70/2025",
+   "Circular 69/2025",
+   "Circular 78/2021"
+  ],
+  "flags": [
+   "new"
+  ]
+ },
+ {
+  "id": "e-invoice-content",
+  "part": "E",
+  "group": "Invoices",
+  "title_en": "E-invoice definition & content",
+  "title_vi": "Hóa đơn điện tử: định nghĩa và nội dung",
+  "summary_vi": "Hóa đơn là chứng từ kế toán do người bán lập ghi nhận việc bán hàng, cung cấp dịch vụ; phải có đủ thông tin người bán, người mua, hàng hóa, thuế và ký số chậm nhất ngày làm việc tiếp theo.",
+  "rules_vi": [
+   "Người bán phải lập và gửi hóa đơn cho người mua, kể cả hàng khuyến mại, quảng cáo, mẫu, biếu tặng, trao đổi, trả thay lương, tiêu dùng nội bộ (trừ luân chuyển nội bộ trong sản xuất), cho thuê, cho mượn, trả lại.",
+   "Thông tin: tên, mã số thuế, địa chỉ người bán và người mua; tên hàng, đơn vị tính, số lượng, đơn giá; tiền trước thuế, thuế suất, tiền thuế, tổng thanh toán (VND làm tròn đến đơn vị đồng, hoặc ngoại tệ nếu mua bán bằng ngoại tệ).",
+   "Ngày ký số: chậm nhất ngày làm việc tiếp theo kể từ ngày lập hóa đơn.",
+   "Kỳ khai thuế: người bán theo ngày lập hóa đơn; người mua theo ngày nhận hóa đơn."
+  ],
+  "sources": [
+   "r4:3",
+   "r4:4"
+  ],
+  "qa": [
+   {
+    "q_en": "Deadline to digitally sign an e-invoice?",
+    "a_vi": "Chậm nhất ngày làm việc tiếp theo kể từ ngày lập hóa đơn."
+   }
+  ]
+ },
+ {
+  "id": "e-invoicing-time",
+  "part": "E",
+  "group": "Invoices",
+  "title_en": "Invoicing time",
+  "title_vi": "Thời điểm lập hóa đơn",
+  "summary_vi": "Hàng hóa: khi chuyển quyền sở hữu hoặc quyền sử dụng; dịch vụ: khi hoàn thành (hoặc khi thu tiền nếu thu trước); xây lắp: khi nghiệm thu bàn giao.",
+  "rules_vi": [
+   "Bán hàng: ngày chuyển giao quyền sở hữu hoặc quyền sử dụng, bất kể đã thu tiền hay chưa.",
+   "Xuất khẩu hàng (mới): do người bán xác định, nhưng chậm nhất ngày làm việc tiếp theo ngày hàng được thông quan.",
+   "Dịch vụ: ngày hoàn thành dịch vụ, bất kể thu tiền hay chưa. Nếu thu tiền trước hoặc trong khi cung cấp dịch vụ: lập hóa đơn khi thu tiền (trừ tiền đặt cọc, tạm ứng bảo đảm thực hiện dịch vụ: kế toán, kiểm toán, tư vấn tài chính và thuế, tư vấn giám sát, thiết kế kỹ thuật và dự án đầu tư).",
+   "Giao hàng nhiều lần: lập hóa đơn cho mỗi lần giao.",
+   "Dịch vụ phát sinh số lượng lớn, thường xuyên (điện, nước, viễn thông, vận tải, logistics, CNTT, ngân hàng, chứng khoán…): ngày hoàn tất đối soát số liệu nhưng chậm nhất ngày 07 của tháng sau (hoặc 07 ngày kể từ ngày kết thúc kỳ quy ước). Dịch vụ viễn thông, CNTT phải đối soát kết nối: chậm nhất 2 tháng kể từ tháng phát sinh cước kết nối.",
+   "Xây dựng, lắp đặt: ngày nghiệm thu, bàn giao công trình, hạng mục hoặc khối lượng hoàn thành, bất kể thu tiền hay chưa.",
+   "Bất động sản: ngày bàn giao; nếu chưa chuyển quyền thì mỗi lần thu tiền theo tiến độ trong hợp đồng."
+  ],
+  "sources": [
+   "r4:4",
+   "r4:5"
+  ],
+  "qa": [
+   {
+    "q_en": "Invoicing time for a service when payment is received before completion?",
+    "a_vi": "Thời điểm thu tiền (trừ tiền đặt cọc, tạm ứng bảo đảm thực hiện các dịch vụ kế toán, kiểm toán, tư vấn…)."
+   }
+  ]
+ },
+ {
+  "id": "e-invoice-special",
+  "part": "E",
+  "group": "Invoices",
+  "title_en": "Special invoices",
+  "title_vi": "Hóa đơn các trường hợp đặc biệt",
+  "summary_vi": "Quà tặng: lập khi chuyển quyền sở hữu, tính theo giá thị trường; khuyến mại đăng ký theo Luật Thương mại: hóa đơn tổng tiền thanh toán bằng 0; điều chuyển tài sản: lệnh điều chuyển hoặc hóa đơn tùy quan hệ.",
+  "rules_vi": [
+   "Quà tặng khách hàng: lập khi chuyển quyền sở hữu; giá tính VAT là giá bán hàng hóa, dịch vụ cùng loại hoặc tương đương tại thời điểm tặng; được lập một hóa đơn cho tổng giá trị kèm bảng kê (mới).",
+   "Hàng khuyến mại đã đăng ký theo Luật Thương mại: ghi rõ là hàng khuyến mại, mẫu, quảng cáo, biếu tặng; thuế suất từng loại; đơn giá; tổng tiền thanh toán bằng 0; có thể lập một hóa đơn tổng kèm bảng kê (mới).",
+   "Điều chuyển tài sản giữa các đơn vị phụ thuộc trong cùng một tổ chức, hoặc khi chia, tách, hợp nhất, sáp nhập, chuyển đổi doanh nghiệp: lệnh điều chuyển kèm chứng từ nguồn gốc tài sản, không cần hóa đơn.",
+   "Điều chuyển giữa các đơn vị độc lập hoặc công ty con có tư cách pháp nhân cùng tổ chức: lập hóa đơn như bán hàng."
+  ],
+  "sources": [
+   "r4:6",
+   "r4:7"
+  ],
+  "qa": [
+   {
+    "q_en": "Total payment shown on the invoice for registered promotional goods?",
+    "a_vi": "Bằng 0."
+   }
+  ]
+ },
+ {
+  "id": "e-invoice-errors",
+  "part": "E",
+  "group": "Invoices",
+  "title_en": "Invoice errors",
+  "title_vi": "Hóa đơn sai sót: điều chỉnh, thay thế, thông báo",
+  "summary_vi": "Sai tên, địa chỉ nhưng đúng mã số thuế: thông báo (mẫu 04/SS-HĐĐT); sai mã số thuế, số tiền, thuế suất, tiền thuế hoặc hàng hóa: lập hóa đơn điều chỉnh hoặc thay thế.",
+  "rules_vi": [
+   "Sai tên, địa chỉ người mua, đúng mã số thuế: không phải lập hóa đơn mới; thông báo cho người mua và cơ quan thuế theo mẫu 04/SS-HĐĐT.",
+   "Sai mã số thuế, số tiền, thuế suất, tiền thuế, hàng hóa: lập hóa đơn điều chỉnh (ghi \"Điều chỉnh cho hóa đơn…\") hoặc hóa đơn thay thế (ghi \"Thay thế cho hóa đơn…\").",
+   "Nhiều hóa đơn cùng sai với cùng người mua trong cùng tháng: một hóa đơn điều chỉnh/thay thế kèm Phụ lục 01/BK-ĐCTT.",
+   "Người mua là doanh nghiệp, tổ chức, hộ kinh doanh: cần có thỏa thuận bằng văn bản trước khi điều chỉnh/thay thế; người mua là cá nhân: thông báo trực tiếp hoặc qua website người bán.",
+   "NĐ 70/2025: bỏ quy định hủy hóa đơn điện tử lập sai.",
+   "Hóa đơn F1 điều chỉnh F0 vẫn sai: nếu chọn điều chỉnh thì lập F2 điều chỉnh F0; nếu chọn thay thế thì lập F2 thay thế F1 (và F0 đã bị F1 thay thế)."
+  ],
+  "sources": [
+   "r4:7",
+   "r4:8"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Nhầm hóa đơn điều chỉnh với thay thế; sai chọn loại là lỗi hay gặp ở câu hóa đơn.",
+    "src": "r4:50"
+   }
+  ],
+  "legal": [
+   "Decree 70/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Wrong buyer address but correct tax code: which handling?",
+    "a_vi": "Không lập hóa đơn mới; thông báo người mua và cơ quan thuế bằng mẫu 04/SS-HĐĐT."
+   }
+  ]
+ },
+ {
+  "id": "e-returns-discounts",
+  "part": "E",
+  "group": "Invoices",
+  "title_en": "Returns & trade discounts",
+  "title_vi": "Trả lại hàng và chiết khấu thương mại",
+  "summary_vi": "Trả hàng và chiết khấu cần hóa đơn điều chỉnh; bên báo cáo theo kỳ lập (người bán) hoặc kỳ nhận (người mua) hóa đơn điều chỉnh.",
+  "rules_vi": [
+   "Theo NĐ 70/2025 (từ 01/06/2025): trả lại hàng được xử lý theo thỏa thuận trong hợp đồng; người mua là đơn vị có tài sản đăng ký thì người mua lập hóa đơn trả hàng, các trường hợp mặc định còn lại người bán lập hóa đơn điều chỉnh.",
+   "Chiết khấu thương mại: người bán điều chỉnh trên hóa đơn của lần mua cuối hoặc kỳ tiếp theo, hoặc lập hóa đơn điều chỉnh kèm bảng kê.",
+   "Kê khai VAT: người bán báo cáo ở kỳ lập hóa đơn điều chỉnh; người mua ở kỳ nhận hóa đơn điều chỉnh."
+  ],
+  "sources": [
+   "r4:8",
+   "r4:9",
+   "r4:42"
+  ],
+  "mvp": true,
+  "legal": [
+   "Decree 70/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Which period does the buyer report an adjustment invoice for returned goods?",
+    "a_vi": "Kỳ nhận hóa đơn điều chỉnh."
+   }
+  ]
+ },
+ {
+  "id": "e-scope-taxpayer",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "Scope & taxpayers",
+  "title_vi": "Phạm vi và người nộp thuế VAT",
+  "summary_vi": "Hàng hóa, dịch vụ dùng cho sản xuất, kinh doanh và tiêu dùng tại VN (kể cả nhập khẩu); người nộp thuế gồm cả tổ chức VN mua dịch vụ của nhà cung cấp nước ngoài không có PE và nền tảng số.",
+  "rules_vi": [
+   "Người nộp VAT: tổ chức, hộ, cá nhân sản xuất, kinh doanh hàng hóa, dịch vụ chịu thuế; tổ chức, cá nhân nhập khẩu hàng chịu thuế.",
+   "Tổ chức, cá nhân tại VN mua dịch vụ (kể cả dịch vụ gắn với hàng) của nhà cung cấp nước ngoài không có PE hoặc của cá nhân nước ngoài không cư trú, trừ thương mại điện tử, nền tảng số (kể cả mua hàng hóa, dịch vụ cho hoạt động dầu khí).",
+   "Mới: nhà cung cấp thương mại điện tử, nền tảng số (kể cả nhà cung cấp nước ngoài chưa đăng ký tại VN) là người nộp thuế; tổ chức quản lý nền tảng số hoặc doanh nghiệp tại VN áp dụng phương pháp khấu trừ có trách nhiệm khấu trừ và nộp thay nhà cung cấp nước ngoài."
+  ],
+  "sources": [
+   "r4:10",
+   "r4:11"
+  ],
+  "legal": [
+   "Law 48/2024"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Who pays VAT on services bought from a foreign supplier without a PE?",
+    "a_vi": "Bên VN mua dịch vụ (khấu trừ và nộp thay), trừ thương mại điện tử, nền tảng số theo quy định riêng."
+   }
+  ]
+ },
+ {
+  "id": "e-non-taxable",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "Non-taxable groups [1]-[12]",
+  "title_vi": "Đối tượng không chịu thuế",
+  "summary_vi": "Mười hai nhóm: nông nghiệp, xã hội, theo cam kết quốc tế, do Nhà nước chi trả, tài chính, chuyển nhượng, khoáng sản chưa chế biến xuất khẩu, vàng nhập khẩu, cá nhân ≤ 200 triệu, tài sản phi kinh doanh, dự trữ quốc gia và phí, hàng nhập đặc biệt.",
+  "rules_vi": [
+   "[1] Nông nghiệp: sản phẩm trồng trọt, chăn nuôi, thủy sản chưa chế biến hoặc chỉ sơ chế; giống vật nuôi, cây trồng; thức ăn chăn nuôi, thủy sản; dịch vụ tưới tiêu, cày bừa, nạo vét kênh mương, thu hoạch; muối; phân bón.",
+   "[2] Xã hội: bảo hiểm cho người, vật nuôi, cây trồng, tàu cá, tái bảo hiểm; y tế, thú y; chăm sóc người cao tuổi, người khuyết tật; giáo dục, dạy nghề; duy trì vườn thú, công viên, chiếu sáng công cộng, mai táng; vận tải hành khách công cộng; xuất bản, nhập khẩu, phát hành báo, tạp chí, sách chính trị, giáo khoa…; hàng viện trợ nhân đạo; công trình công ích do đóng góp ≥ 50%.",
+   "[3] Cam kết quốc tế: tạm nhập tái xuất, tạm xuất tái nhập, chuyển khẩu, quá cảnh; nguyên liệu nhập khẩu gia công xuất khẩu; hàng hóa, dịch vụ giữa nước ngoài và khu phi thuế quan.",
+   "[4] Nhà nước chi trả: bán nhà thuộc sở hữu nhà nước cho người đang thuê; phát thanh, truyền hình bằng ngân sách; vũ khí, phương tiện chuyên dùng quốc phòng, an ninh.",
+   "[5] Dịch vụ tài chính, ngân hàng, chứng khoán. Mới: bán tài sản bảo đảm nợ chỉ không chịu thuế với tổ chức 100% vốn nhà nước do Chính phủ thành lập để xử lý nợ xấu; ngân hàng bán tài sản bảo đảm thì chịu VAT.",
+   "[6] Chuyển nhượng quyền sử dụng đất; chuyển giao công nghệ, chuyển nhượng sở hữu trí tuệ; phần mềm máy tính (sản phẩm và dịch vụ phần mềm).",
+   "[7] (mới) Xuất khẩu khoáng sản, tài nguyên chưa chế biến thuộc danh mục. [8] Vàng nhập khẩu dạng thỏi, miếng chưa chế tác.",
+   "[9] Hàng hóa, dịch vụ của cá nhân kinh doanh có doanh thu năm từ 200 triệu đồng trở xuống.",
+   "[10] Tài sản bán bởi tổ chức, cá nhân không kinh doanh (trước đây: không phải kê khai nộp thuế). [11] Hàng dự trữ quốc gia do cơ quan dự trữ bán; phí, lệ phí theo luật. [12] Hàng nhập đặc biệt: quà tặng miễn thuế, quà ngoại giao, hành lý miễn thuế, viện trợ thiên tai, dịch bệnh, hàng của cư dân biên giới trong định mức, cổ vật, di vật, bảo vật quốc gia.",
+   "Không chịu thuế: không được khấu trừ VAT đầu vào, không được hoàn; hóa đơn ghi \"KCT\"."
+  ],
+  "sources": [
+   "r4:11",
+   "r4:12",
+   "r4:13",
+   "r4:14",
+   "r4:23"
+  ],
+  "mvp": true,
+  "traps": [
+   {
+    "text_vi": "Nhầm không chịu thuế (KCT) với thuế suất 0%.",
+    "src": "r4:50"
+   }
+  ],
+  "legal": [
+   "Law 48/2024"
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Ngưỡng cá nhân kinh doanh: slide VAT ghi 200 triệu (không chịu VAT), bảng thuế PIT dùng 100 triệu. Hai ngưỡng ở hai luật khác nhau; khi thi xem đề cho số nào và ghi rõ luật.",
+  "qa": [
+   {
+    "q_en": "Are unprocessed agricultural products sold by the farmer subject to VAT?",
+    "a_vi": "Không chịu thuế (nhóm [1])."
+   }
+  ]
+ },
+ {
+  "id": "e-not-required-declare",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "Not required to declare and pay VAT",
+  "title_vi": "Không phải kê khai, tính nộp VAT",
+  "summary_vi": "Các khoản không phải giá tính thuế, như bồi thường, thưởng, hỗ trợ, thu nhập tài chính: lập phiếu thu, chi, không lập hóa đơn; VAT đầu vào của hoạt động này vẫn được khấu trừ đầy đủ.",
+  "rules_vi": [
+   "Khoản bồi thường, thưởng, hỗ trợ, chuyển nhượng quyền phát thải và thu nhập tài chính khác: lập chứng từ thu, chi, không lập hóa đơn. Bồi thường bằng hàng hóa, dịch vụ thì bên bồi thường lập hóa đơn như bán hàng, bên nhận kê khai và khấu trừ.",
+   "Nhận tiền, hỗ trợ từ bên khác để thực hiện dịch vụ (sửa chữa, bảo hành, khuyến mại, quảng cáo) thì phải kê khai nộp thuế.",
+   "Không liên quan đến bán hàng, cung cấp dịch vụ: tiền thu hồi từ bên thứ ba trong bảo hiểm; tiền thu hộ; phí, thù lao do cơ quan nhà nước trả cho việc thu hộ; thu nhập tài chính (lãi tiền gửi); tiêu dùng nội bộ phục vụ hoạt động kinh doanh; điều chuyển tài sản giữa đơn vị hạch toán phụ thuộc; điều chuyển khi tái cơ cấu; góp vốn.",
+   "5% (đề thi 2026 và 06/2027): doanh nghiệp, hợp tác xã nộp thuế khấu trừ bán sản phẩm trồng trọt, chăn nuôi, thủy sản chưa chế biến hoặc sơ chế: bán cho doanh nghiệp, HTX khác để kinh doanh thương mại thì không phải kê khai, nộp thuế nhưng được khấu trừ đầu vào; bán không để kinh doanh thương mại thì kê khai, nộp 5%.",
+   "Luật 149, hiệu lực từ 01/01/2026: nhóm này được xếp lại thành \"không phải kê khai, tính nộp thuế\"."
+  ],
+  "sources": [
+   "r4:14",
+   "r4:15",
+   "r4:23"
+  ],
+  "mvp": true,
+  "legal": [
+   "Decree 181/2025",
+   "Law 149"
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide ghi 5% VAT áp dụng cho đề thi 2026 và 06/2027, nhưng chú thích Luật 149 (từ 01/01/2026) chuyển nhóm này thành \"không phải kê khai, tính nộp thuế\". Làm bài theo slide (5% cho kỳ thi 2026 đến 06/2027); xác nhận lại với giảng viên.",
+  "qa": [
+   {
+    "q_en": "Is a bank deposit interest received by a business a VAT-taxable price?",
+    "a_vi": "Không. Thu nhập tài chính không phải giá tính thuế; không lập hóa đơn."
+   }
+  ]
+ },
+ {
+  "id": "e-zero-rate",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "0% goods & services + conditions",
+  "title_vi": "Thuế suất 0% và hồ sơ",
+  "summary_vi": "Hàng hóa, dịch vụ xuất khẩu: thuế đầu ra bằng 0 nhưng vẫn được khấu trừ và hoàn VAT đầu vào; hồ sơ gồm hợp đồng, tờ khai hải quan, chứng từ thanh toán không dùng tiền mặt.",
+  "rules_vi": [
+   "Hàng xuất khẩu: bán cho tổ chức, cá nhân nước ngoài và tiêu dùng ngoài VN; bán cho doanh nghiệp trong khu phi thuế quan tiêu dùng trong khu để sản xuất xuất khẩu; xuất khẩu tại chỗ; hàng bán tại khu cách ly cho cá nhân đã làm thủ tục xuất cảnh (mới); hàng bán tại cửa hàng miễn thuế (mới); hàng gia công chuyển tiếp xuất khẩu; phụ tùng, vật tư cung cấp cho bên nước ngoài sửa chữa và tiêu dùng ngoài VN; hàng không chịu thuế khi xuất khẩu (trừ trường hợp không được áp 0%).",
+   "Dịch vụ xuất khẩu: cung cấp trực tiếp cho bên nước ngoài và tiêu dùng ngoài VN; cho tổ chức trong khu phi thuế quan; vận tải quốc tế; cho thuê phương tiện vận tải sử dụng ngoài VN; dịch vụ hàng không, hàng hải cho vận tải quốc tế; xây dựng, lắp đặt ở nước ngoài hoặc trong khu phi thuế quan; nội dung số cung cấp cho bên nước ngoài, có chứng minh tiêu dùng ngoài VN (mới).",
+   "Vận tải quốc tế: từ VN ra nước ngoài, từ nước ngoài vào VN, hoặc cả điểm đi và đến đều ở nước ngoài; hợp đồng vận tải quốc tế có chặng nội địa thì chặng nội địa cũng thuộc vận tải quốc tế.",
+   "Dịch vụ hàng không 0% thực hiện trong sân bay, cảng hàng không quốc tế: suất ăn trên máy bay, cất hạ cánh, đỗ máy bay, an ninh, soi chiếu hành khách, hành lý, hàng hóa, phục vụ mặt đất, kỹ thuật, kéo đẩy, cầu hành khách, điều hành bay, bốc xếp hàng hóa, sửa chữa bảo dưỡng máy bay, tra nạp nhiên liệu cho chuyến bay quốc tế. Dịch vụ hàng hải 0% trong khu vực cảng: lai dắt, hoa tiêu, cứu hộ, cầu bến, bốc xếp, đóng mở hầm hàng, vệ sinh hầm hàng, kiểm đếm, đăng kiểm, sửa chữa tàu.",
+   "Điều kiện áp 0%: hợp đồng bán, gia công hàng xuất khẩu hoặc ủy thác xuất khẩu; chứng từ thanh toán không dùng tiền mặt; tờ khai hải quan. Mới: thêm packing list, chứng từ vận tải và tờ khai nhập khẩu của người mua nước ngoài."
+  ],
+  "sources": [
+   "r4:16",
+   "r4:17",
+   "r4:18",
+   "r4:19",
+   "r4:37"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Thuế đầu ra",
+    "value": "0",
+    "src": "r4:16"
+   },
+   {
+    "label": "Khấu trừ đầu vào và hoàn thuế",
+    "value": "Có",
+    "src": "r4:23"
+   }
+  ],
+  "legal": [
+   "Law 48/2024"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Why is 0% better than non-taxable for an exporter?",
+    "a_vi": "Đầu ra bằng 0 nhưng VAT đầu vào vẫn được khấu trừ và hoàn."
+   }
+  ]
+ },
+ {
+  "id": "e-zero-not-entitled",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "Not entitled to 0%",
+  "title_vi": "Trường hợp không được áp 0%",
+  "summary_vi": "Dịch vụ tín dụng, phái sinh, chuyển giao công nghệ, bưu chính viễn thông, tái bảo hiểm ra nước ngoài, thuốc lá và rượu bia nhập khẩu tái xuất, khu thương mại tự do một số loại, dịch vụ bán hàng, tiêu dùng tại VN của bên nước ngoài.",
+  "rules_vi": [
+   "Dịch vụ cấp tín dụng, dịch vụ tài chính phái sinh; chuyển giao công nghệ; chuyển nhượng sở hữu trí tuệ ra nước ngoài; dịch vụ bưu chính, viễn thông; tái bảo hiểm ra nước ngoài; thuốc lá, rượu bia nhập khẩu rồi tái xuất; hàng xuất khẩu là tài nguyên, khoáng sản thuộc danh mục không khuyến khích hoặc hạn chế xuất khẩu.",
+   "Doanh nghiệp trong khu phi thuế quan, khu thương mại tự do: ô tô, xăng dầu; dịch vụ cho thuê nhà, hội trường, văn phòng, khách sạn, kho; vận chuyển người lao động; ăn uống (trừ suất ăn công nghiệp và ăn uống trong khu thương mại tự do).",
+   "Tổ chức nước ngoài cung cấp tại VN: dịch vụ gắn với bán, phân phối, tiêu dùng hàng hóa tại VN; thi đấu thể thao, biểu diễn nghệ thuật, văn hóa, giải trí, hội nghị, khách sạn, đào tạo, quảng cáo, du lịch, dịch vụ thanh toán không dùng tiền mặt."
+  ],
+  "sources": [
+   "r4:20"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Is outbound reinsurance eligible for 0%?",
+    "a_vi": "Không. Tái bảo hiểm ra nước ngoài nằm trong danh sách không được áp 0%."
+   }
+  ]
+ },
+ {
+  "id": "e-five-pct",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "5% list",
+  "title_vi": "Hàng hóa, dịch vụ thuế suất 5%",
+  "summary_vi": "Nước sạch, thiết bị y tế, dụng cụ giảng dạy, nông sản, phân bón, máy móc nông nghiệp, nhà ở xã hội, khoa học công nghệ, đồ chơi trẻ em, sách.",
+  "rules_vi": [
+   "Thiết yếu: nước sạch phục vụ sản xuất và sinh hoạt; thiết bị, dụng cụ y tế chuyên dụng; dụng cụ giảng dạy, học tập (mô hình, bản vẽ, bảng, phấn, thước, compa…), các loại khác chịu 10%.",
+   "Nông nghiệp: nông sản chưa chế biến hoặc sơ chế (trừ măng tre, gỗ); mủ cao su dạng tờ, crep, cốm; sản phẩm thủ công từ nguyên liệu nông nghiệp (đay, tre, rơm, dừa, lục bình, bông…); phân bón, quặng làm phân bón, chất kích thích tăng trưởng; máy móc, thiết bị chuyên dùng cho sản xuất nông nghiệp, tàu đánh bắt xa bờ; dịch vụ hỗ trợ nông nghiệp (đào, nạo vét, phòng trừ sâu bệnh, sơ chế, bảo quản); đường và phụ phẩm trong sản xuất đường.",
+   "Khác: bán, cho thuê, thuê mua nhà ở xã hội cho đối tượng đủ điều kiện; biểu diễn nghệ thuật truyền thống; dịch vụ khoa học, công nghệ; hoạt động văn hóa, triển lãm, thể dục, thể thao công cộng; đồ chơi trẻ em; sách (trừ loại không chịu thuế)."
+  ],
+  "sources": [
+   "r4:21",
+   "r4:22"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "VAT rate for children’s toys and books (not exempt)?",
+    "a_vi": "5%."
+   }
+  ]
+ },
+ {
+  "id": "e-ten-pct",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "10% & digital suppliers",
+  "title_vi": "Thuế suất 10% và nhà cung cấp nước ngoài số",
+  "summary_vi": "Mọi hàng hóa, dịch vụ còn lại chịu 10% ở mọi khâu (kể cả phế liệu thu hồi); dịch vụ nước ngoài qua thương mại điện tử, nền tảng số chịu 10% và bên VN khấu trừ nộp thay.",
+  "rules_vi": [
+   "Thuế suất 10% áp dụng đồng nhất ở các khâu nhập khẩu, sản xuất, gia công, kinh doanh thương mại, cho cả hàng hóa, dịch vụ chính và phế liệu thu hồi để tái chế, tái sử dụng.",
+   "Dịch vụ của nhà cung cấp nước ngoài qua thương mại điện tử, nền tảng số cho người mua tại VN: 10%; tổ chức quản lý nền tảng số hoặc doanh nghiệp tại VN áp dụng phương pháp khấu trừ khấu trừ và nộp thay."
+  ],
+  "sources": [
+   "r4:23"
+  ],
+  "mvp": true,
+  "legal": [
+   "Law 48/2024"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Default VAT rate?",
+    "a_vi": "10% cho mọi hàng hóa, dịch vụ không thuộc nhóm 0%, 5% hay không chịu thuế."
+   }
+  ]
+ },
+ {
+  "id": "e-zero-vs-exempt",
+  "part": "E",
+  "group": "Scope, rates & exemptions",
+  "title_en": "0% vs non-taxable",
+  "title_vi": "So sánh 0% và không chịu thuế",
+  "summary_vi": "Không chịu thuế (KCT): không khấu trừ, không hoàn, hóa đơn ghi KCT; 0%: được khấu trừ, được hoàn, hóa đơn ghi 0%.",
+  "rules_vi": [
+   "KCT: không được khấu trừ VAT đầu vào, không được hoàn, hóa đơn ghi \"KCT\"; đối tượng chủ yếu vì lý do xã hội, khuyến khích sản xuất hoặc do Nhà nước chi trả (nông sản, bảo hiểm, y tế, giáo dục, xuất bản, phần mềm…).",
+   "0%: được khấu trừ, được hoàn; hóa đơn ghi 0%; đối tượng là hàng hóa, dịch vụ xuất khẩu, dịch vụ hàng hải, hàng không cho tổ chức nước ngoài, xây lắp ở nước ngoài và khu phi thuế quan, vận tải quốc tế, hàng không chịu thuế khi xuất khẩu."
+  ],
+  "sources": [
+   "r4:23",
+   "r4:16"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Khấu trừ đầu vào",
+    "value": "KCT: Không; 0%: Có",
+    "src": "r4:23"
+   },
+   {
+    "label": "Hoàn thuế",
+    "value": "KCT: Không; 0%: Có",
+    "src": "r4:23"
+   },
+   {
+    "label": "Hóa đơn",
+    "value": "KCT / 0%",
+    "src": "r4:23"
+   }
+  ],
+  "traps": [
+   {
+    "text_vi": "Nhầm 0% với không chịu thuế.",
+    "src": "r4:50"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Invoice rate label for non-taxable supplies?",
+    "a_vi": "KCT; còn 0% ghi 0%."
+   }
+  ]
+ },
+ {
+  "id": "e-taxable-value",
+  "part": "E",
+  "group": "Taxable value & methods",
+  "title_en": "Taxable value (special cases)",
+  "title_vi": "Giá tính thuế các trường hợp đặc biệt",
+  "summary_vi": "Nhập khẩu: giá nhập + thuế nhập khẩu + TTĐB + BVMT; quà tặng, trả lương: giá thị trường; trả góp: giá bán một lần, không tính lãi; thuê: tiền thuê chưa VAT; BĐS: trừ giá đất.",
+  "rules_vi": [
+   "Hàng nhập khẩu: giá nhập khẩu + thuế nhập khẩu + TTĐB + BVMT (nếu có). Hàng xuất khẩu: doanh thu chưa VAT, sau giảm giá, chiết khấu, gồm TTĐB và BVMT (nếu có).",
+   "Trao đổi, biếu tặng, trả thay lương: giá thị trường. Vé mời biểu diễn, thi đấu đã được phê duyệt, ghi rõ \"tặng\": giá tính thuế bằng 0.",
+   "Tiêu dùng nội bộ để tiếp tục sản xuất kinh doanh: không tính VAT; không dùng cho kinh doanh: giá thị trường. Quảng cáo, khuyến mại: đã đăng ký theo quy định thì giá tính thuế bằng 0, chưa đăng ký tính như bán hàng; phiếu mua hàng tặng kèm không phải kê khai.",
+   "Cho thuê tài sản: tiền thuê chưa VAT; trả từng kỳ hoặc trả trước: tiền thuê từng kỳ hoặc trả trước chưa VAT. Bán trả góp, trả chậm: giá bán một lần chưa VAT, không gồm lãi trả góp. Gia công: giá gia công chưa VAT gồm công, nhiên liệu, điện, vật liệu phụ và chi phí khác.",
+   "Xây dựng, lắp đặt: giá trị công trình, hạng mục hoặc khối lượng đã thực hiện và bàn giao chưa VAT; hợp đồng gồm nguyên vật liệu thì tính cả vật liệu; không gồm nguyên vật liệu thì không tính giá trị vật liệu.",
+   "Kinh doanh bất động sản: tổng giá chuyển nhượng trừ giá đất; giá đất được trừ gồm tiền sử dụng đất nộp ngân sách (không gồm phần miễn, giảm) và tiền bồi thường giải phóng mặt bằng; giá trúng đấu giá; tiền thuê đất; giá đất tại thời điểm nhận chuyển nhượng; giá góp vốn bằng quyền sử dụng đất; hợp đồng BT: giá đất tại thời điểm ký hợp đồng. Dự án xây dựng: số tiền thu theo tiến độ trừ giá đất tương ứng tỷ lệ thu trên tổng giá trị hợp đồng.",
+   "Đại lý môi giới, xuất nhập khẩu ủy thác: tiền công, hoa hồng chưa VAT. Chứng từ ghi giá đã gồm VAT (tem, vé vận tải, vé xổ số): giá trước thuế = giá thanh toán / (1 + thuế suất).",
+   "Casino, trò chơi điện tử có thưởng, đặt cược: số tiền thu (gồm TTĐB) trừ tiền thưởng trả khách, rồi chia cho (1 + thuế suất). Vận tải, bốc xếp: tiền công chưa VAT, kể cả thuê thầu phụ. Du lịch trọn gói: giá trọn gói (trừ vé máy bay quốc tế, ăn nghỉ, tham quan ở nước ngoài có chứng từ).",
+   "Cầm đồ: lãi vay và chênh lệch bán hàng cầm cố; doanh thu coi là đã gồm VAT (ví dụ 110 triệu / 1,1 = 100 triệu). Sách bán theo giá bìa: giá bìa đã gồm VAT. In ấn: tiền in, gồm cả tiền giấy nếu hợp đồng gồm giấy.",
+   "Phụ thu, phụ phí ngoài giá bán đều tính vào giá tính thuế. Giảm giá, chiết khấu thương mại: giá đã giảm; giảm theo số lượng, doanh số điều chỉnh trên hóa đơn của lần mua cuối hoặc kỳ sau."
+  ],
+  "sources": [
+   "r4:24",
+   "r4:25",
+   "r4:26",
+   "r4:27",
+   "r4:28",
+   "r4:29",
+   "r4:30",
+   "r4:31"
+  ],
+  "formula": "Giá chưa VAT từ giá đã có VAT = giá thanh toán / (1 + thuế suất)\nBĐS: giá tính VAT = giá chuyển nhượng − giá đất được trừ",
+  "example": {
+   "q_en": "Pawnbroking turnover VND110m VAT-inclusive, VAT 10%: taxable price?",
+   "a_vi": "110 triệu / (1 + 10%) = 100 triệu.",
+   "src": "r4:30"
+  },
+  "qa": [
+   {
+    "q_en": "Taxable price of imported goods?",
+    "a_vi": "Giá nhập + thuế nhập khẩu + TTĐB + BVMT."
+   }
+  ]
+ },
+ {
+  "id": "e-credit-method",
+  "part": "E",
+  "group": "Taxable value & methods",
+  "title_en": "Credit method eligibility",
+  "title_vi": "Phương pháp khấu trừ: điều kiện áp dụng",
+  "summary_vi": "Áp dụng khi có doanh thu từ 1 tỷ đồng và đủ sổ sách, hóa đơn, hoặc tự nguyện đăng ký trước ngày 20/12; ổn định 2 năm liên tiếp.",
+  "rules_vi": [
+   "Doanh nghiệp, hợp tác xã thực hiện đúng chế độ kế toán, hóa đơn, chứng từ; có doanh thu năm từ 1 tỷ đồng trở lên (trừ đối tượng thuộc phương pháp trực tiếp), hoặc tự nguyện áp dụng và thông báo cơ quan thuế chậm nhất ngày 20/12 của năm trước năm áp dụng.",
+   "Doanh thu 1 tỷ đồng xét theo doanh thu chịu thuế bình quân 12 tháng từ tháng 11 năm trước đến tháng 10 năm nay (hoặc từ quý IV năm trước đến hết quý III năm nay); chưa đủ 12 tháng thì quy đổi theo số tháng hoạt động thực tế.",
+   "Kinh doanh vàng, bạc, đá quý, ngoại tệ luôn tính theo phương pháp trực tiếp. Phương pháp đã chọn áp dụng ổn định 2 năm liên tiếp.",
+   "VAT phải nộp = VAT đầu ra − VAT đầu vào được khấu trừ; VAT đầu ra = giá tính thuế × thuế suất.",
+   "Hóa đơn phải tách rõ doanh thu chưa VAT, tiền VAT, tổng thanh toán; hóa đơn chỉ ghi giá đã gồm VAT thì tính lại VAT từ số tiền trên hóa đơn.",
+   "Hóa đơn ghi sai thuế suất mà không điều chỉnh, bị cơ quan thuế phát hiện: bên bán, nếu thuế suất ghi cao hơn quy định thì nộp theo thuế suất ghi trên hóa đơn, thấp hơn thì nộp theo thuế suất quy định; bên mua xử lý ngược lại.",
+   "VAT đầu vào được khấu trừ gồm: VAT trên hóa đơn mua (kể cả tài sản cố định) phục vụ hàng hóa, dịch vụ chịu thuế; VAT hàng nhập khẩu đã nộp; VAT đã khấu trừ, nộp thay nhà thầu nước ngoài."
+  ],
+  "sources": [
+   "r4:32",
+   "r4:33",
+   "r4:34"
+  ],
+  "numbers": [
+   {
+    "label": "Doanh thu để áp dụng khấu trừ",
+    "value": "≥ 1 tỷ đồng/năm",
+    "src": "r4:32"
+   },
+   {
+    "label": "Hạn đăng ký tự nguyện",
+    "value": "Ngày 20/12 năm trước",
+    "src": "r4:32"
+   },
+   {
+    "label": "Ổn định",
+    "value": "2 năm liên tiếp",
+    "src": "r4:32"
+   }
+  ],
+  "formula": "VAT phải nộp = VAT đầu ra − VAT đầu vào được khấu trừ\nVAT đầu ra = giá tính thuế × thuế suất",
+  "qa": [
+   {
+    "q_en": "Deadline to register voluntarily for the credit method?",
+    "a_vi": "Ngày 20/12 của năm trước năm áp dụng."
+   }
+  ]
+ },
+ {
+  "id": "e-input-principles",
+  "part": "E",
+  "group": "Input VAT",
+  "title_en": "Input VAT principles",
+  "title_vi": "Nguyên tắc khấu trừ VAT đầu vào",
+  "summary_vi": "Đầu vào phục vụ sản xuất, kinh doanh hàng hóa, dịch vụ chịu thuế được khấu trừ toàn bộ, kể cả hàng tổn thất chưa được bồi thường; đầu vào dùng cho hoạt động không chịu thuế phải hạch toán riêng.",
+  "rules_vi": [
+   "VAT đầu vào của hàng hóa, dịch vụ phục vụ sản xuất, kinh doanh hàng hóa, dịch vụ chịu VAT được khấu trừ toàn bộ, kể cả VAT chưa được bồi thường của hàng hóa chịu thuế bị tổn thất.",
+   "Hạch toán riêng được đầu vào cho hoạt động chịu thuế và không chịu thuế thì khấu trừ phần chịu thuế; không hạch toán riêng được thì phân bổ (xem thẻ phân bổ).",
+   "Tổn thất không được bồi thường: thiên tai, hỏa hoạn, hư hỏng không được bảo hiểm bồi thường, hàng hết hạn, suy giảm phải tiêu hủy, phải có đủ hồ sơ chứng minh.",
+   "Hao hụt tự nhiên khi vận chuyển, bơm rót (xăng dầu…) trong định mức: được khấu trừ."
+  ],
+  "sources": [
+   "r4:34",
+   "r4:35"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Is input VAT of goods destroyed by fire and uncompensated by insurance deductible?",
+    "a_vi": "Có, nếu có đủ hồ sơ chứng minh tổn thất không được bảo hiểm bồi thường."
+   }
+  ]
+ },
+ {
+  "id": "e-input-conditions",
+  "part": "E",
+  "group": "Input VAT",
+  "title_en": "Input VAT conditions",
+  "title_vi": "Điều kiện khấu trừ: hóa đơn và thanh toán không dùng tiền mặt",
+  "summary_vi": "Cần hóa đơn hợp lệ hoặc chứng từ nộp thuế và chứng từ thanh toán không dùng tiền mặt cho hóa đơn từ 5 triệu đồng đã gồm VAT; hàng xuất khẩu cần thêm hồ sơ 0%.",
+  "rules_vi": [
+   "Hóa đơn hợp lệ, chứng từ nộp thuế (nhập khẩu).",
+   "Chứng từ thanh toán không dùng tiền mặt cho hóa đơn có giá trị từ 5 triệu đồng trở lên đã gồm VAT (tổng các hóa đơn trong một ngày); gồm cả bù trừ công nợ (hàng hóa, khoản vay, bù trừ ba bên) và ủy quyền thanh toán qua bên thứ ba.",
+   "Không có chứng từ không dùng tiền mặt: chỉ khấu trừ VAT tương ứng với giá trị hàng hóa, dịch vụ đã thanh toán không dùng tiền mặt.",
+   "Hàng xuất khẩu đạt điều kiện 0%: hợp đồng, tờ khai hải quan, chứng từ thanh toán không dùng tiền mặt (mới: thêm packing list, chứng từ vận tải, tờ khai nhập khẩu của bên mua nước ngoài)."
+  ],
+  "sources": [
+   "r4:37",
+   "r4:40"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Ngưỡng thanh toán không dùng tiền mặt",
+    "value": "5 triệu đồng (đã gồm VAT, tổng trong ngày)",
+    "src": "r4:37"
+   }
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide có số gạch ngang bị mất khi trích xuất (20 triệu → 5 triệu ở thẻ \"ghi VAT không khấu trừ vào chi phí\" và hóa đơn ủy quyền). Số sau là số mới: 5 triệu.",
+  "qa": [
+   {
+    "q_en": "Non-cash payment threshold for deducting input VAT?",
+    "a_vi": "5 triệu đồng đã gồm VAT (tổng các hóa đơn một ngày)."
+   }
+  ]
+ },
+ {
+  "id": "e-input-specific",
+  "part": "E",
+  "group": "Input VAT",
+  "title_en": "Specific input VAT cases",
+  "title_vi": "Các trường hợp khấu trừ đặc biệt",
+  "summary_vi": "Ô tô ≤ 9 chỗ: phần vượt 1,6 tỷ không khấu trừ; nhà ở người nước ngoài làm quản lý hưởng lương VN: không khấu trừ; công trình phục vụ người lao động: khấu trừ.",
+  "rules_vi": [
+   "Công trình phục vụ người lao động tạo tài sản cố định: nhà ăn ca, phòng nghỉ giữa ca, thay đồ, nhà để xe, nhà vệ sinh, bể nước; nhà ở, trạm y tế cho công nhân trong khu công nghiệp; thuê, mua, xây nhà ở cho công nhân ngoài khu công nghiệp theo tiêu chuẩn thiết kế: được khấu trừ.",
+   "Nhà ở cho người nước ngoài: giữ chức vụ quản lý, hưởng lương theo hợp đồng lao động với công ty VN thì không được khấu trừ; là nhân viên của công ty nước ngoài, do công ty nước ngoài trả lương, có thỏa thuận công ty VN chịu trách nhiệm bố trí nhà ở thì được khấu trừ.",
+   "Tài sản cố định, máy móc (kể cả bảo hành, sửa chữa) không được khấu trừ: sản xuất vũ khí, trang bị quân sự; của tổ chức tín dụng, tái bảo hiểm, bảo hiểm nhân thọ, chứng khoán, cơ sở y tế, đào tạo (các đối tượng được nêu); tàu bay dân dụng, du thuyền không dùng kinh doanh vận tải, du lịch, khách sạn; ô tô ≤ 9 chỗ (trừ kinh doanh vận tải, du lịch, khách sạn, trưng bày, lái thử): phần vượt 1,6 tỷ đồng không được khấu trừ.",
+   "Dây chuyền sản xuất khép kín, hạch toán tập trung: đầu vào không chịu thuế dùng sản xuất hàng chịu thuế được khấu trừ đầy đủ; dự án nhiều giai đoạn: VAT đầu vào của giai đoạn đầu tư xây dựng cơ bản được khấu trừ đầy đủ; dự án tiếp tục sản xuất cần cam kết bằng văn bản tiếp tục sản xuất hàng chịu thuế, nếu sau này không đủ điều kiện thì khai bổ sung và nộp thuế; bán nông sản chưa chế biến không chịu thuế: khấu trừ theo tỷ lệ doanh thu chịu thuế.",
+   "Hàng dùng làm quà tặng, khuyến mại, quảng cáo phục vụ sản xuất kinh doanh hàng chịu thuế: được khấu trừ đầu vào (mua ngoài hoặc tự sản xuất).",
+   "VAT ấn định theo quyết định truy thu của hải quan: được khấu trừ trừ trường hợp gian lận, trốn thuế. Đầu vào của hàng không chịu thuế: không được khấu trừ, trừ viện trợ nhân đạo, không hoàn lại, và hoạt động tìm kiếm, thăm dò, phát triển mỏ dầu khí đến ngày khai thác đầu tiên.",
+   "Đầu vào dùng cho hoạt động không phải kê khai, tính nộp thuế: được khấu trừ đầy đủ.",
+   "Hóa đơn đứng tên bên khác: mua qua tổ chức, cá nhân được ủy quyền (công ty bảo hiểm ủy quyền cho người được bảo hiểm; trước khi thành lập doanh nghiệp, người sáng lập ủy quyền bằng văn bản và thanh toán qua ngân hàng với hóa đơn từ 5 triệu); tài sản góp vốn mới, chưa sử dụng, có hóa đơn hợp pháp, được hội đồng góp vốn chấp thuận: bên nhận góp vốn kê khai, khấu trừ."
+  ],
+  "sources": [
+   "r4:35",
+   "r4:36",
+   "r4:37",
+   "r4:38",
+   "r4:39",
+   "r4:40"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Ô tô ≤ 9 chỗ: nguyên giá khấu trừ tối đa",
+    "value": "1,6 tỷ đồng",
+    "src": "r4:37"
+   }
+  ],
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide có số gạch ngang bị mất khi trích xuất (20 → 5 triệu); lấy số sau là số mới (5 triệu).",
+  "qa": [
+   {
+    "q_en": "Input VAT on a 9-seat car bought for office use: deductible portion?",
+    "a_vi": "Chỉ phần ứng với giá trị đến 1,6 tỷ đồng; phần vượt không được khấu trừ."
+   }
+  ]
+ },
+ {
+  "id": "e-input-apportion",
+  "part": "E",
+  "group": "Input VAT",
+  "title_en": "Input VAT apportionment",
+  "title_vi": "Phân bổ VAT đầu vào",
+  "summary_vi": "Đầu vào dùng chung cho hoạt động chịu thuế và không chịu thuế không hạch toán riêng được thì phân bổ theo tỷ lệ doanh thu chịu thuế trên tổng doanh thu, tạm tính hằng kỳ và điều chỉnh cuối năm; dự án đầu tư mới điều chỉnh trong 3 năm.",
+  "rules_vi": [
+   "Đầu vào (kể cả tài sản cố định) dùng chung cho cả hàng hóa, dịch vụ chịu thuế và không chịu thuế: chỉ khấu trừ phần chịu thuế; tạm phân bổ hằng tháng, quý và điều chỉnh vào cuối năm.",
+   "Hạch toán riêng được: khấu trừ riêng; không hạch toán riêng được: phân bổ theo doanh thu chịu thuế / tổng doanh thu.",
+   "Dự án đầu tư mới vừa tạo ra doanh thu chịu thuế và không chịu thuế: VAT đầu vào của tài sản cố định tạm khấu trừ theo tỷ lệ doanh thu chịu thuế trong kế hoạch sản xuất kinh doanh; điều chỉnh theo tỷ lệ thực tế trong 3 năm kể từ năm đầu có doanh thu, phần điều chỉnh giảm không bị phạt, không tính tiền chậm nộp."
+  ],
+  "sources": [
+   "r4:36",
+   "r4:38"
+  ],
+  "mvp": true,
+  "formula": "VAT đầu vào được khấu trừ (dùng chung) = tổng VAT đầu vào dùng chung × doanh thu chịu thuế / tổng doanh thu",
+  "qa": [
+   {
+    "q_en": "How is shared input VAT split when it cannot be separately accounted?",
+    "a_vi": "Theo tỷ lệ doanh thu chịu thuế trên tổng doanh thu."
+   }
+  ]
+ },
+ {
+  "id": "e-input-noncreditable-to-cit",
+  "part": "E",
+  "group": "Input VAT",
+  "title_en": "Non-creditable VAT → CIT expense",
+  "title_vi": "VAT không được khấu trừ tính vào chi phí",
+  "summary_vi": "VAT đầu vào không được khấu trừ thì được tính vào chi phí được trừ CIT hoặc nguyên giá tài sản cố định, trừ phần VAT của hàng hóa, dịch vụ từ 5 triệu đồng thanh toán không dùng tiền mặt.",
+  "rules_vi": [
+   "VAT đầu vào không được khấu trừ: có thể hạch toán vào chi phí được trừ khi tính CIT hoặc vào nguyên giá tài sản cố định.",
+   "Ngoại lệ: VAT của hàng hóa, dịch vụ mua vào từ 5 triệu đồng không có chứng từ thanh toán không dùng tiền mặt thì không được tính vào chi phí được trừ."
+  ],
+  "sources": [
+   "r4:39"
+  ],
+  "mvp": true,
+  "flags": [
+   "conflict"
+  ],
+  "conflict_vi": "Slide có số gạch ngang bị mất khi trích xuất (20 triệu → 5 triệu); lấy số sau là số mới (5 triệu).",
+  "qa": [
+   {
+    "q_en": "Where can non-creditable input VAT go for CIT purposes?",
+    "a_vi": "Chi phí được trừ CIT hoặc nguyên giá tài sản cố định, trừ khoản ≥ 5 triệu thanh toán tiền mặt."
+   }
+  ]
+ },
+ {
+  "id": "e-direct-method",
+  "part": "E",
+  "group": "Taxable value & methods",
+  "title_en": "Direct method",
+  "title_vi": "Phương pháp trực tiếp",
+  "summary_vi": "Vàng, bạc, đá quý, ngoại tệ: 10% × giá trị gia tăng; đối tượng khác: doanh thu × tỷ lệ 1% (thương mại), 5% (dịch vụ), 3% (sản xuất, vận tải), 2% (khác).",
+  "rules_vi": [
+   "Đối tượng: kinh doanh vàng, bạc, đá quý, ngoại tệ; hộ, cá nhân kinh doanh không thực hiện hoặc thực hiện không đầy đủ chế độ kế toán, hóa đơn, chứng từ; tổ chức, cá nhân nước ngoài không đạt điều kiện kế toán để khấu trừ; doanh nghiệp, HTX mới thành lập hoặc doanh thu dưới 1 tỷ đồng (tùy chọn).",
+   "Vàng, bạc, đá quý: VAT = 10% × giá trị gia tăng; giá trị gia tăng = giá bán − giá mua tương ứng; số âm được chuyển sang các tháng sau cùng năm.",
+   "Đối tượng khác: VAT = doanh thu × tỷ lệ giá trị gia tăng. Thương mại (phân phối, cung cấp hàng hóa): 1%; dịch vụ, xây dựng không bao thầu nguyên vật liệu: 5%; sản xuất, vận tải, dịch vụ gắn với hàng hóa, xây dựng có bao thầu nguyên vật liệu: 3%; khác: 2%."
+  ],
+  "sources": [
+   "r4:40",
+   "r4:41"
+  ],
+  "numbers": [
+   {
+    "label": "Thương mại",
+    "value": "1%",
+    "src": "r4:41"
+   },
+   {
+    "label": "Dịch vụ, xây dựng không bao thầu vật liệu",
+    "value": "5%",
+    "src": "r4:41"
+   },
+   {
+    "label": "Sản xuất, vận tải, dịch vụ gắn hàng, xây dựng có bao thầu vật liệu",
+    "value": "3%",
+    "src": "r4:41"
+   },
+   {
+    "label": "Khác",
+    "value": "2%",
+    "src": "r4:41"
+   }
+  ],
+  "formula": "Vàng bạc đá quý: VAT = 10% × (giá bán − giá mua tương ứng)\nKhác: VAT = doanh thu × tỷ lệ (1% / 5% / 3% / 2%)",
+  "qa": [
+   {
+    "q_en": "Direct VAT rate on trading goods?",
+    "a_vi": "1% trên doanh thu."
+   }
+  ]
+ },
+ {
+  "id": "e-taxing-time",
+  "part": "E",
+  "group": "Timing & refund",
+  "title_en": "Taxing time",
+  "title_vi": "Thời điểm xác định thuế VAT",
+  "summary_vi": "Hàng hóa: chuyển quyền sở hữu; dịch vụ: hoàn thành hoặc lập hóa đơn; điện nước: ghi chỉ số; BĐS: ngày thu tiền; xây lắp: nghiệm thu; nhập khẩu: đăng ký tờ khai hải quan.",
+  "rules_vi": [
+   "Bán hàng: thời điểm chuyển giao quyền sở hữu hoặc quyền sử dụng.",
+   "Cung cấp dịch vụ: thời điểm hoàn thành hoặc lập hóa đơn dịch vụ.",
+   "Viễn thông: hoàn thành thủ tục đối soát, xác nhận. Điện, nước: ghi chỉ số công tơ làm căn cứ lập hóa đơn.",
+   "Kinh doanh bất động sản: ngày thu tiền theo tiến độ trong hợp đồng. Xây dựng, lắp đặt: nghiệm thu, bàn giao công trình, hạng mục hoặc khối lượng hoàn thành. Nhập khẩu: ngày đăng ký tờ khai hải quan."
+  ],
+  "sources": [
+   "r4:42"
+  ],
+  "traps": [
+   {
+    "text_vi": "Xác định sai thời điểm tính thuế (thương mại, dịch vụ, bất động sản, xây lắp, nhập khẩu).",
+    "src": "r4:50"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Tax point for imported goods?",
+    "a_vi": "Ngày đăng ký tờ khai hải quan."
+   }
+  ]
+ },
+ {
+  "id": "e-declaration-timing",
+  "part": "E",
+  "group": "Timing & refund",
+  "title_en": "Declaration timing & amendments",
+  "title_vi": "Kỳ khai và khai bổ sung",
+  "summary_vi": "Hóa đơn đầu ra khai vào kỳ lập hóa đơn; đầu vào khai kỳ lập hóa đơn hoặc khai muộn trước khi có quyết định thanh tra, kiểm tra; điều chỉnh sai sót khai bổ sung kỳ gốc; trả hàng, chiết khấu khai theo kỳ hóa đơn điều chỉnh.",
+  "rules_vi": [
+   "Hóa đơn đầu ra (người bán): khai trong kỳ lập hóa đơn. Hóa đơn đầu vào (người mua): khai trong kỳ lập hóa đơn hoặc khai muộn, miễn là trước khi cơ quan thuế ban hành quyết định thanh tra, kiểm tra kỳ đó.",
+   "Hóa đơn đúng, đã kê khai nhưng kê khai sai: nếu làm tăng VAT phải nộp hoặc giảm VAT được hoàn thì khai bổ sung cho kỳ gốc; nếu làm giảm VAT phải nộp hoặc thay đổi VAT được khấu trừ thì khai bổ sung vào kỳ hiện tại (kỳ phát hiện sai).",
+   "Hóa đơn lập sai (sai mã số thuế, giá trị, thuế suất, tiền thuế, quy cách hàng hóa): người bán lập hóa đơn điều chỉnh hoặc thay thế, khai bổ sung cho kỳ gốc.",
+   "Sự kiện phát sinh sau khi hóa đơn gốc đúng (trả hàng, chiết khấu…): người bán báo cáo ở kỳ lập hóa đơn điều chỉnh; người mua ở kỳ nhận hóa đơn điều chỉnh.",
+   "Khai bổ sung phải thực hiện trước khi có thông báo chính thức về quyết định thanh tra, kiểm tra."
+  ],
+  "sources": [
+   "r4:42"
+  ],
+  "mvp": true,
+  "qa": [
+   {
+    "q_en": "Deadline for a supplementary VAT return to correct an error?",
+    "a_vi": "Trước khi có thông báo chính thức về quyết định thanh tra, kiểm tra."
+   }
+  ]
+ },
+ {
+  "id": "e-refund-investment",
+  "part": "E",
+  "group": "Timing & refund",
+  "title_en": "Refund: investment projects",
+  "title_vi": "Hoàn thuế: dự án đầu tư",
+  "summary_vi": "Dự án đầu tư mới hoặc đang đầu tư chưa vận hành: VAT đầu vào lũy kế từ 300 triệu đồng được hoàn; dự án đang đầu tư của doanh nghiệp đang hoạt động bù trừ với VAT phải nộp, phần còn lại từ 300 triệu mới hoàn.",
+  "rules_vi": [
+   "Dự án mới thành lập, đăng ký nộp thuế theo phương pháp khấu trừ, hoặc dự án thăm dò, phát triển mỏ dầu khí đang đầu tư, chưa vận hành: VAT đầu vào lũy kế từ 300 triệu đồng trở lên thì được hoàn.",
+   "Doanh nghiệp đang hoạt động nộp thuế theo phương pháp khấu trừ có dự án đầu tư (cùng hoặc khác tỉnh, thành phố) trong giai đoạn đầu tư: khai riêng cho dự án; bù trừ VAT đầu vào của dự án với VAT phải nộp của hoạt động đang sản xuất kinh doanh; phần còn lại từ 300 triệu thì hoàn, dưới 300 triệu thì chuyển kỳ sau.",
+   "Không được hoàn (chỉ chuyển kỳ sau): vốn điều lệ chưa góp đủ như đã đăng ký; dự án kinh doanh ngành nghề có điều kiện nhưng chưa đủ điều kiện, hoặc không duy trì được điều kiện trong quá trình hoạt động; dự án có giá trị tài nguyên, khoáng sản cộng chi phí năng lượng chiếm từ 51% giá thành trở lên (dự án khai thác được cấp phép từ 01/07/2016 hoặc dự án sản xuất hàng hóa)."
+  ],
+  "sources": [
+   "r4:44",
+   "r4:45"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Ngưỡng hoàn",
+    "value": "300 triệu đồng",
+    "src": "r4:44"
+   }
+  ],
+  "legal": [
+   "Resolution 49/2022"
+  ],
+  "qa": [
+   {
+    "q_en": "Refund threshold for an investment project?",
+    "a_vi": "VAT đầu vào lũy kế còn lại từ 300 triệu đồng trở lên."
+   }
+  ]
+ },
+ {
+  "id": "e-refund-export",
+  "part": "E",
+  "group": "Timing & refund",
+  "title_en": "Refund: exports",
+  "title_vi": "Hoàn thuế: hàng xuất khẩu",
+  "summary_vi": "Doanh nghiệp vừa xuất khẩu vừa bán nội địa: hoàn khi VAT đầu vào của hàng xuất khẩu trừ VAT phải nộp nội địa từ 300 triệu; số hoàn tối đa 10% doanh thu xuất khẩu.",
+  "rules_vi": [
+   "Vừa xuất khẩu vừa bán nội địa: chỉ hoàn VAT đầu vào của hàng xuất khẩu nếu (VAT đầu vào của xuất khẩu − VAT phải nộp của bán nội địa) từ 300 triệu đồng trở lên.",
+   "Số hoàn không vượt quá 10% doanh thu xuất khẩu.",
+   "Tách được đầu vào dùng cho xuất khẩu thì dùng số đó. Không tách được: VAT đầu vào xuất khẩu = tổng VAT đầu vào được khấu trừ của kỳ từ lần hoàn gần nhất × tỷ lệ doanh thu xuất khẩu trên tổng doanh thu.",
+   "Hoàn trước, kiểm tra sau cho nhà sản xuất xuất khẩu trong hai năm liên tục không bị xử phạt về buôn lậu, buôn bán hàng qua biên giới, trốn thuế, gian lận thuế, thương mại, không thuộc diện rủi ro cao. Ví dụ: doanh nghiệp bị phạt trốn thuế 06/N−1 xin hoàn hàng xuất khẩu 09/N thì phải kiểm tra trước khi hoàn."
+  ],
+  "sources": [
+   "r4:45",
+   "r4:46",
+   "r4:50"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Ngưỡng hoàn",
+    "value": "300 triệu đồng",
+    "src": "r4:45"
+   },
+   {
+    "label": "Trần số hoàn",
+    "value": "10% doanh thu xuất khẩu",
+    "src": "r4:45"
+   }
+  ],
+  "formula": "VAT đầu vào của xuất khẩu (không tách được) = tổng VAT đầu vào được khấu trừ từ lần hoàn gần nhất × doanh thu xuất khẩu / tổng doanh thu\nVAT được hoàn = MIN(VAT đầu vào xuất khẩu − VAT phải nộp nội địa; 10% × doanh thu xuất khẩu)",
+  "traps": [
+   {
+    "text_vi": "Tính sai VAT hoàn khi doanh nghiệp vừa xuất khẩu vừa bán nội địa.",
+    "src": "r4:50"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Cap on VAT refund for exports?",
+    "a_vi": "10% doanh thu xuất khẩu."
+   }
+  ]
+ },
+ {
+  "id": "e-refund-other",
+  "part": "E",
+  "group": "Timing & refund",
+  "title_en": "Refund: other cases",
+  "title_vi": "Hoàn thuế: các trường hợp khác",
+  "summary_vi": "Thuế suất 5% tích lũy từ 300 triệu sau 12 tháng hoặc 4 quý; giải thể, phá sản; ODA, viện trợ nhân đạo; đối tượng ngoại giao; người nước ngoài mang hàng ra khỏi VN.",
+  "rules_vi": [
+   "Mới (Luật 48/2024, NĐ 181/2025) với doanh nghiệp bán hàng thuế suất 5%: được hoàn nếu VAT đầu vào lũy kế vượt 300 triệu đồng sau 12 tháng hoặc 4 quý liên tục; điều kiện: đã nộp tờ khai VAT và không còn nợ thuế VAT tại thời điểm đề nghị hoàn.",
+   "Giải thể, phá sản (từ 01/07/2025 chỉ còn trường hợp này trong tái cơ cấu): doanh nghiệp đang đầu tư chưa sản xuất kinh doanh mà phải giải thể, phá sản thì thông báo cơ quan thuế quản lý trực tiếp; sau khi hoàn tất thủ tục theo pháp luật về giải thể, phá sản thì số hoàn theo quy định đó; phần VAT còn lại không giải quyết hoàn; phải nộp lại tiền thuế đã hoàn vào ngân sách nhà nước; bán tài sản chịu VAT thì không phải điều chỉnh VAT đầu vào đã hoàn của tài sản.",
+   "Dự án ODA viện trợ không hoàn lại: chủ dự án, nhà thầu chính hoặc tổ chức do nhà tài trợ nước ngoài chỉ định quản lý dự án được hoàn VAT hàng hóa, dịch vụ mua tại VN; tổ chức tại VN dùng viện trợ nhân đạo của nước ngoài mua hàng hóa, dịch vụ cho dự án, chương trình viện trợ được hoàn VAT. Ví dụ: Hội Chữ thập đỏ nhận 200 triệu mua hàng cứu trợ, VAT 20 triệu được hoàn 20 triệu.",
+   "Đối tượng hưởng ưu đãi, miễn trừ ngoại giao mua hàng hóa, dịch vụ tại VN; người nước ngoài và người VN định cư ở nước ngoài mang hộ chiếu hoặc giấy tờ nhập cảnh do nước ngoài cấp, hoàn VAT hàng mua tại VN mang theo khi xuất cảnh."
+  ],
+  "sources": [
+   "r4:46",
+   "r4:47",
+   "r4:48"
+  ],
+  "mvp": true,
+  "numbers": [
+   {
+    "label": "Ngưỡng hoàn, thuế suất 5%",
+    "value": "Trên 300 triệu sau 12 tháng hoặc 4 quý liên tục",
+    "src": "r4:46"
+   }
+  ],
+  "legal": [
+   "Law 48/2024",
+   "Decree 181/2025"
+  ],
+  "flags": [
+   "new"
+  ],
+  "qa": [
+   {
+    "q_en": "Conditions for refund of a business whose output is taxed at 5%?",
+    "a_vi": "Đầu vào lũy kế vượt 300 triệu sau 12 tháng hoặc 4 quý liên tục; đã nộp tờ khai VAT; không còn nợ VAT."
+   }
+  ]
+ },
+ {
+  "id": "e-refund-procedure",
+  "part": "E",
+  "group": "Timing & refund",
+  "title_en": "Refund procedure",
+  "title_vi": "Hồ sơ và thời hạn hoàn thuế",
+  "summary_vi": "Hồ sơ gồm giấy đề nghị hoàn, bảng kê VAT đầu ra, đầu vào, VAT đã nộp; hoàn trước kiểm tra sau: trả lời trong 6 ngày làm việc nếu hồ sơ thiếu; kiểm tra sau hoàn: giải quyết trong 40 ngày làm việc.",
+  "rules_vi": [
+   "Điều kiện: nộp thuế theo phương pháp khấu trừ; có giấy chứng nhận đăng ký kinh doanh, giấy phép đầu tư, chứng chỉ hành nghề hoặc quyết định thành lập; có con dấu hợp pháp; lưu giữ sổ sách kế toán và có tài khoản tiền gửi ngân hàng theo mã số thuế.",
+   "Hồ sơ: giấy đề nghị hoàn thuế (nêu lý do, số tiền, thời gian); bảng kê VAT đầu ra, đầu vào được khấu trừ, VAT đã nộp, VAT đề nghị hoàn; bảng kê hàng hóa mua vào, bán ra trong kỳ; các tài liệu theo từng trường hợp.",
+   "Hoàn trước, kiểm tra sau: cơ quan thuế thông báo trong 6 ngày làm việc nếu hồ sơ chưa đủ. Kiểm tra trước, hoàn sau: giải quyết trong 40 ngày làm việc nếu người nộp thuế đủ điều kiện hoàn."
+  ],
+  "sources": [
+   "r4:48",
+   "r4:49"
+  ],
+  "numbers": [
+   {
+    "label": "Thông báo hồ sơ thiếu (hoàn trước)",
+    "value": "6 ngày làm việc",
+    "src": "r4:49"
+   },
+   {
+    "label": "Giải quyết hoàn (kiểm tra trước)",
+    "value": "40 ngày làm việc",
+    "src": "r4:49"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Time limit for refund after audit?",
+    "a_vi": "40 ngày làm việc."
+   }
+  ]
+ },
+ {
+  "id": "e-exam-traps",
+  "part": "E",
+  "group": "Timing & refund",
+  "title_en": "VAT examiner’s notes",
+  "title_vi": "Lỗi hay gặp trong bài VAT",
+  "summary_vi": "Nhầm 0% và không chịu thuế, nơi tiêu dùng dịch vụ, điều kiện khấu trừ, thời điểm tính thuế, loại hóa đơn điều chỉnh/thay thế, số hoàn khi vừa xuất khẩu vừa bán nội địa, chi phí cần hóa đơn.",
+  "rules_vi": [
+   "Nhầm sự khác nhau giữa thuế suất 0% và không chịu thuế.",
+   "Nhầm nơi tiêu dùng ngoài VN, nhất là với dịch vụ.",
+   "Sai điều kiện được khấu trừ VAT đầu vào.",
+   "Xác định sai thời điểm tính thuế (thương mại, dịch vụ, bất động sản, xây dựng, nhập khẩu).",
+   "Xác định sai thời hạn, thời điểm lập hóa đơn, chọn sai hóa đơn điều chỉnh hay thay thế.",
+   "Tính sai số hoàn khi doanh nghiệp vừa xuất khẩu vừa bán nội địa.",
+   "Nhầm chi phí cần hóa đơn (dịch vụ, hàng mua vào) với chi phí không cần hóa đơn (lương, thưởng, dự phòng, chỉ cần chứng từ nội bộ và bút toán)."
+  ],
+  "sources": [
+   "r4:49",
+   "r4:50"
+  ],
+  "traps": [
+   {
+    "text_vi": "Bảy lỗi: 0% vs KCT; thời điểm tính thuế; nơi tiêu dùng; thời điểm và loại hóa đơn; điều kiện khấu trừ; số hoàn khi vừa xuất khẩu vừa bán nội địa; chi phí cần và không cần hóa đơn.",
+    "src": "r4:50"
+   }
+  ],
+  "qa": [
+   {
+    "q_en": "Do salaries need VAT invoices to be deductible for CIT?",
+    "a_vi": "Không. Lương, thưởng, dự phòng dựa trên chứng từ nội bộ và bút toán, không cần hóa đơn."
+   }
+  ]
+ }
+]

@@ -1,0 +1,52 @@
+---
+title: "Thuế Việt Nam · ACCA TX-VNM"
+description: "Một bản đồ 143 thẻ kiến thức, 16 cây quyết định và bộ bẫy đề cho kỳ thi tháng 12/2026."
+id: d0-start
+nhanh: D
+phan: d0
+loai: thue
+thoi_luong: 6
+nguon: ["source/library/acca-tx-vnm/", "docs/TAX_MAP.md"]
+ngay_cap_nhat: 2026-11-16
+style_version: "D-1.0-draft"
+sidebar: { order: 0, label: "D0 · Start here" }
+---
+import { Eyebrow } from '@components';
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Nhánh D phục vụ kỳ thi **ACCA TX-VNM tháng 12/2026**. Thuật ngữ thi giữ **tiếng Anh**, giải thích bằng tiếng Việt. Mọi con số trên web truy được về slide BISC hoặc bảng thuế J26–J27 (mã nguồn như `r3:20` = revision CIT, trang 20).
+
+<Eyebrow>Cách học</Eyebrow>
+## Ba lớp: cây, dây nối, cây quyết định
+| Lớp | Là gì | Dùng khi |
+|---|---|---|
+| **Cây kiến thức** | 143 thẻ chia 5 phần A–E (86 thẻ ★ trọng tâm) | Học và tra cứu từng điểm |
+| **Dây nối** | Thẻ nào ảnh hưởng, cùng con số, hay nhầm, ngoại lệ của thẻ nào | Hiểu các điểm liên quan, tránh nhầm số |
+| **Cây quyết định** | 16 cây hỏi từng bước (cư trú, khoản được trừ, phương pháp FCT, VAT đầu vào…) | Gặp tình huống đề thi, cần kết luận nhanh |
+
+<CardGrid>
+<LinkCard title="D1 · Tax Atlas" description="Cây kiến thức, thẻ, dây nối, ghi chú cá nhân" href="/d/atlas/" />
+<LinkCard title="D2 · Cây quyết định" description="16 cây theo PIT, CIT, FCT, VAT, hóa đơn" href="/d/decide/" />
+<LinkCard title="D3 · Bẫy đề" description="Gom toàn bộ bẫy từ thẻ và cây" href="/d/traps/" />
+<LinkCard title="D6 · Máy tính" description="PIT, CIT, FCT, VAT" href="/d/calc/" />
+</CardGrid>
+
+<Eyebrow>Lộ trình 3 tuần</Eyebrow>
+## Gợi ý, tự chỉnh theo thời gian của bạn
+| Tuần | Trọng tâm | Công cụ |
+|---|---|---|
+| 1 | PIT + CIT (hai câu 15 điểm) | Cây `pit-*`, `cit-*`; máy tính PIT, CIT; đề Dec23, Dec24 câu PIT, CIT |
+| 2 | VAT + FCT + Admin | Cây `vat-*`, `fct-*`, `invoice-error`; flashcard phần A |
+| 3 | Đề tổng hợp có bấm giờ, sửa bẫy | Kho đề, trang Bẫy đề, thẻ chưa thuộc trên Atlas |
+
+<Eyebrow>Cảnh báo luật</Eyebrow>
+## Đề cũ có thể dùng luật cũ
+Đề các kỳ trước tháng 12/2025 áp dụng luật cũ ở CIT, VAT, FCT. Từ 01/10/2025 CIT theo Luật 67/2025 và Nghị định 320/2025 (từ 15/12/2025); VAT theo Luật 48/2024, Nghị định 181/2025, Thông tư 69/2025; hóa đơn theo Nghị định 70/2025. Với đề cũ chỉ lấy **dạng bài và bẫy**, con số lấy theo thẻ Atlas và bảng thuế J26–J27.
+
+<Eyebrow>Điểm cần xác nhận với giảng viên</Eyebrow>
+## Các thẻ có cờ ⚠ xung đột nguồn
+1. PIT và FCT gánh thay (hợp đồng net) có được trừ khi tính CIT không: slide ghi không được trừ, Nghị định 320/2025 Điều 10 khoản 12 loại trừ hai khoản này.
+2. Ngưỡng cá nhân kinh doanh: 100 triệu (PIT, bảng thuế) khác 200 triệu (không chịu VAT, slide).
+3. Điều kiện hybrid FCT: slide có chỗ ghi 2/3 điều kiện, chỗ liệt kê 3.
+4. Nông sản bán cho doanh nghiệp: slide 5% cho kỳ thi 2026 đến 06/2027, dù Luật 149 đã chuyển sang "không phải kê khai".

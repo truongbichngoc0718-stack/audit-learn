@@ -86,3 +86,17 @@
 
 ## 2026-11-08 · Duyệt STYLE_C C-1.2
 - Bạn duyệt chú thích hướng dẫn tiếng Việt → khóa STYLE_C **C-1.2**; 18 trang nhánh C đều đã có note trong `cGuide.ts` (đạt tiêu chí 8), cập nhật `style_version: "C-1.2"`, không cần sửa nội dung bài.
+
+## 2026-11-16 · Nhánh D · Ghi bù phần việc ngày 16/11 (phiên Opus)
+- Nạp thư viện `source/library/acca-tx-vnm/` (slide revision r1–r5, study s1–s5, syllabus, bảng thuế J26–J27, đề có text, OCR Jun21 → Dec23) bằng `scripts/ingest_tax.py`, `scripts/ocr_tax_exams.py` (gốc).
+- `docs/TAX_MAP.md` D-map 1.0: 143 thẻ (86 ★), 16 cây, mô hình dữ liệu, kế hoạch build, các vấn đề nguồn §9 (gốc).
+- `src/data/tax/trees.json` D-trees-1.0: 16 cây quyết định, kèm nguồn và thẻ liên quan (gốc).
+
+## 2026-11-16 · Nhánh D · Tax Atlas MVP (chờ duyệt)
+- Schema: `nhanh: D`, `phan: d0–d7`, `loai: thue`; sidebar "D · Thuế Việt Nam (ACCA TX-VNM)"; PageTitle có breadcrumb nhánh D (gốc).
+- Dữ liệu: 143 thẻ (A20 · B28 · C49 · D17 · E29; 86 ★), 51 dây nối (36 từ TAX_MAP §6 + 15 mới, mỗi dây có `why_vi`), trạng thái `exam-bank.json` mức kỳ thi (gốc, mở rộng ở những chỗ có `legal` ghi Luật 67/2025, NĐ 320/2025, Luật 48/2024, NĐ 181/2025, TT 69/2025, NĐ 70/2025).
+- Cờ `conflict` hiển thị ở thẻ: gánh thuế thay (§9-1), ngưỡng 100/200 triệu (§9-2), điều kiện hybrid (§9-4), số bị gạch ngang (§9-5), nông sản 5% so với Luật 149 (§9-7), bảng r1:5 mất khung cột, thời hạn hồ sơ chuyển giá.
+- Thành phần: TaxAtlas, DecisionTree + DecisionList, TrapList, TaxFlashcards, TaxCalc (PIT gross/net, CIT, FCT, VAT), TaxTables, ExamBank; tiến độ lưu `tax-progress-v1`.
+- Trang: D0 Start here (lộ trình 3 tuần, cảnh báo luật cũ), D1 Atlas, D2 Cây quyết định + 16 trang cây, D3 Bẫy đề, D4 Kho đề, D5 Flashcard, D6 Máy tính, D7 Bảng thuế.
+- Thêm mục "Thuế" vào `docs/GLOSSARY.md`; tạo `docs/STYLE_D.md` D-1.0-draft.
+- Chưa làm: gắn từng câu đề vào thẻ (`exam_refs`) và tự chấm theo câu, vì OCR Dec24, Dec25 và J20 sample chưa xong; kho đề hiện ở mức kỳ thi.
