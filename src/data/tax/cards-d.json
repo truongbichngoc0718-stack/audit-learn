@@ -132,6 +132,10 @@
     "q_en": "Goods and services separated in the contract: which part is subject to VAT-FCT?",
     "a_vi": "Chỉ giá trị dịch vụ; giá trị hàng chỉ chịu VAT khi nhập khẩu."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q3",
+   "Dec 2022 · Q3"
   ]
  },
  {
@@ -157,6 +161,10 @@
     "q_en": "CIT-FCT rate for loan interest and royalties?",
     "a_vi": "10% trên doanh thu (bảng thuế)."
    }
+  ],
+  "exam_refs": [
+   "Dec 2021 · Q3",
+   "Dec 2024 · Q3"
   ]
  },
  {
@@ -253,6 +261,13 @@
     "q_en": "Gross-up for a VAT-exclusive FCT contract?",
     "a_vi": "Doanh thu tính VAT = doanh thu chưa VAT / (1 − tỷ lệ VAT)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q3",
+   "Dec 2021 · Q3",
+   "Dec 2022 · Q3",
+   "Dec 2023 · Q3",
+   "Dec 2024 · Q2"
   ]
  },
  {
@@ -280,6 +295,10 @@
     "q_en": "CIT-taxable turnover when the contract is net of CIT?",
     "a_vi": "Doanh thu chưa CIT / (1 − tỷ lệ CIT)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2021 · Q2",
+   "Dec 2023 · Q3"
   ]
  },
  {
@@ -316,6 +335,11 @@
     "q_en": "Order of gross-up for a contract net of both CIT and VAT?",
     "a_vi": "Gross-up CIT trước, rồi gross-up VAT trên doanh thu đã gồm CIT."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q3",
+   "J20 CBE sample · Q3",
+   "Dec 2024 · Q3"
   ]
  },
  {
@@ -348,6 +372,11 @@
     "q_en": "Revenue subject to CIT for a foreign airline with collected airport fee and ticket refunds?",
     "a_vi": "Tổng doanh thu trừ phí sân bay thu hộ Nhà nước và tiền hoàn vé (ví dụ 100.000 − 3.000 = 97.000 USD)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q3",
+   "Jun 2019 · Q3",
+   "Dec 2023 · Q3"
   ]
  },
  {
@@ -372,6 +401,15 @@
     "q_en": "FCT CIT rate for services versus construction?",
     "a_vi": "Dịch vụ 5%; xây dựng, lắp đặt 2% (VAT: xây lắp có vật tư 3%, không có vật tư 5%)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q3",
+   "J20 CBE sample · Q3",
+   "Jun 2021 · Q2",
+   "Dec 2021 · Q3",
+   "Jun 2022 · Q3",
+   "Dec 2022 · Q3",
+   "Dec 2024 · Q2"
   ]
  },
  {
@@ -408,6 +446,11 @@
     "q_en": "Mixed contract where goods and services cannot be separated: rates?",
     "a_vi": "VAT 3% và CIT 2% trên toàn bộ giá trị hợp đồng."
    }
+  ],
+  "exam_refs": [
+   "J20 CBE sample · Q3",
+   "Jun 2021 · Q2",
+   "Dec 2024 · Q3"
   ]
  },
  {
@@ -464,6 +507,10 @@
     "q_en": "Who must withhold FCT if a foreign digital supplier does not register in Vietnam?",
     "a_vi": "Tổ chức VN mua dịch vụ khấu trừ và khai thay; với người mua cá nhân thì ngân hàng hoặc trung gian thanh toán khấu trừ hoặc báo cáo hằng tháng."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q3",
+   "Jun 2023 · Q3"
   ]
  },
  {
@@ -487,6 +534,9 @@
     "q_en": "Which documents support a DTA claim?",
     "a_vi": "01/HTQT, giấy chứng nhận cư trú, hợp đồng, chứng từ thu nhập và thanh toán."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q3"
   ]
  },
  {

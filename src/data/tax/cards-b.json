@@ -58,6 +58,14 @@
     "q_en": "When is an individual with fewer than 183 days in Vietnam still a tax resident?",
     "a_vi": "Khi không là resident nước khác và có nơi ở thường xuyên tại VN hoặc thuê nhà ở VN từ 183 ngày trở lên."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q6",
+   "J20 CBE sample · Q6",
+   "Jun 2021 · Q1",
+   "Dec 2021 · Q6",
+   "Dec 2022 · Q2",
+   "Dec 2024 · Q6"
   ]
  },
  {
@@ -89,6 +97,11 @@
     "q_en": "First tax year for a foreigner arriving with less than 183 days in the calendar year?",
     "a_vi": "12 tháng liên tục kể từ ngày đến; năm thứ hai là năm dương lịch (phần chồng lấn quyết toán riêng)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q6",
+   "Dec 2021 · Q6",
+   "Dec 2023 · Q2"
   ]
  },
  {
@@ -113,6 +126,9 @@
     "q_en": "How is the overlapped period dealt with in the second tax year?",
     "a_vi": "Trừ PIT phần chồng lấn = tổng PIT năm 1 × số tháng chồng lấn / 12 khi tính PIT phải nộp năm 2."
    }
+  ],
+  "exam_refs": [
+   "Dec 2023 · Q2"
   ]
  },
  {
@@ -135,6 +151,10 @@
     "q_en": "Name the five steps to compute PIT on a flat-rate income.",
     "a_vi": "Nguồn thu nhập → thu nhập tính thuế → thuế suất → thời điểm tính thuế → bên khai nộp."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q2",
+   "Jun 2022 · Q6"
   ]
  },
  {
@@ -160,6 +180,19 @@
     "q_en": "Is the standard-rate part of overtime pay taxable?",
     "a_vi": "Có. Chỉ phần trả cao hơn mức lương chuẩn cho giờ làm thêm được miễn thuế."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q2",
+   "Jun 2018 · Q6",
+   "Dec 2018 · Q2",
+   "Dec 2018 · Q6",
+   "Jun 2019 · Q2",
+   "J20 CBE sample · Q2",
+   "J20 CBE sample · Q6",
+   "Jun 2021 · Q1",
+   "Dec 2021 · Q6",
+   "Jun 2022 · Q2",
+   "Dec 2023 · Q2"
   ]
  },
  {
@@ -193,6 +226,11 @@
     "q_en": "How is taxable in-kind housing computed?",
     "a_vi": "MIN của tiền nhà thực tế và 15% thu nhập chịu thuế chưa gồm tiền nhà."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q6",
+   "J20 CBE sample · Q6",
+   "Dec 2024 · Q6"
   ]
  },
  {
@@ -325,6 +363,10 @@
     "q_en": "Name three types of PIT-exempt income.",
     "a_vi": "Lãi tiền gửi ngân hàng VN, kiều hối, học bổng (còn: lãi trái phiếu Chính phủ, bồi thường bảo hiểm, quỹ từ thiện)."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q2",
+   "Dec 2023 · Q6"
   ]
  },
  {
@@ -373,6 +415,11 @@
     "q_en": "Monthly personal and dependant deductions (J26–J27)?",
     "a_vi": "Self 11 triệu; dependant 4,4 triệu mỗi người."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q6",
+   "J20 CBE sample · Q2",
+   "Dec 2024 · Q6"
   ]
  },
  {
@@ -419,6 +466,9 @@
     "q_en": "Employee compulsory insurance rates for a Vietnamese and an expat?",
     "a_vi": "VN: 8% + 1,5% + 1% = 10,5%; expat: 8% + 1,5% = 9,5%; trên lương tối đa 46,8 triệu."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q6"
   ]
  },
  {
@@ -444,6 +494,11 @@
     "q_en": "Quick formula for assessable income of VND 25 million per month?",
     "a_vi": "T = 0,2 × 25 − 1,65 = 3,35 triệu (khoảng 18–32 triệu)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q2",
+   "Jun 2019 · Q6",
+   "Jun 2021 · Q5"
   ]
  },
  {
@@ -477,6 +532,9 @@
     "q_en": "Gross-up formula for monthly net assessable income of VND 20 million?",
     "a_vi": "G = (20 − 1,65) / 0,8 = 22,94 triệu (khoảng N 16,05–27,25)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2021 · Q5"
   ]
  },
  {
@@ -502,6 +560,9 @@
     "q_en": "How is the Vietnam-sourced portion of a non-resident’s salary determined?",
     "a_vi": "Theo tỷ lệ ngày: ngày làm việc cho VN / tổng ngày làm việc (nếu không có mặt), hoặc ngày có mặt tại VN / 365."
    }
+  ],
+  "exam_refs": [
+   "Dec 2022 · Q2"
   ]
  },
  {
@@ -531,6 +592,9 @@
     "q_en": "Net salary from two employers: how many times are deductions applied?",
     "a_vi": "Một lần. Gross-up riêng từng nơi trả, giảm trừ chỉ áp một lần."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q6"
   ]
  },
  {
@@ -594,6 +658,10 @@
     "q_en": "PIT rate for an individual’s lease of property?",
     "a_vi": "5% trên doanh thu (khi doanh thu năm vượt 100 triệu)."
    }
+  ],
+  "exam_refs": [
+   "Dec 2022 · Q6",
+   "Jun 2023 · Q1"
   ]
  },
  {
@@ -618,6 +686,9 @@
     "q_en": "PIT rate on dividends for a resident individual?",
     "a_vi": "5% trên tổng thu nhập (cổ tức bằng cổ phiếu chưa tính thuế khi nhận)."
    }
+  ],
+  "exam_refs": [
+   "Dec 2021 · Q2"
   ]
  },
  {
@@ -659,6 +730,9 @@
     "q_en": "PIT on securities transfer for a resident?",
     "a_vi": "0,1% trên giá bán, không phụ thuộc lãi lỗ."
    }
+  ],
+  "exam_refs": [
+   "Dec 2021 · Q2"
   ]
  },
  {
@@ -683,6 +757,10 @@
     "q_en": "When is real property transfer by an individual PIT-exempt?",
     "a_vi": "Giữa người thân trong danh sách (vợ chồng, cha mẹ con…) hoặc khi chuyển nhượng nhà ở/đất ở duy nhất của cá nhân."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q2",
+   "Dec 2023 · Q6"
   ]
  },
  {
@@ -708,6 +786,14 @@
     "q_en": "PIT on a VND 50 million prize?",
     "a_vi": "10% × (50 − 10) = 4 triệu."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q2",
+   "Dec 2021 · Q2",
+   "Jun 2022 · Q6",
+   "Dec 2022 · Q6",
+   "Jun 2023 · Q1",
+   "Dec 2023 · Q6"
   ]
  },
  {
@@ -738,6 +824,10 @@
     "q_en": "When is PIT on stock dividends taxed?",
     "a_vi": "Chưa tính khi nhận; tính khi chuyển nhượng số cổ phiếu đó, theo thứ tự cổ phiếu cổ tức trước."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q2",
+   "Dec 2022 · Q6"
   ]
  },
  {
@@ -859,6 +949,10 @@
     "q_en": "How does a DTA affect the first-year income period of an arriving foreigner?",
     "a_vi": "Chỉ tính thu nhập từ ngày đến VN (nước không có DTA thì tính từ 01/01)."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q3",
+   "Dec 2024 · Q1"
   ]
  }
 ]

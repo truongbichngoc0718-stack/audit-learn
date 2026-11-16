@@ -214,6 +214,9 @@
     "q_en": "Daily late payment interest rate?",
     "a_vi": "0,03% mỗi ngày."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q4"
   ]
  },
  {
@@ -506,6 +509,9 @@
     "q_en": "Capital ownership threshold making two enterprises related?",
     "a_vi": "Nắm trực tiếp hoặc gián tiếp ít nhất 25% vốn chủ sở hữu của bên kia."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q1"
   ]
  },
  {
@@ -650,6 +656,10 @@
     "q_en": "Net interest deductibility cap under the transfer pricing decree?",
     "a_vi": "30% EBITDA; phần vượt chuyển tối đa 5 năm."
    }
+  ],
+  "exam_refs": [
+   "Jun 2021 · Q4",
+   "Jun 2022 · Q1"
   ]
  },
  {

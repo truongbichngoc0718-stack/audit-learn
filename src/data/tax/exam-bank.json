@@ -1,104 +1,1063 @@
 {
- "intro_vi": "Mức hiện tại: danh mục 11 kỳ thi và cảnh báo luật. Gắn từng câu hỏi vào thẻ (exam_refs) và tự chấm theo câu sẽ làm khi OCR đề Dec 2024, Dec 2025 và J20 sample hoàn tất. Tích ô để đánh dấu kỳ đã làm.",
+ "intro_vi": "Mỗi dòng là một câu tự luận (Section B/C), tóm tắt bằng lời riêng, gắn với thẻ Atlas. Không chép nguyên văn đề: mở file trong thư viện nguồn để làm. Tích Đúng hoặc Sai sau khi làm; Sai sẽ đưa thẻ liên quan sang trạng thái \"đang học\" trên Atlas. Các kỳ trước Dec 2025 có thể dùng luật cũ ở CIT, VAT, FCT, hóa đơn: chỉ lấy dạng bài và bẫy, con số lấy theo thẻ và bảng thuế J26–J27. Nhãn \"cần đối chiếu\" dùng cho PIT và quản lý thuế (bảng giảm trừ, biểu thuế thay đổi).",
  "sittings": [
   {
    "id": "until-dec17",
-   "label": "Đến Dec 2017 (gộp)",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
-  },
-  {
-   "id": "2018-dec",
-   "label": "Dec 2018",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "label": "Đến Dec 2017 (gộp nhiều đề)"
   },
   {
    "id": "2018-jun",
-   "label": "Jun 2018",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "label": "Jun 2018"
+  },
+  {
+   "id": "2018-dec",
+   "label": "Dec 2018"
   },
   {
    "id": "2019-jun",
-   "label": "Jun 2019",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "label": "Jun 2019"
   },
   {
    "id": "2020-sample",
-   "label": "J20 Sample",
-   "law_status": "old-law",
-   "has_question": false,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
-  },
-  {
-   "id": "2021-dec",
-   "label": "Dec 2021",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "label": "J20 CBE sample"
   },
   {
    "id": "2021-jun",
-   "label": "Jun 2021",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "label": "Jun 2021"
   },
   {
-   "id": "2022-dec",
-   "label": "Dec 2022",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "id": "2021-dec",
+   "label": "Dec 2021"
   },
   {
    "id": "2022-jun",
-   "label": "Jun 2022",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "label": "Jun 2022"
   },
   {
-   "id": "2023-dec",
-   "label": "Dec 2023",
-   "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "id": "2022-dec",
+   "label": "Dec 2022"
   },
   {
    "id": "2023-jun",
-   "label": "Jun 2023",
+   "label": "Jun 2023"
+  },
+  {
+   "id": "2023-dec",
+   "label": "Dec 2023"
+  },
+  {
+   "id": "2024-dec",
+   "label": "Dec 2024"
+  }
+ ],
+ "questions": [
+  {
+   "id": "until-dec17-all",
+   "sitting": "until-dec17",
+   "q_no": "Tập hợp",
+   "marks": null,
+   "part": "all",
+   "topic_vi": "Nhiều đề trước 2018 gộp trong một file; dùng để luyện dạng bài, không dùng số liệu luật cũ.",
+   "nodes": [],
    "law_status": "old-law",
-   "has_question": true,
-   "has_answer": true,
-   "note_vi": "Đề trước Luật CIT 67/2025 (01/10/2025), Nghị định 320/2025, Luật VAT 48/2024 và Thông tư 69/2025: câu CIT, VAT, FCT có thể dùng luật cũ, chỉ lấy dạng bài và bẫy, đối chiếu con số với thẻ Atlas. PIT cần đối chiếu giảm trừ và biểu thuế của bảng J26–J27. Đề gốc nằm trong source/library/acca-tx-vnm/exams/ (dùng nội bộ).",
-   "topics": []
+   "question_ref": "source/library/acca-tx-vnm/exams/until-dec17/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/until-dec17/answer.md"
+  },
+  {
+   "id": "2018-jun-q1",
+   "sitting": "2018-jun",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Điều chỉnh CIT cho 5 khoản mục của một công ty cổ phần; câu (a) về doanh thu dưới 100 triệu.",
+   "nodes": [
+    "c-computation-template",
+    "c-deductible-3-conditions"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-jun/answer.md"
+  },
+  {
+   "id": "2018-jun-q2",
+   "sitting": "2018-jun",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "Thu nhập chịu thuế và PIT từ tiền lương; thời điểm chịu thuế khi bán căn hộ.",
+   "nodes": [
+    "b-emp-taxable",
+    "b-real-estate",
+    "b-progressive-quick-formula"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-jun/answer.md"
+  },
+  {
+   "id": "2018-jun-q3",
+   "sitting": "2018-jun",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "Nguyên tắc doanh thu tính thuế của hãng tàu; FCT công ty trong nước khai thay.",
+   "nodes": [
+    "d-special-cases",
+    "d-nonvas-vat"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-jun/answer.md"
+  },
+  {
+   "id": "2018-jun-q4",
+   "sitting": "2018-jun",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "VAT bán biệt thự: giá tính thuế, đầu vào được khấu trừ.",
+   "nodes": [
+    "e-taxable-value",
+    "e-input-apportion"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-jun/answer.md"
+  },
+  {
+   "id": "2018-jun-q5",
+   "sitting": "2018-jun",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "CIT chuyển nhượng phần vốn góp và cổ phần.",
+   "nodes": [
+    "c-capital-transfer-vn"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-jun/answer.md"
+  },
+  {
+   "id": "2018-jun-q6",
+   "sitting": "2018-jun",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "Cư trú thuế hai năm của người nước ngoài; thu nhập chịu thuế và PIT từng năm.",
+   "nodes": [
+    "b-residence-test",
+    "b-tax-period-first-year",
+    "b-emp-taxable"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-jun/answer.md"
+  },
+  {
+   "id": "2018-dec-q1",
+   "sitting": "2018-dec",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Ưu đãi thuế từng năm và bù lỗ chuyển tiếp.",
+   "nodes": [
+    "c-loss-cf",
+    "c-incentive-concepts",
+    "c-location-incentive"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-dec/answer.md"
+  },
+  {
+   "id": "2018-dec-q2",
+   "sitting": "2018-dec",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "Thu nhập chịu thuế từ lương và các nguồn khác; liệt kê khoản không chịu thuế.",
+   "nodes": [
+    "b-income-types",
+    "b-emp-taxable",
+    "b-exempt-income"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-dec/answer.md"
+  },
+  {
+   "id": "2018-dec-q3",
+   "sitting": "2018-dec",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "Hiệp định thuế với Hồng Kông: miễn FCT và thủ tục ban đầu.",
+   "nodes": [
+    "d-dta-procedure",
+    "b-dta"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-dec/answer.md"
+  },
+  {
+   "id": "2018-dec-q4",
+   "sitting": "2018-dec",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "Điều chỉnh VAT đầu vào của tài sản cố định trong 3 năm và tiền chậm nộp.",
+   "nodes": [
+    "e-input-apportion",
+    "a-late-interest"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-dec/answer.md"
+  },
+  {
+   "id": "2018-dec-q5",
+   "sitting": "2018-dec",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT từ lợi nhuận trước thuế 80.000 triệu với 4 khoản điều chỉnh.",
+   "nodes": [
+    "c-computation-template",
+    "c-deductible-3-conditions"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-dec/answer.md"
+  },
+  {
+   "id": "2018-dec-q6",
+   "sitting": "2018-dec",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "Thu nhập chịu thuế và không chịu thuế, có lợi ích nhà ở.",
+   "nodes": [
+    "b-emp-housing-15",
+    "b-emp-taxable"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2018-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2018-dec/answer.md"
+  },
+  {
+   "id": "2019-jun-q1",
+   "sitting": "2019-jun",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Thu nhập từ đầu tư của doanh nghiệp: phần miễn thuế và phần chịu thuế.",
+   "nodes": [
+    "c-exempt-income",
+    "c-other-income"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2019-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2019-jun/answer.md"
+  },
+  {
+   "id": "2019-jun-q2",
+   "sitting": "2019-jun",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT lương của người nước ngoài; xử lý khoản trả mua giấy phép AI.",
+   "nodes": [
+    "b-emp-taxable",
+    "b-royalty-prize-gift"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2019-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2019-jun/answer.md"
+  },
+  {
+   "id": "2019-jun-q3",
+   "sitting": "2019-jun",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "FCT khi trả số tiền net 16 triệu USD; phí dịch vụ đám mây.",
+   "nodes": [
+    "d-nonvas-gross-up",
+    "d-special-cases",
+    "d-rates"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2019-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2019-jun/answer.md"
+  },
+  {
+   "id": "2019-jun-q4",
+   "sitting": "2019-jun",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "INV",
+   "topic_vi": "Yêu cầu lập hóa đơn khi điều chuyển hàng cho chi nhánh phụ thuộc và khi chi nhánh bán.",
+   "nodes": [
+    "e-invoice-special",
+    "e-invoicing-time"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2019-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2019-jun/answer.md"
+  },
+  {
+   "id": "2019-jun-q5",
+   "sitting": "2019-jun",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT từ lợi nhuận trước thuế 26.800 triệu, bảng khoản mục và ghi chú.",
+   "nodes": [
+    "c-computation-template"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2019-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2019-jun/answer.md"
+  },
+  {
+   "id": "2019-jun-q6",
+   "sitting": "2019-jun",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "Thu nhập tính thuế, giảm trừ, bảo hiểm và PIT hằng tháng của 4 nhân viên.",
+   "nodes": [
+    "b-shui",
+    "b-deductions",
+    "b-progressive-quick-formula"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2019-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2019-jun/answer.md"
+  },
+  {
+   "id": "2020-sample-q1",
+   "sitting": "2020-sample",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "CIT tiềm năng cơ quan thuế có thể áp cho một giao dịch chuyển nhượng.",
+   "nodes": [
+    "c-capital-transfer-vn",
+    "c-capital-transfer-foreign"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2020-sample/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2020-sample/answer.md"
+  },
+  {
+   "id": "2020-sample-q2",
+   "sitting": "2020-sample",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT thu nhập từ tiền lương năm 2019.",
+   "nodes": [
+    "b-emp-taxable",
+    "b-deductions"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2020-sample/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2020-sample/answer.md"
+  },
+  {
+   "id": "2020-sample-q3",
+   "sitting": "2020-sample",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "So sánh hai phương án giá hợp đồng nhà thầu: phương án nào có FCT thấp hơn.",
+   "nodes": [
+    "d-nonvas-gross-up",
+    "d-mixed-contracts",
+    "d-rates"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2020-sample/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2020-sample/answer.md"
+  },
+  {
+   "id": "2020-sample-q4",
+   "sitting": "2020-sample",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "Tỷ lệ và số VAT đầu vào được hoàn năm 2019.",
+   "nodes": [
+    "e-refund-export",
+    "e-refund-investment"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2020-sample/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2020-sample/answer.md"
+  },
+  {
+   "id": "2020-sample-q5",
+   "sitting": "2020-sample",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT từ lợi nhuận trước thuế 138.000 triệu.",
+   "nodes": [
+    "c-computation-template"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2020-sample/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2020-sample/answer.md"
+  },
+  {
+   "id": "2020-sample-q6",
+   "sitting": "2020-sample",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "Thu nhập chịu thuế, không chịu thuế, chưa chịu thuế trong năm của người nước ngoài (tính bằng USD).",
+   "nodes": [
+    "b-residence-test",
+    "b-emp-housing-15",
+    "b-emp-taxable"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2020-sample/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2020-sample/answer.md"
+  },
+  {
+   "id": "2021-jun-q1",
+   "sitting": "2021-jun",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT thu nhập phát sinh tại VN của người Nhật làm việc cho công ty mẹ.",
+   "nodes": [
+    "b-residence-test",
+    "b-emp-taxable"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-jun/answer.md"
+  },
+  {
+   "id": "2021-jun-q2",
+   "sitting": "2021-jun",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "CIT-FCT của 4 hợp đồng của một công ty cung cấp giải pháp công nghệ.",
+   "nodes": [
+    "d-nonvas-cit",
+    "d-rates",
+    "d-mixed-contracts"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-jun/answer.md"
+  },
+  {
+   "id": "2021-jun-q3",
+   "sitting": "2021-jun",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "VAT đầu vào được hoàn cho các công ty con có dự án đầu tư tại ngày cho trước.",
+   "nodes": [
+    "e-refund-investment"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-jun/answer.md"
+  },
+  {
+   "id": "2021-jun-q4",
+   "sitting": "2021-jun",
+   "q_no": "Q4",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "CIT hai năm theo Nghị định 20/2017 và 68/2020, phần lãi vay vượt trần chuyển sang năm sau.",
+   "nodes": [
+    "c-interest",
+    "a-tp-interest-30-ebitda"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-jun/answer.md"
+  },
+  {
+   "id": "2021-jun-q5",
+   "sitting": "2021-jun",
+   "q_no": "Q5",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "Thu nhập chịu thuế hằng tháng gộp và PIT cả năm.",
+   "nodes": [
+    "b-gross-up-net",
+    "b-progressive-quick-formula"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-jun/answer.md"
+  },
+  {
+   "id": "2021-dec-q1",
+   "sitting": "2021-dec",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Khấu hao tài sản cố định được trừ hay không; khoản lỗ khi giải thể liên doanh.",
+   "nodes": [
+    "c-depreciation-nondeductible",
+    "c-depreciation-methods"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-dec/answer.md"
+  },
+  {
+   "id": "2021-dec-q2",
+   "sitting": "2021-dec",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT trúng thưởng xổ số và đầu tư vào ứng dụng của cá nhân.",
+   "nodes": [
+    "b-royalty-prize-gift",
+    "b-capital-investment",
+    "b-capital-transfer"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-dec/answer.md"
+  },
+  {
+   "id": "2021-dec-q3",
+   "sitting": "2021-dec",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "FCT của công ty Singapore cung cấp dịch vụ ví điện tử.",
+   "nodes": [
+    "d-cit-subject",
+    "d-nonvas-vat",
+    "d-rates"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-dec/answer.md"
+  },
+  {
+   "id": "2021-dec-q4",
+   "sitting": "2021-dec",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "VAT đầu vào, đầu ra và thời điểm lập hóa đơn của công ty bán lẻ.",
+   "nodes": [
+    "e-input-conditions",
+    "e-invoicing-time"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-dec/answer.md"
+  },
+  {
+   "id": "2021-dec-q5",
+   "sitting": "2021-dec",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT năm tài chính đến 30/9; xử lý tổn thất do cháy và bảo hiểm.",
+   "nodes": [
+    "c-computation-template",
+    "c-special-deductible"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-dec/answer.md"
+  },
+  {
+   "id": "2021-dec-q6",
+   "sitting": "2021-dec",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "Thu nhập chịu thuế, không chịu thuế và PIT năm của người Hàn Quốc, tháng đến VN.",
+   "nodes": [
+    "b-residence-test",
+    "b-tax-period-first-year",
+    "b-emp-taxable"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2021-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2021-dec/answer.md"
+  },
+  {
+   "id": "2022-jun-q1",
+   "sitting": "2022-jun",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Lãi vay dài hạn từ công ty mẹ hai năm: chi phí lãi được trừ.",
+   "nodes": [
+    "c-interest",
+    "a-tp-interest-30-ebitda",
+    "a-tp-related-parties"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-jun/answer.md"
+  },
+  {
+   "id": "2022-jun-q2",
+   "sitting": "2022-jun",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT của CEO công ty niêm yết nhận cổ phiếu, quyền chọn.",
+   "nodes": [
+    "b-taxing-time-shares",
+    "b-emp-taxable"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-jun/answer.md"
+  },
+  {
+   "id": "2022-jun-q3",
+   "sitting": "2022-jun",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "FCT các khoản thanh toán cho hai nhà cung cấp nước ngoài.",
+   "nodes": [
+    "d-ecommerce",
+    "d-vat-subject",
+    "d-rates"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-jun/answer.md"
+  },
+  {
+   "id": "2022-jun-q4",
+   "sitting": "2022-jun",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "VAT của hoạt động tài trợ đối với bên nhận và bên tài trợ.",
+   "nodes": [
+    "e-not-required-declare",
+    "e-taxable-value"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-jun/answer.md"
+  },
+  {
+   "id": "2022-jun-q5",
+   "sitting": "2022-jun",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT: quà tặng nhân viên, phúc lợi, dự án ngoài Việt Nam.",
+   "nodes": [
+    "c-computation-template",
+    "c-employment-caps",
+    "c-overseas-income-credit"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-jun/answer.md"
+  },
+  {
+   "id": "2022-jun-q6",
+   "sitting": "2022-jun",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "PIT của quản lý làm thêm công việc bán thời gian, nhiều nguồn thu.",
+   "nodes": [
+    "b-multiple-employers",
+    "b-royalty-prize-gift",
+    "b-income-types"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-jun/answer.md"
+  },
+  {
+   "id": "2022-dec-q1",
+   "sitting": "2022-dec",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Thu nhập đầu tư của công ty lỗ hoạt động: khoản chịu thuế, miễn thuế.",
+   "nodes": [
+    "c-other-income",
+    "c-exempt-income",
+    "c-loss-cf"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-dec/answer.md"
+  },
+  {
+   "id": "2022-dec-q2",
+   "sitting": "2022-dec",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT của cá nhân Singapore làm việc cho văn phòng đại diện.",
+   "nodes": [
+    "b-residence-test",
+    "b-nonresident-employment"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-dec/answer.md"
+  },
+  {
+   "id": "2022-dec-q3",
+   "sitting": "2022-dec",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "FCT thanh toán cho nhà cung cấp giải pháp eKYC nước ngoài.",
+   "nodes": [
+    "d-vat-subject",
+    "d-nonvas-vat",
+    "d-rates"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-dec/answer.md"
+  },
+  {
+   "id": "2022-dec-q4",
+   "sitting": "2022-dec",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "Doanh thu phí hội viên đã gồm thuế tiêu thụ đặc biệt và VAT: tách ra giá tính thuế.",
+   "nodes": [
+    "e-taxable-value",
+    "e-invoicing-time"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-dec/answer.md"
+  },
+  {
+   "id": "2022-dec-q5",
+   "sitting": "2022-dec",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT khi báo cáo kiểm toán lỗ; các khoản điều chỉnh và công ty con ở Singapore.",
+   "nodes": [
+    "c-computation-template",
+    "c-loss-cf"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-dec/answer.md"
+  },
+  {
+   "id": "2022-dec-q6",
+   "sitting": "2022-dec",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "PIT của chủ sở hữu kiêm CEO và tư vấn tự do; thưởng đất ảo.",
+   "nodes": [
+    "b-business-income",
+    "b-taxing-time-shares",
+    "b-royalty-prize-gift"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2022-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2022-dec/answer.md"
+  },
+  {
+   "id": "2023-jun-q1",
+   "sitting": "2023-jun",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT bản quyền sách và thu nhập từ kênh nội dung.",
+   "nodes": [
+    "b-royalty-prize-gift",
+    "b-business-income"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-jun/answer.md"
+  },
+  {
+   "id": "2023-jun-q2",
+   "sitting": "2023-jun",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Ô tô 7 chỗ bị hỏng do lũ: khấu hao, sửa chữa, chi phí được trừ.",
+   "nodes": [
+    "c-car-1-6bn",
+    "c-depreciation-nondeductible",
+    "c-special-deductible"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-jun/answer.md"
+  },
+  {
+   "id": "2023-jun-q3",
+   "sitting": "2023-jun",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "FCT và VAT dịch vụ nền tảng số của công ty Singapore không có mặt tại VN.",
+   "nodes": [
+    "d-ecommerce",
+    "e-scope-taxpayer"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-jun/answer.md"
+  },
+  {
+   "id": "2023-jun-q4",
+   "sitting": "2023-jun",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "INV",
+   "topic_vi": "Xử lý hóa đơn có sai sót trước và sau khi gửi người mua.",
+   "nodes": [
+    "e-invoice-errors",
+    "e-invoicing-time"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-jun/answer.md"
+  },
+  {
+   "id": "2023-jun-q5",
+   "sitting": "2023-jun",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT từ lợi nhuận kế toán 30.000 triệu với 7 khoản mục.",
+   "nodes": [
+    "c-computation-template"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-jun/answer.md"
+  },
+  {
+   "id": "2023-jun-q6",
+   "sitting": "2023-jun",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Xử lý thuế khi nhận và bán quyền chọn bán cổ phần (không cần tính toán).",
+   "nodes": [
+    "c-capital-transfer-vn",
+    "c-other-income"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-jun/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-jun/answer.md"
+  },
+  {
+   "id": "2023-dec-q1",
+   "sitting": "2023-dec",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Đối chiếu lợi nhuận kế toán và thu nhập tính thuế từ 45.000 triệu.",
+   "nodes": [
+    "c-computation-template",
+    "c-deductible-3-conditions"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-dec/answer.md"
+  },
+  {
+   "id": "2023-dec-q2",
+   "sitting": "2023-dec",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "PIT",
+   "topic_vi": "PIT lao động ký hợp đồng 5 năm, kết thúc tháng 9/2022.",
+   "nodes": [
+    "b-emp-taxable",
+    "b-tax-period-first-year",
+    "b-cross-year-finalisation"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-dec/answer.md"
+  },
+  {
+   "id": "2023-dec-q3",
+   "sitting": "2023-dec",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "FCT vận tải, logistics chọn không áp dụng kế toán VN (phương pháp trực tiếp).",
+   "nodes": [
+    "d-special-cases",
+    "d-nonvas-vat",
+    "d-nonvas-cit"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-dec/answer.md"
+  },
+  {
+   "id": "2023-dec-q4",
+   "sitting": "2023-dec",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "INV",
+   "topic_vi": "Thời điểm lập hóa đơn cho các trường hợp tư vấn thuế đưa ra.",
+   "nodes": [
+    "e-invoicing-time",
+    "e-invoice-special"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-dec/answer.md"
+  },
+  {
+   "id": "2023-dec-q5",
+   "sitting": "2023-dec",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "CIT công ty công nghệ cao: ưu đãi, thuế suất, thời hạn.",
+   "nodes": [
+    "c-incentive-concepts",
+    "c-incentive-duration",
+    "c-large-scale"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-dec/answer.md"
+  },
+  {
+   "id": "2023-dec-q6",
+   "sitting": "2023-dec",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "PIT thừa kế tài sản của ba anh chị em.",
+   "nodes": [
+    "b-royalty-prize-gift",
+    "b-real-estate",
+    "b-exempt-income"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2023-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2023-dec/answer.md"
+  },
+  {
+   "id": "2024-dec-q1",
+   "sitting": "2024-dec",
+   "q_no": "Q1",
+   "marks": 10,
+   "part": "CIT",
+   "topic_vi": "Công ty Singapore chuyển nhượng cổ phần công ty VN qua công ty con: thuế VN và hiệp định.",
+   "nodes": [
+    "c-capital-transfer-foreign",
+    "b-dta",
+    "c-pe-scope"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2024-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2024-dec/answer.md"
+  },
+  {
+   "id": "2024-dec-q2",
+   "sitting": "2024-dec",
+   "q_no": "Q2",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "FCT từ thanh toán cho hai nhà cung cấp, ngày 31/12/2023.",
+   "nodes": [
+    "d-nonvas-vat",
+    "d-rates"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2024-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2024-dec/answer.md"
+  },
+  {
+   "id": "2024-dec-q3",
+   "sitting": "2024-dec",
+   "q_no": "Q3",
+   "marks": 10,
+   "part": "FCT",
+   "topic_vi": "Phân loại phí phần mềm: dịch vụ hay bản quyền; phí net thuế VN.",
+   "nodes": [
+    "d-mixed-contracts",
+    "d-cit-subject",
+    "d-nonvas-gross-up"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2024-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2024-dec/answer.md"
+  },
+  {
+   "id": "2024-dec-q4",
+   "sitting": "2024-dec",
+   "q_no": "Q4",
+   "marks": 10,
+   "part": "VAT",
+   "topic_vi": "VAT đầu ra, đầu vào của chuỗi siêu thị trong 5 giao dịch.",
+   "nodes": [
+    "e-input-specific",
+    "e-not-required-declare"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2024-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2024-dec/answer.md"
+  },
+  {
+   "id": "2024-dec-q5",
+   "sitting": "2024-dec",
+   "q_no": "Q5",
+   "marks": 15,
+   "part": "CIT",
+   "topic_vi": "Tính CIT công ty sản xuất giày gia công, bản nháp của kế toán thuế mới.",
+   "nodes": [
+    "c-computation-template"
+   ],
+   "law_status": "old-law",
+   "question_ref": "source/library/acca-tx-vnm/exams/2024-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2024-dec/answer.md"
+  },
+  {
+   "id": "2024-dec-q6",
+   "sitting": "2024-dec",
+   "q_no": "Q6",
+   "marks": 15,
+   "part": "PIT",
+   "topic_vi": "PIT người Úc, vợ và ba con (phụ thuộc, nhà ở), năm 2023.",
+   "nodes": [
+    "b-residence-test",
+    "b-deductions",
+    "b-emp-housing-15"
+   ],
+   "law_status": "check",
+   "question_ref": "source/library/acca-tx-vnm/exams/2024-dec/question.md",
+   "answer_ref": "source/library/acca-tx-vnm/exams/2024-dec/answer.md"
   }
  ]
 }

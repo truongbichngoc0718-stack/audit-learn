@@ -100,3 +100,9 @@
 - Trang: D0 Start here (lộ trình 3 tuần, cảnh báo luật cũ), D1 Atlas, D2 Cây quyết định + 16 trang cây, D3 Bẫy đề, D4 Kho đề, D5 Flashcard, D6 Máy tính, D7 Bảng thuế.
 - Thêm mục "Thuế" vào `docs/GLOSSARY.md`; tạo `docs/STYLE_D.md` D-1.0-draft.
 - Chưa làm: gắn từng câu đề vào thẻ (`exam_refs`) và tự chấm theo câu, vì OCR Dec24, Dec25 và J20 sample chưa xong; kho đề hiện ở mức kỳ thi.
+
+## 2026-11-16 · Nhánh D · Kho đề theo câu hỏi
+- OCR thêm đề Dec 2024 và 2020 sample; bỏ qua đề Dec 2025 (chỉ có 1 trang đáp án).
+- `exam-bank.json` chuyển sang mức câu hỏi: 66 câu / 11 kỳ, tóm tắt bằng lời mình (không chép đề), gắn `law_status` (CIT/VAT/FCT/INV = luật cũ, PIT/ADM = cần đối chiếu) và liên kết thẻ; 63 thẻ có `exam_refs`.
+- `ExamBank.tsx` viết lại: lọc kỳ/phần/trạng thái, tự chấm Đúng/Sai; Sai → thẻ liên quan chuyển "đang học".
+- Sinh bằng `_gen/exam_bank.py`. Chạy build: 88 trang, không lỗi.

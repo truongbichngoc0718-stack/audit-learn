@@ -60,6 +60,9 @@
     "q_en": "Scope of CIT for a foreign enterprise with a PE in Vietnam?",
     "a_vi": "Thu nhập nguồn VN (liên quan hoặc không liên quan PE) cộng thu nhập nước ngoài liên quan đến PE."
    }
+  ],
+  "exam_refs": [
+   "Dec 2024 · Q1"
   ]
  },
  {
@@ -212,6 +215,18 @@
     "q_en": "Why list items with zero adjustment in a CIT reconciliation answer?",
     "a_vi": "Đề chấm theo từng khoản: liệt kê mọi khoản và ghi 0 cho khoản không điều chỉnh để chắc điểm."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q1",
+   "Dec 2018 · Q5",
+   "Jun 2019 · Q5",
+   "J20 CBE sample · Q5",
+   "Dec 2021 · Q5",
+   "Jun 2022 · Q5",
+   "Dec 2022 · Q5",
+   "Jun 2023 · Q5",
+   "Dec 2023 · Q1",
+   "Dec 2024 · Q5"
   ]
  },
  {
@@ -273,6 +288,11 @@
     "q_en": "Name the three general conditions for a CIT-deductible expense.",
     "a_vi": "Liên quan hoạt động kinh doanh; hóa đơn, chứng từ hợp lệ; thanh toán không dùng tiền mặt (từ 5 triệu)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q1",
+   "Dec 2018 · Q5",
+   "Dec 2023 · Q1"
   ]
  },
  {
@@ -461,6 +481,9 @@
     "q_en": "Annual cap on cash uniform allowance for CIT?",
     "a_vi": "5 triệu đồng mỗi người mỗi năm."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q5"
   ]
  },
  {
@@ -487,6 +510,10 @@
     "q_en": "When is depreciation on temporarily idle assets still deductible?",
     "a_vi": "Ngừng do mùa vụ không quá 9 tháng, hoặc do sửa chữa, di dời, bảo trì định kỳ không quá 12 tháng."
    }
+  ],
+  "exam_refs": [
+   "Dec 2021 · Q1",
+   "Jun 2023 · Q2"
   ]
  },
  {
@@ -518,6 +545,9 @@
     "q_en": "Car costing VND2 billion: how much cost is depreciable for CIT?",
     "a_vi": "Chỉ 1,6 tỷ (chưa gồm VAT); khấu hao phần 0,4 tỷ vượt không được trừ."
    }
+  ],
+  "exam_refs": [
+   "Jun 2023 · Q2"
   ]
  },
  {
@@ -541,6 +571,9 @@
     "q_en": "Adjustment ratio for reducing-balance depreciation of an asset with a 3-year life?",
     "a_vi": "1,5 (thời gian sử dụng ≤ 4 năm); trên 4 năm thì 2,0."
    }
+  ],
+  "exam_refs": [
+   "Dec 2021 · Q1"
   ]
  },
  {
@@ -648,6 +681,10 @@
     "q_en": "Interest cap for loans from non-credit institutions under the new CIT rules?",
     "a_vi": "20% mỗi năm; vượt thì không được trừ (trước đây 1,5 lần lãi suất cơ bản)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2021 · Q4",
+   "Jun 2022 · Q1"
   ]
  },
  {
@@ -926,6 +963,10 @@
     "q_en": "Is non-creditable input VAT deductible for CIT?",
     "a_vi": "Có nếu gắn với sản xuất kinh doanh và không đủ điều kiện hoàn, trừ phần VAT bị loại vì thanh toán tiền mặt từ 5 triệu."
    }
+  ],
+  "exam_refs": [
+   "Dec 2021 · Q5",
+   "Jun 2023 · Q2"
   ]
  },
  {
@@ -949,6 +990,11 @@
     "q_en": "CIT on a Vietnamese enterprise’s capital transfer?",
     "a_vi": "20% trên lãi: giá chuyển nhượng − giá mua − chi phí chuyển nhượng."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q5",
+   "J20 CBE sample · Q1",
+   "Jun 2023 · Q6"
   ]
  },
  {
@@ -989,6 +1035,10 @@
     "q_en": "CIT on a foreign investor’s transfer of unlisted shares in a Vietnamese company?",
     "a_vi": "2% trên giá chuyển nhượng (không xét lãi lỗ); chứng khoán niêm yết 0,1%."
    }
+  ],
+  "exam_refs": [
+   "J20 CBE sample · Q1",
+   "Dec 2024 · Q1"
   ]
  },
  {
@@ -1047,6 +1097,11 @@
     "q_en": "Is the reversal of a deductible provision taxable?",
     "a_vi": "Có, là thu nhập khác chịu CIT (nếu trước đó khoản dự phòng không được trừ thì khoản thu hồi có thể không chịu thuế)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q1",
+   "Dec 2022 · Q1",
+   "Jun 2023 · Q6"
   ]
  },
  {
@@ -1081,6 +1136,9 @@
     "q_en": "Can excess foreign tax credit be carried forward?",
     "a_vi": "Không. Số vượt thuế VN phải nộp trên khoản thu nhập đó không được chuyển sang năm sau."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q5"
   ]
  },
  {
@@ -1110,6 +1168,10 @@
     "q_en": "Why are dividends from a Vietnamese subsidiary exempt from CIT?",
     "a_vi": "Vì đã nộp CIT tại công ty nhận đầu tư; miễn để tránh đánh thuế hai lần."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q1",
+   "Dec 2022 · Q1"
   ]
  },
  {
@@ -1142,6 +1204,11 @@
     "q_en": "How long can a tax loss be carried forward?",
     "a_vi": "Liên tục tối đa 5 năm kể từ năm sau năm phát sinh lỗ."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q1",
+   "Dec 2022 · Q1",
+   "Dec 2022 · Q5"
   ]
  },
  {
@@ -1221,6 +1288,10 @@
     "q_en": "If an incentive activity’s income cannot be separately accounted, how is it pro-rated?",
     "a_vi": "Theo tỷ lệ doanh thu hoạt động ưu đãi / tổng doanh thu, hoặc chi phí được trừ của hoạt động ưu đãi / tổng chi phí được trừ."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q1",
+   "Dec 2023 · Q5"
   ]
  },
  {
@@ -1245,6 +1316,9 @@
     "q_en": "Name the location groups eligible for CIT incentives.",
     "a_vi": "Địa bàn đặc biệt khó khăn, khó khăn, khu kinh tế, khu công nghệ cao, khu nông nghiệp công nghệ cao, khu công nghệ số tập trung, khu công nghiệp."
    }
+  ],
+  "exam_refs": [
+   "Dec 2018 · Q1"
   ]
  },
  {
@@ -1289,6 +1363,9 @@
     "q_en": "Preferential CIT rate and maximum duration for a large-scale project?",
     "a_vi": "10%, tối đa 30 năm (vốn đăng ký từ 12.000 tỷ)."
    }
+  ],
+  "exam_refs": [
+   "Dec 2023 · Q5"
   ]
  },
  {
@@ -1392,6 +1469,9 @@
     "q_en": "When does a tax holiday start for a new investment with taxable profit in year 1?",
     "a_vi": "Liên tục từ năm đầu tiên có thu nhập chịu thuế (không tính lỗ chuyển); nếu 3 năm đầu chưa có thu nhập thì từ năm thứ 4 có doanh thu."
    }
+  ],
+  "exam_refs": [
+   "Dec 2023 · Q5"
   ]
  },
  {

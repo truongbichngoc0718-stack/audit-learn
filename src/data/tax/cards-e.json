@@ -75,6 +75,13 @@
     "q_en": "Invoicing time for a service when payment is received before completion?",
     "a_vi": "Thời điểm thu tiền (trừ tiền đặt cọc, tạm ứng bảo đảm thực hiện các dịch vụ kế toán, kiểm toán, tư vấn…)."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q4",
+   "Dec 2021 · Q4",
+   "Dec 2022 · Q4",
+   "Jun 2023 · Q4",
+   "Dec 2023 · Q4"
   ]
  },
  {
@@ -99,6 +106,10 @@
     "q_en": "Total payment shown on the invoice for registered promotional goods?",
     "a_vi": "Bằng 0."
    }
+  ],
+  "exam_refs": [
+   "Jun 2019 · Q4",
+   "Dec 2023 · Q4"
   ]
  },
  {
@@ -138,6 +149,9 @@
     "q_en": "Wrong buyer address but correct tax code: which handling?",
     "a_vi": "Không lập hóa đơn mới; thông báo người mua và cơ quan thuế bằng mẫu 04/SS-HĐĐT."
    }
+  ],
+  "exam_refs": [
+   "Jun 2023 · Q4"
   ]
  },
  {
@@ -198,6 +212,9 @@
     "q_en": "Who pays VAT on services bought from a foreign supplier without a PE?",
     "a_vi": "Bên VN mua dịch vụ (khấu trừ và nộp thay), trừ thương mại điện tử, nền tảng số theo quy định riêng."
    }
+  ],
+  "exam_refs": [
+   "Jun 2023 · Q3"
   ]
  },
  {
@@ -280,6 +297,10 @@
     "q_en": "Is a bank deposit interest received by a business a VAT-taxable price?",
     "a_vi": "Không. Thu nhập tài chính không phải giá tính thuế; không lập hóa đơn."
    }
+  ],
+  "exam_refs": [
+   "Jun 2022 · Q4",
+   "Dec 2024 · Q4"
   ]
  },
  {
@@ -490,6 +511,11 @@
     "q_en": "Taxable price of imported goods?",
     "a_vi": "Giá nhập + thuế nhập khẩu + TTĐB + BVMT."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q4",
+   "Jun 2022 · Q4",
+   "Dec 2022 · Q4"
   ]
  },
  {
@@ -597,6 +623,9 @@
     "q_en": "Non-cash payment threshold for deducting input VAT?",
     "a_vi": "5 triệu đồng đã gồm VAT (tổng các hóa đơn một ngày)."
    }
+  ],
+  "exam_refs": [
+   "Dec 2021 · Q4"
   ]
  },
  {
@@ -641,6 +670,9 @@
     "q_en": "Input VAT on a 9-seat car bought for office use: deductible portion?",
     "a_vi": "Chỉ phần ứng với giá trị đến 1,6 tỷ đồng; phần vượt không được khấu trừ."
    }
+  ],
+  "exam_refs": [
+   "Dec 2024 · Q4"
   ]
  },
  {
@@ -666,6 +698,10 @@
     "q_en": "How is shared input VAT split when it cannot be separately accounted?",
     "a_vi": "Theo tỷ lệ doanh thu chịu thuế trên tổng doanh thu."
    }
+  ],
+  "exam_refs": [
+   "Jun 2018 · Q4",
+   "Dec 2018 · Q4"
   ]
  },
  {
@@ -826,6 +862,10 @@
     "q_en": "Refund threshold for an investment project?",
     "a_vi": "VAT đầu vào lũy kế còn lại từ 300 triệu đồng trở lên."
    }
+  ],
+  "exam_refs": [
+   "J20 CBE sample · Q4",
+   "Jun 2021 · Q3"
   ]
  },
  {
@@ -871,6 +911,9 @@
     "q_en": "Cap on VAT refund for exports?",
     "a_vi": "10% doanh thu xuất khẩu."
    }
+  ],
+  "exam_refs": [
+   "J20 CBE sample · Q4"
   ]
  },
  {
