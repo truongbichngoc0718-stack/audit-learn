@@ -72,3 +72,70 @@
 .tx-field input, .tx-field select { font: inherit; padding: .4rem .6rem; border-radius: 10px; border: 1px solid var(--bisc-line); background: var(--bisc-card); color: var(--sl-color-white); }
 .tx-note { font-size: .85rem; color: var(--bisc-muted); margin: .5rem 0; }
 .tx-tables table { width: 100%; font-size: .9rem; }
+
+/* ---- Sơ đồ cây quyết định (trái → phải) ---- */
+.tf-wrap { overflow: auto; max-height: 72vh; border: 1px solid var(--bisc-line); border-radius: 12px; background: var(--sl-color-gray-7, var(--bisc-bg)); padding: 1rem; margin: .6rem 0; }
+.tf { width: max-content; --tf-y: 24px; }
+.tf-node { display: flex; align-items: flex-start; }
+.tf-box { flex: 0 0 auto; width: 210px; text-align: left; font: inherit; font-size: .8rem; line-height: 1.3; color: inherit; cursor: pointer; border: 1.5px solid var(--bisc-line); border-left: 4px solid var(--bisc-navy); border-radius: 10px; background: var(--bisc-card); padding: .45rem .6rem; min-height: 48px; box-shadow: var(--bisc-shadow); }
+.tf-box span { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.tf-box small { display: block; color: var(--bisc-muted); font-size: .7rem; margin-top: .15rem; }
+.tf-box.res { border-left-color: var(--bisc-emerald); background: var(--bisc-emerald-soft); width: 180px; }
+.tf-box:hover { border-color: var(--bisc-amber); }
+.tf-box.on { border-color: var(--bisc-navy); }
+.tf-box.res.on { border-color: var(--bisc-emerald); }
+.tf-box.cur { outline: 3px solid var(--bisc-amber); outline-offset: 2px; }
+.tf-kids { display: flex; flex-direction: column; gap: .5rem; padding-left: 26px; position: relative; }
+.tf-kids::before { content: ''; position: absolute; left: 0; top: var(--tf-y); width: 13px; border-top: 2px solid var(--bisc-line); }
+.tf-kid { display: flex; align-items: flex-start; position: relative; }
+.tf-kid::before { content: ''; position: absolute; left: -13px; width: 13px; top: var(--tf-y); border-top: 2px solid var(--bisc-line); }
+.tf-kid::after { content: ''; position: absolute; left: -13px; top: 0; bottom: 0; border-left: 2px solid var(--bisc-line); }
+.tf-kid:first-child::after { top: var(--tf-y); }
+.tf-kid:last-child::after { bottom: auto; height: var(--tf-y); }
+.tf-kid:first-child:last-child::after { display: none; }
+.tf-kid:only-child::after { display: none; }
+.tf-kid.on::before { border-color: var(--bisc-amber); border-width: 3px; }
+.tf-kid.dim > .tf-edge, .tf-kid.dim > .tf-node { opacity: .38; }
+.tf-edge { flex: 0 0 auto; max-width: 150px; margin-right: .45rem; font: inherit; font-size: .74rem; font-weight: 600; line-height: 1.25; cursor: pointer; border: 1.5px solid var(--bisc-line); border-radius: 999px; padding: .2rem .55rem; background: var(--bisc-card); color: inherit; position: relative; margin-top: calc(var(--tf-y) - .75rem); }
+.tf-edge::after { content: '→'; position: absolute; right: -.75rem; top: 50%; transform: translateY(-50%); color: var(--bisc-muted); font-weight: 400; }
+.tf-edge:hover { border-color: var(--bisc-amber); background: var(--bisc-amber-soft); }
+.tf-kid.on > .tf-edge { border-color: var(--bisc-amber); background: var(--bisc-amber); color: var(--bisc-navy); }
+.dt-path button { font: inherit; color: inherit; border: 0; cursor: pointer; background: var(--sl-color-gray-6); border-radius: 6px; padding: .1rem .4rem; }
+.dt-path button:hover { background: var(--bisc-amber-soft); }
+.dt-list .dt-first { margin-top: .3rem; font-style: italic; }
+
+/* ---- Tra cứu nhanh ---- */
+.ql-search input { width: 100%; font: inherit; font-size: 1.05rem; padding: .7rem .9rem; border: 2px solid var(--bisc-navy); border-radius: 12px; background: var(--bisc-card); color: inherit; }
+.ql-search input:focus { outline: 3px solid var(--bisc-amber); outline-offset: 1px; }
+.ql-chips, .ql-tabs { display: flex; flex-wrap: wrap; gap: .3rem; }
+.ql-chips button, .ql-tabs button { font: inherit; font-size: .82rem; cursor: pointer; border: 1.5px solid var(--bisc-line); border-radius: 999px; padding: .2rem .7rem; background: transparent; color: inherit; }
+.ql-chips button.sel, .ql-tabs button.sel { background: var(--bisc-navy); border-color: var(--bisc-navy); color: #fff; }
+.ql-tabs { margin: .5rem 0 .7rem; border-bottom: 1px solid var(--bisc-line); padding-bottom: .5rem; }
+.ql-tabs small { opacity: .75; }
+.ql-list { display: flex; flex-direction: column; gap: .35rem; }
+.ql-row { border: 1px solid var(--bisc-line); border-radius: 10px; background: var(--bisc-card); }
+.ql-row summary { cursor: pointer; padding: .5rem .7rem; display: flex; flex-wrap: wrap; gap: .3rem .7rem; align-items: baseline; font-size: .86rem; list-style: none; }
+.ql-row summary::before { content: '▸'; color: var(--bisc-muted); }
+.ql-row[open] summary::before { content: '▾'; }
+.ql-t { flex: 0 0 240px; }
+.ql-s { flex: 1 1 320px; }
+.ql-nums { flex: 0 0 auto; }
+.ql { display: flex; flex-direction: column; gap: .5rem; }
+.ql ul { padding-left: 1.2rem; margin: .3rem 0; }
+.ql .tx-chips { margin-top: .5rem; }
+.ql-row summary::-webkit-details-marker { display: none; }
+.ql-row[open] summary { border-bottom: 1px solid var(--bisc-line); }
+.ql-t small, .ql-s { color: var(--bisc-muted); }
+.ql-nums { display: flex; gap: .25rem; flex-wrap: wrap; }
+.ql-nums code { font-size: .74rem; background: var(--bisc-amber-soft); border-radius: 5px; padding: .05rem .35rem; }
+.ql-body { padding: .5rem .9rem .8rem; font-size: .88rem; }
+.ql-f { padding: .5rem .7rem; }
+.ql-part { flex: 0 0 auto; display: inline-block; min-width: 3.4rem; text-align: center; font-size: .7rem; font-weight: 700; border-radius: 6px; padding: .1rem .35rem; color: #fff; background: var(--bisc-navy); }
+.ql-part.pB { background: #2563a8; } .ql-part.pC { background: #7a4fb0; } .ql-part.pD { background: #b0662b; } .ql-part.pE { background: #2b8a6e; }
+.ql-tbl { width: 100%; border-collapse: collapse; font-size: .85rem; margin: .4rem 0; }
+.ql-tbl td, .ql-tbl th { border-bottom: 1px solid var(--bisc-line); padding: .3rem .45rem; text-align: left; vertical-align: top; }
+.ql-big th { position: sticky; top: 0; background: var(--bisc-card); }
+@media (max-width: 720px) { .ql-t { flex-basis: 70%; } }
+
+/* Trang có sơ đồ cây / tra cứu: nới rộng khung nội dung */
+:root:has(.tf-wrap), :root:has(.ql) { --sl-content-width: 76rem; }

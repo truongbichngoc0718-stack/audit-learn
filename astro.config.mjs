@@ -41,6 +41,7 @@ export default defineConfig({
         ] },
         { label: 'D · Thuế Việt Nam (ACCA TX-VNM)', collapsed: true, items: [
           { label: 'D0 · Start here', link: '/d/' },
+          { label: '🔎 Tra cứu nhanh', link: '/d/lookup/' },
           { label: 'D1 · Tax Atlas', link: '/d/atlas/' },
           { label: 'D2 · Cây quyết định', link: '/d/decide/' },
           { label: 'D3 · Bẫy đề', link: '/d/traps/' },

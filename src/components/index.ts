@@ -39,3 +39,4 @@ export { default as TaxFlashcards } from './TaxFlashcards';
 export { default as TaxCalc } from './TaxCalc';
 export { default as TaxTables } from './TaxTables';
 export { default as ExamBank } from './ExamBank';
+export { default as QuickLookup } from './QuickLookup';

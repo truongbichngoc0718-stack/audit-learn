@@ -106,3 +106,9 @@
 - `exam-bank.json` chuyển sang mức câu hỏi: 66 câu / 11 kỳ, tóm tắt bằng lời mình (không chép đề), gắn `law_status` (CIT/VAT/FCT/INV = luật cũ, PIT/ADM = cần đối chiếu) và liên kết thẻ; 63 thẻ có `exam_refs`.
 - `ExamBank.tsx` viết lại: lọc kỳ/phần/trạng thái, tự chấm Đúng/Sai; Sai → thẻ liên quan chuyển "đang học".
 - Sinh bằng `_gen/exam_bank.py`. Chạy build: 88 trang, không lỗi.
+
+## 2026-11-16 · Nhánh D · Tra cứu nhanh + sơ đồ cây quyết định
+- Trang mới `/d/lookup/` (🔎 Tra cứu nhanh, ngay dưới D0): một ô tìm cho 143 thẻ; tìm không dấu hoặc có dấu, phím `/` để nhảy vào ô; lọc theo phần A–E và thẻ ★; 4 bảng: Thẻ (mở rộng xem quy tắc, con số, công thức, bẫy, link Atlas/cây/kho đề), Con số, Công thức, Cây quyết định.
+- `DecisionTree`: thêm sơ đồ nhánh trái → phải cho cả 16 cây; bấm nhãn nhánh (Có/Không…) để chọn, bấm ô để quay về bước đó; đường đang đi tô vàng, nhánh không chọn làm mờ; phóng to/thu nhỏ; ẩn/hiện sơ đồ. Khung từng bước giữ nguyên, dùng chung trạng thái. Danh sách cây hiện câu hỏi đầu tiên và số câu/kết luận.
+- Trang cây và trang tra cứu: tắt mục lục bên phải, nới rộng khung nội dung. Không đổi nội dung thẻ hay cây.
+- Sinh/áp bằng `_gen/add_lookup.py` (+ `_gen/tax_add.css`), chạy sau `setup_d.py`. Build: 89 trang, không lỗi.
