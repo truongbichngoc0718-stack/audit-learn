@@ -116,3 +116,8 @@
 ## 2026-11-16 · Dọn cảnh báo build Vercel
 - Khai báo collection `i18n` (`src/content/i18n/vi.json`) → hết cảnh báo "collection i18n does not exist".
 - Thêm trang 404 tiếng Việt (`src/content/docs/404.md`, có nút về trang chủ và Tra cứu nhanh), bật `disable404Route` → hết cảnh báo "Entry docs → 404 was not found". Build: 89 trang, 0 cảnh báo.
+
+## 2026-11-17 · Bản đồ giấy làm việc VACPA (mở rộng)
+- Trang mới `/glv/` (file tĩnh `public/glv/index.html`, mục "Bản đồ giấy làm việc VACPA" trên sidebar, ngay trên Thư viện): 213 giấy A–H, 25 khoản mục, 555 liên kết "nhận từ → đẩy sang" kèm lý do, 56 lưu ý; tìm kiếm, lọc theo khoản mục, ô ghi chú cá nhân (localStorage).
+- Trạng thái: **mở rộng**, ngoài ebook BISC. Căn cứ: danh mục Chương trình kiểm toán mẫu BCTC của VACPA (sheet "Mục GLV"), nhận xét của giảng viên trên bài thực hành Tiền, Phải trả người bán, TSCĐ (folder `note/`, đã viết lại, bỏ tên người); lưu ý Doanh thu rút từ bảng rủi ro của bài nhóm.
+- Giấy ở vùng x50–x99 gắn nhãn "bổ sung từ bài thực hành", không phải mã chuẩn VACPA. Rủi ro, thủ tục của các khoản mục chưa có nhận xét giảng viên là nội dung chung, chưa qua bộ lọc BISC_STYLE.

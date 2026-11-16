@@ -30,6 +30,7 @@ export default defineConfig({
         { label: 'A2 · Materiality', items: [{ autogenerate: { directory: 'a/2' } }] },
         { label: 'A3 · Phần hành', items: [{ autogenerate: { directory: 'a/3' } }] },
         { label: 'A4 · Ghi finding', items: [{ autogenerate: { directory: 'a/4' } }] },
+        { label: 'Bản đồ giấy làm việc VACPA', link: '/glv/' },
         { label: 'Thư viện', collapsed: true, items: [{ autogenerate: { directory: 'thu-vien' } }] },
         { label: 'B · Excel & Power BI', collapsed: true, items: [{ autogenerate: { directory: 'b' } }] },
         { label: 'C · ACCA Audit & Assurance', collapsed: true, items: [

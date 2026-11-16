@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bản đồ giấy làm việc VACPA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Bố cục: cột chỉ mục bên trái như mục lục hồ sơ kiểm toán; bên phải là "nhận từ → giấy đang chọn → đẩy sang" rồi tới phần giải thích. */
+:root{
+  --bg:#f3f4f7; --panel:#ffffff; --ink:#16233b; --mute:#5d6880; --line:#d9dde6;
+  --navy:#14284b; --gold:#b8861f; --gold-soft:#fbf3df;
+  --pA:#2f6fb2; --pC:#1f8a7a; --pS:#5a4fb0; --pH:#6b7280; --pB:#b8861f;
+  --warn:#b4472e; --warn-soft:#fbebe6;
+  --f-body:"Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif;
+  --f-code:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0f1624; --panel:#182235; --ink:#e7ebf3; --mute:#9aa6bd; --line:#2c3a54;
+    --navy:#0b1324; --gold:#e0b04a; --gold-soft:#2c2614;
+    --pA:#6aa6e6; --pC:#4fc0ae; --pS:#9d93ec; --pH:#a3acbb; --pB:#e0b04a;
+    --warn:#ef8a6f; --warn-soft:#33201b;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0f1624; --panel:#182235; --ink:#e7ebf3; --mute:#9aa6bd; --line:#2c3a54;
+  --navy:#0b1324; --gold:#e0b04a; --gold-soft:#2c2614;
+  --pA:#6aa6e6; --pC:#4fc0ae; --pS:#9d93ec; --pH:#a3acbb; --pB:#e0b04a;
+  --warn:#ef8a6f; --warn-soft:#33201b;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14.5px;line-height:1.55}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.app{display:grid;grid-template-rows:auto 1fr;height:100%}
+header.top{background:var(--navy);color:#fff;padding:10px 18px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+header.top h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.01em}
+header.top h1 span{color:#e0b04a}
+header.top .sub{font-size:12px;color:#b9c3d8}
+.search{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.search input,.search select{font:inherit;font-size:13.5px;padding:7px 10px;border-radius:6px;border:1px solid #3a4c70;background:#1d3156;color:#fff;min-width:0}
+.search input{width:220px}
+.search input::placeholder{color:#9fb0cf}
+.body{display:grid;grid-template-columns:310px 1fr;min-height:0}
+nav.idx{background:var(--panel);border-right:1px solid var(--line);overflow:auto;padding:8px 0 30px}
+main{overflow:auto;padding:20px 24px 60px}
+.grp>button.gh{width:100%;text-align:left;background:none;border:0;padding:9px 14px 5px;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);display:flex;gap:8px;align-items:center}
+.grp>button.gh i{width:9px;height:9px;border-radius:2px;display:inline-block;background:var(--c)}
+.sec{border-top:1px solid var(--line)}
+.sec>button{width:100%;text-align:left;background:none;border:0;padding:7px 14px;display:flex;gap:8px;align-items:baseline;font-weight:600}
+.sec>button:hover,.row:hover{background:var(--bg)}
+.row{width:100%;text-align:left;background:none;border:0;border-left:3px solid transparent;padding:4px 14px 4px 24px;display:flex;gap:8px;align-items:baseline;font-size:13.5px}
+.code{font-family:var(--f-code);font-size:12.5px;font-weight:600;color:var(--c,var(--ink));white-space:nowrap;min-width:54px}
+.row .nm{color:var(--ink)}
+.row.x .nm::after{content:" ·bổ sung";color:var(--mute);font-size:11px}
+.on{background:var(--gold-soft)!important;border-left-color:var(--gold)!important}
+.sec>button.on{box-shadow:inset 3px 0 0 var(--gold)}
+.hasnote::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--warn);margin-left:auto;flex:none;align-self:center}
+h2{font-size:22px;margin:0 0 4px;font-weight:700;text-wrap:balance}
+h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:0 0 8px;font-weight:700}
+.head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:14px}
+.head .big{font-family:var(--f-code);font-size:22px;font-weight:600;color:var(--c);background:var(--panel);border:1px solid var(--line);border-bottom:3px solid var(--c);padding:2px 12px;border-radius:6px}
+.pill{font-size:12px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--mute);white-space:nowrap}
+.pill.v{border-color:var(--pC);color:var(--pC)}
+.pill.x{border-color:var(--gold);color:var(--gold)}
+.lede{color:var(--mute);max-width:75ch;margin:0 0 18px}
+.flow{display:grid;grid-template-columns:1fr 28px minmax(170px,.7fr) 28px 1fr;gap:0;align-items:stretch;margin-bottom:22px}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;min-width:0}
+.col.me{border:2px solid var(--c);display:flex;flex-direction:column;justify-content:center;text-align:center;gap:4px}
+.col.me .code{font-size:20px;min-width:0}
+.arr{display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:20px}
+.eg{margin-bottom:11px}
+.eg:last-child{margin-bottom:0}
+.eg p{margin:0 0 5px;font-size:13px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:3px 8px;font-size:12.5px;display:inline-flex;gap:6px;align-items:baseline;text-align:left;max-width:100%}
+.chip:hover{border-color:var(--c,var(--gold))}
+.chip .code{min-width:0}
+.chip small{color:var(--mute);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:190px}
+.empty{color:var(--mute);font-size:13px;font-style:italic}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;min-width:0}
+.card.wide{grid-column:1/-1}
+.card ul{margin:0;padding-left:18px}
+.card li{margin:3px 0}
+.card p{margin:0 0 6px}
+.note{border-left:4px solid var(--warn);background:var(--warn-soft);padding:8px 12px;border-radius:0 6px 6px 0;margin:0 0 8px}
+.note.th{border-left-color:var(--pS);background:var(--bg)}
+.note b{font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:2px}
+.note.th b{color:var(--pS)}
+.note .at{margin-top:4px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute)}
+.tw{overflow-x:auto}
+.as{font-family:var(--f-code);font-size:11.5px;border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-right:3px;white-space:nowrap}
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.path .st{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
+.path .st>span{display:block;font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.path>i{color:var(--mute);font-style:normal}
+textarea{width:100%;min-height:76px;font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);resize:vertical}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:5px 11px;font-size:13px}
+.btn:hover{border-color:var(--gold)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--mute);padding:8px 14px 10px;border-bottom:1px solid var(--line)}
+.legend i{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:5px}
+.legend em{width:6px;height:6px;border-radius:50%;display:inline-block;margin-right:5px;background:var(--warn)}
+@media (max-width:860px){
+  html,body{height:auto}
+  .app{display:block;height:auto}
+  .body{display:block}
+  nav.idx{max-height:42vh;border-right:0;border-bottom:1px solid var(--line)}
+  main{padding:16px}
+  .flow{grid-template-columns:1fr}
+  .arr{transform:rotate(90deg);padding:2px}
+  .search{margin-left:0;width:100%}
+  .search input{flex:1}
+}
+@media (prefers-reduced-motion:no-preference){.row,.chip,.btn{transition:background .12s,border-color .12s}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div>
+    <h1>Bản đồ <span>giấy làm việc</span> VACPA</h1>
+    <div class="sub"><a href="/" style="color:#e0b04a">← Audit Learning Hub</a> · Chương trình kiểm toán mẫu BCTC · chọn một giấy để xem nó nhận gì, đẩy sang đâu</div>
+  </div>
+  <div class="search">
+    <label class="sub" for="acc">Khoản mục</label>
+    <select id="acc"></select>
+    <input id="q" type="search" placeholder="Tìm mã hoặc tên giấy (vd D133, khấu hao)" aria-label="Tìm giấy làm việc">
+  </div>
+</header>
+<div class="body">
+  <nav class="idx" id="idx" aria-label="Chỉ mục giấy làm việc"></nav>
+  <main id="main"></main>
+</div>
+</div>
+<script>
+"use strict";
+/* ---------- 1. DỮ LIỆU ---------- */
+const PH={A:{n:"A · Lập kế hoạch",c:"--pA"},C:{n:"C · KSNB và thủ tục chung",c:"--pC"},D:{n:"D · Tài sản",c:"--pS"},E:{n:"E · Nợ phải trả",c:"--pS"},F:{n:"F · Vốn chủ sở hữu",c:"--pS"},G:{n:"G · Kết quả kinh doanh",c:"--pS"},H:{n:"H · Nội dung khác",c:"--pH"},B:{n:"B · Tổng hợp và báo cáo",c:"--pB"}};
+const ORDER=["A","C","D","E","F","G","H","B"];
+const AS={E:"Hiện hữu",C:"Đầy đủ",A:"Chính xác",V:"Đánh giá",RO:"Quyền và nghĩa vụ",CO:"Đúng kỳ",CL:"Phân loại",PD:"Trình bày và thuyết minh",O:"Phát sinh"};
+const P={},E=[],N=[];
+// src: V = có mẫu trong CTKTM VACPA, I = có trong danh mục VACPA, X = bổ sung từ bài thực hành (vùng x50–x99)
+function p(id,n,kind,src,o){P[id]=Object.assign({id,n,kind,src:src||"V",g:id[0],sec:null},o||{});}
+function e(f,t,w){[].concat(f).forEach(a=>[].concat(t).forEach(b=>E.push({f:a,t:b,w})));}
+
+/* A — kế hoạch */
+p("A110","Chấp nhận khách hàng mới và đánh giá rủi ro hợp đồng","plan","V",{d:"Quyết định có nhận hợp đồng không và mức rủi ro hợp đồng.",need:["Thông tin pháp lý, chủ sở hữu, BGĐ","BCTC các năm trước","Trao đổi với KTV tiền nhiệm (A111)"]});
+p("A120","Chấp nhận, duy trì khách hàng cũ","plan","V",{d:"Đánh giá lại rủi ro hợp đồng với khách hàng cũ.",need:["Hồ sơ kiểm toán năm trước","Thay đổi về chủ sở hữu, BGĐ, hoạt động"]});
+p("A210","Hợp đồng kiểm toán","plan","V",{d:"Xác lập phạm vi, trách nhiệm, phí, thời hạn.",need:["Kết quả A110 hoặc A120"]});
+p("A212","Thư hẹn kiểm toán","plan","V",{d:"Thay hợp đồng trong trường hợp dùng thư hẹn.",need:["Kết quả A110 hoặc A120"]});
+p("A220","Chiến lược kiểm toán tổng thể","plan","V",{d:"Phạm vi, lịch trình, định hướng và nguồn lực của cuộc kiểm toán.",need:["Hợp đồng","Hiểu biết sơ bộ về khách hàng","Yêu cầu báo cáo, hạn phát hành"]});
+p("A230","Thư gửi khách hàng về kế hoạch kiểm toán","plan","V",{d:"Thông báo lịch, nhóm kiểm toán, yêu cầu phối hợp.",need:["A220","A250"]});
+p("A240","Danh mục tài liệu cần khách hàng cung cấp","plan","V",{d:"Danh sách sổ sách, chứng từ khách hàng phải chuẩn bị cho từng phần hành.",need:["Phạm vi từng phần hành","Chương trình kiểm toán dự kiến"]});
+p("A250","Phân công nhân sự và nhiệm vụ nhóm kiểm toán","plan","V",{d:"A250.1 kế hoạch nhân sự và thời gian, A250.2 phân công nhiệm vụ.",need:["A220","Danh sách phần hành trọng yếu"]});
+p("A260","Cam kết về tính độc lập","plan","V",{d:"Từng thành viên nhóm cam kết độc lập.",need:["Danh sách thành viên nhóm"]});
+p("A270","Soát xét yếu tố ảnh hưởng tính độc lập và biện pháp bảo vệ","plan","V",{d:"Nhận diện nguy cơ (tư lợi, tự kiểm tra, thân thuộc…) và biện pháp.",need:["A260","Quan hệ của thành viên với khách hàng"]});
+p("A280","Trao đổi với nhóm kiểm toán về kế hoạch","plan","V",{d:"Họp nhóm: rủi ro gian lận, vùng dễ sai, phân công.",need:["A310","A510","A810"]});
+p("A290","Trao đổi với BGĐ để lập kế hoạch","plan","V",{d:"Ghi lại nội dung trao đổi với BGĐ và BQT (A290–A292).",need:["Danh sách nhân sự chủ chốt","Lịch kiểm toán"]});
+p("A310","Tìm hiểu khách hàng và môi trường hoạt động","plan","V",{d:"Hiểu ngành nghề, sản phẩm, nguồn cung, khách hàng, mục tiêu và rủi ro kinh doanh.",need:["Giấy phép, điều lệ, sơ đồ tổ chức","Phỏng vấn BGĐ","Thông tin ngành","BCTC và báo cáo quản trị"]});
+p("A311","Danh sách pháp luật và quy định ảnh hưởng","plan","V",{d:"Luật, quy định có ảnh hưởng trực tiếp và gián tiếp tới BCTC.",need:["Ngành nghề, giấy phép con","Chế độ kế toán áp dụng"]});
+p("A312","Các bên liên quan","plan","V",{d:"Danh sách bên liên quan và loại giao dịch.",need:["Sổ cổ đông, danh sách công ty cùng nhóm","Phỏng vấn BGĐ"]});
+p("A313","Hệ thống kế toán ghi chép, xử lý giao dịch","plan","V",{d:"Phần mềm, luồng dữ liệu, phân quyền, bút toán thủ công.",need:["Phỏng vấn kế toán trưởng","Mô tả phần mềm, phân quyền"]});
+p("A314","Các ước tính kế toán","plan","V",{d:"Liệt kê ước tính (dự phòng, khấu hao, giá trị thuần…) và mức độ không chắc chắn.",need:["Chính sách kế toán","Cách BGĐ lập từng ước tính"]});
+p("A410","Tìm hiểu chu trình bán hàng, phải thu, thu tiền","plan","V",{d:"Mô tả chu trình, nhận diện kiểm soát chính theo từng cơ sở dẫn liệu.",need:["Quy trình bán hàng","Phỏng vấn kinh doanh, kế toán","Bộ chứng từ mẫu"]});
+p("A411","Walk-through chu trình bán hàng","plan","V",{d:"Đi theo một giao dịch từ đầu đến cuối để xác nhận chu trình đúng như mô tả.",need:["Một bộ chứng từ bán hàng đầy đủ"]});
+p("A420","Tìm hiểu chu trình mua hàng, phải trả, trả tiền","plan","V",{d:"Mô tả chu trình, nhận diện kiểm soát chính.",need:["Quy trình mua hàng","Phỏng vấn mua hàng, kho, kế toán","Bộ chứng từ mẫu"]});
+p("A421","Walk-through chu trình mua hàng","plan","V",{d:"Đi theo một giao dịch mua hàng từ đề nghị mua tới trả tiền.",need:["Một bộ chứng từ mua hàng đầy đủ"]});
+p("A430","Tìm hiểu chu trình hàng tồn kho, giá thành, giá vốn","plan","V",{d:"Mô tả nhập, xuất, tính giá, tập hợp giá thành.",need:["Quy trình kho và giá thành","Phương pháp tính giá"]});
+p("A431","Walk-through chu trình hàng tồn kho","plan","V",{d:"Đi theo một giao dịch nhập, xuất, tính giá.",need:["Bộ chứng từ kho và bảng tính giá thành"]});
+p("A440","Tìm hiểu chu trình lương và phải trả người lao động","plan","V",{d:"Mô tả tuyển dụng, chấm công, tính lương, chi lương.",need:["Quy chế lương","Phỏng vấn nhân sự, kế toán"]});
+p("A441","Walk-through chu trình lương","plan","V",{d:"Đi theo một kỳ lương của một nhân viên.",need:["HĐLĐ, bảng chấm công, bảng lương, chứng từ chi"]});
+p("A450","Tìm hiểu chu trình TSCĐ và XDCB","plan","V",{d:"Mô tả đề xuất, mua sắm, nghiệm thu, ghi tăng, khấu hao, thanh lý.",need:["Quy trình đầu tư, mua sắm","Phỏng vấn","Bộ hồ sơ một tài sản"]});
+p("A451","Walk-through chu trình TSCĐ và XDCB","plan","V",{d:"Đi theo một tài sản từ đề xuất tới ghi tăng và trích khấu hao.",need:["Hồ sơ đầy đủ một TSCĐ tăng trong kỳ"]});
+p("A460","Tìm hiểu chu trình khoá sổ, lập và trình bày BCTC","plan","V",{d:"Ai lập, ai soát xét, bút toán cuối kỳ, kết chuyển.",need:["Quy trình khoá sổ","Danh sách bút toán điều chỉnh cuối kỳ"]});
+p("A510","Phân tích sơ bộ BCTC","plan","V",{d:"So sánh biến động, tỷ trọng, tỷ suất để khoanh vùng rủi ro. Không phải thử nghiệm cơ bản.",need:["BCTC trước kiểm toán và năm trước","CĐPS","Hiểu biết từ A310"]});
+p("A520","Soát xét sự kiện gây nghi ngờ hoạt động liên tục","plan","V",{d:"Dấu hiệu tài chính, hoạt động có thể ảnh hưởng giả định hoạt động liên tục.",need:["BCTC","Kế hoạch dòng tiền","Hợp đồng vay"]});
+p("A610","Đánh giá KSNB ở cấp độ toàn doanh nghiệp","plan","V",{d:"Năm thành phần KSNB: môi trường kiểm soát, đánh giá rủi ro, thông tin, hoạt động kiểm soát, giám sát.",need:["Quy chế nội bộ","Phỏng vấn BGĐ","Quan sát thực tế"]});
+p("A620","Trao đổi với BGĐ về gian lận","plan","V",{d:"Phỏng vấn BGĐ về rủi ro gian lận và cách đơn vị ứng phó.",need:["Danh sách người được phỏng vấn"]});
+p("A630","Trao đổi với kiểm toán nội bộ, ban kiểm soát về gian lận","plan","V",{d:"Phỏng vấn bộ phận giám sát.",need:["Báo cáo kiểm toán nội bộ, ban kiểm soát"]});
+p("A640","Rà soát yếu tố dẫn đến rủi ro có gian lận","plan","V",{d:"Động cơ, cơ hội, thái độ theo VSA 240.",need:["A310","A510","A610","A620"]});
+p("A710","Xác định mức trọng yếu (kế hoạch, thực tế)","plan","V",{d:"Chọn tiêu chí, tính mức trọng yếu tổng thể, mức trọng yếu thực hiện và ngưỡng sai sót có thể bỏ qua.",need:["BCTC trước kiểm toán","Người sử dụng BCTC là ai","Độ ổn định của tiêu chí qua các năm"]});
+p("A720","Mức trọng yếu cho nhóm giao dịch, số dư, thuyết minh","plan","V",{d:"Mức thấp hơn cho khoản mục nhạy cảm (bên liên quan, thù lao BGĐ…).",need:["A710","Khoản mục người dùng đặc biệt quan tâm"]});
+p("A810","Tổng hợp đánh giá rủi ro cấp BCTC và cấp cơ sở dẫn liệu","plan","V",{d:"Gom mọi rủi ro từ A300 đến A600, phân loại theo cấp và mức.",need:["A310–A314","A410–A460","A510","A610–A640"]});
+p("A820","Tóm tắt rủi ro và biện pháp xử lý kiểm toán","plan","V",{d:"Mỗi khoản mục trọng yếu: rủi ro theo cơ sở dẫn liệu và biện pháp, tham chiếu tới chương trình kiểm toán.",need:["A810","A710","Danh sách khoản mục vượt mức trọng yếu thực hiện"]});
+p("A910","Tổng hợp kế hoạch kiểm toán","plan","V",{d:"Một trang gom phạm vi, trọng yếu, rủi ro, nhân sự để phê duyệt.",need:["A220","A710","A810","A820"]});
+/* C */
+p("C110","Kiểm tra KSNB chu trình bán hàng, phải thu, thu tiền","ctrl","V",{d:"Thử nghiệm kiểm soát với kiểm soát chính đã nhận diện ở A410.",need:["Kiểm soát chính và tần suất","Tổng thể chứng từ để chọn mẫu"]});
+p("C120","Kiểm tra KSNB chu trình mua hàng, phải trả, trả tiền","ctrl","V",{d:"Thử nghiệm kiểm soát với kiểm soát chính ở A420.",need:["Kiểm soát chính và tần suất","Tổng thể chứng từ để chọn mẫu"]});
+p("C130","Kiểm tra KSNB chu trình hàng tồn kho, giá thành, giá vốn","ctrl","V",{d:"Thử nghiệm kiểm soát với kiểm soát chính ở A430.",need:["Kiểm soát chính và tần suất","Phiếu nhập, xuất, bảng tính giá"]});
+p("C140","Kiểm tra KSNB chu trình lương","ctrl","V",{d:"Thử nghiệm kiểm soát với kiểm soát chính ở A440.",need:["Kiểm soát chính và tần suất","Bảng chấm công, bảng lương"]});
+p("C150","Kiểm tra KSNB chu trình TSCĐ và XDCB","ctrl","V",{d:"Thử nghiệm kiểm soát với kiểm soát chính ở A450. Bài thực hành tách C150.1 lấy mẫu, C150.2 kiểm tra mẫu.",need:["Kiểm soát chính và tần suất","Hồ sơ tăng, giảm TSCĐ"]});
+p("C210","Chương trình kiểm toán sổ cái","ctrl","V",{d:"Thủ tục chung trên sổ cái. C210.1: đồng tiền ghi sổ.",need:["Sổ cái, nhật ký chung","CĐPS"]});
+p("C220","Kiểm tra số dư đầu kỳ trên sổ cái","ctrl","V",{d:"C220.1 kiểm toán năm đầu (VSA 510), C220.2 đã kiểm toán kỳ trước.",need:["BCTC năm trước (đã kiểm toán nếu có)","CĐPS đầu kỳ","Hồ sơ KTV tiền nhiệm"]});
+p("C230","Kiểm tra việc BGĐ khống chế kiểm soát","ctrl","V",{d:"Bút toán ghi sổ và điều chỉnh khoá sổ, ước tính kế toán, giao dịch bất thường (VSA 240).",need:["Toàn bộ nhật ký chung","Danh sách ước tính","Giao dịch lớn ngoài hoạt động thường xuyên"]});
+p("C240","Kiểm tra số dư cuối kỳ trên sổ cái","ctrl","V",{d:"Số dư sổ cái khớp CĐPS và BCTC.",need:["Sổ cái","CĐPS","BCTC trước kiểm toán"]});
+p("C250","Hồ sơ pháp lý và soát xét biên bản họp, nghị quyết","ctrl","V",{d:"C250.1 hồ sơ pháp lý, C250.2 biên bản họp và nghị quyết.",need:["ĐKKD, điều lệ","Biên bản họp HĐQT, HĐTV, ĐHĐCĐ trong năm và sau ngày khoá sổ"]});
+/* H */
+p("H110","Tuân thủ pháp luật và các quy định","other","V",{d:"H111, H112: xem xét dấu hiệu không tuân thủ.",need:["A311","Biên bản thanh tra, quyết định xử phạt"]});
+p("H120","Soát xét bút toán ghi sổ và điều chỉnh khác","other","V",{d:"H121: kiểm tra bút toán thủ công, bút toán cuối kỳ.",need:["Nhật ký chung","Tiêu chí lọc bút toán bất thường"]});
+p("H140","Giao dịch với bên liên quan và thuyết minh","other","V",{d:"Danh sách giao dịch, số dư, xác nhận (H141–H148).",need:["A312","Sổ chi tiết theo đối tượng","Hợp đồng với bên liên quan"]});
+p("H150","Sự kiện phát sinh sau ngày kết thúc kỳ","other","V",{d:"Sự kiện cần điều chỉnh hoặc thuyết minh.",need:["Sổ sách sau ngày khoá sổ","Biên bản họp sau niên độ","Phỏng vấn BGĐ"]});
+p("H160","Đánh giá khả năng hoạt động liên tục","other","V",{d:"Kết luận về giả định hoạt động liên tục.",need:["A520","Kế hoạch dòng tiền 12 tháng","Hợp đồng vay, cam kết hỗ trợ"]});
+p("H170","Thông tin khác trong tài liệu có BCTC","other","V",{d:"Đọc báo cáo thường niên để tìm điểm không nhất quán.",need:["Báo cáo thường niên, báo cáo BGĐ"]});
+p("H180","Dự phòng, nợ tiềm tàng và cam kết","other","V",{d:"Tranh chấp, kiện tụng, bảo lãnh, cam kết (H181–H185).",need:["Thư luật sư","Biên bản họp","Hợp đồng bảo lãnh"]});
+p("H190","Thay đổi chính sách kế toán, ước tính và sai sót","other","V",{d:"Xử lý hồi tố, phi hồi tố và thuyết minh.",need:["Chính sách kế toán năm nay và năm trước"]});
+p("H210","Sử dụng công việc của chuyên gia","other","V",{d:"H210.1 chuyên gia của BGĐ, H210.2 chuyên gia của KTV.",need:["Báo cáo chuyên gia","Năng lực, tính khách quan của chuyên gia"]});
+/* B */
+p("B110","Danh mục kiểm tra hoàn thành cuộc kiểm toán","concl","V",{d:"Checklist trước khi phát hành báo cáo.",need:["Toàn bộ hồ sơ đã soát xét"]});
+p("B111","Soát xét BCTC","concl","V",{d:"Soát xét hình thức, số liệu, thuyết minh của BCTC.",need:["BCTC sau điều chỉnh","Các giấy x20 của từng phần hành"]});
+p("B130","Soát xét giấy làm việc chi tiết","concl","V",{d:"Ghi nhận ý kiến soát xét của trưởng nhóm, chủ nhiệm.",need:["Giấy làm việc đã hoàn thành"]});
+p("B140","Hình thành ý kiến kiểm toán","concl","V",{d:"Lập luận dẫn tới dạng ý kiến (VSA 700, 705, 706).",need:["B370","B410","B420","Kết luận về hoạt động liên tục"]});
+p("B210","Thư quản lý","concl","V",{d:"Khiếm khuyết KSNB và khuyến nghị gửi BGĐ.",need:["Phát hiện từ C100","Phát hiện từ từng phần hành"]});
+p("B240","Tổng hợp kết quả phỏng vấn BGĐ về rủi ro gian lận","concl","I",{d:"Gom kết quả phỏng vấn về gian lận.",need:["A620","A630"]});
+p("B310","Báo cáo kiểm toán (B310–B315)","concl","V",{d:"B310 chấp nhận toàn phần, B311 và B312 ngoại trừ, B313 từ chối, B314 trái ngược, B315 khác.",need:["B140","BCTC đã kiểm toán","B440"]});
+p("B341","Bảng cân đối kế toán trước và sau điều chỉnh","concl","V",{d:"Số trước kiểm toán, điều chỉnh, số sau kiểm toán của từng chỉ tiêu.",need:["Leadsheet các phần hành D, E, F","B360"]});
+p("B342","Báo cáo KQKD trước và sau điều chỉnh","concl","V",{d:"Số trước kiểm toán, điều chỉnh, số sau kiểm toán.",need:["Leadsheet phần G","B360"]});
+p("B343","Kiểm tra Báo cáo lưu chuyển tiền tệ","concl","V",{d:"Lập lại hoặc kiểm tra LCTT từ số sau kiểm toán.",need:["B341","B342","Sổ chi tiết tiền, vay, TSCĐ"]});
+p("B350","CĐPS trước và sau điều chỉnh","concl","V",{d:"Bảng cân đối số phát sinh sau khi nhập bút toán điều chỉnh.",need:["B510","B360"]});
+p("B360","Danh sách bút toán điều chỉnh và phân loại lại","concl","V",{d:"Mọi bút toán điều chỉnh đã thống nhất với khách hàng.",need:["Phát hiện có số liệu từ từng phần hành","Tham chiếu về giấy phát hiện"]});
+p("B370","Tổng hợp sai sót không điều chỉnh","concl","V",{d:"Cộng dồn sai sót chưa điều chỉnh, so với mức trọng yếu.",need:["Sai sót khách hàng không điều chỉnh","A710"]});
+p("B410","Tổng hợp kết quả kiểm toán","concl","V",{d:"Vấn đề trọng yếu của từng phần hành, cách xử lý, ảnh hưởng tới ý kiến.",need:["Giấy tổng hợp phát hiện của từng phần hành","B360","B370"]});
+p("B411","Trao đổi với đơn vị về kết quả kiểm toán","concl","V",{d:"Biên bản trao đổi phát hiện và bút toán điều chỉnh.",need:["B410","B360"]});
+p("B420","Phân tích tổng thể BCTC lần cuối","concl","V",{d:"Phân tích lại trên số sau kiểm toán để xem còn điểm nào chưa giải thích được.",need:["B341","B342","A510"]});
+p("B430","Vấn đề cần giải quyết trước ngày phát hành","concl","V",{d:"Danh sách việc còn treo.",need:["Ghi chú soát xét","Tài liệu khách hàng còn nợ"]});
+p("B440","Thư giải trình của BGĐ","concl","V",{d:"BGĐ xác nhận trách nhiệm và các giải trình quan trọng (VSA 580).",need:["B410","B370","Vấn đề dựa vào giải trình"]});
+p("B510","CĐPS và BCTC trước kiểm toán","concl","I",{d:"Số liệu gốc khách hàng cung cấp, là điểm xuất phát của mọi leadsheet.",need:["A240"]});
+
+/* Phần hành: S[code] */
+const S={};
+function sec(code,n,tk,o){S[code]=Object.assign({code,n,tk,g:code[0],cyc:[],ctl:[],rel:[],proc:[],err:[],docs:[],csdl:[]},o);}
+sec("D100","Tiền và các khoản tương đương tiền","111, 112, 113",{cyc:["A410","A420"],ctl:["C110","C120"],
+ mat:"Số dư cuối kỳ có thể nhỏ hơn mức trọng yếu thực hiện, nhưng số phát sinh lớn và nhạy cảm với gian lận nên gần như luôn được kiểm tra đầy đủ.",
+ csdl:[["E","Tiền ghi khống, tiền bị phong toả hoặc không thuộc đơn vị"],["C","Tài khoản ngân hàng, khoản thu chi chưa ghi sổ"],["V","Số dư ngoại tệ chưa đánh giá lại theo tỷ giá cuối kỳ"],["CO","Thu chi sát ngày khoá sổ ghi sai kỳ"],["PD","Tương đương tiền (đáo hạn gốc không quá 3 tháng), tiền bị hạn chế sử dụng"]],
+ proc:[["Chứng kiến kiểm kê quỹ, cộng trừ lùi về ngày khoá sổ",["D132","D132.1"],"E"],["Gửi thư xác nhận tất cả tài khoản ngân hàng, kể cả số dư bằng 0 và đã đóng",["D133","D160"],"E RO C"],["Đối chiếu sổ kế toán với sổ phụ, sao kê",["D161"],"E A"],["Phân tích biến động số dư và số phát sinh theo tháng",["D140"],"E C"],["Kiểm tra chi tiết thu, chi",["D150","D163"],"O A"],["Rà soát đối ứng bất thường",["D151","D164"],"O CL"],["Cut-off trước và sau ngày khoá sổ",["D153","D162"],"CO"],["Đánh giá lại số dư ngoại tệ",["D165"],"V"],["Kiểm tra thuyết minh",["D180"],"PD"]],
+ rel:[["D300","Thu tiền khách hàng sau niên độ là thủ tục thay thế cho thư xác nhận phải thu"],["E200","Chi trả nhà cung cấp, kiểm tra tài khoản thụ hưởng"],["E100","Thư xác nhận ngân hàng xác nhận luôn dư nợ vay, tài sản thế chấp"],["G500","Lãi tiền gửi và chênh lệch tỷ giá đánh giá lại"],["G100","Doanh thu thu bằng tiền mặt"]],
+ docs:["Sổ quỹ, sổ chi tiết 111, 112","Biên bản kiểm kê quỹ tại ngày khoá sổ","Sổ phụ, sao kê, xác nhận số dư của từng ngân hàng","Danh sách tài khoản ngân hàng (kể cả đã đóng trong năm)","Chứng từ thu chi 10–15 ngày trước và sau ngày khoá sổ"]});
+sec("D200","Đầu tư tài chính ngắn hạn, dài hạn","121, 128, 221, 222, 228, 229",{mat:"Trọng yếu khi đơn vị có công ty con, liên kết hoặc tiền gửi có kỳ hạn lớn.",
+ csdl:[["E","Khoản đầu tư không có thật hoặc đã thoái"],["V","Thiếu dự phòng giảm giá, tổn thất đầu tư"],["CL","Nhầm giữa tương đương tiền và đầu tư nắm giữ đến ngày đáo hạn; ngắn hạn và dài hạn"]],
+ proc:[["Gửi thư xác nhận khoản đầu tư",["D231"],"E RO"],["Kiểm tra hợp đồng tiền gửi, sổ cổ đông, giấy chứng nhận góp vốn",[],"E RO"],["Tính lại dự phòng từ BCTC bên nhận đầu tư, giá thị trường",[],"V"],["Ước tính lãi dự thu",[],"A CO"]],
+ rel:[["G500","Lãi tiền gửi, cổ tức, dự phòng đầu tư"],["D100","Phân loại tiền gửi có kỳ hạn"],["H140","Công ty con, liên kết là bên liên quan"]],
+ docs:["Hợp đồng tiền gửi, sổ tiết kiệm","Hồ sơ góp vốn, BCTC của bên nhận đầu tư","Bảng tính dự phòng"]});
+sec("D300","Phải thu khách hàng ngắn hạn, dài hạn","131, 2293",{cyc:["A410"],ctl:["C110"],mat:"Thường vượt mức trọng yếu thực hiện ở doanh nghiệp bán chịu. Hiện hữu và đánh giá hay là rủi ro đáng kể vì gắn với doanh thu.",
+ csdl:[["E","Phải thu khống đi kèm doanh thu khống"],["V","Nợ quá hạn chưa lập đủ dự phòng"],["C","Tiền khách đã trả chưa ghi giảm, bù trừ sai đối tượng"],["CL","Số dư Có TK 131 chưa phân loại sang người mua trả tiền trước"],["CO","Ghi nhận phải thu trước khi chuyển giao hàng"]],
+ proc:[["Đối chiếu bảng tổng hợp công nợ với sổ chi tiết và sổ cái",["D310"],"A"],["Gửi thư xác nhận, theo dõi phản hồi",["D331","D332","D333"],"E RO"],["Thủ tục thay thế: thu tiền sau niên độ, hợp đồng, hoá đơn, biên bản giao hàng",["D333"],"E"],["Phân tích tuổi nợ, tính lại dự phòng (TT 48/2019)",[],"V"],["Phân loại lại số dư Có, đánh giá lại ngoại tệ",[],"CL V"]],
+ rel:[["G100","Mỗi bút toán doanh thu bán chịu sinh ra một khoản phải thu, kiểm tra cut-off cùng nhau"],["D100","Thu tiền sau niên độ"],["E300","Thuế GTGT đầu ra"],["G400","Chi phí dự phòng phải thu khó đòi"],["H140","Số dư với bên liên quan"]],
+ docs:["Bảng tổng hợp và chi tiết công nợ theo khách hàng","Bảng tuổi nợ, bảng tính dự phòng","Biên bản đối chiếu công nợ","Sổ phụ ngân hàng sau ngày khoá sổ"]});
+sec("D400","Phải thu nội bộ và phải thu khác","136, 138, 141, 244",{mat:"Thường không trọng yếu về số, nhưng tạm ứng và phải thu khác là nơi hay treo chi phí.",
+ csdl:[["E","Tạm ứng, phải thu khác tồn lâu không có đối tượng"],["V","Khoản không thu hồi được chưa xử lý"],["CL","Chi phí bị treo dưới dạng tạm ứng"]],
+ proc:[["Chi tiết theo đối tượng, kiểm tra khoản tồn lâu",[],"E V"],["Xác nhận hoặc kiểm tra hoàn ứng sau niên độ",[],"E"]],
+ rel:[["G400","Tạm ứng thực chất đã chi là chi phí chưa ghi"],["H140","Cho vay, tạm ứng cho bên liên quan"]],docs:["Bảng chi tiết tạm ứng, phải thu khác theo đối tượng và tuổi"]});
+sec("D500","Hàng tồn kho","151–158, 2294",{cyc:["A430","A420"],ctl:["C130","C120"],mat:"Thường là khoản mục lớn nhất ở doanh nghiệp sản xuất, thương mại. Hiện hữu và đánh giá là hai cơ sở dẫn liệu chính.",
+ csdl:[["E","Hàng ghi sổ nhưng không có thật, hàng giữ hộ tính là của mình"],["V","Hàng chậm luân chuyển, giá trị thuần thấp hơn giá gốc chưa lập dự phòng"],["A","Tính sai giá xuất kho, phân bổ sai giá thành"],["CO","Nhập, xuất sát ngày khoá sổ ghi sai kỳ"],["RO","Hàng gửi bán, hàng cầm cố"]],
+ proc:[["Quan sát kiểm kê, kiểm đếm hai chiều",["D531","D532","D533"],"E C"],["Thư xác nhận hàng giữ hộ, hàng gửi bán",["D534"],"E RO"],["Tính lại giá xuất kho và giá thành",[],"A"],["So giá gốc với giá bán sau niên độ để xét dự phòng",[],"V"],["Cut-off phiếu nhập, phiếu xuất",[],"CO"]],
+ rel:[["G200","Xuất kho bán hàng tạo giá vốn, sai tồn kho là sai giá vốn"],["E200","Hàng về chưa có hoá đơn, cut-off mua hàng"],["G100","Hàng gửi đại lý chưa đủ điều kiện ghi doanh thu"],["E400","Chi phí nhân công trong giá thành"]],
+ docs:["Báo cáo nhập xuất tồn","Biên bản kiểm kê","Bảng tính giá thành","Phiếu nhập, xuất trước và sau ngày khoá sổ","Bảng giá bán sau niên độ"]});
+sec("D600","Chi phí trả trước và tài sản khác","242",{mat:"Xem xét khi số dư vượt mức trọng yếu thực hiện hoặc có dấu hiệu treo chi phí.",
+ csdl:[["E","Khoản không đủ điều kiện ghi nhận là chi phí trả trước"],["A","Phân bổ sai thời gian, sai tiêu thức"],["CL","Công cụ dụng cụ và TSCĐ, ngắn hạn và dài hạn"]],
+ proc:[["Tính lại bảng phân bổ",[],"A"],["Kiểm tra chứng từ khoản tăng trong kỳ",[],"E"]],
+ rel:[["G400","Chi phí phân bổ trong kỳ"],["D700","Ranh giới công cụ dụng cụ và TSCĐ"]],docs:["Bảng phân bổ chi phí trả trước","Hợp đồng, hoá đơn khoản tăng"]});
+sec("D700","TSCĐ hữu hình, vô hình, BĐS đầu tư, XDCB dở dang","211, 213, 214, 217, 241",{cyc:["A450"],ctl:["C150"],mat:"Trọng yếu ở doanh nghiệp thâm dụng tài sản. Năm có đầu tư lớn thì rủi ro dồn vào nghiệp vụ tăng và chi phí vốn hoá.",
+ csdl:[["E","Tài sản ghi tăng không có thật hoặc chưa đưa vào sử dụng"],["C","Tài sản đã thanh lý chưa ghi giảm, tài sản mua chưa ghi tăng"],["A","Vốn hoá chi phí không đủ điều kiện, tính sai khấu hao"],["RO","Tài sản thế chấp, tài sản không đứng tên đơn vị"],["V","Tài sản hỏng, ngừng dùng chưa xử lý"]],
+ proc:[["Đánh giá tổng thể biến động TSCĐ và XDCB, so với nguồn vốn",["D734"],"E C"],["Chứng kiến kiểm kê TSCĐ",["D735"],"E"],["Kiểm tra chi tiết nghiệp vụ tăng",["D736"],"E A RO"],["Kiểm tra chi tiết nghiệp vụ giảm, thanh lý",["D737"],"C A"],["Kiểm tra chi phí vốn hoá và sửa chữa",["D738"],"A CL"],["Tính lại khấu hao, xem thời gian sử dụng",["D739","D739.1"],"A V"],["Kiểm tra quyền và nghĩa vụ pháp lý",["D740"],"RO"]],
+ rel:[["E100","Tài sản tăng nhiều hơn vốn chủ thì phần còn lại là vay; lãi vay vốn hoá; tài sản thế chấp"],["G200","Khấu hao tính vào giá vốn"],["G400","Khấu hao tính vào chi phí bán hàng, quản lý"],["G600","Lãi, lỗ thanh lý"],["E200","Mua tài sản chưa trả tiền"],["E300","Khấu hao vượt khung, thuế GTGT đầu vào"],["F100","Tăng vốn để đầu tư"]],
+ docs:["Sổ đăng ký TSCĐ, bảng tính khấu hao","Hồ sơ tăng: hợp đồng, hoá đơn, biên bản nghiệm thu, bàn giao","Hồ sơ thanh lý","Biên bản kiểm kê","Giấy tờ sở hữu, hợp đồng thế chấp"]});
+sec("D800","TSCĐ thuê tài chính","212",{mat:"Chỉ áp dụng khi có hợp đồng thuê tài chính.",csdl:[["CL","Phân loại sai thuê tài chính và thuê hoạt động"],["A","Tính sai nguyên giá, nợ gốc thuê"]],
+ proc:[["Đọc hợp đồng thuê, xét điều kiện phân loại",[],"CL"],["Tính lại nợ gốc, lãi thuê, khấu hao",[],"A"]],rel:[["E100","Nợ thuê tài chính"],["G500","Lãi thuê"]],docs:["Hợp đồng thuê, lịch thanh toán"]});
+sec("E100","Vay và nợ thuê tài chính","341, 343",{mat:"Trọng yếu khi dư nợ lớn. Quan tâm tới đầy đủ, phân loại và điều khoản cam kết.",
+ csdl:[["C","Khoản vay chưa ghi sổ"],["A","Tính sai lãi, vốn hoá lãi vay sai"],["CL","Nợ dài hạn đến hạn trả trong 12 tháng chưa phân loại lại"],["PD","Tài sản thế chấp, vi phạm cam kết chưa thuyết minh"]],
+ proc:[["Gửi thư xác nhận nợ vay, theo dõi phản hồi",["E131","E133"],"C E"],["Đọc hợp đồng vay: lãi suất, hạn trả, tài sản đảm bảo, cam kết",[],"PD RO"],["Ước tính lại chi phí lãi vay",[],"A"],["Phân loại lại nợ đến hạn",[],"CL"]],
+ rel:[["G500","Chi phí lãi vay"],["D700","Lãi vay vốn hoá, tài sản thế chấp"],["D100","Giải ngân, trả nợ qua ngân hàng"],["H160","Nợ đến hạn lớn so với khả năng trả là dấu hiệu về hoạt động liên tục"],["F100","Vốn điều lệ chưa góp đủ làm một phần lãi vay không được trừ"]],
+ docs:["Hợp đồng vay, khế ước nhận nợ","Bảng theo dõi gốc, lãi","Xác nhận của ngân hàng"]});
+sec("E200","Phải trả người bán ngắn hạn, dài hạn","331",{cyc:["A420"],ctl:["C120"],mat:"Rủi ro chính là thiếu nợ (đầy đủ), ngược với phải thu. Thường vượt mức trọng yếu thực hiện ở doanh nghiệp thương mại.",
+ csdl:[["C","Nợ chưa ghi sổ, hàng về chưa có hoá đơn"],["E","Trả tiền cho nhà cung cấp không có thật"],["CL","Số dư Nợ TK 331 chưa phân loại sang trả trước cho người bán"],["V","Công nợ ngoại tệ chưa đánh giá lại"],["CO","Mua hàng sát ngày khoá sổ"]],
+ proc:[["Đối chiếu bảng tổng hợp công nợ với sổ chi tiết",["E231.1"],"A"],["Gửi thư xác nhận, ưu tiên nhà cung cấp giao dịch nhiều kể cả số dư nhỏ",["E231","E233"],"C E"],["Phân tích biến động và tuổi nợ",["E242"],"V C"],["Kiểm tra chi tiết phát sinh tăng, giảm",["E251","E252"],"O A"],["Đánh giá lại công nợ ngoại tệ",["E255"],"V"],["Rà soát đối ứng bất thường",["E256"],"CL O"],["Kiểm tra tài khoản thụ hưởng",["E257"],"E"],["Số dư đầu kỳ (năm đầu)",["E258"],"E C"]],
+ rel:[["D500","Mua hàng nhập kho, cut-off mua hàng"],["D100","Chi trả, tài khoản nhận tiền"],["E500","Hàng, dịch vụ đã nhận chưa có hoá đơn"],["D700","Mua TSCĐ chưa trả tiền"],["G500","Chênh lệch tỷ giá"],["E300","Thuế GTGT đầu vào"]],
+ docs:["Bảng tổng hợp, chi tiết công nợ theo nhà cung cấp","Biên bản đối chiếu công nợ","Hoá đơn, phiếu nhập sau ngày khoá sổ","Uỷ nhiệm chi và thông tin tài khoản nhà cung cấp"]});
+sec("E300","Thuế và các khoản phải nộp Nhà nước","333, 133, 821, 243, 347",{mat:"Gần như luôn kiểm tra vì thuế TNDN phụ thuộc mọi điều chỉnh trên KQKD.",
+ csdl:[["A","Tính sai thuế TNDN, bỏ sót chi phí không được trừ"],["C","Thuế bị truy thu chưa ghi nhận"],["PD","Thuế hoãn lại, thuyết minh"]],
+ proc:[["Thuế TNDN hiện hành và hoãn lại",["E330.1"],"A C"],["Thuế GTGT: đối chiếu tờ khai với sổ, doanh thu kê khai với doanh thu sổ sách",["E330.2"],"A C"],["Thuế khác: TNCN, nhập khẩu, nhà thầu",["E330.3"],"A"]],
+ rel:[["G100","Doanh thu trên tờ khai GTGT phải giải thích được với doanh thu sổ sách"],["G400","Chi phí không được trừ"],["E400","Thuế TNCN từ lương"],["D700","Khấu hao vượt khung"],["E100","Lãi vay không được trừ"]],
+ docs:["Tờ khai thuế các kỳ, quyết toán năm","Biên bản thanh tra, kiểm tra thuế","Bảng tính thuế TNDN"]});
+sec("E400","Phải trả người lao động và các khoản trích theo lương","334, 338",{cyc:["A440"],ctl:["C140"],mat:"Trọng yếu ở doanh nghiệp dùng nhiều lao động.",
+ csdl:[["E","Nhân viên khống"],["A","Tính sai lương, bảo hiểm"],["C","Thưởng, lương tháng 13 chưa trích"]],
+ proc:[["Ước tính quỹ lương từ số lao động và lương bình quân",[],"A C"],["Chọn mẫu: HĐLĐ, chấm công, bảng lương, chứng từ chi",[],"E A"],["Đối chiếu bảo hiểm với thông báo của cơ quan bảo hiểm",[],"A C"],["Kiểm tra chi lương sau niên độ",[],"C"]],
+ rel:[["G400","Chi phí lương bán hàng, quản lý"],["G200","Lương trong giá thành"],["E300","Thuế TNCN"],["D100","Chi lương"]],docs:["Bảng lương 12 tháng","HĐLĐ, quy chế lương","Thông báo bảo hiểm"]});
+sec("E500","Chi phí phải trả","335",{mat:"Rủi ro là thiếu (đầy đủ). Số nhỏ không có nghĩa là an toàn.",
+ csdl:[["C","Chi phí đã phát sinh chưa trích trước"],["A","Cơ sở trích không hợp lý"]],
+ proc:[["Tìm nợ chưa ghi sổ: hoá đơn và chi tiền sau niên độ",[],"C CO"],["Kiểm tra cơ sở từng khoản trích",[],"A"]],
+ rel:[["G400","Chi phí trích trước"],["E100","Lãi vay dự trả"],["E200","Ranh giới với phải trả người bán"]],docs:["Bảng chi tiết chi phí phải trả","Hoá đơn và chứng từ chi sau ngày khoá sổ"]});
+sec("E600","Phải trả nội bộ và phải trả khác","336, 338, 344, 3387",{mat:"Chú ý doanh thu chưa thực hiện và khoản nhận trước.",
+ csdl:[["C","Khoản phải trả chưa ghi"],["CL","Doanh thu chưa thực hiện và doanh thu"]],proc:[["Chi tiết theo đối tượng, kiểm tra khoản lớn, tồn lâu",[],"E C"],["Tính lại phân bổ doanh thu chưa thực hiện",[],"A CO"]],
+ rel:[["G100","Doanh thu chưa thực hiện phân bổ vào doanh thu"],["H140","Phải trả bên liên quan"]],docs:["Bảng chi tiết theo đối tượng","Hợp đồng nhận trước"]});
+sec("F100","Vốn chủ sở hữu","411, 412, 414, 421",{mat:"Ít nghiệp vụ nhưng mỗi nghiệp vụ đều lớn, kiểm tra 100%.",
+ csdl:[["E","Vốn góp chưa thực góp"],["PD","Biến động vốn, phân phối lợi nhuận"]],
+ proc:[["Đối chiếu vốn góp với ĐKKD, điều lệ, chứng từ góp vốn",["F131"],"E RO"],["Kiểm tra phân phối lợi nhuận theo nghị quyết",[],"A PD"]],
+ rel:[["D100","Tiền góp vốn về tài khoản"],["E100","Vốn mỏng, vay nhiều"],["G700","Lãi trên cổ phiếu"]],docs:["ĐKKD các lần thay đổi","Nghị quyết tăng vốn, chia cổ tức","Chứng từ góp vốn"]});
+sec("F200","Cổ phiếu quỹ","419",{mat:"Chỉ khi có phát sinh.",proc:[["Kiểm tra nghị quyết và chứng từ mua lại",[],"E A"]],rel:[["F100","Giảm vốn chủ sở hữu"]],docs:["Nghị quyết, sao kê giao dịch"]});
+sec("F300","Nguồn kinh phí và quỹ khác","353, 356, 461",{mat:"Chỉ khi có phát sinh.",proc:[["Kiểm tra trích lập và sử dụng quỹ theo nghị quyết",[],"A"]],rel:[["F100","Trích quỹ từ lợi nhuận"]],docs:["Nghị quyết trích quỹ"]});
+sec("F400","Các khoản mục ngoài Bảng cân đối kế toán","Ngoài bảng",{mat:"Quan tâm tới ngoại tệ, tài sản giữ hộ, nợ khó đòi đã xử lý.",proc:[["Đối chiếu với thuyết minh và giấy làm việc liên quan",[],"PD"]],rel:[["D500","Hàng giữ hộ"],["D100","Ngoại tệ các loại"]],docs:["Sổ theo dõi ngoài bảng"]});
+sec("G100","Doanh thu bán hàng và cung cấp dịch vụ","511, 521",{cyc:["A410"],ctl:["C110"],mat:"Luôn là khoản mục trọng yếu. VSA 240 yêu cầu giả định có rủi ro gian lận trong ghi nhận doanh thu, nên mặc định là rủi ro đáng kể trừ khi có lý do bác bỏ.",
+ csdl:[["O","Doanh thu khống, ghi nhận khi chưa chuyển giao (hàng gửi đại lý, hợp đồng theo đợt)"],["CO","Ghi doanh thu sai kỳ quanh ngày khoá sổ"],["C","Kênh thương mại điện tử, COD cấn trừ phí trực tiếp vào doanh thu"],["CL","Nhầm giữa chiết khấu thương mại, giảm giá, hàng trả lại; gộp dịch vụ vào hàng hoá"],["A","Lệch giữa sổ chi tiết, sổ tổng hợp và hoá đơn"]],
+ proc:[["Phân tích doanh thu theo tháng, kênh, sản phẩm, tỷ lệ lãi gộp",["G160"],"O C"],["Đọc lướt sổ cái 511, 521, 3387",["G174"],"O CL"],["Kiểm tra chi tiết: hợp đồng, hoá đơn, biên bản giao hàng, thu tiền",["G172"],"O A"],["Cut-off trước và sau ngày khoá sổ",["G173"],"CO"],["Các khoản giảm trừ và phân loại",["G170","G171"],"CL A"],["Ước tính doanh thu theo hợp đồng",["G146"],"A CO"],["Đối chiếu với tờ khai thuế GTGT",["G175"],"C A"]],
+ rel:[["D300","Doanh thu bán chịu và phải thu là hai mặt của một giao dịch"],["G200","Doanh thu phải đi cùng giá vốn tương ứng"],["D500","Hàng gửi đại lý còn là tồn kho cho tới khi có bảng kê tiêu thụ"],["E300","Doanh thu kê khai thuế GTGT"],["E600","Doanh thu chưa thực hiện"],["D100","Thu tiền bán hàng, tiền COD đang ở đơn vị vận chuyển"]],
+ docs:["Sổ chi tiết 511, 521 theo tháng","Hợp đồng lớn, chính sách bán hàng, chiết khấu","Hoá đơn, phiếu xuất, biên bản giao nhận quanh ngày khoá sổ","Báo cáo đối soát sàn thương mại điện tử, đơn vị vận chuyển","Tờ khai thuế GTGT 12 tháng"]});
+sec("G200","Giá vốn hàng bán","632",{cyc:["A430"],ctl:["C130"],mat:"Trọng yếu cùng với doanh thu và hàng tồn kho.",
+ csdl:[["A","Giá vốn không tương ứng doanh thu"],["CO","Ghi giá vốn khác kỳ với doanh thu"],["C","Hao hụt, dự phòng chưa ghi vào giá vốn"]],
+ proc:[["Phân tích tỷ lệ lãi gộp theo tháng, theo sản phẩm",[],"A C"],["Đối chiếu số lượng xuất bán với số lượng ghi doanh thu",[],"C CO"],["Kiểm tra bút toán điều chỉnh giá vốn cuối kỳ",[],"A"]],
+ rel:[["D500","Giá vốn bằng tồn đầu cộng nhập trừ tồn cuối"],["G100","Nguyên tắc phù hợp"],["D700","Khấu hao trong giá thành"],["E400","Nhân công trong giá thành"]],docs:["Sổ chi tiết 632","Bảng tính giá thành","Báo cáo lãi gộp theo sản phẩm"]});
+sec("G300","Chi phí bán hàng","641",{cyc:["A420","A440"],ctl:["C120","C140"],mat:"Kiểm tra khi vượt mức trọng yếu thực hiện hoặc biến động ngược chiều doanh thu.",
+ csdl:[["C","Chi phí chưa ghi (phí sàn, hoa hồng, vận chuyển)"],["O","Chi phí không có chứng từ hợp lệ"],["CL","Nhầm với chi phí quản lý, giá vốn"]],
+ proc:[["Phân tích theo tháng và theo khoản mục phí, so với doanh thu",[],"C O"],["Chọn mẫu kiểm tra chứng từ",[],"O A"],["Cut-off và tìm chi phí chưa ghi",[],"C CO"]],
+ rel:[["G100","Phí bán hàng biến động theo doanh thu, phí sàn bị cấn trừ vào doanh thu"],["E500","Chi phí phải trả cuối kỳ"],["E400","Lương bán hàng"],["E300","Chi phí không được trừ"]],docs:["Sổ chi tiết 641 theo khoản mục","Hợp đồng dịch vụ, bảng đối soát phí"]});
+sec("G400","Chi phí quản lý doanh nghiệp","642",{cyc:["A420","A440"],ctl:["C120","C140"],mat:"Kiểm tra khi vượt mức trọng yếu thực hiện. Chú ý dự phòng và chi phí không được trừ.",
+ csdl:[["C","Chi phí chưa ghi"],["O","Chi phí cá nhân, không phục vụ kinh doanh"],["CL","Chi phí đáng lẽ vốn hoá hoặc trả trước"]],
+ proc:[["Phân tích theo tháng và khoản mục phí",[],"C O"],["Chọn mẫu kiểm tra chứng từ",[],"O A"],["Tổng hợp chi phí không được trừ cho thuế TNDN",[],"A"]],
+ rel:[["E400","Lương quản lý"],["D600","Phân bổ chi phí trả trước"],["D700","Khấu hao"],["D300","Dự phòng phải thu khó đòi"],["E300","Chi phí không được trừ"],["E500","Chi phí phải trả"]],docs:["Sổ chi tiết 642 theo khoản mục","Hợp đồng, hoá đơn khoản lớn"]});
+sec("G500","Doanh thu và chi phí tài chính","515, 635",{mat:"Trọng yếu khi vay nhiều, có ngoại tệ hoặc đầu tư tài chính lớn.",
+ csdl:[["A","Tính sai lãi vay, lãi tiền gửi"],["C","Lãi dự thu, dự trả chưa ghi"],["CL","Chênh lệch tỷ giá đã thực hiện và chưa thực hiện"]],
+ proc:[["Ước tính lãi vay từ dư nợ bình quân và lãi suất",[],"A C"],["Ước tính lãi tiền gửi",[],"A C"],["Tính lại chênh lệch tỷ giá",[],"A V"]],
+ rel:[["E100","Chi phí lãi vay"],["D100","Lãi tiền gửi, đánh giá lại ngoại tệ"],["D200","Lãi, dự phòng đầu tư"],["E200","Chênh lệch tỷ giá công nợ"],["D700","Lãi vay vốn hoá"]],docs:["Bảng tính lãi vay, lãi tiền gửi","Bảng đánh giá lại ngoại tệ cuối kỳ"]});
+sec("G600","Thu nhập và chi phí khác","711, 811",{mat:"Ít nghiệp vụ, kiểm tra các khoản lớn.",csdl:[["CL","Thu nhập khác ghi vào doanh thu và ngược lại"],["A","Tính sai lãi, lỗ thanh lý"]],
+ proc:[["Kiểm tra 100% khoản lớn",[],"O A"],["Đối chiếu thanh lý TSCĐ với phần hành TSCĐ",[],"A"]],rel:[["D700","Thanh lý, nhượng bán TSCĐ"],["E300","Tiền phạt không được trừ"]],docs:["Sổ chi tiết 711, 811","Hồ sơ thanh lý"]});
+sec("G700","Lãi trên cổ phiếu","Chỉ tiêu 70, 71",{mat:"Chỉ với công ty cổ phần.",proc:[["Tính lại số cổ phiếu bình quân và lãi cơ bản",[],"A PD"]],rel:[["F100","Số cổ phiếu lưu hành"]],docs:["Sổ cổ đông, biến động cổ phiếu"]});
+
+/* giấy riêng của từng phần hành */
+const SUM={};        // phần hành → giấy tổng hợp phát hiện
+function sp(id,n,kind,src,secCode,o){p(id,n,kind,src,o);P[id].sec=secCode;}
+Object.keys(S).forEach(c=>{const b=c.slice(0,2);
+  sp(b+"10","Bảng tổng hợp số liệu (leadsheet)","lead","I",c);
+  sp(b+"20","Giấy làm việc phục vụ thuyết minh BCTC","tm","I",c);
+  if(!["D200","D700","E300"].includes(c)) sp(b+"30","Chương trình kiểm toán","prog","V",c);
+});
+sp("D230.1","CTKiT: đầu tư vào công ty con, liên doanh, liên kết","prog","V","D200");
+sp("D230.2","CTKiT: đầu tư tài chính ngắn hạn, dài hạn","prog","V","D200");
+sp("D231","Mẫu thư xác nhận khoản đầu tư","form","V","D200",{as:"E RO"});
+sp("D730.1","CTKiT: TSCĐ hữu hình","prog","V","D700");
+sp("D730.2","CTKiT: TSCĐ vô hình","prog","V","D700");
+sp("D730.3","CTKiT: Bất động sản đầu tư","prog","V","D700");
+sp("D730.4","CTKiT: Chi phí XDCB dở dang","prog","V","D700");
+sp("E330.1","CTKiT: Thuế TNDN hiện hành và hoãn lại","prog","V","E300");
+sp("E330.2","CTKiT: Thuế GTGT","prog","V","E300");
+sp("E330.3","CTKiT: Các loại thuế khác","prog","V","E300");
+// Tiền
+sp("D111","Tổng hợp phát hiện và đánh giá mục tiêu kiểm toán","sum","X","D100",{d:"Gom mọi phát hiện của phần hành Tiền, bút toán đề nghị điều chỉnh, kết luận theo từng mục tiêu.",need:["Phát hiện từ mọi giấy D13x–D18x","Giải trình của khách hàng (D112)"]});
+sp("D112","Trao đổi với khách hàng về vấn đề bất thường","test","X","D100",{d:"Sổ theo dõi câu hỏi, người trả lời, tiến độ, kết quả và ảnh hưởng tới kết luận.",need:["Danh sách bất thường từ các giấy kiểm tra chi tiết"],as:""});
+sp("D132","Phiếu chứng kiến kiểm kê tiền mặt","form","V","D100",{d:"Biên bản đếm quỹ theo mệnh giá, có chữ ký thủ quỹ, kế toán, KTV.",need:["Sổ quỹ tới thời điểm kiểm kê","Phiếu thu, chi cuối cùng"],as:"E"});
+sp("D132.1","Thủ tục chứng kiến kiểm kê tiền mặt","test","X","D100",{d:"Mô tả thủ tục: thời điểm, người tham gia, cộng trừ lùi về ngày khoá sổ, xử lý chênh lệch.",need:["D132","Thu chi từ ngày khoá sổ tới ngày kiểm kê"],as:"E"});
+sp("D133","Mẫu thư xác nhận ngân hàng","form","V","D100",{d:"Xác nhận số dư tiền gửi, vay, bảo lãnh, tài sản đảm bảo tại từng ngân hàng.",need:["Danh sách toàn bộ tài khoản","Chữ ký người có thẩm quyền của khách hàng"],as:"E RO C"});
+sp("D140","Thủ tục phân tích khoản mục Tiền","test","X","D100",{d:"Phân tích cơ bản: biến động số dư, số phát sinh theo tháng, tỷ trọng tiền mặt và tiền gửi.",need:["Sổ cái 111, 112 theo tháng","Số năm trước"],as:"E C"});
+sp("D150","Kiểm tra chi tiết nghiệp vụ tiền mặt","test","X","D100",{d:"Chọn mẫu phiếu thu, chi, kiểm tra chứng từ gốc và phê duyệt.",need:["Sổ quỹ","Cỡ mẫu từ A710 và D130","Chứng từ gốc"],as:"O A"});
+sp("D151","Kiểm tra đối ứng bất thường TK 111","test","X","D100",{d:"Tổng hợp đối ứng, lọc cặp tài khoản lạ và nghiệp vụ lớn.",need:["Sổ cái 111 có tài khoản đối ứng"],as:"O CL"});
+sp("D153","Cut-off tiền mặt","test","X","D100",{d:"Phiếu thu, chi trước và sau ngày khoá sổ được ghi đúng kỳ.",need:["Phiếu thu, chi cuối năm và đầu năm sau"],as:"CO"});
+sp("D160","Theo dõi và đối chiếu thư xác nhận ngân hàng","test","X","D100",{d:"Theo dõi thư gửi, thư về, đối chiếu với sổ, giải thích chênh lệch.",need:["Thư phản hồi gốc","Sổ chi tiết 112 theo ngân hàng"],as:"E RO C"});
+sp("D161","Đề nghị sao kê và sao kê tài khoản ngân hàng","form","X","D100",{d:"Bằng chứng thay thế, bổ sung cho thư xác nhận.",need:["Sao kê cả năm của từng tài khoản"],as:"E A"});
+sp("D162","Cut-off tiền gửi ngân hàng","test","X","D100",{d:"Giao dịch ngân hàng quanh ngày khoá sổ, tiền đang chuyển.",need:["Sao kê tháng cuối năm và tháng đầu năm sau"],as:"CO"});
+sp("D163","Kiểm tra chi tiết tiền gửi ngân hàng","test","X","D100",{d:"Chọn mẫu giao dịch, kiểm tra uỷ nhiệm chi, giấy báo và chứng từ gốc.",need:["Sổ chi tiết 112","Cỡ mẫu","Sao kê"],as:"O A"});
+sp("D164","Kiểm tra đối ứng bất thường TK 112","test","X","D100",{d:"Tổng hợp đối ứng, lọc nghiệp vụ lạ.",need:["Sổ cái 112 có tài khoản đối ứng"],as:"O CL"});
+sp("D165","Đánh giá lại chênh lệch tỷ giá","test","X","D100",{d:"Tính lại số dư ngoại tệ theo tỷ giá cuối kỳ.",need:["Số dư nguyên tệ theo thư xác nhận","Tỷ giá của ngân hàng nơi mở tài khoản tại ngày khoá sổ"],as:"V"});
+sp("D180","Kiểm tra thuyết minh Tiền","test","X","D100",{d:"Số trên thuyết minh khớp số sau kiểm toán, đủ nội dung bắt buộc.",need:["D110 sau điều chỉnh","Bản thuyết minh BCTC"],as:"PD"});
+// Phải thu
+sp("D331","Mẫu thư xác nhận phải thu (ghi sẵn số dư)","form","V","D300",{as:"E RO"});
+sp("D332","Mẫu thư xác nhận phải thu (để trống số dư)","form","V","D300",{as:"E RO"});
+sp("D333","Theo dõi xác nhận phải thu và phản hồi","test","V","D300",{d:"Theo dõi thư gửi, thư về, chênh lệch và thủ tục thay thế.",need:["Bảng chi tiết công nợ","Thư phản hồi gốc","Thu tiền sau niên độ"],as:"E RO"});
+// HTK
+sp("D531","CTKiT: quan sát kiểm kê hàng tồn kho","prog","V","D500");
+sp("D532","Báo cáo kiểm kê hàng tồn kho","test","V","D500",{as:"E C",need:["Kế hoạch kiểm kê","Phiếu kiểm đếm"]});
+sp("D533","Phiếu kiểm đếm hàng tồn kho","form","V","D500",{as:"E C"});
+sp("D534","Thư xác nhận hàng giữ hộ, hàng gửi bán","form","V","D500",{as:"E RO"});
+// TSCĐ
+sp("D711","Tổng hợp sai sót và bút toán điều chỉnh TSCĐ","sum","X","D700",{d:"Bút toán điều chỉnh của phần hành và việc khách hàng thực hiện.",need:["Phát hiện từ D734–D740"]});
+sp("D734","Đánh giá tổng thể biến động TSCĐ và XDCB","test","X","D700",{d:"Phân tích cơ bản: tăng, giảm nguyên giá, khấu hao, so với nguồn vốn tài trợ.",need:["Bảng tổng hợp tăng giảm TSCĐ","Biến động vốn chủ và vay"],as:"E C"});
+sp("D735","Phiếu chứng kiến kiểm kê TSCĐ","form","X","D700",{d:"Kiểm kê hiện vật, tình trạng sử dụng. D735.1: đánh giá quy trình kiểm kê.",need:["Sổ đăng ký TSCĐ","Kế hoạch kiểm kê của đơn vị"],as:"E"});
+sp("D736","Kiểm tra chi tiết nghiệp vụ tăng TSCĐ","test","X","D700",{d:"Hồ sơ tăng: hợp đồng, hoá đơn, nghiệm thu, bàn giao, thanh toán.",need:["Danh sách tài sản tăng","Bộ hồ sơ từng tài sản","Cỡ mẫu"],as:"E A RO"});
+sp("D737","Kiểm tra chi tiết nghiệp vụ giảm TSCĐ","test","X","D700",{d:"Quyết định thanh lý, biên bản, hoá đơn, tính lãi lỗ.",need:["Danh sách tài sản giảm","Hồ sơ thanh lý"],as:"C A"});
+sp("D738","Kiểm tra chi phí vốn hoá và chi phí sửa chữa","test","X","D700",{d:"Phân biệt nâng cấp (vốn hoá) với sửa chữa (chi phí), lãi vay vốn hoá.",need:["Sổ chi tiết 241, 242, 627, 642","Hợp đồng sửa chữa, nâng cấp","Hợp đồng vay"],as:"A CL"});
+sp("D739","Bảng tính lại khấu hao TSCĐ","test","X","D700",{d:"Tính lại theo phương pháp và thời gian của đơn vị, so với số ghi sổ.",need:["Sổ đăng ký TSCĐ: nguyên giá, ngày đưa vào dùng, thời gian","Khung TT 45/2013"],as:"A V"});
+sp("D739.1","Kiểm tra tính hợp lý của thời gian sử dụng","test","X","D700",{d:"Thời gian khấu hao nằm trong khung và nhất quán.",need:["Chính sách khấu hao","Khung thời gian theo quy định"],as:"V"});
+sp("D740","Kiểm tra quyền và nghĩa vụ pháp lý","test","X","D700",{d:"Giấy tờ sở hữu, đăng ký, tài sản thế chấp.",need:["Giấy đăng ký xe, sổ đỏ","Hợp đồng thế chấp"],as:"RO"});
+// Vay
+sp("E131","Mẫu thư xác nhận nợ vay","form","V","E100",{as:"C E"});
+sp("E133","Theo dõi xác nhận vay và phản hồi","test","I","E100",{as:"C E"});
+// Phải trả
+sp("E231","Mẫu thư xác nhận phải trả nhà cung cấp","form","V","E200",{d:"Thư xác nhận số dư với nhà cung cấp.",need:["Danh sách nhà cung cấp được chọn","Số dư cuối kỳ (và đầu kỳ nếu là năm đầu)"],as:"C E"});
+sp("E231.1","Bảng tổng hợp công nợ theo nhà cung cấp","test","X","E200",{d:"Số dư đầu, phát sinh, số dư cuối theo từng nhà cung cấp, khớp sổ chi tiết.",need:["Sổ chi tiết 331 theo đối tượng","Bảng tổng hợp công nợ của đơn vị"],as:"A"});
+sp("E233","Theo dõi xác nhận phải trả và phản hồi","test","V","E200",{d:"Theo dõi thư, chênh lệch, thủ tục thay thế, kết luận số sau kiểm toán.",need:["Thư phản hồi gốc","Hoá đơn, thanh toán sau niên độ"],as:"C E"});
+sp("E242","Phân tích biến động và tuổi nợ phải trả","test","X","E200",{d:"Biến động theo nhà cung cấp, khoản nợ tồn lâu.",need:["Bảng tuổi nợ","Số năm trước"],as:"V C"});
+sp("E251","Kiểm tra chi tiết phát sinh tăng TK 331","test","X","E200",{d:"Chọn mẫu nghiệp vụ mua: hợp đồng, hoá đơn, phiếu nhập.",need:["Sổ chi tiết 331 bên Có","Chứng từ mua hàng"],as:"O A"});
+sp("E252","Kiểm tra chi tiết phát sinh giảm TK 331","test","X","E200",{d:"Chọn mẫu thanh toán: uỷ nhiệm chi, phê duyệt, đúng đối tượng.",need:["Sổ chi tiết 331 bên Nợ","Chứng từ thanh toán"],as:"O A"});
+sp("E255","Đánh giá lại công nợ ngoại tệ cuối kỳ","test","X","E200",{d:"Tính lại số dư gốc ngoại tệ theo tỷ giá cuối kỳ.",need:["Số dư nguyên tệ theo nhà cung cấp","Tỷ giá cuối kỳ theo quy định"],as:"V"});
+sp("E256","Kiểm tra đối ứng bất thường TK 331","test","X","E200",{d:"Lọc cặp đối ứng lạ với 331.",need:["Sổ cái 331 có tài khoản đối ứng"],as:"CL O"});
+sp("E257","Tài khoản thụ hưởng và dấu hiệu gian lận khi thanh toán","test","X","E200",{d:"So tài khoản nhận tiền với hợp đồng, phát hiện trả cho bên thứ ba (VSA 240).",need:["Uỷ nhiệm chi","Thông tin tài khoản trên hợp đồng"],as:"E"});
+sp("E258","Kiểm tra số dư đầu kỳ TK 331","test","X","E200",{d:"Năm đầu kiểm toán: bằng chứng cho số dư đầu kỳ (VSA 510).",need:["BCTC năm trước","Thanh toán trong năm cho số dư đầu kỳ"],as:"E C"});
+sp("F131","Mẫu thư xác nhận vốn góp","form","V","F100",{as:"E RO"});
+// Doanh thu
+sp("G140","Tổng hợp bút toán điều chỉnh và vấn đề lưu ý","sum","X","G100",{d:"Gom phát hiện và bút toán điều chỉnh của phần hành Doanh thu.",need:["Phát hiện từ G146–G175"]});
+sp("G146","Ước tính doanh thu theo hợp đồng","test","X","G100",{d:"Tính lại doanh thu theo tiến độ, đợt nghiệm thu của hợp đồng.",need:["Hợp đồng","Biên bản nghiệm thu, bàn giao"],as:"A CO"});
+sp("G160","Thủ tục phân tích doanh thu","test","X","G100",{d:"Phân tích theo tháng, kênh, sản phẩm, tỷ lệ giảm trừ, lãi gộp.",need:["Sổ chi tiết 511, 521 theo tháng","Số năm trước, kế hoạch"],as:"O C"});
+sp("G170","Kiểm tra các khoản giảm trừ doanh thu","test","X","G100",{d:"Chiết khấu thương mại, giảm giá, hàng trả lại: hồ sơ và hạch toán.",need:["Sổ chi tiết 5211, 5212, 5213","Biên bản trả hàng, hoá đơn điều chỉnh, chính sách chiết khấu"],as:"O A CL"});
+sp("G171","Kiểm tra phân loại doanh thu","test","X","G100",{d:"Tách hàng hoá và dịch vụ, phân loại đúng tiểu khoản.",need:["Hợp đồng hỗn hợp","Sổ chi tiết 5111, 5113"],as:"CL"});
+sp("G172","Kiểm tra chi tiết tính hiện hữu của doanh thu","test","X","G100",{d:"Từ sổ về chứng từ: hợp đồng, hoá đơn, giao hàng, thu tiền.",need:["Sổ chi tiết 511","Cỡ mẫu","Chứng từ bán hàng"],as:"O A"});
+sp("G173","Kiểm tra tính đúng kỳ của doanh thu","test","X","G100",{d:"Giao dịch trước và sau ngày khoá sổ so với ngày chuyển giao.",need:["Hoá đơn, phiếu xuất, biên bản giao nhận quanh ngày khoá sổ","Báo cáo đối soát sàn, vận chuyển"],as:"CO"});
+sp("G174","Đọc lướt sổ cái 511, 521, 3387","test","X","G100",{d:"Tìm bút toán lạ, đối ứng lạ, điều chỉnh cuối kỳ.",need:["Sổ cái có diễn giải và tài khoản đối ứng"],as:"O CL"});
+sp("G175","Đối chiếu doanh thu với tờ khai thuế GTGT","test","X","G100",{d:"Giải thích chênh lệch giữa doanh thu sổ sách và doanh thu kê khai.",need:["Tờ khai GTGT 12 tháng","Sổ chi tiết 511, 3331"],as:"C A"});
+SUM.D100="D111";SUM.D700="D711";SUM.G100="G140";
+
+/* ---------- 2. LIÊN KẾT ---------- */
+e(["A110","A120"],["A210","A212"],"Chấp nhận khách hàng xong mới ký hợp đồng");
+e("A210",["A220","A240"],"Phạm vi hợp đồng quyết định chiến lược và tài liệu yêu cầu");
+e("A220",["A250","A230","A910"],"Chiến lược tổng thể dẫn tới phân công và kế hoạch");
+e("A260","A270","Cam kết độc lập là đầu vào để soát xét nguy cơ");
+e("A240","B510","Khách hàng cung cấp số liệu theo danh mục này");
+e("A310",["A410","A420","A430","A440","A450"],"Hiểu ngành nghề, sản phẩm rồi mới mô tả đúng chu trình");
+e("A310",["A510","A810"],"Rủi ro kinh doanh giúp đọc biến động và nhận diện rủi ro cấp BCTC");
+e("A311","H110","Danh sách quy định là cơ sở kiểm tra tuân thủ");
+e("A312","H140","Danh sách bên liên quan dùng để soát xét giao dịch");
+e("A313",["A460","C210"],"Hiểu hệ thống kế toán trước khi kiểm tra sổ cái, khoá sổ");
+e("A314",["A820","C230"],"Ước tính kế toán là nơi có xét đoán, phải đưa vào đánh giá rủi ro");
+[["A410","A411","C110"],["A420","A421","C120"],["A430","A431","C130"],["A440","A441","C140"],["A450","A451","C150"]].forEach(([a,w,c])=>{
+  e(a,w,"Mô tả chu trình phải được xác nhận bằng walk-through");
+  e(w,c,"Walk-through xác nhận kiểm soát có tồn tại rồi mới thử nghiệm kiểm soát");
+  e(a,["A810","A820"],"Rủi ro theo cơ sở dẫn liệu của chu trình đẩy lên bảng đánh giá rủi ro");
+  e(c,"B210","Khiếm khuyết kiểm soát đưa vào thư quản lý");
+});
+e("A460",["C210","C230","H120"],"Hiểu quy trình khoá sổ để kiểm tra sổ cái và bút toán cuối kỳ");
+e("A510","A710","Số liệu và độ ổn định của chỉ tiêu dùng để chọn tiêu chí trọng yếu");
+e("A510",["A810","A820"],"Biến động bất thường chỉ ra khoản mục có rủi ro");
+e("A510","B420","Phân tích lần cuối so lại với phân tích sơ bộ");
+e("A520","H160","Dấu hiệu ban đầu về hoạt động liên tục được kết luận ở cuối");
+e(["A610","A620","A630","A640"],"A810","Kết quả đánh giá KSNB và gian lận tổng hợp vào rủi ro cấp BCTC");
+e("A620","B240","Kết quả phỏng vấn được tổng hợp lại");
+e("A640","C230","Yếu tố gian lận định hướng kiểm tra việc BGĐ khống chế kiểm soát");
+e("A710","A720","Mức riêng cho khoản mục nhạy cảm tính từ mức tổng thể");
+e("A710","A820","Khoản mục vượt mức trọng yếu thực hiện phải có biện pháp xử lý");
+e("A710","B370","Sai sót chưa điều chỉnh được so với mức trọng yếu");
+e("A810","A820","Phải tổng hợp rủi ro trước rồi mới tóm tắt biện pháp");
+e(["A710","A810","A820"],"A910","Tổng hợp vào kế hoạch kiểm toán");
+e("C210",["C220","C240"],"Chương trình sổ cái gồm kiểm tra số dư đầu kỳ và cuối kỳ");
+e("C230","H120","Kiểm tra bút toán ghi sổ là một phần của thủ tục về khống chế kiểm soát");
+e("C240","B350","Số dư cuối kỳ sổ cái khớp CĐPS");
+e("C250",["F130","E130","H180","H150"],"Nghị quyết về vốn, vay, bảo lãnh, cam kết ảnh hưởng tới các phần này");
+e("B510","B350","CĐPS trước kiểm toán là cột đầu của bảng trước và sau điều chỉnh");
+e("B360",["B341","B342","B350"],"Bút toán điều chỉnh tạo ra cột số sau kiểm toán");
+e("B360","B411","Trao đổi và thống nhất bút toán với khách hàng");
+e(["B341","B342"],["B343","B420","B111"],"Số sau kiểm toán dùng để kiểm tra LCTT, phân tích lần cuối, soát xét BCTC");
+e("B370","B140","Tổng sai sót chưa điều chỉnh so với trọng yếu quyết định dạng ý kiến");
+e("B410",["B140","B411","B440"],"Vấn đề trọng yếu dẫn tới ý kiến, trao đổi với đơn vị, nội dung thư giải trình");
+e("B420","B140","Điểm chưa giải thích được phải xử lý trước khi ra ý kiến");
+e("B140","B310","Chọn mẫu báo cáo theo dạng ý kiến");
+e(["B110","B111","B440"],"B310","Hoàn thành các bước này mới phát hành báo cáo");
+e(["B130","B430"],"B110","Ghi chú soát xét và việc còn treo phải đóng trước khi hoàn thành");
+e(["H110","H120","H140","H150","H180","H190","H210"],"B410","Vấn đề từ thủ tục chung được tổng hợp vào kết quả kiểm toán");
+e("H160","B140","Kết luận về hoạt động liên tục ảnh hưởng trực tiếp tới ý kiến");
+e("H180","B440","Nợ tiềm tàng, cam kết cần BGĐ giải trình");
+// theo phần hành
+Object.values(S).forEach(s=>{const mine=Object.values(P).filter(x=>x.sec===s.code);
+  const lead=mine.find(x=>x.kind==="lead").id, tm=mine.find(x=>x.kind==="tm").id;
+  const progs=mine.filter(x=>x.kind==="prog").map(x=>x.id), tests=mine.filter(x=>["test","form"].includes(x.kind)).map(x=>x.id), sum=SUM[s.code];
+  e("B510",lead,"CĐPS và BCTC trước kiểm toán là số xuất phát của leadsheet");
+  e("C220",lead,"Số dư đầu kỳ phải được kiểm tra trước khi tin số trên leadsheet");
+  e(["A710"],progs,"Mức trọng yếu thực hiện và ngưỡng sai sót quyết định cỡ mẫu");
+  e(["A820"],progs,"Rủi ro và biện pháp ở A820 phải khớp với thủ tục trong chương trình kiểm toán");
+  e(s.ctl,progs,"Kết quả thử nghiệm kiểm soát quyết định mức độ thử nghiệm cơ bản");
+  e(progs,tests,"Thủ tục trong chương trình được thực hiện ở giấy này");
+  if(sum){e(tests,sum,"Phát hiện được gom về giấy tổng hợp của phần hành");e(sum,lead,"Bút toán điều chỉnh cập nhật số sau kiểm toán");e(sum,["B360","B410","B210"],"Phát hiện của phần hành đi vào bút toán điều chỉnh, tổng hợp kết quả, thư quản lý");}
+  else{e(tests,lead,"Kết quả kiểm tra cập nhật số sau kiểm toán trên leadsheet");e(lead,["B360","B410"],"Bút toán điều chỉnh và vấn đề của phần hành");}
+  e(lead,tm,"Thuyết minh lập từ số sau kiểm toán");
+  e(lead,s.g==="G"?"B342":"B341","Số sau kiểm toán của khoản mục");
+  e(tm,"B111","Thuyết minh của khoản mục được soát xét cùng BCTC");
+});
+// liên kết riêng
+e("D132.1","D132","Thủ tục được ghi nhận kết quả trên phiếu kiểm kê");
+e("D133","D160","Thư gửi đi được theo dõi và đối chiếu");
+e("D133","E133","Thư ngân hàng xác nhận luôn dư nợ vay");
+e("D161",["D162","D163"],"Sao kê là nguồn đối chiếu cho cut-off và kiểm tra chi tiết");
+e("D140",["D151","D164","D150","D163"],"Biến động bất thường ở phân tích phải được truy tiếp bằng kiểm tra chi tiết");
+e(["D150","D151","D163","D164"],"D112","Bất thường được hỏi kế toán và ghi lại giải trình");
+e("D112","D111","Giải trình quyết định phát hiện nào thành bút toán điều chỉnh");
+e("D160","D165","Số dư nguyên tệ đã xác nhận dùng để đánh giá lại");
+e("D165","G510","Chênh lệch đánh giá lại ghi vào doanh thu, chi phí tài chính");
+e("D180","D120","Kết quả kiểm tra thuyết minh");
+e("D110","B343","Số dư tiền đầu kỳ, cuối kỳ khớp LCTT");
+e("E231.1","E231","Chọn nhà cung cấp gửi thư từ bảng tổng hợp");
+e("E231","E233","Thư gửi đi được theo dõi và đối chiếu");
+e(["E251","E252","E257"],"E233","Chênh lệch khi kiểm tra chi tiết phải đối chiếu với kết quả xác nhận");
+e("E258","C220","Bằng chứng số dư đầu kỳ của khoản mục");
+e("E255","G510","Chênh lệch tỷ giá công nợ");
+e("E251","D510","Mua hàng ghi tăng nợ đồng thời tăng tồn kho, kiểm tra cut-off cùng nhau");
+e("E252","D110","Thanh toán nhà cung cấp là phát sinh giảm tiền");
+e("C150","D736","Có thể kiểm tra đồng thời kiểm soát và số liệu trên cùng mẫu tăng TSCĐ");
+e("D734",["D736","D738"],"Biến động lớn định hướng mẫu kiểm tra tăng và chi phí vốn hoá");
+e("D734","E130","Tài sản tăng vượt vốn chủ nghĩa là có vay, cần xem phần hành Vay");
+e("D739.1","D739","Thời gian sử dụng hợp lý rồi mới tính lại khấu hao");
+e("D739",["G210","G410"],"Chênh lệch khấu hao ảnh hưởng giá vốn, chi phí");
+e("D737","G610","Lãi, lỗ thanh lý");
+e("D738","E130","Lãi vay vốn hoá lấy từ hợp đồng vay");
+e("D740","E130","Tài sản thế chấp phải khớp hợp đồng vay và thuyết minh");
+e("D736","E210","Tài sản mua chưa trả tiền nằm trên phải trả người bán");
+e("C250","D740","Hồ sơ pháp lý, nghị quyết đầu tư");
+e("G160",["G172","G173"],"Tháng, kênh biến động bất thường là nơi chọn mẫu");
+e("G174",["G172","G170"],"Bút toán lạ khi đọc lướt được kiểm tra chi tiết");
+e("G172",["D310","D333"],"Doanh thu bán chịu đối chiếu với công nợ và xác nhận phải thu");
+e("G173","D510","Cut-off doanh thu đi cùng cut-off xuất kho");
+e("G173","G210","Doanh thu chuyển kỳ thì giá vốn chuyển theo");
+e("G170","G171","Giảm trừ sai loại là lỗi phân loại");
+e("G175","E330.2","Chênh lệch với tờ khai chuyển cho phần hành Thuế");
+e("G146","E610","Phần chưa đủ điều kiện ghi nhận là doanh thu chưa thực hiện");
+e("D333","G172","Chênh lệch xác nhận phải thu có thể là doanh thu ghi khống hoặc sai kỳ");
+e("D534","G173","Hàng còn ở đại lý chưa được ghi doanh thu");
+
+/* ---------- 3. LƯU Ý ---------- */
+// k: gv = giảng viên nhận xét; th = rút ra từ bài thực hành. p = giấy; kind = áp cho mọi giấy thuộc loại
+function note(k,a,ps,t,kind){N.push({k,a,p:ps,t,kind});}
+note("gv","Chung",[],"Phát hiện và kết luận là hai thứ khác nhau. Phát hiện là điều tìm thấy (chênh lệch, bất thường, có số và tham chiếu). Kết luận trả lời mục tiêu của giấy: cơ sở dẫn liệu đạt hay chưa. Lỗi này lặp lại ở hầu hết giấy kiểm tra chi tiết.","test");
+note("gv","Chung",[],"Mỗi giấy trình bày đủ: mục tiêu, nội dung công việc, phát hiện, kết luận. Tham chiếu phải đánh đúng và hai chiều. Có thể tham khảo AI nhưng phải bám quy định trình bày giấy làm việc.","test");
+note("gv","Chung",["A820","A810"],"Không có A810 thì không thể có A820. A600 và A400 phải liên hệ chặt với nhau, từ đó mới đẩy lên A700 và A800.");
+note("gv","Chung",["A820","A310","A510"],"Giấy mã A là lập kế hoạch, lập trước khi có kết quả thử nghiệm cơ bản, nên không tham chiếu ngược về giấy D, E, G.");
+note("gv","Chung",["C110","C120","C130","C140","C150"],"Chọn mẫu cho thử nghiệm kiểm soát khác với thử nghiệm cơ bản vì mục tiêu khác. Cỡ mẫu kiểm soát xác định theo tần suất của kiểm soát (ngày, tháng, năm).");
+note("gv","Chung",["D112","B411"],"Cần một sổ theo dõi trao đổi với khách hàng: vấn đề, người phụ trách, giấy liên quan, tiến độ, kết quả, ảnh hưởng tới kết luận.");
+note("gv","Chung",["A314","D739","D736","D737"],"Dùng ký hiệu (tickmark) có chú giải. Không tô màu mà không giải thích.");
+// Tiền
+note("gv","D100",["A710","A820"],"Bài Tiền bị thiếu A710 và A820: phần hành nào cũng phải có hai giấy này trước chương trình kiểm toán.");
+note("gv","D100",["D111","B410"],"Giấy tổng hợp phát hiện đặt ngay sau leadsheet (D111) và là nguồn của B410. B410 lấy từ D111, không viết lại từ đầu.");
+note("gv","D100",["B140"],"Khi đưa ra ý kiến kiểm toán phải nêu căn cứ chuẩn mực và lập luận, không chỉ nêu dạng ý kiến.");
+note("gv","D100",["D140","A510"],"Phải phân biệt phân tích sơ bộ (A510, để khoanh rủi ro) với thủ tục phân tích cơ bản (thử nghiệm cơ bản, để lấy bằng chứng). Phát hiện ở giấy phân tích chưa đủ, cần thêm thủ tục làm rõ. Kết luận phải bám mục tiêu.");
+note("gv","D100",["D132","D132.1"],"Chỉ có phiếu kiểm kê là chưa đủ, phải có giấy mô tả thủ tục chứng kiến kiểm kê và lập luận logic.");
+note("gv","D100",["D150"],"Kiểm tra chi tiết tiền mặt phải có mẫu chọn cụ thể. Làm rõ quan hệ với giấy trao đổi kế toán: bất thường nào đã hỏi, trả lời ra sao.");
+note("gv","D100",["D151","D140"],"Giấy đối ứng bất thường phải logic với giấy phân tích: điều bất thường thấy ở phân tích cần được lần tiếp ở đây.");
+note("gv","D100",["D153","D162","D163"],"Bài bị thiếu cut-off tiền mặt. Cut-off làm cho cả 111 và 112, và cách chọn mẫu phải có lý do.");
+note("gv","D100",["D164"],"Phát hiện phải xử lý dứt điểm và chỉ rõ tham chiếu sang giấy nào.");
+note("gv","D100",["D165"],"Giấy đánh giá lại tỷ giá phải liên kết với giấy khác (số dư nguyên tệ đã xác nhận, chi phí tài chính).");
+note("gv","D100",["D100","D110"],"Sắp xếp giấy theo đúng thứ tự mã trong chỉ mục D100.");
+// Phải trả
+note("gv","E200",["A310"],"A310 cần có điểm nhấn dẫn tới kết luận ảnh hưởng đến kiểm toán 331, ví dụ đặc điểm sản phẩm, nguồn cung cấp. Không kết luận quá thận trọng khi chưa đủ bằng chứng.");
+note("gv","E200",["A314"],"Xem lại cái gì mới là ước tính kế toán. Đánh giá lại chênh lệch tỷ giá, chiết khấu thương mại không phải ước tính.");
+note("gv","E200",["A421","C120"],"Nên có A421 vì đủ cơ sở dữ liệu và là cơ sở cho C120.");
+note("gv","E200",["A510"],"A510 không được sơ sài: phải có quan hệ với các bộ phận khác của BCTC và tỷ trọng. Báo cáo KQKD là số của một kỳ, không ghi 'tại ngày'.");
+note("gv","E200",["C220","C210","C230","C240","C250"],"Nhóm C200 với phần hành phải trả thì trọng tâm là C220.1 (số dư đầu kỳ, năm đầu). Các giấy còn lại phục vụ A810, A820.");
+note("gv","E200",["E230","A820"],"Rủi ro ở A820 phải gắn với E230 và phải cụ thể cho khoản mục, cả phần đánh giá rủi ro lẫn biện pháp. Tránh nêu rủi ro chung chung.");
+note("gv","E200",["E210"],"Leadsheet không đối chiếu với nhật ký chung. Xác định rõ nguồn số liệu gốc (sổ cái, CĐPS, BCTC).");
+note("gv","E200",["E220"],"Giấy thuyết minh chỉ làm sau khi đã chốt bút toán điều chỉnh.");
+note("gv","E200",["E231.1"],"Chỉ đối chiếu sổ chi tiết với bảng tổng hợp công nợ, không đối chiếu nhật ký chung.");
+note("gv","E200",["E231","E233"],"Kiểm toán năm đầu thì thư xác nhận phải hỏi cả số dư đầu kỳ. Chênh lệch do xử lý dữ liệu (sổ chi tiết và bảng tổng hợp không khớp) phải báo cho phần hành khác vì có thể sai dây chuyền.");
+note("gv","E200",["E233","E210"],"E233 phải kết luận số sau kiểm toán và bút toán điều chỉnh, rồi tham chiếu về E210.");
+note("gv","E200",["E242"],"Số liệu trên bảng tuổi nợ phải khớp với các giấy khác.");
+note("gv","E200",["E251","E252"],"Trình bày ổn nhưng thủ tục chưa chuẩn. Khi có chênh lệch phải liên kết sang giấy xác nhận (E231, E233).");
+note("gv","E200",["E255"],"Xem lại quy định về tỷ giá theo Thông tư 99 áp dụng từ năm 2026.");
+note("gv","E200",["E256"],"Mục tiêu và nội dung giấy không được mâu thuẫn: đang kiểm tra tỷ giá cuối kỳ hay tỷ giá phát sinh.");
+note("gv","E200",["E257"],"Kết quả kiểm tra tài khoản thụ hưởng phải liên kết với kết quả xác nhận ở E233.");
+note("gv","E200",["B210"],"Thư quản lý phải viết đúng mẫu.");
+// TSCĐ
+note("gv","D700",["A314","A710"],"Mức trọng yếu thực hiện là mức chung của cuộc kiểm toán, không có mức riêng cho TSCĐ.");
+note("gv","D700",["A450","A451","C150"],"Cột cơ sở dẫn liệu ở A450 liên quan tới A451. Không có A451 thì chưa đủ cơ sở để sang thử nghiệm kiểm soát ở phần C.");
+note("gv","D700",["A710"],"Chọn Tổng tài sản làm tiêu chí phải cân nhắc người sử dụng BCTC và các nhân tố khác. Tài sản biến động mạnh mà dùng làm số gốc là rủi ro.");
+note("gv","D700",["A820"],"A820 phải đi từ cả A500 và A600. Đánh giá nhiều cơ sở dẫn liệu ở mức rủi ro cao là quá thận trọng khi A450 đã nhận xét KSNB tốt. A820 lập trước D730 nên chưa đi vào chi tiết nghiệp vụ.");
+note("gv","D700",["C150"],"Phải liên kết với đánh giá độ tin cậy vào kiểm soát để xác định mẫu. Kết luận cần nêu mức thử nghiệm cơ bản tương ứng (chú ý kiểm toán năm đầu). Kiểm soát theo tháng, năm cũng phải được đánh giá. Đánh tham chiếu đúng: C140 là lương, TSCĐ là C150.");
+note("gv","D700",["C150","D736"],"Kiểm tra mẫu chọn kiểm soát có thể kết hợp với D736 (thử nghiệm song song), tránh làm trùng.");
+note("gv","D700",["C250","E130"],"Soát xét nghị quyết: vốn điều lệ tăng nhưng chưa góp đủ thì có rủi ro về chi phí lãi vay.");
+note("gv","D700",["D710"],"Leadsheet phải đối chiếu với bảng tổng hợp TSCĐ và logic với công việc đã làm. Giấy đối chiếu leadsheet với BCĐKT gộp vào D710, kèm bút toán điều chỉnh giá trị còn lại của tài sản thanh lý.");
+note("gv","D700",["D734"],"Phân tích cơ bản phải đặt câu hỏi về nguồn: vốn chủ tăng 8 tỷ mà TSCĐ và XDCB tăng 20 tỷ thì phần còn lại là vay dài hạn. Vốn mỏng, vay nhiều thì có động cơ xử lý BCTC.");
+note("gv","D700",["D730.1","A820"],"Biện pháp trong chương trình kiểm toán phải logic với A820, đừng nhận diện rủi ro quá phức tạp. Trình bày ngay khi vào mã D, sau đó mới tới D710.");
+note("gv","D700",["D735"],"Kế hoạch mẫu kiểm kê và thực tế phải khớp (dự kiến chọn mẫu mà thực tế kiểm hết). Giữ hoài nghi nghề nghiệp: công ty vận tải mà toàn bộ xe có mặt tại công ty vào ngày kiểm kê là điều bất hợp lý.");
+note("gv","D700",["D736"],"Nêu lý do chọn cỡ mẫu. Tách ký hiệu theo từng loại chứng từ cơ bản. Cập nhật quy định thanh toán không dùng tiền mặt từ 5 triệu đồng.");
+note("gv","D700",["D738"],"Đây là vùng rủi ro cao: doanh nghiệp đi vay thì có rủi ro treo chi phí vào tài sản (lãi giả, lỗ thật).");
+note("gv","D700",["D739"],"Làm rõ ba cột: đơn vị, KTV tính lại, chênh lệch. Khấu hao nhanh vẫn được chấp nhận nếu thoả điều kiện. So chênh lệch với ngưỡng sai sót có thể bỏ qua. Giấy này được khen vì đi tới tận cùng bằng chứng.");
+// Doanh thu (từ bài thực hành)
+note("th","G100",["G172","G173","D534"],"Hàng xuất cho đại lý ký gửi vẫn là hàng gửi bán (TK 157) cho tới khi có bảng kê tiêu thụ. Kiểm tra hợp đồng đại lý và xác nhận lượng hàng còn tồn tại đại lý.");
+note("th","G100",["G170","G171"],"Chiết khấu thương mại, giảm giá hàng bán, hàng bán bị trả lại dễ bị hạch toán lẫn nhau. Chiết khấu đã trừ trên hoá đơn thì không ghi qua 521.");
+note("th","G100",["G173","G160"],"Kênh thương mại điện tử và COD: sàn, đơn vị vận chuyển cấn trừ phí rồi mới trả tiền, đơn vị dễ ghi doanh thu theo số thuần và sai kỳ. Đối chiếu báo cáo đối soát, xác nhận tiền COD còn ở đơn vị vận chuyển.");
+note("th","G100",["G146","G173"],"Hợp đồng nghiệm thu theo đợt: không ghi doanh thu đợt sau khi chưa có biên bản nghiệm thu, bàn giao.");
+note("th","G100",["G171"],"Hợp đồng bán hàng kèm dịch vụ phải tách doanh thu dịch vụ (5113) khỏi hàng hoá (5111).");
+note("th","G100",["A520","G310"],"Phí sàn tăng mà chi phí bán hàng trên BCTC giảm là dấu hiệu chi phí ghi thiếu, chuyển sang kiểm tra chi phí bán hàng.");
+note("th","G100",["A710"],"Tiêu chí lợi nhuận trước thuế chỉ dùng được khi lợi nhuận ổn định qua các năm, cần ghi rõ lý do chọn tiêu chí và tỷ lệ.");
+
+/* ---------- 4. GIAO DIỆN ---------- */
+const $=s=>document.querySelector(s), main=$("#main"), idx=$("#idx");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fold=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d").replace(/Đ/g,"D").toLowerCase();
+const col=id=>`var(${PH[id[0]].c})`;
+const h2id=h=>{h=decodeURIComponent(h.replace(/^#/,""));if(P[h]||S[h])return h;const d=h.replace(/-/g,".");return (P[d]||S[d])?d:null;};
+const name=id=>S[id]?S[id].n:P[id]?P[id].n:id;
+let cur="D100", filt="", myNotes={};
+try{myNotes=JSON.parse(localStorage.getItem("wpmap-notes")||"{}");}catch(_){}
+const notesFor=id=>{const pp=P[id];return N.filter(n=>n.p.includes(id)||(pp&&n.kind&&n.kind===pp.kind&&pp.src==="X"));};
+const secNotes=c=>N.filter(n=>n.a===c);
+const KIND={plan:"Lập kế hoạch",ctrl:"Kiểm soát, thủ tục chung",lead:"Leadsheet",tm:"Thuyết minh",prog:"Chương trình kiểm toán",test:"Thử nghiệm cơ bản",form:"Mẫu thư, phiếu",sum:"Tổng hợp phần hành",concl:"Tổng hợp, báo cáo",other:"Nội dung khác"};
+function generic(pp){const s=S[pp.sec];const o={d:pp.d,need:pp.need};
+  if(pp.kind==="lead"){o.d=o.d||`Trình bày số trước kiểm toán, điều chỉnh, số sau kiểm toán của ${s.n} (TK ${s.tk}); đối chiếu với sổ cái, CĐPS và số năm trước.`;o.need=o.need||["CĐPS, sổ cái, sổ chi tiết","BCTC năm trước","Bút toán điều chỉnh từ các giấy chi tiết"];}
+  if(pp.kind==="tm"){o.d=o.d||`Số liệu chi tiết phục vụ thuyết minh ${s.n}. Làm sau khi đã chốt bút toán điều chỉnh.`;o.need=o.need||["Leadsheet sau điều chỉnh","Yêu cầu thuyết minh của chế độ kế toán","Chi tiết theo đối tượng, kỳ hạn, nguyên tệ"];}
+  if(pp.kind==="prog"){o.d=o.d||`Mục tiêu kiểm toán, rủi ro theo cơ sở dẫn liệu và danh sách thủ tục cho ${s.n}, kèm tham chiếu tới giấy thực hiện.`;o.need=o.need||["Mức trọng yếu thực hiện và ngưỡng sai sót (A710)","Rủi ro và biện pháp (A810, A820)","Kết quả thử nghiệm kiểm soát"+(s.ctl.length?` (${s.ctl.join(", ")})`:"")];}
+  if(pp.kind==="form"){o.d=o.d||"Mẫu thư hoặc phiếu dùng để thu thập bằng chứng từ bên ngoài hoặc từ quan sát trực tiếp.";o.need=o.need||["Danh sách đối tượng được chọn","Số dư tại ngày khoá sổ","Chữ ký người có thẩm quyền của khách hàng"];}
+  if(pp.kind==="test"){o.d=o.d||"Giấy thực hiện thủ tục trong chương trình kiểm toán.";o.need=o.need||["Sổ chi tiết liên quan","Chứng từ gốc"];}
+  return o;}
+function chip(id,withName){if(!P[id]&&!S[id])return `<span class="chip"><span class="code">${esc(id)}</span></span>`;
+  return `<button class="chip" style="--c:${col(id)}" data-go="${esc(id)}" title="${esc(name(id))}"><span class="code">${esc(id)}</span>${withName?`<small>${esc(name(id))}</small>`:""}</button>`;}
+function asTags(a){return (a||"").split(" ").filter(Boolean).map(x=>`<span class="as" title="${esc(AS[x]||x)}">${x}</span>`).join("");}
+function groupEdges(list,key){const m=new Map();list.forEach(x=>{if(!m.has(x.w))m.set(x.w,[]);if(!m.get(x.w).includes(x[key]))m.get(x.w).push(x[key]);});
+  if(!m.size)return `<p class="empty">Không có</p>`;
+  return [...m].map(([w,ids])=>`<div class="eg"><p>${esc(w)}</p><div class="chips">${ids.map(i=>chip(i,ids.length<=5)).join("")}</div></div>`).join("");}
+function noteHtml(n,showAt){return `<div class="note ${n.k}"><b>${n.k==="gv"?"Giảng viên nhận xét":"Rút ra từ bài thực hành"}${n.a!=="Chung"&&S[n.a]?" · "+esc(S[n.a].n.split(",")[0].split(" ngắn")[0]):n.a==="Chung"?" · áp dụng chung":""}</b>${esc(n.t)}${showAt&&n.p.length?`<div class="chips at">${n.p.map(i=>chip(i)).join("")}</div>`:""}</div>`;}
+function myNoteCard(id){return `<section class="card wide"><h3>Ghi chú của tôi cho ${esc(id)}</h3><textarea id="mynote" placeholder="Ghi lại nhận xét của giảng viên, lỗi đã gặp, thủ tục đã dùng…">${esc(myNotes[id]||"")}</textarea><p style="margin:8px 0 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn" id="copyNotes">Sao chép toàn bộ ghi chú</button><span class="empty" id="copyMsg">Ghi chú chỉ lưu trên trình duyệt này. Sao chép và gửi lại để đưa vào bản đồ.</span></p></section>`;}
+
+function renderPaper(id){const pp=P[id],g=generic(pp),s=S[pp.sec];
+  const inn=E.filter(x=>x.t===id),out=E.filter(x=>x.f===id),ns=notesFor(id);
+  const accs=s?[s.code]:[...new Set(Object.values(S).filter(x=>x.cyc.includes(id)||x.ctl.includes(id)).map(x=>x.code))];
+  const procs=s?s.proc.filter(r=>r[1].includes(id)):[];
+  const srcPill=pp.src==="V"?`<span class="pill v">Có mẫu VACPA</span>`:pp.src==="I"?`<span class="pill">Trong danh mục VACPA</span>`:`<span class="pill x">Bổ sung từ bài thực hành</span>`;
+  main.innerHTML=`<div style="--c:${col(id)}">
+  <div class="head"><span class="big">${esc(id)}</span><div><h2>${esc(pp.n)}</h2><div class="chips"><span class="pill">${esc(PH[pp.g].n)}</span><span class="pill">${KIND[pp.kind]}</span>${srcPill}${s?`<button class="chip" data-go="${s.code}" style="--c:${col(id)}"><span class="code">${s.code}</span><small>${esc(s.n)}</small></button>`:""}</div></div></div>
+  <p class="lede">${esc(g.d||"")}</p>
+  <div class="flow">
+    <div class="col"><h3>Nhận từ (${new Set(inn.map(x=>x.f)).size})</h3>${groupEdges(inn,"f")}</div><div class="arr" aria-hidden="true">→</div>
+    <div class="col me"><span class="code">${esc(id)}</span><span>${esc(pp.n)}</span></div><div class="arr" aria-hidden="true">→</div>
+    <div class="col"><h3>Đẩy sang (${new Set(out.map(x=>x.t)).size})</h3>${groupEdges(out,"t")}</div>
+  </div>
+  <div class="cards">
+    <section class="card"><h3>Cần thông tin gì</h3><ul>${(g.need||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>Theo mẫu VACPA</li>"}</ul></section>
+    <section class="card"><h3>Khoản mục và cơ sở dẫn liệu</h3>
+      ${pp.as?`<p>${asTags(pp.as)}</p><p class="empty">${pp.as.split(" ").map(x=>x+" = "+AS[x]).join(" · ")}</p>`:""}
+      ${accs.length?`<div class="chips">${accs.map(c=>chip(c,true)).join("")}</div>`:`<p class="empty">Áp dụng cho toàn bộ cuộc kiểm toán, không gắn riêng khoản mục nào.</p>`}
+      ${s&&s.mat?`<p style="margin-top:8px"><b>Khi nào trọng yếu:</b> ${esc(s.mat)}</p>`:""}</section>
+    ${procs.length?`<section class="card"><h3>Thủ tục dùng ở giấy này</h3><ul>${procs.map(r=>`<li>${esc(r[0])} ${asTags(r[2])}</li>`).join("")}</ul></section>`:""}
+    ${pp.kind==="prog"&&s?`<section class="card wide"><h3>Thủ tục trong chương trình và giấy thực hiện</h3>${procTable(s)}</section>`:""}
+    <section class="card wide"><h3>Dễ sai ở giấy này (${ns.length})</h3>${ns.length?ns.map(n=>noteHtml(n)).join(""):`<p class="empty">Chưa có lưu ý nào cho giấy này. Thêm ở ô ghi chú bên dưới.</p>`}</section>
+    ${myNoteCard(id)}
+  </div></div>`;}
+function procTable(s){return `<div class="tw"><table><tr><th>Thủ tục</th><th>Cơ sở dẫn liệu</th><th>Giấy</th></tr>${s.proc.map(r=>`<tr><td>${esc(r[0])}</td><td>${asTags(r[2])}</td><td><div class="chips">${r[1].map(i=>chip(i)).join("")||'<span class="empty">vùng x50–x99</span>'}</div></td></tr>`).join("")}</table></div>`;}
+function renderSec(c){const s=S[c],mine=Object.values(P).filter(x=>x.sec===c);
+  const by=k=>mine.filter(x=>[].concat(k).includes(x.kind)).map(x=>x.id);
+  const steps=[["Hiểu chu trình",s.cyc.flatMap(a=>[a,a.slice(0,3)+"1"]).filter(a=>P[a])],["Trọng yếu, rủi ro",["A710","A810","A820"]],["Kiểm soát",s.ctl.concat(["C220"])],["Chương trình",by("prog")],["Thử nghiệm cơ bản",by(["test","form"])],["Tổng hợp",by(["sum","lead","tm"])],["Báo cáo",["B360",s.g==="G"?"B342":"B341","B410","B210"]]].filter(x=>x[1].length);
+  const ns=secNotes(c);
+  main.innerHTML=`<div style="--c:${col(c)}">
+  <div class="head"><span class="big">${c}</span><div><h2>${esc(s.n)}</h2><div class="chips"><span class="pill">Chỉ mục phần hành</span><span class="pill">TK ${esc(s.tk)}</span><span class="pill">${mine.length} giấy</span></div></div></div>
+  <p class="lede"><b>Khi nào trọng yếu:</b> ${esc(s.mat||"")}</p>
+  <div class="cards">
+    <section class="card wide"><h3>Đường đi của hồ sơ</h3><div class="path">${steps.map(([t,ids])=>`<div class="st"><span>${t}</span><div class="chips">${ids.map(i=>chip(i)).join("")}</div></div>`).join("<i>→</i>")}</div></section>
+    ${s.csdl.length?`<section class="card"><h3>Rủi ro theo cơ sở dẫn liệu</h3><div class="tw"><table>${s.csdl.map(r=>`<tr><td>${asTags(r[0])}</td><td>${esc(AS[r[0]])}</td><td>${esc(r[1])}</td></tr>`).join("")}</table></div></section>`:""}
+    <section class="card"><h3>Khoản mục liên quan</h3>${s.rel.map(r=>`<div class="eg"><div class="chips">${chip(r[0],true)}</div><p>${esc(r[1])}</p></div>`).join("")}</section>
+    <section class="card wide"><h3>Thủ tục chính và giấy thực hiện</h3>${procTable(s)}</section>
+    <section class="card"><h3>Tài liệu cần khách hàng cung cấp</h3><ul>${s.docs.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><p style="margin-top:8px" class="chips">${chip("A240",true)}</p></section>
+    <section class="card wide"><h3>Dễ sai ở khoản mục này (${ns.length})</h3>${ns.length?ns.map(n=>noteHtml(n,true)).join(""):`<p class="empty">Chưa có nhận xét của giảng viên cho khoản mục này. Hiện có ghi chú cho Tiền, TSCĐ, Phải trả người bán, Doanh thu.</p>`}</section>
+    ${myNoteCard(c)}
+  </div></div>`;}
+
+function renderIdx(){const f=fold(filt.trim());const hit=(id,n)=>!f||fold(id+" "+n).includes(f);
+  let h=`<div class="legend"><span><i style="background:var(--pA)"></i>Kế hoạch</span><span><i style="background:var(--pC)"></i>Kiểm soát</span><span><i style="background:var(--pS)"></i>Thử nghiệm cơ bản</span><span><i style="background:var(--pB)"></i>Báo cáo</span><span><em></em>Có lưu ý</span></div>`;
+  ORDER.forEach(g=>{let inner="";
+    const row=x=>`<button class="row${x.src==="X"?" x":""}${x.id===cur?" on":""}${N.some(n=>n.p.includes(x.id))?" hasnote":""}" data-go="${x.id}" style="--c:${col(x.id)}"><span class="code">${x.id}</span><span class="nm">${esc(x.n)}</span></button>`;
+    const secs=Object.values(S).filter(s=>s.g===g);
+    if(secs.length){secs.forEach(s=>{const rows=Object.values(P).filter(x=>x.sec===s.code&&hit(x.id,x.n));if(!rows.length&&!hit(s.code,s.n))return;
+      inner+=`<div class="sec"><button data-go="${s.code}" class="${s.code===cur?"on":""}${secNotes(s.code).length?" hasnote":""}" style="--c:${col(s.code)}"><span class="code">${s.code}</span><span>${esc(s.n)}</span></button>${(f||s.code===cur||P[cur]&&P[cur].sec===s.code)?rows.map(row).join(""):""}</div>`;});}
+    else inner=Object.values(P).filter(x=>x.g===g&&!x.sec&&hit(x.id,x.n)).map(row).join("");
+    if(inner)h+=`<div class="grp" style="--c:var(${PH[g].c})"><button class="gh" tabindex="-1"><i></i>${PH[g].n}</button>${inner}</div>`;});
+  idx.innerHTML=h;}
+function go(id,push){if(!P[id]&&!S[id])return;cur=id;S[id]?renderSec(id):renderPaper(id);renderIdx();
+  $("#acc").value=S[id]?id:(P[id].sec||"");main.scrollTop=0;
+  const on=idx.querySelector(".on");if(on&&on.scrollIntoView)on.scrollIntoView({block:"nearest"});
+  if(push!==false){try{location.hash=id.replace(/\./g,"-");}catch(_){}}}
+document.addEventListener("click",ev=>{const b=ev.target.closest("[data-go]");if(b){go(b.dataset.go);return;}
+  if(ev.target.id==="copyNotes"){const txt=Object.entries(myNotes).filter(([,v])=>v.trim()).map(([k,v])=>k+" · "+name(k)+"\n"+v.trim()).join("\n\n")||"(chưa có ghi chú)";
+    const msg=$("#copyMsg");const done=ok=>{if(msg)msg.textContent=ok?"Đã sao chép.":"Trình duyệt không cho sao chép. Hãy bôi đen và chép tay từng ô.";};
+    try{navigator.clipboard.writeText(txt).then(()=>done(true),()=>done(false));}catch(_){done(false);}}});
+document.addEventListener("input",ev=>{if(ev.target.id==="mynote"){myNotes[cur]=ev.target.value;try{localStorage.setItem("wpmap-notes",JSON.stringify(myNotes));}catch(_){}}
+  if(ev.target.id==="q"){filt=ev.target.value;renderIdx();}});
+$("#q").addEventListener("keydown",ev=>{if(ev.key==="Enter"){const first=idx.querySelector(".row,.sec>button");if(first)go(first.dataset.go);}});
+$("#acc").innerHTML=`<option value="">Tất cả</option>`+Object.values(S).map(s=>`<option value="${s.code}">${s.code} · ${esc(s.n)}</option>`).join("");
+$("#acc").addEventListener("change",ev=>{if(ev.target.value)go(ev.target.value);});
+window.addEventListener("hashchange",()=>{const id=h2id(location.hash);if(id&&id!==cur)go(id,false);});
+go(h2id(location.hash)||"D100",false);
+</script>
+</body>
+</html>
