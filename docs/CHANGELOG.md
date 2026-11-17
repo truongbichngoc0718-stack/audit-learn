@@ -144,3 +144,6 @@
 - Thi thử: chọn một trong 13 đề gốc hoặc đề trộn theo bộ lọc; đồng hồ tổng theo thời gian mục tiêu, không làm lại, xem lại từng câu sau khi nộp.
 - Tiến độ lưu localStorage `mt-progress-v1`, gộp vào bản sao lưu ở trang Tiến độ (`src/lib/backup.ts`).
 - Lưu ý bản quyền: đề AssessmentDay ghi "for personal use only"; bạn quyết định đưa lên hub công khai (17/11/2026).
+
+## 2026-11-17 · Pop-up chúc mừng khi xong bài
+- Bấm "✓ Đánh dấu đã học xong" → pop-up giữa màn hình kèm pháo hoa trái tim (`src/lib/celebrate.ts`, gọi từ override `Pagination`). 7 câu chúc xáo ngẫu nhiên theo vòng, không lặp liền nhau; đóng bằng nút, bấm ra ngoài, Esc hoặc tự tắt sau 6 giây; tắt hiệu ứng khi máy bật "giảm chuyển động".

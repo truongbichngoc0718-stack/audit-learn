@@ -16,6 +16,7 @@ const ids = show ? (await getCollection('docs')).filter(e => e.data.id && !['he-
 <Default />
 <script>
   import { getData, getLesson, setDone, subscribe } from '../../lib/store';
+  import { celebrate } from '../../lib/celebrate';
   const box = document.querySelector<HTMLElement>('.b-done');
   if (box) {
     const id = box.dataset.doneId!; const ids: string[] = JSON.parse(box.dataset.doneIds || '[]'); const en = box.dataset.lang === 'en';
@@ -29,7 +30,7 @@ const ids = show ? (await getCollection('docs')).filter(e => e.data.id && !['he-
     };
     b.addEventListener('click', () => {
       const was = !!getLesson(id)?.done; setDone(id, !was);
-      if (!was) { box.classList.remove('pop'); void box.offsetWidth; box.classList.add('pop'); }
+      if (!was) { box.classList.remove('pop'); void box.offsetWidth; box.classList.add('pop'); celebrate(); }
     });
     subscribe(paint); paint();
   }
