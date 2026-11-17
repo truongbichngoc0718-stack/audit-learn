@@ -2,4 +2,4 @@
 interface Props { label?: string }
 const { label = 'Xem lời giải' } = Astro.props;
 ---
-<details class="b-reveal" style="margin-top:.8rem"><summary>{label} ▾</summary><div class="ans"><slot /></div></details>
+<details class="b-reveal b-sol" style="margin-top:.8rem"><summary><span>{label}</span><span class="chev" aria-hidden="true">▾</span></summary><div class="ans"><slot /></div></details>

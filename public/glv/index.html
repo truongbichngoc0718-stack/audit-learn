@@ -6,22 +6,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bản đồ giấy làm việc VACPA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 /* Bố cục: cột chỉ mục bên trái như mục lục hồ sơ kiểm toán; bên phải là "nhận từ → giấy đang chọn → đẩy sang" rồi tới phần giải thích. */
 :root{
-  --bg:#f3f4f7; --panel:#ffffff; --ink:#16233b; --mute:#5d6880; --line:#d9dde6;
-  --navy:#14284b; --gold:#b8861f; --gold-soft:#fbf3df;
+  --bg:#f2f7f9; --panel:#ffffff; --ink:#0F2530; --mute:#5A7A88; --line:#d8e8ed;
+  --navy:#1C3A4A; --gold:#b7860b; --gold-soft:#fef9e0; --amber:#F9C31F;
   --pA:#2f6fb2; --pC:#1f8a7a; --pS:#5a4fb0; --pH:#6b7280; --pB:#b8861f;
   --warn:#b4472e; --warn-soft:#fbebe6;
-  --f-body:"Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif;
+  --f-body:"Inter",system-ui,"Segoe UI",Arial,sans-serif; --f-serif:"Lora",Georgia,serif;
   --f-code:"IBM Plex Mono",ui-monospace,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --bg:#0f1624; --panel:#182235; --ink:#e7ebf3; --mute:#9aa6bd; --line:#2c3a54;
-    --navy:#0b1324; --gold:#e0b04a; --gold-soft:#2c2614;
+    --navy:#0F2530; --gold:#e0b04a; --gold-soft:#2c2614;
     --pA:#6aa6e6; --pC:#4fc0ae; --pS:#9d93ec; --pH:#a3acbb; --pB:#e0b04a;
     --warn:#ef8a6f; --warn-soft:#33201b;
   }
@@ -29,7 +29,7 @@
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#0f1624; --panel:#182235; --ink:#e7ebf3; --mute:#9aa6bd; --line:#2c3a54;
-  --navy:#0b1324; --gold:#e0b04a; --gold-soft:#2c2614;
+  --navy:#0F2530; --gold:#e0b04a; --gold-soft:#2c2614;
   --pA:#6aa6e6; --pC:#4fc0ae; --pS:#9d93ec; --pH:#a3acbb; --pB:#e0b04a;
   --warn:#ef8a6f; --warn-soft:#33201b;
 }
@@ -39,12 +39,16 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);fo
 button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .app{display:grid;grid-template-rows:auto 1fr;height:100%}
-header.top{background:var(--navy);color:#fff;padding:10px 18px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+header.top{background:var(--navy);color:#fff;padding:10px 18px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;border-bottom:3px solid var(--amber)}
+.brand{color:var(--amber);font-weight:700;font-size:20px;text-decoration:none;white-space:nowrap}
+.brand:hover{color:#ffd54f}
+.ttl{border-left:1px solid #3d5a69;padding-left:16px}
 header.top h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.01em}
-header.top h1 span{color:#e0b04a}
+header.top h1 span{color:var(--amber)}
+.navbtn{display:none;border:1px solid #4a6878;background:transparent;color:#fff;border-radius:8px;padding:6px 10px;font-size:13px}
 header.top .sub{font-size:12px;color:#b9c3d8}
 .search{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.search input,.search select{font:inherit;font-size:13.5px;padding:7px 10px;border-radius:6px;border:1px solid #3a4c70;background:#1d3156;color:#fff;min-width:0}
+.search input,.search select{font:inherit;font-size:13.5px;padding:7px 10px;border-radius:8px;border:1px solid #3d5a69;background:#24495c;color:#fff;min-width:0}
 .search input{width:220px}
 .search input::placeholder{color:#9fb0cf}
 .body{display:grid;grid-template-columns:310px 1fr;min-height:0}
@@ -62,7 +66,7 @@ main{overflow:auto;padding:20px 24px 60px}
 .on{background:var(--gold-soft)!important;border-left-color:var(--gold)!important}
 .sec>button.on{box-shadow:inset 3px 0 0 var(--gold)}
 .hasnote::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--warn);margin-left:auto;flex:none;align-self:center}
-h2{font-size:22px;margin:0 0 4px;font-weight:700;text-wrap:balance}
+h2{font-family:var(--f-serif);font-size:24px;margin:0 0 4px;font-weight:700;text-wrap:balance}
 h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:0 0 8px;font-weight:700}
 .head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:14px}
 .head .big{font-family:var(--f-code);font-size:22px;font-weight:600;color:var(--c);background:var(--panel);border:1px solid var(--line);border-bottom:3px solid var(--c);padding:2px 12px;border-radius:6px}
@@ -114,7 +118,11 @@ textarea{width:100%;min-height:76px;font:inherit;padding:8px;border:1px solid va
   html,body{height:auto}
   .app{display:block;height:auto}
   .body{display:block}
-  nav.idx{max-height:42vh;border-right:0;border-bottom:1px solid var(--line)}
+  nav.idx{display:none;max-height:60vh;border-right:0;border-bottom:1px solid var(--line);box-shadow:0 8px 20px rgba(8,25,34,.12)}
+  body.idx-open nav.idx{display:block}
+  .navbtn{display:inline-block}
+  .ttl{border-left:0;padding-left:0;flex:1 1 100%}
+  .brand{font-size:17px}
   main{padding:16px}
   .flow{grid-template-columns:1fr}
   .arr{transform:rotate(90deg);padding:2px}
@@ -127,10 +135,12 @@ textarea{width:100%;min-height:76px;font:inherit;padding:8px;border:1px solid va
 <body>
 <div class="app">
 <header class="top">
-  <div>
+  <a class="brand" href="/" title="Về trang chủ Audit Learning Hub">Audit Learning Hub</a>
+  <div class="ttl">
     <h1>Bản đồ <span>giấy làm việc</span> VACPA</h1>
-    <div class="sub"><a href="/" style="color:#e0b04a">← Audit Learning Hub</a> · Chương trình kiểm toán mẫu BCTC · chọn một giấy để xem nó nhận gì, đẩy sang đâu</div>
+    <div class="sub">Chương trình kiểm toán mẫu BCTC · chọn một giấy để xem nó nhận gì, đẩy sang đâu</div>
   </div>
+  <button class="navbtn" id="navbtn" type="button" aria-expanded="false" aria-controls="idx">☰ Danh sách giấy</button>
   <div class="search">
     <label class="sub" for="acc">Khoản mục</label>
     <select id="acc"></select>
@@ -661,7 +671,7 @@ function renderIdx(){const f=fold(filt.trim());const hit=(id,n)=>!f||fold(id+" "
     else inner=Object.values(P).filter(x=>x.g===g&&!x.sec&&hit(x.id,x.n)).map(row).join("");
     if(inner)h+=`<div class="grp" style="--c:var(${PH[g].c})"><button class="gh" tabindex="-1"><i></i>${PH[g].n}</button>${inner}</div>`;});
   idx.innerHTML=h;}
-function go(id,push){if(!P[id]&&!S[id])return;cur=id;S[id]?renderSec(id):renderPaper(id);renderIdx();
+function go(id,push){if(!P[id]&&!S[id])return;cur=id;setIdx(false);S[id]?renderSec(id):renderPaper(id);renderIdx();
   $("#acc").value=S[id]?id:(P[id].sec||"");main.scrollTop=0;
   const on=idx.querySelector(".on");if(on&&on.scrollIntoView)on.scrollIntoView({block:"nearest"});
   if(push!==false){try{location.hash=id.replace(/\./g,"-");}catch(_){}}}
@@ -673,6 +683,9 @@ document.addEventListener("input",ev=>{if(ev.target.id==="mynote"){myNotes[cur]=
   if(ev.target.id==="q"){filt=ev.target.value;renderIdx();}});
 $("#q").addEventListener("keydown",ev=>{if(ev.key==="Enter"){const first=idx.querySelector(".row,.sec>button");if(first)go(first.dataset.go);}});
 $("#acc").innerHTML=`<option value="">Tất cả</option>`+Object.values(S).map(s=>`<option value="${s.code}">${s.code} · ${esc(s.n)}</option>`).join("");
+function setIdx(v){document.body.classList.toggle("idx-open",v);const b=$("#navbtn");if(b){b.setAttribute("aria-expanded",v?"true":"false");b.textContent=v?"✕ Đóng danh sách":"☰ Danh sách giấy";}}
+$("#navbtn").addEventListener("click",()=>setIdx(!document.body.classList.contains("idx-open")));
+$("#q").addEventListener("focus",()=>{if(matchMedia("(max-width:860px)").matches)setIdx(true);});
 $("#acc").addEventListener("change",ev=>{if(ev.target.value)go(ev.target.value);});
 window.addEventListener("hashchange",()=>{const id=h2id(location.hash);if(id&&id!==cur)go(id,false);});
 go(h2id(location.hash)||"D100",false);

@@ -18,6 +18,7 @@ export default defineConfig({
       pagination: true,
       components: {
         PageTitle: './src/components/overrides/PageTitle.astro',
+        Pagination: './src/components/overrides/Pagination.astro',
       },
       sidebar: [
         { label: 'Bắt đầu', items: [
@@ -25,11 +26,11 @@ export default defineConfig({
           { label: 'Tiến độ & ghi chú của tôi', link: '/tien-do/' },
           { label: 'Mới cập nhật', link: '/moi-cap-nhat/' },
         ] },
-        { label: 'A0 · Lộ trình', items: [{ autogenerate: { directory: 'a/0' } }] },
-        { label: 'A1 · Nền tảng', items: [{ autogenerate: { directory: 'a/1' } }] },
-        { label: 'A2 · Materiality', items: [{ autogenerate: { directory: 'a/2' } }] },
-        { label: 'A3 · Phần hành', items: [{ autogenerate: { directory: 'a/3' } }] },
-        { label: 'A4 · Ghi finding', items: [{ autogenerate: { directory: 'a/4' } }] },
+        { label: 'A0 · Lộ trình', collapsed: true, items: [{ autogenerate: { directory: 'a/0' } }] },
+        { label: 'A1 · Nền tảng', collapsed: true, items: [{ autogenerate: { directory: 'a/1' } }] },
+        { label: 'A2 · Materiality', collapsed: true, items: [{ autogenerate: { directory: 'a/2' } }] },
+        { label: 'A3 · Phần hành', collapsed: true, items: [{ autogenerate: { directory: 'a/3' } }] },
+        { label: 'A4 · Ghi finding', collapsed: true, items: [{ autogenerate: { directory: 'a/4' } }] },
         { label: 'Bản đồ giấy làm việc VACPA', link: '/glv/' },
         { label: 'Thư viện', collapsed: true, items: [{ autogenerate: { directory: 'thu-vien' } }] },
         { label: 'B · Excel & Power BI', collapsed: true, items: [{ autogenerate: { directory: 'b' } }] },

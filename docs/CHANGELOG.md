@@ -121,3 +121,16 @@
 - Trang mới `/glv/` (file tĩnh `public/glv/index.html`, mục "Bản đồ giấy làm việc VACPA" trên sidebar, ngay trên Thư viện): 213 giấy A–H, 25 khoản mục, 555 liên kết "nhận từ → đẩy sang" kèm lý do, 56 lưu ý; tìm kiếm, lọc theo khoản mục, ô ghi chú cá nhân (localStorage).
 - Trạng thái: **mở rộng**, ngoài ebook BISC. Căn cứ: danh mục Chương trình kiểm toán mẫu BCTC của VACPA (sheet "Mục GLV"), nhận xét của giảng viên trên bài thực hành Tiền, Phải trả người bán, TSCĐ (folder `note/`, đã viết lại, bỏ tên người); lưu ý Doanh thu rút từ bảng rủi ro của bài nhóm.
 - Giấy ở vùng x50–x99 gắn nhãn "bổ sung từ bài thực hành", không phải mã chuẩn VACPA. Rủi ro, thủ tục của các khoản mục chưa có nhận xét giảng viên là nội dung chung, chưa qua bộ lọc BISC_STYLE.
+
+## 2026-11-17 · Đợt nâng cấp UX/UI (theo đánh giá UX)
+- **Thời lượng:** ước tính tự động từ nội dung bài (`src/lib/duration.ts`: đọc ~170 từ/phút; lời giải Biscore 3′, kiểm tra nhanh 1′, câu quiz 1′, công cụ tương tác 3′). Header bài hiện "Đọc X′ · Thực hành Y′". Cập nhật `thoi_luong` cho 44 trang có số cũ thấp hơn thực tế (ví dụ Doanh thu 7 → 42 phút), bảng/thẻ thời lượng ở trang tổng quan A0–A4 và tổng từng Phần. Không đổi nhánh B và Checkpoint (thời lượng do tác giả đặt).
+- **Bài phần hành:** thanh tiến trình dính "Bước x/7" có chấm bấm nhảy bước và bộ đếm "🎯 Bài tập Biscore x/7" (mở lời giải = đã làm, lưu theo bài, hiện trong trang Tiến độ). Bảng trong bước/ví dụ cuộn ngang thay vì bóp cột.
+- **Hoàn thành bài:** nút "✓ Đánh dấu đã học xong" tách khỏi ô ghi chú, đặt ngay trên nút Trước/Tiếp của mọi bài, kèm số bài đã xong toàn lộ trình (override `Pagination`).
+- **Quiz:** phản hồi ngay từng câu (đúng/sai + giải thích), tự chấm khi xong, không còn nút Nộp bài.
+- **Trang chủ:** ô "Học tiếp" + thanh tiến độ; "Bốn nhánh học" (thêm D); mục "Công cụ tra cứu" (Bản đồ GLV, Thư viện); 3 thẻ câu hỏi trên một hàng.
+- **Trang Tiến độ:** thẻ "Học tiếp", bản đồ lộ trình theo nhóm (A0–A4, B, C, D, Tax Atlas), bảng chi tiết thu gọn theo nhóm, tên bài lấy theo nhãn sidebar. Sao lưu/khôi phục gộp một file (tiến độ bài + Tax Atlas + ghi chú GLV), đổi tên thành "Tải bản sao lưu" / "Khôi phục từ file"; vẫn đọc được file JSON cũ.
+- **Tax Atlas:** thanh công cụ gọn (ô tìm + "⚙ Bộ lọc" thu gọn + bộ đếm + toàn màn hình); bỏ Xuất/Nhập JSON (chuyển về trang Tiến độ); màu trạng thái: Chưa thuộc xám, Đang học vàng nhạt, Đã thuộc xanh.
+- **Sửa lỗi hiển thị:** mũi tên lơ lửng ở "Kiểm tra nhanh", hai mũi tên ở "Xem lời giải"; tắt mục lục phải ở 21 trang công cụ/tổng quan chỉ có 1 mục.
+- **Sidebar:** A0–A4 thu gọn mặc định, tự mở nhóm đang học.
+- **Nhánh C:** pop-up hướng dẫn chỉ mở đủ ở lần đầu vào mỗi trang; các lần sau là bong bóng gọn "Xem hướng dẫn (n bước)". Trên điện thoại pop-up giới hạn 55% chiều cao.
+- **Bản đồ GLV:** giữ nguyên bố cục đã duyệt; header, font, màu theo hệ thống chung (Inter/Lora, navy #1C3A4A, viền vàng, logo về trang chủ); trên điện thoại danh sách giấy thành nút "☰ Danh sách giấy" mở/đóng.

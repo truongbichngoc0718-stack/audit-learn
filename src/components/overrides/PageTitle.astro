@@ -1,23 +1,31 @@
 ---
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 import CGuide from '../CGuide.astro';
+import { estimate, fmtDuration } from '../../lib/duration';
+const entry = Astro.locals.starlightRoute.entry as any;
 const d = Astro.locals.starlightRoute.entry.data as any;
 const partNames: Record<string, string> = { '0': 'Lộ trình', '1': 'Nền tảng', '2': 'Materiality', '3': 'Thủ tục theo phần hành', '4': 'Ghi finding', b: 'Excel & Power BI' };
 const isLesson = d.loai && !['he-thong'].includes(d.loai);
+const est = estimate(entry.body ?? '');
+const isSection = /^a\/\d$/.test(entry.id ?? '');
+const fmtMin = (m: number) => m >= 90 ? `~${Math.floor(m / 60)} giờ ${m % 60 ? `${m % 60} phút` : ''}`.trim() : `${m} phút`;
+const durVi = d.thoi_luong ? (isSection ? `Cả phần ${fmtMin(d.thoi_luong)}` : est.total >= d.thoi_luong && est.practice > 0 ? fmtDuration(est) : `${d.thoi_luong} phút`) : '';
+const durEn = d.thoi_luong ? (est.total >= d.thoi_luong && est.practice > 0 ? fmtDuration(est, 'en') : `${d.thoi_luong} min`) : '';
+const hasSteps = /<AuditStep\b/.test(entry.body ?? '');
 const part = d.phan !== undefined ? String(d.phan) : undefined;
 const dParts: Record<string, string> = { d0: 'D0 · Start here', d1: 'D1 · Tax Atlas', d2: 'D2 · Cây quyết định', d3: 'D3 · Bẫy đề', d4: 'D4 · Kho đề', d5: 'D5 · Flashcard', d6: 'D6 · Máy tính', d7: 'D7 · Bảng thuế', d8: 'Tra cứu nhanh' };
 const crumb = d.nhanh === 'D' ? `Nhánh D · ACCA TX-VNM · ${dParts[d.phan] ?? ''}` : d.nhanh === 'B' ? 'Nhánh B · Excel & Power BI' : d.nhanh === 'lib' ? 'Thư viện' : part !== undefined ? `Phần ${part} · ${partNames[part] ?? ''}` : '';
-const label = d.nhanh === 'B' && d.bai ? `Bài ${d.bai}${d.nhan ? ` · ${d.nhan}` : ''}` : d.bai ? `Bài ${d.bai}${d.nhan ? ` — ${d.nhan}` : ''}${d.thoi_luong ? ` · ${d.thoi_luong} phút` : ''}` : d.thoi_luong ? `${d.thoi_luong} phút` : '';
+const label = d.nhanh === 'B' && d.bai ? `Bài ${d.bai}${d.nhan ? ` · ${d.nhan}` : ''}` : d.bai ? `Bài ${d.bai}${d.nhan ? ` — ${d.nhan}` : ''}${durVi ? ` · ${durVi}` : ''}` : durVi;
 const cParts: Record<string, string> = { c0: 'Start here', c1: 'C1 · The Audit Master Map', c2: 'C2 · The audit operating system', c3: 'C3 · Cycle playbooks', c4: 'C4 · The engagement frame', c5: 'C5 · Skills Checkpoints', cA: 'Part A · Audit framework & regulation', cB: 'Part B · Planning & risk assessment', cC: 'Part C · Internal control', cD: 'Part D · Audit evidence', cE: 'Part E · Review & reporting' };
 const isC = d.nhanh === 'C';
 const cCrumb = isC ? `Branch C · ACCA AA · ${cParts[d.phan] ?? ''}` : '';
-const cLabel = isC ? [d.loai === 'checkpoint' ? `Skills Checkpoint ${d.bai ?? ''}` : d.bai ? (/^c[1-5]$/.test(d.phan) ? `Module ${d.bai}` : `Chapter ${d.bai}`) : '', d.nhan, d.thoi_luong ? `${d.thoi_luong} min` : ''].filter(Boolean).join(' · ') : '';
+const cLabel = isC ? [d.loai === 'checkpoint' ? `Skills Checkpoint ${d.bai ?? ''}` : d.bai ? (/^c[1-5]$/.test(d.phan) ? `Module ${d.bai}` : `Chapter ${d.bai}`) : '', d.nhan, durEn].filter(Boolean).join(' · ') : '';
 const pageId = d.id ?? '';
 const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const takeawayHtml = d.description ? esc(d.description).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') : '';
 ---
 {isLesson ? (
-  <div class="b-header" data-lesson-id={pageId} data-lesson-title={d.title}>
+  <div class="b-header" data-lesson-id={pageId} data-lesson-title={d.title} data-steps={hasSteps ? '1' : undefined}>
     {isC ? <>
       <div class="crumb">{cCrumb}</div>
       {cLabel && <div class="label">{cLabel}</div>}
@@ -41,4 +49,7 @@ const takeawayHtml = d.description ? esc(d.description).replace(/\*\*(.+?)\*\*/g
   import { markVisited } from '../../lib/store';
   const el = document.querySelector<HTMLElement>('[data-lesson-id]');
   if (el?.dataset.lessonId) markVisited(el.dataset.lessonId, el.dataset.lessonTitle ?? '', location.pathname);
+  import { initStepBar, trackSolutions } from '../../lib/stepbar';
+  if (el?.dataset.steps) initStepBar(el.dataset.lessonId ?? '');
+  else if (el?.dataset.lessonId) trackSolutions(el.dataset.lessonId);
 </script>

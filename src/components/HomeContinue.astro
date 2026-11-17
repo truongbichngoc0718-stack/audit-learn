@@ -1,0 +1,34 @@
+---
+/** Ô "Học tiếp" trên trang chủ: bài đang học dở gần nhất + tổng tiến độ (đọc localStorage). */
+import { getLessonRefs } from '../lib/lessonRefs';
+const lessons = (await getLessonRefs()).map(({ id, title, path, group }) => ({ id, title, path, group }));
+---
+<div class="b-card b-continue b-home-continue" data-lessons={JSON.stringify(lessons)}>
+  <div>
+    <div class="b-kicker">Tiến độ của bạn</div>
+    <div class="ttl">Bắt đầu từ A0 · Lộ trình &amp; 3 câu hỏi</div>
+  </div>
+  <a class="b-btn" href="/a/0/">Bắt đầu →</a>
+  <div class="bar"><i style="width:0%"></i></div>
+</div>
+<script>
+  import { getData } from '../lib/store';
+  const box = document.querySelector<HTMLElement>('.b-home-continue');
+  if (box) {
+    const ls: { id: string; title: string; path: string; group: string }[] = JSON.parse(box.dataset.lessons || '[]');
+    const d = getData().lessons;
+    const done = ls.filter(l => d[l.id]?.done).length;
+    const visited = ls.filter(l => d[l.id]?.visitedAt && !d[l.id]?.done).sort((a, b) => (d[b.id].visitedAt! > d[a.id].visitedAt! ? 1 : -1));
+    const next = visited[0] ?? (Object.keys(d).length ? ls.find(l => !d[l.id]?.done) : undefined);
+    const pct = ls.length ? Math.round((100 * done) / ls.length) : 0;
+    if (next) {
+      box.querySelector('.b-kicker')!.textContent = `Tiến độ của bạn · ${done}/${ls.length} bài · ${pct}%`;
+      box.querySelector('.ttl')!.textContent = `Học tiếp: ${next.title}`;
+      const a = box.querySelector<HTMLAnchorElement>('a.b-btn')!; a.href = next.path; a.textContent = 'Học tiếp →';
+      box.querySelector<HTMLElement>('.bar > i')!.style.width = `${pct}%`;
+    } else if (done && done === ls.length) {
+      box.querySelector('.ttl')!.textContent = '🎉 Bạn đã hoàn thành toàn bộ lộ trình';
+      box.querySelector<HTMLElement>('.bar > i')!.style.width = '100%';
+    }
+  }
+</script>

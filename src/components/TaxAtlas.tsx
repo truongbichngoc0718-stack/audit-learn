@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { cards, edges, cardById, partNames, edgeLabels, srcLabel, treesByCard, type Part, type TaxCard } from '../lib/tax';
-import { getTax, subscribe, setStatus, setCardNote, exportTax, importTax, type CardStatus } from '../lib/taxStore';
+import { getTax, subscribe, setStatus, setCardNote, type CardStatus } from '../lib/taxStore';
 
 const PARTS: Part[] = ['A', 'B', 'C', 'D', 'E'];
 const statusLabel: Record<CardStatus, string> = { new: '❓ Chưa thuộc', learning: '📖 Đang học', known: '✅ Đã thuộc' };
@@ -23,6 +23,8 @@ export default function TaxAtlas() {
   const [onlyMvp, setOnlyMvp] = useState(false);
   const [open, setOpen] = useState<Record<string, boolean>>({ B: true });
   const [full, setFull] = useState(false);
+  const [showF, setShowF] = useState(false);
+  const nF = (part !== 'all' ? 1 : 0) + (st !== 'all' ? 1 : 0) + (onlyTrap ? 1 : 0) + (onlyMvp ? 1 : 0);
 
   useEffect(() => {
     const read = () => { const m = location.hash.match(/^#n-([a-z0-9-]+)$/); if (m && cardById(m[1])) { setSel(m[1]); const c = cardById(m[1])!; setOpen(o => ({ ...o, [c.part]: true })); } };
@@ -103,15 +105,17 @@ export default function TaxAtlas() {
     <div className={`tx ${full ? 'tx-full' : ''}`}>
       <div className="tx-bar">
         <input type="search" placeholder="Tìm thẻ (VD: lãi vay, 183, hybrid…)" value={q} onChange={e => setQ(e.target.value)} aria-label="Tìm thẻ" />
+        <button type="button" className="b-btn ghost" aria-expanded={showF} onClick={() => setShowF(!showF)}>⚙ Bộ lọc{nF > 0 && <span className="n">{nF}</span>}</button>
+        <span className="tx-count">✅ {known}/{cards.length} đã thuộc</span>
+        <button type="button" className="b-btn ghost tx-fs" onClick={() => setFull(!full)} title={full ? 'Đóng (Esc)' : 'Mở toàn màn hình'}>{full ? 'Đóng (Esc)' : '⛶'}</button>
+      </div>
+      {showF && <div className="tx-filters">
         <select value={part} onChange={e => setPart(e.target.value as any)} aria-label="Phần"><option value="all">Mọi phần</option>{PARTS.map(p => <option key={p} value={p}>{p} · {partNames[p].en}</option>)}</select>
         <select value={st} onChange={e => setSt(e.target.value as any)} aria-label="Trạng thái"><option value="all">Mọi trạng thái</option>{(Object.keys(statusLabel) as CardStatus[]).map(s => <option key={s} value={s}>{statusLabel[s]}</option>)}</select>
         <label><input type="checkbox" checked={onlyTrap} onChange={e => setOnlyTrap(e.target.checked)} /> ⚠️ Có bẫy</label>
         <label><input type="checkbox" checked={onlyMvp} onChange={e => setOnlyMvp(e.target.checked)} /> ★ Trọng tâm</label>
-        <span style={{ fontSize: '.85rem', color: 'var(--bisc-muted)' }}>{known}/{cards.length} đã thuộc</span>
-        <button type="button" className="b-btn ghost" onClick={() => setFull(!full)}>{full ? 'Đóng (Esc)' : '⛶ Toàn màn hình'}</button>
-        <button type="button" className="b-btn ghost" onClick={() => { const b = new Blob([exportTax()], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'tax-progress.json'; a.click(); }}>Xuất JSON</button>
-        <label className="b-btn ghost" style={{ cursor: 'pointer' }}>Nhập JSON<input type="file" accept="application/json" hidden onChange={async e => { const f = e.target.files?.[0]; if (!f) return; try { importTax(await f.text()); } catch (er) { alert((er as Error).message); } }} /></label>
-      </div>
+        {nF > 0 && <button type="button" className="b-btn ghost" onClick={() => { setPart('all'); setSt('all'); setOnlyTrap(false); setOnlyMvp(false); }}>Xóa lọc</button>}
+      </div>}
       <div className="tx-body">
         {tree}
         {full ? <>{detail}{side}</> : <div>{detail}<div style={{ marginTop: '.7rem' }}>{side}</div></div>}
@@ -152,9 +156,9 @@ export function CardView({ card, data, go }: { card: TaxCard; data: ReturnType<t
       <div style={{ fontSize: '.72rem', color: 'var(--bisc-muted)' }}>Nguồn</div>
       <SrcChips list={card.sources} />
       <div className="tx-status" role="group" aria-label="Trạng thái học">
-        {(Object.keys(statusLabel) as CardStatus[]).map(s => <button key={s} type="button" className={`b-btn ghost ${st === s ? 'on' : ''}`} onClick={() => setStatus(card.id, s)}>{statusLabel[s]}</button>)}
+        {(Object.keys(statusLabel) as CardStatus[]).map(s => <button key={s} type="button" className={`b-btn ghost st-${s} ${st === s ? 'on' : ''}`} onClick={() => setStatus(card.id, s)}>{statusLabel[s]}</button>)}
       </div>
-      <textarea className="tx-note" placeholder="Ghi chú riêng của bạn cho thẻ này (lưu trong trình duyệt, xuất cùng JSON)…" value={data.cards[card.id]?.note ?? ''} onChange={e => setCardNote(card.id, e.target.value)} aria-label="Ghi chú" />
+      <textarea className="tx-note" placeholder="Ghi chú riêng của bạn cho thẻ này (lưu trong trình duyệt; sao lưu ở trang Tiến độ)…" value={data.cards[card.id]?.note ?? ''} onChange={e => setCardNote(card.id, e.target.value)} aria-label="Ghi chú" />
     </article>
   );
 }

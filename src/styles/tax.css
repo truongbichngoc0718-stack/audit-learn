@@ -31,7 +31,17 @@
 .tx-chips { display: flex; flex-wrap: wrap; gap: .3rem; margin: .4rem 0; }
 .tx-src { font: 600 .68rem ui-monospace, monospace; padding: .1rem .4rem; border-radius: 6px; background: var(--sl-color-gray-6); border: 1px solid var(--bisc-line); color: var(--bisc-muted); }
 .tx-status { display: flex; gap: .35rem; flex-wrap: wrap; margin: .7rem 0 .3rem; }
-.tx-status button.on { background: var(--bisc-amber); color: var(--bisc-ink); border-color: var(--bisc-amber); }
+.tx-status button.on { font-weight: 700; }
+.tx-status button.st-new.on { background: var(--sl-color-gray-6); color: var(--sl-color-white); border-color: var(--bisc-muted); }
+.tx-status button.st-learning.on { background: var(--bisc-amber-soft); color: var(--sl-color-white); border-color: var(--bisc-amber); }
+.tx-status button.st-known.on { background: var(--bisc-emerald); color: #fff; border-color: var(--bisc-emerald); }
+/* Thanh công cụ gọn: tìm + bộ lọc thu gọn */
+.tx-filters { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; padding: .6rem .7rem; margin: -.2rem 0 .7rem; border: 1px solid var(--bisc-line); border-radius: 12px; background: var(--bisc-card); }
+.tx-filters select { font: inherit; padding: .35rem .55rem; border-radius: 10px; border: 1px solid var(--bisc-line); background: var(--bisc-card); color: var(--sl-color-white); }
+.tx-bar .tx-count { font-size: .85rem; color: var(--bisc-muted); white-space: nowrap; }
+.tx-bar .b-btn { padding: .4rem .8rem; }
+.tx-bar .b-btn .n { display: inline-grid; place-items: center; min-width: 1.2rem; height: 1.2rem; margin-left: .3rem; border-radius: 99px; background: var(--bisc-amber); color: var(--bisc-ink); font-size: .72rem; }
+@media (max-width: 800px) { .tx-bar .tx-fs { display: none; } }
 .tx-note { width: 100%; min-height: 4rem; border-radius: 10px; border: 1px solid var(--bisc-line); padding: .5rem; font: inherit; background: transparent; color: inherit; }
 .tx-side { border: 1px solid var(--bisc-line); border-radius: 12px; background: var(--bisc-card); padding: .7rem .8rem; font-size: .88rem; }
 .tx-side h4 { margin: 0 0 .3rem !important; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--bisc-muted); }
@@ -139,3 +149,4 @@
 
 /* Trang có sơ đồ cây / tra cứu: nới rộng khung nội dung */
 :root:has(.tf-wrap), :root:has(.ql) { --sl-content-width: 76rem; }
+@media (max-width: 800px) { .tx-tree { max-height: 40vh; } }

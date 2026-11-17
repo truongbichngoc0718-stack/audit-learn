@@ -1,0 +1,36 @@
+---
+/** Thanh "Đánh dấu đã học xong" đặt ngay trên nút Trước/Tiếp của mọi bài, sau đó là phân trang mặc định. */
+import Default from '@astrojs/starlight/components/Pagination.astro';
+import { getCollection } from 'astro:content';
+const d = Astro.locals.starlightRoute.entry.data as any;
+const show = !!d.id && !['he-thong', 'khung', 'thu-vien'].includes(d.loai);
+const en = d.nhanh === 'C';
+const ids = show ? (await getCollection('docs')).filter(e => e.data.id && !['he-thong', 'khung'].includes(e.data.loai)).map(e => e.data.id) : [];
+---
+{show && (
+  <div class="b-done" data-done-id={d.id} data-done-ids={JSON.stringify(ids)} data-lang={en ? 'en' : 'vi'}>
+    <div><div class="t"></div><div class="s"></div></div>
+    <button type="button" class="b-btn"></button>
+  </div>
+)}
+<Default />
+<script>
+  import { getData, getLesson, setDone, subscribe } from '../../lib/store';
+  const box = document.querySelector<HTMLElement>('.b-done');
+  if (box) {
+    const id = box.dataset.doneId!; const ids: string[] = JSON.parse(box.dataset.doneIds || '[]'); const en = box.dataset.lang === 'en';
+    const t = box.querySelector<HTMLElement>('.t')!, s = box.querySelector<HTMLElement>('.s')!, b = box.querySelector<HTMLButtonElement>('button')!;
+    const paint = () => {
+      const done = !!getLesson(id)?.done; const all = getData().lessons; const n = ids.filter(x => all[x]?.done).length;
+      box.classList.toggle('is-done', done);
+      t.textContent = done ? (en ? '✅ Page completed' : '✅ Bạn đã hoàn thành bài này') : (en ? 'Finished this page?' : 'Học xong bài này chưa?');
+      s.textContent = en ? `${n}/${ids.length} pages completed across the hub` : `Đã xong ${n}/${ids.length} bài trong toàn bộ lộ trình`;
+      b.textContent = done ? (en ? 'Undo' : 'Bỏ đánh dấu') : (en ? '✓ Mark as completed' : '✓ Đánh dấu đã học xong');
+    };
+    b.addEventListener('click', () => {
+      const was = !!getLesson(id)?.done; setDone(id, !was);
+      if (!was) { box.classList.remove('pop'); void box.offsetWidth; box.classList.add('pop'); }
+    });
+    subscribe(paint); paint();
+  }
+</script>

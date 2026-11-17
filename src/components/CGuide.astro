@@ -1,7 +1,7 @@
 ---
 /**
  * Chú thích hướng dẫn tiếng Việt cho nhánh C (dữ liệu: src/lib/cGuide.ts).
- * - Pop-up nhiều bước tự mở MỖI LẦN vào trang; tắt được (✕, Esc) hoặc tắt hẳn cho cả nhánh C.
+ * - Lần đầu vào mỗi trang: pop-up nhiều bước tự mở. Các lần sau: bong bóng gọn ở góc, bấm để mở đủ. Tắt được (✕, Esc) hoặc tắt hẳn cho cả nhánh C.
  * - Note theo mục: tự hiện khi cuộn tới tiêu đề tương ứng, mỗi mục 1 lần/lượt xem.
  * - Nút "💡 Hướng dẫn" luôn có để mở lại hoặc bật lại.
  * Cài đặt lưu localStorage (bọc try/catch).
@@ -72,12 +72,19 @@ const guide = cGuide[pageId];
   .cg-fab:hover { background: #24495c; }
   .cg-fab .cg-dot { width: 8px; height: 8px; border-radius: 50%; background: #F9C31F; }
   .cg-fab.off .cg-dot { background: #7a8d96; }
+  .cg-peek { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60; width: min(320px, calc(100vw - 2rem)); background: #1C3A4A; color: #f1f5f7; border-radius: 12px; border-left: 4px solid #F9C31F; box-shadow: 0 12px 32px rgba(8,25,34,.35); padding: .6rem .7rem .6rem .8rem; font: .84rem/1.45 var(--sl-font); display: flex; gap: .5rem; align-items: flex-start; animation: cg-in .25s ease-out; }
+  .cg-peek[hidden] { display: none !important; }
+  .cg-peek .k { font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #F9C31F; }
+  .cg-peek .tt { color: #fff; font-weight: 600; margin: .1rem 0 .35rem !important; }
+  .cg-peek .go { background: #F9C31F; color: #1C3A4A; border: 0; border-radius: 7px; padding: .25rem .6rem; font: 700 .78rem var(--sl-font); cursor: pointer; margin: 0 !important; }
+  .cg-peek .cg-x { margin: 0 !important; }
   @media (max-width: 50rem) {
-    .cg-panel { right: .75rem; left: .75rem; bottom: .75rem; width: auto; }
+    .cg-panel { right: .75rem; left: .75rem; bottom: .75rem; width: auto; max-height: 55vh; overflow: auto; }
+    .cg-peek { right: .75rem; left: .75rem; bottom: .75rem; width: auto; }
     .cg-toast { right: .75rem; left: .75rem; width: auto; bottom: 4rem; }
     .cg-fab { right: .75rem; bottom: .75rem; }
   }
-  @media print { .cg-panel, .cg-toast, .cg-fab { display: none !important; } }
+  @media print { .cg-panel, .cg-toast, .cg-fab, .cg-peek { display: none !important; } }
 </style>
 
 <script>
@@ -88,7 +95,7 @@ const guide = cGuide[pageId];
 
   const KEY = 'bisc-cguide-v1';
   const LABEL: Record<NoteType, string> = { nav: '🧭 Điều hướng', study: '📘 Cách học', tip: '💡 Mẹo', warn: '⚠️ Lưu ý' };
-  type Settings = { auto: boolean; sections: boolean };
+  type Settings = { auto: boolean; sections: boolean; seen?: Record<string, boolean> };
   const load = (): Settings => { try { return { auto: true, sections: true, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { return { auto: true, sections: true }; } };
   const save = (s: Settings) => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch { /* storage bị chặn */ } };
 
@@ -110,9 +117,12 @@ const guide = cGuide[pageId];
     panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-label', 'Hướng dẫn học bằng tiếng Việt');
     const toast = document.createElement('div');
     toast.className = 'cg-toast'; toast.hidden = true; toast.setAttribute('role', 'status'); toast.setAttribute('aria-live', 'polite');
+    const pageId = root.dataset.cgPage || '';
+    const peek = document.createElement('div');
+    peek.className = 'cg-peek'; peek.hidden = true; peek.setAttribute('role', 'status');
     const fab = document.createElement('button');
     fab.className = 'cg-fab'; fab.type = 'button'; fab.hidden = true;
-    document.body.append(toast, panel, fab);
+    document.body.append(toast, panel, fab, peek);
 
     const renderFab = () => {
       fab.classList.toggle('off', !s.auto);
@@ -139,9 +149,20 @@ const guide = cGuide[pageId];
         </div>`;
     };
 
-    const open = () => { step = 0; render(); panel.hidden = false; fab.hidden = true; toast.hidden = true; (panel.querySelector('[data-a="next"],[data-a="close"].primary') as HTMLElement | null)?.focus({ preventScroll: true }); };
+    const open = () => { step = 0; render(); panel.hidden = false; fab.hidden = true; toast.hidden = true; peek.hidden = true; (panel.querySelector('[data-a="next"],[data-a="close"].primary') as HTMLElement | null)?.focus({ preventScroll: true }); };
     let onClose = () => {};
-    const close = () => { panel.hidden = true; renderFab(); fab.hidden = false; onClose(); };
+    const close = () => { panel.hidden = true; renderFab(); fab.hidden = false; if (pageId && !s.seen?.[pageId]) { s = { ...s, seen: { ...s.seen, [pageId]: true } }; save(s); } onClose(); };
+    // Từ lần thứ hai vào trang: chỉ hiện bong bóng gọn, bấm để mở đủ hướng dẫn
+    const showPeek = () => {
+      peek.innerHTML = `<div style="flex:1"><div class="k">${LABEL[g.intro[0].type]}</div><p class="tt">${md(g.intro[0].title)}</p>
+        <button class="go" type="button" data-p="open">Xem hướng dẫn (${g.intro.length} bước)</button></div>
+        <button class="cg-x" type="button" data-p="x" aria-label="Thu gọn">✕</button>`;
+      peek.hidden = false; fab.hidden = true;
+    };
+    peek.addEventListener('click', (e) => {
+      const a = (e.target as HTMLElement).closest<HTMLElement>('[data-p]')?.dataset.p;
+      if (a === 'open') open(); else if (a === 'x') { peek.hidden = true; renderFab(); fab.hidden = false; }
+    });
 
     panel.addEventListener('click', (e) => {
       const a = (e.target as HTMLElement).closest<HTMLElement>('[data-a]')?.dataset.a;
@@ -154,13 +175,14 @@ const guide = cGuide[pageId];
     fab.addEventListener('click', open);
     document.addEventListener('keydown', (e) => {
       if (e.key !== 'Escape') return;
-      if (!panel.hidden) close(); else if (!toast.hidden) toast.hidden = true;
+      if (!panel.hidden) close(); else if (!toast.hidden) toast.hidden = true; else if (!peek.hidden) { peek.hidden = true; fab.hidden = false; }
     });
 
     // Note theo mục
     let hideTimer: number | undefined;
     const showToast = (n: Sec) => {
       if (!s.sections || !panel.hidden) return;
+      peek.hidden = true; if (fab.hidden) { renderFab(); fab.hidden = false; }
       toast.innerHTML = `<div class="cg-th"><span>${LABEL[n.type]} · theo mục</span><button class="cg-x" type="button" aria-label="Đóng note">✕</button></div>
         <p>${md(n.body)}</p><button class="cg-off" type="button">Tắt note theo từng mục</button>`;
       toast.hidden = false;
@@ -197,7 +219,7 @@ const guide = cGuide[pageId];
     }
 
     renderFab();
-    if (s.auto) window.setTimeout(open, 500); else fab.hidden = false;
+    if (s.auto && !s.seen?.[pageId]) { s = { ...s, seen: { ...s.seen, [pageId]: true } }; save(s); window.setTimeout(open, 500); } else if (s.auto) window.setTimeout(showPeek, 500); else fab.hidden = false;
   }
 
   init();

@@ -1,12 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
 import ProgressPage from './ProgressPage';
-const cParts: Record<string, string> = { c0: 'Overview', cA: 'A · Framework & regulation', cB: 'B · Planning & risk', cC: 'C · Internal control', cD: 'D · Audit evidence', cE: 'E · Review & reporting' };
-const groupName = (d: any) => d.nhanh === 'C' ? `Nhánh C · ACCA AA · ${cParts[d.phan] ?? ''}` : d.nhanh === 'B' ? 'Nhánh B · Excel & Power BI' : d.nhanh === 'lib' ? 'Thư viện' : `Phần ${d.phan}`;
-const docs = (await getCollection('docs')).filter(e => e.data.id && !['he-thong', 'khung'].includes(e.data.loai));
-const lessons = docs
-  .sort((a, b) => a.id.localeCompare(b.id, 'vi', { numeric: true }))
-  .map(e => ({ id: e.data.id!, title: e.data.title, path: `/${e.id}/`, group: groupName(e.data), minutes: e.data.thoi_luong }));
+import { getLessonRefs } from '../lib/lessonRefs';
+const lessons = await getLessonRefs();
 ---
 <ProgressPage client:only="react" lessons={lessons} />
 {lessons.length === 0 && <p>Chưa có bài nào. Các bài sẽ xuất hiện ở đây khi được xuất bản.</p>}

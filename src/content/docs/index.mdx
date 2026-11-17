@@ -13,18 +13,30 @@ hero:
       link: /tien-do/
       variant: minimal
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import HomeContinue from '../../components/HomeContinue.astro';
+
+<HomeContinue />
 
 ## Ba câu hỏi đi suốt lộ trình
+<div class="b-home-q">
 <CardGrid>
   <Card title="Test cái gì" icon="magnifier">Reconcile để chốt population, chọn đúng chiều vouching hay tracing theo assertion.</Card>
   <Card title="Test bao nhiêu" icon="setting">OM · PM · CTT quyết định khoản mục phải test, key items và cỡ mẫu.</Card>
   <Card title="Kết luận thế nào" icon="approve-check">Suy rộng rồi mới so ngưỡng, ghi finding vào mini working paper.</Card>
 </CardGrid>
+</div>
 
-## Ba nhánh học
+## Bốn nhánh học
 <CardGrid>
-  <Card title="Nhánh A · Kiểm toán" icon="open-book">0 Lộ trình → 1 Nền tảng → 2 Materiality → 3 Bảy phần hành → 4 Ghi finding, cộng Thư viện.</Card>
-  <Card title="Nhánh B · Excel & Power BI" icon="laptop">Kỹ năng dữ liệu cho KTV; mỗi bài thực hành nối sang phần hành tương ứng.</Card>
-  <Card title="Nhánh C · ACCA Audit & Assurance" icon="puzzle">Học theo cách của KTV giỏi: [bản đồ liên kết mọi phần hành](/c/1/c1-master-map/), 6 mô hình tư duy, 7 chu trình, 5 checkpoint. Tiếng Anh như đề thi.</Card>
+  <LinkCard title="A · Kiểm toán theo phần hành" description="Lộ trình chính: Nền tảng → Materiality → 7 phần hành → Ghi finding, thực hành trên Biscore." href="/a/0/" />
+  <LinkCard title="B · Excel & Power BI" description="Kỹ năng dữ liệu cho KTV; mỗi bài thực hành nối sang phần hành tương ứng." href="/b/" />
+  <LinkCard title="C · ACCA Audit & Assurance" description="Học theo cách của KTV giỏi: một bản đồ nối mọi phần hành, 7 chu trình, 5 checkpoint. Tiếng Anh như đề thi." href="/c/" />
+  <LinkCard title="D · Thuế Việt Nam (ACCA TX-VNM)" description="Tax Atlas, cây quyết định, bẫy đề, kho đề, flashcard và máy tính thuế." href="/d/" />
+</CardGrid>
+
+## Công cụ tra cứu
+<CardGrid>
+  <LinkCard title="Bản đồ giấy làm việc VACPA" description="Chọn một giấy (vd D100) để xem nó nhận gì, đẩy sang đâu và lỗi hay gặp." href="/glv/" />
+  <LinkCard title="Thư viện" description="Thuật ngữ, chuẩn mực VSA/ISA, hệ thống tài khoản, dữ liệu Biscore." href="/thu-vien/thuat-ngu/" />
 </CardGrid>
