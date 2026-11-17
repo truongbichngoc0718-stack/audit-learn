@@ -1,0 +1,64 @@
+---
+title: "Ôn test MT · Aptitude"
+description: "355 câu aptitude cho vòng test Management Trainee / Consultant: Numerical, Verbal, Inductive, Error Checking, CFA Ethics."
+id: e0-start
+nhanh: E
+phan: e0
+loai: aptitude
+thoi_luong: 4
+nguon: ["quiz-bank/source/aptitude/", "quiz-bank/source/cfa_ethics_cau_hoi.csv", "quiz-bank/TAXONOMY.md"]
+ngay_cap_nhat: 2026-11-17
+trang_thai: mo-rong
+sidebar: { order: 0, label: "E0 · Start here" }
+tableOfContents: false
+---
+import { Eyebrow } from '@components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Nhánh E là kho luyện test năng lực cho vòng online test của các chương trình Management Trainee và tư vấn. Đề giữ nguyên **tiếng Anh** như khi thi thật; giao diện, nhãn và hướng dẫn bằng tiếng Việt. Làm tốt nhất trên điện thoại, mỗi lần 5–10 câu.
+
+<CardGrid>
+<LinkCard title="E1 · Luyện tập" description="Lọc theo độ khó, kiểu làm, lĩnh vực, dạng câu, chủ đề. Sai được làm lại một lần." href="/e/luyen-tap/" />
+<LinkCard title="E2 · Thi thử" description="Làm trọn một đề gốc có đồng hồ, chấm khi nộp." href="/e/thi-thu/" />
+</CardGrid>
+
+<Eyebrow>Kho đề</Eyebrow>
+## 355 câu, 5 lĩnh vực
+| Lĩnh vực | Số câu | Dạng gốc | Nguồn |
+|---|---|---|---|
+| Numerical Reasoning | 144 | Bảng dữ liệu lọc nhiều tiêu chí (4 đề) · Bài toán lời văn (6 đề) | AssessmentDay NR 13–22 |
+| Verbal Reasoning | 150 | Đoạn văn + nhận định True / False / Cannot say | AssessmentDay VR 7–11 |
+| Inductive Reasoning | 37 | Dãy hình, chọn hình tiếp theo hoặc điền “?” | Talent Q · Inductive 1–2 |
+| Error Checking | 5 | Đối chiếu mã số, tên, trạng thái với bảng gốc | Talent Q · Error Checking 1 |
+| Kiến thức nghề (CFA Ethics) | 19 | Câu hỏi tình huống theo Standards | `cau_hoi.csv` |
+
+<Eyebrow>Cách làm bài</Eyebrow>
+## Sai được làm lại một lần, sau đó mới xem lời giải
+- **Lượt 1 sai:** phương án vừa chọn bị gạch, bạn chọn hoặc điền lại. Với câu điền số, app cho biết kết quả đang cao hay thấp hơn đáp án.
+- **Lượt 2:** đúng hay sai đều hiện đáp án, lời giải gốc (kèm ảnh lời giải với câu hình và Error Checking) và trang nguồn.
+- **Điểm:** đúng lần đầu 1 · đúng lần chọn lại 0,5 · sai cả hai 0. Trạng thái câu: *Chưa làm · Đã đúng · Đúng lần 2 · Đang sai*. Nút **Ôn câu sai** gom cả câu “Đúng lần 2” và “Đang sai”.
+
+## Năm dạng hiển thị
+| Dạng | Áp dụng | Luyện kỹ năng |
+|---|---|---|
+| **Trắc nghiệm** | Mọi câu có lựa chọn | Như đề thật |
+| **Điền số** | Bài toán lời văn có đáp án là số (không phải “Cannot say”) | Tự tính ra con số, không dựa vào loại trừ phương án |
+| **Đúng/Sai nhanh** | Mọi lĩnh vực trừ Inductive | Nhìn một phương án, quyết định nhanh. Nhận định sai thì chuyển sang trắc nghiệm, coi như đã dùng một lượt |
+| **Cả đoạn văn** | Verbal, khi phiên có từ 2 nhận định cùng đoạn | Đọc một lần, trả lời liền các nhận định |
+| **Chọn hình** | Inductive | Lưới A–E, ảnh phóng to được |
+
+Chế độ **Tự động trộn** chọn ngẫu nhiên giữa trắc nghiệm, điền số và đúng/sai nhanh cho từng câu.
+
+<Eyebrow>Bộ nhãn</Eyebrow>
+## Lọc theo năm trục
+| Trục | Giá trị |
+|---|---|
+| Độ khó | Dễ · Trung bình · Khó (chia ba nhóm bằng nhau trong từng dạng câu, theo số bước và độ dài lời giải) |
+| Kiểu làm | **Nhanh** ≤45 giây, nhìn là ra · **Chậm** nhiều bước tính hoặc đọc kỹ · **Tư duy** tìm quy luật, suy luận |
+| Lĩnh vực | Numerical · Verbal · Inductive · Error Checking · CFA Ethics |
+| Dạng câu | Bảng dữ liệu · Bài toán lời văn · True/False/Cannot say · Dãy hình · Đối chiếu dữ liệu · Tình huống |
+| Chủ đề | Numerical: phần trăm, lợi nhuận, tỷ giá, tỷ lệ, số trung bình…; Verbal: chủ đề đoạn văn; Inductive: loại quy luật (xoay, di chuyển, tô màu, đếm) |
+
+Nhãn được gán tự động; cách gán ghi ở `quiz-bank/TAXONOMY.md`. Sáu câu nguồn để trống đáp án (NR19-Q14, VR08-Q28, VR09-Q08, VR09-Q10, VR09-Q23, VR11-Q19) được suy từ lời giải gốc và có ghi chú trong câu.
+
+Tiến độ lưu trên trình duyệt đang dùng và nằm trong bản sao lưu ở trang **Tiến độ**.

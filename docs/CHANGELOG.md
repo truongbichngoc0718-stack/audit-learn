@@ -134,3 +134,13 @@
 - **Sidebar:** A0–A4 thu gọn mặc định, tự mở nhóm đang học.
 - **Nhánh C:** pop-up hướng dẫn chỉ mở đủ ở lần đầu vào mỗi trang; các lần sau là bong bóng gọn "Xem hướng dẫn (n bước)". Trên điện thoại pop-up giới hạn 55% chiều cao.
 - **Bản đồ GLV:** giữ nguyên bố cục đã duyệt; header, font, màu theo hệ thống chung (Inter/Lora, navy #1C3A4A, viền vàng, logo về trang chủ); trên điện thoại danh sách giấy thành nút "☰ Danh sách giấy" mở/đóng.
+
+## 2026-11-17 · Nhánh E · Ôn test MT (Aptitude)
+- Thêm nhánh E (mở rộng, ngoài ebook BISC): E0 Start here · E1 Luyện tập · E2 Thi thử; thẻ ở trang chủ ("Năm nhánh học"), sidebar, breadcrumb, nhóm E trong trang Tiến độ.
+- Kho 355 câu từ `quiz-bank` (Downloads/Ebook/quiz-bank): AssessmentDay Numerical 13–22 (144), Verbal 7–11 (150), Talent Q Inductive 1–2 (37), Error Checking 1 (5), CFA Ethics `cau_hoi.csv` (19). Dữ liệu `public/mt/questions.json`, 117 ảnh đề/lời giải `public/mt/img/*.webp`.
+- Bộ lọc 5 trục: độ khó (Dễ/Trung bình/Khó), kiểu làm (Nhanh/Chậm/Tư duy), lĩnh vực, dạng câu, chủ đề; thêm trạng thái (Chưa làm/Đã đúng/Đúng lần 2/Đang sai/Đã đánh dấu).
+- Cơ chế làm lại: sai lần 1 → gạch phương án (câu điền số: báo cao/thấp hơn đáp án), chọn hoặc điền lại; sai lần 2 mới hiện lời giải. Điểm 1 / 0,5 / 0.
+- Năm dạng hiển thị: trắc nghiệm, điền số (bài toán lời văn có đáp án là số), đúng/sai nhanh (nhận định sai → chuyển trắc nghiệm, mất 1 lượt), cả đoạn văn Verbal (gom nhận định cùng đoạn), chọn hình (Inductive). Chế độ "Tự động trộn".
+- Thi thử: chọn một trong 13 đề gốc hoặc đề trộn theo bộ lọc; đồng hồ tổng theo thời gian mục tiêu, không làm lại, xem lại từng câu sau khi nộp.
+- Tiến độ lưu localStorage `mt-progress-v1`, gộp vào bản sao lưu ở trang Tiến độ (`src/lib/backup.ts`).
+- Lưu ý bản quyền: đề AssessmentDay ghi "for personal use only"; bạn quyết định đưa lên hub công khai (17/11/2026).

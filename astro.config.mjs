@@ -53,6 +53,11 @@ export default defineConfig({
           { label: 'D6 · Máy tính', link: '/d/calc/' },
           { label: 'D7 · Bảng thuế', link: '/d/tables/' },
         ] },
+        { label: 'E · Ôn test MT (Aptitude)', collapsed: true, items: [
+          { label: 'E0 · Start here', link: '/e/' },
+          { label: 'E1 · Luyện tập', link: '/e/luyen-tap/' },
+          { label: 'E2 · Thi thử', link: '/e/thi-thu/' },
+        ] },
       ],
     }),
     react(),
